@@ -11,7 +11,6 @@
  *
  */
 
-#include <QDebug>
 #include <QLineEdit>
 #include <QMessageBox>
 #include <QPixmap>
@@ -84,8 +83,8 @@ void ContactDialog::getData(ContactItem& c)
     // Names
     c.fullName = ui->leFullName->text();
     c.names.clear();
-    for (int i=1; i<=nameCount; i++)
-        c.names.push_back(findChild<QLineEdit*>(QString("leName%1").arg(i))->text());
+    for (int i=0; i<nameCount; i++)
+        c.names.push_back(findChild<QLineEdit*>(QString("leName%1").arg(i+1))->text());
     // Phones
     c.phones.clear();
     for (int i=0; i<phoneCount; i++) {
@@ -236,6 +235,15 @@ void ContactDialog::delTriplet(int& count, const QString& nameTemplate, int num)
         delete typeBox;
         delete delBtn;
         count--;
+        // Rename next dynamically created controls for crash preventing
+        for (int i=num; i<=count; i++) {
+            QLineEdit* editor = findChild<QLineEdit*>(QString("le%1%2").arg(nameTemplate).arg(i+1));
+            QComboBox* typeBox = findChild<QComboBox*>(QString("cb%1Type%2").arg(nameTemplate).arg(i+1));
+            QToolButton* delBtn = findChild<QToolButton*>(QString("btnDel%1%2").arg(nameTemplate).arg(i+1));
+            editor->setObjectName(QString("le%1%2").arg(nameTemplate).arg(i));
+            typeBox->setObjectName(QString("cb%1Type%2").arg(nameTemplate).arg(i));
+            delBtn->setObjectName(QString("btnDel%1%2").arg(nameTemplate).arg(i));
+        }
     }
 }
 
