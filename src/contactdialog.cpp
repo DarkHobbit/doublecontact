@@ -84,6 +84,8 @@ void ContactDialog::setData(const ContactItem& c)
     ui->dteBirthday->setEnabled(c.birthDay.isValid());
     if (c.birthDay.isValid())
         ui->dteBirthday->setDateTime(c.birthDay);
+    // Other
+    ui->edDescription->setPlainText(c.description);
 }
 
 void ContactDialog::getData(ContactItem& c)
@@ -114,7 +116,9 @@ void ContactDialog::getData(ContactItem& c)
     }
     // BirthDay
     c.birthDay = (ui->cbBirthday->isChecked()) ? ui->dteBirthday->dateTime() : QDateTime();
-    // TODO Notes, Photos, address
+    // Other
+    c.description = ui->edDescription->toPlainText();
+    // TODO Photos, address
     c.calculateFields();
 }
 
