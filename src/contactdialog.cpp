@@ -14,6 +14,7 @@
 #include <QDebug>
 #include <QLineEdit>
 #include <QMessageBox>
+#include <QPixmap>
 #include "contactdialog.h"
 #include "phonetypedialog.h"
 #include "ui_contactdialog.h"
@@ -131,7 +132,8 @@ void ContactDialog::addName(const QString& name)
         ui->layNames->addWidget(le, nameCount-1, 0);
         QToolButton* btnD = new QToolButton(this);
         btnD->setObjectName(QString("btnDelName%1").arg(nameCount+1));
-        btnD->setArrowType(Qt::RightArrow);
+        QPixmap icoDel(":/res/../img/16x16/del.png");
+        btnD->setIcon(icoDel);
         connect(btnD, SIGNAL(clicked()), this, SLOT(slotDelName()));
         ui->layNames->addWidget(btnD, nameCount-1, 1);
     }
@@ -195,7 +197,8 @@ void ContactDialog::addTriplet(int& count, QGridLayout* l, const QString& nameTe
         // Delete button
         QToolButton* btnD = new QToolButton(this);
         btnD->setObjectName(QString("btnDel%1%2").arg(nameTemplate).arg(count+1));
-        btnD->setArrowType(Qt::RightArrow);
+        QPixmap icoDel(":/res/../img/16x16/del.png");
+        btnD->setIcon(icoDel);
         connect(btnD, SIGNAL(clicked()), this, SLOT(slotDelTriplet()));
         l->addWidget(btnD, count, 2);
     }

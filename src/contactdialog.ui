@@ -74,8 +74,12 @@
             <property name="text">
              <string>...</string>
             </property>
+            <property name="icon">
+             <iconset resource="doublecontact.qrc">
+              <normaloff>:/img/16x16/del.png</normaloff>:/img/16x16/del.png</iconset>
+            </property>
             <property name="arrowType">
-             <enum>Qt::RightArrow</enum>
+             <enum>Qt::NoArrow</enum>
             </property>
            </widget>
           </item>
@@ -109,8 +113,12 @@
             <property name="text">
              <string>...</string>
             </property>
+            <property name="icon">
+             <iconset resource="doublecontact.qrc">
+              <normaloff>:/img/16x16/del.png</normaloff>:/img/16x16/del.png</iconset>
+            </property>
             <property name="arrowType">
-             <enum>Qt::RightArrow</enum>
+             <enum>Qt::NoArrow</enum>
             </property>
            </widget>
           </item>
@@ -188,7 +196,9 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="doublecontact.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>buttonBox</sender>
