@@ -54,6 +54,7 @@ private slots:
     void slotDelTriplet();
     void on_btnAdd_clicked();
     void itemTypeChanged(const QString& value);
+    void on_cbBirthday_toggled(bool checked);
 };
 
 #endif // CONTACTDIALOG_H

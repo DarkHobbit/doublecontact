@@ -14,6 +14,7 @@
 #ifndef CONTACTLIST_H
 #define CONTACTLIST_H
 
+#include <QDateTime>
 #include <QFlags>
 #include <QList>
 #include <QString>
@@ -66,6 +67,7 @@ struct ContactItem {
     QStringList names;
     QList<Phone> phones;
     QList<Email> emails;
+    QDateTime birthDay; // TODO maybe add field from timezone, if it was in vcf?
     QString description;
     // TODO address, bDay
     QList<TagValue> unknownTags; // specific tags for any file format, i.e. vcf

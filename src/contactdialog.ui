@@ -171,15 +171,45 @@
        <property name="frameShadow">
         <enum>QFrame::Raised</enum>
        </property>
-       <layout class="QVBoxLayout" name="verticalLayout">
-        <item>
-         <widget class="QLabel" name="labelForFuture">
-          <property name="text">
-           <string>For Future</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
+       <widget class="QLabel" name="labelForFuture">
+        <property name="geometry">
+         <rect>
+          <x>9</x>
+          <y>204</y>
+          <width>121</width>
+          <height>91</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>For Future</string>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="cbBirthday">
+        <property name="geometry">
+         <rect>
+          <x>9</x>
+          <y>9</y>
+          <width>91</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Birthday</string>
+        </property>
+       </widget>
+       <widget class="QDateTimeEdit" name="dteBirthday">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>40</y>
+          <width>194</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="calendarPopup">
+         <bool>true</bool>
+        </property>
+       </widget>
       </widget>
      </item>
     </layout>

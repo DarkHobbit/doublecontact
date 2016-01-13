@@ -11,6 +11,7 @@
  *
  */
 
+#include <QDebug>
 #include <QLineEdit>
 #include <QMessageBox>
 #include <QPixmap>
@@ -61,6 +62,8 @@ void ContactDialog::clearData()
     setWindowTitle(tr("Add contact"));
     nameCount = MIN_VISIBLE_NAMES;
     phoneCount = emailCount = MIN_VISIBLE_TRIPLETS;
+    ui->cbBirthday->setChecked(false);
+    ui->dteBirthday->setEnabled(false);
 }
 
 void ContactDialog::setData(const ContactItem& c)
@@ -76,6 +79,11 @@ void ContactDialog::setData(const ContactItem& c)
     // Emails
     for (int i=0; i<c.emails.count(); i++)
         addEmail(c.emails[i]);
+    // BirthDay
+    ui->cbBirthday->setChecked(c.birthDay.isValid());
+    ui->dteBirthday->setEnabled(c.birthDay.isValid());
+    if (c.birthDay.isValid())
+        ui->dteBirthday->setDateTime(c.birthDay);
 }
 
 void ContactDialog::getData(ContactItem& c)
@@ -104,7 +112,9 @@ void ContactDialog::getData(ContactItem& c)
         em.preferred = (i==0); // TODO need widget for this
         c.emails.push_back(em);
     }
-    // TODO BirthDays, Notes, Photos
+    // BirthDay
+    c.birthDay = (ui->cbBirthday->isChecked()) ? ui->dteBirthday->dateTime() : QDateTime();
+    // TODO Notes, Photos, address
     c.calculateFields();
 }
 
@@ -291,4 +301,9 @@ void ContactDialog::itemTypeChanged(const QString &value)
             // TODO
         }
     }
+}
+
+void ContactDialog::on_cbBirthday_toggled(bool checked)
+{
+    ui->dteBirthday->setEnabled(checked);
 }
