@@ -17,6 +17,7 @@
 #include <QAbstractTableModel>
 #include <QString>
 #include "contactlist.h"
+#include "formats/formatfactory.h"
 
 // Visible columns
 enum ContactColumn {
@@ -41,6 +42,7 @@ public:
     QVariant headerData(int section, Qt::Orientation orientation, int role) const;
     QVariant data(const QModelIndex &index, int role) const;
     // Save and open methods
+    bool open();
     bool save();
     // Contact operation methods
     void addRow(const ContactItem& c);
@@ -60,6 +62,7 @@ private:
     bool _changed;   // has contact book unsaved changes?
     ContactList items;
     QList<ContactColumn> visibleColumns;
+    FormatFactory factory;
 };
 
 #endif // CONTACTMODEL_H

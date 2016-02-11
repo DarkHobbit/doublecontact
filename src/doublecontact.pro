@@ -12,12 +12,15 @@ SOURCES += main.cpp \
     contactmodel.cpp \
     contactlist.cpp \
     contactdialog.cpp \
-    phonetypedialog.cpp
+    phonetypedialog.cpp \
+    formats/formatfactory.cpp
 HEADERS += mainwindow.h \
     contactmodel.h \
     contactlist.h \
     contactdialog.h \
-    phonetypedialog.h
+    phonetypedialog.h \
+    formats/iformat.h \
+    formats/formatfactory.h
 FORMS += mainwindow.ui \
     contactdialog.ui \
     phonetypedialog.ui

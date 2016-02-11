@@ -13,7 +13,7 @@
 
 #include "contactlist.h"
 
-const struct Phone fullPhoneFlagSet = { "0",  /*.tType =*/ Phone::All };
+const struct Phone fullPhoneFlagSet = { "0",  /*.tType =*/ Phone::All, true };
 
 // We can't use QMap, etc, because multiple flags may be for one phone
 QStringList Phone::typeToStrList() const

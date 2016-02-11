@@ -69,7 +69,7 @@ struct ContactItem {
     QList<Email> emails;
     QDateTime birthDay; // TODO maybe add field from timezone, if it was in vcf?
     QString description;
-    // TODO address, bDay
+    // TODO address
     QList<TagValue> unknownTags; // specific tags for any file format, i.e. vcf
     // calculated fields for higher perfomance
     QString prefPhone, prefEmail;

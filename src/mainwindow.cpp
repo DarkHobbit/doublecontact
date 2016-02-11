@@ -94,7 +94,7 @@ void MainWindow::on_btnExit_clicked()
 // Open
 void MainWindow::on_action_Open_triggered()
 {
-    // TODO
+    selectedModel->open();
 }
 
 // Save

@@ -12,9 +12,10 @@
  */
 
 #include <QtAlgorithms>
+#include <QFileDialog>
 #include <QMessageBox>
+
 #include "contactmodel.h"
-#include <QDebug>
 
 // Visible columns headers
 QString contactColumnHeaders[ccLast] = {
@@ -95,6 +96,20 @@ QVariant ContactModel::data(const QModelIndex &index, int role) const
         }
     }
     return QVariant();
+}
+
+bool ContactModel::open()
+{
+    QString dir = ""; // TODO last dir from settings
+    QString selectedFilter;
+    QString path = QFileDialog::getOpenFileName(0, tr("Open contact file"),
+        dir, factory.supportedExtensions().join(";;"), &selectedFilter);
+    if (path.isEmpty()) return false;
+    IFormat* format = factory.createObject(path);
+    if (!format) return false;
+    format->importRecords(path, items, false);
+    delete format;
+    return true;
 }
 
 bool ContactModel::save() // false if user cancel
