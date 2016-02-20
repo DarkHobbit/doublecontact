@@ -20,7 +20,7 @@
 
 class IFormat {
 public:
-    virtual ~IFormat();
+//    virtual ~IFormat();
     virtual bool detect(const QString& url)=0; // tri-state?
     virtual QStringList supportedTypes()=0; // only for files
     virtual bool importRecords(const QString& url, ContactList& list, bool append)=0;

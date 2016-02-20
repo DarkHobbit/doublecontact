@@ -108,6 +108,7 @@ bool ContactModel::open()
     IFormat* format = factory.createObject(path);
     if (!format) return false;
     format->importRecords(path, items, false);
+    _source = path;
     delete format;
     return true;
 }

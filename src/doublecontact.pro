@@ -13,14 +13,16 @@ SOURCES += main.cpp \
     contactlist.cpp \
     contactdialog.cpp \
     phonetypedialog.cpp \
-    formats/formatfactory.cpp
+    formats/formatfactory.cpp \
+    formats/files/fileformat.cpp
 HEADERS += mainwindow.h \
     contactmodel.h \
     contactlist.h \
     contactdialog.h \
     phonetypedialog.h \
     formats/iformat.h \
-    formats/formatfactory.h
+    formats/formatfactory.h \
+    formats/files/fileformat.h
 FORMS += mainwindow.ui \
     contactdialog.ui \
     phonetypedialog.ui
