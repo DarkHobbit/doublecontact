@@ -14,7 +14,9 @@ SOURCES += main.cpp \
     contactdialog.cpp \
     phonetypedialog.cpp \
     formats/formatfactory.cpp \
-    formats/files/fileformat.cpp
+    formats/files/fileformat.cpp \
+    formats/files/vcffile.cpp \
+    formats/common/vcarddata.cpp
 HEADERS += mainwindow.h \
     contactmodel.h \
     contactlist.h \
@@ -22,7 +24,9 @@ HEADERS += mainwindow.h \
     phonetypedialog.h \
     formats/iformat.h \
     formats/formatfactory.h \
-    formats/files/fileformat.h
+    formats/files/fileformat.h \
+    formats/files/vcffile.h \
+    formats/common/vcarddata.h
 FORMS += mainwindow.ui \
     contactdialog.ui \
     phonetypedialog.ui

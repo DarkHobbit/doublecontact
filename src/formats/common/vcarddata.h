@@ -1,6 +1,6 @@
 /* Double Contact
  *
- * Module: Abstract class for file export/import format
+ * Module: VCard data export/import (both for file and network media)
  *
  * Copyright 2016 Mikhail Y. Zvyozdochkin aka DarkHobbit <pub@zvyozdochkin.ru>
  *
@@ -10,22 +10,17 @@
  * (at your option) any later version. See COPYING file for more details.
  *
  */
+#ifndef VCARDDATA_H
+#define VCARDDATA_H
 
-#ifndef FILEFORMAT_H
-#define FILEFORMAT_H
+#include <QStringList>
+#include "../../contactlist.h"
 
-#include <QFile>
-#include "../iformat.h"
-
-class FileFormat : public IFormat
+class VCardData
 {
 public:
-    FileFormat();
-    virtual ~FileFormat();
-protected:
-    QFile file;
-    bool openFile(QString path, QIODevice::OpenMode mode);
-    void closeFile();
+    static bool importRecords(const QStringList& lines, ContactList &list, bool append);
+    static bool exportRecords(QStringList& lines, const ContactList &list);
 };
 
-#endif // FILEFORMAT_H
+#endif // VCARDDATA_H

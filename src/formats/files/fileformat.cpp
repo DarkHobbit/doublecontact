@@ -15,21 +15,21 @@
 #include <QObject>
 #include "fileformat.h"
 
-FileFormat::FileFormat(const QString& path)
-    :_path(path), file(path)
+FileFormat::FileFormat()
 {}
 
 FileFormat::~FileFormat()
 {}
 
-bool FileFormat::openFile(QIODevice::OpenMode mode)
+bool FileFormat::openFile(QString path, QIODevice::OpenMode mode)
 {
+    file.setFileName(path);
     bool res = file.open(mode);
     if (!res) {
         QString msgTempl = (mode==QIODevice::ReadOnly)
             ? QObject::tr("Can't read file\n%1")
             : QObject::tr("Can't write file\n%1");
-        QMessageBox::critical(0, QObject::tr("Error"), msgTempl.arg(_path));
+        QMessageBox::critical(0, QObject::tr("Error"), msgTempl.arg(path));
     }
     return res;
 }
