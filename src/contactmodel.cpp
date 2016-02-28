@@ -110,6 +110,7 @@ bool ContactModel::open()
     format->importRecords(path, items, false);
     _source = path;
     delete format;
+    reset();
     return true;
 }
 

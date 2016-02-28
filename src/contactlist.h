@@ -22,6 +22,7 @@
 
 struct TagValue {
     QString tag, value;
+    TagValue(const QString& _tag, const QString& _value);
 };
 
 struct Phone {
@@ -70,9 +71,13 @@ struct ContactItem {
     QDateTime birthDay; // TODO maybe add field from timezone, if it was in vcf?
     QString description;
     // TODO address
+    // Format internals
+    QString originalFormat;
+    QString version;
     QList<TagValue> unknownTags; // specific tags for any file format, i.e. vcf
-    // calculated fields for higher perfomance
+    // Calculated fields for higher perfomance
     QString prefPhone, prefEmail;
+    void clear();
     bool swapNames();
     void calculateFields();
 };

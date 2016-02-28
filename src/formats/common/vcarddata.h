@@ -19,8 +19,10 @@
 class VCardData
 {
 public:
-    static bool importRecords(const QStringList& lines, ContactList &list, bool append);
-    static bool exportRecords(QStringList& lines, const ContactList &list);
+    static bool importRecords(QStringList& lines, ContactList& list, bool append, QStringList& errors);
+    static bool exportRecords(QStringList& lines, const ContactList& list);
+private:
+    static QString decode(const QString& src, const QString& encoding, const QString& charSet, QStringList& errors);
 };
 
 #endif // VCARDDATA_H

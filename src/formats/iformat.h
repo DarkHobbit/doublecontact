@@ -23,6 +23,7 @@ public:
     virtual ~IFormat() {};
     virtual bool importRecords(const QString& url, ContactList& list, bool append)=0;
     virtual bool exportRecords(const QString& url, const ContactList& list)=0;
+    virtual QStringList errors()=0;
     /* Subclasses also can create next _static_ methods:
      * bool detect(const QString& url); // tri-state?
      * QStringList supportedTypes(); // only for files

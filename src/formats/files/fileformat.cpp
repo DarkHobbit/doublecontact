@@ -21,6 +21,11 @@ FileFormat::FileFormat()
 FileFormat::~FileFormat()
 {}
 
+QStringList FileFormat::errors()
+{
+    return _errors;
+}
+
 bool FileFormat::openFile(QString path, QIODevice::OpenMode mode)
 {
     file.setFileName(path);

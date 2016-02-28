@@ -10,16 +10,116 @@
  * (at your option) any later version. See COPYING file for more details.
  *
  */
+#include <QObject>
 #include "vcarddata.h"
-#include <QMessageBox> //==>
 
-bool VCardData::importRecords(const QStringList &lines, ContactList &list, bool append)
+bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append, QStringList& errors)
 {
-    QMessageBox::information(0, "dbg", QString("%1 lines read").arg(lines.count())); //===>
-    // TODO
+    bool recordOpened = false;
+    ContactItem item;
+    if (!append)
+        list.clear();
+    // Merge quoted-printable linesets
+    if (lines.count()>1)
+    for (int i=lines.count()-2;i>=0;i--) {
+        if (lines[i].right(1)=="=" && lines[i+1].left(1)=="=") {
+            lines[i] += lines[i+1].mid(1);
+            lines.removeAt(i+1);
+        }
+    }
+    // Collect records
+    for (int line=0; line<lines.count(); line++) {
+        const QString& s = lines[line];
+        if (s.startsWith("BEGIN:VCARD", Qt::CaseInsensitive)) {
+            recordOpened = true;
+            item.clear();
+            item.originalFormat = "VCARD";
+        }
+        else if (s.startsWith("END:VCARD", Qt::CaseInsensitive)) {
+            recordOpened = false;
+            list.push_back(item);
+        }
+        else if (s.startsWith("VERSION:", Qt::CaseInsensitive)) {
+            item.version = s.mid(8);
+        }
+        else {
+            // Split type:value
+            int scPos = s.indexOf(":");
+            if (scPos==-1) {
+                item.unknownTags.push_back(TagValue(s, ""));
+                continue;
+            }
+            QStringList vType = s.left(scPos).split(";");
+            QStringList vValue = s.mid(scPos+1).split(";");
+            // Encoding and charset
+            QString encoding;
+            QString charSet;
+            for (int i=1; i<vType.count(); i++) {
+                if (vType[i].startsWith("ENCODING="))
+                    encoding = vType[i].mid(9);
+                else if (vType[i].startsWith("CHARSET="))
+                    charSet = vType[i].mid(8);
+                else
+                    item.unknownTags.push_back(TagValue(vType.join(";"), vValue.join(";"))); // TODO partiallyKnownTag?
+            }
+            // Known tags
+            if (vType[0].toUpper()=="FN")
+                item.fullName = decode(vValue[0], encoding, charSet, errors);
+            else if (vType[0].toUpper()=="N")
+                foreach (const QString& name, vValue)
+                    item.names << decode(name, encoding, charSet, errors);
+            // TODO
+
+            // Unknown tags
+            else
+                item.unknownTags.push_back(TagValue(vType.join(";"), vValue.join(";")));
+        }
+
+    }
+    if (recordOpened) {
+        list.push_back(item);
+        errors << QObject::tr("Last section not closed");
+    }
+    // Unknown tags statistics
+    int totalUnknownTags = 0;
+    foreach (const ContactItem& _item, list)
+        totalUnknownTags += _item.unknownTags.count();
+    if (totalUnknownTags)
+        errors << QObject::tr("%1 unknown tags found").arg(totalUnknownTags);
+    // Ready
+    return (!list.isEmpty());
 }
 
 bool VCardData::exportRecords(QStringList &lines, const ContactList &list)
 {
     // TODO
+}
+
+QString VCardData::decode(const QString &src, const QString &encoding, const QString &charSet, QStringList& errors)
+{
+    QString res;
+    // Encoding
+    if (encoding.isEmpty())
+        res = src;
+    else if (encoding.toUpper()=="QUOTED-PRINTABLE") {
+        res = "";
+        bool ok;
+        for (int i=0; i<src.length(); i++) {
+            if (src[i]=='=')
+                res += QChar(src.mid(i+1, 2).toInt(&ok, 16));
+            else
+                res += src[i];
+        }
+    }
+    else {
+        errors << QObject::tr("Unknown encoding");
+        return "";
+    }
+    // Charset
+    if (charSet.isEmpty() || charSet.toUpper()=="UTF-8")
+        return res;
+    else {
+        errors << QObject::tr("Unknown encoding");
+        return "";
+    }
 }

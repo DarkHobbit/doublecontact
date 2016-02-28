@@ -126,6 +126,22 @@ void Phone::calculateFields()
     isMixed = (flagCount>1);
 }
 
+void ContactItem::clear()
+{
+    fullName.clear();
+    names.clear();
+    phones.clear();
+    emails.clear();
+    birthDay = QDateTime();
+    description.clear();
+    unknownTags.clear();
+    originalFormat.clear();
+    version.clear();
+    // maybe not needed:
+    prefPhone.clear();
+    prefEmail.clear();
+}
+
 bool ContactItem::swapNames()
 {
     if (names.isEmpty())
@@ -160,3 +176,9 @@ void ContactItem::calculateFields()
 ContactList::ContactList()
 {
 }
+
+
+TagValue::TagValue(const QString& _tag, const QString& _value)
+    :tag(_tag), value(_value)
+{}
+

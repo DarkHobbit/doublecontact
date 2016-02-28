@@ -42,13 +42,14 @@ bool VCFFile::importRecords(const QString &url, ContactList &list, bool append)
     QStringList data;
     if (!openFile(url, QIODevice::ReadOnly))
         return false;
+    _errors.clear();
     QStringList content;
     QTextStream stream(&file);
     do {
         content.push_back(stream.readLine());
     } while (!stream.atEnd());
     closeFile();
-    return VCardData::importRecords(content, list, append);
+    return VCardData::importRecords(content, list, append, _errors);
 }
 
 bool VCFFile::exportRecords(const QString &url, const ContactList &list)

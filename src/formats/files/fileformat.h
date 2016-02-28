@@ -22,8 +22,10 @@ class FileFormat : public IFormat
 public:
     FileFormat();
     virtual ~FileFormat();
+    QStringList errors();
 protected:
     QFile file;
+    QStringList _errors;
     bool openFile(QString path, QIODevice::OpenMode mode);
     void closeFile();
 };
