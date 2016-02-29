@@ -35,8 +35,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->tvLeft->setModel(modLeft);
     modRight = new ContactModel(this, tr("New contact list 2"));
     ui->tvRight->setModel(modRight);
-    if (qApp->arguments().contains("-d"))
-        modLeft->testList();
     // Track selected view
     connect(qApp, SIGNAL(focusChanged(QWidget*,QWidget*)), this, SLOT(anyFocusChanged(QWidget*,QWidget*)));
     connect(ui->tvLeft->selectionModel(), SIGNAL(currentChanged(const QModelIndex&, const QModelIndex&)),
@@ -51,6 +49,17 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->tvRight, SIGNAL(doubleClicked (const QModelIndex&)), this, SLOT(rowDoubleClicked(const QModelIndex&)));
     selectView(ui->tvLeft);
     selection = selectedView->selectionModel()->selectedRows();
+    // Test data
+    if (qApp->arguments().contains("-d"))
+        modLeft->testList();
+    // File data
+    else if (qApp->arguments().count()>1) {
+        modLeft->open(qApp->arguments()[1]);
+        if (qApp->arguments().count()>2) {
+            ui->action_Two_panels->setChecked(true);
+            modRight->open(qApp->arguments()[2]);
+        }
+    }
     updateHeaders();
     on_action_Two_panels_toggled(ui->action_Two_panels->isChecked());
 }
