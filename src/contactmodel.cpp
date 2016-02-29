@@ -12,7 +12,6 @@
  */
 
 #include <QtAlgorithms>
-#include <QFileDialog>
 #include <QMessageBox>
 
 #include "contactmodel.h"
@@ -98,12 +97,8 @@ QVariant ContactModel::data(const QModelIndex &index, int role) const
     return QVariant();
 }
 
-bool ContactModel::open()
+bool ContactModel::open(const QString& path)
 {
-    QString dir = ""; // TODO last dir from settings
-    QString selectedFilter;
-    QString path = QFileDialog::getOpenFileName(0, tr("Open contact file"),
-        dir, factory.supportedExtensions().join(";;"), &selectedFilter);
     if (path.isEmpty()) return false;
     IFormat* format = factory.createObject(path);
     if (!format) return false;

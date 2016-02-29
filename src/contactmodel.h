@@ -42,7 +42,7 @@ public:
     QVariant headerData(int section, Qt::Orientation orientation, int role) const;
     QVariant data(const QModelIndex &index, int role) const;
     // Save and open methods
-    bool open();
+    bool open(const QString& path);
     bool save();
     // Contact operation methods
     void addRow(const ContactItem& c);

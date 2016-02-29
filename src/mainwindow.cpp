@@ -12,9 +12,15 @@
  */
 
 #include <QCloseEvent>
+#include <QFileDialog>
 #include <QItemSelectionModel>
 #include <QMessageBox>
-#include <QDebug>
+
+#if QT_VERSION >= 0x050000
+#include <QStandardPaths>
+#else
+#include <QDesktopServices>
+#endif
 
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
@@ -94,7 +100,11 @@ void MainWindow::on_btnExit_clicked()
 // Open
 void MainWindow::on_action_Open_triggered()
 {
-    selectedModel->open();
+    QString selectedFilter;
+    QString path = QFileDialog::getOpenFileName(0, tr("Open contact file"),
+        lastPath(), FormatFactory::supportedExtensions().join(";;"), &selectedFilter);
+    selectedModel->open(path);
+    setLastPath(path);
 }
 
 // Save
@@ -327,6 +337,22 @@ void MainWindow::askSaveChanges(QCloseEvent *event, QTableView *view)
         event->ignore();
         break;
     }
+}
+
+QString MainWindow::lastPath()
+{
+    QString defaultDir =
+#if QT_VERSION >= 0x050000
+        QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
+#else
+        QDesktopServices::storageLocation( QDesktopServices::DocumentsLocation);
+#endif
+    return settings.value("General/LastFile", defaultDir).toString();
+}
+
+void MainWindow::setLastPath(const QString &path)
+{
+    settings.setValue("General/LastFile", path);
 }
 
 void MainWindow::on_action_Other_panel_triggered()

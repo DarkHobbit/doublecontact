@@ -17,6 +17,7 @@
 #include <QLabel>
 #include <QMainWindow>
 #include <QModelIndexList>
+#include <QSettings>
 #include <QTableView>
 #include "contactmodel.h"
 
@@ -71,12 +72,15 @@ private:
     QLabel* selectedHeader;
     // End of potentially unsafe pointers
     QModelIndexList selection;
+    QSettings settings;
     void selectView(QTableView* view);
     bool checkSelection();
     void updateListHeader(ContactModel* model, QLabel* header);
     void updateHeaders();
     inline ContactModel* oppositeModel();
     void askSaveChanges(QCloseEvent *event, QTableView* view);
+    QString lastPath();
+    void setLastPath(const QString& path);
 };
 
 #endif // MAINWINDOW_H

@@ -105,8 +105,10 @@ QString VCardData::decode(const QString &src, const QString &encoding, const QSt
         res = "";
         bool ok;
         for (int i=0; i<src.length(); i++) {
-            if (src[i]=='=')
+            if (src[i]=='=') {
                 res += QChar(src.mid(i+1, 2).toInt(&ok, 16));
+                i += 2;
+            }
             else
                 res += src[i];
         }
