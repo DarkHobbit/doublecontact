@@ -15,6 +15,7 @@
 #include <QMessageBox>
 
 #include "contactmodel.h"
+#include "logwindow.h"
 
 // Visible columns headers
 QString contactColumnHeaders[ccLast] = {
@@ -104,6 +105,12 @@ bool ContactModel::open(const QString& path)
     if (!format) return false;
     format->importRecords(path, items, false);
     _source = path;
+    if (!format->errors().isEmpty()) {
+        LogWindow* w = new LogWindow(0);
+        w->setData(path, items, format->errors());
+        w->exec();
+        delete w;
+    }
     delete format;
     reset();
     return true;

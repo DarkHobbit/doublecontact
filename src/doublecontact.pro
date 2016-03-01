@@ -16,7 +16,8 @@ SOURCES += main.cpp \
     formats/formatfactory.cpp \
     formats/files/fileformat.cpp \
     formats/files/vcffile.cpp \
-    formats/common/vcarddata.cpp
+    formats/common/vcarddata.cpp \
+    logwindow.cpp
 HEADERS += mainwindow.h \
     contactmodel.h \
     contactlist.h \
@@ -26,10 +27,12 @@ HEADERS += mainwindow.h \
     formats/formatfactory.h \
     formats/files/fileformat.h \
     formats/files/vcffile.h \
-    formats/common/vcarddata.h
+    formats/common/vcarddata.h \
+    logwindow.h
 FORMS += mainwindow.ui \
     contactdialog.ui \
-    phonetypedialog.ui
+    phonetypedialog.ui \
+    logwindow.ui
 unix { 
     OBJECTS_DIR = .obj
     UI_DIR = .ui
