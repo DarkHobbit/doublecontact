@@ -19,7 +19,9 @@
 #include <QModelIndexList>
 #include <QSettings>
 #include <QTableView>
+
 #include "contactmodel.h"
+#include "settingsdialog.h"
 
 namespace Ui {
 class MainWindow;
@@ -63,6 +65,8 @@ private slots:
     void on_action_Save_triggered();
     void on_actionSave_as_triggered();
     void rowDoubleClicked(const QModelIndex&);
+    void on_actionSettings_triggered();
+
 private:
     Ui::MainWindow *ui;
     ContactModel *modLeft, *modRight;
@@ -73,6 +77,7 @@ private:
     // End of potentially unsafe pointers
     QModelIndexList selection;
     QSettings settings;
+    SettingsDialog* setDlg;
     void selectView(QTableView* view);
     bool checkSelection();
     void updateListHeader(ContactModel* model, QLabel* header);

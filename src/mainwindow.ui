@@ -152,7 +152,7 @@
      <x>0</x>
      <y>0</y>
      <width>677</width>
-     <height>25</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_File">
@@ -162,6 +162,7 @@
     <addaction name="action_Open"/>
     <addaction name="action_Save"/>
     <addaction name="actionSave_as"/>
+    <addaction name="actionSettings"/>
     <addaction name="action_Close"/>
     <addaction name="separator"/>
     <addaction name="actionE_xit"/>
@@ -336,6 +337,11 @@
    </property>
    <property name="shortcut">
     <string>Tab</string>
+   </property>
+  </action>
+  <action name="actionSettings">
+   <property name="text">
+    <string>Settings</string>
    </property>
   </action>
  </widget>

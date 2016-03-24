@@ -17,6 +17,7 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+    // Settings settings :)
     a.setOrganizationName("doublecontact");
     a.setApplicationName("doublecontact");
     MainWindow w;

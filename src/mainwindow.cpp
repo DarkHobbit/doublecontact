@@ -35,6 +35,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->tvLeft->setModel(modLeft);
     modRight = new ContactModel(this, tr("New contact list 2"));
     ui->tvRight->setModel(modRight);
+    // Settings
+    setDlg = new SettingsDialog(0);
+    //setDlg->readConfig();
     // Track selected view
     connect(qApp, SIGNAL(focusChanged(QWidget*,QWidget*)), this, SLOT(anyFocusChanged(QWidget*,QWidget*)));
     connect(ui->tvLeft->selectionModel(), SIGNAL(currentChanged(const QModelIndex&, const QModelIndex&)),
@@ -66,6 +69,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
 MainWindow::~MainWindow()
 {
+    delete setDlg;
     delete ui;
 }
 
@@ -372,4 +376,9 @@ void MainWindow::on_action_Other_panel_triggered()
         selectView(ui->tvLeft);
     selectedView->setFocus();
     updateHeaders();
+}
+
+void MainWindow::on_actionSettings_triggered()
+{
+    setDlg->exec();
 }
