@@ -37,7 +37,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->tvRight->setModel(modRight);
     // Settings
     setDlg = new SettingsDialog(0);
-    //setDlg->readConfig();
+    setDlg->readConfig();
     // Track selected view
     connect(qApp, SIGNAL(focusChanged(QWidget*,QWidget*)), this, SLOT(anyFocusChanged(QWidget*,QWidget*)));
     connect(ui->tvLeft->selectionModel(), SIGNAL(currentChanged(const QModelIndex&, const QModelIndex&)),
@@ -381,4 +381,9 @@ void MainWindow::on_action_Other_panel_triggered()
 void MainWindow::on_actionSettings_triggered()
 {
     setDlg->exec();
+    if (setDlg->result()==QDialog::Accepted)
+        setDlg->writeConfig();
+    modLeft->setVisibleColumns(setDlg->columnNames());
+    if (modRight)
+        modRight->setVisibleColumns(setDlg->columnNames());
 }

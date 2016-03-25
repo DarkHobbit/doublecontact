@@ -1,6 +1,8 @@
 #include <QApplication>
 #include <QMessageBox>
+#include <QDebug>
 
+#include "globals.h"
 #include "settingsdialog.h"
 #include "ui_settingsdialog.h"
 
@@ -9,15 +11,6 @@ SettingsDialog::SettingsDialog(QWidget *parent) :
     ui(new Ui::SettingsDialog)
 {
     ui->setupUi(this);
-    // Settings settings :)
-    // Test data ==>
-    ui->lwAvailableColumns->addItem("col1");
-    ui->lwAvailableColumns->addItem("col2");
-    ui->lwAvailableColumns->addItem("col3");
-    ui->lwAvailableColumns->addItem("col4");
-    ui->lwAvailableColumns->addItem("col5");
-    // TODO load list
-    // TODO if list is empty, set default
 }
 
 SettingsDialog::~SettingsDialog()
@@ -32,6 +25,7 @@ bool SettingsDialog::readConfig()
     if (lang==tr("Unknown")) {
         lang = "English"; // TODO use system language
     }
+    ui->cbLanguage->setCurrentIndex(ui->cbLanguage->findText(lang));
     // Treat name ... as surname
     int surnameIndex = settings.value("General/SurnameIndex", -1).toInt();
     ui->cbSurname->setChecked(surnameIndex>-1);
@@ -40,20 +34,46 @@ bool SettingsDialog::readConfig()
         ui->sbSurname->setValue(surnameIndex);
     // Column view
     int visibleColumnCount = settings.value("VisibleColumns/Count", 0).toInt();
-    QStringList validColumnNames; // TODO fill it from array (defs.h)
+    QStringList validColumnNames; // Available list
+    for (int i=0; i<ccLast; i++)
+        validColumnNames << contactColumnHeaders[i];
     for (int i=0; i<visibleColumnCount; i++) { // Fill visible columns list
         QString columnCandidate = settings.value(QString("VisibleColumns/Column%1").arg(i+1)).toString();
         if (validColumnNames.contains(columnCandidate))
             ui->lwVisibleColumns->addItem(columnCandidate);
     }
+    if (ui->lwVisibleColumns->count()==0) { // if list is empty, set default
+        ui->lwVisibleColumns->addItem(contactColumnHeaders[ccFirstName]);
+        ui->lwVisibleColumns->addItem(contactColumnHeaders[ccSecondName]);
+        ui->lwVisibleColumns->addItem(contactColumnHeaders[ccPhone]);
+    }
     for (int i=0; i<validColumnNames.count(); i++) // Fill available columns list
         if (ui->lwVisibleColumns->findItems(validColumnNames[i], Qt::MatchCaseSensitive).isEmpty())
             ui->lwAvailableColumns->addItem(validColumnNames[i]);
+    return true;
 }
 
 bool SettingsDialog::writeConfig()
 {
-    // TODO
+    // Language
+    settings.setValue("General/Language", ui->cbLanguage->currentText());
+    // Treat name ... as surname
+    settings.setValue("General/SurnameIndex",
+        ui->cbSurname->isChecked() ? ui->sbSurname->value()+1 : -1);
+    // Column view
+    settings.setValue("VisibleColumns/Count", ui->lwVisibleColumns->count());
+    for (int i=0; i<ui->lwVisibleColumns->count(); i++)
+        settings.setValue(QString("VisibleColumns/Column%1").arg(i+1),
+                          ui->lwVisibleColumns->item(i)->text());
+    return true;
+}
+
+QStringList SettingsDialog::columnNames()
+{
+    QStringList res;
+    for (int i=0; i<ui->lwVisibleColumns->count(); i++)
+        res << ui->lwVisibleColumns->item(i)->text();
+    return res;
 }
 
 void SettingsDialog::on_cbSurname_toggled(bool checked)

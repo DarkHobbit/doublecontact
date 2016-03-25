@@ -16,6 +16,8 @@ public:
     explicit SettingsDialog(QWidget *parent = 0);
     ~SettingsDialog();
     bool readConfig();
+    bool writeConfig();
+    QStringList columnNames();
 private slots:
     void on_cbSurname_toggled(bool checked);
     void on_btnAddCol_clicked();
@@ -25,7 +27,6 @@ private slots:
 private:
     Ui::SettingsDialog *ui;
     QSettings settings;
-    bool writeConfig();
 };
 
 #endif // SETTINGSDIALOG_H

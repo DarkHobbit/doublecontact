@@ -18,14 +18,7 @@
 #include <QString>
 #include "contactlist.h"
 #include "formats/formatfactory.h"
-
-// Visible columns
-enum ContactColumn {
-  ccFirstName, ccSecondName, ccFullName, // names
-  ccPhone, // first or preferred phone
-  ccEMail, // first or preferred email
-  ccLast
-};
+#include "globals.h"
 
 class ContactModel : public QAbstractTableModel
 {
@@ -35,6 +28,7 @@ public:
     ~ContactModel();
     QString source(); // file path or network source
     bool changed();    // has contact book unsaved changes?
+    void setVisibleColumns(const QStringList& colNames);
     // Base model implementation methods
     Qt::ItemFlags flags(const QModelIndex &) const;
     int rowCount(const QModelIndex &parent = QModelIndex()) const;

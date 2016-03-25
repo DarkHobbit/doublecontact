@@ -18,7 +18,8 @@ SOURCES += main.cpp \
     formats/files/vcffile.cpp \
     formats/common/vcarddata.cpp \
     logwindow.cpp \
-    settingsdialog.cpp
+    settingsdialog.cpp \
+    globals.cpp
 HEADERS += mainwindow.h \
     contactmodel.h \
     contactlist.h \
@@ -30,7 +31,8 @@ HEADERS += mainwindow.h \
     formats/files/vcffile.h \
     formats/common/vcarddata.h \
     logwindow.h \
-    settingsdialog.h
+    settingsdialog.h \
+    globals.h
 FORMS += mainwindow.ui \
     contactdialog.ui \
     phonetypedialog.ui \

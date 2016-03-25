@@ -17,15 +17,6 @@
 #include "contactmodel.h"
 #include "logwindow.h"
 
-// Visible columns headers
-QString contactColumnHeaders[ccLast] = {
-    QObject::tr("Name 1"),
-    QObject::tr("Name 2"),
-    QObject::tr("Full name"),
-    QObject::tr("Phone"),
-    QObject::tr("eMail")
-};
-
 ContactModel::ContactModel(QObject *parent, const QString& source) :
     QAbstractTableModel(parent), _source(source), _changed(false)
 {
@@ -34,7 +25,6 @@ ContactModel::ContactModel(QObject *parent, const QString& source) :
     visibleColumns.push_back(ccFirstName);
     visibleColumns.push_back(ccSecondName);
     visibleColumns.push_back(ccPhone);
-    // TODO read visible columns from config
 }
 
 ContactModel::~ContactModel()
@@ -50,6 +40,15 @@ QString ContactModel::source()
 bool ContactModel::changed()
 {
     return _changed;
+}
+
+void ContactModel::setVisibleColumns(const QStringList &colNames)
+{
+    /*visibleColumns.clear();
+    foreach (const QString& col, colNames)
+        visibleColumns.push_back(col);
+    reset();*/
+    // TODO пусть setdialog возвращает индексы
 }
 
 Qt::ItemFlags ContactModel::flags(const QModelIndex &) const
