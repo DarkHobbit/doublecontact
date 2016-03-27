@@ -42,13 +42,12 @@ bool ContactModel::changed()
     return _changed;
 }
 
-void ContactModel::setVisibleColumns(const QStringList &colNames)
+void ContactModel::setVisibleColumns(const ContactColumnList& colNames)
 {
-    /*visibleColumns.clear();
-    foreach (const QString& col, colNames)
+    visibleColumns.clear();
+    foreach (const ContactColumn& col, colNames)
         visibleColumns.push_back(col);
-    reset();*/
-    // TODO пусть setdialog возвращает индексы
+    reset();
 }
 
 Qt::ItemFlags ContactModel::flags(const QModelIndex &) const

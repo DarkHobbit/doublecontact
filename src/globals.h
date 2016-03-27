@@ -14,6 +14,7 @@
 #ifndef GLOBALS_H
 #define GLOBALS_H
 
+#include <QList>
 #include <QString>
 
 // Visible columns
@@ -27,5 +28,7 @@ enum ContactColumn {
 // Visible columns headers
 extern const QString contactColumnHeaders[ccLast];
 
+class ContactColumnList: public QList<ContactColumn>
+{};
 
 #endif // GLOBALS_H

@@ -79,6 +79,11 @@ void MainWindow::closeEvent(QCloseEvent *event)
     askSaveChanges(event, ui->tvRight);
 }
 
+void MainWindow::showEvent(QShowEvent *event)
+{
+    updateConfig();
+}
+
 void MainWindow::anyFocusChanged(QWidget *, QWidget *now)
 {
     if ((now==ui->tvLeft)||(now==ui->tvRight))
@@ -368,6 +373,14 @@ void MainWindow::setLastPath(const QString &path)
     settings.setValue("General/LastFile", path);
 }
 
+void MainWindow::updateConfig()
+{
+    modLeft->setVisibleColumns(setDlg->columnNames());
+    if (modRight)
+        modRight->setVisibleColumns(setDlg->columnNames());
+    // TODO lang, surname...
+}
+
 void MainWindow::on_action_Other_panel_triggered()
 {
     if (selectedView==ui->tvLeft)
@@ -381,9 +394,8 @@ void MainWindow::on_action_Other_panel_triggered()
 void MainWindow::on_actionSettings_triggered()
 {
     setDlg->exec();
-    if (setDlg->result()==QDialog::Accepted)
+    if (setDlg->result()==QDialog::Accepted) {
         setDlg->writeConfig();
-    modLeft->setVisibleColumns(setDlg->columnNames());
-    if (modRight)
-        modRight->setVisibleColumns(setDlg->columnNames());
+        updateConfig();
+    }
 }

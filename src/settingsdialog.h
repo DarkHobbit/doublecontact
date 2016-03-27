@@ -3,6 +3,8 @@
 
 #include <QDialog>
 #include <QSettings>
+#include <QVector>
+#include "globals.h"
 
 namespace Ui {
 class SettingsDialog;
@@ -17,7 +19,7 @@ public:
     ~SettingsDialog();
     bool readConfig();
     bool writeConfig();
-    QStringList columnNames();
+    ContactColumnList columnNames();
 private slots:
     void on_cbSurname_toggled(bool checked);
     void on_btnAddCol_clicked();
@@ -27,6 +29,7 @@ private slots:
 private:
     Ui::SettingsDialog *ui;
     QSettings settings;
+    QStringList validColumnNames; // Available list
 };
 
 #endif // SETTINGSDIALOG_H

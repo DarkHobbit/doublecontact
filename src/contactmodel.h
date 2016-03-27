@@ -16,6 +16,7 @@
 
 #include <QAbstractTableModel>
 #include <QString>
+#include <QVector>
 #include "contactlist.h"
 #include "formats/formatfactory.h"
 #include "globals.h"
@@ -28,7 +29,7 @@ public:
     ~ContactModel();
     QString source(); // file path or network source
     bool changed();    // has contact book unsaved changes?
-    void setVisibleColumns(const QStringList& colNames);
+    void setVisibleColumns(const ContactColumnList& colNames);
     // Base model implementation methods
     Qt::ItemFlags flags(const QModelIndex &) const;
     int rowCount(const QModelIndex &parent = QModelIndex()) const;
@@ -55,7 +56,7 @@ private:
     QString _source; // file path or network source
     bool _changed;   // has contact book unsaved changes?
     ContactList items;
-    QList<ContactColumn> visibleColumns;
+    ContactColumnList visibleColumns;
     FormatFactory factory;
 };
 

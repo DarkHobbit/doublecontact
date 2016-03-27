@@ -2,7 +2,6 @@
 #include <QMessageBox>
 #include <QDebug>
 
-#include "globals.h"
 #include "settingsdialog.h"
 #include "ui_settingsdialog.h"
 
@@ -11,6 +10,8 @@ SettingsDialog::SettingsDialog(QWidget *parent) :
     ui(new Ui::SettingsDialog)
 {
     ui->setupUi(this);
+    for (int i=0; i<ccLast; i++)
+         validColumnNames << contactColumnHeaders[i];
 }
 
 SettingsDialog::~SettingsDialog()
@@ -34,9 +35,6 @@ bool SettingsDialog::readConfig()
         ui->sbSurname->setValue(surnameIndex);
     // Column view
     int visibleColumnCount = settings.value("VisibleColumns/Count", 0).toInt();
-    QStringList validColumnNames; // Available list
-    for (int i=0; i<ccLast; i++)
-        validColumnNames << contactColumnHeaders[i];
     for (int i=0; i<visibleColumnCount; i++) { // Fill visible columns list
         QString columnCandidate = settings.value(QString("VisibleColumns/Column%1").arg(i+1)).toString();
         if (validColumnNames.contains(columnCandidate))
@@ -68,11 +66,11 @@ bool SettingsDialog::writeConfig()
     return true;
 }
 
-QStringList SettingsDialog::columnNames()
+ContactColumnList SettingsDialog::columnNames()
 {
-    QStringList res;
+    ContactColumnList res;
     for (int i=0; i<ui->lwVisibleColumns->count(); i++)
-        res << ui->lwVisibleColumns->item(i)->text();
+        res << (ContactColumn)validColumnNames.indexOf(ui->lwVisibleColumns->item(i)->text());
     return res;
 }
 

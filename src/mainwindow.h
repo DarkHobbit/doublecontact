@@ -36,6 +36,7 @@ public:
     ~MainWindow();
 protected:
     virtual void closeEvent(QCloseEvent* event);
+    virtual void showEvent(QShowEvent* event);
 private slots:
     void on_action_Other_panel_triggered();
     void setButtonsAccess();
@@ -86,6 +87,7 @@ private:
     void askSaveChanges(QCloseEvent *event, QTableView* view);
     QString lastPath();
     void setLastPath(const QString& path);
+    void updateConfig();
 };
 
 #endif // MAINWINDOW_H
