@@ -24,7 +24,8 @@ public:
     // IFormat interface
 public:
     static bool detect(const QString &url);
-    static QStringList supportedTypes();
+    static QStringList supportedExtensions();
+    static QStringList supportedFilters();
     bool importRecords(const QString &url, ContactList &list, bool append);
     bool exportRecords(const QString &url, const ContactList &list);
 };

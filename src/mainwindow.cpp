@@ -58,7 +58,7 @@ MainWindow::MainWindow(QWidget *parent) :
         }
     }
     // Previous session file data
-    else if (setDlg->openLastFilesAtStartup() || QFile(setDlg->lastPath()).exists())
+    else if (setDlg->openLastFilesAtStartup() && QFile(setDlg->lastPath()).exists())
         selectedModel->open(setDlg->lastPath());
     ui->action_Two_panels->setChecked(setDlg->showTwoPanels());
     updateHeaders();
@@ -119,7 +119,7 @@ void MainWindow::on_action_Open_triggered()
 {
     QString selectedFilter;
     QString path = QFileDialog::getOpenFileName(0, tr("Open contact file"),
-        setDlg->lastPath(), FormatFactory::supportedExtensions().join(";;"), &selectedFilter);
+        setDlg->lastPath(), FormatFactory::supportedFilters().join(";;"), &selectedFilter);
     selectedModel->open(path);
     setDlg->setLastPath(path);
 }

@@ -26,7 +26,8 @@ public:
     virtual QStringList errors()=0;
     /* Subclasses also can create next _static_ methods:
      * bool detect(const QString& url); // tri-state?
-     * QStringList supportedTypes(); // only for files
+     * QStringList supportedExtensions(); // only for files
+     * QStringList supportedFilters();    // only for files
      */
 };
 

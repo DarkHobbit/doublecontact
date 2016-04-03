@@ -9,11 +9,11 @@ FormatFactory::FormatFactory()
 {
 }
 
-QStringList FormatFactory::supportedExtensions()
+QStringList FormatFactory::supportedFilters()
 {
     QStringList allTypes;
     // Known formats
-    allTypes << VCFFile::supportedTypes();
+    allTypes << VCFFile::supportedFilters();
     // ...here add extensions for new format
     return allTypes;
 }
@@ -27,7 +27,7 @@ IFormat *FormatFactory::createObject(const QString &url)
     QFileInfo info(url);
     QString ext = info.completeSuffix();
     // Known formats by extension
-    if (VCFFile::supportedTypes().contains(ext, Qt::CaseInsensitive))
+    if (VCFFile::supportedExtensions().contains(ext, Qt::CaseInsensitive))
         return new VCFFile();
     // ...here add extensions for new format
     // Known formats with incorrect extension

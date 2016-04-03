@@ -32,9 +32,14 @@ bool VCFFile::detect(const QString &url)
     return res;
 }
 
-QStringList VCFFile::supportedTypes()
+QStringList VCFFile::supportedExtensions()
 {
     return (QStringList() << "vcf" << "VCF");
+}
+
+QStringList VCFFile::supportedFilters()
+{
+    return (QStringList() << "vCard (*.vcf *.VCF)");
 }
 
 bool VCFFile::importRecords(const QString &url, ContactList &list, bool append)

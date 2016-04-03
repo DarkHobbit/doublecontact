@@ -20,7 +20,7 @@ class FormatFactory
 {
 public:
     FormatFactory();
-    static QStringList supportedExtensions();
+    static QStringList supportedFilters();
     IFormat* createObject(const QString& url);
 };
 
