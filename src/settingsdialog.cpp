@@ -2,6 +2,12 @@
 #include <QMessageBox>
 #include <QDebug>
 
+#if QT_VERSION >= 0x050000
+#include <QStandardPaths>
+#else
+#include <QDesktopServices>
+#endif
+
 #include "settingsdialog.h"
 #include "ui_settingsdialog.h"
 
@@ -66,6 +72,22 @@ bool SettingsDialog::writeConfig()
     return true;
 }
 
+QString SettingsDialog::lastPath()
+{
+    QString defaultDir =
+#if QT_VERSION >= 0x050000
+        QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
+#else
+        QDesktopServices::storageLocation( QDesktopServices::DocumentsLocation);
+#endif
+    return settings.value("General/LastFile", defaultDir).toString();
+}
+
+void SettingsDialog::setLastPath(const QString &path)
+{
+    settings.setValue("General/LastFile", path);
+}
+
 ContactColumnList SettingsDialog::columnNames()
 {
     ContactColumnList res;
@@ -124,3 +146,4 @@ void SettingsDialog::on_btnDownCol_clicked()
         }
     }
 }
+

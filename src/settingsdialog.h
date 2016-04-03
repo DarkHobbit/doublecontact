@@ -19,6 +19,8 @@ public:
     ~SettingsDialog();
     bool readConfig();
     bool writeConfig();
+    QString lastPath();
+    void setLastPath(const QString& path);
     ContactColumnList columnNames();
 private slots:
     void on_cbSurname_toggled(bool checked);
