@@ -67,6 +67,8 @@ private slots:
     void rowDoubleClicked(const QModelIndex&);
     void on_actionSettings_triggered();
 
+    void on_action_Close_triggered();
+
 private:
     Ui::MainWindow *ui;
     ContactModel *modLeft, *modRight;

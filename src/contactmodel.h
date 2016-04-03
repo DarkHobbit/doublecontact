@@ -39,6 +39,7 @@ public:
     // Save and open methods
     bool open(const QString& path);
     bool save();
+    void close();
     // Contact operation methods
     void addRow(const ContactItem& c);
     ContactItem& beginEditRow(QModelIndex& index);

@@ -111,6 +111,7 @@ bool ContactModel::open(const QString& path)
     }
     delete format;
     reset();
+    _changed = false;
     return true;
 }
 
@@ -118,7 +119,16 @@ bool ContactModel::save() // false if user cancel
 {
     QMessageBox::information(0, "Debug", "Under construction");
     // TODO
+    _changed = false;
     return true;
+}
+
+void ContactModel::close()
+{
+    _changed = false;
+    _source.clear();
+    items.clear();
+    reset();
 }
 
 void ContactModel::addRow(const ContactItem& c)
