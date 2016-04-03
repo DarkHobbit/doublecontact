@@ -68,11 +68,15 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                     item.unknownTags.push_back(TagValue(vType.join(";"), vValue.join(";"))); // TODO partiallyKnownTag?
             }
             // Known tags
-            if (vType[0].toUpper()=="FN")
-                item.fullName = decode(vValue[0], encoding, charSet, errors);
-            else if (vType[0].toUpper()=="N")
+            const QString tag = vType[0].toUpper();
+            if (tag=="FN")
+                item.fullName = decodeValue(vValue[0], encoding, charSet, errors);
+            else if (tag=="N")
                 foreach (const QString& name, vValue)
-                    item.names << decode(name, encoding, charSet, errors);
+                    item.names << decodeValue(name, encoding, charSet, errors);
+            else if (tag=="NOTE")
+                item.description = decodeValue(vValue[0], encoding, charSet, errors);
+
             // TODO
 
             // Unknown tags
@@ -100,7 +104,7 @@ bool VCardData::exportRecords(QStringList &lines, const ContactList &list)
     // TODO
 }
 
-QString VCardData::decode(const QString &src, const QString &encoding, const QString &charSet, QStringList& errors)
+QString VCardData::decodeValue(const QString &src, const QString &encoding, const QString &charSet, QStringList& errors)
 {
     // Charset
     QTextCodec *codec;
