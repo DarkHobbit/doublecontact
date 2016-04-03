@@ -88,6 +88,16 @@ void SettingsDialog::setLastPath(const QString &path)
     settings.setValue("General/LastFile", path);
 }
 
+bool SettingsDialog::showTwoPanels()
+{
+    return settings.value("General/ShowTwoPanels", true).toBool();
+}
+
+void SettingsDialog::setShowTwoPanels(bool value)
+{
+    settings.setValue("General/ShowTwoPanels", value);
+}
+
 ContactColumnList SettingsDialog::columnNames()
 {
     ContactColumnList res;

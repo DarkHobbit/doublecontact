@@ -21,6 +21,8 @@ public:
     bool writeConfig();
     QString lastPath();
     void setLastPath(const QString& path);
+    bool showTwoPanels();
+    void setShowTwoPanels(bool value);
     ContactColumnList columnNames();
 private slots:
     void on_cbSurname_toggled(bool checked);

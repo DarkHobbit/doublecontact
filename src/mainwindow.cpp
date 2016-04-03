@@ -15,6 +15,7 @@
 #include <QFileDialog>
 #include <QItemSelectionModel>
 #include <QMessageBox>
+#include <QDebug>
 
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
@@ -49,7 +50,7 @@ MainWindow::MainWindow(QWidget *parent) :
     // Test data
     if (qApp->arguments().contains("-d"))
         modLeft->testList();
-    // File data
+    // File command-line data
     else if (qApp->arguments().count()>1) {
         modLeft->open(qApp->arguments()[1]);
         if (qApp->arguments().count()>2) {
@@ -57,6 +58,7 @@ MainWindow::MainWindow(QWidget *parent) :
             modRight->open(qApp->arguments()[2]);
         }
     }
+    ui->action_Two_panels->setChecked(setDlg->showTwoPanels());
     updateHeaders();
     on_action_Two_panels_toggled(ui->action_Two_panels->isChecked());
 }
@@ -92,6 +94,7 @@ void MainWindow::on_actionE_xit_triggered()
 
 void MainWindow::on_action_Two_panels_toggled(bool showTwoPanels)
 {
+    qDebug() << "on_action_Two_panels_toggled";
     if (showTwoPanels) {
         ui->tvRight->show();
         ui->lbRight->show();
@@ -102,6 +105,7 @@ void MainWindow::on_action_Two_panels_toggled(bool showTwoPanels)
         selectView(ui->tvLeft);
     }
     setButtonsAccess();
+    setDlg->setShowTwoPanels(showTwoPanels);
 }
 
 void MainWindow::on_btnExit_clicked()
