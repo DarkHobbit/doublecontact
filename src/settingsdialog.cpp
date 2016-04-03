@@ -39,6 +39,8 @@ bool SettingsDialog::readConfig()
     ui->sbSurname->setEnabled(surnameIndex>-1);
     if (surnameIndex>-1)
         ui->sbSurname->setValue(surnameIndex);
+    // Misc
+    ui->cbOpenLastFilesAtStartup->setChecked(settings.value("General/OpenLastFilesAtStartup", true).toBool());
     // Column view
     int visibleColumnCount = settings.value("VisibleColumns/Count", 0).toInt();
     for (int i=0; i<visibleColumnCount; i++) { // Fill visible columns list
@@ -64,6 +66,8 @@ bool SettingsDialog::writeConfig()
     // Treat name ... as surname
     settings.setValue("General/SurnameIndex",
         ui->cbSurname->isChecked() ? ui->sbSurname->value()+1 : -1);
+    // Misc
+    settings.setValue("General/OpenLastFilesAtStartup", ui->cbOpenLastFilesAtStartup->isChecked());
     // Column view
     settings.setValue("VisibleColumns/Count", ui->lwVisibleColumns->count());
     for (int i=0; i<ui->lwVisibleColumns->count(); i++)
@@ -96,6 +100,11 @@ bool SettingsDialog::showTwoPanels()
 void SettingsDialog::setShowTwoPanels(bool value)
 {
     settings.setValue("General/ShowTwoPanels", value);
+}
+
+bool SettingsDialog::openLastFilesAtStartup()
+{
+    return ui->cbOpenLastFilesAtStartup->isChecked();
 }
 
 ContactColumnList SettingsDialog::columnNames()

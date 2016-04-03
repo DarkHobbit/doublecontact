@@ -15,7 +15,6 @@
 #include <QFileDialog>
 #include <QItemSelectionModel>
 #include <QMessageBox>
-#include <QDebug>
 
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
@@ -58,6 +57,9 @@ MainWindow::MainWindow(QWidget *parent) :
             modRight->open(qApp->arguments()[2]);
         }
     }
+    // Previous session file data
+    else if (setDlg->openLastFilesAtStartup() || QFile(setDlg->lastPath()).exists())
+        selectedModel->open(setDlg->lastPath());
     ui->action_Two_panels->setChecked(setDlg->showTwoPanels());
     updateHeaders();
     on_action_Two_panels_toggled(ui->action_Two_panels->isChecked());
@@ -94,7 +96,6 @@ void MainWindow::on_actionE_xit_triggered()
 
 void MainWindow::on_action_Two_panels_toggled(bool showTwoPanels)
 {
-    qDebug() << "on_action_Two_panels_toggled";
     if (showTwoPanels) {
         ui->tvRight->show();
         ui->lbRight->show();

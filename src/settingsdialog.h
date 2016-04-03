@@ -23,6 +23,8 @@ public:
     void setLastPath(const QString& path);
     bool showTwoPanels();
     void setShowTwoPanels(bool value);
+    bool openLastFilesAtStartup();
+    void setOpenLastFilesAtStartup();
     ContactColumnList columnNames();
 private slots:
     void on_cbSurname_toggled(bool checked);

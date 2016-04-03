@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>380</width>
-    <height>300</height>
+    <height>312</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -73,6 +73,13 @@
           </widget>
          </item>
         </layout>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="cbOpenLastFilesAtStartup">
+         <property name="text">
+          <string>Open last files at startup</string>
+         </property>
+        </widget>
        </item>
        <item>
         <widget class="QLabel" name="label">
