@@ -10,6 +10,8 @@
  * (at your option) any later version. See COPYING file for more details.
  *
  */
+
+#include <QByteArray>
 #include <QObject>
 #include <QTextCodec>
 #include <QDebug>
@@ -100,29 +102,6 @@ bool VCardData::exportRecords(QStringList &lines, const ContactList &list)
 
 QString VCardData::decode(const QString &src, const QString &encoding, const QString &charSet, QStringList& errors)
 {
-    QString res;
-    // Encoding
-    if (encoding.isEmpty())
-        res = src;
-    else if (encoding.toUpper()=="QUOTED-PRINTABLE") {  // TODO not tested on QUOTED-PRINTABLE
-        res = "";
-        bool ok;
-        for (int i=0; i<src.length(); i++) {
-            if (src[i]=='=') {
-                const quint8 code = src.mid(i+1, 2).toInt(&ok, 16);
-                const char c = (char)code;
-                qDebug() << "code " << QString::number(code, 16) << " char " << c;
-                res += QString::fromAscii(&c, 1);
-                i += 2;
-            }
-            else
-                res += src[i];
-        }
-    }
-    else {
-        errors << QObject::tr("Unknown encoding");
-        return "";
-    }
     // Charset
     QTextCodec *codec;
     if (charSet.isEmpty()) // TODO not tested on Linux
@@ -133,6 +112,26 @@ QString VCardData::decode(const QString &src, const QString &encoding, const QSt
         errors << QObject::tr("Unknown encoding");
         return "";
     }
-    res = codec->toUnicode(res.toLocal8Bit());
-    return res;
+    // Encoding
+    if (encoding.isEmpty())
+        return codec->toUnicode(src.toLocal8Bit());
+    else if (encoding.toUpper()=="QUOTED-PRINTABLE") {
+        QByteArray res;
+        bool ok;
+        for (int i=0; i<src.length(); i++) {
+            if (src[i]=='=') {
+                if (src[i+1]==' ') i++; // sometime bad space after = appears
+                const quint8 code = src.mid(i+1, 2).toInt(&ok, 16);
+                res.append(code);
+                i += 2;
+            }
+            else
+                res += src[i];
+        }
+        return codec->toUnicode(res);
+    }
+    else {
+        errors << QObject::tr("Unknown encoding");
+        return "";
+    }
 }
