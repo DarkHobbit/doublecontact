@@ -117,7 +117,7 @@ void MainWindow::on_btnExit_clicked()
 // Open
 void MainWindow::on_action_Open_triggered()
 {
-    // TODO ask if model has unsaved changes
+    // TODO ask if model has unsaved changes (after save implementation)
     QString selectedFilter;
     QString path = QFileDialog::getOpenFileName(0, tr("Open contact file"),
         setDlg->lastPath(), FormatFactory::supportedFilters().join(";;"), &selectedFilter);
@@ -386,7 +386,7 @@ void MainWindow::on_actionSettings_triggered()
 
 void MainWindow::on_action_Close_triggered()
 {
-    // TODO ask if model has unsaved changes
+    // TODO ask if model has unsaved changes (after save implementation)
     selectedModel->close();
     updateHeaders();
 }

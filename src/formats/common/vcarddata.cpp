@@ -11,6 +11,9 @@
  *
  */
 #include <QObject>
+#include <QTextCodec>
+#include <QDebug>
+
 #include "vcarddata.h"
 
 bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append, QStringList& errors)
@@ -101,12 +104,15 @@ QString VCardData::decode(const QString &src, const QString &encoding, const QSt
     // Encoding
     if (encoding.isEmpty())
         res = src;
-    else if (encoding.toUpper()=="QUOTED-PRINTABLE") {
+    else if (encoding.toUpper()=="QUOTED-PRINTABLE") {  // TODO not tested on QUOTED-PRINTABLE
         res = "";
         bool ok;
         for (int i=0; i<src.length(); i++) {
             if (src[i]=='=') {
-                res += QChar(src.mid(i+1, 2).toInt(&ok, 16));
+                const quint8 code = src.mid(i+1, 2).toInt(&ok, 16);
+                const char c = (char)code;
+                qDebug() << "code " << QString::number(code, 16) << " char " << c;
+                res += QString::fromAscii(&c, 1);
                 i += 2;
             }
             else
@@ -118,10 +124,15 @@ QString VCardData::decode(const QString &src, const QString &encoding, const QSt
         return "";
     }
     // Charset
-    if (charSet.isEmpty() || charSet.toUpper()=="UTF-8")
-        return res;
-    else {
+    QTextCodec *codec;
+    if (charSet.isEmpty()) // TODO not tested on Linux
+        codec = QTextCodec::codecForName("UTF-8");
+    else
+        codec = QTextCodec::codecForName(charSet.toLocal8Bit());
+    if (!codec) {
         errors << QObject::tr("Unknown encoding");
         return "";
     }
+    res = codec->toUnicode(res.toLocal8Bit());
+    return res;
 }
