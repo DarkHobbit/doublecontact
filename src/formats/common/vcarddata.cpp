@@ -44,9 +44,6 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
             recordOpened = false;
             list.push_back(item);
         }
-        else if (s.startsWith("VERSION:", Qt::CaseInsensitive)) {
-            item.version = s.mid(8);
-        }
         else {
             // Split type:value
             int scPos = s.indexOf(":");
@@ -69,7 +66,9 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
             }
             // Known tags
             const QString tag = vType[0].toUpper();
-            if (tag=="FN")
+            if (tag=="VERSION")
+                item.version = decodeValue(vValue[0], encoding, charSet, errors);
+            else if (tag=="FN")
                 item.fullName = decodeValue(vValue[0], encoding, charSet, errors);
             else if (tag=="N")
                 foreach (const QString& name, vValue)
