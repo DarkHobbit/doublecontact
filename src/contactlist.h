@@ -49,6 +49,8 @@ struct Phone {
     QStringList typeToStrList() const;
     QString typeToString() const;
     bool typeFromString(const QString& s);
+    QString typeToI18nString() const;
+    bool typeFromI18nString(const QString& s);
     // calculated fields for higher perfomance
     bool isMixed;
     void calculateFields();

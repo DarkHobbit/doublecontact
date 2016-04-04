@@ -14,9 +14,9 @@
 #include <QByteArray>
 #include <QObject>
 #include <QTextCodec>
-#include <QDebug>
 
 #include "vcarddata.h"
+#include <QDebug>
 
 bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append, QStringList& errors)
 {
@@ -42,6 +42,7 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
         }
         else if (s.startsWith("END:VCARD", Qt::CaseInsensitive)) {
             recordOpened = false;
+            item.calculateFields();
             list.push_back(item);
         }
         else {
@@ -75,6 +76,23 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                     item.names << decodeValue(name, encoding, charSet, errors);
             else if (tag=="NOTE")
                 item.description = decodeValue(vValue[0], encoding, charSet, errors);
+            else if (tag=="TEL") {
+                Phone phone;
+                phone.number = decodeValue(vValue[0], encoding, charSet, errors);
+                // Phone type(s)
+                if (vType.count()<2)
+                    errors << QObject::tr("Missing phone type at line %1").arg(line+1);
+                QString typeAttrs;
+                for (int i=1; i<vType.count(); i++) {
+                    if (vType[i].startsWith("TYPE=", Qt::CaseInsensitive))
+                        typeAttrs += vType[i].mid(5) + ((i<vType.count()-1) ? ";" : "");
+                    else
+                        item.unknownTags.push_back(TagValue(vType.join(";"), vValue.join(";"))); // TODO partiallyKnownTag?
+                }
+                if (!phone.typeFromString(typeAttrs))
+                    errors << QObject::tr("Unknown or missing phone type at line %1").arg(line+1);
+                item.phones.push_back(phone);
+            }
 
             // TODO
 
@@ -85,6 +103,7 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
 
     }
     if (recordOpened) {
+        item.calculateFields();
         list.push_back(item);
         errors << QObject::tr("Last section not closed");
     }

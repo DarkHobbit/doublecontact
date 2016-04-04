@@ -101,7 +101,7 @@ void ContactDialog::getData(ContactItem& c)
         Phone ph;
         ph.number = findChild<QLineEdit*>(QString("lePhone%1").arg(i+1))->text();
         QString t = findChild<QComboBox*>(QString("cbPhoneType%1").arg(i+1))->currentText();
-        ph.typeFromString(t);
+        ph.typeFromI18nString(t);
         c.phones.push_back(ph);
     }
     // Emails
@@ -174,7 +174,7 @@ void ContactDialog::addPhone(const Phone& ph)
     if (phoneCount>MIN_VISIBLE_TRIPLETS)
         fillPhoneTypes(cbT);
     // Select item or add mixed
-    QString s = ph.typeToString();
+    QString s = ph.typeToI18nString();
     if (ph.isMixed) {
         cbT->insertItem(0, s);
         cbT->setCurrentIndex(0);

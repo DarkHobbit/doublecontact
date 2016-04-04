@@ -12,6 +12,7 @@
  */
 
 #include "contactlist.h"
+#include <QMessageBox>
 
 const struct Phone fullPhoneFlagSet = { "0",  /*.tType =*/ Phone::All, true };
 
@@ -52,10 +53,53 @@ QStringList Phone::typeToStrList() const
 
 QString Phone::typeToString() const
 {
-    return typeToStrList().join("+");
+    // TODO
+    QMessageBox::warning(0, "warn", "uppercased list under construction");
 }
 
 bool Phone::typeFromString(const QString &s)
+{
+    QStringList tt = s.split(";");
+    foreach (const QString& src, tt) {
+        if (src=="HOME")
+            tType |= Home;
+        else if (src=="MSG")
+            tType |= Msg;
+        else if (src=="WORK")
+            tType |= Work;
+        else if (src=="PREF")
+            tType |= Pref;
+        else if (src=="VOICE")
+            tType |= Voice;
+        else if (src=="FAX")
+            tType |= Fax;
+        else if (src=="CELL")
+            tType |= Cell;
+        else if (src=="VIDEO")
+            tType |= Video;
+        else if (src=="PAGER")
+            tType |= Pager;
+        else if (src=="BBS")
+            tType |= BBS;
+        else if (src=="MODEM")
+            tType |= Modem;
+        else if (src=="CAR")
+            tType |= Car;
+        else if (src=="ISDN")
+            tType |= ISDN;
+        else if (src=="PCS")
+            tType |= PCS;
+        else return false;
+    }
+    return true;
+}
+
+QString Phone::typeToI18nString() const
+{
+    return typeToStrList().join("+");
+}
+
+bool Phone::typeFromI18nString(const QString &s)
 {
     QStringList tt = s.split("+");
     foreach (const QString& src, tt) {
