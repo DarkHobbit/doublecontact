@@ -69,7 +69,7 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                 else
                     item.unknownTags.push_back(TagValue(vType.join(";"), vValue.join(";"))); // TODO partiallyKnownTag?
             }
-            if ((!types.isEmpty()) && (tag!="TEL") && (tag!="EMAIL") && (tag!="ADR"))
+            if ((!types.isEmpty()) && (tag!="TEL") && (tag!="EMAIL") && (tag!="ADR") && (tag!="PHOTO"))
                 errors << QObject::tr("Unexpected TYPE appearance at line %1").arg(line+1);
             // Known tags
             if (tag=="VERSION")
@@ -90,6 +90,18 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                 if (!phone.typeFromString(types.join(";")))
                     errors << QObject::tr("Unknown or missing phone type at line %1").arg(line+1);
                 item.phones.push_back(phone);
+            }
+            else if (tag=="EMAIL") {
+                Email email;
+                email.address = decodeValue(vValue[0], encoding, charSet, errors);
+                if (types.isEmpty())
+                    errors << QObject::tr("Missing email type at line %1").arg(line+1);
+                email.emTypes = types;
+                item.emails.push_back(email);
+            }
+            else if (tag=="ADR") {
+                // TODO
+                item.unknownTags.push_back(TagValue(vType.join(";"), vValue.join(";"))); //===>
             }
 
             // TODO
