@@ -79,8 +79,8 @@ QVariant ContactModel::data(const QModelIndex &index, int role) const
           return QVariant();
       if (index.row() >= items.count())
           return QVariant();
+    const ContactItem& c = items[index.row()];
     if (role==Qt::DisplayRole) {
-        const ContactItem& c = items[index.row()];
         // Detect column
         ContactColumn col = visibleColumns[index.column()];
         switch (col) {
@@ -92,6 +92,9 @@ QVariant ContactModel::data(const QModelIndex &index, int role) const
             case ccLast: { return QVariant(); } // Boundary case
             default: return QVariant();
         }
+    }
+    else if (role==Qt::BackgroundRole) {
+        return (c.unknownTags.isEmpty()) ? QVariant() : QBrush(Qt::yellow);
     }
     return QVariant();
 }
