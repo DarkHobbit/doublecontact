@@ -54,19 +54,24 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
             }
             QStringList vType = s.left(scPos).split(";");
             QStringList vValue = s.mid(scPos+1).split(";");
-            // Encoding and charset
+            const QString tag = vType[0].toUpper();
+            // Encoding, charset, types
             QString encoding;
             QString charSet;
+            QStringList types;
             for (int i=1; i<vType.count(); i++) {
-                if (vType[i].startsWith("ENCODING="))
-                    encoding = vType[i].mid(9);
-                else if (vType[i].startsWith("CHARSET="))
-                    charSet = vType[i].mid(8);
+                if (vType[i].startsWith("ENCODING=", Qt::CaseInsensitive))
+                    encoding = vType[i].mid(QString("ENCODING=").length());
+                else if (vType[i].startsWith("CHARSET=", Qt::CaseInsensitive))
+                    charSet = vType[i].mid(QString("CHARSET=").length());
+                else if (vType[i].startsWith("TYPE=", Qt::CaseInsensitive))
+                    types << vType[i].mid(QString("TYPE=").length());
                 else
                     item.unknownTags.push_back(TagValue(vType.join(";"), vValue.join(";"))); // TODO partiallyKnownTag?
             }
+            if ((!types.isEmpty()) && (tag!="TEL") && (tag!="EMAIL") && (tag!="ADR"))
+                errors << QObject::tr("Unexpected TYPE appearance at line %1").arg(line+1);
             // Known tags
-            const QString tag = vType[0].toUpper();
             if (tag=="VERSION")
                 item.version = decodeValue(vValue[0], encoding, charSet, errors);
             else if (tag=="FN")
@@ -80,16 +85,9 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                 Phone phone;
                 phone.number = decodeValue(vValue[0], encoding, charSet, errors);
                 // Phone type(s)
-                if (vType.count()<2)
+                if (types.isEmpty())
                     errors << QObject::tr("Missing phone type at line %1").arg(line+1);
-                QString typeAttrs;
-                for (int i=1; i<vType.count(); i++) {
-                    if (vType[i].startsWith("TYPE=", Qt::CaseInsensitive))
-                        typeAttrs += vType[i].mid(5) + ((i<vType.count()-1) ? ";" : "");
-                    else
-                        item.unknownTags.push_back(TagValue(vType.join(";"), vValue.join(";"))); // TODO partiallyKnownTag?
-                }
-                if (!phone.typeFromString(typeAttrs))
+                if (!phone.typeFromString(types.join(";")))
                     errors << QObject::tr("Unknown or missing phone type at line %1").arg(line+1);
                 item.phones.push_back(phone);
             }
