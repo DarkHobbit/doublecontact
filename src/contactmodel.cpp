@@ -193,7 +193,7 @@ void ContactModel::testList()
     c.names.push_back("Doe");
     c.phones.clear();
     ph.number = "+1-213-555-1234"; // example from  RFC 2426
-    ph.tType = Phone::TelType(Phone::Work | Phone::Pref);
+    ph.tTypes << "work" << "pref";
     c.phones.push_back(ph);
     c.emails.clear();
     c.calculateFields();
@@ -206,7 +206,7 @@ void ContactModel::testList()
     c.names.push_back(QString::fromUtf8("Попов"));
     c.phones.clear();
     ph.number = "+79101234567"; // example for any cellular operator
-    ph.tType = Phone::Cell;
+    ph.tTypes << "cell";
     c.phones.push_back(ph);
     c.emails.clear();
     em.address = "alexpopov@spb.ru";
@@ -222,10 +222,10 @@ void ContactModel::testList()
     c.names.push_back(QString::fromUtf8("Köster"));
     c.phones.clear();
     ph.number = "233";
-    ph.tType = Phone::Home;
+    ph.tTypes << "home";
     c.phones.push_back(ph);
     ph.number = "322";
-    ph.tType = Phone::Work;
+    ph.tTypes << "work";
     c.phones.push_back(ph);
     c.emails.clear();
     c.calculateFields();

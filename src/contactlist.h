@@ -15,10 +15,8 @@
 #define CONTACTLIST_H
 
 #include <QDateTime>
-#include <QFlags>
-#include <QList>
-#include <QString>
 #include <QStringList>
+#include "globals.h"
 
 struct TagValue {
     QString tag, value;
@@ -26,34 +24,17 @@ struct TagValue {
 };
 
 struct Phone {
-    enum TelTypeFlag { // according RFC 2426
-      Home  = 0x0001,
-      Msg   = 0x0002,
-      Work  = 0x0004,
-      Pref  = 0x0008,
-      Voice = 0x0010,
-      Fax   = 0x0020,
-      Cell  = 0x0040,
-      Video = 0x0080,
-      Pager = 0x0100,
-      BBS   = 0x0200,
-      Modem = 0x0400,
-      Car   = 0x0800,
-      ISDN  = 0x1000,
-      PCS   = 0x2000,
-      All   = 0x3FFF
-    };
-    Q_DECLARE_FLAGS(TelType, TelTypeFlag)
     QString number;
-    TelType tType;
-    QStringList typeToStrList() const;
-    QString typeToString() const;
-    bool typeFromString(const QString& s);
-    QString typeToI18nString() const;
-    bool typeFromI18nString(const QString& s);
+    bool preferred;
+    QStringList tTypes; // some phones may allow create any tel type (not RFC, but...)
     // calculated fields for higher perfomance
     bool isMixed;
     void calculateFields();
+    // standart types
+    static class StandardTypes: public ::StandardTypes {
+        public:
+        StandardTypes();
+    } standardTypes;
 };
 
 extern const struct Phone fullPhoneFlagSet;

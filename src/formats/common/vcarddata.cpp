@@ -21,6 +21,7 @@
 bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append, QStringList& errors)
 {
     bool recordOpened = false;
+    QTextCodec* codec = QTextCodec::codecForName("UTF-8"); // non-standart types also may be non-latin
     ContactItem item;
     if (!append)
         list.clear();
@@ -65,7 +66,8 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                 else if (vType[i].startsWith("CHARSET=", Qt::CaseInsensitive))
                     charSet = vType[i].mid(QString("CHARSET=").length());
                 else if (vType[i].startsWith("TYPE=", Qt::CaseInsensitive))
-                    types << vType[i].mid(QString("TYPE=").length());
+                    // non-standart types may be non-latin
+                    types << codec->toUnicode(vType[i].mid(QString("TYPE=").length()).toLocal8Bit());
                 else
                     item.unknownTags.push_back(TagValue(vType.join(";"), vValue.join(";"))); // TODO partiallyKnownTag?
             }
@@ -87,8 +89,8 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                 // Phone type(s)
                 if (types.isEmpty())
                     errors << QObject::tr("Missing phone type at line %1").arg(line+1);
-                if (!phone.typeFromString(types.join(";")))
-                    errors << QObject::tr("Unknown or missing phone type at line %1").arg(line+1);
+                phone.tTypes = types;
+                qDebug() << phone.tTypes.join("==");
                 item.phones.push_back(phone);
             }
             else if (tag=="EMAIL") {
@@ -134,8 +136,8 @@ bool VCardData::exportRecords(QStringList &lines, const ContactList &list)
 
 QString VCardData::decodeValue(const QString &src, const QString &encoding, const QString &charSet, QStringList& errors)
 {
+    QTextCodec *codec; // for values
     // Charset
-    QTextCodec *codec;
     if (charSet.isEmpty()) // TODO not tested on Linux
         codec = QTextCodec::codecForName("UTF-8");
     else

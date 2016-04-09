@@ -23,3 +23,19 @@ const QString contactColumnHeaders[ccLast] = {
     QObject::tr("eMail")
 };
 
+QString StandardTypes::translate(const QString &key, bool* isStandard) const
+{
+    if (this->contains(key.toLower())) {
+        if (isStandard) *isStandard = true;
+        return (*this)[key.toLower()];
+    }
+    else { // Non-standard type stored as is
+        if (isStandard) *isStandard = false;
+        return key;
+    }
+}
+
+QString StandardTypes::unTranslate(const QString &value) const
+{
+    return key(value, value);
+}

@@ -14,160 +14,30 @@
 #include "contactlist.h"
 #include <QMessageBox>
 
-const struct Phone fullPhoneFlagSet = { "0",  /*.tType =*/ Phone::All, true };
+Phone::StandardTypes::StandardTypes Phone::standardTypes;
 
-// We can't use QMap, etc, because multiple flags may be for one phone
-QStringList Phone::typeToStrList() const
+Phone::StandardTypes::StandardTypes()
 {
-    QStringList res;
-    if (tType.testFlag(Home))
-        res.push_back(QObject::tr("Home"));
-    if (tType.testFlag(Msg))
-        res.push_back(QObject::tr("Msg"));
-    if (tType.testFlag(Work))
-        res.push_back(QObject::tr("Work"));
-    if (tType.testFlag(Pref))
-        res.push_back(QObject::tr("Pref"));
-    if (tType.testFlag(Voice)) // Synonym for OTHER for some real phones
-        res.push_back(QObject::tr("Voice"));
-    if (tType.testFlag(Fax))
-        res.push_back(QObject::tr("Fax"));
-    if (tType.testFlag(Cell))
-        res.push_back(QObject::tr("Cell"));
-    if (tType.testFlag(Video))
-        res.push_back(QObject::tr("Video"));
-    if (tType.testFlag(Pager))
-        res.push_back(QObject::tr("Pager"));
-    if (tType.testFlag(BBS))
-        res.push_back(QObject::tr("BBS"));
-    if (tType.testFlag(Modem))
-        res.push_back(QObject::tr("Modem"));
-    if (tType.testFlag(Car))
-        res.push_back(QObject::tr("Car"));
-    if (tType.testFlag(ISDN))
-        res.push_back(QObject::tr("ISDN"));
-    if (tType.testFlag(PCS))
-        res.push_back(QObject::tr("PCS"));
-    return res;
-}
-
-QString Phone::typeToString() const
-{
-    // TODO
-    QMessageBox::warning(0, "warn", "uppercased list under construction");
-}
-
-bool Phone::typeFromString(const QString &s)
-{
-    QStringList tt = s.split(";");
-    foreach (const QString& src, tt) {
-        if (src=="HOME")
-            tType |= Home;
-        else if (src=="MSG")
-            tType |= Msg;
-        else if (src=="WORK")
-            tType |= Work;
-        else if (src=="PREF")
-            tType |= Pref;
-        else if (src=="VOICE")
-            tType |= Voice;
-        else if (src=="FAX")
-            tType |= Fax;
-        else if (src=="CELL")
-            tType |= Cell;
-        else if (src=="VIDEO")
-            tType |= Video;
-        else if (src=="PAGER")
-            tType |= Pager;
-        else if (src=="BBS")
-            tType |= BBS;
-        else if (src=="MODEM")
-            tType |= Modem;
-        else if (src=="CAR")
-            tType |= Car;
-        else if (src=="ISDN")
-            tType |= ISDN;
-        else if (src=="PCS")
-            tType |= PCS;
-        else return false;
-    }
-    return true;
-}
-
-QString Phone::typeToI18nString() const
-{
-    return typeToStrList().join("+");
-}
-
-bool Phone::typeFromI18nString(const QString &s)
-{
-    QStringList tt = s.split("+");
-    foreach (const QString& src, tt) {
-        if (src==QObject::tr("Home"))
-            tType |= Home;
-        else if (src==QObject::tr("Msg"))
-            tType |= Msg;
-        else if (src==QObject::tr("Work"))
-            tType |= Work;
-        else if (src==QObject::tr("Pref"))
-            tType |= Pref;
-        else if (src==QObject::tr("Voice"))
-            tType |= Voice;
-        else if (src==QObject::tr("Fax"))
-            tType |= Fax;
-        else if (src==QObject::tr("Cell"))
-            tType |= Cell;
-        else if (src==QObject::tr("Video"))
-            tType |= Video;
-        else if (src==QObject::tr("Pager"))
-            tType |= Pager;
-        else if (src==QObject::tr("BBS"))
-            tType |= BBS;
-        else if (src==QObject::tr("Modem"))
-            tType |= Modem;
-        else if (src==QObject::tr("Car"))
-            tType |= Car;
-        else if (src==QObject::tr("ISDN"))
-            tType |= ISDN;
-        else if (src==QObject::tr("PCS"))
-            tType |= PCS;
-        else return false;
-    }
-    return true;
+    clear();
+    (*this)["home"] = QObject::tr("Home");
+    (*this)["msg"] = QObject::tr("Msg");
+    (*this)["work"] = QObject::tr("Work");
+    (*this)["pref"] = QObject::tr("Pref");
+    (*this)["voice"] = QObject::tr("Voice"); // Synonym for OTHER for some real phones
+    (*this)["fax"] = QObject::tr("Fax");
+    (*this)["cell"] = QObject::tr("Cell");
+    (*this)["video"] = QObject::tr("Video");
+    (*this)["pager"] = QObject::tr("Pager");
+    (*this)["bbs"] = QObject::tr("BBS");
+    (*this)["modem"] = QObject::tr("Modem");
+    (*this)["car"] = QObject::tr("Car");
+    (*this)["isdn"] = QObject::tr("ISDN");
+    (*this)["pcs"] = QObject::tr("PCS");
 }
 
 void Phone::calculateFields()
 {
-    short flagCount = 0;
-    if (tType.testFlag(Home))
-        flagCount++;
-    if (tType.testFlag(Msg))
-        flagCount++;
-    if (tType.testFlag(Work))
-        flagCount++;
-    if (tType.testFlag(Pref))
-        flagCount++;
-    if (tType.testFlag(Voice)) // Synonym for OTHER for some real phones
-        flagCount++;
-    if (tType.testFlag(Fax))
-        flagCount++;
-    if (tType.testFlag(Cell))
-        flagCount++;
-    if (tType.testFlag(Video))
-        flagCount++;
-    if (tType.testFlag(Pager))
-        flagCount++;
-    if (tType.testFlag(BBS))
-        flagCount++;
-    if (tType.testFlag(Modem))
-        flagCount++;
-    if (tType.testFlag(Car))
-        flagCount++;
-    if (tType.testFlag(ISDN))
-        flagCount++;
-    if (tType.testFlag(PCS))
-        flagCount++;
-    isMixed = (flagCount>1);
+    isMixed = tTypes.count()>1;
 }
 
 void ContactItem::clear()
@@ -203,7 +73,7 @@ void ContactItem::calculateFields()
     if (phones.count()>0) {
         prefPhone = phones[0].number;
         for (int i=0; i<phones.count();i++) {
-            if (phones[i].tType.testFlag(Phone::Pref))
+            if (phones[i].tTypes.contains("pref"))
                 prefPhone = phones[i].number;
             phones[i].calculateFields();
         }
@@ -212,7 +82,7 @@ void ContactItem::calculateFields()
     if (emails.count()>0) {
         prefEmail = emails[0].address;
         for (int i=0; i<emails.count(); i++)
-            if (emails[i].preferred)
+            if (emails[i].preferred) // TODO preferred, вероятно, убрать, у почты тоже есть тег pref
                 prefEmail = emails[i].address;
     }
 }

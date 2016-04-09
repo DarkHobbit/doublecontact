@@ -101,7 +101,12 @@ void ContactDialog::getData(ContactItem& c)
         Phone ph;
         ph.number = findChild<QLineEdit*>(QString("lePhone%1").arg(i+1))->text();
         QString t = findChild<QComboBox*>(QString("cbPhoneType%1").arg(i+1))->currentText();
-        ph.typeFromI18nString(t);
+        // Make translated type list
+        QStringList tl = t.split("+");
+        ph.tTypes.clear();
+        foreach(const QString& te, tl)
+            ph.tTypes.push_back(Phone::standardTypes.unTranslate(te));
+        // TODO maybe store non-standart type in common list if operator changed it to standard?
         c.phones.push_back(ph);
     }
     // Emails
@@ -125,7 +130,7 @@ void ContactDialog::getData(ContactItem& c)
 void ContactDialog::fillPhoneTypes(QComboBox* combo)
 {
     combo->clear();
-    combo->insertItems(0, fullPhoneFlagSet.typeToStrList());
+    combo->insertItems(0, Phone::standardTypes.values());
     combo->addItem(mixedType);
 }
 
@@ -174,13 +179,20 @@ void ContactDialog::addPhone(const Phone& ph)
     if (phoneCount>MIN_VISIBLE_TRIPLETS)
         fillPhoneTypes(cbT);
     // Select item or add mixed
-    QString s = ph.typeToI18nString();
-    if (ph.isMixed) {
-        cbT->insertItem(0, s);
+    QString translated = "";
+    if (ph.isMixed) { // Multi types
+        foreach (const QString& t, ph.tTypes)
+            translated += Phone::standardTypes.translate(t);
+        cbT->insertItem(0, translated);
         cbT->setCurrentIndex(0);
     }
-    else
-        cbT->setCurrentIndex(cbT->findText(s));
+    else { // One type
+        bool isStandard;
+        translated = Phone::standardTypes.translate(ph.tTypes[0], &isStandard);
+        if (!isStandard)
+            cbT->addItem(translated);
+        cbT->setCurrentIndex(cbT->findText(translated));
+    }
 }
 
 void ContactDialog::addEmail(const Email &em)
