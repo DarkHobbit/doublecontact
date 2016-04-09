@@ -206,6 +206,7 @@ void ContactModel::testList()
     c.names.push_back(QString::fromUtf8("Попов"));
     c.phones.clear();
     ph.number = "+79101234567"; // example for any cellular operator
+    ph.tTypes.clear();
     ph.tTypes << "cell";
     c.phones.push_back(ph);
     c.emails.clear();
@@ -222,9 +223,11 @@ void ContactModel::testList()
     c.names.push_back(QString::fromUtf8("Köster"));
     c.phones.clear();
     ph.number = "233";
+    ph.tTypes.clear();
     ph.tTypes << "home";
     c.phones.push_back(ph);
     ph.number = "322";
+    ph.tTypes.clear();
     ph.tTypes << "work";
     c.phones.push_back(ph);
     c.emails.clear();

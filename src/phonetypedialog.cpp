@@ -26,7 +26,7 @@ PhoneTypeDialog::PhoneTypeDialog(QWidget *parent) :
     ui->setupUi(this);
     // Fill dialog by all available types
     short i=0;
-    foreach (const QString& s, Phone::standardTypes.values()) {
+    foreach (const QString& s, Phone::standardTypes.displayValues) {
         short row = i / COLUMN_COUNT;
         short col = i % COLUMN_COUNT;
         QCheckBox* cb = new QCheckBox(s);

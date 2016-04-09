@@ -16,7 +16,6 @@
 #include <QTextCodec>
 
 #include "vcarddata.h"
-#include <QDebug>
 
 bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append, QStringList& errors)
 {
@@ -90,15 +89,15 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                 if (types.isEmpty())
                     errors << QObject::tr("Missing phone type at line %1").arg(line+1);
                 phone.tTypes = types;
-                qDebug() << phone.tTypes.join("==");
                 item.phones.push_back(phone);
             }
             else if (tag=="EMAIL") {
                 Email email;
                 email.address = decodeValue(vValue[0], encoding, charSet, errors);
-                if (types.isEmpty())
-                    errors << QObject::tr("Missing email type at line %1").arg(line+1);
-                email.emTypes = types;
+                /*if (types.isEmpty()) // maybe, it not a bug; some devices allows email without type
+                    email.emTypes << "pref";
+                else*/
+                    email.emTypes = types;
                 item.emails.push_back(email);
             }
             else if (tag=="ADR") {

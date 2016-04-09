@@ -11,7 +11,6 @@
  *
  */
 
-#include <QDebug>
 #include <QLineEdit>
 #include <QMessageBox>
 #include <QPixmap>
@@ -99,14 +98,7 @@ void ContactDialog::getData(ContactItem& c)
     c.phones.clear();
     for (int i=0; i<phoneCount; i++) {
         Phone ph;
-        ph.number = findChild<QLineEdit*>(QString("lePhone%1").arg(i+1))->text();
-        QString t = findChild<QComboBox*>(QString("cbPhoneType%1").arg(i+1))->currentText();
-        // Make translated type list
-        QStringList tl = t.split("+");
-        ph.tTypes.clear();
-        foreach(const QString& te, tl)
-            ph.tTypes.push_back(Phone::standardTypes.unTranslate(te));
-        // TODO maybe store non-standart type in common list if operator changed it to standard?
+        readTriplet("Phone", i+1, ph.number, ph.tTypes, Phone::standardTypes);
         c.phones.push_back(ph);
     }
     // Emails
@@ -130,7 +122,7 @@ void ContactDialog::getData(ContactItem& c)
 void ContactDialog::fillPhoneTypes(QComboBox* combo)
 {
     combo->clear();
-    combo->insertItems(0, Phone::standardTypes.values());
+    combo->insertItems(0, Phone::standardTypes.displayValues);
     combo->addItem(mixedType);
 }
 
@@ -178,11 +170,14 @@ void ContactDialog::addPhone(const Phone& ph)
     QComboBox* cbT = findChild<QComboBox*>(QString("cbPhoneType%1").arg(phoneCount));
     if (phoneCount>MIN_VISIBLE_TRIPLETS)
         fillPhoneTypes(cbT);
+    if (ph.tTypes.isEmpty())
+        return;
     // Select item or add mixed
     QString translated = "";
     if (ph.isMixed) { // Multi types
         foreach (const QString& t, ph.tTypes)
-            translated += Phone::standardTypes.translate(t);
+            translated += Phone::standardTypes.translate(t) + "+";
+        translated.remove(translated.length()-1, 1);
         cbT->insertItem(0, translated);
         cbT->setCurrentIndex(0);
     }
@@ -227,8 +222,23 @@ void ContactDialog::addTriplet(int& count, QGridLayout* l, const QString& nameTe
         connect(btnD, SIGNAL(clicked()), this, SLOT(slotDelTriplet()));
         l->addWidget(btnD, count, 2);
     }
-    editorByNum(nameTemplate, count+1)->setText(itemValue);
+    if (!itemValue.isEmpty()) // Don't delete first text in interactive mode
+        editorByNum(nameTemplate, count+1)->setText(itemValue);
     count++;
+}
+
+void ContactDialog::readTriplet(const QString &nameTemplate, int num, QString &itemValue, QStringList &types, const ::StandardTypes& sTypes)
+{
+    QLineEdit* editor = findChild<QLineEdit*>(QString("le%1%2").arg(nameTemplate).arg(num));
+    QComboBox* typeBox = findChild<QComboBox*>(QString("cb%1Type%2").arg(nameTemplate).arg(num));
+    if (!editor || !typeBox) return;
+    itemValue = editor->text();
+    QString t = typeBox->currentText();
+    QStringList tl = t.split("+");
+    types.clear();
+    foreach(const QString& te, tl)
+        types.push_back(sTypes.unTranslate(te));
+    // TODO maybe store non-standart type in common list if operator changed it to standard?
 }
 
 void ContactDialog::slotDelTriplet()

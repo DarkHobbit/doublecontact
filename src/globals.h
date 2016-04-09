@@ -14,9 +14,8 @@
 #ifndef GLOBALS_H
 #define GLOBALS_H
 
-#include <QList>
-#include <QMap>
-#include <QString>
+#include <QHash>
+#include <QStringList>
 
 // Visible columns
 enum ContactColumn {
@@ -33,12 +32,13 @@ class ContactColumnList: public QList<ContactColumn>
 {};
 
 // Standart support types (phone, email, address) storage and checker
-static class StandardTypes: public QMap<QString, QString> {
+class StandardTypes: public QHash<QString, QString> {
     public:
     // untranslated keys stored in lowercase
     QString translate(const QString& key, bool* isStandard = 0) const;
     QString unTranslate(const QString& value) const;
-} standardTypes;
+    QStringList displayValues;
+};
 
 
 #endif // GLOBALS_H

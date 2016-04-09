@@ -19,6 +19,7 @@ Phone::StandardTypes::StandardTypes Phone::standardTypes;
 Phone::StandardTypes::StandardTypes()
 {
     clear();
+    // Types according RFC 2426
     (*this)["home"] = QObject::tr("Home");
     (*this)["msg"] = QObject::tr("Msg");
     (*this)["work"] = QObject::tr("Work");
@@ -33,6 +34,13 @@ Phone::StandardTypes::StandardTypes()
     (*this)["car"] = QObject::tr("Car");
     (*this)["isdn"] = QObject::tr("ISDN");
     (*this)["pcs"] = QObject::tr("PCS");
+    displayValues
+        << (*this)["home"]  << (*this)["work"] << (*this)["cell"]
+        << (*this)["pref"] << (*this)["voice"]
+        << (*this)["msg"] << (*this)["fax"] << (*this)["video"]
+        << (*this)["pager"] << (*this)["bbs"]
+        << (*this)["modem"] << (*this)["car"]
+        << (*this)["isdn"] << (*this)["pcs"];
 }
 
 void Phone::calculateFields()

@@ -45,7 +45,9 @@ private:
     void addName(const QString& name);
     void addPhone(const Phone& ph);
     void addEmail(const Email& em);
+    // Common helpers for phone/email
     void addTriplet(int& count, QGridLayout* l, const QString& nameTemplate, const QString& itemValue);
+    void readTriplet(const QString& nameTemplate, int num, QString& itemValue, QStringList& types, const  ::StandardTypes& sTypes);
     void delTriplet(int& count, const QString& nameTemplate, int num);
     inline QLineEdit* nameEditorByNum(int num);
     inline QLineEdit* editorByNum(const QString& nameTemplate, int num);
