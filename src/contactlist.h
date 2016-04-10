@@ -25,11 +25,7 @@ struct TagValue {
 
 struct Phone {
     QString number;
-    bool preferred;
     QStringList tTypes; // some phones may allow create any tel type (not RFC, but...)
-    // calculated fields for higher perfomance
-    bool isMixed;
-    void calculateFields();
     // standart types
     static class StandardTypes: public ::StandardTypes {
         public:
@@ -37,13 +33,13 @@ struct Phone {
     } standardTypes;
 };
 
-extern const struct Phone fullPhoneFlagSet;
-const short maxTelTypeFlagCount = 14;
-
 struct Email {
     QString address;
-    bool preferred;
     QStringList emTypes;  // according RFC 2426, may be non-standard
+    static class StandardTypes: public ::StandardTypes {
+        public:
+        StandardTypes();
+    } standardTypes;
 };
 
 struct ContactItem {

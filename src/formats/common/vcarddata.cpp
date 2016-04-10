@@ -86,17 +86,19 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                 Phone phone;
                 phone.number = decodeValue(vValue[0], encoding, charSet, errors);
                 // Phone type(s)
-                if (types.isEmpty())
+                if (types.isEmpty()) {
                     errors << QObject::tr("Missing phone type at line %1").arg(line+1);
+                    phone.tTypes << "pref";
+                }
                 phone.tTypes = types;
                 item.phones.push_back(phone);
             }
             else if (tag=="EMAIL") {
                 Email email;
                 email.address = decodeValue(vValue[0], encoding, charSet, errors);
-                /*if (types.isEmpty()) // maybe, it not a bug; some devices allows email without type
+                if (types.isEmpty()) // maybe, it not a bug; some devices allows email without type
                     email.emTypes << "pref";
-                else*/
+                else
                     email.emTypes = types;
                 item.emails.push_back(email);
             }

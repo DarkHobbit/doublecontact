@@ -105,10 +105,7 @@ void ContactDialog::getData(ContactItem& c)
     c.emails.clear();
     for (int i=0; i<emailCount; i++) {
         Email em;
-        em.address = findChild<QLineEdit*>(QString("leEmail%1").arg(i+1))->text();
-        QString t = findChild<QComboBox*>(QString("cbEmailType%1").arg(i+1))->currentText();
-        em.emTypes.push_back(t); // TODO multi-types
-        em.preferred = (i==0); // TODO need widget for this
+        readTriplet("Email", i+1, em.address, em.emTypes, Email::standardTypes);
         c.emails.push_back(em);
     }
     // BirthDay
@@ -129,9 +126,8 @@ void ContactDialog::fillPhoneTypes(QComboBox* combo)
 void ContactDialog::fillEmailTypes(QComboBox* combo)
 {
     combo->clear();
-    combo->addItem(tr("internet"));
-    combo->addItem(tr("x400"));
-    // combo->addItem(mixedType); TODO
+    combo->insertItems(0, Email::standardTypes.displayValues);
+    combo->addItem(mixedType);
 }
 
 void ContactDialog::addName(const QString& name)
@@ -170,24 +166,7 @@ void ContactDialog::addPhone(const Phone& ph)
     QComboBox* cbT = findChild<QComboBox*>(QString("cbPhoneType%1").arg(phoneCount));
     if (phoneCount>MIN_VISIBLE_TRIPLETS)
         fillPhoneTypes(cbT);
-    if (ph.tTypes.isEmpty())
-        return;
-    // Select item or add mixed
-    QString translated = "";
-    if (ph.isMixed) { // Multi types
-        foreach (const QString& t, ph.tTypes)
-            translated += Phone::standardTypes.translate(t) + "+";
-        translated.remove(translated.length()-1, 1);
-        cbT->insertItem(0, translated);
-        cbT->setCurrentIndex(0);
-    }
-    else { // One type
-        bool isStandard;
-        translated = Phone::standardTypes.translate(ph.tTypes[0], &isStandard);
-        if (!isStandard)
-            cbT->addItem(translated);
-        cbT->setCurrentIndex(cbT->findText(translated));
-    }
+    addTypeList(phoneCount, "Phone", ph.tTypes, Phone::standardTypes);
 }
 
 void ContactDialog::addEmail(const Email &em)
@@ -196,9 +175,7 @@ void ContactDialog::addEmail(const Email &em)
     QComboBox* cbT = findChild<QComboBox*>(QString("cbEmailType%1").arg(emailCount));
     if (emailCount>MIN_VISIBLE_TRIPLETS)
         fillEmailTypes(cbT);
-    // TODO Are some types in one email really present? TODO Are email have nonstandard types?
-    if (!em.emTypes.isEmpty())
-        cbT->setCurrentIndex(cbT->findText(em.emTypes[0])); //===>
+    addTypeList(emailCount, "Email", em.emTypes, Email::standardTypes);
 }
 
 void ContactDialog::addTriplet(int& count, QGridLayout* l, const QString& nameTemplate, const QString& itemValue)
@@ -280,6 +257,30 @@ void ContactDialog::delTriplet(int& count, const QString& nameTemplate, int num)
             typeBox->setObjectName(QString("cb%1Type%2").arg(nameTemplate).arg(i));
             delBtn->setObjectName(QString("btnDel%1%2").arg(nameTemplate).arg(i));
         }
+    }
+}
+
+void ContactDialog::addTypeList(int count, const QString &nameTemplate,
+          const QStringList &types, const ::StandardTypes &sTypes)
+{
+    QComboBox* cbT = findChild<QComboBox*>(QString("cb%1Type%2").arg(nameTemplate).arg(count));
+    if (types.isEmpty())
+        return;
+    // Select item or add mixed
+    QString translated = "";
+    if (types.count()>1) { // Multi types
+        foreach (const QString& t, types)
+            translated += sTypes.translate(t) + "+";
+        translated.remove(translated.length()-1, 1);
+        cbT->insertItem(0, translated);
+        cbT->setCurrentIndex(0);
+    }
+    else { // One type
+        bool isStandard;
+        translated = sTypes.translate(types[0], &isStandard);
+        if (!isStandard)
+            cbT->addItem(translated);
+        cbT->setCurrentIndex(cbT->findText(translated));
     }
 }
 

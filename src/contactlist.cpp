@@ -14,8 +14,6 @@
 #include "contactlist.h"
 #include <QMessageBox>
 
-Phone::StandardTypes::StandardTypes Phone::standardTypes;
-
 Phone::StandardTypes::StandardTypes()
 {
     clear();
@@ -43,9 +41,15 @@ Phone::StandardTypes::StandardTypes()
         << (*this)["isdn"] << (*this)["pcs"];
 }
 
-void Phone::calculateFields()
+Email::StandardTypes::StandardTypes()
 {
-    isMixed = tTypes.count()>1;
+    clear();
+    // Types according RFC 2426
+    (*this)["internet"] = QObject::tr("Internet");
+    (*this)["x400"] = QObject::tr("X.400");
+    (*this)["pref"] = QObject::tr("Pref");
+    displayValues
+        << (*this)["internet"]  << (*this)["x400"] << (*this)["pref"];
 }
 
 void ContactItem::clear()
@@ -81,16 +85,15 @@ void ContactItem::calculateFields()
     if (phones.count()>0) {
         prefPhone = phones[0].number;
         for (int i=0; i<phones.count();i++) {
-            if (phones[i].tTypes.contains("pref"))
+            if (phones[i].tTypes.contains("pref", Qt::CaseInsensitive))
                 prefPhone = phones[i].number;
-            phones[i].calculateFields();
         }
     }
     prefEmail.clear(); // first or preferred email
     if (emails.count()>0) {
         prefEmail = emails[0].address;
         for (int i=0; i<emails.count(); i++)
-            if (emails[i].preferred) // TODO preferred, вероятно, убрать, у почты тоже есть тег pref
+            if (emails[i].emTypes.contains("pref", Qt::CaseInsensitive))
                 prefEmail = emails[i].address;
     }
 }
@@ -104,3 +107,5 @@ TagValue::TagValue(const QString& _tag, const QString& _value)
     :tag(_tag), value(_value)
 {}
 
+Phone::StandardTypes::StandardTypes Phone::standardTypes;
+Email::StandardTypes::StandardTypes Email::standardTypes;
