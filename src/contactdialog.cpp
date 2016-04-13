@@ -307,26 +307,12 @@ void ContactDialog::on_btnAdd_clicked()
 void ContactDialog::itemTypeChanged(const QString &value)
 {
     if (value==mixedType) {
+        QComboBox *cbT = dynamic_cast<QComboBox*>(sender());
         // make dialog for mixed record
-        if (sender()->objectName().contains("Phone")) {
-            PhoneTypeDialog* dlg = new PhoneTypeDialog();
-            dlg->exec();
-            if (dlg->result()==QDialog::Accepted) {
-                QComboBox* cbT = dynamic_cast<QComboBox*>(sender());
-                cbT->setCurrentIndex(0); // prevent event recursion
-                QString mix = dlg->getData();
-                if (mix.contains("+")) {
-                    cbT->insertItem(0, mix);
-                    cbT->setCurrentIndex(0); // new mixed type
-                }
-                else // prevent adding non-mixed types
-                    cbT->setCurrentIndex(cbT->findText(mix));
-            }
-            delete dlg;
-        }
-        else if (sender()->objectName().contains("Email")) {
-            // TODO
-        }
+        if (sender()->objectName().contains("Phone"))
+            PhoneTypeDialog::selectType(tr("Phone type"), Phone::standardTypes, cbT);
+        else if (sender()->objectName().contains("Email"))
+            PhoneTypeDialog::selectType(tr("Email type"), Email::standardTypes, cbT);
     }
 }
 

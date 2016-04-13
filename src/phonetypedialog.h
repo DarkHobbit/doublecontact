@@ -14,8 +14,10 @@
 #ifndef PHONETYPEDIALOG_H
 #define PHONETYPEDIALOG_H
 
+#include <QComboBox>
 #include <QDialog>
 #include <QString>
+#include "globals.h"
 
 namespace Ui {
 class PhoneTypeDialog;
@@ -26,10 +28,10 @@ class PhoneTypeDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit PhoneTypeDialog(QWidget *parent = 0);
+    explicit PhoneTypeDialog(const QString& title, const StandardTypes& sTypes);
     ~PhoneTypeDialog();
     QString getData() const;
-
+    static void selectType(const QString& title, const StandardTypes& sTypes, QComboBox* cbT);
 private:
     Ui::PhoneTypeDialog *ui;
 };

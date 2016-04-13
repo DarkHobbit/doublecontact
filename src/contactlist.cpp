@@ -19,9 +19,9 @@ Phone::StandardTypes::StandardTypes()
     clear();
     // Types according RFC 2426
     (*this)["home"] = QObject::tr("Home");
-    (*this)["msg"] = QObject::tr("Msg");
+    (*this)["msg"] = QObject::tr("Message");
     (*this)["work"] = QObject::tr("Work");
-    (*this)["pref"] = QObject::tr("Pref");
+    (*this)["pref"] = QObject::tr("Preferable");
     (*this)["voice"] = QObject::tr("Voice"); // Synonym for OTHER for some real phones
     (*this)["fax"] = QObject::tr("Fax");
     (*this)["cell"] = QObject::tr("Cell");
@@ -47,7 +47,7 @@ Email::StandardTypes::StandardTypes()
     // Types according RFC 2426
     (*this)["internet"] = QObject::tr("Internet");
     (*this)["x400"] = QObject::tr("X.400");
-    (*this)["pref"] = QObject::tr("Pref");
+    (*this)["pref"] = QObject::tr("Preferable");
     displayValues
         << (*this)["internet"]  << (*this)["x400"] << (*this)["pref"];
 }

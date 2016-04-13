@@ -14,19 +14,19 @@
 #include <QGridLayout>
 #include <QCheckBox>
 #include <QStringList>
-#include "contactlist.h"
 #include "phonetypedialog.h"
 #include "ui_phonetypedialog.h"
 
 #define COLUMN_COUNT 3
-PhoneTypeDialog::PhoneTypeDialog(QWidget *parent) :
-    QDialog(parent),
+PhoneTypeDialog::PhoneTypeDialog(const QString& title, const StandardTypes& sTypes) :
+    QDialog(0),
     ui(new Ui::PhoneTypeDialog)
 {
     ui->setupUi(this);
+    setWindowTitle(title);
     // Fill dialog by all available types
     short i=0;
-    foreach (const QString& s, Phone::standardTypes.displayValues) {
+    foreach (const QString& s, sTypes.displayValues) {
         short row = i / COLUMN_COUNT;
         short col = i % COLUMN_COUNT;
         QCheckBox* cb = new QCheckBox(s);
@@ -51,4 +51,21 @@ QString PhoneTypeDialog::getData() const
                 selectedTypes.push_back(cb->text());
     }
     return selectedTypes.join("+");
+}
+
+void PhoneTypeDialog::selectType(const QString &title, const StandardTypes &sTypes, QComboBox *cbT)
+{
+    PhoneTypeDialog* dlg = new PhoneTypeDialog(title, sTypes);
+    dlg->exec();
+    if (dlg->result()==QDialog::Accepted) {
+        cbT->setCurrentIndex(0); // prevent event recursion
+        QString mix = dlg->getData();
+        if (mix.contains("+")) {
+            cbT->insertItem(0, mix);
+            cbT->setCurrentIndex(0); // new mixed type
+        }
+        else // prevent adding non-mixed types
+            cbT->setCurrentIndex(cbT->findText(mix));
+    }
+    delete dlg;
 }
