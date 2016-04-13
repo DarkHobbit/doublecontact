@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>594</width>
+    <width>821</width>
     <height>447</height>
    </rect>
   </property>
@@ -60,7 +60,7 @@
            <widget class="QComboBox" name="cbPhoneType1">
             <property name="minimumSize">
              <size>
-              <width>128</width>
+              <width>160</width>
               <height>0</height>
              </size>
             </property>
@@ -99,7 +99,7 @@
            <widget class="QComboBox" name="cbEmailType1">
             <property name="minimumSize">
              <size>
-              <width>128</width>
+              <width>160</width>
               <height>0</height>
              </size>
             </property>
@@ -161,7 +161,7 @@
       <widget class="QFrame" name="frameForFuture">
        <property name="minimumSize">
         <size>
-         <width>200</width>
+         <width>400</width>
          <height>0</height>
         </size>
        </property>
@@ -184,38 +184,12 @@
          <string>For Future</string>
         </property>
        </widget>
-       <widget class="QCheckBox" name="cbBirthday">
-        <property name="geometry">
-         <rect>
-          <x>9</x>
-          <y>9</y>
-          <width>91</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Birthday</string>
-        </property>
-       </widget>
-       <widget class="QDateTimeEdit" name="dteBirthday">
-        <property name="geometry">
-         <rect>
-          <x>0</x>
-          <y>40</y>
-          <width>194</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="calendarPopup">
-         <bool>true</bool>
-        </property>
-       </widget>
        <widget class="QPlainTextEdit" name="edDescription">
         <property name="geometry">
          <rect>
           <x>23</x>
           <y>300</y>
-          <width>161</width>
+          <width>371</width>
           <height>91</height>
          </rect>
         </property>
@@ -232,6 +206,32 @@
         <property name="text">
          <string>Description</string>
         </property>
+       </widget>
+       <widget class="QWidget" name="">
+        <property name="geometry">
+         <rect>
+          <x>9</x>
+          <y>9</y>
+          <width>209</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <item>
+          <widget class="QCheckBox" name="cbBirthday">
+           <property name="text">
+            <string>Birthday</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDateTimeEdit" name="dteBirthday">
+           <property name="calendarPopup">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </widget>
       </widget>
      </item>
