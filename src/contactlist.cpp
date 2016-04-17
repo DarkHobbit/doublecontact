@@ -60,6 +60,7 @@ void ContactItem::clear()
     emails.clear();
     birthday.value = QDateTime();
     birthday.hasTime = false;
+    anniversaries.clear();
     description.clear();
     unknownTags.clear();
     originalFormat.clear();

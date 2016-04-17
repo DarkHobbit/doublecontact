@@ -104,7 +104,11 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
             }
             else if (tag=="BDAY")
                 importDate(item.birthday, decodeValue(vValue[0], encoding, charSet, errors), errors);
-            // TODO x-anniversary
+            else if (tag=="X-ANNIVERSARY") {
+                DateItem di;
+                importDate(di, decodeValue(vValue[0], encoding, charSet, errors), errors);
+                item.anniversaries.push_back(di);
+            }
             else if (tag=="ADR") {
                 // TODO
                 item.unknownTags.push_back(TagValue(vType.join(";"), vValue.join(";"))); //===>
