@@ -42,12 +42,20 @@ struct Email {
     } standardTypes;
 };
 
+struct DateItem { // Birthday and anniversaries
+    QDateTime value; // date & time
+    bool hasTime; // false if date only was in file
+    bool hasTimeZone; // record contains TZ info
+    short zoneHour, zoneMin; // TZ value
+};
+
 struct ContactItem {
     QString fullName;
     QStringList names;
     QList<Phone> phones;
     QList<Email> emails;
-    QDateTime birthDay; // TODO maybe add field from timezone, if it was in vcf?
+    DateItem birthday;
+    QList<DateItem> anniversaries;
     QString description;
     // TODO address
     // Format internals

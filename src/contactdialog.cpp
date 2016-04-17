@@ -79,10 +79,10 @@ void ContactDialog::setData(const ContactItem& c)
     for (int i=0; i<c.emails.count(); i++)
         addEmail(c.emails[i]);
     // BirthDay
-    ui->cbBirthday->setChecked(c.birthDay.isValid());
-    ui->dteBirthday->setEnabled(c.birthDay.isValid());
-    if (c.birthDay.isValid())
-        ui->dteBirthday->setDateTime(c.birthDay);
+    ui->cbBirthday->setChecked(c.birthday.value.isValid());
+    ui->dteBirthday->setEnabled(c.birthday.value.isValid());
+    if (c.birthday.value.isValid())
+        ui->dteBirthday->setDateTime(c.birthday.value);
     // Other
     ui->edDescription->setPlainText(c.description);
 }
@@ -109,7 +109,7 @@ void ContactDialog::getData(ContactItem& c)
         c.emails.push_back(em);
     }
     // BirthDay
-    c.birthDay = (ui->cbBirthday->isChecked()) ? ui->dteBirthday->dateTime() : QDateTime();
+    c.birthday.value = (ui->cbBirthday->isChecked()) ? ui->dteBirthday->dateTime() : QDateTime();
     // Other
     c.description = ui->edDescription->toPlainText();
     // TODO Photos, address

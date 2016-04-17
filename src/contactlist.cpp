@@ -58,7 +58,8 @@ void ContactItem::clear()
     names.clear();
     phones.clear();
     emails.clear();
-    birthDay = QDateTime();
+    birthday.value = QDateTime();
+    birthday.hasTime = false;
     description.clear();
     unknownTags.clear();
     originalFormat.clear();
