@@ -102,6 +102,9 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                     email.emTypes = types;
                 item.emails.push_back(email);
             }
+            else if (tag=="BDAY")
+                importDate(item.birthday, decodeValue(vValue[0], encoding, charSet, errors), errors);
+            // TODO x-anniversary
             else if (tag=="ADR") {
                 // TODO
                 item.unknownTags.push_back(TagValue(vType.join(";"), vValue.join(";"))); //===>
@@ -169,4 +172,43 @@ QString VCardData::decodeValue(const QString &src, const QString &encoding, cons
         errors << QObject::tr("Unknown encoding");
         return "";
     }
+}
+
+void VCardData::importDate(DateItem &item, const QString &src, QStringList& errors)
+{
+    int tPos = src.indexOf("T", 0, Qt::CaseInsensitive);
+    item.hasTime = (tPos!=-1);
+    if (item.hasTime) {
+        int sPos = src.mid(tPos+1).indexOf("-");
+        int zPos = src.mid(tPos+1).indexOf("Z", 0, Qt::CaseInsensitive);
+        item.hasTimeZone = (sPos!=-1) || (zPos!=-1);
+        if (sPos!=-1) { // 1987-09-27T08:30:00-06:00
+            item.value = QDateTime::fromString(
+                src.left(tPos+sPos+1), "yyyy-MM-ddTHH:mm:ss");
+            QString zone = src.mid(tPos+tPos+1);
+            bool ok;
+            item.zoneHour = zone.left(zone.indexOf(":")).toShort(&ok);
+            if (ok)
+                item.zoneMin = zone.right(zone.indexOf(":")).toShort(&ok);
+            if (!ok)
+                errors << QObject::tr("Invalid timezone: ") + src;
+        }
+        else if (zPos!=-1) { // 1953-10-15T23:10:00Z
+            item.value = QDateTime::fromString(
+                src.left(tPos+zPos+1), "yyyy-MM-ddTHH:mm:ss");
+            item.zoneHour = 0;
+            item.zoneMin = 0;
+        }
+        else
+            item.value = QDateTime::fromString(
+                src, "yyyy-MM-ddTHH:mm:ss");
+    }
+    else {
+        item.value = QDateTime::fromString(src, "yyyy-MM-dd");
+        if (!item.value.isValid())
+            // try non-standard format from some old Nokias
+            item.value = QDateTime::fromString(src, "yyyyMMdd");
+    }
+    if (!item.value.isValid())
+        errors << QObject::tr("Invalid datetime: ") + src;
 }
