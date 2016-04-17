@@ -40,6 +40,7 @@ protected:
 private:
     Ui::ContactDialog *ui;
     int nameCount, phoneCount, emailCount;
+    DateItem birthdayDetails;
     void fillPhoneTypes(QComboBox* combo);
     void fillEmailTypes(QComboBox* combo);
     void addName(const QString& name);
@@ -58,6 +59,7 @@ private slots:
     void on_btnAdd_clicked();
     void itemTypeChanged(const QString& value);
     void on_cbBirthday_toggled(bool checked);
+    void on_btnBDayDetails_clicked();
 };
 
 #endif // CONTACTDIALOG_H

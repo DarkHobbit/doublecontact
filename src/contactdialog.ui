@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>821</width>
-    <height>447</height>
+    <width>867</width>
+    <height>446</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,7 +15,7 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_3">
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_3">
+    <layout class="QHBoxLayout" name="horizontalLayout_4">
      <item>
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>
@@ -158,65 +158,9 @@
       </layout>
      </item>
      <item>
-      <widget class="QFrame" name="frameForFuture">
-       <property name="minimumSize">
-        <size>
-         <width>400</width>
-         <height>0</height>
-        </size>
-       </property>
-       <property name="frameShape">
-        <enum>QFrame::StyledPanel</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Raised</enum>
-       </property>
-       <widget class="QLabel" name="labelForFuture">
-        <property name="geometry">
-         <rect>
-          <x>40</x>
-          <y>150</y>
-          <width>121</width>
-          <height>91</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>For Future</string>
-        </property>
-       </widget>
-       <widget class="QPlainTextEdit" name="edDescription">
-        <property name="geometry">
-         <rect>
-          <x>23</x>
-          <y>300</y>
-          <width>371</width>
-          <height>91</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QLabel" name="lbDescription">
-        <property name="geometry">
-         <rect>
-          <x>30</x>
-          <y>280</y>
-          <width>91</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Description</string>
-        </property>
-       </widget>
-       <widget class="QWidget" name="">
-        <property name="geometry">
-         <rect>
-          <x>9</x>
-          <y>9</y>
-          <width>209</width>
-          <height>24</height>
-         </rect>
-        </property>
-        <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
          <item>
           <widget class="QCheckBox" name="cbBirthday">
            <property name="text">
@@ -231,9 +175,84 @@
            </property>
           </widget>
          </item>
+         <item>
+          <widget class="QPushButton" name="btnBDayDetails">
+           <property name="text">
+            <string>Details</string>
+           </property>
+          </widget>
+         </item>
         </layout>
-       </widget>
-      </widget>
+       </item>
+       <item>
+        <layout class="QGridLayout" name="gridLayout">
+         <item row="0" column="0">
+          <widget class="QLabel" name="lbPhoto">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>Photo</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="lbDescription">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>Description</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="lbPhotoContent">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>140</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>200</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Under consrtuction</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QPlainTextEdit" name="edDescription">
+           <property name="maximumSize">
+            <size>
+             <width>200</width>
+             <height>16777215</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
      </item>
     </layout>
    </item>

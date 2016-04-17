@@ -81,8 +81,10 @@ void ContactDialog::setData(const ContactItem& c)
     // BirthDay
     ui->cbBirthday->setChecked(c.birthday.value.isValid());
     ui->dteBirthday->setEnabled(c.birthday.value.isValid());
+    ui->btnBDayDetails->setEnabled(c.birthday.value.isValid());
     if (c.birthday.value.isValid())
         ui->dteBirthday->setDateTime(c.birthday.value);
+    birthdayDetails = c.birthday;
     // Other
     ui->edDescription->setPlainText(c.description);
 }
@@ -109,6 +111,7 @@ void ContactDialog::getData(ContactItem& c)
         c.emails.push_back(em);
     }
     // BirthDay
+    c.birthday = birthdayDetails;
     c.birthday.value = (ui->cbBirthday->isChecked()) ? ui->dteBirthday->dateTime() : QDateTime();
     // Other
     c.description = ui->edDescription->toPlainText();
@@ -319,4 +322,16 @@ void ContactDialog::itemTypeChanged(const QString &value)
 void ContactDialog::on_cbBirthday_toggled(bool checked)
 {
     ui->dteBirthday->setEnabled(checked);
+    ui->btnBDayDetails->setEnabled(checked);
+}
+
+void ContactDialog::on_btnBDayDetails_clicked()
+{
+    birthdayDetails.value = ui->dteBirthday->dateTime();
+    // TODO call dialog with birthdayDetails
+    if (birthdayDetails.hasTime)
+        ui->dteBirthday->setDisplayFormat("dd.MM.yyyy H:mm");
+    else
+        ui->dteBirthday->setDisplayFormat("dd.MM.yyyy");
+    // TODO 1) only if accepted 2) also tune in setData 3) to separate func
 }
