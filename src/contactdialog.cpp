@@ -19,6 +19,7 @@
 #include "ui_contactdialog.h"
 
 #include "contactlist.h"
+#include "datedetailsdialog.h"
 
 // Spec.value for combined phone/mail types
 const QString mixedType = QObject::tr("mixed...");
@@ -85,6 +86,7 @@ void ContactDialog::setData(const ContactItem& c)
     if (c.birthday.value.isValid())
         ui->dteBirthday->setDateTime(c.birthday.value);
     birthdayDetails = c.birthday;
+    DateDetailsDialog::setDateFormat(ui->dteBirthday, birthdayDetails.hasTime);
     // Other
     ui->edDescription->setPlainText(c.description);
 }
@@ -328,10 +330,13 @@ void ContactDialog::on_cbBirthday_toggled(bool checked)
 void ContactDialog::on_btnBDayDetails_clicked()
 {
     birthdayDetails.value = ui->dteBirthday->dateTime();
-    // TODO call dialog with birthdayDetails
-    if (birthdayDetails.hasTime)
-        ui->dteBirthday->setDisplayFormat("dd.MM.yyyy H:mm");
-    else
-        ui->dteBirthday->setDisplayFormat("dd.MM.yyyy");
-    // TODO 1) only if accepted 2) also tune in setData 3) to separate func
+    DateDetailsDialog* dlg = new DateDetailsDialog();
+    dlg->setData(birthdayDetails);
+    dlg->exec();
+    if (dlg->result()==QDialog::Accepted) {
+        dlg->getData(birthdayDetails);
+        DateDetailsDialog::setDateFormat(ui->dteBirthday, birthdayDetails.hasTime);
+        ui->dteBirthday->setDateTime(birthdayDetails.value);
+    }
+    delete dlg;
 }

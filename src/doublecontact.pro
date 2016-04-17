@@ -19,7 +19,8 @@ SOURCES += main.cpp \
     formats/common/vcarddata.cpp \
     logwindow.cpp \
     settingsdialog.cpp \
-    globals.cpp
+    globals.cpp \
+    datedetailsdialog.cpp
 HEADERS += mainwindow.h \
     contactmodel.h \
     contactlist.h \
@@ -32,12 +33,14 @@ HEADERS += mainwindow.h \
     formats/common/vcarddata.h \
     logwindow.h \
     settingsdialog.h \
-    globals.h
+    globals.h \
+    datedetailsdialog.h
 FORMS += mainwindow.ui \
     contactdialog.ui \
     phonetypedialog.ui \
     logwindow.ui \
-    settingsdialog.ui
+    settingsdialog.ui \
+    datedetailsdialog.ui
 unix { 
     OBJECTS_DIR = .obj
     UI_DIR = .ui

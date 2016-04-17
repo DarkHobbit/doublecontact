@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>867</width>
-    <height>446</height>
+    <width>839</width>
+    <height>583</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,246 +15,284 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_3">
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_4">
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout_2">
+    <widget class="QTabWidget" name="twContact">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="tabGeneral">
+      <attribute name="title">
+       <string>General</string>
+      </attribute>
+      <layout class="QHBoxLayout" name="horizontalLayout_4">
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout">
+        <layout class="QVBoxLayout" name="verticalLayout_2">
          <item>
-          <widget class="QLabel" name="lbFullName">
-           <property name="text">
-            <string>Full Name</string>
+          <layout class="QHBoxLayout" name="horizontalLayout">
+           <item>
+            <widget class="QLabel" name="lbFullName">
+             <property name="text">
+              <string>Full Name</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="leFullName"/>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="gbNames">
+           <property name="title">
+            <string>Name</string>
            </property>
+           <layout class="QGridLayout" name="layNames">
+            <item row="0" column="0">
+             <widget class="QLineEdit" name="leName1"/>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLineEdit" name="leName2"/>
+            </item>
+           </layout>
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="leFullName"/>
+          <widget class="QGroupBox" name="gbPhones">
+           <property name="title">
+            <string>Phone</string>
+           </property>
+           <layout class="QGridLayout" name="layPhones">
+            <item row="0" column="0">
+             <widget class="QLineEdit" name="lePhone1"/>
+            </item>
+            <item row="0" column="1">
+             <widget class="QComboBox" name="cbPhoneType1">
+              <property name="minimumSize">
+               <size>
+                <width>160</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maxVisibleItems">
+               <number>32</number>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="2">
+             <widget class="QToolButton" name="btnDelPhone1">
+              <property name="text">
+               <string>...</string>
+              </property>
+              <property name="icon">
+               <iconset resource="doublecontact.qrc">
+                <normaloff>:/img/16x16/del.png</normaloff>:/img/16x16/del.png</iconset>
+              </property>
+              <property name="arrowType">
+               <enum>Qt::NoArrow</enum>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="gbEmails">
+           <property name="title">
+            <string>Email</string>
+           </property>
+           <layout class="QGridLayout" name="layEmails">
+            <item row="0" column="0">
+             <widget class="QLineEdit" name="leEmail1"/>
+            </item>
+            <item row="0" column="1">
+             <widget class="QComboBox" name="cbEmailType1">
+              <property name="minimumSize">
+               <size>
+                <width>160</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maxVisibleItems">
+               <number>32</number>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="2">
+             <widget class="QToolButton" name="btnDelEmail1">
+              <property name="text">
+               <string>...</string>
+              </property>
+              <property name="icon">
+               <iconset resource="doublecontact.qrc">
+                <normaloff>:/img/16x16/del.png</normaloff>:/img/16x16/del.png</iconset>
+              </property>
+              <property name="arrowType">
+               <enum>Qt::NoArrow</enum>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <item>
+            <widget class="QPushButton" name="btnAdd">
+             <property name="text">
+              <string>Add...</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="cbAdd">
+             <item>
+              <property name="text">
+               <string>name</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>phone</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>e-mail</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+          </layout>
          </item>
         </layout>
        </item>
        <item>
-        <widget class="QGroupBox" name="gbNames">
-         <property name="title">
-          <string>Name</string>
-         </property>
-         <layout class="QGridLayout" name="layNames">
-          <item row="0" column="0">
-           <widget class="QLineEdit" name="leName1"/>
-          </item>
-          <item row="0" column="1">
-           <widget class="QLineEdit" name="leName2"/>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item>
-        <widget class="QGroupBox" name="gbPhones">
-         <property name="title">
-          <string>Phone</string>
-         </property>
-         <layout class="QGridLayout" name="layPhones">
-          <item row="0" column="0">
-           <widget class="QLineEdit" name="lePhone1"/>
-          </item>
-          <item row="0" column="1">
-           <widget class="QComboBox" name="cbPhoneType1">
-            <property name="minimumSize">
-             <size>
-              <width>160</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="maxVisibleItems">
-             <number>32</number>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="2">
-           <widget class="QToolButton" name="btnDelPhone1">
-            <property name="text">
-             <string>...</string>
-            </property>
-            <property name="icon">
-             <iconset resource="doublecontact.qrc">
-              <normaloff>:/img/16x16/del.png</normaloff>:/img/16x16/del.png</iconset>
-            </property>
-            <property name="arrowType">
-             <enum>Qt::NoArrow</enum>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item>
-        <widget class="QGroupBox" name="gbEmails">
-         <property name="title">
-          <string>Email</string>
-         </property>
-         <layout class="QGridLayout" name="layEmails">
-          <item row="0" column="0">
-           <widget class="QLineEdit" name="leEmail1"/>
-          </item>
-          <item row="0" column="1">
-           <widget class="QComboBox" name="cbEmailType1">
-            <property name="minimumSize">
-             <size>
-              <width>160</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="maxVisibleItems">
-             <number>32</number>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="2">
-           <widget class="QToolButton" name="btnDelEmail1">
-            <property name="text">
-             <string>...</string>
-            </property>
-            <property name="icon">
-             <iconset resource="doublecontact.qrc">
-              <normaloff>:/img/16x16/del.png</normaloff>:/img/16x16/del.png</iconset>
-            </property>
-            <property name="arrowType">
-             <enum>Qt::NoArrow</enum>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <layout class="QVBoxLayout" name="verticalLayout">
          <item>
-          <widget class="QPushButton" name="btnAdd">
-           <property name="text">
-            <string>Add...</string>
+          <widget class="QGroupBox" name="gbBirthday">
+           <property name="title">
+            <string/>
            </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_3">
+            <item>
+             <widget class="QCheckBox" name="cbBirthday">
+              <property name="text">
+               <string>Birthday</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QDateTimeEdit" name="dteBirthday">
+              <property name="calendarPopup">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btnBDayDetails">
+              <property name="text">
+               <string>Details</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </widget>
          </item>
          <item>
-          <widget class="QComboBox" name="cbAdd">
-           <item>
-            <property name="text">
-             <string>name</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>phone</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>e-mail</string>
-            </property>
-           </item>
-          </widget>
-         </item>
-        </layout>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout">
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_3">
-         <item>
-          <widget class="QCheckBox" name="cbBirthday">
-           <property name="text">
-            <string>Birthday</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QDateTimeEdit" name="dteBirthday">
-           <property name="calendarPopup">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="btnBDayDetails">
-           <property name="text">
-            <string>Details</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QGridLayout" name="gridLayout">
-         <item row="0" column="0">
-          <widget class="QLabel" name="lbPhoto">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="text">
-            <string>Photo</string>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="1">
-          <widget class="QLabel" name="lbDescription">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="text">
-            <string>Description</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="0">
-          <widget class="QLabel" name="lbPhotoContent">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
+          <widget class="QGroupBox" name="gbAnniversaries">
            <property name="minimumSize">
             <size>
-             <width>140</width>
-             <height>0</height>
+             <width>0</width>
+             <height>96</height>
             </size>
            </property>
-           <property name="maximumSize">
-            <size>
-             <width>200</width>
-             <height>16777215</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>Under consrtuction</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
+           <property name="title">
+            <string>Anniversaries</string>
            </property>
           </widget>
          </item>
-         <item row="1" column="1">
-          <widget class="QPlainTextEdit" name="edDescription">
-           <property name="maximumSize">
-            <size>
-             <width>200</width>
-             <height>16777215</height>
-            </size>
-           </property>
-          </widget>
+         <item>
+          <layout class="QGridLayout" name="gridLayout">
+           <item row="0" column="0">
+            <widget class="QLabel" name="lbPhoto">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>Photo</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLabel" name="lbDescription">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>Description</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QPlainTextEdit" name="edDescription">
+             <property name="maximumSize">
+              <size>
+               <width>200</width>
+               <height>16777215</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="lbPhotoContent">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>140</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>200</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Under consrtuction</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
         </layout>
        </item>
       </layout>
-     </item>
-    </layout>
+     </widget>
+     <widget class="QWidget" name="tabAddresses">
+      <attribute name="title">
+       <string>Addresses</string>
+      </attribute>
+     </widget>
+     <widget class="QWidget" name="tabOther">
+      <attribute name="title">
+       <string>Other</string>
+      </attribute>
+     </widget>
+    </widget>
    </item>
    <item>
     <widget class="QDialogButtonBox" name="buttonBox">
