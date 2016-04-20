@@ -159,6 +159,11 @@
                <string>e-mail</string>
               </property>
              </item>
+             <item>
+              <property name="text">
+               <string>anniversary</string>
+              </property>
+             </item>
             </widget>
            </item>
           </layout>

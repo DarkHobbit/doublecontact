@@ -15,6 +15,7 @@
 #define CONTACTDIALOG_H
 
 #include <QComboBox>
+#include <QDateTimeEdit>
 #include <QDialog>
 #include <QGridLayout>
 #include "contactlist.h"
@@ -39,13 +40,17 @@ protected:
 
 private:
     Ui::ContactDialog *ui;
-    int nameCount, phoneCount, emailCount;
+    QGridLayout* layAnniversaries;
+    int nameCount, phoneCount, emailCount, anniversaryCount;
     DateItem birthdayDetails;
+    QList<DateItem> anniversaryDetails;
     void fillPhoneTypes(QComboBox* combo);
     void fillEmailTypes(QComboBox* combo);
     void addName(const QString& name);
     void addPhone(const Phone& ph);
     void addEmail(const Email& em);
+    void addAnniversary(const DateItem& ann);
+    void readAnniversary(int num, DateItem& ann);
     // Common helpers for phone/email
     void addTriplet(int& count, QGridLayout* l, const QString& nameTemplate, const QString& itemValue);
     void readTriplet(const QString& nameTemplate, int num, QString& itemValue, QStringList& types, const  ::StandardTypes& sTypes);
@@ -53,6 +58,7 @@ private:
     void addTypeList(int count, const QString& nameTemplate, const QStringList& types, const ::StandardTypes& sTypes);
     inline QLineEdit* nameEditorByNum(int num);
     inline QLineEdit* editorByNum(const QString& nameTemplate, int num);
+    void editDateDetails(QDateTimeEdit* editor, DateItem& details);
 private slots:
     void slotDelName();
     void slotDelTriplet();
@@ -60,6 +66,8 @@ private slots:
     void itemTypeChanged(const QString& value);
     void on_cbBirthday_toggled(bool checked);
     void on_btnBDayDetails_clicked();
+    void slotAnnDetails();
+    void slotDelAnniversary();
 };
 
 #endif // CONTACTDIALOG_H
