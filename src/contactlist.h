@@ -61,6 +61,7 @@ struct ContactItem {
     // Format internals
     QString originalFormat;
     QString version;
+    QList<TagValue> otherTags;   // Known but un-editing tags
     QList<TagValue> unknownTags; // specific tags for any file format, i.e. vcf
     // Calculated fields for higher perfomance
     QString prefPhone, prefEmail;

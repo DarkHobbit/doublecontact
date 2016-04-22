@@ -14,14 +14,14 @@
 #include <QLineEdit>
 #include <QMessageBox>
 #include <QPixmap>
+
 #include "contactdialog.h"
-#include "phonetypedialog.h"
 #include "ui_contactdialog.h"
 
 #include "contactlist.h"
 #include "datedetailsdialog.h"
-
-#include <QDebug>
+#include "globals.h"
+#include "phonetypedialog.h"
 
 // Spec.value for combined phone/mail types
 const QString mixedType = QObject::tr("mixed...");
@@ -41,6 +41,8 @@ ContactDialog::ContactDialog(QWidget *parent) :
     connect(ui->cbEmailType1, SIGNAL(currentIndexChanged(const QString&)), this, SLOT(itemTypeChanged(const QString&)));
     connect(ui->btnDelEmail1, SIGNAL(clicked()), this, SLOT(slotDelTriplet()));
     layAnniversaries = new QGridLayout(ui->gbAnniversaries);
+    ui->twOtherTags->setItemDelegate(new ReadOnlyTableDelegate());
+    ui->twUnknownTags->setItemDelegate(new ReadOnlyTableDelegate());
 }
 
 ContactDialog::~ContactDialog()
@@ -58,6 +60,20 @@ void ContactDialog::changeEvent(QEvent *e)
     default:
         break;
     }
+}
+
+void ContactDialog::resizeEvent(QResizeEvent *event)
+{
+    QDialog::resizeEvent(event);
+    ui->twOtherTags->setColumnWidth(0, ui->twOtherTags->width()*0.4);
+    ui->twOtherTags->setColumnWidth(1, ui->twOtherTags->width()*0.5);
+    ui->twUnknownTags->setColumnWidth(0, ui->twUnknownTags->width()*0.4);
+    ui->twUnknownTags->setColumnWidth(1, ui->twUnknownTags->width()*0.5);
+}
+
+void ContactDialog::showEvent(QShowEvent *event)
+{
+    resizeEvent(0);
 }
 
 void ContactDialog::clearData()
@@ -95,6 +111,23 @@ void ContactDialog::setData(const ContactItem& c)
         addAnniversary(c.anniversaries[i]);
     // Other
     ui->edDescription->setPlainText(c.description);
+    ui->lbOriginalFormatValue->setText(c.originalFormat);
+    ui->lbFormatVersionValue->setText(c.version);
+    ui->twOtherTags->setRowCount(c.otherTags.count());
+    int index = 0;
+    foreach (const TagValue& tag, c.otherTags) {
+        ui->twOtherTags->setItem(index, 0, new QTableWidgetItem(tag.tag));
+        ui->twOtherTags->setItem(index, 1, new QTableWidgetItem(tag.value));
+        index++;
+    }
+    // Unknown tags
+    ui->twUnknownTags->setRowCount(c.unknownTags.count());
+    index = 0;
+    foreach (const TagValue& tag, c.unknownTags) {
+        ui->twUnknownTags->setItem(index, 0, new QTableWidgetItem(tag.tag));
+        ui->twUnknownTags->setItem(index, 1, new QTableWidgetItem(tag.value));
+        index++;
+    }
 }
 
 void ContactDialog::getData(ContactItem& c)
@@ -227,7 +260,6 @@ void ContactDialog::readAnniversary(int num, DateItem &ann)
         (QString("dteAnn%1Date").arg(num));
     if (!editor) return;
     anniversaryDetails[num-1].value = editor->dateTime();
-qDebug() << anniversaryDetails[num-1].value;
     ann = anniversaryDetails[num-1];
 }
 
@@ -436,4 +468,9 @@ void ContactDialog::slotDelAnniversary()
         detBtn->setObjectName(QString("btnAnn%1Details").arg(i));
         delBtn->setObjectName(QString("btnDelAnn%1").arg(i));
     }
+}
+
+void ContactDialog::on_twContact_currentChanged(int index)
+{
+    resizeEvent(0);
 }

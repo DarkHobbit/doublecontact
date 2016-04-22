@@ -56,8 +56,8 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
             QStringList vValue = s.mid(scPos+1).split(";");
             const QString tag = vType[0].toUpper();
             // Encoding, charset, types
-            QString encoding;
-            QString charSet;
+            QString encoding = "";
+            QString charSet = "";
             QStringList types;
             for (int i=1; i<vType.count(); i++) {
                 if (vType[i].startsWith("ENCODING=", Qt::CaseInsensitive))
@@ -109,16 +109,18 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                 importDate(di, decodeValue(vValue[0], encoding, charSet, errors), errors);
                 item.anniversaries.push_back(di);
             }
-            else if (tag=="ADR") {
-                // TODO
-                item.unknownTags.push_back(TagValue(vType.join(";"), vValue.join(";"))); //===>
+            // TODO PHOTO, ADR, ORG...
+
+            // Known but un-editing tags
+            else if (tag=="LABEL") { // TODO other from rfc 2426
+                item.otherTags.push_back(TagValue(vType.join(";"),
+                    decodeValue(vValue.join(";"), encoding, charSet, errors)));
             }
-
-            // TODO
-
             // Unknown tags
-            else
-                item.unknownTags.push_back(TagValue(vType.join(";"), vValue.join(";")));
+            else {
+                item.unknownTags.push_back(TagValue(vType.join(";"),
+                    decodeValue(vValue.join(";"), encoding, charSet, errors)));
+            }
         }
 
     }
@@ -151,7 +153,7 @@ QString VCardData::decodeValue(const QString &src, const QString &encoding, cons
     else
         codec = QTextCodec::codecForName(charSet.toLocal8Bit());
     if (!codec) {
-        errors << QObject::tr("Unknown encoding");
+        errors << QObject::tr("Unknown charset: ")+charSet;
         return "";
     }
     // Encoding
@@ -173,7 +175,7 @@ QString VCardData::decodeValue(const QString &src, const QString &encoding, cons
         return codec->toUnicode(res);
     }
     else {
-        errors << QObject::tr("Unknown encoding");
+        errors << QObject::tr("Unknown encoding: ")+encoding;
         return "";
     }
 }

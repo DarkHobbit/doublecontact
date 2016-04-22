@@ -15,6 +15,7 @@
 #define GLOBALS_H
 
 #include <QHash>
+#include <QItemDelegate>
 #include <QStringList>
 
 // Visible columns
@@ -38,6 +39,16 @@ class StandardTypes: public QHash<QString, QString> {
     QString translate(const QString& key, bool* isStandard = 0) const;
     QString unTranslate(const QString& value) const;
     QStringList displayValues;
+};
+
+// Delegate for making table widgets read only
+// Thanx to Axis - http://axis.bplaced.net/news/460
+class ReadOnlyTableDelegate : public QItemDelegate
+{
+public:
+    ReadOnlyTableDelegate(QObject* parent = 0);
+    virtual QWidget* createEditor(
+        QWidget*, const QStyleOptionViewItem&, const QModelIndex &) const;
 };
 
 

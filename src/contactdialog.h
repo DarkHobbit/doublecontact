@@ -18,6 +18,8 @@
 #include <QDateTimeEdit>
 #include <QDialog>
 #include <QGridLayout>
+#include <QResizeEvent>
+#include <QShowEvent>
 #include "contactlist.h"
 
 namespace Ui {
@@ -37,7 +39,8 @@ public:
     // TODO checkData
 protected:
     void changeEvent(QEvent *e);
-
+    virtual void resizeEvent(QResizeEvent* event);
+    virtual void showEvent(QShowEvent* event);
 private:
     Ui::ContactDialog *ui;
     QGridLayout* layAnniversaries;
@@ -68,6 +71,7 @@ private slots:
     void on_btnBDayDetails_clicked();
     void slotAnnDetails();
     void slotDelAnniversary();
+    void on_twContact_currentChanged(int index);
 };
 
 #endif // CONTACTDIALOG_H

@@ -11,6 +11,7 @@
  *
  */
 
+#include <QMessageBox>
 #include <QObject>
 #include "globals.h"
 
@@ -39,3 +40,15 @@ QString StandardTypes::unTranslate(const QString &value) const
 {
     return key(value, value);
 }
+
+ReadOnlyTableDelegate::ReadOnlyTableDelegate(QObject* parent)
+    : QItemDelegate(parent)
+{}
+
+QWidget* ReadOnlyTableDelegate::createEditor(
+     QWidget*, const QStyleOptionViewItem&, const QModelIndex &) const
+{
+    QMessageBox::critical(0, tr("Error"), tr("This table is read only"));
+    return 0;
+}
+
