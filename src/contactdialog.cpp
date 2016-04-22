@@ -109,6 +109,18 @@ void ContactDialog::setData(const ContactItem& c)
     anniversaryDetails.clear();
     for (int i=0; i<c.anniversaries.count(); i++)
         addAnniversary(c.anniversaries[i]);
+    // Photo
+    if (c.photoType=="URL") {
+        // TODO
+    }
+    else if (c.photoType.toUpper()=="JPEG") {
+        QPixmap photo;
+        photo.loadFromData(c.photo);
+        ui->lbPhotoContent->setPixmap(photo);
+    }
+    else {
+        // TODO
+    }
     // Other
     ui->edDescription->setPlainText(c.description);
     ui->lbOriginalFormatValue->setText(c.originalFormat);

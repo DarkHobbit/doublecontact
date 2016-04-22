@@ -58,6 +58,7 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
             // Encoding, charset, types
             QString encoding = "";
             QString charSet = "";
+            QString typeVal = ""; // for PHOTO/URI, at least
             QStringList types;
             for (int i=1; i<vType.count(); i++) {
                 if (vType[i].startsWith("ENCODING=", Qt::CaseInsensitive))
@@ -67,6 +68,9 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                 else if (vType[i].startsWith("TYPE=", Qt::CaseInsensitive))
                     // non-standart types may be non-latin
                     types << codec->toUnicode(vType[i].mid(QString("TYPE=").length()).toLocal8Bit());
+                else if (vType[i].startsWith("VALUE=", Qt::CaseInsensitive))
+                    // for PHOTO/URI, at least
+                    typeVal = vType[i].mid(QString("VALUE=").length());
                 else
                     item.unknownTags.push_back(TagValue(vType.join(";"), vValue.join(";"))); // TODO partiallyKnownTag?
             }
@@ -109,7 +113,29 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                 importDate(di, decodeValue(vValue[0], encoding, charSet, errors), errors);
                 item.anniversaries.push_back(di);
             }
-            // TODO PHOTO, ADR, ORG...
+            else if (tag=="PHOTO") {
+                if (typeVal.startsWith("URI", Qt::CaseInsensitive)) {
+                    item.photoType = "URL";
+                    item.photoUrl = decodeValue(vValue[0], encoding, charSet, errors);
+                }
+                else {
+                    item.photoType = types[0];
+                    if (item.photoType.toUpper()!="JPEG")
+                        errors << QObject::tr("Unsupported photo type at line %1: ").arg(line+1)+typeVal;
+                    if (encoding=="B") {
+                        QString binaryData = vValue[0];
+                        while (line<lines.count() && !lines[line+1].trimmed().isEmpty()) {
+                            binaryData += lines[line+1];
+                            line++;
+                        }
+                        if (lines[line+1].trimmed().isEmpty()) line++;
+                        item.photo = QByteArray::fromBase64(binaryData.toLatin1());
+                    }
+                    else
+                        errors << QObject::tr("Unknown type at line %1").arg(line+1);
+                }
+            }
+            // TODO ADR, ORG...
 
             // Known but un-editing tags
             else if (tag=="LABEL") { // TODO other from rfc 2426

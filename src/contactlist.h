@@ -14,18 +14,19 @@
 #ifndef CONTACTLIST_H
 #define CONTACTLIST_H
 
+#include <QByteArray>
 #include <QDateTime>
 #include <QStringList>
 #include "globals.h"
 
-struct TagValue {
+struct TagValue { // for non-editing ang unknown tags
     QString tag, value;
     TagValue(const QString& _tag, const QString& _value);
 };
 
 struct Phone {
     QString number;
-    QStringList tTypes; // some phones may allow create any tel type (not RFC, but...)
+    QStringList tTypes; // some devices & addressbooks may allow create any tel type (not RFC, but...)
     // standart types
     static class StandardTypes: public ::StandardTypes {
         public:
@@ -57,6 +58,10 @@ struct ContactItem {
     DateItem birthday;
     QList<DateItem> anniversaries;
     QString description;
+    // Photo
+    QString photoType; // URL, JPEG or unsupported, but stored value
+    QByteArray photo;
+    QString photoUrl;
     // TODO address
     // Format internals
     QString originalFormat;
