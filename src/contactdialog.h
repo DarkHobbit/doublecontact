@@ -20,6 +20,7 @@
 #include <QGridLayout>
 #include <QResizeEvent>
 #include <QShowEvent>
+#include <QToolButton>
 #include "contactlist.h"
 
 namespace Ui {
@@ -58,6 +59,8 @@ private:
     void addTriplet(int& count, QGridLayout* l, const QString& nameTemplate, const QString& itemValue);
     void readTriplet(const QString& nameTemplate, int num, QString& itemValue, QStringList& types, const  ::StandardTypes& sTypes);
     void delTriplet(int& count, const QString& nameTemplate, int num);
+    // Other common helpers
+    QToolButton* addDelButton(int count, const QString& nameTemplate);
     void addTypeList(int count, const QString& nameTemplate, const QStringList& types, const ::StandardTypes& sTypes);
     inline QLineEdit* nameEditorByNum(int num);
     inline QLineEdit* editorByNum(const QString& nameTemplate, int num);

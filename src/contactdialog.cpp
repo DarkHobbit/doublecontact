@@ -23,6 +23,8 @@
 #include "globals.h"
 #include "phonetypedialog.h"
 
+#include <QDebug>
+
 // Spec.value for combined phone/mail types
 const QString mixedType = QObject::tr("mixed...");
 #define MIN_VISIBLE_NAMES 2
@@ -90,11 +92,14 @@ void ContactDialog::setData(const ContactItem& c)
     setWindowTitle(tr("Edit contact"));
     // Names
     ui->leFullName->setText(c.fullName);
+    qDebug() << "bef add";
     for (int i=0; i<c.names.count(); i++)
             addName(c.names[i]);
+qDebug() << "addName";
     // Phones
     for (int i=0; i<c.phones.count(); i++)
         addPhone(c.phones[i]);
+    qDebug() << "addPhone";
     // Emails
     for (int i=0; i<c.emails.count(); i++)
         addEmail(c.emails[i]);
@@ -117,9 +122,6 @@ void ContactDialog::setData(const ContactItem& c)
         QPixmap photo;
         photo.loadFromData(c.photo);
         ui->lbPhotoContent->setPixmap(photo);
-    }
-    else {
-        // TODO
     }
     // Other
     ui->edDescription->setPlainText(c.description);
@@ -171,10 +173,9 @@ void ContactDialog::getData(ContactItem& c)
         readAnniversary(i+1, di);
         c.anniversaries.push_back(di);
     }
-    // TODO anniversaries
     // Other
     c.description = ui->edDescription->toPlainText();
-    // TODO Photos, address
+    // TODO org, address
     c.calculateFields();
 }
 
@@ -198,10 +199,8 @@ void ContactDialog::addName(const QString& name)
         QLineEdit* le = new QLineEdit(this);
         le->setObjectName(QString("leName%1").arg(nameCount+1));
         ui->layNames->addWidget(le, nameCount-1, 0);
-        QToolButton* btnD = new QToolButton(this);
-        btnD->setObjectName(QString("btnDelName%1").arg(nameCount+1));
-        QPixmap icoDel(":/res/../img/16x16/del.png");
-        btnD->setIcon(icoDel);
+        // Delete button
+        QToolButton* btnD = addDelButton(nameCount, "Name");
         connect(btnD, SIGNAL(clicked()), this, SLOT(slotDelName()));
         ui->layNames->addWidget(btnD, nameCount-1, 1);
     }
@@ -257,10 +256,7 @@ void ContactDialog::addAnniversary(const DateItem &ann)
     connect(btnDet, SIGNAL(clicked()), this, SLOT(slotAnnDetails()));
     layAnniversaries->addWidget(btnDet, anniversaryCount, 1);
     // Delete button
-    QToolButton* btnD = new QToolButton(this);
-    btnD->setObjectName(QString("btnDelAnn%1").arg(anniversaryCount+1));
-    QPixmap icoDel(":/res/../img/16x16/del.png");
-    btnD->setIcon(icoDel);
+    QToolButton* btnD = addDelButton(anniversaryCount, "Ann");
     connect(btnD, SIGNAL(clicked()), this, SLOT(slotDelAnniversary()));
     layAnniversaries->addWidget(btnD, anniversaryCount, 2);
     anniversaryCount++;
@@ -289,10 +285,7 @@ void ContactDialog::addTriplet(int& count, QGridLayout* l, const QString& nameTe
         connect(cbT, SIGNAL(currentIndexChanged(const QString&)), this, SLOT(itemTypeChanged(const QString&)));
         l->addWidget(cbT, count, 1);
         // Delete button
-        QToolButton* btnD = new QToolButton(this);
-        btnD->setObjectName(QString("btnDel%1%2").arg(nameTemplate).arg(count+1));
-        QPixmap icoDel(":/res/../img/16x16/del.png");
-        btnD->setIcon(icoDel);
+        QToolButton* btnD = addDelButton(count, nameTemplate);
         connect(btnD, SIGNAL(clicked()), this, SLOT(slotDelTriplet()));
         l->addWidget(btnD, count, 2);
     }
@@ -355,6 +348,15 @@ void ContactDialog::delTriplet(int& count, const QString& nameTemplate, int num)
             delBtn->setObjectName(QString("btnDel%1%2").arg(nameTemplate).arg(i));
         }
     }
+}
+
+QToolButton* ContactDialog::addDelButton(int count, const QString &nameTemplate)
+{
+    QToolButton* btnD = new QToolButton(this);
+    btnD->setObjectName(QString("btnDel%1%2").arg(nameTemplate).arg(count+1));
+    QPixmap icoDel(":/res/../img/16x16/del.png");
+    btnD->setIcon(icoDel);
+    return btnD;
 }
 
 void ContactDialog::addTypeList(int count, const QString &nameTemplate,
