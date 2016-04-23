@@ -62,6 +62,11 @@ void ContactItem::clear()
     birthday.hasTime = false;
     anniversaries.clear();
     description.clear();
+    photoType.clear();
+    if (!photo.isEmpty())
+        photo.clear();
+    photoUrl.clear();
+    otherTags.clear();
     unknownTags.clear();
     originalFormat.clear();
     version.clear();
