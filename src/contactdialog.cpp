@@ -113,7 +113,7 @@ void ContactDialog::setData(const ContactItem& c)
     if (c.photoType=="URL") {
         // TODO
     }
-    else if (c.photoType.toUpper()=="JPEG") {
+    else if (c.photoType.toUpper()=="JPEG" || c.photoType.toUpper()=="PNG") {
         QPixmap photo;
         photo.loadFromData(c.photo);
         ui->lbPhotoContent->setPixmap(photo);

@@ -59,7 +59,7 @@ struct ContactItem {
     QList<DateItem> anniversaries;
     QString description;
     // Photo
-    QString photoType; // URL, JPEG or unsupported, but stored value
+    QString photoType; // URL, JPEG, PNG or unsupported, but stored value
     QByteArray photo;
     QString photoUrl;
     // TODO address
