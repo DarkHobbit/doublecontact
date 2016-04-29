@@ -23,8 +23,6 @@
 #include "globals.h"
 #include "phonetypedialog.h"
 
-#include <QDebug>
-
 // Spec.value for combined phone/mail types
 const QString mixedType = QObject::tr("mixed...");
 #define MIN_VISIBLE_NAMES 2
@@ -92,14 +90,11 @@ void ContactDialog::setData(const ContactItem& c)
     setWindowTitle(tr("Edit contact"));
     // Names
     ui->leFullName->setText(c.fullName);
-    qDebug() << "bef add";
     for (int i=0; i<c.names.count(); i++)
             addName(c.names[i]);
-qDebug() << "addName";
     // Phones
     for (int i=0; i<c.phones.count(); i++)
         addPhone(c.phones[i]);
-    qDebug() << "addPhone";
     // Emails
     for (int i=0; i<c.emails.count(); i++)
         addEmail(c.emails[i]);
@@ -349,6 +344,7 @@ void ContactDialog::delTriplet(int& count, const QString& nameTemplate, int num)
         }
     }
 }
+
 
 QToolButton* ContactDialog::addDelButton(int count, const QString &nameTemplate)
 {
