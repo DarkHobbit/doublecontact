@@ -195,8 +195,7 @@ void ContactDialog::addName(const QString& name)
         le->setObjectName(QString("leName%1").arg(nameCount+1));
         ui->layNames->addWidget(le, nameCount-1, 0);
         // Delete button
-        QToolButton* btnD = addDelButton(nameCount, "Name");
-        connect(btnD, SIGNAL(clicked()), this, SLOT(slotDelName()));
+        QToolButton* btnD = addDelButton(nameCount, "Name", SLOT(slotDelName()));
         ui->layNames->addWidget(btnD, nameCount-1, 1);
     }
     nameEditorByNum(nameCount+1)->setText(name);
@@ -251,8 +250,7 @@ void ContactDialog::addAnniversary(const DateItem &ann)
     connect(btnDet, SIGNAL(clicked()), this, SLOT(slotAnnDetails()));
     layAnniversaries->addWidget(btnDet, anniversaryCount, 1);
     // Delete button
-    QToolButton* btnD = addDelButton(anniversaryCount, "Ann");
-    connect(btnD, SIGNAL(clicked()), this, SLOT(slotDelAnniversary()));
+    QToolButton* btnD = addDelButton(anniversaryCount, "Ann", SLOT(slotDelAnniversary()));
     layAnniversaries->addWidget(btnD, anniversaryCount, 2);
     anniversaryCount++;
 }
@@ -280,8 +278,7 @@ void ContactDialog::addTriplet(int& count, QGridLayout* l, const QString& nameTe
         connect(cbT, SIGNAL(currentIndexChanged(const QString&)), this, SLOT(itemTypeChanged(const QString&)));
         l->addWidget(cbT, count, 1);
         // Delete button
-        QToolButton* btnD = addDelButton(count, nameTemplate);
-        connect(btnD, SIGNAL(clicked()), this, SLOT(slotDelTriplet()));
+        QToolButton* btnD = addDelButton(count, nameTemplate, SLOT(slotDelTriplet()));
         l->addWidget(btnD, count, 2);
     }
     if (!itemValue.isEmpty()) // Don't delete first text in interactive mode
@@ -345,13 +342,14 @@ void ContactDialog::delTriplet(int& count, const QString& nameTemplate, int num)
     }
 }
 
-
-QToolButton* ContactDialog::addDelButton(int count, const QString &nameTemplate)
+QToolButton* ContactDialog::addDelButton
+    (int count, const QString &nameTemplate, const char* method/*, QGridLayout* l, int pos*/)
 {
     QToolButton* btnD = new QToolButton(this);
     btnD->setObjectName(QString("btnDel%1%2").arg(nameTemplate).arg(count+1));
     QPixmap icoDel(":/res/../img/16x16/del.png");
     btnD->setIcon(icoDel);
+    connect(btnD, SIGNAL(clicked()), this, method);
     return btnD;
 }
 
