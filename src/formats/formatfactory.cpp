@@ -35,6 +35,8 @@ IFormat *FormatFactory::createObject(const QString &url)
         return new VCFFile();
     // ...here add detect() for new format
     // Sad but true
-    QMessageBox::critical(0, QObject::tr("Error"), QObject::tr("Unknown file format"));
+    QMessageBox::critical(0,
+        QObject::tr("Error"),
+        QObject::tr("Unknown file format:\n%1").arg(url));
     return 0;
 }

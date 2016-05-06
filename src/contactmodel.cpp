@@ -44,10 +44,11 @@ bool ContactModel::changed()
 
 void ContactModel::setVisibleColumns(const ContactColumnList& colNames)
 {
+    beginResetModel();
     visibleColumns.clear();
     foreach (const ContactColumn& col, colNames)
         visibleColumns.push_back(col);
-    reset();
+    endResetModel();
 }
 
 Qt::ItemFlags ContactModel::flags(const QModelIndex &) const
@@ -104,6 +105,7 @@ bool ContactModel::open(const QString& path)
     if (path.isEmpty()) return false;
     IFormat* format = factory.createObject(path);
     if (!format) return false;
+    beginResetModel();
     format->importRecords(path, items, false);
     _source = path;
     if (!format->errors().isEmpty()) {
@@ -113,7 +115,7 @@ bool ContactModel::open(const QString& path)
         delete w;
     }
     delete format;
-    reset();
+    endResetModel();
     _changed = false;
     return true;
 }
@@ -129,9 +131,10 @@ bool ContactModel::save() // false if user cancel
 void ContactModel::close()
 {
     _changed = false;
+    beginResetModel();
     _source.clear();
     items.clear();
-    reset();
+    endResetModel();
 }
 
 void ContactModel::addRow(const ContactItem& c)

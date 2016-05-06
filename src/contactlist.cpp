@@ -115,5 +115,5 @@ TagValue::TagValue(const QString& _tag, const QString& _value)
     :tag(_tag), value(_value)
 {}
 
-Phone::StandardTypes/*::StandardTypes*/ Phone::standardTypes;
-Email::StandardTypes/*::StandardTypes*/ Email::standardTypes;
+Phone::StandardTypes Phone::standardTypes;
+Email::StandardTypes Email::standardTypes;
