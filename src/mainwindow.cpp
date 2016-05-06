@@ -30,6 +30,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->tvLeft->setModel(modLeft);
     modRight = new ContactModel(this, tr("New contact list 2"));
     ui->tvRight->setModel(modRight);
+    // Status bar
+    lbMode = new QLabel(0);
+    statusBar()->addWidget(lbMode);
     // Settings
     setDlg = new SettingsDialog(0);
     setDlg->readConfig();
@@ -63,6 +66,7 @@ MainWindow::MainWindow(QWidget *parent) :
         selectedModel->open(setDlg->lastPath());
     ui->action_Two_panels->setChecked(setDlg->showTwoPanels());
     updateHeaders();
+    updateMode();
     on_action_Two_panels_toggled(ui->action_Two_panels->isChecked());
 }
 
@@ -109,6 +113,7 @@ void MainWindow::on_action_Two_panels_toggled(bool showTwoPanels)
     }
     setButtonsAccess();
     setDlg->setShowTwoPanels(showTwoPanels);
+    updateMode();
 }
 
 void MainWindow::on_btnExit_clicked()
@@ -315,12 +320,12 @@ void MainWindow::setButtonsAccess()
 
 void MainWindow::on_tvLeft_clicked(const QModelIndex&)
 {
-    setButtonsAccess(); // TODO focusChanged not works in some cases
+    setButtonsAccess();
 }
 
 void MainWindow::on_tvRight_clicked(const QModelIndex&)
 {
-    setButtonsAccess(); // TODO focusChanged not works in some cases
+    setButtonsAccess();
 }
 
 void MainWindow::updateHeaders()
@@ -329,7 +334,15 @@ void MainWindow::updateHeaders()
     updateListHeader(dynamic_cast<ContactModel*>(ui->tvRight->model()), ui->lbRight);
     setWindowTitle(selectedModel->source().isEmpty() ?
         tr("Double Contact") :
-        tr("Double Contact - %1").arg(selectedHeader->text()));
+                       tr("Double Contact - %1").arg(selectedHeader->text()));
+}
+
+void MainWindow::updateMode()
+{
+    QString sm = tr("Mode: ");
+    sm += (setDlg->showTwoPanels() ? tr("two panels") : tr("one panel")) + ", ";
+    sm += tr("simple editing"); // TODO for manual search, auto compare, duplicate search
+    lbMode->setText(sm);
 }
 
 ContactModel* MainWindow::oppositeModel()

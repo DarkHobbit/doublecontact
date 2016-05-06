@@ -79,10 +79,12 @@ private:
     // End of potentially unsafe pointers
     QModelIndexList selection;
     SettingsDialog* setDlg;
+    QLabel* lbMode;
     void selectView(QTableView* view);
     bool checkSelection();
     void updateListHeader(ContactModel* model, QLabel* header);
     void updateHeaders();
+    void updateMode();
     inline ContactModel* oppositeModel();
     void askSaveChanges(QCloseEvent *event, QTableView* view);
     void updateConfig();
