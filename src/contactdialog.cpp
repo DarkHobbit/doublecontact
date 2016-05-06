@@ -118,6 +118,9 @@ void ContactDialog::setData(const ContactItem& c)
         photo.loadFromData(c.photo);
         ui->lbPhotoContent->setPixmap(photo);
     }
+    // Work
+    ui->leOrganization->setText(c.organization);
+    ui->leTitle->setText(c.title);
     // Other
     ui->edDescription->setPlainText(c.description);
     ui->lbOriginalFormatValue->setText(c.originalFormat);
@@ -168,6 +171,10 @@ void ContactDialog::getData(ContactItem& c)
         readAnniversary(i+1, di);
         c.anniversaries.push_back(di);
     }
+    // TODO upload photos
+    // Work
+    c.organization = ui->leOrganization->text();
+    c.title = ui->leTitle->text();
     // Other
     c.description = ui->edDescription->toPlainText();
     // TODO org, address

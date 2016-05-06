@@ -66,6 +66,8 @@ void ContactItem::clear()
     if (!photo.isEmpty())
         photo.clear();
     photoUrl.clear();
+    organization.clear();
+    title.clear();
     otherTags.clear();
     unknownTags.clear();
     originalFormat.clear();

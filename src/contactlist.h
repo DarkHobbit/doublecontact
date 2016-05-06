@@ -62,6 +62,9 @@ struct ContactItem {
     QString photoType; // URL, JPEG, PNG or unsupported, but stored value
     QByteArray photo;
     QString photoUrl;
+    // Work
+    QString organization, title;
+    // TODO role, logo?
     // TODO address
     // Format internals
     QString originalFormat;

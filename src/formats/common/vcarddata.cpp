@@ -135,7 +135,11 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                         errors << QObject::tr("Unknown type at line %1").arg(line+1);
                 }
             }
-            // TODO ADR, ORG...
+            else if (tag=="ORG")
+                item.organization = decodeValue(vValue[0], encoding, charSet, errors);
+            else if (tag=="TITLE")
+                item.title = decodeValue(vValue[0], encoding, charSet, errors);
+            // TODO ADR...
 
             // Known but un-editing tags
             else if (tag=="LABEL") { // TODO other from rfc 2426
