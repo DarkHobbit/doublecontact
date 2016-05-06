@@ -59,7 +59,7 @@ private slots:
     void on_btnSwapNames_clicked();
     void on_tvLeft_clicked(const QModelIndex&);
     void on_tvRight_clicked(const QModelIndex&);
-    void on_action_Sort_triggered();
+    void on_action_Sort_toggled(bool needSort);
     void on_btnSort_clicked();
     void on_action_Open_triggered();
     void on_action_Save_triggered();

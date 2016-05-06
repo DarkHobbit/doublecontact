@@ -267,14 +267,17 @@ void MainWindow::on_btnCompare_clicked()
 }
 
 // Sort List
-void MainWindow::on_action_Sort_triggered()
+void MainWindow::on_action_Sort_toggled(bool needSort)
 {
     // TODO
+
+
+    updateMode();
 }
 
 void MainWindow::on_btnSort_clicked()
 {
-    on_action_Sort_triggered();
+    ui->action_Sort->toggle();
 }
 
 void MainWindow::selectView(QTableView* view)
@@ -341,6 +344,8 @@ void MainWindow::updateMode()
 {
     QString sm = tr("Mode: ");
     sm += (setDlg->showTwoPanels() ? tr("two panels") : tr("one panel")) + ", ";
+    sm += (ui->action_Sort->isChecked() ? tr("sorted") : tr("not sorted")) + ", ";
+    // TODO save sorting state in settings and restore it!
     sm += tr("simple editing"); // TODO for manual search, auto compare, duplicate search
     lbMode->setText(sm);
 }
