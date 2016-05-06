@@ -13,6 +13,7 @@
 
 #include <QCloseEvent>
 #include <QFileDialog>
+#include <QFileInfo>
 #include <QItemSelectionModel>
 #include <QMessageBox>
 
@@ -58,7 +59,7 @@ MainWindow::MainWindow(QWidget *parent) :
         }
     }
     // Previous session file data
-    else if (setDlg->openLastFilesAtStartup() && QFile(setDlg->lastPath()).exists())
+    else if (setDlg->openLastFilesAtStartup() && QFile(setDlg->lastPath()).exists() && !(QFileInfo(setDlg->lastPath()).isDir()))
         selectedModel->open(setDlg->lastPath());
     ui->action_Two_panels->setChecked(setDlg->showTwoPanels());
     updateHeaders();
@@ -121,8 +122,11 @@ void MainWindow::on_action_Open_triggered()
     QString selectedFilter;
     QString path = QFileDialog::getOpenFileName(0, tr("Open contact file"),
         setDlg->lastPath(), FormatFactory::supportedFilters().join(";;"), &selectedFilter);
-    selectedModel->open(path);
-    setDlg->setLastPath(path);
+    if (!path.isEmpty()) {
+        selectedModel->open(path);
+        setDlg->setLastPath(path);
+        updateHeaders();
+    }
 }
 
 // Save
