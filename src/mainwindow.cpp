@@ -77,7 +77,7 @@ void MainWindow::closeEvent(QCloseEvent *event)
     askSaveChanges(event, ui->tvRight);
 }
 
-void MainWindow::showEvent(QShowEvent *event)
+void MainWindow::showEvent(QShowEvent*)
 {
     updateConfig();
 }

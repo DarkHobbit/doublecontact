@@ -71,7 +71,7 @@ void ContactDialog::resizeEvent(QResizeEvent *event)
     ui->twUnknownTags->setColumnWidth(1, ui->twUnknownTags->width()*0.5);
 }
 
-void ContactDialog::showEvent(QShowEvent *event)
+void ContactDialog::showEvent(QShowEvent*)
 {
     resizeEvent(0);
 }
@@ -478,7 +478,7 @@ void ContactDialog::slotDelAnniversary()
     }
 }
 
-void ContactDialog::on_twContact_currentChanged(int index)
+void ContactDialog::on_twContact_currentChanged(int)
 {
     resizeEvent(0);
 }

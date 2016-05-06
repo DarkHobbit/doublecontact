@@ -41,7 +41,7 @@ public:
 protected:
     void changeEvent(QEvent *e);
     virtual void resizeEvent(QResizeEvent* event);
-    virtual void showEvent(QShowEvent* event);
+    virtual void showEvent(QShowEvent*);
 private:
     Ui::ContactDialog *ui;
     QGridLayout* layAnniversaries;
@@ -75,7 +75,7 @@ private slots:
     void on_btnBDayDetails_clicked();
     void slotAnnDetails();
     void slotDelAnniversary();
-    void on_twContact_currentChanged(int index);
+    void on_twContact_currentChanged(int);
 };
 
 #endif // CONTACTDIALOG_H

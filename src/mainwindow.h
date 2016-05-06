@@ -35,7 +35,7 @@ public:
     ~MainWindow();
 protected:
     virtual void closeEvent(QCloseEvent* event);
-    virtual void showEvent(QShowEvent* event);
+    virtual void showEvent(QShowEvent*);
 private slots:
     void on_action_Other_panel_triggered();
     void setButtonsAccess();

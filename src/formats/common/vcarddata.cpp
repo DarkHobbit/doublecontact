@@ -174,7 +174,7 @@ QString VCardData::decodeValue(const QString &src, const QString &encoding, cons
 {
     QTextCodec *codec; // for values
     // Charset
-    if (charSet.isEmpty()) // TODO not tested on Linux
+    if (charSet.isEmpty())
         codec = QTextCodec::codecForName("UTF-8");
     else
         codec = QTextCodec::codecForName(charSet.toLocal8Bit());
@@ -190,7 +190,8 @@ QString VCardData::decodeValue(const QString &src, const QString &encoding, cons
         bool ok;
         for (int i=0; i<src.length(); i++) {
             if (src[i]=='=') {
-                if (src[i+1]==' ') i++; // sometime bad space after = appears
+                if (i<src.length()-1)
+                    if (src[i+1]==' ') i++; // sometime bad space after = appears
                 const quint8 code = src.mid(i+1, 2).toInt(&ok, 16);
                 res.append(code);
                 i += 2;
