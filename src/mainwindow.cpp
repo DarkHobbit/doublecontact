@@ -88,6 +88,7 @@ void MainWindow::anyFocusChanged(QWidget *, QWidget *now)
     if ((now==ui->tvLeft)||(now==ui->tvRight))
         selectView(dynamic_cast<QTableView*>(now));
     setButtonsAccess();
+    updateHeaders();
 }
 
 void MainWindow::on_actionE_xit_triggered()
@@ -376,7 +377,6 @@ void MainWindow::on_action_Other_panel_triggered()
     else
         selectView(ui->tvLeft);
     selectedView->setFocus();
-    updateHeaders();
 }
 
 void MainWindow::on_actionSettings_triggered()
