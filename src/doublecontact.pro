@@ -20,7 +20,8 @@ SOURCES += main.cpp \
     logwindow.cpp \
     settingsdialog.cpp \
     globals.cpp \
-    datedetailsdialog.cpp
+    datedetailsdialog.cpp \
+    contactsorterfilter.cpp
 HEADERS += mainwindow.h \
     contactmodel.h \
     contactlist.h \
@@ -34,7 +35,8 @@ HEADERS += mainwindow.h \
     logwindow.h \
     settingsdialog.h \
     globals.h \
-    datedetailsdialog.h
+    datedetailsdialog.h \
+    contactsorterfilter.h
 FORMS += mainwindow.ui \
     contactdialog.ui \
     phonetypedialog.ui \

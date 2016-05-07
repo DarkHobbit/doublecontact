@@ -27,9 +27,13 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     modLeft = new ContactModel(this, tr("New contact list"));
-    ui->tvLeft->setModel(modLeft);
     modRight = new ContactModel(this, tr("New contact list 2"));
-    ui->tvRight->setModel(modRight);
+    proxyLeft  = new ContactSorterFilter(this);
+    proxyRight  = new ContactSorterFilter(this);
+    proxyLeft->setSourceModel(modLeft);
+    proxyRight->setSourceModel(modRight);
+    ui->tvLeft->setModel(proxyLeft);
+    ui->tvRight->setModel(proxyRight);
     // Status bar
     lbMode = new QLabel(0);
     statusBar()->addWidget(lbMode);
@@ -78,8 +82,8 @@ MainWindow::~MainWindow()
 
 void MainWindow::closeEvent(QCloseEvent *event)
 {
-    askSaveChanges(event, ui->tvLeft);
-    askSaveChanges(event, ui->tvRight);
+    askSaveChanges(event, modLeft);
+    askSaveChanges(event, modRight);
 }
 
 void MainWindow::showEvent(QShowEvent*)
@@ -269,9 +273,8 @@ void MainWindow::on_btnCompare_clicked()
 // Sort List
 void MainWindow::on_action_Sort_toggled(bool needSort)
 {
-    // TODO
-
-
+    ui->tvLeft->setSortingEnabled(needSort);
+    ui->tvRight->setSortingEnabled(needSort);
     updateMode();
 }
 
@@ -283,8 +286,9 @@ void MainWindow::on_btnSort_clicked()
 void MainWindow::selectView(QTableView* view)
 {
     selectedView = view;
-    selectedModel = dynamic_cast<ContactModel*>(selectedView->model());
-    selectedHeader = (selectedView==ui->tvLeft ? ui->lbLeft : ui->lbRight);
+    bool isLeft = selectedView==ui->tvLeft;
+    selectedModel = (isLeft ? modLeft : modRight);
+    selectedHeader = (isLeft ? ui->lbLeft : ui->lbRight);
 }
 
 bool MainWindow::checkSelection()
@@ -333,8 +337,8 @@ void MainWindow::on_tvRight_clicked(const QModelIndex&)
 
 void MainWindow::updateHeaders()
 {    
-    updateListHeader(dynamic_cast<ContactModel*>(ui->tvLeft->model()), ui->lbLeft);
-    updateListHeader(dynamic_cast<ContactModel*>(ui->tvRight->model()), ui->lbRight);
+    updateListHeader(modLeft, ui->lbLeft);
+    updateListHeader(modRight, ui->lbRight);
     setWindowTitle(selectedModel->source().isEmpty() ?
         tr("Double Contact") :
                        tr("Double Contact - %1").arg(selectedHeader->text()));
@@ -352,13 +356,11 @@ void MainWindow::updateMode()
 
 ContactModel* MainWindow::oppositeModel()
 {
-    return dynamic_cast<ContactModel*>
-            ((selectedView==ui->tvLeft) ? ui->tvRight->model() : ui->tvLeft->model());
+    return (selectedView==ui->tvLeft) ? modRight : modLeft;
 }
 
-void MainWindow::askSaveChanges(QCloseEvent *event, QTableView *view)
+void MainWindow::askSaveChanges(QCloseEvent *event, ContactModel *model)
 {
-    ContactModel* model = dynamic_cast<ContactModel*>(view->model());
     if (!model->changed())
         return;
     int res = QMessageBox::question(0, tr("Confirmation"),

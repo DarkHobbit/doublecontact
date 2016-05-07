@@ -20,6 +20,7 @@
 #include <QTableView>
 
 #include "contactmodel.h"
+#include "contactsorterfilter.h"
 #include "settingsdialog.h"
 
 namespace Ui {
@@ -76,6 +77,7 @@ private:
     QTableView* selectedView;
     ContactModel* selectedModel;
     QLabel* selectedHeader;
+    ContactSorterFilter *proxyLeft, *proxyRight;
     // End of potentially unsafe pointers
     QModelIndexList selection;
     SettingsDialog* setDlg;
@@ -86,7 +88,7 @@ private:
     void updateHeaders();
     void updateMode();
     inline ContactModel* oppositeModel();
-    void askSaveChanges(QCloseEvent *event, QTableView* view);
+    void askSaveChanges(QCloseEvent *event, ContactModel *model);
     void updateConfig();
 };
 
