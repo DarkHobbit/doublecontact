@@ -17,15 +17,19 @@ class SettingsDialog : public QDialog
 public:
     explicit SettingsDialog(QWidget *parent = 0);
     ~SettingsDialog();
+    // Common configuration, managed by dialog
     bool readConfig();
     bool writeConfig();
+    ContactColumnList columnNames();
+    // Separate settings, managed by main window commands
     QString lastPath();
     void setLastPath(const QString& path);
     bool showTwoPanels();
     void setShowTwoPanels(bool value);
     bool openLastFilesAtStartup();
     void setOpenLastFilesAtStartup();
-    ContactColumnList columnNames();
+    bool sortingEnabled();
+    void setSortingEnabled(bool value);
 private slots:
     void on_cbSurname_toggled(bool checked);
     void on_btnAddCol_clicked();

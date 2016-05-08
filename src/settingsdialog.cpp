@@ -106,6 +106,17 @@ bool SettingsDialog::openLastFilesAtStartup()
     return ui->cbOpenLastFilesAtStartup->isChecked();
 }
 
+bool SettingsDialog::sortingEnabled()
+{
+    return settings.value("General/SortingEnabled", false).toBool();
+}
+
+void SettingsDialog::setSortingEnabled(bool value)
+{
+    settings.setValue("General/SortingEnabled", value);
+
+}
+
 ContactColumnList SettingsDialog::columnNames()
 {
     ContactColumnList res;

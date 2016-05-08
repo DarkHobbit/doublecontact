@@ -68,7 +68,10 @@ MainWindow::MainWindow(QWidget *parent) :
     // Previous session file data
     else if (setDlg->openLastFilesAtStartup() && QFile(setDlg->lastPath()).exists() && !(QFileInfo(setDlg->lastPath()).isDir()))
         selectedModel->open(setDlg->lastPath());
+    // Show data
     ui->action_Two_panels->setChecked(setDlg->showTwoPanels());
+    ui->action_Sort->setChecked(setDlg->sortingEnabled());
+    setSorting(setDlg->sortingEnabled());
     updateHeaders();
     updateMode();
     on_action_Two_panels_toggled(ui->action_Two_panels->isChecked());
@@ -273,8 +276,8 @@ void MainWindow::on_btnCompare_clicked()
 // Sort List
 void MainWindow::on_action_Sort_toggled(bool needSort)
 {
-    ui->tvLeft->setSortingEnabled(needSort);
-    ui->tvRight->setSortingEnabled(needSort);
+    setSorting(needSort);
+    setDlg->setSortingEnabled(needSort);
     updateMode();
 }
 
@@ -299,6 +302,12 @@ bool MainWindow::checkSelection()
         return false;
     }
     else return true;
+}
+
+void MainWindow::setSorting(bool needSort)
+{
+    ui->tvLeft->setSortingEnabled(needSort);
+    ui->tvRight->setSortingEnabled(needSort);
 }
 
 void MainWindow::updateListHeader(ContactModel *model, QLabel *header)

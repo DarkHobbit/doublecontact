@@ -84,6 +84,7 @@ private:
     QLabel* lbMode;
     void selectView(QTableView* view);
     bool checkSelection();
+    void setSorting(bool needSort);
     void updateListHeader(ContactModel* model, QLabel* header);
     void updateHeaders();
     void updateMode();
