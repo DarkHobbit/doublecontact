@@ -296,12 +296,17 @@ void MainWindow::selectView(QTableView* view)
 
 bool MainWindow::checkSelection()
 {
-    selection = selectedView->selectionModel()->selectedRows();
-    if (selection.count()==0) {
+    QModelIndexList proxySelection = selectedView->selectionModel()->selectedRows();
+    if (proxySelection.count()==0) {
         QMessageBox::critical(0, tr("Error"), tr("Record not selected"));
         return false;
     }
-    else return true;
+    // If proxy models works...
+    ContactSorterFilter* selectedProxy = (selectedView==ui->tvLeft) ? proxyLeft : proxyRight;
+    selection.clear();
+    foreach(QModelIndex index, proxySelection)
+        selection << selectedProxy->mapToSource(index);
+    return true;
 }
 
 void MainWindow::setSorting(bool needSort)
