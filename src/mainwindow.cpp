@@ -30,6 +30,8 @@ MainWindow::MainWindow(QWidget *parent) :
     modRight = new ContactModel(this, tr("New contact list 2"));
     proxyLeft  = new ContactSorterFilter(this);
     proxyRight  = new ContactSorterFilter(this);
+    /*ui->tvLeft->setModel(modLeft);
+    ui->tvRight->setModel(modRight);*/
     proxyLeft->setSourceModel(modLeft);
     proxyRight->setSourceModel(modRight);
     ui->tvLeft->setModel(proxyLeft);
@@ -313,6 +315,9 @@ void MainWindow::setSorting(bool needSort)
 {
     ui->tvLeft->setSortingEnabled(needSort);
     ui->tvRight->setSortingEnabled(needSort);
+    int sortColumn = needSort ? 0 : -1;
+    proxyLeft->sort(sortColumn);
+    proxyRight->sort(sortColumn);
 }
 
 void MainWindow::updateListHeader(ContactModel *model, QLabel *header)
