@@ -147,13 +147,21 @@ void MainWindow::on_action_Open_triggered()
 // Save
 void MainWindow::on_action_Save_triggered()
 {
-    selectedModel->save();
+    // TODO check if list was loaded from file, else call save as
+    selectedModel->saveAs(selectedModel->source());
 }
 
 // Save as
 void MainWindow::on_actionSave_as_triggered()
 {
-    // TODO
+    QString selectedFilter;
+    QString path = QFileDialog::getSaveFileName(0, tr("Save contact file"),
+        setDlg->lastPath(), FormatFactory::supportedFilters().join(";;"), &selectedFilter);
+    if (!path.isEmpty()) {
+        selectedModel->saveAs(path);
+        setDlg->setLastPath(path);
+        updateHeaders();
+    }
 }
 
 // Add
@@ -323,7 +331,10 @@ void MainWindow::setSorting(bool needSort)
 void MainWindow::updateListHeader(ContactModel *model, QLabel *header)
 {
     QString sChanged = model->changed() ? "*" : "";
-    header->setText(sChanged+model->source());
+    QString src = model->source();
+    if (src.contains(QDir::separator()))
+        src = src.mid(src.lastIndexOf(QDir::separator())+1);
+    header->setText(sChanged+src);
 }
 
 void MainWindow::setButtonsAccess()
@@ -387,7 +398,7 @@ void MainWindow::askSaveChanges(QCloseEvent *event, ContactModel *model)
             QMessageBox::Yes, QMessageBox::No, QMessageBox::Cancel);
     switch (res) {
     case QMessageBox::Yes:
-        if (model->save())
+        if (model->saveAs(model->source()))
             event->accept();
         else
             event->ignore();

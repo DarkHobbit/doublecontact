@@ -33,7 +33,6 @@ ContactModel::~ContactModel()
 
 QString ContactModel::source()
 {
-    // TODO may be return short filename, if source is full filepath
     return _source;
 }
 
@@ -124,12 +123,23 @@ bool ContactModel::open(const QString& path)
     return true;
 }
 
-bool ContactModel::save() // false if user cancel
+bool ContactModel::saveAs(const QString& path)
 {
-    QMessageBox::information(0, "Debug", "Under construction");
-    // TODO
+    if (path.isEmpty()) return false;
+    IFormat* format = factory.createObject(path);
+    if (!format) return false;
+    bool res = format->exportRecords(path, items);
+    if (res)
+        _source = path;
+    if (!format->errors().isEmpty()) {
+        LogWindow* w = new LogWindow(0);
+        w->setData(path, items, format->errors());
+        w->exec();
+        delete w;
+    }
+    delete format;
     _changed = false;
-    return true;
+    return res;
 }
 
 void ContactModel::close()

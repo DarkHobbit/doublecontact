@@ -14,6 +14,8 @@
 #include <QTextCodec>
 #include "udxfile.h"
 
+#include <QMessageBox> //===>
+
 UDXFile::UDXFile()
     :FileFormat()
 {
@@ -156,5 +158,6 @@ bool UDXFile::importRecords(const QString &url, ContactList &list, bool append)
 
 bool UDXFile::exportRecords(const QString &url, const ContactList &list)
 {
+    QMessageBox::information(0, "Debug", "UDX save is under construction");
     // TODO
 }

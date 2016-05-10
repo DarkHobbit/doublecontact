@@ -16,6 +16,8 @@
 
 #include "../common/vcarddata.h"
 
+#include <QMessageBox> //===>
+
 VCFFile::VCFFile()
     :FileFormat()
 {
@@ -59,5 +61,6 @@ bool VCFFile::importRecords(const QString &url, ContactList &list, bool append)
 
 bool VCFFile::exportRecords(const QString &url, const ContactList &list)
 {
+    QMessageBox::information(0, "Debug", "VSF save is under construction");
     // TODO
 }

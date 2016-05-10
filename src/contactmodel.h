@@ -38,7 +38,7 @@ public:
     QVariant data(const QModelIndex &index, int role) const;
     // Save and open methods
     bool open(const QString& path);
-    bool save();
+    bool saveAs(const QString& path);
     void close();
     // Contact operation methods
     void addRow(const ContactItem& c);
