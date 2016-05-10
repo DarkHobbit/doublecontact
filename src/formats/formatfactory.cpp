@@ -13,10 +13,17 @@ FormatFactory::FormatFactory()
 QStringList FormatFactory::supportedFilters()
 {
     QStringList allTypes;
-    // Known formats
+    // Known formats (all supported)
+    QString allSupported;
+    allSupported += "*." + VCFFile::supportedExtensions().join(" *.");
+    allSupported += "*." + UDXFile::supportedExtensions().join(" *.");
+    // ...here add supportedExtensions() for new format
+    allTypes << QObject::tr("All supported files (%1)").arg(allSupported);
+    // Known formats (separate)
     allTypes << VCFFile::supportedFilters();
     allTypes << UDXFile::supportedFilters();
-    // ...here add extensions for new format
+    // ...here add supportedFilters() for new format
+    allTypes << QObject::tr("All files (*.*)");
     return allTypes;
 }
 
@@ -33,7 +40,7 @@ IFormat *FormatFactory::createObject(const QString &url)
         return new VCFFile();
     if (UDXFile::supportedExtensions().contains(ext, Qt::CaseInsensitive))
         return new UDXFile();
-    // ...here add extensions for new format
+    // ...here add supportedExtensions() for new format
     // Known formats with non-standard extension
     if (VCFFile::detect(url))
         return new VCFFile();
