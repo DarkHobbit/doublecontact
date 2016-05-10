@@ -67,6 +67,7 @@ struct ContactItem {
     // TODO role, logo?
     // TODO address
     // Format internals
+    QString id; // optional record unique id (udx Sequence, vcf X-IRMC-LUID, etc)
     QString originalFormat;
     QString version;
     QList<TagValue> otherTags;   // Known but un-editing tags

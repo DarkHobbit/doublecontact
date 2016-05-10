@@ -94,7 +94,7 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                     errors << QObject::tr("Missing phone type at line %1").arg(line+1);
                     phone.tTypes << "pref";
                 }
-                phone.tTypes = types;
+                else phone.tTypes = types;
                 item.phones.push_back(phone);
             }
             else if (tag=="EMAIL") {

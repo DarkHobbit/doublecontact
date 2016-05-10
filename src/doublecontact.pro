@@ -21,7 +21,8 @@ SOURCES += main.cpp \
     settingsdialog.cpp \
     globals.cpp \
     datedetailsdialog.cpp \
-    contactsorterfilter.cpp
+    contactsorterfilter.cpp \
+    formats/files/udxfile.cpp
 HEADERS += mainwindow.h \
     contactmodel.h \
     contactlist.h \
@@ -36,7 +37,8 @@ HEADERS += mainwindow.h \
     settingsdialog.h \
     globals.h \
     datedetailsdialog.h \
-    contactsorterfilter.h
+    contactsorterfilter.h \
+    formats/files/udxfile.h
 FORMS += mainwindow.ui \
     contactdialog.ui \
     phonetypedialog.ui \
