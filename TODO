@@ -1,0 +1,47 @@
+This file contains English and Russian (UTF-8) issues. Sorry for this mixing, it's alpha.
+You can contact me at pub@zvyozdochkin.ru.
+
+Ирина
+* search/filter
+* panels compare/synchronization (and merging, probably make unified merging VV)
+* в групповые операции - разделение фамилии и имени и разделение инициалов (рядом с обменом имён). Возможно, тж. сделать разделение имён в контекстном меню.
+* language selection support, russian and ukrainian language files (Rosetta?)
+* см. все TODO в udxfile.cpp
+* check udx support (по итогам)
+
+Я
+* id support in vcf
+* postal address support
+* vcf save (and change status to alpha)
+
+0.1:
+* vcf directory
+* photo editing (replace) support (and change status to beta)
+* export - split contact mode by phones for SIM ??? Ирине?
+* export delete time from bday mode if receiver not support it
+* separate other and unknown tags
+* settings - fonts, remove "treat name n as surname"
+* experimental csv support (full write)
+* проверить, как работает на charset, отличных от utf-8 (codec->toUnicode, у меня везде toLocal8Bit, а это, вероятно, неправильно)
+* см. все TODO в проекте
+* проверить на всех доступных телефонах и андроидах
+* проверить на RFC
+* рус. описание (особ. отображение, Generic Name, операции редактирования, про сплиттинг и др., багрепортинг)
+* англ. описание?
+
+* duplicate search (and merging, probably make unified merging ^^)
+
+0.2:
+* full csv support
+
+0.3:
+* network export/import
+
+0.4:
+* integration with mail clients, import contacts from mailboxes
+* export birthday in calendarzzz
+
+* mobile version???
+
+
+
