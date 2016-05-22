@@ -215,8 +215,7 @@ bool UDXFile::exportRecords(const QString &url, ContactList &list)
                 item.id = QString::number(++maxSeq);
             if (seqs.contains(currentID)) { // duplicate?
                 _errors << QObject::tr("Warning: contact %1, duplicate id %2 changed to %3")
-                     .arg(item.names.join(" ")) // TODO implement and use ContactItem::visibleName for people and orgs!!! And use it in ContactModel::data
-                     .arg(currentID).arg(++maxSeq);
+                     .arg(item.visibleName).arg(currentID).arg(++maxSeq);
                 item.id = QString::number(maxSeq);
             }
             seqs.insert(item.id.toInt());
@@ -254,8 +253,7 @@ bool UDXFile::exportRecords(const QString &url, ContactList &list)
             else {
                 addElement(vCardField, "TEL", ph.number);
                 _errors << QObject::tr("Warning: contact %1, unknown tel type:\n%2\n saved as cellular")
-                     .arg(item.names.join(" ")) // TODO implement and use ContactItem::visibleName for people and orgs!!! And use it in ContactModel::data
-                     .arg(ph.tTypes.join(";"));
+                     .arg(item.visibleName).arg(ph.tTypes.join(";"));
             }
         }
         // Emails
@@ -274,8 +272,7 @@ bool UDXFile::exportRecords(const QString &url, ContactList &list)
             addElement(vCardField, "BDAY", item.birthday.value.toString("yyyyMMdd"));
         if (item.birthday.hasTime)
             _errors << QObject::tr("Warning: contact %1 has time (%2) in birthday, not supported in UDX")
-                 .arg(item.names.join(" ")) // TODO implement and use ContactItem::visibleName for people and orgs!!! And use it in ContactModel::data
-                 .arg(item.birthday.value.toString("hh:mm:ss"));
+                 .arg(item.visibleName).arg(item.birthday.value.toString("hh:mm:ss"));
         // TODO warning if item contains addresses, photos and other udx-unsupported things
     }
     QString content = toString(0);

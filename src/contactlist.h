@@ -73,10 +73,11 @@ struct ContactItem {
     QList<TagValue> otherTags;   // Known but un-editing tags
     QList<TagValue> unknownTags; // specific tags for any file format, i.e. vcf
     // Calculated fields for higher perfomance
-    QString prefPhone, prefEmail;
+    QString visibleName, prefPhone, prefEmail;
     void clear();
     bool swapNames();
     void calculateFields();
+    QString formatNames();
 };
 
 class ContactList : public QList<ContactItem>

@@ -20,7 +20,8 @@
 
 // Visible columns
 enum ContactColumn {
-  ccFirstName, ccSecondName, ccFullName, // names
+  ccFirstName, ccLastName, ccMiddleName, // names
+  ccFullName, ccGenericName, // formatted names
   ccPhone, // first or preferred phone
   ccEMail, // first or preferred email
   ccLast

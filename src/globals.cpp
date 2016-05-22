@@ -17,9 +17,11 @@
 
 // Visible columns headers
 const QString contactColumnHeaders[ccLast] = {
-    QObject::tr("Name 1"),
-    QObject::tr("Name 2"),
+    QObject::tr("Firstname"),
+    QObject::tr("Lastname"),
+    QObject::tr("Middlename"),
     QObject::tr("Full name"),
+    QObject::tr("Generic name"),
     QObject::tr("Phone"),
     QObject::tr("eMail")
 };

@@ -22,8 +22,8 @@ ContactModel::ContactModel(QObject *parent, const QString& source) :
 {
     // Default visible columns
     visibleColumns.clear();
+    visibleColumns.push_back(ccLastName);
     visibleColumns.push_back(ccFirstName);
-    visibleColumns.push_back(ccSecondName);
     visibleColumns.push_back(ccPhone);
 }
 
@@ -84,13 +84,10 @@ QVariant ContactModel::data(const QModelIndex &index, int role) const
         // Detect column
         ContactColumn col = visibleColumns[index.column()];
         switch (col) {
-            case ccFirstName:  if (c.names.count()>0) return c.names[0]; else return QVariant();
-            case ccSecondName: if (c.names.count()>1) return c.names[1]; else return QVariant();
-            case ccFullName: {
-                // TODO if full name is empty, fill it from names or organization or else (see Tim Internetov at phone)
-                // TODO also check, how dc read names, if first name is empty
-                return c.fullName;
-            }
+            case ccFirstName:  if (c.names.count()>1) return c.names[1]; else return QVariant();
+            case ccLastName: if (c.names.count()>0) return c.names[0]; else return QVariant();
+            case ccFullName: return c.fullName;
+            case ccGenericName: return c.visibleName; // must be calculated
             case ccPhone: return c.prefPhone;
             case ccEMail: return c.prefEmail;
             case ccLast: { return QVariant(); } // Boundary case

@@ -91,7 +91,23 @@ bool ContactItem::swapNames()
 
 void ContactItem::calculateFields()
 {
-    prefPhone.clear(); // first or preferred phone number
+    // Visible name depend of filled lields
+    if (!fullName.isEmpty())
+        visibleName = fullName;
+    else if (!names.isEmpty())
+        visibleName = formatNames();
+    else if (!organization.isEmpty())
+        visibleName = organization;
+    else if (!description.isEmpty())
+        visibleName = description;
+    else if (!emails.isEmpty())
+        visibleName = emails[0].address;
+    else if (!phones.isEmpty())
+        visibleName = phones[0].number;
+    else // WTF???
+        visibleName = QObject::tr("Strange empty contact");
+    // First or preferred phone number
+    prefPhone.clear();
     if (phones.count()>0) {
         prefPhone = phones[0].number;
         for (int i=0; i<phones.count();i++) {
@@ -99,13 +115,28 @@ void ContactItem::calculateFields()
                 prefPhone = phones[i].number;
         }
     }
-    prefEmail.clear(); // first or preferred email
+    // First or preferred email
+    prefEmail.clear();
     if (emails.count()>0) {
         prefEmail = emails[0].address;
         for (int i=0; i<emails.count(); i++)
             if (emails[i].emTypes.contains("pref", Qt::CaseInsensitive))
                 prefEmail = emails[i].address;
     }
+}
+
+QString ContactItem::formatNames()
+{
+    QString res = names[0]; // Last name
+    if (names.count()>1) // First name
+        res += " " + names[1];
+    if (names.count()>2) // Middle name
+        res += " " + names[2];
+    if (names.count()>3) // Honorific Prefixes
+        res = names[3] + " " + visibleName;
+    if (names.count()>4) // Honorific Suffixes, rank, degree
+        res += ", " + names[2];
+    return res;
 }
 
 ContactList::ContactList()

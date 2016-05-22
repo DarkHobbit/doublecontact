@@ -48,8 +48,8 @@ bool SettingsDialog::readConfig()
             ui->lwVisibleColumns->addItem(columnCandidate);
     }
     if (ui->lwVisibleColumns->count()==0) { // if list is empty, set default
+        ui->lwVisibleColumns->addItem(contactColumnHeaders[ccLastName]);
         ui->lwVisibleColumns->addItem(contactColumnHeaders[ccFirstName]);
-        ui->lwVisibleColumns->addItem(contactColumnHeaders[ccSecondName]);
         ui->lwVisibleColumns->addItem(contactColumnHeaders[ccPhone]);
     }
     for (int i=0; i<validColumnNames.count(); i++) // Fill available columns list
