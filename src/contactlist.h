@@ -69,7 +69,7 @@ struct ContactItem {
     // Format internals
     QString id; // optional record unique id (udx Sequence, vcf X-IRMC-LUID, etc)
     QString originalFormat;
-    QString version;
+    QString version, subVersion;
     QList<TagValue> otherTags;   // Known but un-editing tags
     QList<TagValue> unknownTags; // specific tags for any file format, i.e. vcf
     // Calculated fields for higher perfomance
@@ -83,6 +83,7 @@ class ContactList : public QList<ContactItem>
 {
 public:
     ContactList();
+    int findById(const QString& idValue);
 };
 
 #endif // CONTACTLIST_H

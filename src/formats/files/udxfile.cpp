@@ -12,12 +12,12 @@
  */
 
 #include <QTextCodec>
+#include <QTextStream>
+#include <QSet>
 #include "udxfile.h"
 
-#include <QMessageBox> //===>
-
 UDXFile::UDXFile()
-    :FileFormat()
+    :FileFormat(), QDomDocument("DataExchangeInfo")
 {
 }
 
@@ -79,6 +79,11 @@ bool UDXFile::importRecords(const QString &url, ContactList &list, bool append)
         _errors << QObject::tr("Warning: codepage not found, trying use UTF-8...");
         charSet = "UTF-8";
     }
+    QString udxVer = recInfo.firstChildElement("UdxVersion").text();
+    if (udxVer.isEmpty()) {
+        _errors << QObject::tr("Warning: udx version not found, treat as 1.0...");
+        charSet = "1.0";
+    }
     QDomElement vcfInfo = recInfo.firstChildElement("RecordOfvCard");
     QString vcVer = vcfInfo.firstChildElement("vCardVersion").text();
     int expCount = vcfInfo.firstChildElement("vCardRecord").text().toInt();
@@ -96,7 +101,8 @@ bool UDXFile::importRecords(const QString &url, ContactList &list, bool append)
     while (!vCardInfo.isNull()) {
         item.clear();
         item.originalFormat = "UDX";
-        item.version = vcVer; // TODO version of udx, not vcf?
+        item.version = udxVer;
+        item.subVersion = vcVer;
         item.id = vCardInfo.firstChildElement("Sequence").text();
         QDomElement fields = vCardInfo.firstChildElement("vCardField");
         if (fields.isNull())
@@ -156,8 +162,147 @@ bool UDXFile::importRecords(const QString &url, ContactList &list, bool append)
     return (!list.isEmpty());
 }
 
-bool UDXFile::exportRecords(const QString &url, const ContactList &list)
+bool UDXFile::exportRecords(const QString &url, ContactList &list)
 {
-    QMessageBox::information(0, "Debug", "UDX save is under construction");
-    // TODO
+    QDomDocument::clear();
+    QDomElement root = createElement("DataExchangeInfo");
+    appendChild(root);
+    // Original format also was UDX?
+    bool wasUDX = false;
+    if (!list.isEmpty())
+        if (list[0].originalFormat=="UDX")
+            wasUDX = true;
+    // XML header
+    QDomNode node = createProcessingInstruction("xml", "version=\"1.0\" encoding=\"utf-8\"");
+    insertBefore(node, firstChild());
+    // UDX header
+    QDomElement recInfo = addElement(root, "RecordInfo");
+    addElement(recInfo, "VendorInfo", "VendorUDX");
+    addElement(recInfo, "DeviceInfo", "DeviceUDX");
+    if (wasUDX)
+        addElement(recInfo, "UdxVersion", list[0].version);
+    else
+        addElement(recInfo, "UdxVersion", "1.0");
+    addElement(recInfo, "UserAgent", "AgentUDX");
+    addElement(recInfo, "UserInfo", "UserUDX");
+    addElement(recInfo, "Encoding", "UTF-8");
+    addElement(recInfo, "FileSize", "          "); // strongly 10 spaces! (~~)
+    addElement(recInfo, "Date", QDate::currentDate().toString("dd.MM.yyyy"));
+    addElement(recInfo, "Language","CHS"); // wtf, but this code was in real russian-language udx
+    QDomElement vcfInfo = addElement(recInfo, "RecordOfvCard");
+    if (wasUDX)
+        addElement(vcfInfo, "vCardVersion", list[0].subVersion);
+    else
+        addElement(vcfInfo, "vCardVersion", "2.1");
+    addElement(vcfInfo, "vCardRecord", QString::number(list.count()));
+    addElement(vcfInfo, "vCardLength", "          "); // strongly 10 spaces! (~~)
+    addElement(recInfo, "RecordOfvCalendar");
+    addElement(recInfo, "RecordOfSMS");
+    addElement(recInfo, "RecordOfMMS");
+    addElement(recInfo, "RecordOfEmail");
+    // Parent tag for all records
+    QDomElement vCard = addElement(root, "vCard");
+    // Add missing sequences to records
+    int maxSeq = 0;
+    if (wasUDX) { // wasUDX - simply add missing
+        foreach (const ContactItem& item, list)
+            if (item.id.toInt()>maxSeq)
+                    maxSeq = item.id.toInt();
+        QSet<int> seqs;
+        foreach (ContactItem item, list) {
+            int currentID = item.id.toInt();
+            if (currentID<1) // simply missing
+                item.id = QString::number(++maxSeq);
+            if (seqs.contains(currentID)) { // duplicate?
+                _errors << QObject::tr("Warning: contact %1, duplicate id %2 changed to %3")
+                     .arg(item.names.join(" ")) // TODO implement and use ContactItem::visibleName for people and orgs!!! And use it in ContactModel::data
+                     .arg(currentID).arg(++maxSeq);
+                item.id = QString::number(maxSeq);
+            }
+            seqs.insert(item.id.toInt());
+            // TODO check, that really modified!
+        }
+    }
+    else { // if original wasn't UDX, completely renumerate all
+        for (int i=0; i<list.count(); i++)
+            list[i].id = QString::number(i+1);
+            // TODO check, that really modified!
+        maxSeq = list.count();
+    }
+    // Write all records, sorted by id
+    for(int i=1; i<=maxSeq; i++) {
+        int index = list.findById(QString::number(i));
+        if (index==-1)
+            continue;
+        ContactItem& item = list[index];
+        QDomElement vCardInfo = addElement(vCard, "vCardInfo");
+        addElement(vCardInfo, "Sequence", item.id);
+        QDomElement vCardField = addElement(vCardInfo, "vCardField");
+        // Names
+        // TODO check if first file is surname on real phone
+        addElement(vCardField, "N", QString(";")+item.names.join(";"));
+        // Phones
+        foreach (const Phone& ph, item.phones) {
+            if (ph.tTypes.contains("CELL", Qt::CaseInsensitive))
+                addElement(vCardField, "TEL", ph.number);
+            else if (ph.tTypes.contains("HOME", Qt::CaseInsensitive))
+                addElement(vCardField, "TELHOME", ph.number);
+            else if (ph.tTypes.contains("WORK", Qt::CaseInsensitive))
+                addElement(vCardField, "TELWORK", ph.number);
+            else if (ph.tTypes.contains("FAX", Qt::CaseInsensitive))
+                addElement(vCardField, "TELFAX", ph.number);
+            else {
+                addElement(vCardField, "TEL", ph.number);
+                _errors << QObject::tr("Warning: contact %1, unknown tel type:\n%2\n saved as cellular")
+                     .arg(item.names.join(" ")) // TODO implement and use ContactItem::visibleName for people and orgs!!! And use it in ContactModel::data
+                     .arg(ph.tTypes.join(";"));
+            }
+        }
+        // Emails
+        foreach (const Email& em, item.emails)
+            addElement(vCardField, "EMAIL", em.address);
+        // TODO what if save some EMAIL tags?
+        // Organization/title
+        if (!item.organization.isEmpty()) {
+            QString org = item.organization;
+            if (!item.title.isEmpty())
+                org += ", " + item.title;
+            addElement(vCardField, "ORGNAME", org);
+        }
+        // Birthday
+        if (item.birthday.value.isValid())
+            addElement(vCardField, "BDAY", item.birthday.value.toString("yyyyMMdd"));
+        if (item.birthday.hasTime)
+            _errors << QObject::tr("Warning: contact %1 has time (%2) in birthday, not supported in UDX")
+                 .arg(item.names.join(" ")) // TODO implement and use ContactItem::visibleName for people and orgs!!! And use it in ContactModel::data
+                 .arg(item.birthday.value.toString("hh:mm:ss"));
+        // TODO warning if item contains addresses, photos and other udx-unsupported things
+    }
+    QString content = toString(0);
+    // Add left-aligned file size, completed to 10 characters
+    int fsPos = content.indexOf("<FileSize>")+QString("<FileSize>").length();
+    int fileSize = content.toLocal8Bit().size();
+    content.replace(fsPos, 10, QString("%1").arg(fileSize, -10, 10, QChar(' ')));
+    // Add left-aligned vcard length, completed to 10 characters
+    int vclPos = content.indexOf("<vCardLength>")+QString("<vCardLength>").length();
+    int vcLength = content.indexOf("</vCard>")-content.indexOf("<vCard>")+QString("</vCard>").length();
+    content.replace(vclPos, 10, QString("%1").arg(vcLength, -10, 10, QChar(' ')));
+    // Write to file
+    if (!openFile(url, QIODevice::WriteOnly))
+        return false;
+    QTextStream stream(&file);
+    stream << content;
+    closeFile();
+    return true;
+}
+
+QDomElement UDXFile::addElement(QDomElement &parent, const QString &tagName, const QString &tagValue)
+{
+    QDomElement e = createElement(tagName);
+    if (!tagValue.isEmpty()) {
+        QDomText t = createTextNode(tagValue);
+        e.appendChild(t);
+    }
+    parent.appendChild(e);
+    return e;
 }

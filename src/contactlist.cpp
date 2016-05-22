@@ -72,6 +72,7 @@ void ContactItem::clear()
     unknownTags.clear();
     originalFormat.clear();
     version.clear();
+    subVersion.clear();
     // maybe not needed:
     prefPhone.clear();
     prefEmail.clear();
@@ -109,6 +110,14 @@ void ContactItem::calculateFields()
 
 ContactList::ContactList()
 {
+}
+
+int ContactList::findById(const QString &idValue)
+{
+    for(int i=0; i<count(); i++)
+        if ((*this)[i].id==idValue)
+            return i;
+    return -1;
 }
 
 TagValue::TagValue(const QString& _tag, const QString& _value)

@@ -59,7 +59,7 @@ bool VCFFile::importRecords(const QString &url, ContactList &list, bool append)
     return VCardData::importRecords(content, list, append, _errors);
 }
 
-bool VCFFile::exportRecords(const QString &url, const ContactList &list)
+bool VCFFile::exportRecords(const QString &url, ContactList &list)
 {
     QMessageBox::information(0, "Debug", "VSF save is under construction");
     // TODO

@@ -27,7 +27,9 @@ public:
     static QStringList supportedExtensions();
     static QStringList supportedFilters();
     bool importRecords(const QString &url, ContactList &list, bool append);
-    bool exportRecords(const QString &url, const ContactList &list);
+    bool exportRecords(const QString &url, ContactList &list);
+private:
+    QDomElement addElement(QDomElement& parent, const QString& tagName, const QString& tagValue = "");
 };
 
 #endif // UDXFILE_H
