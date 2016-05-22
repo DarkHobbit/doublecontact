@@ -34,6 +34,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->tvRight->setModel(modRight);*/
     proxyLeft->setSourceModel(modLeft);
     proxyRight->setSourceModel(modRight);
+    proxyLeft->setFilterKeyColumn(-1);
+    proxyRight->setFilterKeyColumn(-1);
     ui->tvLeft->setModel(proxyLeft);
     ui->tvRight->setModel(proxyRight);
     // Status bar
@@ -443,4 +445,28 @@ void MainWindow::on_action_Close_triggered()
     // TODO ask if model has unsaved changes (after save implementation)
     selectedModel->close();
     updateHeaders();
+}
+
+void MainWindow::on_leFilterLeft_textChanged(const QString &arg1)
+{
+    if (arg1.isEmpty())
+        proxyLeft->setFilterWildcard("");
+    else
+        proxyLeft->setFilterWildcard(arg1);
+}
+
+void MainWindow::on_leFilterRight_textChanged(const QString &arg1)
+{
+    if (arg1.isEmpty())
+        proxyRight->setFilterWildcard("");
+    else
+        proxyRight->setFilterWildcard(arg1);
+}
+
+void MainWindow::on_action_Filter_triggered()
+{
+    if (selectedView==ui->tvLeft)
+        ui->leFilterLeft->setFocus();
+    else
+        ui->leFilterRight->setFocus();
 }

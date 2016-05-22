@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>677</width>
-    <height>516</height>
+    <width>763</width>
+    <height>539</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -43,6 +43,13 @@
         </property>
        </widget>
       </item>
+      <item row="1" column="1">
+       <widget class="QTableView" name="tvRight">
+        <property name="selectionBehavior">
+         <enum>QAbstractItemView::SelectRows</enum>
+        </property>
+       </widget>
+      </item>
       <item row="1" column="0">
        <widget class="QTableView" name="tvLeft">
         <property name="selectionBehavior">
@@ -50,12 +57,33 @@
         </property>
        </widget>
       </item>
-      <item row="1" column="1">
-       <widget class="QTableView" name="tvRight">
-        <property name="selectionBehavior">
-         <enum>QAbstractItemView::SelectRows</enum>
-        </property>
-       </widget>
+      <item row="2" column="0">
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="QLabel" name="lbFilterLeft">
+          <property name="text">
+           <string>Filter</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="leFilterLeft"/>
+        </item>
+       </layout>
+      </item>
+      <item row="2" column="1">
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <item>
+         <widget class="QLabel" name="lbFilterRight">
+          <property name="text">
+           <string>Filter</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="leFilterRight"/>
+        </item>
+       </layout>
       </item>
      </layout>
     </item>
@@ -163,7 +191,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>677</width>
+     <width>763</width>
      <height>19</height>
     </rect>
    </property>
@@ -209,6 +237,7 @@
     <addaction name="actionCo_mpare"/>
     <addaction name="action_Sort"/>
     <addaction name="action_Other_panel"/>
+    <addaction name="action_Filter"/>
    </widget>
    <addaction name="menu_File"/>
    <addaction name="menu_View"/>
@@ -359,6 +388,14 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+P</string>
+   </property>
+  </action>
+  <action name="action_Filter">
+   <property name="text">
+    <string>&amp;Filter</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F</string>
    </property>
   </action>
  </widget>

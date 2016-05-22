@@ -70,6 +70,12 @@ private slots:
 
     void on_action_Close_triggered();
 
+    void on_leFilterLeft_textChanged(const QString &arg1);
+
+    void on_leFilterRight_textChanged(const QString &arg1);
+
+    void on_action_Filter_triggered();
+
 private:
     Ui::MainWindow *ui;
     ContactModel *modLeft, *modRight;
