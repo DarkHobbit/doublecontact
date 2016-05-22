@@ -1,8 +1,7 @@
-This file contains English and Russian (UTF-8) issues. Sorry for this mixing, it's alpha.
+This file contains English and Russian (CP1251) issues. Sorry for this mixing, it's alpha.
 You can contact me at pub@zvyozdochkin.ru.
 
 Ирина
-* search/filter
 * panels compare/synchronization (and merging, probably make unified merging VV)
 * в групповые операции - разделение фамилии и имени и разделение инициалов (рядом с обменом имён). Возможно, тж. сделать разделение имён в контекстном меню.
 * language selection support, russian and ukrainian language files (Rosetta?)
