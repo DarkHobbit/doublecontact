@@ -27,6 +27,8 @@ struct TagValue { // for non-editing ang unknown tags
 struct Phone {
     QString number;
     QStringList tTypes; // some devices & addressbooks may allow create any tel type (not RFC, but...)
+    QString expandNumber() const; // international number representation from particular
+    bool operator ==(const Phone& p);
     // standart types
     static class StandardTypes: public ::StandardTypes {
         public:
@@ -37,6 +39,7 @@ struct Phone {
 struct Email {
     QString address;
     QStringList emTypes;  // according RFC 2426, may be non-standard
+    bool operator ==(const Email& e);
     static class StandardTypes: public ::StandardTypes {
         public:
         StandardTypes();
@@ -48,6 +51,7 @@ struct DateItem { // Birthday and anniversaries
     bool hasTime; // false if date only was in file
     bool hasTimeZone; // record contains TZ info
     short zoneHour, zoneMin; // TZ value
+    bool operator ==(const DateItem& d);
 };
 
 struct ContactItem {
@@ -76,8 +80,11 @@ struct ContactItem {
     QString visibleName, prefPhone, prefEmail;
     void clear();
     bool swapNames();
+    // bool splitNames(int index) TODO
     void calculateFields();
     QString formatNames();
+    bool similarTo(const ContactItem& pair);
+    bool identicalTo(const ContactItem& pair);
 };
 
 class ContactList : public QList<ContactItem>

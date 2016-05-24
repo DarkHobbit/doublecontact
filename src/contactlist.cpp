@@ -14,6 +14,19 @@
 #include "contactlist.h"
 #include <QMessageBox>
 
+QString Phone::expandNumber() const
+{
+    QString res = number;
+    if (number.startsWith("8")) // Russia; TODO: make table for some countries!
+            res = res.replace(0, 1, "+7");
+    return res;
+}
+
+bool Phone::operator ==(const Phone &p)
+{
+    return (number==p.number && tTypes==p.tTypes);
+}
+
 Phone::StandardTypes::StandardTypes()
 {
     clear();
@@ -39,6 +52,11 @@ Phone::StandardTypes::StandardTypes()
         << (*this)["pager"] << (*this)["bbs"]
         << (*this)["modem"] << (*this)["car"]
         << (*this)["isdn"] << (*this)["pcs"];
+}
+
+bool Email::operator ==(const Email &e)
+{
+    return (address==e.address && emTypes==e.emTypes);
 }
 
 Email::StandardTypes::StandardTypes()
@@ -91,7 +109,7 @@ bool ContactItem::swapNames()
 
 void ContactItem::calculateFields()
 {
-    // Visible name depend of filled lields
+    // Visible name depend of filled fields
     if (!fullName.isEmpty())
         visibleName = fullName;
     else if (!names.isEmpty())
@@ -104,6 +122,7 @@ void ContactItem::calculateFields()
         visibleName = emails[0].address;
     else if (!phones.isEmpty())
         visibleName = phones[0].number;
+    // TODO by address
     else // WTF???
         visibleName = QObject::tr("Strange empty contact");
     // First or preferred phone number
@@ -139,6 +158,57 @@ QString ContactItem::formatNames()
     return res;
 }
 
+bool ContactItem::similarTo(const ContactItem &pair)
+{
+    // TODO set options for various criter.
+    if (id.length()>4 && id==pair.id)
+        return true;
+    if (!fullName.isEmpty() && fullName==pair.fullName)
+        return true;
+    if ((names.count()>1) && (pair.names.count()>1)) {
+        // 2 names equals
+        if (names[0].toUpper()==pair.names[1].toUpper() && names[1].toUpper()==names[0].toUpper())
+            return true;
+        // 2 reversed names equals
+        if (names[0].toUpper()==pair.names[0].toUpper() && names[1].toUpper()==names[1].toUpper())
+            return true;
+        // Initials?..
+    }
+    // Phones
+    foreach (const Phone& thisPhone, phones)
+        foreach (const Phone& pairPhone, pair.phones)
+            if (thisPhone.expandNumber()==pairPhone.expandNumber())
+                return true;
+    // Emails
+    foreach (const Email& thisEmail, emails)
+        foreach (const Email& pairEmail, pair.emails)
+            if (thisEmail.address.toUpper()==pairEmail.address.toUpper())
+                return true;
+    if (organization==pair.organization) return false;
+    //TODO address
+    return false;
+}
+
+bool ContactItem::identicalTo(const ContactItem &pair)
+{
+    // TODO set options for various criter.
+    if (fullName!=pair.fullName) return false;
+    if (names!=pair.names) return false;
+    if (phones!=pair.phones) return false;
+    if (emails!=pair.emails) return false;
+    if (!(birthday==pair.birthday)) return false;
+    if (anniversaries!=pair.anniversaries) return false;
+    if (description!=pair.description) return false;
+    if (photoType!=pair.photoType) return false;
+    if (photo!=pair.photo) return false;
+    if (photoUrl!=pair.photoUrl) return false;
+    if (organization!=pair.organization) return false;
+    if (title!=pair.title) return false;
+    //TODO address
+    // Here strongly add ALL new
+    return true;
+}
+
 ContactList::ContactList()
 {
 }
@@ -157,3 +227,10 @@ TagValue::TagValue(const QString& _tag, const QString& _value)
 
 Phone::StandardTypes Phone::standardTypes;
 Email::StandardTypes Email::standardTypes;
+
+bool DateItem::operator ==(const DateItem &d)
+{
+    if (hasTimeZone && ((zoneHour!=d.zoneHour) || (zoneMin!=d.zoneMin)))
+        return false;
+    return (value==d.value && hasTime==d.hasTime && hasTimeZone==d.hasTimeZone);
+}

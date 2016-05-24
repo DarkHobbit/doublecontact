@@ -10,7 +10,7 @@ You can contact me at pub@zvyozdochkin.ru.
 
 Я
 * id support in vcf
-* postal address support
+* postal address support (и найти относящиеся к адресам TODO, например, в ContactItem::identicalTo)
 * vcf save (and change status to alpha)
 
 0.1:
