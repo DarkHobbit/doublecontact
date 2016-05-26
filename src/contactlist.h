@@ -78,6 +78,14 @@ struct ContactItem {
     QList<TagValue> unknownTags; // specific tags for any file format, i.e. vcf
     // Calculated fields for higher perfomance
     QString visibleName, prefPhone, prefEmail;
+    // Calculated fields for list comparison
+    enum PairState {
+        PairNotFound,
+        PairSimilar,
+        PairIdentical
+    } pairState;
+    ContactItem* pairItem;
+    // Aux methods
     void clear();
     bool swapNames();
     // bool splitNames(int index) TODO
