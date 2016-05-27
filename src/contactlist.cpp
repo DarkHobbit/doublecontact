@@ -13,6 +13,7 @@
 
 #include "contactlist.h"
 #include <QMessageBox>
+#include <iostream>
 
 QString Phone::expandNumber() const
 {
@@ -76,8 +77,7 @@ void ContactItem::clear()
     names.clear();
     phones.clear();
     emails.clear();
-    birthday.value = QDateTime();
-    birthday.hasTime = false;
+    birthday.clear();
     anniversaries.clear();
     description.clear();
     photoType.clear();
@@ -221,6 +221,40 @@ int ContactList::findById(const QString &idValue)
     return -1;
 }
 
+void ContactList::compareWith(ContactList &pairList)
+{
+    for (int i=0; i<pairList.count(); i++)
+        pairList[i].pairState = ContactItem::PairNotFound;
+    for (int i=0; i<count(); i++) {
+        ContactItem& item = (*this)[i];
+        item.pairState = ContactItem::PairNotFound;
+        item.pairItem = 0;
+        // At first, search complete matching
+        for(int j=0; j<pairList.count(); j++) {
+            ContactItem& candidate = pairList[j];
+            if (item.identicalTo(candidate)) {
+                item.pairState = ContactItem::PairIdentical;
+                item.pairItem = &candidate;
+                candidate.pairItem = &item;
+                candidate.pairState = ContactItem::PairIdentical;
+                break;
+            }
+        }
+        // If no identical records, search similar
+        if (item.pairState==ContactItem::PairNotFound)
+            for(int j=0; j<pairList.count(); j++) {
+                ContactItem& candidate = pairList[j];
+                if (item.similarTo(candidate)) {
+                    item.pairState = ContactItem::PairSimilar;
+                    item.pairItem = &candidate;
+                    candidate.pairItem = &item;
+                    candidate.pairState = ContactItem::PairSimilar;
+                    break;
+                }
+            }
+    }
+}
+
 TagValue::TagValue(const QString& _tag, const QString& _value)
     :tag(_tag), value(_value)
 {}
@@ -233,4 +267,13 @@ bool DateItem::operator ==(const DateItem &d)
     if (hasTimeZone && ((zoneHour!=d.zoneHour) || (zoneMin!=d.zoneMin)))
         return false;
     return (value==d.value && hasTime==d.hasTime && hasTimeZone==d.hasTimeZone);
+}
+
+void DateItem::clear()
+{
+    value = QDateTime();
+    hasTime = false;
+    hasTimeZone = false;
+    zoneHour = 0;
+    zoneMin = 0;
 }

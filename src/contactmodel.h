@@ -30,6 +30,12 @@ public:
     QString source(); // file path or network source
     bool changed();    // has contact book unsaved changes?
     void setVisibleColumns(const ContactColumnList& colNames);
+    enum ContactViewMode {
+        Standard,
+        CompareMain,
+        CompareOpposite,
+        DupSearch
+    };
     // Base model implementation methods
     Qt::ItemFlags flags(const QModelIndex &) const;
     int rowCount(const QModelIndex &parent = QModelIndex()) const;
@@ -47,9 +53,10 @@ public:
     void copyRows(QModelIndexList& indices, ContactModel* target);
     void removeAnyRows(QModelIndexList& indices);
     void swapNames(const QModelIndexList& indices);
+    void setViewMode(ContactViewMode mode, ContactModel* target);
+    ContactList& itemList();
     // Test data
     void testList();
-
 signals:
 
 public slots:
@@ -59,6 +66,7 @@ private:
     ContactList items;
     ContactColumnList visibleColumns;
     FormatFactory factory;
+    ContactViewMode viewMode;
 };
 
 #endif // CONTACTMODEL_H

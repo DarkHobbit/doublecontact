@@ -52,6 +52,7 @@ struct DateItem { // Birthday and anniversaries
     bool hasTimeZone; // record contains TZ info
     short zoneHour, zoneMin; // TZ value
     bool operator ==(const DateItem& d);
+    void clear();
 };
 
 struct ContactItem {
@@ -100,6 +101,7 @@ class ContactList : public QList<ContactItem>
 public:
     ContactList();
     int findById(const QString& idValue);
+    void compareWith(ContactList& pairList);
 };
 
 #endif // CONTACTLIST_H

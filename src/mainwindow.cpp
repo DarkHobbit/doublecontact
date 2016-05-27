@@ -277,7 +277,11 @@ void MainWindow::on_btnSwapNames_clicked()
 // Compare two lists
 void MainWindow::on_actionCo_mpare_triggered()
 {
-    // TODO clear both selections before compare
+    // Clear both selections before compare
+    ui->tvLeft->selectionModel()->clearSelection();
+    ui->tvRight->selectionModel()->clearSelection();
+    // Compare
+    selectedModel->setViewMode(ContactModel::CompareMain, oppositeModel());
 }
 
 void MainWindow::on_btnCompare_clicked()
@@ -345,7 +349,7 @@ void MainWindow::setButtonsAccess()
     bool twoPanels = ui->tvRight->isVisible();
     ui->action_Copy->setEnabled(hasSelectedRows && twoPanels);
     ui->action_Move->setEnabled(hasSelectedRows && twoPanels);
-    ui->actionCo_mpare->setEnabled(hasSelectedRows && twoPanels);
+    ui->actionCo_mpare->setEnabled(twoPanels);
     ui->action_Edit->setEnabled(hasSelectedRows && (selectedView->selectionModel()->selectedRows().count()==1));
     ui->action_Remove->setEnabled(hasSelectedRows);
     ui->action_Swap_names->setEnabled(hasSelectedRows);

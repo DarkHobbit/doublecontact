@@ -95,7 +95,18 @@ QVariant ContactModel::data(const QModelIndex &index, int role) const
         }
     }
     else if (role==Qt::BackgroundRole) {
-        return (c.unknownTags.isEmpty()) ? QVariant() : QBrush(Qt::yellow);
+        switch (viewMode) {
+        case ContactModel::Standard:
+            return (c.unknownTags.isEmpty()) ? QVariant() : QBrush(Qt::yellow);
+        case ContactModel::CompareOpposite:
+        case ContactModel::CompareMain:
+            return(c.pairState==ContactItem::PairNotFound ? QBrush(Qt::red) :
+                (c.pairState==ContactItem::PairIdentical ? QBrush(Qt::green) :
+                    (c.pairState==ContactItem::PairSimilar ? QBrush(Qt::yellow) : QVariant())));
+        case ContactModel::DupSearch:
+            // TODO
+            break;
+        }
     }
     return QVariant();
 }
@@ -190,6 +201,22 @@ void ContactModel::swapNames(const QModelIndexList& indices)
         items[index.row()].swapNames();
     emit dataChanged(QModelIndex(), QModelIndex());
     _changed = true;
+}
+
+void ContactModel::setViewMode(ContactModel::ContactViewMode mode, ContactModel *target)
+{
+    beginResetModel();
+    viewMode = mode;
+    if (mode==ContactModel::CompareMain) {
+        items.compareWith(target->itemList());
+        target->setViewMode(ContactModel::CompareOpposite, 0);
+    }
+    endResetModel();
+}
+
+ContactList &ContactModel::itemList()
+{
+    return items;
 }
 
 void ContactModel::testList()
