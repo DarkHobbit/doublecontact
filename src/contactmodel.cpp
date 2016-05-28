@@ -175,7 +175,7 @@ ContactItem& ContactModel::beginEditRow(QModelIndex& index)
 void ContactModel::endEditRow(QModelIndex& index)
 {
     _changed = true;
-    emit dataChanged(index, index);
+    emit dataChanged(index, index.sibling(index.row(), columnCount()-1));
 }
 
 void ContactModel::copyRows(QModelIndexList& indices, ContactModel* target)
@@ -197,9 +197,11 @@ void ContactModel::removeAnyRows(QModelIndexList& indices)
 
 void ContactModel::swapNames(const QModelIndexList& indices)
 {
-    foreach(QModelIndex index, indices)
+    foreach(QModelIndex index, indices) {
+        beginEditRow(index);
         items[index.row()].swapNames();
-    emit dataChanged(QModelIndex(), QModelIndex());
+        endEditRow(index);
+    }
     _changed = true;
 }
 
