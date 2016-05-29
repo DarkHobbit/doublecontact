@@ -209,7 +209,8 @@ bool UDXFile::exportRecords(const QString &url, ContactList &list)
             if (item.id.toInt()>maxSeq)
                     maxSeq = item.id.toInt();
         QSet<int> seqs;
-        foreach (ContactItem item, list) {
+        for (int i=0; i<list.count(); i++) {
+            ContactItem& item = list[i];
             int currentID = item.id.toInt();
             if (currentID<1) // simply missing
                 item.id = QString::number(++maxSeq);
@@ -219,13 +220,11 @@ bool UDXFile::exportRecords(const QString &url, ContactList &list)
                 item.id = QString::number(maxSeq);
             }
             seqs.insert(item.id.toInt());
-            // TODO check, that really modified!
         }
     }
     else { // if original wasn't UDX, completely renumerate all
         for (int i=0; i<list.count(); i++)
             list[i].id = QString::number(i+1);
-            // TODO check, that really modified!
         maxSeq = list.count();
     }
     // Write all records, sorted by id
@@ -250,7 +249,7 @@ bool UDXFile::exportRecords(const QString &url, ContactList &list)
                 addElement(vCardField, "TELWORK", ph.number);
             else if (ph.tTypes.contains("FAX", Qt::CaseInsensitive))
                 addElement(vCardField, "TELFAX", ph.number);
-            else {
+            else if (ph.tTypes.join(";").toUpper()!="PREF") {
                 addElement(vCardField, "TEL", ph.number);
                 _errors << QObject::tr("Warning: contact %1, unknown tel type:\n%2\n saved as cellular")
                      .arg(item.visibleName).arg(ph.tTypes.join(";"));
