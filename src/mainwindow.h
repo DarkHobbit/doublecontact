@@ -77,6 +77,8 @@ private slots:
 
     void on_action_Filter_triggered();
 
+    void on_actionCompare_Result_triggered();
+
 private:
     Ui::MainWindow *ui;
     ContactModel *modLeft, *modRight;

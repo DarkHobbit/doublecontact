@@ -20,6 +20,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "contactdialog.h"
+#include "comparedialog.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -190,7 +191,7 @@ void MainWindow::on_action_Edit_triggered()
 {
     if (!checkSelection()) return;
     if (selection.count()>1) {
-        QMessageBox::critical(0, tr("Error"), tr("Group editing not impemented"));
+        QMessageBox::critical(0, tr("Error"), tr("Group editing not impemented, select one record"));
         return;
     }
     ContactDialog* d = new ContactDialog(0);
@@ -501,4 +502,25 @@ void MainWindow::on_action_Filter_triggered()
         ui->leFilterLeft->setFocus();
     else
         ui->leFilterRight->setFocus();
+}
+
+void MainWindow::on_actionCompare_Result_triggered()
+{
+    // TODO check two panels and compare mode
+    if (!checkSelection()) return;
+    if (selection.count()>1) {
+        QMessageBox::critical(0, tr("Error"), tr("Group editing not impemented, select one record"));
+        return;
+    }
+    CompareDialog* d = new CompareDialog(0);
+    ContactItem& left = selectedModel->beginEditRow(selection[0]);
+    on_action_Other_panel_triggered(); // TODO G-code, need move oppositeView to selection proc
+    if (!checkSelection()) return;
+    ContactItem& right = selectedModel->beginEditRow(selection[0]);
+    d->setData(left, right);
+    d->exec();
+    if (d->result()==QDialog::Accepted)
+        d->getData(left, right);
+    delete d;
+    on_action_Other_panel_triggered(); // TODO G-code, need move oppositeView to selection proc
 }

@@ -22,7 +22,9 @@ SOURCES += main.cpp \
     globals.cpp \
     datedetailsdialog.cpp \
     contactsorterfilter.cpp \
-    formats/files/udxfile.cpp
+    formats/files/udxfile.cpp \
+    comparecontainers.cpp \
+    comparedialog.cpp
 HEADERS += mainwindow.h \
     contactmodel.h \
     contactlist.h \
@@ -38,13 +40,16 @@ HEADERS += mainwindow.h \
     globals.h \
     datedetailsdialog.h \
     contactsorterfilter.h \
-    formats/files/udxfile.h
+    formats/files/udxfile.h \
+    comparecontainers.h \
+    comparedialog.h
 FORMS += mainwindow.ui \
     contactdialog.ui \
     phonetypedialog.ui \
     logwindow.ui \
     settingsdialog.ui \
-    datedetailsdialog.ui
+    datedetailsdialog.ui \
+    comparedialog.ui
 unix { 
     OBJECTS_DIR = .obj
     UI_DIR = .ui

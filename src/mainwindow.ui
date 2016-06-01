@@ -217,6 +217,7 @@
     <addaction name="action_Copy"/>
     <addaction name="action_Move"/>
     <addaction name="action_Swap_names"/>
+    <addaction name="actionCompare_Result"/>
    </widget>
    <widget class="QMenu" name="menu_Help">
     <property name="title">
@@ -396,6 +397,14 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+F</string>
+   </property>
+  </action>
+  <action name="actionCompare_Result">
+   <property name="text">
+    <string>Compare &amp;Result</string>
+   </property>
+   <property name="shortcut">
+    <string>Shift+F3</string>
    </property>
   </action>
  </widget>
