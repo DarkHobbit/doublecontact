@@ -235,8 +235,10 @@ void ContactList::compareWith(ContactList &pairList)
             if (item.identicalTo(candidate)) {
                 item.pairState = ContactItem::PairIdentical;
                 item.pairItem = &candidate;
+                item.pairIndex = j;
                 candidate.pairItem = &item;
                 candidate.pairState = ContactItem::PairIdentical;
+                candidate.pairIndex = i;
                 break;
             }
         }
@@ -247,8 +249,10 @@ void ContactList::compareWith(ContactList &pairList)
                 if (item.similarTo(candidate)) {
                     item.pairState = ContactItem::PairSimilar;
                     item.pairItem = &candidate;
+                    item.pairIndex = j;
                     candidate.pairItem = &item;
                     candidate.pairState = ContactItem::PairSimilar;
+                    candidate.pairIndex = i;
                     break;
                 }
             }

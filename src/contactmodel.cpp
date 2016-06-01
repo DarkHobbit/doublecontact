@@ -95,7 +95,7 @@ QVariant ContactModel::data(const QModelIndex &index, int role) const
         }
     }
     else if (role==Qt::BackgroundRole) {
-        switch (viewMode) {
+        switch (_viewMode) {
         case ContactModel::Standard:
             return (c.unknownTags.isEmpty()) ? QVariant() : QBrush(Qt::yellow);
         case ContactModel::CompareOpposite:
@@ -208,12 +208,17 @@ void ContactModel::swapNames(const QModelIndexList& indices)
 void ContactModel::setViewMode(ContactModel::ContactViewMode mode, ContactModel *target)
 {
     beginResetModel();
-    viewMode = mode;
+    _viewMode = mode;
     if (mode==ContactModel::CompareMain) {
         items.compareWith(target->itemList());
         target->setViewMode(ContactModel::CompareOpposite, 0);
     }
     endResetModel();
+}
+
+ContactModel::ContactViewMode ContactModel::viewMode()
+{
+    return _viewMode;
 }
 
 ContactList &ContactModel::itemList()

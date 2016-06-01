@@ -86,6 +86,7 @@ struct ContactItem {
         PairIdentical
     } pairState;
     ContactItem* pairItem;
+    int pairIndex;
     // Aux methods
     void clear();
     bool swapNames();

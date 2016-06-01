@@ -40,6 +40,7 @@ protected:
 private slots:
     void on_action_Other_panel_triggered();
     void setButtonsAccess();
+    void on_Selection_Changed();
     void on_actionCo_mpare_triggered();
     void on_btnCompare_clicked();
     void anyFocusChanged (QWidget*, QWidget* now);
@@ -89,7 +90,7 @@ private:
     SettingsDialog* setDlg;
     QLabel* lbMode;
     void selectView(QTableView* view);
-    bool checkSelection();
+    bool checkSelection(bool errorIfNoSelected = true);
     void setSorting(bool needSort);
     void updateListHeader(ContactModel* model, QLabel* header);
     void updateHeaders();

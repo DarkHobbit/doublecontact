@@ -54,6 +54,7 @@ public:
     void removeAnyRows(QModelIndexList& indices);
     void swapNames(const QModelIndexList& indices);
     void setViewMode(ContactViewMode mode, ContactModel* target);
+    ContactViewMode viewMode();
     ContactList& itemList();
     // Test data
     void testList();
@@ -66,7 +67,7 @@ private:
     ContactList items;
     ContactColumnList visibleColumns;
     FormatFactory factory;
-    ContactViewMode viewMode;
+    ContactViewMode _viewMode;
 };
 
 #endif // CONTACTMODEL_H

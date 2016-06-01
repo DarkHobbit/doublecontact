@@ -51,9 +51,9 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->tvRight->selectionModel(), SIGNAL(currentChanged(const QModelIndex&, const QModelIndex&)),
             this, SLOT(setButtonsAccess()));
     connect(ui->tvLeft->selectionModel(), SIGNAL(selectionChanged( const QItemSelection&, const QItemSelection&)),
-            this, SLOT(setButtonsAccess()));
+            this, SLOT(on_Selection_Changed()));
     connect(ui->tvRight->selectionModel(), SIGNAL(selectionChanged( const QItemSelection&, const QItemSelection&)),
-            this, SLOT(setButtonsAccess()));
+            this, SLOT(on_Selection_Changed()));
     connect(ui->tvLeft, SIGNAL(doubleClicked (const QModelIndex&)), this, SLOT(rowDoubleClicked(const QModelIndex&)));
     connect(ui->tvRight, SIGNAL(doubleClicked (const QModelIndex&)), this, SLOT(rowDoubleClicked(const QModelIndex&)));
     selectView(ui->tvLeft);
@@ -310,11 +310,12 @@ void MainWindow::selectView(QTableView* view)
     selectedHeader = (isLeft ? ui->lbLeft : ui->lbRight);
 }
 
-bool MainWindow::checkSelection()
+bool MainWindow::checkSelection(bool errorIfNoSelected)
 {
     QModelIndexList proxySelection = selectedView->selectionModel()->selectedRows();
     if (proxySelection.count()==0) {
-        QMessageBox::critical(0, tr("Error"), tr("Record not selected"));
+        if (errorIfNoSelected)
+            QMessageBox::critical(0, tr("Error"), tr("Record not selected"));
         return false;
     }
     // If proxy models works...
@@ -359,6 +360,33 @@ void MainWindow::setButtonsAccess()
     ui->btnEdit->setEnabled(hasSelectedRows && (selectedView->selectionModel()->selectedRows().count()==1));
     ui->btnRemove->setEnabled(hasSelectedRows);
     ui->btnSwapNames->setEnabled(hasSelectedRows);
+}
+
+void MainWindow::on_Selection_Changed()
+{
+    static bool lockSelection = false;
+    // For compare mode, select pair item(s)
+    ContactModel::ContactViewMode viewMode = selectedModel->viewMode();
+    if (!lockSelection)
+    if (viewMode==ContactModel::CompareMain || viewMode==ContactModel::CompareOpposite) {
+        if (!checkSelection(false)) return;
+        QTableView* oppView = (selectedView==ui->tvLeft) ? ui->tvRight : ui->tvLeft;
+        QSortFilterProxyModel* oppProxy = dynamic_cast<QSortFilterProxyModel*>(oppView->model());
+        oppView->selectionModel()->clearSelection();
+        foreach (const QModelIndex& index, selection) {
+            ContactItem& item = selectedModel->itemList()[index.row()];
+            if (item.pairItem) {
+                QModelIndex oppIndexFirst = oppProxy->mapFromSource(
+                            oppositeModel()->index(item.pairIndex, 0));
+                QModelIndex oppIndexLast = oppProxy->mapFromSource(
+                            oppositeModel()->index(item.pairIndex, selectedModel->columnCount()-1));
+                lockSelection = true;
+                oppView->selectionModel()->select(QItemSelection(oppIndexFirst, oppIndexLast), QItemSelectionModel::Select);
+                lockSelection = false;
+            }
+        }
+    }
+    setButtonsAccess();
 }
 
 void MainWindow::on_tvLeft_clicked(const QModelIndex&)
