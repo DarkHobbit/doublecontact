@@ -90,7 +90,8 @@ struct ContactItem {
     // Aux methods
     void clear();
     bool swapNames();
-    // bool splitNames(int index) TODO
+    bool splitNames(); // TODO int index
+    bool dropSlashes();
     void calculateFields();
     QString formatNames();
     bool similarTo(const ContactItem& pair);

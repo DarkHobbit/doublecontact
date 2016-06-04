@@ -140,7 +140,8 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
             else if (tag=="TITLE")
                 item.title = decodeValue(vValue[0], encoding, charSet, errors);
             // TODO ADR...
-
+            else if (tag=="X-IRMC-LUID")
+                item.id = decodeValue(vValue[0], encoding, charSet, errors);
             // Known but un-editing tags
             else if (tag=="LABEL") { // TODO other from rfc 2426
                 item.otherTags.push_back(TagValue(vType.join(";"),

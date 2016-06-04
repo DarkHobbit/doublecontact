@@ -1,3 +1,16 @@
+/* Double Contact
+ *
+ * Module: Helpers for contact comparison dialog
+ *
+ * Copyright 2016 Mikhail Y. Zvyozdochkin aka DarkHobbit <pub@zvyozdochkin.ru>
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version. See COPYING file for more details.
+ *
+ */
+
 #include <QPalette>
 #include <QVBoxLayout>
 #include "comparecontainers.h"
@@ -55,6 +68,7 @@ void StringListPair::getData(QStringList &leftData, QStringList &rightData)
     leftData.clear();
     foreach(QLineEdit* ed, leftSet)
         leftData.push_back(ed->text());
+    rightData.clear();
     foreach(QLineEdit* ed, rightSet)
         rightData.push_back(ed->text());
 }
@@ -112,7 +126,7 @@ void TypedPair::addValue(const QString &value, const QStringList &types, bool to
     QGridLayout* layout = toLeft ? layLeft : layRight;
     QList<QLineEdit*>& edSet = toLeft ? leftEdSet : rightEdSet;
     QList<QComboBox*>& comboSet = toLeft ? leftComboSet : rightComboSet;
-    int prevCount = layout->rowCount();
+    int prevCount = edSet.count();
     edSet.push_back(new QLineEdit(value));
     layout->addWidget(edSet.last(), prevCount, 0);
     comboSet.push_back(new QComboBox());

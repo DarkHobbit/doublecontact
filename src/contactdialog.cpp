@@ -125,6 +125,7 @@ void ContactDialog::setData(const ContactItem& c)
     ui->edDescription->setPlainText(c.description);
     ui->lbOriginalFormatValue->setText(c.originalFormat);
     ui->lbFormatVersionValue->setText(c.version);
+    ui->lbIDValue->setText(c.id);
     ui->twOtherTags->setRowCount(c.otherTags.count());
     int index = 0;
     foreach (const TagValue& tag, c.otherTags) {

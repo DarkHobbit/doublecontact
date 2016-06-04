@@ -192,7 +192,7 @@
      <x>0</x>
      <y>0</y>
      <width>763</width>
-     <height>26</height>
+     <height>24</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_File">
@@ -218,6 +218,8 @@
     <addaction name="action_Move"/>
     <addaction name="action_Swap_names"/>
     <addaction name="actionCompare_Result"/>
+    <addaction name="actionS_plit_names"/>
+    <addaction name="action_Drop_slashes"/>
    </widget>
    <widget class="QMenu" name="menu_Help">
     <property name="title">
@@ -405,6 +407,19 @@
    </property>
    <property name="shortcut">
     <string>Shift+F3</string>
+   </property>
+  </action>
+  <action name="actionS_plit_names">
+   <property name="text">
+    <string>S&amp;plit names</string>
+   </property>
+   <property name="shortcut">
+    <string>Shift+F2</string>
+   </property>
+  </action>
+  <action name="action_Drop_slashes">
+   <property name="text">
+    <string>&amp;Drop slashes</string>
    </property>
   </action>
  </widget>

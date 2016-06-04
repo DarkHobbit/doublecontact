@@ -237,7 +237,7 @@ bool UDXFile::exportRecords(const QString &url, ContactList &list)
         addElement(vCardInfo, "Sequence", item.id);
         QDomElement vCardField = addElement(vCardInfo, "vCardField");
         // Names
-        // TODO check if first file is surname on real phone
+        // TODO check if first file is surname on real phone (also has description in last test file)
         addElement(vCardField, "N", QString(";")+item.names.join(";"));
         // Phones
         foreach (const Phone& ph, item.phones) {
@@ -258,7 +258,7 @@ bool UDXFile::exportRecords(const QString &url, ContactList &list)
         // Emails
         foreach (const Email& em, item.emails)
             addElement(vCardField, "EMAIL", em.address);
-        // TODO what if save some EMAIL tags?
+        // TODO what if save some EMAIL tags? (also some one-type TEL)
         // Organization/title
         if (!item.organization.isEmpty()) {
             QString org = item.organization;
@@ -272,7 +272,16 @@ bool UDXFile::exportRecords(const QString &url, ContactList &list)
         if (item.birthday.hasTime)
             _errors << QObject::tr("Warning: contact %1 has time (%2) in birthday, not supported in UDX")
                  .arg(item.visibleName).arg(item.birthday.value.toString("hh:mm:ss"));
-        // TODO warning if item contains addresses, photos and other udx-unsupported things
+        // TODO warn on address
+        if ((!item.photo.isEmpty()) || (!item.photoUrl.isEmpty()))
+            _errors << QObject::tr("Warning: contact %1 has photo, not supported in UDX").arg(item.visibleName);
+        if (!item.description.isEmpty())
+            _errors << QObject::tr("Warning: contact %1 has description, not supported in UDX").arg(item.visibleName);
+        if (!item.title.isEmpty())
+            _errors << QObject::tr("Warning: contact %1 has job title, not supported in UDX").arg(item.visibleName);
+        if (!item.anniversaries.isEmpty())
+            _errors << QObject::tr("Warning: contact %1 has anniversaries, not supported in UDX").arg(item.visibleName);
+        // Here place warning on all other udx-unsupported things
     }
     QString content = toString(0);
     // Add left-aligned file size, completed to 10 characters

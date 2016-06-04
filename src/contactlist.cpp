@@ -107,6 +107,31 @@ bool ContactItem::swapNames()
     return true;
 }
 
+bool ContactItem::splitNames()
+{
+    bool res = false;
+    for (int i=0; i<names.count(); i++) {
+        int sPos = names[i].indexOf(" ");
+        if (sPos!=-1) {
+            names.push_back(names[i].mid(sPos+1));
+            names[i] = names[i].left(sPos);
+            res = true;
+        }
+    }
+    return res;
+}
+
+bool ContactItem::dropSlashes()
+{
+    for (int i=0; i<names.count(); i++) {
+        if (names[i].right(1)=="\\")
+            names[i].remove(names[i].length()-1, 1);
+        if (names[i][names[i].length()-2]=='/' && names[i][names[i].length()-1].isDigit())
+            names[i].remove(names[i].length()-2, 2);
+    }
+    return true;
+}
+
 void ContactItem::calculateFields()
 {
     // Visible name depend of filled fields

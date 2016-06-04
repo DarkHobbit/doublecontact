@@ -68,16 +68,13 @@ private slots:
     void on_actionSave_as_triggered();
     void rowDoubleClicked(const QModelIndex&);
     void on_actionSettings_triggered();
-
     void on_action_Close_triggered();
-
     void on_leFilterLeft_textChanged(const QString &arg1);
-
     void on_leFilterRight_textChanged(const QString &arg1);
-
     void on_action_Filter_triggered();
-
     void on_actionCompare_Result_triggered();
+    void on_actionS_plit_names_triggered();
+    void on_action_Drop_slashes_triggered();
 
 private:
     Ui::MainWindow *ui;
@@ -96,7 +93,8 @@ private:
     void setSorting(bool needSort);
     void updateListHeader(ContactModel* model, QLabel* header);
     void updateHeaders();
-    void updateMode();
+    void updateModeStatus();
+    void updateViewMode();
     inline ContactModel* oppositeModel();
     void askSaveChanges(QCloseEvent *event, ContactModel *model);
     void updateConfig();

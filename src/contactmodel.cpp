@@ -84,8 +84,9 @@ QVariant ContactModel::data(const QModelIndex &index, int role) const
         // Detect column
         ContactColumn col = visibleColumns[index.column()];
         switch (col) {
+            case ccLastName: if (c.names.count()>0)   return c.names[0]; else return QVariant();
             case ccFirstName:  if (c.names.count()>1) return c.names[1]; else return QVariant();
-            case ccLastName: if (c.names.count()>0) return c.names[0]; else return QVariant();
+            case ccMiddleName: if (c.names.count()>2) return c.names[2]; else return QVariant();
             case ccFullName: return c.fullName;
             case ccGenericName: return c.visibleName; // must be calculated
             case ccPhone: return c.prefPhone;
@@ -200,6 +201,26 @@ void ContactModel::swapNames(const QModelIndexList& indices)
     foreach(QModelIndex index, indices) {
         beginEditRow(index);
         items[index.row()].swapNames();
+        endEditRow(index);
+    }
+    _changed = true;
+}
+
+void ContactModel::splitNames(const QModelIndexList &indices)
+{
+    foreach(QModelIndex index, indices) {
+        beginEditRow(index);
+        items[index.row()].splitNames();
+        endEditRow(index);
+    }
+    _changed = true;
+}
+
+void ContactModel::dropSlashes(const QModelIndexList &indices)
+{
+    foreach(QModelIndex index, indices) {
+        beginEditRow(index);
+        items[index.row()].dropSlashes();
         endEditRow(index);
     }
     _changed = true;

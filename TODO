@@ -2,10 +2,9 @@ This file contains English and Russian (CP1251) issues. Sorry for this mixing, i
 You can contact me at pub@zvyozdochkin.ru.
 
 Ирина
-* panels compare/synchronization (and merging, probably make unified merging VV)
-* в групповые операции - разделение фамилии и имени и разделение инициалов (рядом с обменом имён). Возможно, тж. сделать разделение имён в контекстном меню.
-* language selection support, russian and ukrainian language files (Rosetta?)
 * см. все TODO в udxfile.cpp
+* language selection support, russian language file
+* при экспорте на Филипс проверить, не проглотится ли третье имя у разделённых имён с ФИО!
 * check udx support (по итогам)
 
 Я
@@ -22,13 +21,14 @@ You can contact me at pub@zvyozdochkin.ru.
 * settings - fonts, remove "treat name n as surname"
 * experimental csv support (full write)
 * проверить, как работает на charset, отличных от utf-8 (codec->toUnicode, у меня везде toLocal8Bit, а это, вероятно, неправильно)
+* ukrainian and belarussian language files (po, Rosetta?)
 * см. все TODO в проекте
 * проверить на всех доступных телефонах и андроидах
 * проверить на RFC
 * рус. описание (особ. отображение, Generic Name, операции редактирования, про сплиттинг и др., багрепортинг)
 * англ. описание?
 
-* duplicate search (and merging, probably make unified merging ^^)
+* duplicate search (and merging, probably make unified merging dialog with panels compare merging)
 
 0.2:
 * full csv support

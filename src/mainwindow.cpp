@@ -78,7 +78,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->action_Sort->setChecked(setDlg->sortingEnabled());
     setSorting(setDlg->sortingEnabled());
     updateHeaders();
-    updateMode();
+    updateModeStatus();
     on_action_Two_panels_toggled(ui->action_Two_panels->isChecked());
 }
 
@@ -125,7 +125,7 @@ void MainWindow::on_action_Two_panels_toggled(bool showTwoPanels)
     }
     setButtonsAccess();
     setDlg->setShowTwoPanels(showTwoPanels);
-    updateMode();
+    updateModeStatus();
 }
 
 void MainWindow::on_btnExit_clicked()
@@ -177,7 +177,7 @@ void MainWindow::on_action_Add_triggered()
         ContactItem c;
         d->getData(c);
         selectedModel->addRow(c);
-        selectedModel->setViewMode(selectedModel->viewMode(), oppositeModel());
+        updateViewMode();
     }
     delete d;
 }
@@ -198,7 +198,7 @@ void MainWindow::on_action_Edit_triggered()
     if (d->result()==QDialog::Accepted) {
         d->getData(c);
         selectedModel->endEditRow(selection[0]);
-        selectedModel->setViewMode(selectedModel->viewMode(), oppositeModel());
+        updateViewMode();
     }
     delete d;
 }
@@ -219,7 +219,7 @@ void MainWindow::on_action_Remove_triggered()
     if (!checkSelection()) return;
     if (QMessageBox::question(0, tr("Confirm"), tr("Are You really want to delete selected items?"), tr("Yes"), tr("No"))==0)
         selectedModel->removeAnyRows(selection);
-    selectedModel->setViewMode(selectedModel->viewMode(), oppositeModel());
+    updateViewMode();
     updateHeaders();
 }
 
@@ -235,7 +235,7 @@ void MainWindow::on_action_Copy_triggered()
     ContactModel* target = oppositeModel();
     selectedModel->copyRows(selection, target);
     selectedView->clearSelection();
-    selectedModel->setViewMode(selectedModel->viewMode(), oppositeModel());
+    updateViewMode();
     setButtonsAccess();
     updateHeaders();
 }
@@ -253,7 +253,7 @@ void MainWindow::on_action_Move_triggered()
     selectedModel->copyRows(selection, target);
     selectedModel->removeAnyRows(selection);
     selectedView->clearSelection();
-    selectedModel->setViewMode(selectedModel->viewMode(), oppositeModel());
+    updateViewMode();
     setButtonsAccess();
     updateHeaders();
 }
@@ -268,7 +268,16 @@ void MainWindow::on_action_Swap_names_triggered()
 {
     if (!checkSelection()) return;
     selectedModel->swapNames(selection);
-    selectedModel->setViewMode(selectedModel->viewMode(), oppositeModel());
+    updateViewMode();
+    updateHeaders();
+}
+
+// Split names
+void MainWindow::on_actionS_plit_names_triggered()
+{
+    if (!checkSelection()) return;
+    selectedModel->splitNames(selection);
+    updateViewMode();
     updateHeaders();
 }
 
@@ -307,7 +316,7 @@ void MainWindow::on_action_Sort_toggled(bool needSort)
 {
     setSorting(needSort);
     setDlg->setSortingEnabled(needSort);
-    updateMode();
+    updateModeStatus();
 }
 
 void MainWindow::on_btnSort_clicked()
@@ -331,7 +340,7 @@ bool MainWindow::checkSelection(bool errorIfNoSelected, bool onlyOneRowAllowed)
             QMessageBox::critical(0, tr("Error"), tr("Record not selected"));
         return false;
     }
-    if (proxySelection.count()>1) {
+    if (onlyOneRowAllowed && (proxySelection.count()>1)) {
         QMessageBox::critical(0, tr("Error"), tr("Group editing not impemented, select one record"));
         return false;
     }
@@ -425,7 +434,7 @@ void MainWindow::updateHeaders()
                        tr("Double Contact - %1").arg(selectedHeader->text()));
 }
 
-void MainWindow::updateMode()
+void MainWindow::updateModeStatus()
 {
     QString sm = tr("Mode: ");
     sm += (setDlg->showTwoPanels() ? tr("two panels") : tr("one panel")) + ", ";
@@ -433,6 +442,11 @@ void MainWindow::updateMode()
     // TODO save sorting state in settings and restore it!
     sm += tr("simple editing"); // TODO for manual search, auto compare, duplicate search
     lbMode->setText(sm);
+}
+
+void MainWindow::updateViewMode()
+{
+    selectedModel->setViewMode(selectedModel->viewMode(), oppositeModel());
 }
 
 ContactModel* MainWindow::oppositeModel()
@@ -535,4 +549,12 @@ void MainWindow::on_actionCompare_Result_triggered()
     if (d->result()==QDialog::Accepted)
         d->getData(left, right);
     delete d;
+}
+
+void MainWindow::on_action_Drop_slashes_triggered()
+{
+    if (!checkSelection()) return;
+    selectedModel->dropSlashes(selection);
+    updateViewMode();
+    updateHeaders();
 }
