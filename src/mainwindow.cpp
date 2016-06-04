@@ -281,8 +281,18 @@ void MainWindow::on_actionCo_mpare_triggered()
     // Clear both selections before compare
     ui->tvLeft->selectionModel()->clearSelection();
     ui->tvRight->selectionModel()->clearSelection();
-    // Compare
-    selectedModel->setViewMode(ContactModel::CompareMain, oppositeModel());
+    // Compare on
+    if (selectedModel->viewMode()==ContactModel::Standard) {
+        if (!ui->tvRight->isVisible() || oppositeModel()->rowCount()==0 || selectedModel->rowCount()==0) {
+            QMessageBox::critical(0, tr("Error"),
+                tr("Compare mode requires show two panels and load contact lists in both panels"));
+            return;
+        }
+        selectedModel->setViewMode(ContactModel::CompareMain, oppositeModel());
+    }
+    // Compare off
+    else
+        selectedModel->setViewMode(ContactModel::Standard, oppositeModel());
 }
 
 void MainWindow::on_btnCompare_clicked()

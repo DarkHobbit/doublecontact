@@ -213,6 +213,8 @@ void ContactModel::setViewMode(ContactModel::ContactViewMode mode, ContactModel 
         items.compareWith(target->itemList());
         target->setViewMode(ContactModel::CompareOpposite, 0);
     }
+    else if (mode==ContactModel::Standard && target)
+        target->setViewMode(ContactModel::Standard, 0);
     endResetModel();
 }
 

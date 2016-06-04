@@ -192,7 +192,7 @@
      <x>0</x>
      <y>0</y>
      <width>763</width>
-     <height>19</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_File">
@@ -358,7 +358,7 @@
   </action>
   <action name="actionCo_mpare">
    <property name="text">
-    <string>&amp;Compare</string>
+    <string>&amp;Compare/Uncompare</string>
    </property>
    <property name="shortcut">
     <string>F3</string>
