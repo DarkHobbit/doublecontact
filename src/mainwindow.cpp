@@ -177,6 +177,7 @@ void MainWindow::on_action_Add_triggered()
         ContactItem c;
         d->getData(c);
         selectedModel->addRow(c);
+        selectedModel->setViewMode(selectedModel->viewMode(), oppositeModel());
     }
     delete d;
 }
@@ -189,11 +190,7 @@ void MainWindow::on_btnAdd_clicked()
 // Edit
 void MainWindow::on_action_Edit_triggered()
 {
-    if (!checkSelection()) return;
-    if (selection.count()>1) {
-        QMessageBox::critical(0, tr("Error"), tr("Group editing not impemented, select one record"));
-        return;
-    }
+    if (!checkSelection(true, true)) return;
     ContactDialog* d = new ContactDialog(0);
     ContactItem& c = selectedModel->beginEditRow(selection[0]);
     d->setData(c);
@@ -201,6 +198,7 @@ void MainWindow::on_action_Edit_triggered()
     if (d->result()==QDialog::Accepted) {
         d->getData(c);
         selectedModel->endEditRow(selection[0]);
+        selectedModel->setViewMode(selectedModel->viewMode(), oppositeModel());
     }
     delete d;
 }
@@ -221,6 +219,7 @@ void MainWindow::on_action_Remove_triggered()
     if (!checkSelection()) return;
     if (QMessageBox::question(0, tr("Confirm"), tr("Are You really want to delete selected items?"), tr("Yes"), tr("No"))==0)
         selectedModel->removeAnyRows(selection);
+    selectedModel->setViewMode(selectedModel->viewMode(), oppositeModel());
     updateHeaders();
 }
 
@@ -236,6 +235,7 @@ void MainWindow::on_action_Copy_triggered()
     ContactModel* target = oppositeModel();
     selectedModel->copyRows(selection, target);
     selectedView->clearSelection();
+    selectedModel->setViewMode(selectedModel->viewMode(), oppositeModel());
     setButtonsAccess();
     updateHeaders();
 }
@@ -253,6 +253,7 @@ void MainWindow::on_action_Move_triggered()
     selectedModel->copyRows(selection, target);
     selectedModel->removeAnyRows(selection);
     selectedView->clearSelection();
+    selectedModel->setViewMode(selectedModel->viewMode(), oppositeModel());
     setButtonsAccess();
     updateHeaders();
 }
@@ -267,6 +268,7 @@ void MainWindow::on_action_Swap_names_triggered()
 {
     if (!checkSelection()) return;
     selectedModel->swapNames(selection);
+    selectedModel->setViewMode(selectedModel->viewMode(), oppositeModel());
     updateHeaders();
 }
 
@@ -321,12 +323,16 @@ void MainWindow::selectView(QTableView* view)
     selectedHeader = (isLeft ? ui->lbLeft : ui->lbRight);
 }
 
-bool MainWindow::checkSelection(bool errorIfNoSelected)
+bool MainWindow::checkSelection(bool errorIfNoSelected, bool onlyOneRowAllowed)
 {
     QModelIndexList proxySelection = selectedView->selectionModel()->selectedRows();
     if (proxySelection.count()==0) {
         if (errorIfNoSelected)
             QMessageBox::critical(0, tr("Error"), tr("Record not selected"));
+        return false;
+    }
+    if (proxySelection.count()>1) {
+        QMessageBox::critical(0, tr("Error"), tr("Group editing not impemented, select one record"));
         return false;
     }
     // If proxy models works...
@@ -517,20 +523,16 @@ void MainWindow::on_action_Filter_triggered()
 void MainWindow::on_actionCompare_Result_triggered()
 {
     // TODO check two panels and compare mode
-    if (!checkSelection()) return;
-    if (selection.count()>1) {
-        QMessageBox::critical(0, tr("Error"), tr("Group editing not impemented, select one record"));
-        return;
-    }
+    if (!checkSelection(true, true)) return;
     CompareDialog* d = new CompareDialog(0);
     ContactItem& left = selectedModel->beginEditRow(selection[0]);
     on_action_Other_panel_triggered(); // TODO G-code, need move oppositeView to selection proc
-    if (!checkSelection()) return;
+    if (!checkSelection(true, true)) return;
     ContactItem& right = selectedModel->beginEditRow(selection[0]);
+    on_action_Other_panel_triggered(); // TODO G-code, need move oppositeView to selection proc
     d->setData(left, right);
     d->exec();
     if (d->result()==QDialog::Accepted)
         d->getData(left, right);
     delete d;
-    on_action_Other_panel_triggered(); // TODO G-code, need move oppositeView to selection proc
 }

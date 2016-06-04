@@ -92,7 +92,7 @@ private:
     SettingsDialog* setDlg;
     QLabel* lbMode;
     void selectView(QTableView* view);
-    bool checkSelection(bool errorIfNoSelected = true);
+    bool checkSelection(bool errorIfNoSelected = true, bool onlyOneRowAllowed = false);
     void setSorting(bool needSort);
     void updateListHeader(ContactModel* model, QLabel* header);
     void updateHeaders();
