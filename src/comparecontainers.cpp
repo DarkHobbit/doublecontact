@@ -55,6 +55,7 @@ void StringListPair::getData(QStringList &leftData, QStringList &rightData)
     leftData.clear();
     foreach(QLineEdit* ed, leftSet)
         leftData.push_back(ed->text());
+    rightData.clear();
     foreach(QLineEdit* ed, rightSet)
         rightData.push_back(ed->text());
 }
@@ -112,7 +113,7 @@ void TypedPair::addValue(const QString &value, const QStringList &types, bool to
     QGridLayout* layout = toLeft ? layLeft : layRight;
     QList<QLineEdit*>& edSet = toLeft ? leftEdSet : rightEdSet;
     QList<QComboBox*>& comboSet = toLeft ? leftComboSet : rightComboSet;
-    int prevCount = layout->rowCount();
+    int prevCount = edSet.count();
     edSet.push_back(new QLineEdit(value));
     layout->addWidget(edSet.last(), prevCount, 0);
     comboSet.push_back(new QComboBox());
