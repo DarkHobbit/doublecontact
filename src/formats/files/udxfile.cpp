@@ -82,7 +82,7 @@ bool UDXFile::importRecords(const QString &url, ContactList &list, bool append)
     QString udxVer = recInfo.firstChildElement("UdxVersion").text();
     if (udxVer.isEmpty()) {
         _errors << QObject::tr("Warning: udx version not found, treat as 1.0...");
-        charSet = "1.0";
+        udxVer = "1.0";
     }
     QDomElement vcfInfo = recInfo.firstChildElement("RecordOfvCard");
     QString vcVer = vcfInfo.firstChildElement("vCardVersion").text();
@@ -93,7 +93,7 @@ bool UDXFile::importRecords(const QString &url, ContactList &list, bool append)
         _errors << QObject::tr("Can't find vCard records at file\n%1").arg(url);
         return false;
     }
-    QTextCodec* codec = QTextCodec::codecForName(charSet.toLocal8Bit());
+    // QTextCodec* codec = QTextCodec::codecForName(charSet.toLocal8Bit()); TODO not works on windows
     ContactItem item;
     if (!append)
         list.clear();
@@ -110,7 +110,7 @@ bool UDXFile::importRecords(const QString &url, ContactList &list, bool append)
         QDomElement field = fields.firstChildElement();
         while (!field.isNull()) {
             QString fldName = field.nodeName().toUpper();
-            QString fldValue = codec->toUnicode(field.text().toLocal8Bit());
+            QString fldValue = field.text(); // codec->toUnicode(field.text().toLocal8Bit()); TODO not works on windows
             if (fldName=="N") {
                 item.names = fldValue.split(";");
                 // In ALL known me udx files part before first ; was EMPTY
