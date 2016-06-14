@@ -21,6 +21,8 @@ public:
     bool readConfig();
     bool writeConfig();
     ContactColumnList columnNames();
+    QString lang();
+    bool langChanged();
     // Separate settings, managed by main window commands
     QString lastPath();
     void setLastPath(const QString& path);
@@ -31,12 +33,13 @@ public:
     bool sortingEnabled();
     void setSortingEnabled(bool value);
 private slots:
-    void on_cbSurname_toggled(bool checked);
     void on_btnAddCol_clicked();
     void on_btnDelCol_clicked();
     void on_btnUpCol_clicked();
     void on_btnDownCol_clicked();
 private:
+    QString _lang;
+    bool _langChanged;
     Ui::SettingsDialog *ui;
     QSettings settings;
     QStringList validColumnNames; // Available list

@@ -56,5 +56,13 @@ unix {
     MOC_DIR = .moc
 }
 
+TRANSLATIONS += \
+    ../translations/doublecontact_en_GB.ts \
+    ../translations/doublecontact_ru_RU.ts
+
+tr.commands = lrelease \
+    $$_PRO_FILE_
+QMAKE_EXTRA_TARGETS += tr
+POST_TARGETDEPS += tr
 RESOURCES += \
     doublecontact.qrc

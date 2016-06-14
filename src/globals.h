@@ -16,7 +16,24 @@
 
 #include <QHash>
 #include <QItemDelegate>
+#include <QObject>
 #include <QStringList>
+
+// Common strings for translation unify
+#define S_ERROR QObject::tr("Error")
+#define S_WARNING QObject::tr("Warning")
+#define S_CONFIRM QObject::tr("Confirmation")
+#define S_NEW_LIST QObject::tr("New contact list")
+// Spec.value for combined phone/mail types
+#define S_MIXED_TYPE QObject::tr("mixed...")
+// Col
+#define S_FIRST_NAME QObject::tr("Firstname")
+#define S_LAST_NAME QObject::tr("Lastname")
+#define S_MIDDLE_NAME QObject::tr("Middlename")
+#define S_FULL_NAME QObject::tr("Full name")
+#define S_GENERIC_NAME QObject::tr("Generic name")
+#define S_PHONE QObject::tr("Phone")
+#define S_EMAIL QObject::tr("Email")
 
 // Visible columns
 enum ContactColumn {
@@ -28,7 +45,15 @@ enum ContactColumn {
 };
 
 // Visible columns headers
-extern const QString contactColumnHeaders[ccLast];
+// (It was a simple string array, but its translation not worked)
+class ContactColumnHeaders: public QStringList
+{
+public:
+    ContactColumnHeaders();
+    void fill();
+};
+
+extern ContactColumnHeaders contactColumnHeaders;
 
 class ContactColumnList: public QList<ContactColumn>
 {};
@@ -46,6 +71,7 @@ class StandardTypes: public QHash<QString, QString> {
 // Thanx to Axis - http://axis.bplaced.net/news/460
 class ReadOnlyTableDelegate : public QItemDelegate
 {
+    Q_OBJECT
 public:
     ReadOnlyTableDelegate(QObject* parent = 0);
     virtual QWidget* createEditor(

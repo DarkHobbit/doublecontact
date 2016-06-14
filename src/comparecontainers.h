@@ -28,39 +28,54 @@ class ItemPair: public QObject
 {
     Q_OBJECT
 public:
-    ItemPair(const QString& title, QGridLayout* layout);
+    ItemPair(const QString& title, QGridLayout* layout, bool multiItem);
 protected:
-    QGroupBox* gbLeft;
-    QGroupBox* gbRight;
+    bool _multiItem;
+    QGridLayout* layLeft;
+    QGridLayout* layRight;
     virtual void copyData(bool toLeft)=0;
+    virtual void copyOneItem(bool toLeft, int srcIndex)=0;
+    bool checkDiff() { return true; }; // TODO=0;
+    void buildOneItemButtonSide(bool toLeft, int column);
+    void buildOneItemButtons(int column);
+    void addOneItemButton(bool toLeft, int column);
     void highlightDiff(bool hasDiff);
 private:
+    QGroupBox* gbLeft;
+    QGroupBox* gbRight;
     QToolButton* btnToLeft;
     QToolButton* btnToRight;
+    QList<QToolButton*> btnsOneItemToLeft;
+    QList<QToolButton*> btnsOneItemToRight;
 private slots:
     void onToLeftClicked();
     void onToRightClicked();
+    void onOneItemToLeftClicked();
+    void onOneItemToRightClicked();
 };
 
 class StringListPair: public ItemPair
 {
     Q_OBJECT
 public:
-    StringListPair(const QString& title, QGridLayout* layout, const QStringList& leftData, const QStringList& rightData);
+    StringListPair(const QString& title, QGridLayout* layout,
+        const QStringList& leftData, const QStringList& rightData, bool multiItem = true);
     void getData(QStringList& leftData, QStringList& rightData);
 protected:
     virtual void copyData(bool toLeft);
+    virtual void copyOneItem(bool toLeft, int srcIndex);
 private:
     QList<QLineEdit*> leftSet;
     QList<QLineEdit*> rightSet;
-    void fillBox(QGroupBox* gBox, const QStringList& data, QList<QLineEdit*>& edSet);
+    void fillBox(QGridLayout* layout, const QStringList& data, QList<QLineEdit*>& edSet);
 };
 
 class StringPair: public StringListPair
 {
     Q_OBJECT
 public:
-    StringPair(const QString& title, QGridLayout* layout, const QString& leftData, const QString& rightData);
+    StringPair(const QString& title, QGridLayout* layout,
+        const QString& leftData, const QString& rightData);
     void getData(QString& leftData, QString& rightData);
 };
 
@@ -69,14 +84,15 @@ class TypedPair: public ItemPair
     Q_OBJECT
 public:
     TypedPair(const QString& title, QGridLayout* layout);
+    virtual ~TypedPair();
 protected:
+    StandardTypes* standardTypes;
     void addValue(const QString& value, const QStringList& types, bool toLeft);
     int count(bool onLeft);
     bool getValue(int index, QString& value, QStringList& types, bool fromLeft);
     virtual void copyData(bool toLeft);
+    virtual void copyOneItem(bool toLeft, int srcIndex);
 private:
-    QGridLayout* layLeft;
-    QGridLayout* layRight;
     QList<QLineEdit*> leftEdSet;
     QList<QComboBox*> leftComboSet;
     QList<QLineEdit*> rightEdSet;
@@ -99,6 +115,33 @@ public:
     void getData(QList<Email>& leftEmails, QList<Email>& rightEmails);
 };
 
-// TODO DateItemPair, AnnPair (how to unify?..) and AddressPair
+class DateItemListPair: public ItemPair
+{
+    Q_OBJECT
+public:
+    DateItemListPair(const QString& title, QGridLayout* layout,
+        const QList<DateItem>& leftData, const QList<DateItem>& rightData, bool multiItem = true);
+    void getData(QList<DateItem>& leftData, QList<DateItem>& rightData);
+protected:
+    virtual void copyData(bool toLeft);
+    virtual void copyOneItem(bool toLeft, int srcIndex);
+private:
+    QList<QLabel*> leftSet;
+    QList<QLabel*> rightSet;
+    QList<DateItem> leftDataSet;
+    QList<DateItem> rightDataSet;
+    void fillBox(QGridLayout* layout, const QList<DateItem>& data, QList<QLabel*>& lbSet);
+};
+
+class DateItemPair: public DateItemListPair
+{
+    Q_OBJECT
+public:
+    DateItemPair(const QString& title, QGridLayout* layout,
+        const DateItem& leftData, const DateItem& rightData);
+    void getData(DateItem& leftData, DateItem& rightData);
+};
+
+// TODO AddressPair
 
 #endif // COMPARECONTAINERS_H

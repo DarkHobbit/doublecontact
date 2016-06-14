@@ -37,39 +37,14 @@
           <widget class="QComboBox" name="cbLanguage">
            <item>
             <property name="text">
-             <string>English</string>
+             <string notr="true">English</string>
             </property>
            </item>
            <item>
             <property name="text">
-             <string>Русский</string>
+             <string notr="true">Русский</string>
             </property>
            </item>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_2">
-         <item>
-          <widget class="QCheckBox" name="cbSurname">
-           <property name="text">
-            <string>Treat name #</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QSpinBox" name="sbSurname">
-           <property name="minimum">
-            <number>1</number>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="lbSurname">
-           <property name="text">
-            <string>as surname</string>
-           </property>
           </widget>
          </item>
         </layout>
@@ -84,7 +59,7 @@
        <item>
         <widget class="QLabel" name="label">
          <property name="text">
-          <string>font dialog call???</string>
+          <string notr="true">font dialog call???</string>
          </property>
         </widget>
        </item>

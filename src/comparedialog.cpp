@@ -31,6 +31,12 @@ CompareDialog::~CompareDialog()
     delete ui;
 }
 
+void CompareDialog::setHeaders(const QString &left, const QString &right)
+{
+    ui->lbLeft->setText(left);
+    ui->lbRight->setText(right);
+}
+
 template<class P, class T>
 void CompareDialog::checkPair(const QString& title, P** pair, T& leftData, T& rightData)
 {
@@ -43,18 +49,18 @@ void CompareDialog::setData(const ContactItem &left, const ContactItem &right)
 {
     ui->layPairs->setAlignment(Qt::AlignTop);
 
-    checkPair(tr("Full Name"), &pFullName, left.fullName, right.fullName);
+    checkPair(tr("Full name"), &pFullName, left.fullName, right.fullName);
     checkPair(tr("Names"), &pNames, left.names, right.names);
     checkPair(tr("Phones"), &pPhones, left.phones, right.phones);
     checkPair(tr("Emails"), &pEmails, left.emails, right.emails);
-    // TODO bday, anniversaries
+    checkPair(tr("Birthday"), &pBDay, left.birthday, right.birthday);
+    checkPair(tr("Anniversaries"), &pAnn, left.anniversaries, right.anniversaries);
     checkPair(tr("Description"), &pDesc, left.description, right.description);
     // TODO photo*
     checkPair(tr("Organization"), &pOrg, left.organization, right.organization);
     checkPair(tr("Job title"), &pTitle, left.title, right.title);
     // TODO address
 }
-
 
 void CompareDialog::getData(ContactItem &left, ContactItem &right)
 {
@@ -66,7 +72,10 @@ void CompareDialog::getData(ContactItem &left, ContactItem &right)
         pPhones->getData(left.phones, right.phones);
     if (pEmails)
         pEmails->getData(left.emails, right.emails);
-    // TODO bday, anniversaries
+    if (pBDay)
+        pBDay->getData(left.birthday, right.birthday);
+    if (pAnn)
+        pAnn->getData(left.anniversaries, right.anniversaries);
     if (pDesc)
         pDesc->getData(left.description, right.description);
     // TODO photo*

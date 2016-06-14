@@ -76,6 +76,12 @@ private slots:
     void on_actionS_plit_names_triggered();
     void on_action_Drop_slashes_triggered();
 
+    void on_action_Generate_full_name_triggered();
+
+    void on_action_Join_triggered();
+
+    void on_actionDrop_full_name_triggered();
+
 private:
     Ui::MainWindow *ui;
     ContactModel *modLeft, *modRight;
@@ -91,6 +97,7 @@ private:
     void selectView(QTableView* view);
     bool checkSelection(bool errorIfNoSelected = true, bool onlyOneRowAllowed = false);
     void setSorting(bool needSort);
+    void setLanguage(const QString& language);
     void updateListHeader(ContactModel* model, QLabel* header);
     void updateHeaders();
     void updateModeStatus();

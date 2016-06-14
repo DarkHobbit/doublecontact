@@ -3,12 +3,15 @@ You can contact me at pub@zvyozdochkin.ru.
 
 Ирина
 * см. все TODO в udxfile.cpp
+* non-destructive item join (i.e. merge 2 phones instead rewrite all list)
+* BDAY in compare dialog
+* search dups in translation!!!
 * language selection support, russian language file
 * при экспорте на Филипс проверить, не проглотится ли третье имя у разделённых имён с ФИО!
 * check udx support (по итогам)
 
 Я
-* id support in vcf
+* compare for multi-type typed pairs! Current version may corrupt data
 * postal address support (и найти относящиеся к адресам TODO, например, в ContactItem::identicalTo)
 * vcf save (and change status to alpha)
 
@@ -19,19 +22,24 @@ You can contact me at pub@zvyozdochkin.ru.
 * export delete time from bday mode if receiver not support it
 * separate other and unknown tags
 * settings - fonts, remove "treat name n as surname"
+* more grid columns: bday, org, mb. address 
 * experimental csv support (full write)
+* add statistics in List menu
 * проверить, как работает на charset, отличных от utf-8 (codec->toUnicode, у меня везде toLocal8Bit, а это, вероятно, неправильно)
+* About dialog
 * ukrainian and belarussian language files (po, Rosetta?)
 * см. все TODO в проекте
 * проверить на всех доступных телефонах и андроидах
 * проверить на RFC
 * рус. описание (особ. отображение, Generic Name, операции редактирования, про сплиттинг и др., багрепортинг)
 * англ. описание?
+* set doxygen labels
 
 * duplicate search (and merging, probably make unified merging dialog with panels compare merging)
 
 0.2:
 * full csv support
+* C++11?
 
 0.3:
 * network export/import

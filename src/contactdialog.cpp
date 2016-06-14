@@ -23,8 +23,6 @@
 #include "globals.h"
 #include "phonetypedialog.h"
 
-// Spec.value for combined phone/mail types
-const QString mixedType = QObject::tr("mixed...");
 #define MIN_VISIBLE_NAMES 2
 #define MIN_VISIBLE_TRIPLETS 1
 
@@ -186,14 +184,14 @@ void ContactDialog::fillPhoneTypes(QComboBox* combo)
 {
     combo->clear();
     combo->insertItems(0, Phone::standardTypes.displayValues);
-    combo->addItem(mixedType);
+    combo->addItem(S_MIXED_TYPE);
 }
 
 void ContactDialog::fillEmailTypes(QComboBox* combo)
 {
     combo->clear();
     combo->insertItems(0, Email::standardTypes.displayValues);
-    combo->addItem(mixedType);
+    combo->addItem(S_MIXED_TYPE);
 }
 
 void ContactDialog::addName(const QString& name)
@@ -424,7 +422,7 @@ void ContactDialog::on_btnAdd_clicked()
 
 void ContactDialog::itemTypeChanged(const QString &value)
 {
-    if (value==mixedType) {
+    if (value==S_MIXED_TYPE) {
         QComboBox *cbT = dynamic_cast<QComboBox*>(sender());
         // make dialog for mixed record
         if (sender()->objectName().contains("Phone"))

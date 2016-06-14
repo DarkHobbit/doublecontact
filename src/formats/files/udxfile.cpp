@@ -71,7 +71,7 @@ bool UDXFile::importRecords(const QString &url, ContactList &list, bool append)
     // Codepage, version, expected record count
     QDomElement recInfo = root.firstChildElement("RecordInfo");
     if (recInfo.isNull()) {
-        _errors << QObject::tr("Can't find record info at file\n%1").arg(url);
+        _errors << QObject::tr("Can't find 'RecordInfo' tag at file\n%1").arg(url);
         return false;
     }
     QString charSet = recInfo.firstChildElement("Encoding").text();
@@ -90,7 +90,7 @@ bool UDXFile::importRecords(const QString &url, ContactList &list, bool append)
     // vCard set
     QDomElement vCard = root.firstChildElement("vCard");
     if (vCard.isNull()) {
-        _errors << QObject::tr("Can't find vCard records at file\n%1").arg(url);
+        _errors << QObject::tr("Can't find 'vCard' records at file\n%1").arg(url);
         return false;
     }
     // QTextCodec* codec = QTextCodec::codecForName(charSet.toLocal8Bit()); TODO not works on windows
@@ -106,7 +106,7 @@ bool UDXFile::importRecords(const QString &url, ContactList &list, bool append)
         item.id = vCardInfo.firstChildElement("Sequence").text();
         QDomElement fields = vCardInfo.firstChildElement("vCardField");
         if (fields.isNull())
-            _errors << QObject::tr("Can't find vCardField at sequence %1").arg(item.id);
+            _errors << QObject::tr("Can't find 'vCardField' at sequence %1").arg(item.id);
         QDomElement field = fields.firstChildElement();
         while (!field.isNull()) {
             QString fldName = field.nodeName().toUpper();
@@ -116,6 +116,8 @@ bool UDXFile::importRecords(const QString &url, ContactList &list, bool append)
                 // In ALL known me udx files part before first ; was EMPTY
                 if (item.names[0].isEmpty())
                     item.names.removeAt(0);
+                // If empty parts not in-middle, remove it
+                item.dropFinalEmptyNames();
             }
             else if (fldName.startsWith("TEL")) {
                 Phone phone;
@@ -135,7 +137,7 @@ bool UDXFile::importRecords(const QString &url, ContactList &list, bool append)
             else if (fldName=="ORGNAME")
                 item.organization = fldValue;
             else if (fldName=="BDAY")
-                item.birthday.value = QDateTime::fromString("yyyyMMdd");
+                item.birthday.value = QDateTime::fromString(fldValue, "yyyyMMdd");
             else if (fldName=="EMAIL") {
                 Email email;
                 email.address = fldValue;
@@ -143,7 +145,7 @@ bool UDXFile::importRecords(const QString &url, ContactList &list, bool append)
                 item.emails.push_back(email);
             }
             else
-                _errors << QObject::tr("Unknown vCard field: %1").arg(fldName);
+                _errors << QObject::tr("Unknown 'vCardfield' type: %1").arg(fldName);
             field = field.nextSiblingElement();
         }
         item.calculateFields();
@@ -269,18 +271,20 @@ bool UDXFile::exportRecords(const QString &url, ContactList &list)
         // Birthday
         if (item.birthday.value.isValid())
             addElement(vCardField, "BDAY", item.birthday.value.toString("yyyyMMdd"));
+        // TODO maybe some phones support time in udx? need search specs, and maybe need use DateItem::toString() here
+        // but check format, - and T, maybe it's vCard 2.1
         if (item.birthday.hasTime)
-            _errors << QObject::tr("Warning: contact %1 has time (%2) in birthday, not supported in UDX")
+            _errors << QObject::tr("Warning: contact %1 has time (%2) in birthday, not implemented in UDX reader")
                  .arg(item.visibleName).arg(item.birthday.value.toString("hh:mm:ss"));
         // TODO warn on address
         if ((!item.photo.isEmpty()) || (!item.photoUrl.isEmpty()))
-            _errors << QObject::tr("Warning: contact %1 has photo, not supported in UDX").arg(item.visibleName);
+            _errors << QObject::tr("Warning: contact %1 has photo, not implemented in UDX").arg(item.visibleName);
         if (!item.description.isEmpty())
-            _errors << QObject::tr("Warning: contact %1 has description, not supported in UDX").arg(item.visibleName);
+            _errors << QObject::tr("Warning: contact %1 has description, not implemented in UDX").arg(item.visibleName);
         if (!item.title.isEmpty())
-            _errors << QObject::tr("Warning: contact %1 has job title, not supported in UDX").arg(item.visibleName);
+            _errors << QObject::tr("Warning: contact %1 has job title, not implemented in UDX").arg(item.visibleName);
         if (!item.anniversaries.isEmpty())
-            _errors << QObject::tr("Warning: contact %1 has anniversaries, not supported in UDX").arg(item.visibleName);
+            _errors << QObject::tr("Warning: contact %1 has anniversaries, not implemented in UDX").arg(item.visibleName);
         // Here place warning on all other udx-unsupported things
     }
     QString content = toString(0);

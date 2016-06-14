@@ -28,6 +28,7 @@ class CompareDialog : public QDialog
 public:
     explicit CompareDialog(QWidget *parent = 0);
     ~CompareDialog();
+    void setHeaders(const QString& left, const QString& right);
     void setData(const ContactItem& left, const ContactItem& right);
     void getData(ContactItem& left, ContactItem& right);
 private:
@@ -36,7 +37,8 @@ private:
     StringListPair* pNames;
     PhonesPair* pPhones;
     EmailsPair* pEmails;
-    // TODO bday, anniversaries
+    DateItemPair* pBDay;
+    DateItemListPair* pAnn;
     StringPair* pDesc;
     // TODO photo*
     StringPair* pOrg, *pTitle;

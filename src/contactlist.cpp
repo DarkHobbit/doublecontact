@@ -30,7 +30,13 @@ bool Phone::operator ==(const Phone &p)
 
 Phone::StandardTypes::StandardTypes()
 {
+    fill();
+}
+
+void Phone::StandardTypes::fill()
+{
     clear();
+    displayValues.clear();
     // Types according RFC 2426
     (*this)["home"] = QObject::tr("Home");
     (*this)["msg"] = QObject::tr("Message");
@@ -62,13 +68,19 @@ bool Email::operator ==(const Email &e)
 
 Email::StandardTypes::StandardTypes()
 {
+    fill();
+}
+
+void Email::StandardTypes::fill()
+{
     clear();
+    displayValues.clear();
     // Types according RFC 2426
     (*this)["internet"] = QObject::tr("Internet");
     (*this)["x400"] = QObject::tr("X.400");
     (*this)["pref"] = QObject::tr("Preferable");
     displayValues
-        << (*this)["internet"]  << (*this)["x400"] << (*this)["pref"];
+            << (*this)["internet"]  << (*this)["x400"] << (*this)["pref"];
 }
 
 void ContactItem::clear()
@@ -104,12 +116,14 @@ bool ContactItem::swapNames()
     QString buffer = names[0];
     names[0] = names[1];
     names[1] = buffer;
+    dropFinalEmptyNames();
     return true;
 }
 
 bool ContactItem::splitNames()
 {
     bool res = false;
+    dropFinalEmptyNames();
     for (int i=0; i<names.count(); i++) {
         int sPos = names[i].indexOf(" ");
         if (sPos!=-1) {
@@ -126,8 +140,10 @@ bool ContactItem::dropSlashes()
     for (int i=0; i<names.count(); i++) {
         if (names[i].right(1)=="\\")
             names[i].remove(names[i].length()-1, 1);
-        if (names[i][names[i].length()-2]=='/' && names[i][names[i].length()-1].isDigit())
-            names[i].remove(names[i].length()-2, 2);
+        int len = names[i].length();
+        if (len>2)
+            if (names[i][len-2]=='/' && names[i][len-1].isDigit())
+                names[i].remove(len-2, 2);
     }
     return true;
 }
@@ -181,6 +197,14 @@ QString ContactItem::formatNames()
     if (names.count()>4) // Honorific Suffixes, rank, degree
         res += ", " + names[2];
     return res;
+}
+
+void ContactItem::dropFinalEmptyNames()
+{
+    while (names.last().isEmpty()) {
+        names.removeLast();
+        if (names.isEmpty()) break;
+    }
 }
 
 bool ContactItem::similarTo(const ContactItem &pair)
@@ -305,4 +329,16 @@ void DateItem::clear()
     hasTimeZone = false;
     zoneHour = 0;
     zoneMin = 0;
+}
+
+QString DateItem::toString() const
+{
+    // TODO use vCard profile
+    QString s = value.date().toString("yyyyMMdd");
+    if (hasTime) {
+        s += value.time().toString("Thhmmss");
+        if (hasTimeZone) // TODO search Xamples with positive TZ hour and short form
+            s += QString("%1:%2").arg(zoneHour).arg(zoneMin);
+    }
+    return s;
 }

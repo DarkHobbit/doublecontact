@@ -55,6 +55,8 @@ public:
     void swapNames(const QModelIndexList& indices);
     void splitNames(const QModelIndexList& indices);
     void dropSlashes(const QModelIndexList& indices);
+    void generateFullNames(const QModelIndexList& indices);
+    void dropFullNames(const QModelIndexList& indices);
     void setViewMode(ContactViewMode mode, ContactModel* target);
     ContactViewMode viewMode();
     ContactList& itemList();

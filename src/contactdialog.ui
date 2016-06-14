@@ -31,7 +31,7 @@
            <item>
             <widget class="QLabel" name="lbFullName">
              <property name="text">
-              <string>Full Name</string>
+              <string>Full name</string>
              </property>
             </widget>
            </item>
@@ -80,7 +80,7 @@
             <item row="0" column="2">
              <widget class="QToolButton" name="btnDelPhone1">
               <property name="text">
-               <string>...</string>
+               <string notr="true">...</string>
               </property>
               <property name="icon">
                <iconset resource="doublecontact.qrc">
@@ -119,7 +119,7 @@
             <item row="0" column="2">
              <widget class="QToolButton" name="btnDelEmail1">
               <property name="text">
-               <string>...</string>
+               <string notr="true">...</string>
               </property>
               <property name="icon">
                <iconset resource="doublecontact.qrc">
@@ -274,7 +274,7 @@
               </size>
              </property>
              <property name="text">
-              <string>Under consrtuction</string>
+              <string notr="true"/>
              </property>
              <property name="alignment">
               <set>Qt::AlignCenter</set>
@@ -355,14 +355,14 @@
          <item row="0" column="3">
           <widget class="QLabel" name="lbFormatVersionValue">
            <property name="text">
-            <string>===</string>
+            <string notr="true">===</string>
            </property>
           </widget>
          </item>
          <item row="0" column="1">
           <widget class="QLabel" name="lbOriginalFormatValue">
            <property name="text">
-            <string>===</string>
+            <string notr="true">===</string>
            </property>
           </widget>
          </item>
@@ -376,7 +376,7 @@
          <item row="1" column="1">
           <widget class="QLabel" name="lbIDValue">
            <property name="text">
-            <string>===</string>
+            <string notr="true">===</string>
            </property>
           </widget>
          </item>

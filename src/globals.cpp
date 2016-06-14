@@ -11,20 +11,31 @@
  *
  */
 
+#include <QtGlobal>
 #include <QMessageBox>
 #include <QObject>
 #include "globals.h"
 
 // Visible columns headers
-const QString contactColumnHeaders[ccLast] = {
-    QObject::tr("Firstname"),
-    QObject::tr("Lastname"),
-    QObject::tr("Middlename"),
-    QObject::tr("Full name"),
-    QObject::tr("Generic name"),
-    QObject::tr("Phone"),
-    QObject::tr("eMail")
-};
+ContactColumnHeaders contactColumnHeaders;
+
+ContactColumnHeaders::ContactColumnHeaders()
+{
+    fill();
+}
+
+void ContactColumnHeaders::fill()
+{
+    clear();
+    (*this)
+    << S_FIRST_NAME
+    << S_LAST_NAME
+    << S_MIDDLE_NAME
+    << S_FULL_NAME
+    << S_GENERIC_NAME
+    << S_PHONE
+    << S_EMAIL;
+}
 
 QString StandardTypes::translate(const QString &key, bool* isStandard) const
 {
@@ -50,7 +61,7 @@ ReadOnlyTableDelegate::ReadOnlyTableDelegate(QObject* parent)
 QWidget* ReadOnlyTableDelegate::createEditor(
      QWidget*, const QStyleOptionViewItem&, const QModelIndex &) const
 {
-    QMessageBox::critical(0, tr("Error"), tr("This table is read only"));
+    QMessageBox::critical(0, S_ERROR, tr("This table is read only"));
     return 0;
 }
 

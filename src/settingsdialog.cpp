@@ -12,7 +12,7 @@
 
 SettingsDialog::SettingsDialog(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::SettingsDialog)
+    _lang(""), _langChanged(false), ui(new Ui::SettingsDialog)
 {
     ui->setupUi(this);
     for (int i=0; i<ccLast; i++)
@@ -27,17 +27,11 @@ SettingsDialog::~SettingsDialog()
 bool SettingsDialog::readConfig()
 {
     // Language
-    QString lang = settings.value("General/Language", "Unknown").toString();
-    if (lang==tr("Unknown")) {
-        lang = "English"; // TODO use system language
+    _lang = settings.value("General/Language", "Unknown").toString();
+    if (_lang=="Unknown") {
+        _lang = "English"; // TODO use system language
     }
-    ui->cbLanguage->setCurrentIndex(ui->cbLanguage->findText(lang));
-    // Treat name ... as surname
-    int surnameIndex = settings.value("General/SurnameIndex", -1).toInt();
-    ui->cbSurname->setChecked(surnameIndex>-1);
-    ui->sbSurname->setEnabled(surnameIndex>-1);
-    if (surnameIndex>-1)
-        ui->sbSurname->setValue(surnameIndex);
+    ui->cbLanguage->setCurrentIndex(ui->cbLanguage->findText(_lang));
     // Misc
     ui->cbOpenLastFilesAtStartup->setChecked(settings.value("General/OpenLastFilesAtStartup", true).toBool());
     // Column view
@@ -61,10 +55,12 @@ bool SettingsDialog::readConfig()
 bool SettingsDialog::writeConfig()
 {
     // Language
-    settings.setValue("General/Language", ui->cbLanguage->currentText());
-    // Treat name ... as surname
-    settings.setValue("General/SurnameIndex",
-        ui->cbSurname->isChecked() ? ui->sbSurname->value()+1 : -1);
+    QString newLang = ui->cbLanguage->currentText();
+    settings.setValue("General/Language", newLang);
+    if (newLang!=_lang) {
+        _langChanged = true;
+        _lang = newLang;
+    }
     // Misc
     settings.setValue("General/OpenLastFilesAtStartup", ui->cbOpenLastFilesAtStartup->isChecked());
     // Column view
@@ -125,9 +121,14 @@ ContactColumnList SettingsDialog::columnNames()
     return res;
 }
 
-void SettingsDialog::on_cbSurname_toggled(bool checked)
+QString SettingsDialog::lang()
 {
-    ui->sbSurname->setEnabled(checked);
+    return _lang;
+}
+
+bool SettingsDialog::langChanged()
+{
+    return _langChanged;
 }
 
 void SettingsDialog::on_btnAddCol_clicked()
@@ -141,7 +142,7 @@ void SettingsDialog::on_btnAddCol_clicked()
 void SettingsDialog::on_btnDelCol_clicked()
 {
     if (ui->lwVisibleColumns->selectedItems().count()>=ui->lwVisibleColumns->count()) {
-        QMessageBox::critical(0, tr("Error"), tr("List must contain at least one visible column"));
+        QMessageBox::critical(0, S_ERROR, tr("List must contain at least one visible column"));
     }
     else
     foreach (QListWidgetItem* item, ui->lwVisibleColumns->selectedItems()) {

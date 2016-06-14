@@ -226,6 +226,26 @@ void ContactModel::dropSlashes(const QModelIndexList &indices)
     _changed = true;
 }
 
+void ContactModel::generateFullNames(const QModelIndexList &indices)
+{
+    foreach(QModelIndex index, indices) {
+        beginEditRow(index);
+        items[index.row()].fullName = items[index.row()].formatNames();
+        endEditRow(index);
+    }
+    _changed = true;
+}
+
+void ContactModel::dropFullNames(const QModelIndexList &indices)
+{
+    foreach(QModelIndex index, indices) {
+        beginEditRow(index);
+        items[index.row()].fullName.clear();
+        endEditRow(index);
+    }
+    _changed = true;
+}
+
 void ContactModel::setViewMode(ContactModel::ContactViewMode mode, ContactModel *target)
 {
     beginResetModel();

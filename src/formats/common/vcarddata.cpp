@@ -35,6 +35,8 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
     // Collect records
     for (int line=0; line<lines.count(); line++) {
         const QString& s = lines[line];
+        if (s.isEmpty()) // vcf can contain empty lines
+            continue;
         if (s.startsWith("BEGIN:VCARD", Qt::CaseInsensitive)) {
             recordOpened = true;
             item.clear();
@@ -68,22 +70,26 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                 else if (vType[i].startsWith("TYPE=", Qt::CaseInsensitive))
                     // non-standart types may be non-latin
                     types << codec->toUnicode(vType[i].mid(QString("TYPE=").length()).toLocal8Bit());
+                    // TODO split such records as home,pref,cell in one type
                 else if (vType[i].startsWith("VALUE=", Qt::CaseInsensitive))
                     // for PHOTO/URI, at least
                     typeVal = vType[i].mid(QString("VALUE=").length());
-                else
-                    item.unknownTags.push_back(TagValue(vType.join(";"), vValue.join(";"))); // TODO partiallyKnownTag?
+                else // "TYPE=" can be omitted in some addressbooks
+                    types << codec->toUnicode(vType[i].toLocal8Bit());
             }
             if ((!types.isEmpty()) && (tag!="TEL") && (tag!="EMAIL") && (tag!="ADR") && (tag!="PHOTO"))
-                errors << QObject::tr("Unexpected TYPE appearance at line %1").arg(line+1);
+                errors << QObject::tr("Unexpected TYPE appearance at line %1: tag %2").arg(line+1).arg(tag);
             // Known tags
             if (tag=="VERSION")
                 item.version = decodeValue(vValue[0], encoding, charSet, errors);
             else if (tag=="FN")
                 item.fullName = decodeValue(vValue[0], encoding, charSet, errors);
-            else if (tag=="N")
+            else if (tag=="N") {
                 foreach (const QString& name, vValue)
                     item.names << decodeValue(name, encoding, charSet, errors);
+                // If empty parts not in-middle, remove it
+                item.dropFinalEmptyNames();
+            }
             else if (tag=="NOTE")
                 item.description = decodeValue(vValue[0], encoding, charSet, errors);
             else if (tag=="TEL") {
@@ -91,7 +97,7 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                 phone.number = decodeValue(vValue[0], encoding, charSet, errors);
                 // Phone type(s)
                 if (types.isEmpty()) {
-                    errors << QObject::tr("Missing phone type at line %1").arg(line+1);
+                    errors << QObject::tr("Missing phone type at line %1: %2").arg(line+1).arg(vValue[0]);
                     phone.tTypes << "pref";
                 }
                 else phone.tTypes = types;
@@ -121,7 +127,7 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                 else {
                     item.photoType = types[0];
                     if (item.photoType.toUpper()!="JPEG" && item.photoType.toUpper()!="PNG")
-                        errors << QObject::tr("Unsupported photo type at line %1: ").arg(line+1)+typeVal;
+                        errors << QObject::tr("Unsupported photo type at line %1: %2").arg(line+1).arg(typeVal);
                     if (encoding=="B") {
                         QString binaryData = vValue[0];
                         while (line<lines.count() && !lines[line+1].trimmed().isEmpty()) {
@@ -132,7 +138,7 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                         item.photo = QByteArray::fromBase64(binaryData.toLatin1());
                     }
                     else
-                        errors << QObject::tr("Unknown type at line %1").arg(line+1);
+                        errors << QObject::tr("Unknown encoding type at line %1: %2").arg(line+1).arg(encoding);
                 }
             }
             else if (tag=="ORG")

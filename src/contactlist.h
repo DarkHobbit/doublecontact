@@ -33,6 +33,7 @@ struct Phone {
     static class StandardTypes: public ::StandardTypes {
         public:
         StandardTypes();
+        void fill();
     } standardTypes;
 };
 
@@ -43,6 +44,7 @@ struct Email {
     static class StandardTypes: public ::StandardTypes {
         public:
         StandardTypes();
+        void fill();
     } standardTypes;
 };
 
@@ -53,6 +55,8 @@ struct DateItem { // Birthday and anniversaries
     short zoneHour, zoneMin; // TZ value
     bool operator ==(const DateItem& d);
     void clear();
+    QString toString() const;
+    inline bool isEmpty() const {return value.isNull(); }
 };
 
 struct ContactItem {
@@ -94,6 +98,7 @@ struct ContactItem {
     bool dropSlashes();
     void calculateFields();
     QString formatNames();
+    void dropFinalEmptyNames(); // If empty parts not in-middle, remove it
     bool similarTo(const ContactItem& pair);
     bool identicalTo(const ContactItem& pair);
 };
