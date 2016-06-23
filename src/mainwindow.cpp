@@ -220,7 +220,7 @@ void MainWindow::on_action_Remove_triggered()
 {
     if (!checkSelection()) return;
     if (QMessageBox::question(0, S_CONFIRM, tr("Are You really want to delete selected items?"),
-            QMessageBox::Yes, QMessageBox::No)==0)
+            QMessageBox::Yes, QMessageBox::No)==QMessageBox::Yes)
         selectedModel->removeAnyRows(selection);
     updateViewMode();
     updateHeaders();
