@@ -84,13 +84,19 @@ QVariant ContactModel::data(const QModelIndex &index, int role) const
         // Detect column
         ContactColumn col = visibleColumns[index.column()];
         switch (col) {
-            case ccLastName: if (c.names.count()>0)   return c.names[0]; else return QVariant();
-            case ccFirstName:  if (c.names.count()>1) return c.names[1]; else return QVariant();
-            case ccMiddleName: if (c.names.count()>2) return c.names[2]; else return QVariant();
-            case ccFullName: return c.fullName;
+            case ccLastName:    return !c.names.isEmpty() ? c.names[0] : QVariant();
+            case ccFirstName:   return c.names.count()>1  ? c.names[1] : QVariant();
+            case ccMiddleName:  return c.names.count()>2  ? c.names[2] : QVariant();
+            case ccFullName:    return c.fullName;
             case ccGenericName: return c.visibleName; // must be calculated
-            case ccPhone: return c.prefPhone;
-            case ccEMail: return c.prefEmail;
+            case ccPhone:       return c.prefPhone;
+            case ccEMail:       return c.prefEmail;
+            case ccBDay:        return c.birthday.toString();
+            case ccHasPhone:    return !c.phones.isEmpty() ? "*" : QVariant();
+            case ccHasEmail:    return !c.emails.isEmpty() ? "*" : QVariant();
+            case ccHasBDay:     return !c.birthday.isEmpty() ? "*" : QVariant();
+            case ccSomePhones:  return c.phones.count()>1  ? "*" : QVariant();
+            case ccSomeEmails:  return c.emails.count()>1  ? "*" : QVariant();
             case ccLast: { return QVariant(); } // Boundary case
             default: return QVariant();
         }

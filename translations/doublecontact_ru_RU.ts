@@ -763,14 +763,14 @@ Save changes?</source>
         <translation>X.400</translation>
     </message>
     <message>
-        <location filename="../src/contactlist.cpp" line="166"/>
+        <location filename="../src/contactlist.cpp" line="168"/>
         <source>Strange empty contact</source>
         <translation>Странный пустой контакт</translation>
     </message>
     <message>
         <location filename="../src/formats/common/vcarddata.cpp" line="81"/>
         <source>Unexpected TYPE appearance at line %1: tag %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Неожиданный TYPE в строке %1: тег %2</translation>
     </message>
     <message>
         <location filename="../src/formats/common/vcarddata.cpp" line="100"/>
@@ -910,7 +910,7 @@ line %3, col %4
     <message>
         <location filename="../src/formats/files/udxfile.cpp" line="277"/>
         <source>Warning: contact %1 has time (%2) in birthday, not implemented in UDX reader</source>
-        <translation type="unfinished"></translation>
+        <translation>Предупреждение: у контакта %1 есть день рождения со временем, не реализовано в UDX</translation>
     </message>
     <message>
         <location filename="../src/formats/files/udxfile.cpp" line="281"/>
@@ -955,70 +955,100 @@ line %3, col %4
 %1</translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="23"/>
+        <location filename="../src/globals.h" line="38"/>
         <source>Error</source>
         <translation>Ошибка</translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="24"/>
+        <location filename="../src/globals.h" line="39"/>
         <source>Warning</source>
         <translation>Предупреждение</translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="25"/>
+        <location filename="../src/globals.h" line="40"/>
         <source>Confirmation</source>
         <translation>Подтверждение</translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="26"/>
+        <location filename="../src/globals.h" line="41"/>
         <source>New contact list</source>
         <translation>Новая адресная книга</translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="28"/>
+        <location filename="../src/globals.h" line="43"/>
         <source>mixed...</source>
         <translation>составной...</translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="30"/>
+        <location filename="../src/globals.h" line="45"/>
         <source>Firstname</source>
         <translation>Имя</translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="31"/>
+        <location filename="../src/globals.h" line="46"/>
         <source>Lastname</source>
         <translation>Фамилия</translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="32"/>
+        <location filename="../src/globals.h" line="47"/>
         <source>Middlename</source>
         <translation>Отчество</translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="33"/>
+        <location filename="../src/globals.h" line="48"/>
         <source>Full name</source>
         <translation>Полное имя</translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="34"/>
+        <location filename="../src/globals.h" line="49"/>
         <source>Generic name</source>
         <translation>Универсальное имя</translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="35"/>
+        <location filename="../src/globals.h" line="50"/>
         <source>Phone</source>
         <translation>Телефон</translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="36"/>
+        <location filename="../src/globals.h" line="51"/>
         <source>Email</source>
         <translation>Электропочта</translation>
+    </message>
+    <message>
+        <location filename="../src/globals.h" line="52"/>
+        <source>Birthday</source>
+        <translation>День рождения</translation>
+    </message>
+    <message>
+        <location filename="../src/globals.h" line="53"/>
+        <source>Has phone</source>
+        <translation>Есть телефон</translation>
+    </message>
+    <message>
+        <location filename="../src/globals.h" line="54"/>
+        <source>Has email</source>
+        <translation>Есть почта</translation>
+    </message>
+    <message>
+        <location filename="../src/globals.h" line="55"/>
+        <source>Has birthday</source>
+        <translation>Есть день рождения</translation>
+    </message>
+    <message>
+        <location filename="../src/globals.h" line="56"/>
+        <source>Some phones</source>
+        <translation>Много телефонов</translation>
+    </message>
+    <message>
+        <location filename="../src/globals.h" line="57"/>
+        <source>Some emails</source>
+        <translation>Много ящиков</translation>
     </message>
 </context>
 <context>
     <name>ReadOnlyTableDelegate</name>
     <message>
-        <location filename="../src/globals.cpp" line="64"/>
+        <location filename="../src/globals.cpp" line="70"/>
         <source>This table is read only</source>
         <translation>Эту таблицу изменять нельзя</translation>
     </message>

@@ -19,6 +19,21 @@
 #include <QObject>
 #include <QStringList>
 
+// Visible columns
+enum ContactColumn {
+  ccFirstName, ccLastName, ccMiddleName, // names
+  ccFullName, ccGenericName, // formatted names
+  ccPhone, // first or preferred phone
+  ccEMail, // first or preferred email
+  ccBDay,  // birthday
+  ccHasPhone, // contact has at least one phone
+  ccHasEmail, // contact has at least one phone
+  ccHasBDay, // contact has birthday
+  ccSomePhones, // contact has more than one phone
+  ccSomeEmails, // contact has more than one email
+  ccLast
+};
+
 // Common strings for translation unify
 #define S_ERROR QObject::tr("Error")
 #define S_WARNING QObject::tr("Warning")
@@ -34,15 +49,12 @@
 #define S_GENERIC_NAME QObject::tr("Generic name")
 #define S_PHONE QObject::tr("Phone")
 #define S_EMAIL QObject::tr("Email")
-
-// Visible columns
-enum ContactColumn {
-  ccFirstName, ccLastName, ccMiddleName, // names
-  ccFullName, ccGenericName, // formatted names
-  ccPhone, // first or preferred phone
-  ccEMail, // first or preferred email
-  ccLast
-};
+#define S_BDAY QObject::tr("Birthday")
+#define S_HAS_PHONE QObject::tr("Has phone")
+#define S_HAS_EMAIL QObject::tr("Has email")
+#define S_HAS_BDAY QObject::tr("Has birthday")
+#define S_SOME_PHONES QObject::tr("Some phones")
+#define S_SOME_EMAILS QObject::tr("Some emails")
 
 // Visible columns headers
 // (It was a simple string array, but its translation not worked)

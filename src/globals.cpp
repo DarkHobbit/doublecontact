@@ -34,7 +34,13 @@ void ContactColumnHeaders::fill()
     << S_FULL_NAME
     << S_GENERIC_NAME
     << S_PHONE
-    << S_EMAIL;
+    << S_EMAIL
+    << S_BDAY
+    << S_HAS_PHONE
+    << S_HAS_EMAIL
+    << S_HAS_BDAY
+    << S_SOME_PHONES
+    << S_SOME_EMAILS;
 }
 
 QString StandardTypes::translate(const QString &key, bool* isStandard) const
