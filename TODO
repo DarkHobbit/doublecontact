@@ -2,15 +2,14 @@ This file contains English and Russian (CP1251) issues. Sorry for this mixing, i
 You can contact me at pub@zvyozdochkin.ru.
 
 Ирина
-* сделать разделение контактов по телефонам сейчас (перенести из TODO)
-* DateItem::toString разделить на читаемый и служебный вид
-* отследить работу save сейчас (по крайней мере, убрать QMessageBox) - Контакт/Склеить есть, контакт/разделить сделать int split?() c возвратом полученного количества записей
 * см. все TODO в udxfile.cpp
-* language selection support, russian language file
 * при экспорте на Филипс проверить, не проглотится ли третье имя у разделённых имён с ФИО!
+* вероятно, ложное сообщение про время в ДР при экспорте в UDX
 * check udx support (по итогам)
 
 Я
+* DateItem::toString разделить на читаемый и служебный вид
+* convert to international format (+7 instead 8, see other countries)
 * обмен панелей (Ctrl+U)
 * зависоны при редактировании
 * compare for multi-type typed pairs! Current version may corrupt data
@@ -22,7 +21,6 @@ You can contact me at pub@zvyozdochkin.ru.
 * заставить * исчезать сразу после save, без ресайза
 * vcf directory
 * photo editing (replace) support (and change status to beta)
-* export - split contact mode by phones for SIM ??? Ирине?
 * export delete time from bday mode if receiver not support it
 * separate other and unknown tags
 * settings - fonts, remove "treat name n as surname"
@@ -31,6 +29,7 @@ You can contact me at pub@zvyozdochkin.ru.
 * add statistics in List menu
 * проверить, как работает на charset, отличных от utf-8 (codec->toUnicode, у меня везде toLocal8Bit, а это, вероятно, неправильно)
 * About dialog
+* full language selection support (not only russian)
 * ukrainian and belarussian language files (po, Rosetta?)
 * см. все TODO в проекте
 * проверить на всех доступных телефонах и андроидах

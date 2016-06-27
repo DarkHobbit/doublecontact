@@ -252,6 +252,32 @@ void ContactModel::dropFullNames(const QModelIndexList &indices)
     _changed = true;
 }
 
+void ContactModel::splitNumbers(const QModelIndexList &indices)
+{
+    foreach(QModelIndex index, indices) {
+        ContactItem& item = items[index.row()];
+        int newLines = item.phones.count()-1;
+        if (newLines<1)
+            continue;
+        beginInsertRows(QModelIndex(), index.row(), index.row() + newLines);
+        for (int i=1; i<item.phones.count(); i++) {
+            ContactItem nc;
+            nc.names = item.names;
+            QString tType = Phone::standardTypes.translate(item.phones[i].tTypes[0]);
+            if (nc.names.count()<3)
+                nc.names.push_back(tType);
+            else
+                nc.names[2] += " " + tType;
+            nc.phones.push_back(item.phones[i]);
+            items.push_back(nc);
+        }
+        while (item.phones.count()>1)
+            item.phones.removeLast();
+        endInsertRows();
+    }
+    _changed = true;
+}
+
 void ContactModel::setViewMode(ContactModel::ContactViewMode mode, ContactModel *target)
 {
     beginResetModel();

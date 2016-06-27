@@ -82,6 +82,8 @@ private slots:
 
     void on_actionDrop_full_name_triggered();
 
+    void on_actionSp_lit_triggered();
+
 private:
     Ui::MainWindow *ui;
     ContactModel *modLeft, *modRight;

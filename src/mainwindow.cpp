@@ -596,14 +596,6 @@ void MainWindow::on_action_Drop_slashes_triggered()
     updateHeaders();
 }
 
-void MainWindow::on_action_Generate_full_name_triggered()
-{
-    if (!checkSelection()) return;
-    selectedModel->generateFullNames(selection);
-    updateViewMode();
-    updateHeaders();
-}
-
 void MainWindow::on_action_Join_triggered()
 {
     if (!checkSelection()) return;
@@ -618,11 +610,30 @@ void MainWindow::on_action_Join_triggered()
     d->setHeaders(tr("Item 1"), tr("Item 2"));
     d->setData(i1, i2);
     d->exec();
-    if (d->result()==QDialog::Accepted)
+    if (d->result()==QDialog::Accepted) {
         d->getData(i1, i2);
         selectedModel->endEditRow(selection[0]);
         selectedModel->endEditRow(selection[1]);
+        updateViewMode();
+        updateHeaders();
+    }
     delete d;
+}
+
+void MainWindow::on_actionSp_lit_triggered()
+{
+    if (!checkSelection()) return;
+    selectedModel->splitNumbers(selection);
+    updateViewMode();
+    updateHeaders();
+}
+
+void MainWindow::on_action_Generate_full_name_triggered()
+{
+    if (!checkSelection()) return;
+    selectedModel->generateFullNames(selection);
+    updateViewMode();
+    updateHeaders();
 }
 
 void MainWindow::on_actionDrop_full_name_triggered()
@@ -632,3 +643,4 @@ void MainWindow::on_actionDrop_full_name_triggered()
     updateViewMode();
     updateHeaders();
 }
+

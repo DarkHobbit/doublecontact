@@ -355,219 +355,224 @@
         <translation>&amp;Контакт</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="230"/>
+        <location filename="../src/mainwindow.ui" line="232"/>
         <source>&amp;Help</source>
         <translation>Справка</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="235"/>
+        <location filename="../src/mainwindow.ui" line="237"/>
         <source>&amp;View</source>
         <translation>&amp;Вид</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="242"/>
+        <location filename="../src/mainwindow.ui" line="244"/>
         <source>&amp;List</source>
         <translation>К&amp;нига</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="266"/>
+        <location filename="../src/mainwindow.ui" line="268"/>
         <source>&amp;Open</source>
         <translation>&amp;Открыть</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="269"/>
+        <location filename="../src/mainwindow.ui" line="271"/>
         <source>Ctrl+O</source>
         <translation>Ctrl+O</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="274"/>
+        <location filename="../src/mainwindow.ui" line="276"/>
         <source>&amp;Close</source>
         <translation>&amp;Закрыть</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="277"/>
+        <location filename="../src/mainwindow.ui" line="279"/>
         <source>Ctrl+W</source>
         <translation>Ctrl+W</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="285"/>
+        <location filename="../src/mainwindow.ui" line="287"/>
         <source>&amp;Save</source>
         <translation>&amp;Сохранить</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="288"/>
+        <location filename="../src/mainwindow.ui" line="290"/>
         <source>Ctrl+S</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="293"/>
+        <location filename="../src/mainwindow.ui" line="295"/>
         <source>Save &amp;as...</source>
         <translation>Сохранить &amp;как...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="298"/>
+        <location filename="../src/mainwindow.ui" line="300"/>
         <source>E&amp;xit</source>
         <translation>В&amp;ыход</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="309"/>
+        <location filename="../src/mainwindow.ui" line="311"/>
         <source>&amp;Two panels</source>
         <translation>&amp;Две панели</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="314"/>
+        <location filename="../src/mainwindow.ui" line="316"/>
         <source>&amp;Options...</source>
         <translation>&amp;Настройки...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="319"/>
+        <location filename="../src/mainwindow.ui" line="321"/>
         <source>&amp;Add</source>
         <translation>&amp;Вставить</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="322"/>
+        <location filename="../src/mainwindow.ui" line="324"/>
         <source>Ins</source>
         <translation>Ins</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="327"/>
+        <location filename="../src/mainwindow.ui" line="329"/>
         <source>&amp;Edit</source>
         <translation>&amp;Править</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="330"/>
+        <location filename="../src/mainwindow.ui" line="332"/>
         <source>Return</source>
         <translation>Return</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="335"/>
+        <location filename="../src/mainwindow.ui" line="337"/>
         <source>&amp;Remove</source>
         <translation>&amp;Удалить</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="338"/>
+        <location filename="../src/mainwindow.ui" line="340"/>
         <source>Del</source>
         <translation>Del</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="343"/>
+        <location filename="../src/mainwindow.ui" line="345"/>
         <source>&amp;Copy</source>
         <translation>&amp;Копировать</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="346"/>
+        <location filename="../src/mainwindow.ui" line="348"/>
         <source>F5</source>
         <translation>F5</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="351"/>
+        <location filename="../src/mainwindow.ui" line="353"/>
         <source>&amp;Move</source>
         <translation>&amp;Переместить</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="354"/>
+        <location filename="../src/mainwindow.ui" line="356"/>
         <source>F6</source>
         <translation>F6</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="359"/>
+        <location filename="../src/mainwindow.ui" line="361"/>
         <source>&amp;Swap names</source>
         <translation>Переставить &amp;имена</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="362"/>
+        <location filename="../src/mainwindow.ui" line="364"/>
         <source>F2</source>
         <translation>F2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="367"/>
+        <location filename="../src/mainwindow.ui" line="369"/>
         <source>&amp;Compare/Uncompare</source>
         <translation>&amp;Сравнить</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="370"/>
+        <location filename="../src/mainwindow.ui" line="372"/>
         <source>F3</source>
         <translation>F3</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="378"/>
+        <location filename="../src/mainwindow.ui" line="380"/>
         <source>&amp;Sort</source>
         <translation>&amp;Сортировать</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="381"/>
+        <location filename="../src/mainwindow.ui" line="383"/>
         <source>F4</source>
         <translation>F4</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="386"/>
+        <location filename="../src/mainwindow.ui" line="388"/>
         <source>&amp;Other panel</source>
         <translation>&amp;Другая панель</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="389"/>
+        <location filename="../src/mainwindow.ui" line="391"/>
         <source>Tab</source>
         <translation>Tab</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="394"/>
+        <location filename="../src/mainwindow.ui" line="396"/>
         <source>Settings...</source>
         <translation>&amp;Настройки...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="397"/>
+        <location filename="../src/mainwindow.ui" line="399"/>
         <source>Ctrl+P</source>
         <translation>Ctrl+P</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="402"/>
+        <location filename="../src/mainwindow.ui" line="404"/>
         <source>&amp;Filter</source>
         <translation>&amp;Фильтр</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="405"/>
+        <location filename="../src/mainwindow.ui" line="407"/>
         <source>Ctrl+F</source>
         <translation>Ctrl+F</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="410"/>
+        <location filename="../src/mainwindow.ui" line="412"/>
         <source>Compare &amp;Result</source>
         <translation>&amp;Результат сравнения</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="413"/>
+        <location filename="../src/mainwindow.ui" line="415"/>
         <source>Shift+F3</source>
         <translation>Shift+F3</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="418"/>
+        <location filename="../src/mainwindow.ui" line="420"/>
         <source>S&amp;plit names</source>
         <translation>Разделить &amp;имена</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="421"/>
+        <location filename="../src/mainwindow.ui" line="423"/>
         <source>Shift+F2</source>
         <translation>Shift+F2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="426"/>
+        <location filename="../src/mainwindow.ui" line="428"/>
         <source>&amp;Drop slashes</source>
         <translation>&amp;Убрать спецсимволы</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="431"/>
+        <location filename="../src/mainwindow.ui" line="433"/>
         <source>&amp;Generate full name</source>
         <translation>&amp;Собрать полное имя</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="436"/>
+        <location filename="../src/mainwindow.ui" line="438"/>
         <source>&amp;Join</source>
         <translation>Ск&amp;леить</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="441"/>
+        <location filename="../src/mainwindow.ui" line="443"/>
         <source>Drop &amp;full name</source>
         <translation>Убрать полное имя</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="448"/>
+        <source>Sp&amp;lit</source>
+        <translation>Ра&amp;зделить</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="143"/>
@@ -656,17 +661,17 @@ Save changes?</source>
         <translation>Правый контакт</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="612"/>
+        <location filename="../src/mainwindow.cpp" line="604"/>
         <source>Strongly two records on current panel must be selected for this operation</source>
         <translation>Сначала надо выбрать ровно2 записи на текущей панели</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="618"/>
+        <location filename="../src/mainwindow.cpp" line="610"/>
         <source>Item 1</source>
         <translation>Контакт 1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="618"/>
+        <location filename="../src/mainwindow.cpp" line="610"/>
         <source>Item 2</source>
         <translation>Контакт 2</translation>
     </message>

@@ -192,7 +192,7 @@
      <x>0</x>
      <y>0</y>
      <width>763</width>
-     <height>24</height>
+     <height>19</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_File">
@@ -216,7 +216,9 @@
     <addaction name="separator"/>
     <addaction name="action_Copy"/>
     <addaction name="action_Move"/>
+    <addaction name="separator"/>
     <addaction name="action_Join"/>
+    <addaction name="actionSp_lit"/>
     <addaction name="separator"/>
     <addaction name="action_Swap_names"/>
     <addaction name="actionCompare_Result"/>
@@ -439,6 +441,11 @@
   <action name="actionDrop_full_name">
    <property name="text">
     <string>Drop &amp;full name</string>
+   </property>
+  </action>
+  <action name="actionSp_lit">
+   <property name="text">
+    <string>Sp&amp;lit</string>
    </property>
   </action>
  </widget>
