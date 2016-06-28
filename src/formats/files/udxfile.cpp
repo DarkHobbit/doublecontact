@@ -112,10 +112,10 @@ bool UDXFile::importRecords(const QString &url, ContactList &list, bool append)
             QString fldName = field.nodeName().toUpper();
             QString fldValue = field.text(); // codec->toUnicode(field.text().toLocal8Bit()); TODO not works on windows
             if (fldName=="N") {
-                item.names = fldValue.split(";");
+                fldValue.replace("\\;", " ");
                 // In ALL known me udx files part before first ; was EMPTY
-                if (item.names[0].isEmpty())
-                    item.names.removeAt(0);
+                fldValue.remove(";");
+                item.names = fldValue.split(" ");
                 // If empty parts not in-middle, remove it
                 item.dropFinalEmptyNames();
             }
@@ -239,8 +239,7 @@ bool UDXFile::exportRecords(const QString &url, ContactList &list)
         addElement(vCardInfo, "Sequence", item.id);
         QDomElement vCardField = addElement(vCardInfo, "vCardField");
         // Names
-        // TODO check if first file is surname on real phone (also has description in last test file)
-        addElement(vCardField, "N", QString(";")+item.names.join(";"));
+        addElement(vCardField, "N", QString(";")+item.names.join(" ")); // sad but true
         // Phones
         foreach (const Phone& ph, item.phones) {
             if (ph.tTypes.contains("CELL", Qt::CaseInsensitive))

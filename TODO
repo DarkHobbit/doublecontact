@@ -1,12 +1,6 @@
 This file contains English and Russian (CP1251) issues. Sorry for this mixing, it's alpha.
 You can contact me at pub@zvyozdochkin.ru.
 
-Ирина
-* см. все TODO в udxfile.cpp
-* при экспорте на Филипс проверить, не проглотится ли третье имя у разделённых имён с ФИО!
-* вероятно, ложное сообщение про время в ДР при экспорте в UDX
-* check udx support (по итогам)
-
 Я
 * DateItem::toString разделить на читаемый и служебный вид
 * convert to international format (+7 instead 8, see other countries)
