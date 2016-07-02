@@ -137,7 +137,7 @@ bool UDXFile::importRecords(const QString &url, ContactList &list, bool append)
             else if (fldName=="ORGNAME")
                 item.organization = fldValue;
             else if (fldName=="BDAY")
-                item.birthday.value = QDateTime::fromString(fldValue, "yyyyMMdd");
+                item.birthday.value = QDateTime::fromString(fldValue, "yyyyMMdd"); // TODO Maybe, use DateItem::fromString
             else if (fldName=="EMAIL") {
                 Email email;
                 email.address = fldValue;
@@ -269,7 +269,7 @@ bool UDXFile::exportRecords(const QString &url, ContactList &list)
         }
         // Birthday
         if (item.birthday.value.isValid())
-            addElement(vCardField, "BDAY", item.birthday.value.toString("yyyyMMdd"));
+            addElement(vCardField, "BDAY", item.birthday.toString(DateItem::ISOBasic));
         // TODO maybe some phones support time in udx? need search specs, and maybe need use DateItem::toString() here
         // but check format, - and T, maybe it's vCard 2.1
         if (item.birthday.hasTime)

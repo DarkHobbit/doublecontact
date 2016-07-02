@@ -814,12 +814,12 @@ Save changes?</source>
         <translation>Неизвестное кодирование: </translation>
     </message>
     <message>
-        <location filename="../src/formats/common/vcarddata.cpp" line="238"/>
+        <location filename="../src/formats/common/vcarddata.cpp" line="239"/>
         <source>Invalid timezone: </source>
         <translation>Неправильный часовой пояс: </translation>
     </message>
     <message>
-        <location filename="../src/formats/common/vcarddata.cpp" line="257"/>
+        <location filename="../src/formats/common/vcarddata.cpp" line="258"/>
         <source>Invalid datetime: </source>
         <translation>Неправильная дата/время</translation>
     </message>
@@ -904,7 +904,7 @@ line %3, col %4
         <translation>Предупреждение: контакт %1 дублирует идентификатор %2, изменён на %3</translation>
     </message>
     <message>
-        <location filename="../src/formats/files/udxfile.cpp" line="256"/>
+        <location filename="../src/formats/files/udxfile.cpp" line="255"/>
         <source>Warning: contact %1, unknown tel type:
 %2
  saved as cellular</source>
@@ -913,27 +913,27 @@ line %3, col %4
  сохранён как мобильный</translation>
     </message>
     <message>
-        <location filename="../src/formats/files/udxfile.cpp" line="277"/>
+        <location filename="../src/formats/files/udxfile.cpp" line="276"/>
         <source>Warning: contact %1 has time (%2) in birthday, not implemented in UDX reader</source>
         <translation>Предупреждение: у контакта %1 есть день рождения со временем, не реализовано в UDX</translation>
     </message>
     <message>
-        <location filename="../src/formats/files/udxfile.cpp" line="281"/>
+        <location filename="../src/formats/files/udxfile.cpp" line="280"/>
         <source>Warning: contact %1 has photo, not implemented in UDX</source>
         <translation>Предупреждение: у контакта %1 есть фотография, не реализовано в UDX</translation>
     </message>
     <message>
-        <location filename="../src/formats/files/udxfile.cpp" line="283"/>
+        <location filename="../src/formats/files/udxfile.cpp" line="282"/>
         <source>Warning: contact %1 has description, not implemented in UDX</source>
         <translation>Предупреждение: у контакта %1 есть описание, не реализовано в UDX</translation>
     </message>
     <message>
-        <location filename="../src/formats/files/udxfile.cpp" line="285"/>
+        <location filename="../src/formats/files/udxfile.cpp" line="284"/>
         <source>Warning: contact %1 has job title, not implemented in UDX</source>
         <translation>Предупреждение: у контакта %1 есть должность, не реализовано в UDX</translation>
     </message>
     <message>
-        <location filename="../src/formats/files/udxfile.cpp" line="287"/>
+        <location filename="../src/formats/files/udxfile.cpp" line="286"/>
         <source>Warning: contact %1 has anniversaries, not implemented in UDX</source>
         <translation>Предупреждение: у контакта %1 есть годовщины, не реализовано в UDX</translation>
     </message>
@@ -1073,30 +1073,45 @@ line %3, col %4
     <message>
         <location filename="../src/settingsdialog.ui" line="32"/>
         <source>Language</source>
-        <translation>Язык&gt;</translation>
+        <translation>Язык</translation>
     </message>
     <message>
-        <location filename="../src/settingsdialog.ui" line="55"/>
+        <location filename="../src/settingsdialog.ui" line="53"/>
+        <source>Date format</source>
+        <translation>Формат даты</translation>
+    </message>
+    <message>
+        <location filename="../src/settingsdialog.ui" line="63"/>
+        <source>Time format</source>
+        <translation>Формат времени</translation>
+    </message>
+    <message>
+        <location filename="../src/settingsdialog.ui" line="75"/>
+        <source>Use system date/time format</source>
+        <translation>Использовать системный формат</translation>
+    </message>
+    <message>
+        <location filename="../src/settingsdialog.ui" line="82"/>
         <source>Open last files at startup</source>
         <translation>Открывать последние файлы при запуске</translation>
     </message>
     <message>
-        <location filename="../src/settingsdialog.ui" line="83"/>
+        <location filename="../src/settingsdialog.ui" line="110"/>
         <source>Columns</source>
         <translation>Столбцы</translation>
     </message>
     <message>
-        <location filename="../src/settingsdialog.ui" line="89"/>
+        <location filename="../src/settingsdialog.ui" line="116"/>
         <source>Visible</source>
         <translation>Видимые</translation>
     </message>
     <message>
-        <location filename="../src/settingsdialog.ui" line="96"/>
+        <location filename="../src/settingsdialog.ui" line="123"/>
         <source>Available</source>
         <translation>Доступные</translation>
     </message>
     <message>
-        <location filename="../src/settingsdialog.cpp" line="145"/>
+        <location filename="../src/settingsdialog.cpp" line="171"/>
         <source>List must contain at least one visible column</source>
         <translation>В списке должен быть хотя бы один видимый столбец</translation>
     </message>

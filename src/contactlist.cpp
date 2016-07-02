@@ -331,11 +331,33 @@ void DateItem::clear()
     zoneMin = 0;
 }
 
-QString DateItem::toString() const
+QString DateItem::toString(DateFormat format) const
 {
-    // TODO use vCard profile
-    QString s = value.date().toString("yyyyMMdd");
+    QString s;
+    switch (format) {
+    case DateItem::ISOBasic:
+        s = value.date().toString("yyyyMMdd");
+        break;
+    case DateItem::ISOExtended:
+        s = value.date().toString("yyyy-MM-dd");
+        break;
+    default:
+        s = value.date().toString(Qt::DefaultLocaleLongDate);
+        break;
+    }
     if (hasTime) {
+        s += (format==DateItem::Local) ? " " : "T";
+        switch (format) {
+        case DateItem::ISOBasic:
+            s += value.time().toString("Thhmmss");
+            break;
+        case DateItem::ISOExtended:
+            s += value.time().toString("Thh:mm:ss");
+            break;
+        default:
+            s += value.time().toString();
+            break;
+        }
         s += value.time().toString("Thhmmss");
         if (hasTimeZone) // TODO search Xamples with positive TZ hour and short form
             s += QString("%1:%2").arg(zoneHour).arg(zoneMin);

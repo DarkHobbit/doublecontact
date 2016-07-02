@@ -218,6 +218,7 @@ QString VCardData::decodeValue(const QString &src, const QString &encoding, cons
     }
 }
 
+// TODO Maybe, move it into DateItem::fromString
 void VCardData::importDate(DateItem &item, const QString &src, QStringList& errors)
 {
     int tPos = src.indexOf("T", 0, Qt::CaseInsensitive);

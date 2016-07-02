@@ -391,7 +391,7 @@ void DateItemListPair::copyOneItem(bool toLeft, int srcIndex)
 void DateItemListPair::fillBox(QGridLayout* layout, const QList<DateItem> &data, QList<QLabel *> &lbSet)
 {
     foreach(const DateItem& di, data) {
-        lbSet.push_back(new QLabel(di.toString()));
+        lbSet.push_back(new QLabel(di.toString(DateItem::Local)));
         layout->addWidget(lbSet.last());
     }
 }

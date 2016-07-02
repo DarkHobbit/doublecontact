@@ -7,13 +7,13 @@
     <x>0</x>
     <y>0</y>
     <width>380</width>
-    <height>312</height>
+    <height>315</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Settings</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout">
+  <layout class="QVBoxLayout" name="verticalLayout_2">
    <item>
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
@@ -23,17 +23,17 @@
       <attribute name="title">
        <string>General</string>
       </attribute>
-      <layout class="QVBoxLayout" name="verticalLayout_2">
+      <layout class="QVBoxLayout" name="verticalLayout">
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout">
-         <item>
+        <layout class="QGridLayout" name="gridLayout_2">
+         <item row="0" column="0">
           <widget class="QLabel" name="lbLanguage">
            <property name="text">
             <string>Language</string>
            </property>
           </widget>
          </item>
-         <item>
+         <item row="0" column="1">
           <widget class="QComboBox" name="cbLanguage">
            <item>
             <property name="text">
@@ -47,7 +47,34 @@
            </item>
           </widget>
          </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="lbDateFormat">
+           <property name="text">
+            <string>Date format</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1" rowspan="2">
+          <widget class="QLineEdit" name="leDateFormat"/>
+         </item>
+         <item row="2" column="0" rowspan="2">
+          <widget class="QLabel" name="lbTimeFormat">
+           <property name="text">
+            <string>Time format</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QLineEdit" name="leTimeFormat"/>
+         </item>
         </layout>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="cbUseSystemDateTimeFormat">
+         <property name="text">
+          <string>Use system date/time format</string>
+         </property>
+        </widget>
        </item>
        <item>
         <widget class="QCheckBox" name="cbOpenLastFilesAtStartup">
@@ -57,7 +84,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QLabel" name="label">
+        <widget class="QLabel" name="labelTODO">
          <property name="text">
           <string notr="true">font dialog call???</string>
          </property>

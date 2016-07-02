@@ -53,9 +53,14 @@ struct DateItem { // Birthday and anniversaries
     bool hasTime; // false if date only was in file
     bool hasTimeZone; // record contains TZ info
     short zoneHour, zoneMin; // TZ value
+    enum DateFormat {
+        ISOBasic,    // basic ISO 8601 format (in general, for vCard 2.1)
+        ISOExtended, // extended ISO 8601 format (in general, for vCard 3.0)
+        Local        // human-readable, according current locale
+    };
     bool operator ==(const DateItem& d);
     void clear();
-    QString toString() const;
+    QString toString(DateFormat format) const;
     inline bool isEmpty() const {return value.isNull(); }
 };
 

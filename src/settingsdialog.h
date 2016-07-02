@@ -23,6 +23,8 @@ public:
     ContactColumnList columnNames();
     QString lang();
     bool langChanged();
+    QString dateFormat();
+    QString timeFormat();
     // Separate settings, managed by main window commands
     QString lastPath();
     void setLastPath(const QString& path);
@@ -37,6 +39,8 @@ private slots:
     void on_btnDelCol_clicked();
     void on_btnUpCol_clicked();
     void on_btnDownCol_clicked();
+    void on_cbUseSystemDateTimeFormat_clicked(bool checked);
+
 private:
     QString _lang;
     bool _langChanged;

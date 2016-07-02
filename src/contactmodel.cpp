@@ -91,7 +91,7 @@ QVariant ContactModel::data(const QModelIndex &index, int role) const
             case ccGenericName: return c.visibleName; // must be calculated
             case ccPhone:       return c.prefPhone;
             case ccEMail:       return c.prefEmail;
-            case ccBDay:        return c.birthday.toString();
+            case ccBDay:        return c.birthday.toString(DateItem::Local);
             case ccHasPhone:    return !c.phones.isEmpty() ? "*" : QVariant();
             case ccHasEmail:    return !c.emails.isEmpty() ? "*" : QVariant();
             case ccHasBDay:     return !c.birthday.isEmpty() ? "*" : QVariant();
