@@ -23,8 +23,6 @@ public:
     ContactColumnList columnNames();
     QString lang();
     bool langChanged();
-    QString dateFormat();
-    QString timeFormat();
     // Separate settings, managed by main window commands
     QString lastPath();
     void setLastPath(const QString& path);
@@ -47,6 +45,7 @@ private:
     Ui::SettingsDialog *ui;
     QSettings settings;
     QStringList validColumnNames; // Available list
+    void updateGlobalData();
 };
 
 #endif // SETTINGSDIALOG_H

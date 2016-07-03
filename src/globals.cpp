@@ -71,3 +71,4 @@ QWidget* ReadOnlyTableDelegate::createEditor(
     return 0;
 }
 
+GlobalConfig gd;

@@ -342,7 +342,7 @@ QString DateItem::toString(DateFormat format) const
         s = value.date().toString("yyyy-MM-dd");
         break;
     default:
-        s = value.date().toString(Qt::DefaultLocaleLongDate);
+        s = value.date().toString(gd.dateFormat);
         break;
     }
     if (hasTime) {
@@ -355,7 +355,7 @@ QString DateItem::toString(DateFormat format) const
             s += value.time().toString("Thh:mm:ss");
             break;
         default:
-            s += value.time().toString();
+            s += value.time().toString(gd.timeFormat);
             break;
         }
         s += value.time().toString("Thhmmss");

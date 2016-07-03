@@ -90,5 +90,9 @@ public:
         QWidget*, const QStyleOptionViewItem&, const QModelIndex &) const;
 };
 
+extern
+struct GlobalConfig {
+    QString dateFormat, timeFormat;
+} gd;
 
 #endif // GLOBALS_H

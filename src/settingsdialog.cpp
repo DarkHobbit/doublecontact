@@ -36,8 +36,9 @@ bool SettingsDialog::readConfig()
     // Locale
     ui->leDateFormat->setText(settings.value("Locale/DateFormat", QLocale::system().dateFormat()).toString());
     ui->leTimeFormat->setText(settings.value("Locale/TimeFormat", QLocale::system().timeFormat()).toString());
-    ui->cbUseSystemDateTimeFormat->setChecked(settings.value("Locale/UseSystemDAteTimeFormat", true).toBool());
+    ui->cbUseSystemDateTimeFormat->setChecked(settings.value("Locale/UseSystemDateTimeFormat", true).toBool());
     on_cbUseSystemDateTimeFormat_clicked(ui->cbUseSystemDateTimeFormat->isChecked());
+    updateGlobalData();
     // Misc
     ui->cbOpenLastFilesAtStartup->setChecked(settings.value("General/OpenLastFilesAtStartup", true).toBool());
     // Column view
@@ -70,7 +71,8 @@ bool SettingsDialog::writeConfig()
     // Locale
     settings.setValue("Locale/DateFormat", ui->leDateFormat->text());
     settings.setValue("Locale/TimeFormat", ui->leTimeFormat->text());
-    settings.setValue("Locale/UseSystemDAteTimeFormat", ui->cbUseSystemDateTimeFormat->isChecked());
+    settings.setValue("Locale/UseSystemDateTimeFormat", ui->cbUseSystemDateTimeFormat->isChecked());
+    updateGlobalData();
     // Misc
     settings.setValue("General/OpenLastFilesAtStartup", ui->cbOpenLastFilesAtStartup->isChecked());
     // Column view
@@ -141,22 +143,6 @@ bool SettingsDialog::langChanged()
     return _langChanged;
 }
 
-QString SettingsDialog::dateFormat()
-{
-    if (ui->cbUseSystemDateTimeFormat->isChecked())
-        return QLocale::system().dateFormat();
-    else
-        return ui->leDateFormat->text();
-}
-
-QString SettingsDialog::timeFormat()
-{
-    if (ui->cbUseSystemDateTimeFormat->isChecked())
-        return QLocale::system().timeFormat();
-    else
-        return ui->leTimeFormat->text();
-}
-
 void SettingsDialog::on_btnAddCol_clicked()
 {
     foreach (QListWidgetItem* item, ui->lwAvailableColumns->selectedItems()) {
@@ -203,9 +189,20 @@ void SettingsDialog::on_btnDownCol_clicked()
     }
 }
 
-
 void SettingsDialog::on_cbUseSystemDateTimeFormat_clicked(bool checked)
 {
     ui->leDateFormat->setEnabled(!checked);
     ui->leTimeFormat->setEnabled(!checked);
+}
+
+void SettingsDialog::updateGlobalData()
+{
+    if (ui->cbUseSystemDateTimeFormat->isChecked()) {
+        gd.dateFormat = QLocale::system().dateFormat();
+        gd.timeFormat = QLocale::system().timeFormat();
+    }
+    else {
+        gd.dateFormat = ui->leDateFormat->text();
+        gd.timeFormat = ui->leTimeFormat->text();
+    }
 }
