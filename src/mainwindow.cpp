@@ -644,3 +644,11 @@ void MainWindow::on_actionDrop_full_name_triggered()
     updateHeaders();
 }
 
+
+void MainWindow::on_actionIntl_phone_prefix_triggered()
+{
+    if (!checkSelection()) return;
+    selectedModel->intlPhonePrefix(selection);
+    updateViewMode();
+    updateHeaders();
+}

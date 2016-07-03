@@ -148,6 +148,18 @@ bool ContactItem::dropSlashes()
     return true;
 }
 
+bool ContactItem::intlPhonePrefix()
+{
+    // TODO currently only Russian codes supported. Need more countries!
+    int res = false;
+    for (int i=0; i<phones.count();i++)
+        if (phones[i].number.startsWith("8")) {
+            phones[i].number = QString("+7")+phones[i].number.mid(1);
+            res = true;
+        }
+    return res;
+}
+
 void ContactItem::calculateFields()
 {
     // Visible name depend of filled fields

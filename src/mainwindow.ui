@@ -192,7 +192,7 @@
      <x>0</x>
      <y>0</y>
      <width>763</width>
-     <height>19</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_File">
@@ -226,6 +226,7 @@
     <addaction name="action_Drop_slashes"/>
     <addaction name="action_Generate_full_name"/>
     <addaction name="actionDrop_full_name"/>
+    <addaction name="actionIntl_phone_prefix"/>
    </widget>
    <widget class="QMenu" name="menu_Help">
     <property name="title">
@@ -446,6 +447,11 @@
   <action name="actionSp_lit">
    <property name="text">
     <string>Sp&amp;lit</string>
+   </property>
+  </action>
+  <action name="actionIntl_phone_prefix">
+   <property name="text">
+    <string>Internationalize phone prefix</string>
    </property>
   </action>
  </widget>

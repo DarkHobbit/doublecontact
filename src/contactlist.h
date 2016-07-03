@@ -96,11 +96,13 @@ struct ContactItem {
     } pairState;
     ContactItem* pairItem;
     int pairIndex;
-    // Aux methods
+    // Editing
     void clear();
     bool swapNames();
     bool splitNames(); // TODO int index
     bool dropSlashes();
+    bool intlPhonePrefix();
+    // Aux methods
     void calculateFields();
     QString formatNames();
     void dropFinalEmptyNames(); // If empty parts not in-middle, remove it

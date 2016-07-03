@@ -278,6 +278,17 @@ void ContactModel::splitNumbers(const QModelIndexList &indices)
     _changed = true;
 }
 
+void ContactModel::intlPhonePrefix(const QModelIndexList &indices)
+{
+    foreach(QModelIndex index, indices) {
+        beginEditRow(index);
+        if (items[index.row()].intlPhonePrefix())
+            items[index.row()].calculateFields();
+        endEditRow(index);
+    }
+    _changed = true;
+}
+
 void ContactModel::setViewMode(ContactModel::ContactViewMode mode, ContactModel *target)
 {
     beginResetModel();
