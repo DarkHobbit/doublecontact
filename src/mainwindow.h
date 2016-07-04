@@ -86,6 +86,8 @@ private slots:
 
     void on_actionIntl_phone_prefix_triggered();
 
+    void on_actionS_wap_Panels_triggered();
+
 private:
     Ui::MainWindow *ui;
     ContactModel *modLeft, *modRight;

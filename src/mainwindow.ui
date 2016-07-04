@@ -248,6 +248,7 @@
     <addaction name="action_Sort"/>
     <addaction name="action_Other_panel"/>
     <addaction name="action_Filter"/>
+    <addaction name="actionS_wap_Panels"/>
    </widget>
    <addaction name="menu_File"/>
    <addaction name="menu_View"/>
@@ -452,6 +453,14 @@
   <action name="actionIntl_phone_prefix">
    <property name="text">
     <string>Internationalize phone prefix</string>
+   </property>
+  </action>
+  <action name="actionS_wap_Panels">
+   <property name="text">
+    <string>S&amp;wap Panels</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+U</string>
    </property>
   </action>
  </widget>

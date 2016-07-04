@@ -652,3 +652,21 @@ void MainWindow::on_actionIntl_phone_prefix_triggered()
     updateViewMode();
     updateHeaders();
 }
+
+void MainWindow::on_actionS_wap_Panels_triggered()
+{
+    if (!ui->tvRight->isVisible()) {
+        QMessageBox::critical(0, S_ERROR,
+            tr("Operation requires show two panels"));
+        return;
+    }
+    ContactModel* bufModel = modLeft;
+    modLeft = modRight;
+    modRight = bufModel;
+    ContactSorterFilter * bufProxy = proxyLeft;
+    proxyLeft = proxyRight;
+    proxyRight = bufProxy;
+    ui->tvLeft->setModel(proxyLeft);
+    ui->tvRight->setModel(proxyRight);
+    updateHeaders();
+}
