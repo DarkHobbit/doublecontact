@@ -54,9 +54,9 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->tvRight->selectionModel(), SIGNAL(currentChanged(const QModelIndex&, const QModelIndex&)),
             this, SLOT(setButtonsAccess()));
     connect(ui->tvLeft->selectionModel(), SIGNAL(selectionChanged( const QItemSelection&, const QItemSelection&)),
-            this, SLOT(on_Selection_Changed()));
+            this, SLOT(selectionChanged()));
     connect(ui->tvRight->selectionModel(), SIGNAL(selectionChanged( const QItemSelection&, const QItemSelection&)),
-            this, SLOT(on_Selection_Changed()));
+            this, SLOT(selectionChanged()));
     connect(ui->tvLeft, SIGNAL(doubleClicked (const QModelIndex&)), this, SLOT(rowDoubleClicked(const QModelIndex&)));
     connect(ui->tvRight, SIGNAL(doubleClicked (const QModelIndex&)), this, SLOT(rowDoubleClicked(const QModelIndex&)));
     selectView(ui->tvLeft);
@@ -410,7 +410,7 @@ void MainWindow::setButtonsAccess()
     ui->btnSwapNames->setEnabled(hasSelectedRows);
 }
 
-void MainWindow::on_Selection_Changed()
+void MainWindow::selectionChanged()
 {
     static bool lockSelection = false;
     // For compare mode, select pair item(s)

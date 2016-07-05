@@ -2,7 +2,6 @@ This file contains English and Russian (CP1251) issues. Sorry for this mixing, i
 You can contact me at pub@zvyozdochkin.ru.
 
 Я
-* зависоны при редактировании
 * compare for multi-type typed pairs! Current version may corrupt data
 * postal address support (и найти относящиеся к адресам TODO, например, в ContactItem::identicalTo)
 * vcf save (and change status to alpha)
@@ -15,7 +14,7 @@ You can contact me at pub@zvyozdochkin.ru.
 * export delete time from bday mode if receiver not support it
 * separate other and unknown tags
 * settings - fonts, remove "treat name n as surname"
-* more grid columns: bday, org, mb. address 
+* more grid columns: org, mb. address 
 * experimental csv support (full write)
 * add statistics in List menu
 * проверить, как работает на charset, отличных от utf-8 (codec->toUnicode, у меня везде toLocal8Bit, а это, вероятно, неправильно)

@@ -29,7 +29,7 @@
 ContactDialog::ContactDialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::ContactDialog),
-    nameCount(0), phoneCount(0), emailCount(0)
+    nameCount(0), phoneCount(0), emailCount(0), anniversaryCount(0)
 {
     ui->setupUi(this);
     fillPhoneTypes(ui->cbPhoneType1);
