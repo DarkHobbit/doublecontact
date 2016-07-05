@@ -3,6 +3,7 @@ You can contact me at pub@zvyozdochkin.ru.
 
 я
 * compare for multi-type typed pairs! Current version may corrupt data
+* некоторые телефоны оказываютс€ похожими на автокласс (перва€ зпись), а действительно парные им остаютс€ сиротами (јндреев)
 * postal address support (и найти относ€щиес€ к адресам TODO, например, в ContactItem::identicalTo)
 * vcf save (and change status to alpha)
 
@@ -12,8 +13,7 @@ You can contact me at pub@zvyozdochkin.ru.
 * vcf directory
 * photo editing (replace) support (and change status to beta)
 * export delete time from bday mode if receiver not support it
-* separate other and unknown tags
-* settings - fonts, remove "treat name n as surname"
+* settings - fonts
 * more grid columns: org, mb. address 
 * experimental csv support (full write)
 * add statistics in List menu
