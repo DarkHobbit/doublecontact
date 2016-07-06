@@ -18,6 +18,7 @@
 QString Phone::expandNumber() const
 {
     QString res = number;
+    // TODO currently only Russian codes supported. Need more countries!
     if (number.startsWith("8")) // Russia; TODO: make table for some countries!
             res = res.replace(0, 1, "+7");
     return res;
@@ -150,13 +151,13 @@ bool ContactItem::dropSlashes()
 
 bool ContactItem::intlPhonePrefix()
 {
-    // TODO currently only Russian codes supported. Need more countries!
     int res = false;
-    for (int i=0; i<phones.count();i++)
-        if (phones[i].number.startsWith("8")) {
-            phones[i].number = QString("+7")+phones[i].number.mid(1);
+    for (int i=0; i<phones.count();i++) {
+        QString newNumber = phones[i].expandNumber();
+        if (newNumber!=phones[i].number)
             res = true;
-        }
+        phones[i].number = newNumber;
+    }
     return res;
 }
 
