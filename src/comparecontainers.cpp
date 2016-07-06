@@ -195,19 +195,18 @@ void TypedPair::addValue(const QString &value, const QStringList &types, bool to
     foreach(const QString& sv, standardTypes->displayValues)
             combo->addItem(sv);
     // Add current value(s)
+    QString dType;
     if (types.count()==1) {
         bool isStandard;
-        QString dType = standardTypes->translate(types[0], &isStandard);
+        dType = standardTypes->translate(types[0], &isStandard);
         if (!isStandard)
             combo->addItem(dType);
-        combo->setCurrentIndex(combo->findText(dType, Qt::MatchExactly));
     }
     else {
-        // TODO compare for multi-type typed pairs
-        QMessageBox::warning(0, S_WARNING,
-        QString("Compare for multi-type typed pairs not implemented! Current version may corrupt data"));
-        combo->addItem(types[0]); //==> spec. value instead
+        dType = types.join("+");
+        combo->addItem(dType);
     }
+    combo->setCurrentIndex(combo->findText(dType, Qt::MatchExactly));
     layout->addWidget(combo, prevCount, 1);
 }
 
@@ -224,7 +223,11 @@ bool TypedPair::getValue(int index, QString &value, QStringList &types, bool fro
     value = edSet[index]->text();
     types.clear();
     QString typeValue = comboSet[index]->currentText();
-    if (false /*typeValue==???*/) {
+    if (typeValue.contains("+")) {
+        QStringList tl = typeValue.split("+");
+        types.clear();
+        foreach(const QString& te, tl)
+            types << standardTypes->unTranslate(te);
         // TODO compare for multi-type typed pairs
     }
     else

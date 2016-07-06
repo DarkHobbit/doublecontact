@@ -98,6 +98,7 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                 // Phone type(s)
                 if (types.isEmpty()) {
                     errors << QObject::tr("Missing phone type at line %1: %2").arg(line+1).arg(vValue[0]);
+                    // TODO mb. no type is valid (in this case compare container and contact edit dialog must be updated)
                     phone.tTypes << "pref";
                 }
                 else phone.tTypes = types;
