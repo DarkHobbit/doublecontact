@@ -105,6 +105,9 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                 item.phones.push_back(phone);
             }
             else if (tag=="EMAIL") {
+                // Some phones write empty EMAIL tag even if no email (i.e SE W300i in vCard 2.1)
+                if (vValue[0].isEmpty())
+                    continue;
                 Email email;
                 email.address = decodeValue(vValue[0], encoding, charSet, errors);
                 if (types.isEmpty()) // maybe, it not a bug; some devices allows email without type
