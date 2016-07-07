@@ -198,7 +198,7 @@ void ContactItem::calculateFields()
     }
 }
 
-QString ContactItem::formatNames()
+QString ContactItem::formatNames() const
 {
     QString res = names[0]; // Last name
     if (names.count()>1) // First name
@@ -227,11 +227,11 @@ bool ContactItem::similarTo(const ContactItem &pair)
         return true;
     if (!fullName.isEmpty() && fullName==pair.fullName)
         return true;
-    if ((names.count()>1) && (pair.names.count()>1)) {
-        // 2 names equals
+    if ((names.count()>1) && (pair.names.count()>1) && (!names[0].isEmpty()) && (!names[1].isEmpty())) {
+        // 2 reversed names equals
         if (names[0].toUpper()==pair.names[1].toUpper() && names[1].toUpper()==names[0].toUpper())
             return true;
-        // 2 reversed names equals
+        // 2 names equals
         if (names[0].toUpper()==pair.names[0].toUpper() && names[1].toUpper()==names[1].toUpper())
             return true;
         // Initials?..

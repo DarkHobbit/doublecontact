@@ -2,7 +2,7 @@ This file contains English and Russian (CP1251) issues. Sorry for this mixing, i
 You can contact me at pub@zvyozdochkin.ru.
 
 я
-* некоторые телефоны оказываютс€ похожими на автокласс (перва€ зпись), а действительно парные им остаютс€ сиротами (√ришин)
+* сбиваетс€ сравнение по similarTo, если осталс€ 100% телефон, но добавилс€ email - идентичности уже нет, а по похожести возникают ложные срабатывани€ (Ўлыков)
 * postal address support (и найти относ€щиес€ к адресам TODO, например, в ContactItem::identicalTo)
 * vcf save (and change status to alpha)
 

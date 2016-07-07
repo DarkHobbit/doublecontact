@@ -104,7 +104,7 @@ struct ContactItem {
     bool intlPhonePrefix();
     // Aux methods
     void calculateFields();
-    QString formatNames();
+    QString formatNames() const;
     void dropFinalEmptyNames(); // If empty parts not in-middle, remove it
     bool similarTo(const ContactItem& pair);
     bool identicalTo(const ContactItem& pair);
