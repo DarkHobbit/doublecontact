@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="ru_RU">
+<TS version="2.1" language="ru_RU">
 <context>
     <name>CompareDialog</name>
     <message>
@@ -650,48 +650,53 @@
         <translation>не сорт.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="465"/>
+        <location filename="../src/mainwindow.cpp" line="466"/>
         <source>simple editing</source>
         <translation>простая правка</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="484"/>
+        <location filename="../src/mainwindow.cpp" line="470"/>
+        <source>compare</source>
+        <translation>сравнение</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="494"/>
         <source>&apos;%1&apos; was changed.
 Save changes?</source>
         <translation>%1 изменился. Сохранить?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="566"/>
+        <location filename="../src/mainwindow.cpp" line="576"/>
         <source>Two panels and compare mode needed for this operation</source>
         <translation>Сначала нужно включить 2 панели и режим сравнения</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="579"/>
+        <location filename="../src/mainwindow.cpp" line="589"/>
         <source>Left item</source>
         <translation>Левый контакт</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="579"/>
+        <location filename="../src/mainwindow.cpp" line="589"/>
         <source>Right item</source>
         <translation>Правый контакт</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="604"/>
+        <location filename="../src/mainwindow.cpp" line="614"/>
         <source>Strongly two records on current panel must be selected for this operation</source>
         <translation>Сначала надо выбрать ровно2 записи на текущей панели</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="610"/>
+        <location filename="../src/mainwindow.cpp" line="620"/>
         <source>Item 1</source>
         <translation>Контакт 1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="610"/>
+        <location filename="../src/mainwindow.cpp" line="620"/>
         <source>Item 2</source>
         <translation>Контакт 2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="660"/>
+        <location filename="../src/mainwindow.cpp" line="670"/>
         <source>Operation requires show two panels</source>
         <translation>Необходимо включить 2 панели</translation>
     </message>
@@ -707,88 +712,88 @@ Save changes?</source>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/contactlist.cpp" line="41"/>
+        <location filename="../src/contactlist.cpp" line="42"/>
         <source>Home</source>
         <translation>Домашний</translation>
     </message>
     <message>
-        <location filename="../src/contactlist.cpp" line="42"/>
+        <location filename="../src/contactlist.cpp" line="43"/>
         <source>Message</source>
         <translation>Для сообщений</translation>
     </message>
     <message>
-        <location filename="../src/contactlist.cpp" line="43"/>
+        <location filename="../src/contactlist.cpp" line="44"/>
         <source>Work</source>
         <translation>Служебный</translation>
     </message>
     <message>
-        <location filename="../src/contactlist.cpp" line="44"/>
-        <location filename="../src/contactlist.cpp" line="81"/>
+        <location filename="../src/contactlist.cpp" line="45"/>
+        <location filename="../src/contactlist.cpp" line="82"/>
         <source>Preferable</source>
         <translation>Предпочтительный</translation>
     </message>
     <message>
-        <location filename="../src/contactlist.cpp" line="45"/>
+        <location filename="../src/contactlist.cpp" line="46"/>
         <source>Voice</source>
         <translation>Голосовой</translation>
     </message>
     <message>
-        <location filename="../src/contactlist.cpp" line="46"/>
+        <location filename="../src/contactlist.cpp" line="47"/>
         <source>Fax</source>
         <translation>Факс</translation>
     </message>
     <message>
-        <location filename="../src/contactlist.cpp" line="47"/>
+        <location filename="../src/contactlist.cpp" line="48"/>
         <source>Cell</source>
         <translation>Мобильный</translation>
     </message>
     <message>
-        <location filename="../src/contactlist.cpp" line="48"/>
+        <location filename="../src/contactlist.cpp" line="49"/>
         <source>Video</source>
         <translation>Видеофон</translation>
     </message>
     <message>
-        <location filename="../src/contactlist.cpp" line="49"/>
+        <location filename="../src/contactlist.cpp" line="50"/>
         <source>Pager</source>
         <translation>Пейджер</translation>
     </message>
     <message>
-        <location filename="../src/contactlist.cpp" line="50"/>
+        <location filename="../src/contactlist.cpp" line="51"/>
         <source>BBS</source>
         <translation>BBS</translation>
     </message>
     <message>
-        <location filename="../src/contactlist.cpp" line="51"/>
+        <location filename="../src/contactlist.cpp" line="52"/>
         <source>Modem</source>
         <translation>Модем</translation>
     </message>
     <message>
-        <location filename="../src/contactlist.cpp" line="52"/>
+        <location filename="../src/contactlist.cpp" line="53"/>
         <source>Car</source>
         <translation>Автомобильный</translation>
     </message>
     <message>
-        <location filename="../src/contactlist.cpp" line="53"/>
+        <location filename="../src/contactlist.cpp" line="54"/>
         <source>ISDN</source>
         <translation>ISDN</translation>
     </message>
     <message>
-        <location filename="../src/contactlist.cpp" line="54"/>
+        <location filename="../src/contactlist.cpp" line="55"/>
         <source>PCS</source>
         <translation>PCS</translation>
     </message>
     <message>
-        <location filename="../src/contactlist.cpp" line="79"/>
+        <location filename="../src/contactlist.cpp" line="80"/>
         <source>Internet</source>
         <translation>Интернет</translation>
     </message>
     <message>
-        <location filename="../src/contactlist.cpp" line="80"/>
+        <location filename="../src/contactlist.cpp" line="81"/>
         <source>X.400</source>
         <translation>X.400</translation>
     </message>
     <message>
-        <location filename="../src/contactlist.cpp" line="180"/>
+        <location filename="../src/contactlist.cpp" line="181"/>
         <source>Strange empty contact</source>
         <translation>Странный пустой контакт</translation>
     </message>
@@ -803,43 +808,43 @@ Save changes?</source>
         <translation>Телефон без типа в строке %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/formats/common/vcarddata.cpp" line="130"/>
+        <location filename="../src/formats/common/vcarddata.cpp" line="134"/>
         <source>Unsupported photo type at line %1: %2</source>
         <translation>Неподдерживаемый тип фотографии в строке %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/formats/common/vcarddata.cpp" line="141"/>
+        <location filename="../src/formats/common/vcarddata.cpp" line="145"/>
         <source>Unknown encoding type at line %1: %2</source>
         <translation>Неизвестное кодирование в строке %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/formats/common/vcarddata.cpp" line="167"/>
+        <location filename="../src/formats/common/vcarddata.cpp" line="171"/>
         <source>Last section not closed</source>
         <translation>Последняя секция не закрыта</translation>
     </message>
     <message>
-        <location filename="../src/formats/common/vcarddata.cpp" line="174"/>
+        <location filename="../src/formats/common/vcarddata.cpp" line="178"/>
         <location filename="../src/formats/files/udxfile.cpp" line="162"/>
         <source>%1 unknown tags found</source>
         <translation>Неизвестных тегов: %1</translation>
     </message>
     <message>
-        <location filename="../src/formats/common/vcarddata.cpp" line="193"/>
+        <location filename="../src/formats/common/vcarddata.cpp" line="197"/>
         <source>Unknown charset: </source>
         <translation>Неизвестная кодировка: </translation>
     </message>
     <message>
-        <location filename="../src/formats/common/vcarddata.cpp" line="216"/>
+        <location filename="../src/formats/common/vcarddata.cpp" line="220"/>
         <source>Unknown encoding: </source>
         <translation>Неизвестное кодирование: </translation>
     </message>
     <message>
-        <location filename="../src/formats/common/vcarddata.cpp" line="239"/>
+        <location filename="../src/formats/common/vcarddata.cpp" line="243"/>
         <source>Invalid timezone: </source>
         <translation>Неправильный часовой пояс: </translation>
     </message>
     <message>
-        <location filename="../src/formats/common/vcarddata.cpp" line="258"/>
+        <location filename="../src/formats/common/vcarddata.cpp" line="262"/>
         <source>Invalid datetime: </source>
         <translation>Неправильная дата/время</translation>
     </message>

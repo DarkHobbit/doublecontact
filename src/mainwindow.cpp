@@ -307,6 +307,7 @@ void MainWindow::on_actionCo_mpare_triggered()
     // Compare off
     else
         selectedModel->setViewMode(ContactModel::Standard, oppositeModel());
+    updateModeStatus();
 }
 
 void MainWindow::on_btnCompare_clicked()
@@ -461,8 +462,18 @@ void MainWindow::updateModeStatus()
     QString sm = tr("Mode: ");
     sm += (setDlg->showTwoPanels() ? tr("two panels") : tr("one panel")) + ", ";
     sm += (ui->action_Sort->isChecked() ? tr("sorted") : tr("not sorted")) + ", ";
-    // TODO save sorting state in settings and restore it!
-    sm += tr("simple editing"); // TODO for manual search, auto compare, duplicate search
+    switch (modLeft->viewMode()) {
+    case ContactModel::Standard:
+        sm += tr("simple editing");
+        break;
+    case ContactModel::CompareMain:
+    case ContactModel::CompareOpposite:
+        sm += tr("compare");
+        break;
+    default:
+        // TODO duplicate search
+        break;
+    }
     lbMode->setText(sm);
 }
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="en_GB">
+<TS version="2.1" language="en_GB">
 <context>
     <name>CompareDialog</name>
     <message>
@@ -650,48 +650,53 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="465"/>
+        <location filename="../src/mainwindow.cpp" line="466"/>
         <source>simple editing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="484"/>
+        <location filename="../src/mainwindow.cpp" line="470"/>
+        <source>compare</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="494"/>
         <source>&apos;%1&apos; was changed.
 Save changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="566"/>
+        <location filename="../src/mainwindow.cpp" line="576"/>
         <source>Two panels and compare mode needed for this operation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="579"/>
+        <location filename="../src/mainwindow.cpp" line="589"/>
         <source>Left item</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="579"/>
+        <location filename="../src/mainwindow.cpp" line="589"/>
         <source>Right item</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="604"/>
+        <location filename="../src/mainwindow.cpp" line="614"/>
         <source>Strongly two records on current panel must be selected for this operation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="610"/>
+        <location filename="../src/mainwindow.cpp" line="620"/>
         <source>Item 1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="610"/>
+        <location filename="../src/mainwindow.cpp" line="620"/>
         <source>Item 2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="660"/>
+        <location filename="../src/mainwindow.cpp" line="670"/>
         <source>Operation requires show two panels</source>
         <translation type="unfinished"></translation>
     </message>
@@ -707,88 +712,88 @@ Save changes?</source>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/contactlist.cpp" line="41"/>
+        <location filename="../src/contactlist.cpp" line="42"/>
         <source>Home</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/contactlist.cpp" line="42"/>
+        <location filename="../src/contactlist.cpp" line="43"/>
         <source>Message</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/contactlist.cpp" line="43"/>
+        <location filename="../src/contactlist.cpp" line="44"/>
         <source>Work</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/contactlist.cpp" line="44"/>
-        <location filename="../src/contactlist.cpp" line="81"/>
+        <location filename="../src/contactlist.cpp" line="45"/>
+        <location filename="../src/contactlist.cpp" line="82"/>
         <source>Preferable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/contactlist.cpp" line="45"/>
+        <location filename="../src/contactlist.cpp" line="46"/>
         <source>Voice</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/contactlist.cpp" line="46"/>
+        <location filename="../src/contactlist.cpp" line="47"/>
         <source>Fax</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/contactlist.cpp" line="47"/>
+        <location filename="../src/contactlist.cpp" line="48"/>
         <source>Cell</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/contactlist.cpp" line="48"/>
+        <location filename="../src/contactlist.cpp" line="49"/>
         <source>Video</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/contactlist.cpp" line="49"/>
+        <location filename="../src/contactlist.cpp" line="50"/>
         <source>Pager</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/contactlist.cpp" line="50"/>
+        <location filename="../src/contactlist.cpp" line="51"/>
         <source>BBS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/contactlist.cpp" line="51"/>
+        <location filename="../src/contactlist.cpp" line="52"/>
         <source>Modem</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/contactlist.cpp" line="52"/>
+        <location filename="../src/contactlist.cpp" line="53"/>
         <source>Car</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/contactlist.cpp" line="53"/>
+        <location filename="../src/contactlist.cpp" line="54"/>
         <source>ISDN</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/contactlist.cpp" line="54"/>
+        <location filename="../src/contactlist.cpp" line="55"/>
         <source>PCS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/contactlist.cpp" line="79"/>
+        <location filename="../src/contactlist.cpp" line="80"/>
         <source>Internet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/contactlist.cpp" line="80"/>
+        <location filename="../src/contactlist.cpp" line="81"/>
         <source>X.400</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/contactlist.cpp" line="180"/>
+        <location filename="../src/contactlist.cpp" line="181"/>
         <source>Strange empty contact</source>
         <translation type="unfinished"></translation>
     </message>
@@ -803,43 +808,43 @@ Save changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/formats/common/vcarddata.cpp" line="130"/>
+        <location filename="../src/formats/common/vcarddata.cpp" line="134"/>
         <source>Unsupported photo type at line %1: %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/formats/common/vcarddata.cpp" line="141"/>
+        <location filename="../src/formats/common/vcarddata.cpp" line="145"/>
         <source>Unknown encoding type at line %1: %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/formats/common/vcarddata.cpp" line="167"/>
+        <location filename="../src/formats/common/vcarddata.cpp" line="171"/>
         <source>Last section not closed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/formats/common/vcarddata.cpp" line="174"/>
+        <location filename="../src/formats/common/vcarddata.cpp" line="178"/>
         <location filename="../src/formats/files/udxfile.cpp" line="162"/>
         <source>%1 unknown tags found</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/formats/common/vcarddata.cpp" line="193"/>
+        <location filename="../src/formats/common/vcarddata.cpp" line="197"/>
         <source>Unknown charset: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/formats/common/vcarddata.cpp" line="216"/>
+        <location filename="../src/formats/common/vcarddata.cpp" line="220"/>
         <source>Unknown encoding: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/formats/common/vcarddata.cpp" line="239"/>
+        <location filename="../src/formats/common/vcarddata.cpp" line="243"/>
         <source>Invalid timezone: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/formats/common/vcarddata.cpp" line="258"/>
+        <location filename="../src/formats/common/vcarddata.cpp" line="262"/>
         <source>Invalid datetime: </source>
         <translation type="unfinished"></translation>
     </message>

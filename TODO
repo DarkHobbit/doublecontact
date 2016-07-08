@@ -3,7 +3,6 @@ You can contact me at pub@zvyozdochkin.ru.
 
 Я
 * синхронизация выделения записей в режиме сравнения не отрабатывает после Ctrl+U
-* в строке состояния не отображается переход в режим сравнения
 * postal address support (и найти относящиеся к адресам TODO, например, в ContactItem::identicalTo)
 * vcf save (and change status to alpha)
 
