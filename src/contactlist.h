@@ -19,6 +19,8 @@
 #include <QStringList>
 #include "globals.h"
 
+#define MAX_COMPARE_PRIORITY_LEVEL 3
+
 struct TagValue { // for non-editing ang unknown tags
     QString tag, value;
     TagValue(const QString& _tag, const QString& _value);
@@ -106,7 +108,7 @@ struct ContactItem {
     void calculateFields();
     QString formatNames() const;
     void dropFinalEmptyNames(); // If empty parts not in-middle, remove it
-    bool similarTo(const ContactItem& pair);
+    bool similarTo(const ContactItem& pair, int priorityLevel);
     bool identicalTo(const ContactItem& pair);
 };
 

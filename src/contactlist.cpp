@@ -220,34 +220,44 @@ void ContactItem::dropFinalEmptyNames()
     }
 }
 
-bool ContactItem::similarTo(const ContactItem &pair)
+bool ContactItem::similarTo(const ContactItem &pair, int priorityLevel)
 {
     // TODO set options for various criter.
-    if (id.length()>4 && id==pair.id)
-        return true;
-    if (!fullName.isEmpty() && fullName==pair.fullName)
-        return true;
-    if ((names.count()>1) && (pair.names.count()>1) && (!names[0].isEmpty()) && (!names[1].isEmpty())) {
-        // 2 reversed names equals
-        if (names[0].toUpper()==pair.names[1].toUpper() && names[1].toUpper()==names[0].toUpper())
+    switch (priorityLevel) {
+        case 1:
+        // Phones
+        foreach (const Phone& thisPhone, phones)
+            foreach (const Phone& pairPhone, pair.phones)
+                if (thisPhone.expandNumber()==pairPhone.expandNumber())
+                    return true;
+        // Emails
+        foreach (const Email& thisEmail, emails)
+            foreach (const Email& pairEmail, pair.emails)
+                if (thisEmail.address.toUpper()==pairEmail.address.toUpper())
+                    return true;
+        break;
+        case 2:
+        if (id.length()>4 && id==pair.id)
             return true;
-        // 2 names equals
-        if (names[0].toUpper()==pair.names[0].toUpper() && names[1].toUpper()==names[1].toUpper())
+        break;
+        case 3:
+        if (!fullName.isEmpty() && fullName==pair.fullName)
             return true;
-        // Initials?..
+        if ((names.count()>1) && (pair.names.count()>1) && (!names[0].isEmpty()) && (!names[1].isEmpty())) {
+            // 2 reversed names equals
+            if (names[0].toUpper()==pair.names[1].toUpper() && names[1].toUpper()==names[0].toUpper())
+                return true;
+            // 2 names equals
+            if (names[0].toUpper()==pair.names[0].toUpper() && names[1].toUpper()==names[1].toUpper())
+                return true;
+            // Initials?..
+        }
+        if (organization==pair.organization) return false; //?
+        //TODO address
+        break;
+    default:
+        break;
     }
-    // Phones
-    foreach (const Phone& thisPhone, phones)
-        foreach (const Phone& pairPhone, pair.phones)
-            if (thisPhone.expandNumber()==pairPhone.expandNumber())
-                return true;
-    // Emails
-    foreach (const Email& thisEmail, emails)
-        foreach (const Email& pairEmail, pair.emails)
-            if (thisEmail.address.toUpper()==pairEmail.address.toUpper())
-                return true;
-    if (organization==pair.organization) return false;
-    //TODO address
     return false;
 }
 
@@ -306,17 +316,22 @@ void ContactList::compareWith(ContactList &pairList)
         }
         // If no identical records, search similar
         if (item.pairState==ContactItem::PairNotFound)
-            for(int j=0; j<pairList.count(); j++) {
-                ContactItem& candidate = pairList[j];
-                if (item.similarTo(candidate)) {
-                    item.pairState = ContactItem::PairSimilar;
-                    item.pairItem = &candidate;
-                    item.pairIndex = j;
-                    candidate.pairItem = &item;
-                    candidate.pairState = ContactItem::PairSimilar;
-                    candidate.pairIndex = i;
-                    break;
+            for (int j=1; j<=MAX_COMPARE_PRIORITY_LEVEL; j++) {
+                bool pairFound = false;
+                for(int k=0; k<pairList.count(); k++) {
+                    ContactItem& candidate = pairList[k];
+                    if (item.similarTo(candidate, j)) {
+                        pairFound = true;
+                        item.pairState = ContactItem::PairSimilar;
+                        item.pairItem = &candidate;
+                        item.pairIndex = k;
+                        candidate.pairItem = &item;
+                        candidate.pairState = ContactItem::PairSimilar;
+                        candidate.pairIndex = i;
+                        break;
+                    }
                 }
+                if (pairFound) break;
             }
     }
 }

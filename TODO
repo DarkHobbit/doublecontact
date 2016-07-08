@@ -2,7 +2,8 @@ This file contains English and Russian (CP1251) issues. Sorry for this mixing, i
 You can contact me at pub@zvyozdochkin.ru.
 
 Я
-* сбивается сравнение по similarTo, если остался 100% телефон, но добавился email - идентичности уже нет, а по похожести возникают ложные срабатывания (Шлыков)
+* синхронизация выделения записей в режиме сравнения не отрабатывает после Ctrl+U
+* в строке состояния не отображается переход в режим сравнения
 * postal address support (и найти относящиеся к адресам TODO, например, в ContactItem::identicalTo)
 * vcf save (and change status to alpha)
 
