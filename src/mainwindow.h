@@ -108,6 +108,7 @@ private:
     void updateHeaders();
     void updateModeStatus();
     void updateViewMode();
+    void setSelectionModelEvents();
     inline ContactModel* oppositeModel();
     void askSaveChanges(QCloseEvent *event, ContactModel *model);
     void updateConfig();

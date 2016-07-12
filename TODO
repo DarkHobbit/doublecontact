@@ -2,7 +2,6 @@ This file contains English and Russian (CP1251) issues. Sorry for this mixing, i
 You can contact me at pub@zvyozdochkin.ru.
 
 Я
-* синхронизация выделения записей в режиме сравнения не отрабатывает после Ctrl+U
 * postal address support (и найти относящиеся к адресам TODO, например, в ContactItem::identicalTo)
 * vcf save (and change status to alpha)
 

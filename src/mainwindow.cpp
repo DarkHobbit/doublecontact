@@ -49,14 +49,7 @@ MainWindow::MainWindow(QWidget *parent) :
     setLanguage(setDlg->lang());
     // Track selected view
     connect(qApp, SIGNAL(focusChanged(QWidget*,QWidget*)), this, SLOT(anyFocusChanged(QWidget*,QWidget*)));
-    connect(ui->tvLeft->selectionModel(), SIGNAL(currentChanged(const QModelIndex&, const QModelIndex&)),
-            this, SLOT(setButtonsAccess()));
-    connect(ui->tvRight->selectionModel(), SIGNAL(currentChanged(const QModelIndex&, const QModelIndex&)),
-            this, SLOT(setButtonsAccess()));
-    connect(ui->tvLeft->selectionModel(), SIGNAL(selectionChanged( const QItemSelection&, const QItemSelection&)),
-            this, SLOT(selectionChanged()));
-    connect(ui->tvRight->selectionModel(), SIGNAL(selectionChanged( const QItemSelection&, const QItemSelection&)),
-            this, SLOT(selectionChanged()));
+    setSelectionModelEvents();
     connect(ui->tvLeft, SIGNAL(doubleClicked (const QModelIndex&)), this, SLOT(rowDoubleClicked(const QModelIndex&)));
     connect(ui->tvRight, SIGNAL(doubleClicked (const QModelIndex&)), this, SLOT(rowDoubleClicked(const QModelIndex&)));
     selectView(ui->tvLeft);
@@ -482,6 +475,18 @@ void MainWindow::updateViewMode()
     selectedModel->setViewMode(selectedModel->viewMode(), oppositeModel());
 }
 
+void MainWindow::setSelectionModelEvents()
+{
+    connect(ui->tvLeft->selectionModel(), SIGNAL(currentChanged(const QModelIndex&, const QModelIndex&)),
+            this, SLOT(setButtonsAccess()));
+    connect(ui->tvRight->selectionModel(), SIGNAL(currentChanged(const QModelIndex&, const QModelIndex&)),
+            this, SLOT(setButtonsAccess()));
+    connect(ui->tvLeft->selectionModel(), SIGNAL(selectionChanged( const QItemSelection&, const QItemSelection&)),
+            this, SLOT(selectionChanged()));
+    connect(ui->tvRight->selectionModel(), SIGNAL(selectionChanged( const QItemSelection&, const QItemSelection&)),
+            this, SLOT(selectionChanged()));
+}
+
 ContactModel* MainWindow::oppositeModel()
 {
     return (selectedView==ui->tvLeft) ? modRight : modLeft;
@@ -680,4 +685,5 @@ void MainWindow::on_actionS_wap_Panels_triggered()
     ui->tvLeft->setModel(proxyLeft);
     ui->tvRight->setModel(proxyRight);
     updateHeaders();
+    setSelectionModelEvents();
 }
