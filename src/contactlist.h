@@ -66,6 +66,18 @@ struct DateItem { // Birthday and anniversaries
     inline bool isEmpty() const {return value.isNull(); }
 };
 
+struct PostalAddress {
+    QString offBox, extended, street, city, region, postalCode, country;
+    QStringList paTypes; // home, work, dom, postal, etc.
+    bool operator ==(const PostalAddress& a);
+    void clear();
+    static class StandardTypes: public ::StandardTypes {
+        public:
+        StandardTypes();
+        void fill();
+    } standardTypes;
+};
+
 struct ContactItem {
     QString fullName;
     QStringList names;
@@ -81,7 +93,8 @@ struct ContactItem {
     // Work
     QString organization, title;
     // TODO role, logo?
-    // TODO address
+    // Addresses
+    PostalAddress adrHome, adrWork; // TODO are vCards with more addresses exists in wild nature?
     // Format internals
     QString id; // optional record unique id (udx Sequence, vcf X-IRMC-LUID, etc)
     QString originalFormat;

@@ -392,3 +392,42 @@ QString DateItem::toString(DateFormat format) const
     }
     return s;
 }
+
+bool PostalAddress::operator ==(const PostalAddress &a)
+{
+    return
+        paTypes==a.paTypes
+     && offBox==a.offBox && extended==a.extended
+            && street==a.street && city==a.city && region==a.region && postalCode==a.postalCode && country==a.country;
+}
+
+void PostalAddress::clear()
+{
+    paTypes.clear();
+    offBox.clear();
+    extended.clear();
+}
+
+PostalAddress::StandardTypes::StandardTypes()
+{
+    fill();
+}
+
+void PostalAddress::StandardTypes::fill()
+{
+    clear();
+    displayValues.clear();
+    // Types according RFC 2426
+    (*this)["home"] = QObject::tr("Home");
+    (*this)["work"] = QObject::tr("Work");
+    (*this)["pref"] = QObject::tr("Preferable");
+    (*this)["dom"] = QObject::tr("Domestic");
+    (*this)["intl"] = QObject::tr("International");
+    (*this)["postal"] = QObject::tr("Postal");
+    (*this)["parcel"] = QObject::tr("Parcel");
+    displayValues
+        << (*this)["home"]  << (*this)["work"]
+        << (*this)["pref"] << (*this)["dom"]
+        << (*this)["intl"] << (*this)["postal"] << (*this)["parcel"];
+}
+
