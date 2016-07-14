@@ -19,7 +19,7 @@
 #include <QStringList>
 #include "globals.h"
 
-#define MAX_COMPARE_PRIORITY_LEVEL 3
+#define MAX_COMPARE_PRIORITY_LEVEL 4
 
 struct TagValue { // for non-editing ang unknown tags
     QString tag, value;
@@ -71,6 +71,7 @@ struct PostalAddress {
     QStringList paTypes; // home, work, dom, postal, etc.
     bool operator ==(const PostalAddress& a);
     void clear();
+    bool isEmpty();
     static class StandardTypes: public ::StandardTypes {
         public:
         StandardTypes();
@@ -94,7 +95,7 @@ struct ContactItem {
     QString organization, title;
     // TODO role, logo?
     // Addresses
-    PostalAddress adrHome, adrWork; // TODO are vCards with more addresses exists in wild nature?
+    PostalAddress addrHome, addrWork; // TODO are vCards with more addresses exists in wild nature?
     // Format internals
     QString id; // optional record unique id (udx Sequence, vcf X-IRMC-LUID, etc)
     QString originalFormat;

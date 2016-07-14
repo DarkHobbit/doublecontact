@@ -97,6 +97,8 @@ void ContactItem::clear()
     if (!photo.isEmpty())
         photo.clear();
     photoUrl.clear();
+    addrHome.clear();
+    addrWork.clear();
     organization.clear();
     title.clear();
     otherTags.clear();
@@ -176,7 +178,6 @@ void ContactItem::calculateFields()
         visibleName = emails[0].address;
     else if (!phones.isEmpty())
         visibleName = phones[0].number;
-    // TODO by address
     else // WTF???
         visibleName = QObject::tr("Strange empty contact");
     // First or preferred phone number
@@ -241,6 +242,12 @@ bool ContactItem::similarTo(const ContactItem &pair, int priorityLevel)
             return true;
         break;
         case 3:
+        if (!addrHome.isEmpty() && addrHome==pair.addrHome)
+            return true;
+        if (!addrWork.isEmpty() && addrWork==pair.addrWork)
+            return true;
+        break;
+        case 4:
         if (!fullName.isEmpty() && fullName==pair.fullName)
             return true;
         if ((names.count()>1) && (pair.names.count()>1) && (!names[0].isEmpty()) && (!names[1].isEmpty())) {
@@ -253,7 +260,6 @@ bool ContactItem::similarTo(const ContactItem &pair, int priorityLevel)
             // Initials?..
         }
         if (organization==pair.organization) return false; //?
-        //TODO address
         break;
     default:
         break;
@@ -276,7 +282,7 @@ bool ContactItem::identicalTo(const ContactItem &pair)
     if (photoUrl!=pair.photoUrl) return false;
     if (organization!=pair.organization) return false;
     if (title!=pair.title) return false;
-    //TODO address
+    if (!(addrHome==pair.addrHome)) return false;
     // Here strongly add ALL new
     return true;
 }
@@ -406,6 +412,13 @@ void PostalAddress::clear()
     paTypes.clear();
     offBox.clear();
     extended.clear();
+}
+
+bool PostalAddress::isEmpty()
+{
+    return offBox.isEmpty() && extended.isEmpty()
+        && street.isEmpty() && city.isEmpty() && region.isEmpty()
+        && postalCode.isEmpty() && country.isEmpty();
 }
 
 PostalAddress::StandardTypes::StandardTypes()

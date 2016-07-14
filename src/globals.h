@@ -35,13 +35,14 @@ enum ContactColumn {
 };
 
 // Common strings for translation unify
+// Message boxes
 #define S_ERROR QObject::tr("Error")
 #define S_WARNING QObject::tr("Warning")
 #define S_CONFIRM QObject::tr("Confirmation")
 #define S_NEW_LIST QObject::tr("New contact list")
-// Spec.value for combined phone/mail types
+// Spec.value for combined phone/mail/addr. types
 #define S_MIXED_TYPE QObject::tr("mixed...")
-// Col
+// Column names
 #define S_FIRST_NAME QObject::tr("Firstname")
 #define S_LAST_NAME QObject::tr("Lastname")
 #define S_MIDDLE_NAME QObject::tr("Middlename")
@@ -55,6 +56,14 @@ enum ContactColumn {
 #define S_HAS_BDAY QObject::tr("Has birthday")
 #define S_SOME_PHONES QObject::tr("Some phones")
 #define S_SOME_EMAILS QObject::tr("Some emails")
+// Address components
+#define S_ADR_OFFICE_BOX QObject::tr("P.o. box")
+#define S_ADR_EXTENDED QObject::tr("Ext.addr.")
+#define S_ADR_STREET QObject::tr("Street")
+#define S_ADR_CITY QObject::tr("City/Locality")
+#define S_ADR_REGION QObject::tr("Region")
+#define S_ADR_POST_CODE QObject::tr("Postal code")
+#define S_ADR_COUNTRY QObject::tr("Country")
 
 // Visible columns headers
 // (It was a simple string array, but its translation not worked)
