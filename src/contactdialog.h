@@ -78,6 +78,7 @@ private slots:
     void slotAnnDetails();
     void slotDelAnniversary();
     void on_twContact_currentChanged(int);
+    void on_btnSwapAddresses_clicked();
 };
 
 #endif // CONTACTDIALOG_H

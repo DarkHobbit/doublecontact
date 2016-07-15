@@ -149,7 +149,14 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                 item.organization = decodeValue(vValue[0], encoding, charSet, errors);
             else if (tag=="TITLE")
                 item.title = decodeValue(vValue[0], encoding, charSet, errors);
-            // TODO ADR...
+            else if (tag=="ADR") {
+                if (types.contains("home", Qt::CaseInsensitive))
+                    importAddress(item.addrHome, types, vValue, encoding, charSet, errors);
+                else if (types.contains("work", Qt::CaseInsensitive))
+                    importAddress(item.addrWork, types, vValue, encoding, charSet, errors);
+                else
+                    errors << QObject::tr("Unknown address type at line %1: %2").arg(line+1).arg(types.join(";"));
+            }
             else if (tag=="X-IRMC-LUID")
                 item.id = decodeValue(vValue[0], encoding, charSet, errors);
             // Known but un-editing tags
@@ -260,4 +267,17 @@ void VCardData::importDate(DateItem &item, const QString &src, QStringList& erro
     }
     if (!item.value.isValid())
         errors << QObject::tr("Invalid datetime: ") + src;
+}
+
+void VCardData::importAddress(PostalAddress &item, const QStringList& aTypes, const QStringList& values, const QString& encoding, const QString& charSet, QStringList &errors)
+{
+    item.clear();
+    item.paTypes = aTypes;
+    if (values.count()>0) item.offBox = decodeValue(values[0], encoding, charSet, errors);
+    if (values.count()>1) item.extended = decodeValue(values[1], encoding, charSet, errors);
+    if (values.count()>2) item.street = decodeValue(values[2], encoding, charSet, errors);
+    if (values.count()>3) item.city = decodeValue(values[3], encoding, charSet, errors);
+    if (values.count()>4) item.region = decodeValue(values[4], encoding, charSet, errors);
+    if (values.count()>5) item.postalCode = decodeValue(values[5], encoding, charSet, errors);
+    if (values.count()>6) item.country = decodeValue(values[6], encoding, charSet, errors);
 }

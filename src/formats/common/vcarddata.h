@@ -24,6 +24,7 @@ public:
 private:
     static QString decodeValue(const QString& src, const QString& encoding, const QString& charSet, QStringList& errors);
     static void importDate(DateItem& item, const QString& src, QStringList& errors);
+    static void importAddress(PostalAddress& item, const QStringList& aTypes, const QStringList& values, const QString& encoding, const QString& charSet, QStringList& errors);
     // TODO before export: maybe make class not static and move here encoding, charSet and errors as members
 };
 

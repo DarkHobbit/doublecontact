@@ -552,3 +552,8 @@ void ContactDialog::on_twContact_currentChanged(int)
 {
     resizeEvent(0);
 }
+
+void ContactDialog::on_btnSwapAddresses_clicked()
+{
+    //
+}
