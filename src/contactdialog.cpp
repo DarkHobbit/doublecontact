@@ -176,7 +176,11 @@ void ContactDialog::getData(ContactItem& c)
     // TODO upload photos
     // Addresses
     readAddress(ui->gbAddrHome, c.addrHome);
+    if (!c.addrHome.isEmpty() && !c.addrHome.paTypes.contains("home"), Qt::CaseInsensitive)
+        c.addrHome.paTypes << "home";
     readAddress(ui->gbAddrWork, c.addrWork);
+    if (!c.addrWork.isEmpty() && !c.addrWork.paTypes.contains("work"), Qt::CaseInsensitive)
+        c.addrWork.paTypes << "work";
     // Work
     c.organization = ui->leOrganization->text();
     c.title = ui->leTitle->text();
