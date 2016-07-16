@@ -27,8 +27,9 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
     // Merge quoted-printable linesets
     if (lines.count()>1)
     for (int i=lines.count()-2;i>=0;i--) {
-        if (lines[i].right(1)=="=" && lines[i+1].left(1)=="=") {
-            lines[i] += lines[i+1].mid(1);
+        if (lines[i].right(1)=="=") {
+            lines[i].remove(lines[i].length()-1, 1);
+            lines[i] += lines[i+1];
             lines.removeAt(i+1);
         }
     }
