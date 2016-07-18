@@ -319,6 +319,25 @@ void ContactDialog::addAddress(QWidget *parent, const PostalAddress &addr)
     // TODO type box, if multy addresses will implemented
 }
 
+void ContactDialog::setAddress(QWidget *parent, const PostalAddress &addr)
+{
+    QLineEdit* le;
+    le = parent->findChild<QLineEdit*>(S_ADR_OFFICE_BOX);
+    if (le) le->setText(addr.offBox);
+    le = parent->findChild<QLineEdit*>(S_ADR_EXTENDED);
+    if (le) le->setText(addr.extended);
+    le = parent->findChild<QLineEdit*>(S_ADR_STREET);
+    if (le) le->setText(addr.street);
+    le = parent->findChild<QLineEdit*>(S_ADR_CITY);
+    if (le) le->setText(addr.city);
+    le = parent->findChild<QLineEdit*>(S_ADR_REGION);
+    if (le) le->setText(addr.region);
+    le = parent->findChild<QLineEdit*>(S_ADR_POST_CODE);
+    if (le) le->setText(addr.postalCode);
+    le = parent->findChild<QLineEdit*>(S_ADR_COUNTRY);
+    if (le) le->setText(addr.country);
+}
+
 void ContactDialog::readAddress(QWidget *parent, PostalAddress &addr)
 {
     QLineEdit* le;
@@ -559,5 +578,9 @@ void ContactDialog::on_twContact_currentChanged(int)
 
 void ContactDialog::on_btnSwapAddresses_clicked()
 {
-    //
+    PostalAddress bH, bW;
+    readAddress(ui->gbAddrHome, bH);
+    readAddress(ui->gbAddrWork, bW);
+    setAddress(ui->gbAddrHome, bW);
+    setAddress(ui->gbAddrWork, bH);
 }

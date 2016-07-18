@@ -2,9 +2,8 @@ This file contains English and Russian (CP1251) issues. Sorry for this mixing, i
 You can contact me at pub@zvyozdochkin.ru.
 
 Я
-* quoted-printable multiline bag
-* addresses swap
-* postal address support (и найти относящиеся к адресам TODO)
+* addresses editing: unexpected country name
+* postal address support, incl. compare (и найти относящиеся к адресам TODO)
 * rusify address terms
 * vcf save (and change status to alpha)
 

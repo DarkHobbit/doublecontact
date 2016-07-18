@@ -56,6 +56,7 @@ private:
     void addAnniversary(const DateItem& ann);
     void readAnniversary(int num, DateItem& ann);
     void addAddress(QWidget* parent, const PostalAddress& addr); // TODO if more 2 addresses will allowed, need post layout and num instead this
+    void setAddress(QWidget* parent, const PostalAddress& addr); // TODO if more 2 addresses will allowed, need post layout and num instead this
     void readAddress(QWidget* parent, PostalAddress& addr);
     // Common helpers for phone/email
     void addTriplet(int& count, QGridLayout* l, const QString& nameTemplate, const QString& itemValue);
