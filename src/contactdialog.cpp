@@ -12,7 +12,6 @@
  */
 
 #include <QLineEdit>
-#include <QMessageBox>
 #include <QPixmap>
 
 #include "contactdialog.h"
@@ -176,10 +175,10 @@ void ContactDialog::getData(ContactItem& c)
     // TODO upload photos
     // Addresses
     readAddress(ui->gbAddrHome, c.addrHome);
-    if (!c.addrHome.isEmpty() && !c.addrHome.paTypes.contains("home"), Qt::CaseInsensitive)
+    if (!c.addrHome.isEmpty() && !c.addrHome.paTypes.contains("home", Qt::CaseInsensitive))
         c.addrHome.paTypes << "home";
     readAddress(ui->gbAddrWork, c.addrWork);
-    if (!c.addrWork.isEmpty() && !c.addrWork.paTypes.contains("work"), Qt::CaseInsensitive)
+    if (!c.addrWork.isEmpty() && !c.addrWork.paTypes.contains("work", Qt::CaseInsensitive))
         c.addrWork.paTypes << "work";
     // Work
     c.organization = ui->leOrganization->text();

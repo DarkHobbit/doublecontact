@@ -412,6 +412,11 @@ void PostalAddress::clear()
     paTypes.clear();
     offBox.clear();
     extended.clear();
+    street.clear();
+    city.clear();
+    region.clear();
+    postalCode.clear();
+    country.clear();
 }
 
 bool PostalAddress::isEmpty()
