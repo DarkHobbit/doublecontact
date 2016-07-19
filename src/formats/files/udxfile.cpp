@@ -275,7 +275,9 @@ bool UDXFile::exportRecords(const QString &url, ContactList &list)
         if (item.birthday.hasTime)
             _errors << QObject::tr("Warning: contact %1 has time (%2) in birthday, not implemented in UDX reader")
                  .arg(item.visibleName).arg(item.birthday.value.toString("hh:mm:ss"));
-        // TODO warn on address
+        if (!item.addrHome.isEmpty() || !item.addrWork.isEmpty())
+            _errors << QObject::tr("Warning: contact %1 has address(es), not implemented in UDX")
+                 .arg(item.visibleName);
         if ((!item.photo.isEmpty()) || (!item.photoUrl.isEmpty()))
             _errors << QObject::tr("Warning: contact %1 has photo, not implemented in UDX").arg(item.visibleName);
         if (!item.description.isEmpty())

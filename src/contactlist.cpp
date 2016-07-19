@@ -419,7 +419,7 @@ void PostalAddress::clear()
     country.clear();
 }
 
-bool PostalAddress::isEmpty()
+bool PostalAddress::isEmpty() const
 {
     return offBox.isEmpty() && extended.isEmpty()
         && street.isEmpty() && city.isEmpty() && region.isEmpty()

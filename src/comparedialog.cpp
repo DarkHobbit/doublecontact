@@ -59,7 +59,8 @@ void CompareDialog::setData(const ContactItem &left, const ContactItem &right)
     // TODO photo*
     checkPair(tr("Organization"), &pOrg, left.organization, right.organization);
     checkPair(tr("Job title"), &pTitle, left.title, right.title);
-    // TODO address
+    checkPair(tr("Home Address"), &pAddrHome, left.addrHome, right.addrHome);
+    checkPair(tr("Work Address"), &pAddrWork, left.addrWork, right.addrWork);
 }
 
 void CompareDialog::getData(ContactItem &left, ContactItem &right)
@@ -83,5 +84,8 @@ void CompareDialog::getData(ContactItem &left, ContactItem &right)
         pOrg->getData(left.organization, right.organization);
     if (pTitle)
         pTitle->getData(left.title, right.title);
-    // TODO address
+    if (pAddrHome)
+        pAddrHome->getData(left.addrHome, right.addrHome);
+    if (pAddrWork)
+        pAddrWork->getData(left.addrWork, right.addrWork);
 }

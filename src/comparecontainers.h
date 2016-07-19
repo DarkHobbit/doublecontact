@@ -142,6 +142,13 @@ public:
     void getData(DateItem& leftData, DateItem& rightData);
 };
 
-// TODO AddressPair
+class PostalAddressPair: public StringListPair
+{
+    Q_OBJECT
+public:
+    PostalAddressPair(const QString& title, QGridLayout* layout,
+        const PostalAddress& leftData, const PostalAddress& rightData);
+    void getData(PostalAddress& leftData, PostalAddress& rightData);
+};
 
 #endif // COMPARECONTAINERS_H

@@ -412,3 +412,32 @@ void DateItemPair::getData(DateItem &leftData, DateItem &rightData)
     leftData = ll[0];
     rightData = rl[0];
 }
+
+PostalAddressPair::PostalAddressPair(const QString &title, QGridLayout *layout, const PostalAddress &leftData, const PostalAddress &rightData)
+    :StringListPair(title, layout,
+        QStringList() << leftData.offBox << leftData.extended
+            << leftData.street << leftData.city << leftData.region << leftData.postalCode << leftData.country,
+               QStringList() << rightData.offBox << rightData.extended
+                   << rightData.street << rightData.city << rightData.region << rightData.postalCode << rightData.country
+    )
+{}
+
+void PostalAddressPair::getData(PostalAddress &leftData, PostalAddress &rightData)
+{
+    QStringList ll, rl;
+    StringListPair::getData(ll, rl);
+    leftData.offBox = ll[0];
+    leftData.extended = ll[1];
+    leftData.street = ll[2];
+    leftData.city = ll[3];
+    leftData.region = ll[4];
+    leftData.postalCode = ll[5];
+    leftData.country = ll[6];
+    rightData.offBox = rl[0];
+    rightData.extended = rl[1];
+    rightData.street = rl[2];
+    rightData.city = rl[3];
+    rightData.region = rl[4];
+    rightData.postalCode = rl[5];
+    rightData.country = rl[6];
+}

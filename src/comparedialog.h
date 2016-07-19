@@ -41,8 +41,8 @@ private:
     DateItemListPair* pAnn;
     StringPair* pDesc;
     // TODO photo*
-    StringPair* pOrg, *pTitle;
-    // TODO address
+    StringPair *pOrg, *pTitle;
+    PostalAddressPair *pAddrHome, *pAddrWork;
     template<class P, class T>
     void checkPair(const QString& title, P** pair, T& leftData, T& rightData);
 };
