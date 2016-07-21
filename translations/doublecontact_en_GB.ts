@@ -53,6 +53,16 @@
         <source>Job title</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../src/comparedialog.cpp" line="62"/>
+        <source>Home Address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/comparedialog.cpp" line="63"/>
+        <source>Work Address</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ContactDialog</name>
@@ -93,25 +103,25 @@
     </message>
     <message>
         <location filename="../src/contactdialog.ui" line="149"/>
-        <location filename="../src/contactdialog.cpp" line="413"/>
+        <location filename="../src/contactdialog.cpp" line="499"/>
         <source>name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/contactdialog.ui" line="154"/>
-        <location filename="../src/contactdialog.cpp" line="415"/>
+        <location filename="../src/contactdialog.cpp" line="501"/>
         <source>phone</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/contactdialog.ui" line="159"/>
-        <location filename="../src/contactdialog.cpp" line="417"/>
+        <location filename="../src/contactdialog.cpp" line="503"/>
         <source>email</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/contactdialog.ui" line="164"/>
-        <location filename="../src/contactdialog.cpp" line="419"/>
+        <location filename="../src/contactdialog.cpp" line="505"/>
         <source>anniversary</source>
         <translation type="unfinished"></translation>
     </message>
@@ -146,79 +156,94 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/contactdialog.ui" line="300"/>
+        <location filename="../src/contactdialog.ui" line="314"/>
         <source>Organization</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/contactdialog.ui" line="310"/>
+        <location filename="../src/contactdialog.ui" line="300"/>
         <source>Job Title</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/contactdialog.ui" line="336"/>
+        <location filename="../src/contactdialog.ui" line="332"/>
+        <source>Home address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/contactdialog.ui" line="345"/>
+        <source>Work address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/contactdialog.ui" line="352"/>
+        <source>&lt;&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/contactdialog.ui" line="360"/>
         <source>Other</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/contactdialog.ui" line="344"/>
+        <location filename="../src/contactdialog.ui" line="368"/>
         <source>Format version:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/contactdialog.ui" line="351"/>
+        <location filename="../src/contactdialog.ui" line="375"/>
         <source>ID</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/contactdialog.ui" line="372"/>
+        <location filename="../src/contactdialog.ui" line="396"/>
         <source>Original format:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/contactdialog.ui" line="388"/>
+        <location filename="../src/contactdialog.ui" line="412"/>
         <source>Other contact attributes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/contactdialog.ui" line="402"/>
-        <location filename="../src/contactdialog.ui" line="433"/>
+        <location filename="../src/contactdialog.ui" line="426"/>
+        <location filename="../src/contactdialog.ui" line="457"/>
         <source>Tag</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/contactdialog.ui" line="407"/>
-        <location filename="../src/contactdialog.ui" line="438"/>
+        <location filename="../src/contactdialog.ui" line="431"/>
+        <location filename="../src/contactdialog.ui" line="462"/>
         <source>Value</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/contactdialog.ui" line="416"/>
+        <location filename="../src/contactdialog.ui" line="440"/>
         <source>Problems</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/contactdialog.ui" line="422"/>
+        <location filename="../src/contactdialog.ui" line="446"/>
         <source>Unknown contact attributes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/contactdialog.cpp" line="79"/>
+        <location filename="../src/contactdialog.cpp" line="78"/>
         <source>Add contact</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/contactdialog.cpp" line="88"/>
+        <location filename="../src/contactdialog.cpp" line="87"/>
         <source>Edit contact</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/contactdialog.cpp" line="429"/>
+        <location filename="../src/contactdialog.cpp" line="515"/>
         <source>Phone type</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/contactdialog.cpp" line="431"/>
+        <location filename="../src/contactdialog.cpp" line="517"/>
         <source>Email type</source>
         <translation type="unfinished"></translation>
     </message>
@@ -283,7 +308,7 @@
     <name>MainWindow</name>
     <message>
         <location filename="../src/mainwindow.ui" line="14"/>
-        <location filename="../src/mainwindow.cpp" line="455"/>
+        <location filename="../src/mainwindow.cpp" line="449"/>
         <source>Double Contact</source>
         <translation type="unfinished"></translation>
     </message>
@@ -590,113 +615,113 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="143"/>
+        <location filename="../src/mainwindow.cpp" line="136"/>
         <source>Open contact file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="163"/>
+        <location filename="../src/mainwindow.cpp" line="156"/>
         <source>Save contact file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="222"/>
+        <location filename="../src/mainwindow.cpp" line="215"/>
         <source>Are You really want to delete selected items?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="302"/>
+        <location filename="../src/mainwindow.cpp" line="295"/>
         <source>Compare mode requires show two panels and load contact lists in both panels</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="343"/>
+        <location filename="../src/mainwindow.cpp" line="337"/>
         <source>Record not selected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="347"/>
+        <location filename="../src/mainwindow.cpp" line="341"/>
         <source>Group editing not impemented, select one record</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="456"/>
+        <location filename="../src/mainwindow.cpp" line="450"/>
         <source>Double Contact - %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="461"/>
+        <location filename="../src/mainwindow.cpp" line="455"/>
         <source>Mode: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="462"/>
+        <location filename="../src/mainwindow.cpp" line="456"/>
         <source>two panels</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="462"/>
+        <location filename="../src/mainwindow.cpp" line="456"/>
         <source>one panel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="463"/>
+        <location filename="../src/mainwindow.cpp" line="457"/>
         <source>sorted</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="463"/>
+        <location filename="../src/mainwindow.cpp" line="457"/>
         <source>not sorted</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="466"/>
+        <location filename="../src/mainwindow.cpp" line="460"/>
         <source>simple editing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="470"/>
+        <location filename="../src/mainwindow.cpp" line="464"/>
         <source>compare</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="494"/>
+        <location filename="../src/mainwindow.cpp" line="500"/>
         <source>&apos;%1&apos; was changed.
 Save changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="576"/>
+        <location filename="../src/mainwindow.cpp" line="582"/>
         <source>Two panels and compare mode needed for this operation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="589"/>
+        <location filename="../src/mainwindow.cpp" line="595"/>
         <source>Left item</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="589"/>
+        <location filename="../src/mainwindow.cpp" line="595"/>
         <source>Right item</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="614"/>
+        <location filename="../src/mainwindow.cpp" line="620"/>
         <source>Strongly two records on current panel must be selected for this operation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="620"/>
+        <location filename="../src/mainwindow.cpp" line="626"/>
         <source>Item 1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="620"/>
+        <location filename="../src/mainwindow.cpp" line="626"/>
         <source>Item 2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="670"/>
+        <location filename="../src/mainwindow.cpp" line="676"/>
         <source>Operation requires show two panels</source>
         <translation type="unfinished"></translation>
     </message>
@@ -713,6 +738,7 @@ Save changes?</source>
     <name>QObject</name>
     <message>
         <location filename="../src/contactlist.cpp" line="42"/>
+        <location filename="../src/contactlist.cpp" line="439"/>
         <source>Home</source>
         <translation type="unfinished"></translation>
     </message>
@@ -723,12 +749,14 @@ Save changes?</source>
     </message>
     <message>
         <location filename="../src/contactlist.cpp" line="44"/>
+        <location filename="../src/contactlist.cpp" line="440"/>
         <source>Work</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/contactlist.cpp" line="45"/>
         <location filename="../src/contactlist.cpp" line="82"/>
+        <location filename="../src/contactlist.cpp" line="441"/>
         <source>Preferable</source>
         <translation type="unfinished"></translation>
     </message>
@@ -793,58 +821,83 @@ Save changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/contactlist.cpp" line="181"/>
+        <location filename="../src/contactlist.cpp" line="182"/>
         <source>Strange empty contact</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/formats/common/vcarddata.cpp" line="81"/>
+        <location filename="../src/contactlist.cpp" line="442"/>
+        <source>Domestic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/contactlist.cpp" line="443"/>
+        <source>International</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/contactlist.cpp" line="444"/>
+        <source>Postal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/contactlist.cpp" line="445"/>
+        <source>Parcel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/formats/common/vcarddata.cpp" line="82"/>
         <source>Unexpected TYPE appearance at line %1: tag %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/formats/common/vcarddata.cpp" line="100"/>
+        <location filename="../src/formats/common/vcarddata.cpp" line="101"/>
         <source>Missing phone type at line %1: %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/formats/common/vcarddata.cpp" line="134"/>
+        <location filename="../src/formats/common/vcarddata.cpp" line="135"/>
         <source>Unsupported photo type at line %1: %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/formats/common/vcarddata.cpp" line="145"/>
+        <location filename="../src/formats/common/vcarddata.cpp" line="146"/>
         <source>Unknown encoding type at line %1: %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/formats/common/vcarddata.cpp" line="171"/>
+        <location filename="../src/formats/common/vcarddata.cpp" line="159"/>
+        <source>Unknown address type at line %1: %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/formats/common/vcarddata.cpp" line="179"/>
         <source>Last section not closed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/formats/common/vcarddata.cpp" line="178"/>
+        <location filename="../src/formats/common/vcarddata.cpp" line="186"/>
         <location filename="../src/formats/files/udxfile.cpp" line="162"/>
         <source>%1 unknown tags found</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/formats/common/vcarddata.cpp" line="197"/>
+        <location filename="../src/formats/common/vcarddata.cpp" line="205"/>
         <source>Unknown charset: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/formats/common/vcarddata.cpp" line="220"/>
+        <location filename="../src/formats/common/vcarddata.cpp" line="228"/>
         <source>Unknown encoding: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/formats/common/vcarddata.cpp" line="243"/>
+        <location filename="../src/formats/common/vcarddata.cpp" line="251"/>
         <source>Invalid timezone: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/formats/common/vcarddata.cpp" line="262"/>
+        <location filename="../src/formats/common/vcarddata.cpp" line="270"/>
         <source>Invalid datetime: </source>
         <translation type="unfinished"></translation>
     </message>
@@ -934,22 +987,27 @@ line %3, col %4
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/formats/files/udxfile.cpp" line="280"/>
-        <source>Warning: contact %1 has photo, not implemented in UDX</source>
+        <location filename="../src/formats/files/udxfile.cpp" line="279"/>
+        <source>Warning: contact %1 has address(es), not implemented in UDX</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/formats/files/udxfile.cpp" line="282"/>
-        <source>Warning: contact %1 has description, not implemented in UDX</source>
+        <source>Warning: contact %1 has photo, not implemented in UDX</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/formats/files/udxfile.cpp" line="284"/>
-        <source>Warning: contact %1 has job title, not implemented in UDX</source>
+        <source>Warning: contact %1 has description, not implemented in UDX</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/formats/files/udxfile.cpp" line="286"/>
+        <source>Warning: contact %1 has job title, not implemented in UDX</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/formats/files/udxfile.cpp" line="288"/>
         <source>Warning: contact %1 has anniversaries, not implemented in UDX</source>
         <translation type="unfinished"></translation>
     </message>
@@ -975,93 +1033,128 @@ line %3, col %4
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="38"/>
+        <location filename="../src/globals.h" line="39"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="39"/>
+        <location filename="../src/globals.h" line="40"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="40"/>
+        <location filename="../src/globals.h" line="41"/>
         <source>Confirmation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="41"/>
+        <location filename="../src/globals.h" line="42"/>
         <source>New contact list</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="43"/>
+        <location filename="../src/globals.h" line="44"/>
         <source>mixed...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="45"/>
+        <location filename="../src/globals.h" line="46"/>
         <source>Firstname</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="46"/>
+        <location filename="../src/globals.h" line="47"/>
         <source>Lastname</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="47"/>
+        <location filename="../src/globals.h" line="48"/>
         <source>Middlename</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="48"/>
+        <location filename="../src/globals.h" line="49"/>
         <source>Full name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="49"/>
+        <location filename="../src/globals.h" line="50"/>
         <source>Generic name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="50"/>
+        <location filename="../src/globals.h" line="51"/>
         <source>Phone</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="51"/>
+        <location filename="../src/globals.h" line="52"/>
         <source>Email</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="52"/>
+        <location filename="../src/globals.h" line="53"/>
         <source>Birthday</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="53"/>
+        <location filename="../src/globals.h" line="54"/>
         <source>Has phone</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="54"/>
+        <location filename="../src/globals.h" line="55"/>
         <source>Has email</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="55"/>
+        <location filename="../src/globals.h" line="56"/>
         <source>Has birthday</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="56"/>
+        <location filename="../src/globals.h" line="57"/>
         <source>Some phones</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="57"/>
+        <location filename="../src/globals.h" line="58"/>
         <source>Some emails</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/globals.h" line="60"/>
+        <source>P.o. box</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/globals.h" line="61"/>
+        <source>Ext.addr.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/globals.h" line="62"/>
+        <source>Street</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/globals.h" line="63"/>
+        <source>City/Locality</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/globals.h" line="64"/>
+        <source>Region</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/globals.h" line="65"/>
+        <source>Postal code</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/globals.h" line="66"/>
+        <source>Country</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
