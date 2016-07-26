@@ -19,13 +19,14 @@
 class VCardData
 {
 public:
-    static bool importRecords(QStringList& lines, ContactList& list, bool append, QStringList& errors);
-    static bool exportRecords(QStringList& lines, const ContactList& list);
+    bool importRecords(QStringList& lines, ContactList& list, bool append, QStringList& errors);
+    bool exportRecords(QStringList& lines, const ContactList& list);
 private:
-    static QString decodeValue(const QString& src, const QString& encoding, const QString& charSet, QStringList& errors);
-    static void importDate(DateItem& item, const QString& src, QStringList& errors);
-    static void importAddress(PostalAddress& item, const QStringList& aTypes, const QStringList& values, const QString& encoding, const QString& charSet, QStringList& errors);
-    // TODO before export: maybe make class not static and move here encoding, charSet and errors as members
+    QString encoding;
+    QString charSet;
+    QString decodeValue(const QString& src, QStringList& errors) const;
+    void importDate(DateItem& item, const QString& src, QStringList& errors) const;
+    void importAddress(PostalAddress& item, const QStringList& aTypes, const QStringList& values, QStringList& errors) const;
 };
 
 #endif // VCARDDATA_H

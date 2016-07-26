@@ -14,8 +14,6 @@
 #include <QStringList>
 #include <QTextStream>
 
-#include "../common/vcarddata.h"
-
 #include <QMessageBox> //===>
 
 VCFFile::VCFFile()

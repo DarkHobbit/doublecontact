@@ -27,7 +27,7 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
     // Merge quoted-printable linesets
     if (lines.count()>1)
     for (int i=lines.count()-2;i>=0;i--) {
-        if (lines[i].right(1)=="=") {
+        if (lines[i].right(1)=="=" && !lines[i+1].trimmed().isEmpty()) { // second condition prevent base64 endlines merging
             lines[i].remove(lines[i].length()-1, 1);
             lines[i] += lines[i+1];
             lines.removeAt(i+1);
@@ -59,8 +59,8 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
             QStringList vValue = s.mid(scPos+1).split(";");
             const QString tag = vType[0].toUpper();
             // Encoding, charset, types
-            QString encoding = "";
-            QString charSet = "";
+            encoding = "";
+            charSet = "";
             QString typeVal = ""; // for PHOTO/URI, at least
             QStringList types;
             for (int i=1; i<vType.count(); i++) {
@@ -82,20 +82,20 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                 errors << QObject::tr("Unexpected TYPE appearance at line %1: tag %2").arg(line+1).arg(tag);
             // Known tags
             if (tag=="VERSION")
-                item.version = decodeValue(vValue[0], encoding, charSet, errors);
+                item.version = decodeValue(vValue[0], errors);
             else if (tag=="FN")
-                item.fullName = decodeValue(vValue[0], encoding, charSet, errors);
+                item.fullName = decodeValue(vValue[0], errors);
             else if (tag=="N") {
                 foreach (const QString& name, vValue)
-                    item.names << decodeValue(name, encoding, charSet, errors);
+                    item.names << decodeValue(name, errors);
                 // If empty parts not in-middle, remove it
                 item.dropFinalEmptyNames();
             }
             else if (tag=="NOTE")
-                item.description = decodeValue(vValue[0], encoding, charSet, errors);
+                item.description = decodeValue(vValue[0], errors);
             else if (tag=="TEL") {
                 Phone phone;
-                phone.number = decodeValue(vValue[0], encoding, charSet, errors);
+                phone.number = decodeValue(vValue[0], errors);
                 // Phone type(s)
                 if (types.isEmpty()) {
                     errors << QObject::tr("Missing phone type at line %1: %2").arg(line+1).arg(vValue[0]);
@@ -110,7 +110,7 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                 if (vValue[0].isEmpty())
                     continue;
                 Email email;
-                email.address = decodeValue(vValue[0], encoding, charSet, errors);
+                email.address = decodeValue(vValue[0], errors);
                 if (types.isEmpty()) // maybe, it not a bug; some devices allows email without type
                     email.emTypes << "pref";
                 else
@@ -118,16 +118,16 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                 item.emails.push_back(email);
             }
             else if (tag=="BDAY")
-                importDate(item.birthday, decodeValue(vValue[0], encoding, charSet, errors), errors);
+                importDate(item.birthday, decodeValue(vValue[0], errors), errors);
             else if (tag=="X-ANNIVERSARY") {
                 DateItem di;
-                importDate(di, decodeValue(vValue[0], encoding, charSet, errors), errors);
+                importDate(di, decodeValue(vValue[0], errors), errors);
                 item.anniversaries.push_back(di);
             }
             else if (tag=="PHOTO") {
                 if (typeVal.startsWith("URI", Qt::CaseInsensitive)) {
                     item.photoType = "URL";
-                    item.photoUrl = decodeValue(vValue[0], encoding, charSet, errors);
+                    item.photoUrl = decodeValue(vValue[0], errors);
                 }
                 else {
                     item.photoType = types[0];
@@ -147,28 +147,28 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                 }
             }
             else if (tag=="ORG")
-                item.organization = decodeValue(vValue[0], encoding, charSet, errors);
+                item.organization = decodeValue(vValue[0], errors);
             else if (tag=="TITLE")
-                item.title = decodeValue(vValue[0], encoding, charSet, errors);
+                item.title = decodeValue(vValue[0], errors);
             else if (tag=="ADR") {
                 if (types.contains("home", Qt::CaseInsensitive))
-                    importAddress(item.addrHome, types, vValue, encoding, charSet, errors);
+                    importAddress(item.addrHome, types, vValue, errors);
                 else if (types.contains("work", Qt::CaseInsensitive))
-                    importAddress(item.addrWork, types, vValue, encoding, charSet, errors);
+                    importAddress(item.addrWork, types, vValue, errors);
                 else
                     errors << QObject::tr("Unknown address type at line %1: %2").arg(line+1).arg(types.join(";"));
             }
             else if (tag=="X-IRMC-LUID")
-                item.id = decodeValue(vValue[0], encoding, charSet, errors);
+                item.id = decodeValue(vValue[0], errors);
             // Known but un-editing tags
             else if (tag=="LABEL") { // TODO other from rfc 2426
                 item.otherTags.push_back(TagValue(vType.join(";"),
-                    decodeValue(vValue.join(";"), encoding, charSet, errors)));
+                    decodeValue(vValue.join(";"), errors)));
             }
             // Unknown tags
             else {
                 item.unknownTags.push_back(TagValue(vType.join(";"),
-                    decodeValue(vValue.join(";"), encoding, charSet, errors)));
+                    decodeValue(vValue.join(";"), errors)));
             }
         }
 
@@ -193,7 +193,7 @@ bool VCardData::exportRecords(QStringList &lines, const ContactList &list)
     // TODO
 }
 
-QString VCardData::decodeValue(const QString &src, const QString &encoding, const QString &charSet, QStringList& errors)
+QString VCardData::decodeValue(const QString &src, QStringList& errors) const
 {
     QTextCodec *codec; // for values
     // Charset
@@ -231,7 +231,7 @@ QString VCardData::decodeValue(const QString &src, const QString &encoding, cons
 }
 
 // TODO Maybe, move it into DateItem::fromString
-void VCardData::importDate(DateItem &item, const QString &src, QStringList& errors)
+void VCardData::importDate(DateItem &item, const QString &src, QStringList& errors) const
 {
     int tPos = src.indexOf("T", 0, Qt::CaseInsensitive);
     item.hasTime = (tPos!=-1);
@@ -270,15 +270,15 @@ void VCardData::importDate(DateItem &item, const QString &src, QStringList& erro
         errors << QObject::tr("Invalid datetime: ") + src;
 }
 
-void VCardData::importAddress(PostalAddress &item, const QStringList& aTypes, const QStringList& values, const QString& encoding, const QString& charSet, QStringList &errors)
+void VCardData::importAddress(PostalAddress &item, const QStringList& aTypes, const QStringList& values, QStringList &errors) const
 {
     item.clear();
     item.paTypes = aTypes;
-    if (values.count()>0) item.offBox = decodeValue(values[0], encoding, charSet, errors);
-    if (values.count()>1) item.extended = decodeValue(values[1], encoding, charSet, errors);
-    if (values.count()>2) item.street = decodeValue(values[2], encoding, charSet, errors);
-    if (values.count()>3) item.city = decodeValue(values[3], encoding, charSet, errors);
-    if (values.count()>4) item.region = decodeValue(values[4], encoding, charSet, errors);
-    if (values.count()>5) item.postalCode = decodeValue(values[5], encoding, charSet, errors);
-    if (values.count()>6) item.country = decodeValue(values[6], encoding, charSet, errors);
+    if (values.count()>0) item.offBox = decodeValue(values[0], errors);
+    if (values.count()>1) item.extended = decodeValue(values[1], errors);
+    if (values.count()>2) item.street = decodeValue(values[2], errors);
+    if (values.count()>3) item.city = decodeValue(values[3], errors);
+    if (values.count()>4) item.region = decodeValue(values[4], errors);
+    if (values.count()>5) item.postalCode = decodeValue(values[5], errors);
+    if (values.count()>6) item.country = decodeValue(values[6], errors);
 }
