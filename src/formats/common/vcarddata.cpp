@@ -93,6 +93,8 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
             }
             else if (tag=="NOTE")
                 item.description = decodeValue(vValue[0], errors);
+            else if (tag=="SORT-STRING")
+                item.sortString = decodeValue(vValue[0], errors);
             else if (tag=="TEL") {
                 Phone phone;
                 phone.number = decodeValue(vValue[0], errors);

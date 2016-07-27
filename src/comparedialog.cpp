@@ -56,6 +56,7 @@ void CompareDialog::setData(const ContactItem &left, const ContactItem &right)
     checkPair(tr("Birthday"), &pBDay, left.birthday, right.birthday);
     checkPair(tr("Anniversaries"), &pAnn, left.anniversaries, right.anniversaries);
     checkPair(tr("Description"), &pDesc, left.description, right.description);
+    checkPair(tr("Sort string"), &pSortString, left.sortString, right.sortString);
     // TODO photo*
     checkPair(tr("Organization"), &pOrg, left.organization, right.organization);
     checkPair(tr("Job title"), &pTitle, left.title, right.title);
@@ -84,6 +85,8 @@ void CompareDialog::getData(ContactItem &left, ContactItem &right)
         pAnn->getData(left.anniversaries, right.anniversaries);
     if (pDesc)
         pDesc->getData(left.description, right.description);
+    if (pSortString)
+        pSortString->getData(left.sortString, right.sortString);
     // TODO photo*
     if (pOrg)
         pOrg->getData(left.organization, right.organization);

@@ -39,7 +39,7 @@ private:
     EmailsPair* pEmails;
     DateItemPair* pBDay;
     DateItemListPair* pAnn;
-    StringPair* pDesc;
+    StringPair *pDesc, *pSortString;
     // TODO photo*
     StringPair *pOrg, *pTitle;
     PostalAddressPair *pAddrHome, *pAddrWork;

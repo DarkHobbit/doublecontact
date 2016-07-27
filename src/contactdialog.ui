@@ -461,6 +461,16 @@
            </property>
           </widget>
          </item>
+         <item row="1" column="3">
+          <widget class="QLineEdit" name="leSortString"/>
+         </item>
+         <item row="1" column="2">
+          <widget class="QLabel" name="lbSortString">
+           <property name="text">
+            <string>Sort string</string>
+           </property>
+          </widget>
+         </item>
         </layout>
        </item>
        <item>

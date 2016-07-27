@@ -86,6 +86,7 @@ struct ContactItem {
     QList<Email> emails;
     DateItem birthday;
     QList<DateItem> anniversaries;
+    QString sortString;
     QString description;
     // Photo
     QString photoType; // URL, JPEG, PNG or unsupported, but stored value

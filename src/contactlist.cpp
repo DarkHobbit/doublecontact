@@ -92,6 +92,7 @@ void ContactItem::clear()
     emails.clear();
     birthday.clear();
     anniversaries.clear();
+    sortString.clear();
     description.clear();
     photoType.clear();
     if (!photo.isEmpty())
@@ -182,6 +183,8 @@ void ContactItem::calculateFields()
         visibleName = emails[0].address;
     else if (!phones.isEmpty())
         visibleName = phones[0].number;
+    else if (!sortString.isEmpty())
+        visibleName = sortString;
     else if (!nickName.isEmpty())
         visibleName = nickName;
     else // WTF???
@@ -286,6 +289,7 @@ bool ContactItem::identicalTo(const ContactItem &pair)
     if (emails!=pair.emails) return false;
     if (!(birthday==pair.birthday)) return false;
     if (anniversaries!=pair.anniversaries) return false;
+    if (sortString!=pair.sortString) return false;
     if (description!=pair.description) return false;
     if (photoType!=pair.photoType) return false;
     if (photo!=pair.photo) return false;
