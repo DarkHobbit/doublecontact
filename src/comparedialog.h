@@ -43,8 +43,9 @@ private:
     // TODO photo*
     StringPair *pOrg, *pTitle;
     PostalAddressPair *pAddrHome, *pAddrWork;
+    StringPair *pNickName, *pURL, *pJabber, *pICQ, *pSkype;
     template<class P, class T>
-    void checkPair(const QString& title, P** pair, T& leftData, T& rightData);
+        void checkPair(const QString& title, P** pair, T& leftData, T& rightData);
 };
 
 #endif // COMPAREDIALOG_H

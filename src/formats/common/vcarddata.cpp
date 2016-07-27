@@ -158,6 +158,18 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                 else
                     errors << QObject::tr("Unknown address type at line %1: %2").arg(line+1).arg(types.join(";"));
             }
+            // Internet
+            else if (tag=="NICKNAME")
+                item.nickName = decodeValue(vValue[0], errors);
+            else if (tag=="URL")
+                item.url = decodeValue(vValue[0], errors);
+            else if (tag=="X-JABBER")
+                item.jabberName = decodeValue(vValue[0], errors);
+            else if (tag=="X-ICQ")
+                item.icqName = decodeValue(vValue[0], errors);
+            else if (tag=="X-SKYPE-USERNAME")
+                item.skypeName = decodeValue(vValue[0], errors);
+            // Identifier
             else if (tag=="X-IRMC-LUID")
                 item.id = decodeValue(vValue[0], errors);
             // Known but un-editing tags

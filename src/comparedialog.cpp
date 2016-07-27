@@ -61,6 +61,11 @@ void CompareDialog::setData(const ContactItem &left, const ContactItem &right)
     checkPair(tr("Job title"), &pTitle, left.title, right.title);
     checkPair(tr("Home Address"), &pAddrHome, left.addrHome, right.addrHome);
     checkPair(tr("Work Address"), &pAddrWork, left.addrWork, right.addrWork);
+    checkPair(tr("NickName"), &pNickName, left.nickName, right.nickName);
+    checkPair(tr("URL"), &pURL, left.url, right.url);
+    checkPair(tr("Jabber"), &pJabber, left.jabberName, right.jabberName);
+    checkPair(tr("ICQ"), &pICQ, left.icqName, right.icqName);
+    checkPair(tr("Skype"), &pSkype, left.skypeName, right.skypeName);
 }
 
 void CompareDialog::getData(ContactItem &left, ContactItem &right)
@@ -88,4 +93,14 @@ void CompareDialog::getData(ContactItem &left, ContactItem &right)
         pAddrHome->getData(left.addrHome, right.addrHome);
     if (pAddrWork)
         pAddrWork->getData(left.addrWork, right.addrWork);
+    if (pNickName)
+        pNickName->getData(left.nickName, right.nickName);
+    if (pURL)
+        pURL->getData(left.url, right.url);
+    if (pJabber)
+        pJabber->getData(left.jabberName, right.jabberName);
+    if (pICQ)
+        pICQ->getData(left.icqName, right.icqName);
+    if (pSkype)
+        pSkype->getData(left.skypeName, right.skypeName);
 }

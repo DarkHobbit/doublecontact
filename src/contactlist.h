@@ -19,7 +19,7 @@
 #include <QStringList>
 #include "globals.h"
 
-#define MAX_COMPARE_PRIORITY_LEVEL 4
+#define MAX_COMPARE_PRIORITY_LEVEL 5
 
 struct TagValue { // for non-editing ang unknown tags
     QString tag, value;
@@ -96,6 +96,8 @@ struct ContactItem {
     // TODO role, logo?
     // Addresses
     PostalAddress addrHome, addrWork; // TODO are vCards with more addresses exists in wild nature?
+    // Internet
+    QString nickName, url, jabberName, icqName, skypeName;
     // Format internals
     QString id; // optional record unique id (udx Sequence, vcf X-IRMC-LUID, etc)
     QString originalFormat;

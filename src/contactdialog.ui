@@ -355,6 +355,63 @@
        </item>
       </layout>
      </widget>
+     <widget class="QWidget" name="tabInternet">
+      <attribute name="title">
+       <string>Internet</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_4">
+       <item row="0" column="0">
+        <widget class="QLabel" name="lbNickName">
+         <property name="text">
+          <string>NickName</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="leNickName"/>
+       </item>
+       <item row="0" column="2">
+        <widget class="QLabel" name="lbJabber">
+         <property name="text">
+          <string>Jabber</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="3" colspan="2">
+        <widget class="QLineEdit" name="leJabber"/>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="lbURL">
+         <property name="text">
+          <string>URL</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="leURL"/>
+       </item>
+       <item row="1" column="2">
+        <widget class="QLabel" name="lbICQ">
+         <property name="text">
+          <string>ICQ</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="3" colspan="2">
+        <widget class="QLineEdit" name="leICQ"/>
+       </item>
+       <item row="2" column="2" colspan="2">
+        <widget class="QLabel" name="lbSkype">
+         <property name="text">
+          <string>Skype</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="4">
+        <widget class="QLineEdit" name="leSkype"/>
+       </item>
+      </layout>
+     </widget>
      <widget class="QWidget" name="tabOther">
       <attribute name="title">
        <string>Other</string>

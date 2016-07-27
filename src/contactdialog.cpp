@@ -118,6 +118,12 @@ void ContactDialog::setData(const ContactItem& c)
     // Addresses
     addAddress(ui->gbAddrHome, c.addrHome);
     addAddress(ui->gbAddrWork, c.addrWork);
+    //Internet
+    ui->leNickName->setText(c.nickName);
+    ui->leURL->setText(c.url);
+    ui->leJabber->setText(c.jabberName);
+    ui->leICQ->setText(c.icqName);
+    ui->leSkype->setText(c.skypeName);
     // Work
     ui->leOrganization->setText(c.organization);
     ui->leTitle->setText(c.title);
@@ -180,6 +186,12 @@ void ContactDialog::getData(ContactItem& c)
     readAddress(ui->gbAddrWork, c.addrWork);
     if (!c.addrWork.isEmpty() && !c.addrWork.paTypes.contains("work", Qt::CaseInsensitive))
         c.addrWork.paTypes << "work";
+    // Internet
+    c.nickName = ui->leNickName->text();
+    c.url = ui->leURL->text();
+    c.jabberName = ui->leJabber->text();
+    c.icqName = ui->leICQ->text();
+    c.skypeName = ui->leSkype->text();
     // Work
     c.organization = ui->leOrganization->text();
     c.title = ui->leTitle->text();

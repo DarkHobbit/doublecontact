@@ -106,9 +106,13 @@ void ContactItem::clear()
     originalFormat.clear();
     version.clear();
     subVersion.clear();
-    // maybe not needed:
     prefPhone.clear();
     prefEmail.clear();
+    nickName.clear();
+    url.clear();
+    jabberName.clear();
+    icqName.clear();
+    skypeName.clear();
 }
 
 bool ContactItem::swapNames()
@@ -178,6 +182,8 @@ void ContactItem::calculateFields()
         visibleName = emails[0].address;
     else if (!phones.isEmpty())
         visibleName = phones[0].number;
+    else if (!nickName.isEmpty())
+        visibleName = nickName;
     else // WTF???
         visibleName = QObject::tr("Strange empty contact");
     // First or preferred phone number
@@ -259,6 +265,10 @@ bool ContactItem::similarTo(const ContactItem &pair, int priorityLevel)
                 return true;
             // Initials?..
         }
+        break;
+        case 5:
+        if (!nickName.isEmpty() && nickName==pair.nickName)
+            return true;
         if (organization==pair.organization) return false; //?
         break;
     default:
@@ -283,6 +293,11 @@ bool ContactItem::identicalTo(const ContactItem &pair)
     if (organization!=pair.organization) return false;
     if (title!=pair.title) return false;
     if (!(addrHome==pair.addrHome)) return false;
+    if (nickName!=pair.nickName) return false;
+    if (url!=pair.url) return false;
+    if (jabberName!=pair.jabberName) return false;
+    if (icqName!=pair.icqName) return false;
+    if (skypeName!=pair.skypeName) return false;
     // Here strongly add ALL new
     return true;
 }
