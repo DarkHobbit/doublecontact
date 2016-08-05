@@ -39,9 +39,39 @@ ItemPair::ItemPair(const QString& title, QGridLayout* layout, bool multiItem)
 
 void ItemPair::highlightDiff(bool hasDiff)
 {
-    QString sheet =
-        QString("QGroupBox { border: 1px groove %1; border-radius: 2px; }")
-        .arg(hasDiff ? "red" : "green");
+    QString sheet = QString(
+         // Original
+         /*"QGroupBox { \
+             border: 1px groove %1; \
+             border-radius: 2px; \
+             margin: 10px; \
+             padding: 4px; \
+         }"*/
+         // UNION labs, http://www.prog.org.ru/index.php?topic=21738
+         "QGroupBox { \
+                border: 1px solid %1; \
+                border-radius: 3px; \
+                margin: 10px; \
+                padding: 4px; \
+             } \
+             QGroupBox::title { \
+                  subcontrol-origin: margin; \
+                  subcontrol-position: top left; \
+                padding: 4px; \
+                left: 20px; \
+              }"
+           // spirits25, http://www.prog.org.ru/index.php?topic=21738
+           /*"QGroupBox::title { \
+                border: 0px outset %1; \
+                border-radius: 6px; \
+                background-color: rgba(255, 255, 255, 140); \
+                subcontrol-origin: margin; \
+                color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1, \
+                stop: 0 #111111, stop: 0.7 #111111, stop: 1 #888888); \
+                subcontrol-position: top left; \
+                padding: 1px 18px 1px 13px; \
+            }"*/
+    ).arg(hasDiff ? "red" : "green");
     gbLeft->setStyleSheet(sheet);
     gbRight->setStyleSheet(sheet);
 }
