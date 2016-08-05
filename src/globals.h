@@ -102,6 +102,12 @@ public:
 extern
 struct GlobalConfig {
     QString dateFormat, timeFormat;
+    enum VCFVersion {
+        VCF21,
+        VCF30
+        //VCF40
+    } preferredVCFVersion;
+    bool useOriginalFileVersion;
 } gd;
 
 #endif // GLOBALS_H

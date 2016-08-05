@@ -38,7 +38,6 @@ bool SettingsDialog::readConfig()
     ui->leTimeFormat->setText(settings.value("Locale/TimeFormat", QLocale::system().timeFormat()).toString());
     ui->cbUseSystemDateTimeFormat->setChecked(settings.value("Locale/UseSystemDateTimeFormat", true).toBool());
     on_cbUseSystemDateTimeFormat_clicked(ui->cbUseSystemDateTimeFormat->isChecked());
-    updateGlobalData();
     // Misc
     ui->cbOpenLastFilesAtStartup->setChecked(settings.value("General/OpenLastFilesAtStartup", true).toBool());
     // Column view
@@ -56,6 +55,13 @@ bool SettingsDialog::readConfig()
     for (int i=0; i<validColumnNames.count(); i++) // Fill available columns list
         if (ui->lwVisibleColumns->findItems(validColumnNames[i], Qt::MatchCaseSensitive).isEmpty())
             ui->lwAvailableColumns->addItem(validColumnNames[i]);
+    // Saving
+    int verIndex = ui->cbPrefVCardVer->findText(settings.value("Saving/PreferredVCardVersion", "2.1").toString());
+    if (verIndex!=-1)
+        ui->cbPrefVCardVer->setCurrentIndex(verIndex);
+    ui->cbUseOrigVer->setChecked(settings.value("Saving/UseOriginalFileVCardVersion").toBool());
+    // Done
+    updateGlobalData();
     return true;
 }
 
@@ -72,7 +78,6 @@ bool SettingsDialog::writeConfig()
     settings.setValue("Locale/DateFormat", ui->leDateFormat->text());
     settings.setValue("Locale/TimeFormat", ui->leTimeFormat->text());
     settings.setValue("Locale/UseSystemDateTimeFormat", ui->cbUseSystemDateTimeFormat->isChecked());
-    updateGlobalData();
     // Misc
     settings.setValue("General/OpenLastFilesAtStartup", ui->cbOpenLastFilesAtStartup->isChecked());
     // Column view
@@ -80,6 +85,11 @@ bool SettingsDialog::writeConfig()
     for (int i=0; i<ui->lwVisibleColumns->count(); i++)
         settings.setValue(QString("VisibleColumns/Column%1").arg(i+1),
                           ui->lwVisibleColumns->item(i)->text());
+    // Saving
+    settings.setValue("Saving/PreferredVCardVersion", ui->cbPrefVCardVer->currentText());
+    settings.setValue("Saving/UseOriginalFileVCardVersion", ui->cbUseOrigVer->isChecked());
+    // Done
+    updateGlobalData();
     return true;
 }
 
@@ -205,4 +215,7 @@ void SettingsDialog::updateGlobalData()
         gd.dateFormat = ui->leDateFormat->text();
         gd.timeFormat = ui->leTimeFormat->text();
     }
+    gd.preferredVCFVersion = ui->cbPrefVCardVer->currentText()=="2.1" ?
+                GlobalConfig::VCF21 : GlobalConfig::VCF30;
+    gd.useOriginalFileVersion = ui->cbUseOrigVer->isChecked();
 }

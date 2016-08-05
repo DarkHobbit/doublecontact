@@ -15,6 +15,7 @@
 #include <QObject>
 #include <QTextCodec>
 
+#include "globals.h"
 #include "vcarddata.h"
 
 bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append, QStringList& errors)
@@ -204,7 +205,91 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
 
 bool VCardData::exportRecords(QStringList &lines, const ContactList &list)
 {
-    // TODO
+    foreach (const ContactItem& item, list)
+        exportRecord(lines, item);
+    return (!list.isEmpty());
+}
+
+void VCardData::exportRecord(QStringList &lines, const ContactItem &item)
+{
+
+    // Format version
+    formatVersion = gd.preferredVCFVersion;
+    if (gd.useOriginalFileVersion && (item.originalFormat=="VCARD")) {
+        if (item.version=="2.1")
+            formatVersion = GlobalConfig::VCF21;
+        else if (item.version=="3.0")
+            formatVersion = GlobalConfig::VCF30;
+        // TODO VCF40
+    }
+    // Encoding/charSet prefix
+    charSet = "UTF-8"; // TODO save original charset in ContactItem
+    encoding = formatVersion==GlobalConfig::VCF21 ? "QUOTED-PRINTABLE" : "";
+    QString encStr;
+    if (charSet!="UTF-8" || !encoding.isEmpty()) {
+        encStr = ";CHARSET=" + charSet;
+        if (!encoding.isEmpty())
+            encStr += ";ENCODING=" + encoding;
+    }
+    encStr += ":";
+    // Header
+    lines << "BEGIN:VCARD";
+    lines << QString("VERSION:") + (formatVersion==GlobalConfig::VCF21 ? "2.1" : "3.0");
+    // Known tags
+    if (!item.fullName.isEmpty())
+        lines << QString("FN") + encStr + encodeValue(item.fullName);
+    if (!item.names.isEmpty())
+        lines << QString("N") + encStr + encodeValue(item.names.join(";"));
+    if (!item.description.isEmpty())
+        lines << QString("NOTE") + encStr + encodeValue(item.description);
+    if (!item.sortString.isEmpty())
+        lines << QString("SORT-STRING") + encStr+encodeValue(item.sortString);
+    foreach (const Phone& ph, item.phones)
+        lines << QString("TEL") + encodeTypes(ph.tTypes)+":"+ph.number;
+    foreach (const Email& em, item.emails)
+        lines << QString("EMAIL") + encodeTypes(em.emTypes)+":"+em.address;
+    if (!item.birthday.isEmpty())
+        lines << QString("BDAY:") + exportDate(item.birthday);
+    foreach (const DateItem& ann, item.anniversaries)
+        lines << QString("X-ANNIVERSARY:") + exportDate(ann);
+    // Photos
+    if (item.photoType=="URL")
+        lines << QString("PHOTO;VALUE=uri:") + item.photoUrl;
+    else if (!item.photoType.isEmpty())
+        lines << QString("PHOTO;ENCODING=B;TYPE=")
+            + item.photoType + ":" + item.photo.toBase64();
+    // TODO check base64 photo write (multiline, etc.)
+    // Organization, addresses
+    if (!item.organization.isEmpty())
+        lines << QString("ORG") + encStr + encodeValue(item.organization);
+    if (!item.title.isEmpty())
+        lines << QString("TITLE") + encStr + encodeValue(item.title);
+    if (!item.addrHome.isEmpty())
+        lines << exportAddress(item.addrHome);
+    if (!item.addrWork.isEmpty())
+        lines << exportAddress(item.addrWork);
+    // Internet
+    if (!item.nickName.isEmpty())
+        lines << QString("NICKNAME") + encStr + encodeValue(item.nickName);
+    if (!item.url.isEmpty())
+        lines << QString("URL") + encStr + encodeValue(item.url);
+    if (!item.jabberName.isEmpty())
+        lines << QString("X-JABBER") + encStr + encodeValue(item.jabberName);
+    if (!item.icqName.isEmpty())
+        lines << QString("X-ICQ") + encStr + encodeValue(item.icqName);
+    if (!item.skypeName.isEmpty())
+        lines << QString("X-SKYPE-USERNAME") + encStr + encodeValue(item.skypeName);
+    // Identifier
+    // TODO need support for other identifier types (apple?) and more strong detection
+    if (!item.id.isEmpty() && item.id.length()==10)
+        lines << QString("X-IRMC-LUID") + encStr + encodeValue(item.id);
+    // Known but un-editing tags
+    foreach (const TagValue& tv, item.otherTags)
+            lines << QString(tv.tag + ":" + tv.value);
+    // Unknown tags
+    foreach (const TagValue& tv, item.unknownTags)
+            lines << QString(tv.tag + ":" + tv.value);
+    lines << "END:VCARD";
 }
 
 QString VCardData::decodeValue(const QString &src, QStringList& errors) const
@@ -296,3 +381,53 @@ void VCardData::importAddress(PostalAddress &item, const QStringList& aTypes, co
     if (values.count()>5) item.postalCode = decodeValue(values[5], errors);
     if (values.count()>6) item.country = decodeValue(values[6], errors);
 }
+
+QString VCardData::encodeValue(const QString &src) const
+{
+    // TODO unify with decodeValue
+    QTextCodec *codec; // for values
+    // Charset
+    if (charSet.isEmpty())
+        codec = QTextCodec::codecForName("UTF-8");
+    else
+        codec = QTextCodec::codecForName(charSet.toLocal8Bit());
+    if (encoding.toUpper()=="QUOTED-PRINTABLE") {
+
+
+
+
+
+        // TODO
+        return codec->fromUnicode(src.toLocal8Bit()); //==>
+
+    }
+    else {
+        //return codec->fromUnicode(src.toLocal8Bit());
+        return src;
+    }
+}
+
+QString VCardData::encodeTypes(const QStringList &aTypes) const
+{
+    QString typeStr = ";";
+    if (formatVersion!=GlobalConfig::VCF21)
+        typeStr += "TYPE=";
+    typeStr += aTypes.join(",");
+    return encodeValue(typeStr);
+}
+
+QString VCardData::exportDate(const DateItem &item) const
+{
+    return
+        formatVersion==GlobalConfig::VCF21 ?
+                item.toString(DateItem::ISOBasic) : item.toString(DateItem::ISOExtended);
+}
+
+QString VCardData::exportAddress(const PostalAddress &item) const
+{
+    return QString("ADR") + encodeTypes(item.paTypes)
+        + ":" + item.offBox + ";" + item.extended
+        + ";" + item.street + ";" + item.city + ";" + item.region
+        + ";" + item.postalCode + ";" + item.country;
+}
+

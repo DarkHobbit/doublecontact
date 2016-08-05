@@ -21,12 +21,18 @@ class VCardData
 public:
     bool importRecords(QStringList& lines, ContactList& list, bool append, QStringList& errors);
     bool exportRecords(QStringList& lines, const ContactList& list);
+    void exportRecord(QStringList& lines, const ContactItem& item);
 private:
     QString encoding;
     QString charSet;
+    GlobalConfig::VCFVersion formatVersion;
     QString decodeValue(const QString& src, QStringList& errors) const;
     void importDate(DateItem& item, const QString& src, QStringList& errors) const;
     void importAddress(PostalAddress& item, const QStringList& aTypes, const QStringList& values, QStringList& errors) const;
+    QString encodeValue(const QString& src) const;
+    QString encodeTypes(const QStringList& aTypes) const;
+    QString exportDate(const DateItem& item) const;
+    QString exportAddress(const PostalAddress& item) const;
 };
 
 #endif // VCARDDATA_H

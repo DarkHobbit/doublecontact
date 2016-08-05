@@ -947,22 +947,22 @@ Save changes?</source>
         <translation>Неизвестных тегов: %1</translation>
     </message>
     <message>
-        <location filename="../src/formats/common/vcarddata.cpp" line="219"/>
+        <location filename="../src/formats/common/vcarddata.cpp" line="234"/>
         <source>Unknown charset: </source>
         <translation>Неизвестная кодировка: </translation>
     </message>
     <message>
-        <location filename="../src/formats/common/vcarddata.cpp" line="242"/>
+        <location filename="../src/formats/common/vcarddata.cpp" line="257"/>
         <source>Unknown encoding: </source>
         <translation>Неизвестное кодирование: </translation>
     </message>
     <message>
-        <location filename="../src/formats/common/vcarddata.cpp" line="265"/>
+        <location filename="../src/formats/common/vcarddata.cpp" line="280"/>
         <source>Invalid timezone: </source>
         <translation>Неправильный часовой пояс: </translation>
     </message>
     <message>
-        <location filename="../src/formats/common/vcarddata.cpp" line="284"/>
+        <location filename="../src/formats/common/vcarddata.cpp" line="299"/>
         <source>Invalid datetime: </source>
         <translation>Неправильная дата/время</translation>
     </message>
@@ -1294,7 +1294,32 @@ line %3, col %4
         <translation>Доступные</translation>
     </message>
     <message>
-        <location filename="../src/settingsdialog.cpp" line="157"/>
+        <location filename="../src/settingsdialog.ui" line="177"/>
+        <source>Saving</source>
+        <translation>Сохранение</translation>
+    </message>
+    <message>
+        <location filename="../src/settingsdialog.ui" line="185"/>
+        <source>Preferred vCard version</source>
+        <translation>Предпочтительная версия vCard</translation>
+    </message>
+    <message>
+        <location filename="../src/settingsdialog.ui" line="193"/>
+        <source>2.1</source>
+        <translation>2.1</translation>
+    </message>
+    <message>
+        <location filename="../src/settingsdialog.ui" line="198"/>
+        <source>3.0</source>
+        <translation>3.0</translation>
+    </message>
+    <message>
+        <location filename="../src/settingsdialog.ui" line="208"/>
+        <source>Use original file version (if present)</source>
+        <translation>Брать версию из исходного файла (если есть)</translation>
+    </message>
+    <message>
+        <location filename="../src/settingsdialog.cpp" line="167"/>
         <source>List must contain at least one visible column</source>
         <translation>В списке должен быть хотя бы один видимый столбец</translation>
     </message>

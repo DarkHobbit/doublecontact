@@ -75,6 +75,7 @@ MainWindow::MainWindow(QWidget *parent) :
     updateHeaders();
     updateModeStatus();
     on_action_Two_panels_toggled(ui->action_Two_panels->isChecked());
+    QMessageBox::warning(0, "Attention!", "VCF write code still very buggy. Don't use program for your real data editing!"); //===>
 }
 
 MainWindow::~MainWindow()
