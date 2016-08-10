@@ -58,7 +58,7 @@ MainWindow::MainWindow(QWidget *parent) :
     if (qApp->arguments().contains("-d"))
         modLeft->testList();
     // File command-line data
-    else if (qApp->arguments().count()>1) {
+    else if (qApp->arguments().count()>1 && !qApp->arguments().contains("-q")) {
         modLeft->open(qApp->arguments()[1]);
         if (qApp->arguments().count()>2) {
             ui->action_Two_panels->setChecked(true);
@@ -66,7 +66,10 @@ MainWindow::MainWindow(QWidget *parent) :
         }
     }
     // Previous session file data
-    else if (setDlg->openLastFilesAtStartup() && QFile(setDlg->lastPath()).exists() && !(QFileInfo(setDlg->lastPath()).isDir()))
+    else if (!qApp->arguments().contains("-q")
+             && setDlg->openLastFilesAtStartup()
+             && QFile(setDlg->lastPath()).exists()
+             && !(QFileInfo(setDlg->lastPath()).isDir()))
         selectedModel->open(setDlg->lastPath());
     // Show data
     ui->action_Two_panels->setChecked(setDlg->showTwoPanels());
