@@ -29,14 +29,6 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
     if (!append)
         list.clear();
     // Merge quoted-printable linesets
-    /*if (lines.count()>1)
-    for (int i=lines.count()-2;i>=0;i--) {
-        if (lines[i].right(1)=="=" && !lines[i+1].trimmed().isEmpty()) { // second condition prevent base64 endlines merging
-            lines[i].remove(lines[i].length()-1, 1);
-            lines[i] += lines[i+1];
-            lines.removeAt(i+1);
-        }
-    }*/
     for (int i=0; i<lines.count(); i++) {
         if (i>=lines.count()) break; // need, because count changed inside this cycle
         if (lines[i].contains("QUOTED-PRINTABLE", Qt::CaseInsensitive))
