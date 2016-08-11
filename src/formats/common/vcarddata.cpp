@@ -20,6 +20,7 @@
 
 #define MAX_NAMES 5
 // TODO move MAX_NAMES to globals and use in contact dialog as high editors limit
+#define MAX_BASE64_LEN 74
 
 bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append, QStringList& errors)
 {
@@ -231,13 +232,6 @@ void VCardData::exportRecord(QStringList &lines, const ContactItem &item)
     // Encoding/charSet prefix
     charSet = "UTF-8"; // TODO save original charset in ContactItem
     encoding = formatVersion==GlobalConfig::VCF21 ? "QUOTED-PRINTABLE" : "";
-    QString encStr;
-    if (charSet!="UTF-8" || !encoding.isEmpty()) {
-        encStr = ";CHARSET=" + charSet;
-        if (!encoding.isEmpty())
-            encStr += ";ENCODING=" + encoding;
-    }
-    encStr += ":";
     // Header
     lines << "BEGIN:VCARD";
     lines << QString("VERSION:") + (formatVersion==GlobalConfig::VCF21 ? "2.1" : "3.0");
@@ -246,10 +240,10 @@ void VCardData::exportRecord(QStringList &lines, const ContactItem &item)
         QString seps = "";
         if (item.names.count()<MAX_NAMES)
             seps.fill(';', MAX_NAMES-item.names.count());
-        lines << QString("N") + encStr + encodeValue(item.names.join(";")) + seps;
+        lines << QString("N") + encodeEC(false) + encodeValue(item.names.join(";")) + seps;
     }
     if (!item.fullName.isEmpty())
-        lines << QString("FN") + encStr + encodeValue(item.fullName);
+        lines << QString("FN") + encodeEC(false) + encodeValue(item.fullName);
     foreach (const Phone& ph, item.phones)
         lines << QString("TEL") + encodeTypes(ph.tTypes)+":"+ph.number;
     foreach (const Email& em, item.emails)
@@ -261,38 +255,45 @@ void VCardData::exportRecord(QStringList &lines, const ContactItem &item)
     // Photos
     if (item.photoType=="URL")
         lines << QString("PHOTO;VALUE=uri:") + item.photoUrl;
-    else if (!item.photoType.isEmpty())
-        lines << QString("PHOTO;ENCODING=B;TYPE=")
-            + item.photoType + ":" + item.photo.toBase64();
-    // TODO split base64 photo write to lines
+    else if (!item.photoType.isEmpty()) {
+        QString base64Line = QString("PHOTO;ENCODING=B;TYPE=") + item.photoType + ":" + item.photo.toBase64();
+        while (base64Line.length()>MAX_BASE64_LEN) {
+            lines << base64Line.left(MAX_BASE64_LEN);
+            base64Line.remove(0, MAX_BASE64_LEN);
+            base64Line = QString(" ") + base64Line;
+        }
+        if (!base64Line.isEmpty())
+            lines << base64Line;
+        lines << "";
+    }
     // Organization, addresses
     if (!item.addrHome.isEmpty())
         lines << exportAddress(item.addrHome);
     if (!item.addrWork.isEmpty())
         lines << exportAddress(item.addrWork);
     if (!item.organization.isEmpty())
-        lines << QString("ORG") + encStr + encodeValue(item.organization);
+        lines << QString("ORG") + encodeEC(true) + encodeValue(item.organization);
     if (!item.title.isEmpty())
-        lines << QString("TITLE") + encStr + encodeValue(item.title);
+        lines << QString("TITLE") + encodeEC(true) + encodeValue(item.title);
     if (!item.description.isEmpty())
-        lines << QString("NOTE") + encStr + encodeValue(item.description);
+        lines << QString("NOTE") + encodeEC(true) + encodeValue(item.description);
     if (!item.sortString.isEmpty())
-        lines << QString("SORT-STRING") + encStr+encodeValue(item.sortString);
+        lines << QString("SORT-STRING") + encodeEC(false) + encodeValue(item.sortString);
     // Internet
     if (!item.nickName.isEmpty())
-        lines << QString("NICKNAME") + encStr + encodeValue(item.nickName);
+        lines << QString("NICKNAME") + encodeEC(false) + encodeValue(item.nickName);
     if (!item.url.isEmpty())
-        lines << QString("URL") + encStr + encodeValue(item.url);
+        lines << QString("URL") + encodeEC(false) + encodeValue(item.url);
     if (!item.jabberName.isEmpty())
-        lines << QString("X-JABBER") + encStr + encodeValue(item.jabberName);
+        lines << QString("X-JABBER") + encodeEC(false) + encodeValue(item.jabberName);
     if (!item.icqName.isEmpty())
-        lines << QString("X-ICQ") + encStr + encodeValue(item.icqName);
+        lines << QString("X-ICQ") + encodeEC(false) + encodeValue(item.icqName);
     if (!item.skypeName.isEmpty())
-        lines << QString("X-SKYPE-USERNAME") + encStr + encodeValue(item.skypeName);
+        lines << QString("X-SKYPE-USERNAME") + encodeEC(false) + encodeValue(item.skypeName);
     // Identifier
     // TODO need support for other identifier types (apple?) and more strong detection
     if (!item.id.isEmpty() && item.id.length()==10)
-        lines << QString("X-IRMC-LUID") + encStr + encodeValue(item.id);
+        lines << QString("X-IRMC-LUID") + ":" + encodeValue(item.id);
     // Known but un-editing tags
     foreach (const TagValue& tv, item.otherTags)
             lines << QString(tv.tag + ":" + tv.value);
@@ -390,6 +391,17 @@ void VCardData::importAddress(PostalAddress &item, const QStringList& aTypes, co
     if (values.count()>4) item.region = decodeValue(values[4], errors);
     if (values.count()>5) item.postalCode = decodeValue(values[5], errors);
     if (values.count()>6) item.country = decodeValue(values[6], errors);
+}
+
+QString VCardData::encodeEC(bool forceCharSet)
+{
+    QString encStr = "";
+    if (charSet!="UTF-8" || !encoding.isEmpty() || forceCharSet) {
+        encStr = ";CHARSET=" + charSet;
+        if (!encoding.isEmpty())
+            encStr += ";ENCODING=" + encoding;
+    }
+    return encStr + ":";
 }
 
 QString VCardData::encodeValue(const QString &src) const
