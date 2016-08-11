@@ -18,6 +18,9 @@
 #include "globals.h"
 #include "vcarddata.h"
 
+#define MAX_NAMES 5
+// TODO move MAX_NAMES to globals and use in contact dialog as high editors limit
+
 bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append, QStringList& errors)
 {
     bool recordOpened = false;
@@ -40,6 +43,8 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
         if (s.isEmpty()) // vcf can contain empty lines
             continue;
         if (s.startsWith("BEGIN:VCARD", Qt::CaseInsensitive)) {
+            if (recordOpened)
+                errors << QObject::tr("Unclosed record before line %1").arg(line+1);
             recordOpened = true;
             item.clear();
             item.originalFormat = "VCARD";
@@ -138,7 +143,7 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                         errors << QObject::tr("Unsupported photo type at line %1: %2").arg(line+1).arg(typeVal);
                     if (encoding=="B") {
                         QString binaryData = vValue[0];
-                        while (line<lines.count() && !lines[line+1].trimmed().isEmpty()) {
+                        while (line<lines.count()-1 && !lines[line+1].trimmed().isEmpty() && lines[line+1].left(1)==" ") {
                             binaryData += lines[line+1];
                             line++;
                         }
@@ -236,14 +241,14 @@ void VCardData::exportRecord(QStringList &lines, const ContactItem &item)
     lines << "BEGIN:VCARD";
     lines << QString("VERSION:") + (formatVersion==GlobalConfig::VCF21 ? "2.1" : "3.0");
     // Known tags
+    if (!item.names.isEmpty()) {
+        QString seps = "";
+        if (item.names.count()<MAX_NAMES)
+            seps.fill(';', MAX_NAMES-item.names.count());
+        lines << QString("N") + encStr + encodeValue(item.names.join(";")) + seps;
+    }
     if (!item.fullName.isEmpty())
         lines << QString("FN") + encStr + encodeValue(item.fullName);
-    if (!item.names.isEmpty())
-        lines << QString("N") + encStr + encodeValue(item.names.join(";"));
-    if (!item.description.isEmpty())
-        lines << QString("NOTE") + encStr + encodeValue(item.description);
-    if (!item.sortString.isEmpty())
-        lines << QString("SORT-STRING") + encStr+encodeValue(item.sortString);
     foreach (const Phone& ph, item.phones)
         lines << QString("TEL") + encodeTypes(ph.tTypes)+":"+ph.number;
     foreach (const Email& em, item.emails)
@@ -258,16 +263,20 @@ void VCardData::exportRecord(QStringList &lines, const ContactItem &item)
     else if (!item.photoType.isEmpty())
         lines << QString("PHOTO;ENCODING=B;TYPE=")
             + item.photoType + ":" + item.photo.toBase64();
-    // TODO check base64 photo write (multiline, etc.)
+    // TODO split base64 photo write to lines
     // Organization, addresses
-    if (!item.organization.isEmpty())
-        lines << QString("ORG") + encStr + encodeValue(item.organization);
-    if (!item.title.isEmpty())
-        lines << QString("TITLE") + encStr + encodeValue(item.title);
     if (!item.addrHome.isEmpty())
         lines << exportAddress(item.addrHome);
     if (!item.addrWork.isEmpty())
         lines << exportAddress(item.addrWork);
+    if (!item.organization.isEmpty())
+        lines << QString("ORG") + encStr + encodeValue(item.organization);
+    if (!item.title.isEmpty())
+        lines << QString("TITLE") + encStr + encodeValue(item.title);
+    if (!item.description.isEmpty())
+        lines << QString("NOTE") + encStr + encodeValue(item.description);
+    if (!item.sortString.isEmpty())
+        lines << QString("SORT-STRING") + encStr+encodeValue(item.sortString);
     // Internet
     if (!item.nickName.isEmpty())
         lines << QString("NICKNAME") + encStr + encodeValue(item.nickName);
