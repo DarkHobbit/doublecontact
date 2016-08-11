@@ -216,7 +216,7 @@ QString ContactItem::formatNames() const
     if (names.count()>2) // Middle name
         res += " " + names[2];
     if (names.count()>3) // Honorific Prefixes
-        res = names[3] + " " + visibleName;
+        res = names[3] + " " + res;
     if (names.count()>4) // Honorific Suffixes, rank, degree
         res += ", " + names[2];
     return res;
