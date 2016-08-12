@@ -78,7 +78,7 @@ MainWindow::MainWindow(QWidget *parent) :
     updateHeaders();
     updateModeStatus();
     on_action_Two_panels_toggled(ui->action_Two_panels->isChecked());
-    QMessageBox::warning(0, "Attention!", "VCF write code still very buggy. Don't use program for your real data editing!"); //===>
+    QMessageBox::warning(0, "Attention!", "VCF write code support only 3.0, even if you selected 2.1. Old phones may not read this files!"); //===>
 }
 
 MainWindow::~MainWindow()

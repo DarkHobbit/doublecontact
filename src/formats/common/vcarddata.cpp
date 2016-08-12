@@ -240,10 +240,14 @@ void VCardData::exportRecord(QStringList &lines, const ContactItem &item)
         QString seps = "";
         if (item.names.count()<MAX_NAMES)
             seps.fill(';', MAX_NAMES-item.names.count());
-        lines << QString("N") + encodeEC(false) + encodeValue(item.names.join(";")) + seps;
+        lines << encodeAll("N", false, item.names.join(";")) + seps;
     }
     if (!item.fullName.isEmpty())
-        lines << QString("FN") + encodeEC(false) + encodeValue(item.fullName);
+        lines << encodeAll("FN", false, item.fullName);
+    if (!item.sortString.isEmpty())
+        lines << encodeAll("SORT-STRING", false, item.sortString);
+    if (!item.nickName.isEmpty())
+        lines << encodeAll("NICKNAME", false, item.nickName);
     foreach (const Phone& ph, item.phones)
         lines << QString("TEL") + encodeTypes(ph.tTypes)+":"+ph.number;
     foreach (const Email& em, item.emails)
@@ -252,6 +256,18 @@ void VCardData::exportRecord(QStringList &lines, const ContactItem &item)
         lines << QString("BDAY:") + exportDate(item.birthday);
     foreach (const DateItem& ann, item.anniversaries)
         lines << QString("X-ANNIVERSARY:") + exportDate(ann);
+    // Organization, addresses
+    if (!item.addrHome.isEmpty())
+        lines << exportAddress(item.addrHome);
+    if (!item.addrWork.isEmpty())
+        lines << exportAddress(item.addrWork);
+    if (!item.organization.isEmpty())
+        lines << encodeAll("ORG", true, item.organization);
+    if (!item.title.isEmpty())
+        lines << encodeAll("TITLE", true, item.title);
+    // Internet
+    if (!item.url.isEmpty())
+        lines << encodeAll("URL", false, item.url);
     // Photos
     if (item.photoType=="URL")
         lines << QString("PHOTO;VALUE=uri:") + item.photoUrl;
@@ -266,30 +282,15 @@ void VCardData::exportRecord(QStringList &lines, const ContactItem &item)
             lines << base64Line;
         lines << "";
     }
-    // Organization, addresses
-    if (!item.addrHome.isEmpty())
-        lines << exportAddress(item.addrHome);
-    if (!item.addrWork.isEmpty())
-        lines << exportAddress(item.addrWork);
-    if (!item.organization.isEmpty())
-        lines << QString("ORG") + encodeEC(true) + encodeValue(item.organization);
-    if (!item.title.isEmpty())
-        lines << QString("TITLE") + encodeEC(true) + encodeValue(item.title);
     if (!item.description.isEmpty())
-        lines << QString("NOTE") + encodeEC(true) + encodeValue(item.description);
-    if (!item.sortString.isEmpty())
-        lines << QString("SORT-STRING") + encodeEC(false) + encodeValue(item.sortString);
-    // Internet
-    if (!item.nickName.isEmpty())
-        lines << QString("NICKNAME") + encodeEC(false) + encodeValue(item.nickName);
-    if (!item.url.isEmpty())
-        lines << QString("URL") + encodeEC(false) + encodeValue(item.url);
+        lines << encodeAll("NOTE", true, item.description);
+    // Internet 2
     if (!item.jabberName.isEmpty())
-        lines << QString("X-JABBER") + encodeEC(false) + encodeValue(item.jabberName);
+        lines << encodeAll("X-JABBER", false, item.jabberName);
     if (!item.icqName.isEmpty())
-        lines << QString("X-ICQ") + encodeEC(false) + encodeValue(item.icqName);
+        lines << encodeAll("X-ICQ", false, item.icqName);
     if (!item.skypeName.isEmpty())
-        lines << QString("X-SKYPE-USERNAME") + encodeEC(false) + encodeValue(item.skypeName);
+        lines << encodeAll("X-SKYPE-USERNAME", false, item.skypeName);
     // Identifier
     // TODO need support for other identifier types (apple?) and more strong detection
     if (!item.id.isEmpty() && item.id.length()==10)
@@ -393,17 +394,6 @@ void VCardData::importAddress(PostalAddress &item, const QStringList& aTypes, co
     if (values.count()>6) item.country = decodeValue(values[6], errors);
 }
 
-QString VCardData::encodeEC(bool forceCharSet)
-{
-    QString encStr = "";
-    if (charSet!="UTF-8" || !encoding.isEmpty() || forceCharSet) {
-        encStr = ";CHARSET=" + charSet;
-        if (!encoding.isEmpty())
-            encStr += ";ENCODING=" + encoding;
-    }
-    return encStr + ":";
-}
-
 QString VCardData::encodeValue(const QString &src) const
 {
     // TODO unify with decodeValue
@@ -429,12 +419,25 @@ QString VCardData::encodeValue(const QString &src) const
     }
 }
 
+QString VCardData::encodeAll(const QString &tag, bool forceCharSet, const QString &value) const
+{
+    // Encoding and charset info
+    QString encStr = tag;
+    if (charSet!="UTF-8" || !encoding.isEmpty() || (forceCharSet && value.toLatin1()!=value)) {
+        encStr += ";CHARSET=" + charSet;
+        if (!encoding.isEmpty())
+            encStr += ";ENCODING=" + encoding;
+    }
+    return encStr + ":" + encodeValue(value);
+}
+
 QString VCardData::encodeTypes(const QStringList &aTypes) const
 {
     QString typeStr = ";";
     if (formatVersion!=GlobalConfig::VCF21)
         typeStr += "TYPE=";
-    typeStr += aTypes.join(",");
+    // typeStr += aTypes.join(","); // value list
+    typeStr += aTypes.join(";TYPE="); // parameter list; RFC 2426 allows both form
     return encodeValue(typeStr);
 }
 
@@ -448,8 +451,8 @@ QString VCardData::exportDate(const DateItem &item) const
 QString VCardData::exportAddress(const PostalAddress &item) const
 {
     return QString("ADR") + encodeTypes(item.paTypes)
-        + ":" + item.offBox + ";" + item.extended
+        + encodeAll("", true, item.offBox + ";" + item.extended
         + ";" + item.street + ";" + item.city + ";" + item.region
-        + ";" + item.postalCode + ";" + item.country;
+        + ";" + item.postalCode + ";" + item.country);
 }
 

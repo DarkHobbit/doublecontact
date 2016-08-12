@@ -29,8 +29,8 @@ private:
     QString decodeValue(const QString& src, QStringList& errors) const;
     void importDate(DateItem& item, const QString& src, QStringList& errors) const;
     void importAddress(PostalAddress& item, const QStringList& aTypes, const QStringList& values, QStringList& errors) const;
-    QString encodeEC(bool forceCharSet);
     QString encodeValue(const QString& src) const;
+    QString encodeAll(const QString& tag, bool forceCharSet, const QString& value) const;
     QString encodeTypes(const QStringList& aTypes) const;
     QString exportDate(const DateItem& item) const;
     QString exportAddress(const PostalAddress& item) const;
