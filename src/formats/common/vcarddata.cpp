@@ -21,6 +21,7 @@
 #define MAX_NAMES 5
 // TODO move MAX_NAMES to globals and use in contact dialog as high editors limit
 #define MAX_BASE64_LEN 74
+#define MAX_QUOTED_PRINTABLE_LEN 76
 
 bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append, QStringList& errors)
 {
@@ -219,7 +220,6 @@ bool VCardData::exportRecords(QStringList &lines, const ContactList &list)
 
 void VCardData::exportRecord(QStringList &lines, const ContactItem &item)
 {
-
     // Format version
     formatVersion = gd.preferredVCFVersion;
     if (gd.useOriginalFileVersion && (item.originalFormat=="VCARD")) {
@@ -238,20 +238,29 @@ void VCardData::exportRecord(QStringList &lines, const ContactItem &item)
     // Known tags
     if (!item.names.isEmpty()) {
         QString seps = "";
-        if (item.names.count()<MAX_NAMES)
+        if (item.names.count()<MAX_NAMES && formatVersion!=GlobalConfig::VCF21)
             seps.fill(';', MAX_NAMES-item.names.count());
-        lines << encodeAll("N", false, item.names.join(";")) + seps;
+        lines << encodeAll("N", 0, false, item.names.join(";")) + seps;
     }
     if (!item.fullName.isEmpty())
-        lines << encodeAll("FN", false, item.fullName);
+        lines << encodeAll("FN", 0, false, item.fullName);
     if (!item.sortString.isEmpty())
-        lines << encodeAll("SORT-STRING", false, item.sortString);
+        lines << encodeAll("SORT-STRING", 0, false, item.sortString);
     if (!item.nickName.isEmpty())
-        lines << encodeAll("NICKNAME", false, item.nickName);
+        lines << encodeAll("NICKNAME", 0, false, item.nickName);
     foreach (const Phone& ph, item.phones)
-        lines << QString("TEL") + encodeTypes(ph.tTypes)+":"+ph.number;
+        lines << (QString("TEL") + encodeTypes(ph.tTypes)+":"+ph.number);
     foreach (const Email& em, item.emails)
         lines << QString("EMAIL") + encodeTypes(em.emTypes)+":"+em.address;
+    /*
+    // for Sony Ericsson devices TODO to settings (emulate, fake...)
+    if (item.emails.isEmpty())
+        lines << QString("EMAIL;INTERNET;PREF:");
+    if (item.emails.count()<2)
+        lines << QString("EMAIL;INTERNET:");
+    if (item.emails.count()<3)
+        lines << QString("EMAIL;INTERNET:");
+    */
     if (!item.birthday.isEmpty())
         lines << QString("BDAY:") + exportDate(item.birthday);
     foreach (const DateItem& ann, item.anniversaries)
@@ -262,12 +271,12 @@ void VCardData::exportRecord(QStringList &lines, const ContactItem &item)
     if (!item.addrWork.isEmpty())
         lines << exportAddress(item.addrWork);
     if (!item.organization.isEmpty())
-        lines << encodeAll("ORG", true, item.organization);
+        lines << encodeAll("ORG", 0, true, item.organization);
     if (!item.title.isEmpty())
-        lines << encodeAll("TITLE", true, item.title);
+        lines << encodeAll("TITLE", 0, true, item.title);
     // Internet
     if (!item.url.isEmpty())
-        lines << encodeAll("URL", false, item.url);
+        lines << encodeAll("URL", 0, false, item.url);
     // Photos
     if (item.photoType=="URL")
         lines << QString("PHOTO;VALUE=uri:") + item.photoUrl;
@@ -283,18 +292,18 @@ void VCardData::exportRecord(QStringList &lines, const ContactItem &item)
         lines << "";
     }
     if (!item.description.isEmpty())
-        lines << encodeAll("NOTE", true, item.description);
+        lines << encodeAll("NOTE", 0, true, item.description);
     // Internet 2
     if (!item.jabberName.isEmpty())
-        lines << encodeAll("X-JABBER", false, item.jabberName);
+        lines << encodeAll("X-JABBER", 0, false, item.jabberName);
     if (!item.icqName.isEmpty())
-        lines << encodeAll("X-ICQ", false, item.icqName);
+        lines << encodeAll("X-ICQ", 0, false, item.icqName);
     if (!item.skypeName.isEmpty())
-        lines << encodeAll("X-SKYPE-USERNAME", false, item.skypeName);
+        lines << encodeAll("X-SKYPE-USERNAME", 0, false, item.skypeName);
     // Identifier
     // TODO need support for other identifier types (apple?) and more strong detection
-    if (!item.id.isEmpty() && item.id.length()==10)
-        lines << QString("X-IRMC-LUID") + ":" + encodeValue(item.id);
+    if (!item.id.isEmpty() && item.id.length()>=10) // second condition separate from other ID kinds. TODO: need more strong crit.
+        lines << QString("X-IRMC-LUID:") + encodeValue(item.id, QString("X-IRMC-LUID:").length());
     // Known but un-editing tags
     foreach (const TagValue& tv, item.otherTags)
             lines << QString(tv.tag + ":" + tv.value);
@@ -394,24 +403,68 @@ void VCardData::importAddress(PostalAddress &item, const QStringList& aTypes, co
     if (values.count()>6) item.country = decodeValue(values[6], errors);
 }
 
-QString VCardData::encodeValue(const QString &src) const
+void VCardData::checkQPSoftBreak(QString& buf, QString& lBuf, int prefixLen, int addSize, bool lastChar) const
 {
-    // TODO unify with decodeValue
-    QTextCodec *codec; // for values
+    // If port to C++11, it must be lambda...
+    // Rule 5 (RFC 2045). Soft Line Breaks
+    int limit = MAX_QUOTED_PRINTABLE_LEN;
+    if (buf.isEmpty()) // first sub-line
+        limit -= prefixLen;
+    if (!lastChar)
+        limit--;
+    if (lBuf.length()>limit-addSize) {
+        if (!buf.isEmpty())
+            buf += "=\x0d\n";
+        buf += lBuf;
+        lBuf.clear();
+    }
+}
+
+QString VCardData::encodeValue(const QString &src, int prefixLen) const
+{
+    QTextCodec *codec;
     // Charset
     if (charSet.isEmpty())
         codec = QTextCodec::codecForName("UTF-8");
     else
         codec = QTextCodec::codecForName(charSet.toLocal8Bit());
     if (encoding.toUpper()=="QUOTED-PRINTABLE") {
-
-
-
-
-
-        // TODO
-        return codec->fromUnicode(src.toLocal8Bit()); //==>
-
+        // We can't apply codec->fromUnicode to entire string, because
+        // we must find ascii-able characters, but variable character length
+        // may cause false match. We must check EACH character.
+        QString buf, lBuf;
+        for (int i=0; i<src.count(); i++) {
+            QChar ch = src[i];
+            QByteArray bytes = codec->fromUnicode(ch);
+            // Can we use Literal representation?
+            // Rule 2 (RFC 2045). Literal representation
+            bool useLiteral = (ch>=33 && ch<=126 && ch!=61);
+            // Rule 3. Spaces
+            if (ch==0x20 || ch==0x09)
+                useLiteral = i<src.count()-1;
+            // Represent!
+            bool lastChar = i==src.count()-1;
+            if (useLiteral) {
+                checkQPSoftBreak(buf, lBuf, prefixLen, 1, lastChar);
+                lBuf += ch;
+            }
+            else { // Rule 1. General 8bit representation
+                for(int j=0; j<bytes.count(); j++) {
+                    checkQPSoftBreak(buf, lBuf, prefixLen, 3, lastChar && j==bytes.count()-1);
+                    QString hex = QString::number((uchar)bytes[j], 16).toUpper();
+                    if (hex.length()==1)
+                        hex = QString("0")+hex;
+                    lBuf += "=" + hex;
+                }
+            }
+        }
+        if (!lBuf.isEmpty()) {
+            if (!buf.isEmpty())
+                buf += "=\x0d\n";
+            buf += lBuf;
+        }
+        // Rule 4. Line Breaks - apply in caller
+        return buf;
     }
     else {
         //return codec->fromUnicode(src.toLocal8Bit());
@@ -419,16 +472,23 @@ QString VCardData::encodeValue(const QString &src) const
     }
 }
 
-QString VCardData::encodeAll(const QString &tag, bool forceCharSet, const QString &value) const
+QString VCardData::encodeAll(const QString &tag, const QStringList *aTypes, bool forceCharSet, const QString &value) const
 {
-    // Encoding and charset info
     QString encStr = tag;
+    if (aTypes)
+        encStr += encodeTypes(*aTypes);
+    // Encoding and charset info
     if (charSet!="UTF-8" || !encoding.isEmpty() || (forceCharSet && value.toLatin1()!=value)) {
         encStr += ";CHARSET=" + charSet;
         if (!encoding.isEmpty())
             encStr += ";ENCODING=" + encoding;
     }
-    return encStr + ":" + encodeValue(value);
+    encStr += ":";
+    QString valStr = encodeValue(value, encStr.length());
+    // Optimize ecoding :)
+    if (!valStr.contains("=") && charSet=="UTF-8" && encoding=="QUOTED-PRINTABLE")
+        encStr = tag + ":";
+    return encStr + valStr;
 }
 
 QString VCardData::encodeTypes(const QStringList &aTypes) const
@@ -437,8 +497,8 @@ QString VCardData::encodeTypes(const QStringList &aTypes) const
     if (formatVersion!=GlobalConfig::VCF21)
         typeStr += "TYPE=";
     // typeStr += aTypes.join(","); // value list
-    typeStr += aTypes.join(";TYPE="); // parameter list; RFC 2426 allows both form
-    return encodeValue(typeStr);
+    typeStr += aTypes.join(formatVersion==GlobalConfig::VCF21 ? ";" : ";TYPE="); // parameter list; RFC 2426 allows both form
+    return encodeValue(typeStr, 0);
 }
 
 QString VCardData::exportDate(const DateItem &item) const
@@ -450,8 +510,8 @@ QString VCardData::exportDate(const DateItem &item) const
 
 QString VCardData::exportAddress(const PostalAddress &item) const
 {
-    return QString("ADR") + encodeTypes(item.paTypes)
-        + encodeAll("", true, item.offBox + ";" + item.extended
+    return encodeAll("ADR", &item.paTypes, true,
+                item.offBox + ";" + item.extended
         + ";" + item.street + ";" + item.city + ";" + item.region
         + ";" + item.postalCode + ";" + item.country);
 }

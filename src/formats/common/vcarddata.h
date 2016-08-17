@@ -29,11 +29,12 @@ private:
     QString decodeValue(const QString& src, QStringList& errors) const;
     void importDate(DateItem& item, const QString& src, QStringList& errors) const;
     void importAddress(PostalAddress& item, const QStringList& aTypes, const QStringList& values, QStringList& errors) const;
-    QString encodeValue(const QString& src) const;
-    QString encodeAll(const QString& tag, bool forceCharSet, const QString& value) const;
+    QString encodeValue(const QString& src, int prefixLen) const;
+    QString encodeAll(const QString& tag, const QStringList *aTypes, bool forceCharSet, const QString& value) const;
     QString encodeTypes(const QStringList& aTypes) const;
     QString exportDate(const DateItem& item) const;
     QString exportAddress(const PostalAddress& item) const;
+    void checkQPSoftBreak(QString& buf, QString& lBuf, int prefixLen, int addSize, bool lastChar) const;
 };
 
 #endif // VCARDDATA_H

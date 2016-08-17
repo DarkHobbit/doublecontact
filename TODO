@@ -1,14 +1,17 @@
 This file contains English and Russian (CP1251) issues. Sorry for this mixing, it's alpha.
 You can contact me at pub@zvyozdochkin.ru.
 
-Я
-* vcf save (and change status to alpha)
+I:
+* groups support, if testdata will found
+* group org editing?
 
 0.1:
 * --fullscreen not works on Mac
+* unify: --fullscreen but -d and -q
 * "домашняя папка" вместо "домашний" в диалоге сравнения
 * заставить * исчезать сразу после save, без ресайза
 * vcf directory
+* см. все TODO в проекте
 * photo editing (replace) support (and change status to beta)
 * export delete time from bday mode if receiver not support it
 * settings - fonts
@@ -18,8 +21,7 @@ You can contact me at pub@zvyozdochkin.ru.
 * проверить, как работает на charset, отличных от utf-8 (codec->toUnicode, у меня везде toLocal8Bit, а это, вероятно, неправильно)
 * About dialog
 * full language selection support (not only russian)
-* ukrainian and belarussian language files (po, Rosetta?)
-* см. все TODO в проекте
+* ukrainian and belarussian language files (po, Rosetta or weblate)
 * проверить на всех доступных телефонах и андроидах
 * проверить на RFC
 * рус. описание (особ. отображение, Generic Name, операции редактирования, про сплиттинг и др., багрепортинг, --fullscreen и другие ключи)
@@ -39,6 +41,7 @@ You can contact me at pub@zvyozdochkin.ru.
 * integration with mail clients, import contacts from mailboxes
 * export birthday in calendarzzz
 
+0.5 or 1.0
 * mobile version???
 
 
