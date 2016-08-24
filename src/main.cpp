@@ -14,14 +14,24 @@
 #include "mainwindow.h"
 #include <QApplication>
 
+#include <QDir>
+#include <QTranslator>
+
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     // Settings settings :)
     a.setOrganizationName("doublecontact");
     a.setApplicationName("doublecontact");
+    // TODO temporary language stub
+    QTranslator tr;
+    tr.load(qApp->applicationDirPath()+QDir::separator()+"doublecontact_ru_RU.qm");
+        qApp->installTranslator(&tr);
+    // TODO end of stub
     MainWindow w;
-    w.show();
-
+    if (qApp->arguments().contains("--fullscreen"))
+        w.showMaximized();
+    else
+        w.show();
     return a.exec();
 }

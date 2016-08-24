@@ -13,7 +13,9 @@
 
 #include <QMessageBox>
 #include <QObject>
+
 #include "fileformat.h"
+#include "globals.h"
 
 FileFormat::FileFormat()
 {}
@@ -34,7 +36,7 @@ bool FileFormat::openFile(QString path, QIODevice::OpenMode mode)
         QString msgTempl = (mode==QIODevice::ReadOnly)
             ? QObject::tr("Can't read file\n%1")
             : QObject::tr("Can't write file\n%1");
-        QMessageBox::critical(0, QObject::tr("Error"), msgTempl.arg(path));
+        QMessageBox::critical(0, S_ERROR, msgTempl.arg(path));
     }
     return res;
 }

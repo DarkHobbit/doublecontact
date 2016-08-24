@@ -30,7 +30,7 @@ QStringList FormatFactory::supportedFilters()
 IFormat *FormatFactory::createObject(const QString &url)
 {
     if (url.isEmpty()) {
-        QMessageBox::critical(0, QObject::tr("Error"), QObject::tr("Empty file name"));
+        QMessageBox::critical(0, S_ERROR, QObject::tr("Empty file name"));
         return 0;
     }
     QFileInfo info(url);
@@ -49,7 +49,6 @@ IFormat *FormatFactory::createObject(const QString &url)
     // ...here add detect() for new format
     // Sad but true
     QMessageBox::critical(0,
-        QObject::tr("Error"),
-        QObject::tr("Unknown file format:\n%1").arg(url));
+        S_ERROR, QObject::tr("Unknown file format:\n%1").arg(url));
     return 0;
 }

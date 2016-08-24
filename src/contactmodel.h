@@ -53,6 +53,12 @@ public:
     void copyRows(QModelIndexList& indices, ContactModel* target);
     void removeAnyRows(QModelIndexList& indices);
     void swapNames(const QModelIndexList& indices);
+    void splitNames(const QModelIndexList& indices);
+    void dropSlashes(const QModelIndexList& indices);
+    void generateFullNames(const QModelIndexList& indices);
+    void dropFullNames(const QModelIndexList& indices);
+    void splitNumbers(const QModelIndexList& indices);
+    void intlPhonePrefix(const QModelIndexList& indices);
     void setViewMode(ContactViewMode mode, ContactModel* target);
     ContactViewMode viewMode();
     ContactList& itemList();

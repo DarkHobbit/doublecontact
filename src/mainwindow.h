@@ -40,7 +40,7 @@ protected:
 private slots:
     void on_action_Other_panel_triggered();
     void setButtonsAccess();
-    void on_Selection_Changed();
+    void selectionChanged();
     void on_actionCo_mpare_triggered();
     void on_btnCompare_clicked();
     void anyFocusChanged (QWidget*, QWidget* now);
@@ -68,16 +68,25 @@ private slots:
     void on_actionSave_as_triggered();
     void rowDoubleClicked(const QModelIndex&);
     void on_actionSettings_triggered();
-
     void on_action_Close_triggered();
-
     void on_leFilterLeft_textChanged(const QString &arg1);
-
     void on_leFilterRight_textChanged(const QString &arg1);
-
     void on_action_Filter_triggered();
-
     void on_actionCompare_Result_triggered();
+    void on_actionS_plit_names_triggered();
+    void on_action_Drop_slashes_triggered();
+
+    void on_action_Generate_full_name_triggered();
+
+    void on_action_Join_triggered();
+
+    void on_actionDrop_full_name_triggered();
+
+    void on_actionSp_lit_triggered();
+
+    void on_actionIntl_phone_prefix_triggered();
+
+    void on_actionS_wap_Panels_triggered();
 
 private:
     Ui::MainWindow *ui;
@@ -94,9 +103,12 @@ private:
     void selectView(QTableView* view);
     bool checkSelection(bool errorIfNoSelected = true, bool onlyOneRowAllowed = false);
     void setSorting(bool needSort);
+    void setLanguage(const QString& language);
     void updateListHeader(ContactModel* model, QLabel* header);
     void updateHeaders();
-    void updateMode();
+    void updateModeStatus();
+    void updateViewMode();
+    void setSelectionModelEvents();
     inline ContactModel* oppositeModel();
     void askSaveChanges(QCloseEvent *event, ContactModel *model);
     void updateConfig();

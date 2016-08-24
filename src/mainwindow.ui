@@ -216,8 +216,17 @@
     <addaction name="separator"/>
     <addaction name="action_Copy"/>
     <addaction name="action_Move"/>
+    <addaction name="separator"/>
+    <addaction name="action_Join"/>
+    <addaction name="actionSp_lit"/>
+    <addaction name="separator"/>
     <addaction name="action_Swap_names"/>
     <addaction name="actionCompare_Result"/>
+    <addaction name="actionS_plit_names"/>
+    <addaction name="action_Drop_slashes"/>
+    <addaction name="action_Generate_full_name"/>
+    <addaction name="actionDrop_full_name"/>
+    <addaction name="actionIntl_phone_prefix"/>
    </widget>
    <widget class="QMenu" name="menu_Help">
     <property name="title">
@@ -239,6 +248,7 @@
     <addaction name="action_Sort"/>
     <addaction name="action_Other_panel"/>
     <addaction name="action_Filter"/>
+    <addaction name="actionS_wap_Panels"/>
    </widget>
    <addaction name="menu_File"/>
    <addaction name="menu_View"/>
@@ -285,6 +295,9 @@
   <action name="actionSave_as">
    <property name="text">
     <string>Save &amp;as...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+S</string>
    </property>
   </action>
   <action name="actionE_xit">
@@ -405,6 +418,52 @@
    </property>
    <property name="shortcut">
     <string>Shift+F3</string>
+   </property>
+  </action>
+  <action name="actionS_plit_names">
+   <property name="text">
+    <string>S&amp;plit names</string>
+   </property>
+   <property name="shortcut">
+    <string>Shift+F2</string>
+   </property>
+  </action>
+  <action name="action_Drop_slashes">
+   <property name="text">
+    <string>&amp;Drop slashes</string>
+   </property>
+  </action>
+  <action name="action_Generate_full_name">
+   <property name="text">
+    <string>&amp;Generate full name</string>
+   </property>
+  </action>
+  <action name="action_Join">
+   <property name="text">
+    <string>&amp;Join</string>
+   </property>
+  </action>
+  <action name="actionDrop_full_name">
+   <property name="text">
+    <string>Drop &amp;full name</string>
+   </property>
+  </action>
+  <action name="actionSp_lit">
+   <property name="text">
+    <string>Sp&amp;lit</string>
+   </property>
+  </action>
+  <action name="actionIntl_phone_prefix">
+   <property name="text">
+    <string>Internationalize phone prefix</string>
+   </property>
+  </action>
+  <action name="actionS_wap_Panels">
+   <property name="text">
+    <string>S&amp;wap Panels</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+U</string>
    </property>
   </action>
  </widget>

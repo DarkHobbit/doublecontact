@@ -84,12 +84,19 @@ QVariant ContactModel::data(const QModelIndex &index, int role) const
         // Detect column
         ContactColumn col = visibleColumns[index.column()];
         switch (col) {
-            case ccFirstName:  if (c.names.count()>1) return c.names[1]; else return QVariant();
-            case ccLastName: if (c.names.count()>0) return c.names[0]; else return QVariant();
-            case ccFullName: return c.fullName;
+            case ccLastName:    return !c.names.isEmpty() ? c.names[0] : QVariant();
+            case ccFirstName:   return c.names.count()>1  ? c.names[1] : QVariant();
+            case ccMiddleName:  return c.names.count()>2  ? c.names[2] : QVariant();
+            case ccFullName:    return c.fullName;
             case ccGenericName: return c.visibleName; // must be calculated
-            case ccPhone: return c.prefPhone;
-            case ccEMail: return c.prefEmail;
+            case ccPhone:       return c.prefPhone;
+            case ccEMail:       return c.prefEmail;
+            case ccBDay:        return c.birthday.toString(DateItem::Local);
+            case ccHasPhone:    return !c.phones.isEmpty() ? "*" : QVariant();
+            case ccHasEmail:    return !c.emails.isEmpty() ? "*" : QVariant();
+            case ccHasBDay:     return !c.birthday.isEmpty() ? "*" : QVariant();
+            case ccSomePhones:  return c.phones.count()>1  ? "*" : QVariant();
+            case ccSomeEmails:  return c.emails.count()>1  ? "*" : QVariant();
             case ccLast: { return QVariant(); } // Boundary case
             default: return QVariant();
         }
@@ -200,6 +207,83 @@ void ContactModel::swapNames(const QModelIndexList& indices)
     foreach(QModelIndex index, indices) {
         beginEditRow(index);
         items[index.row()].swapNames();
+        endEditRow(index);
+    }
+    _changed = true;
+}
+
+void ContactModel::splitNames(const QModelIndexList &indices)
+{
+    foreach(QModelIndex index, indices) {
+        beginEditRow(index);
+        items[index.row()].splitNames();
+        endEditRow(index);
+    }
+    _changed = true;
+}
+
+void ContactModel::dropSlashes(const QModelIndexList &indices)
+{
+    foreach(QModelIndex index, indices) {
+        beginEditRow(index);
+        items[index.row()].dropSlashes();
+        endEditRow(index);
+    }
+    _changed = true;
+}
+
+void ContactModel::generateFullNames(const QModelIndexList &indices)
+{
+    foreach(QModelIndex index, indices) {
+        beginEditRow(index);
+        items[index.row()].fullName = items[index.row()].formatNames();
+        endEditRow(index);
+    }
+    _changed = true;
+}
+
+void ContactModel::dropFullNames(const QModelIndexList &indices)
+{
+    foreach(QModelIndex index, indices) {
+        beginEditRow(index);
+        items[index.row()].fullName.clear();
+        endEditRow(index);
+    }
+    _changed = true;
+}
+
+void ContactModel::splitNumbers(const QModelIndexList &indices)
+{
+    foreach(QModelIndex index, indices) {
+        ContactItem& item = items[index.row()];
+        int newLines = item.phones.count()-1;
+        if (newLines<1)
+            continue;
+        beginInsertRows(QModelIndex(), index.row(), index.row() + newLines);
+        for (int i=1; i<item.phones.count(); i++) {
+            ContactItem nc;
+            nc.names = item.names;
+            QString tType = Phone::standardTypes.translate(item.phones[i].tTypes[0]);
+            if (nc.names.count()<3)
+                nc.names.push_back(tType);
+            else
+                nc.names[2] += " " + tType;
+            nc.phones.push_back(item.phones[i]);
+            items.push_back(nc);
+        }
+        while (item.phones.count()>1)
+            item.phones.removeLast();
+        endInsertRows();
+    }
+    _changed = true;
+}
+
+void ContactModel::intlPhonePrefix(const QModelIndexList &indices)
+{
+    foreach(QModelIndex index, indices) {
+        beginEditRow(index);
+        if (items[index.row()].intlPhonePrefix())
+            items[index.row()].calculateFields();
         endEditRow(index);
     }
     _changed = true;

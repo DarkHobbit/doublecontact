@@ -1,4 +1,5 @@
 #include <QApplication>
+#include <QLocale>
 #include <QMessageBox>
 
 #if QT_VERSION >= 0x050000
@@ -12,7 +13,7 @@
 
 SettingsDialog::SettingsDialog(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::SettingsDialog)
+    _lang(""), _langChanged(false), ui(new Ui::SettingsDialog)
 {
     ui->setupUi(this);
     for (int i=0; i<ccLast; i++)
@@ -27,17 +28,16 @@ SettingsDialog::~SettingsDialog()
 bool SettingsDialog::readConfig()
 {
     // Language
-    QString lang = settings.value("General/Language", "Unknown").toString();
-    if (lang==tr("Unknown")) {
-        lang = "English"; // TODO use system language
+    _lang = settings.value("General/Language", "Unknown").toString();
+    if (_lang=="Unknown") {
+        _lang = "English"; // TODO use system language
     }
-    ui->cbLanguage->setCurrentIndex(ui->cbLanguage->findText(lang));
-    // Treat name ... as surname
-    int surnameIndex = settings.value("General/SurnameIndex", -1).toInt();
-    ui->cbSurname->setChecked(surnameIndex>-1);
-    ui->sbSurname->setEnabled(surnameIndex>-1);
-    if (surnameIndex>-1)
-        ui->sbSurname->setValue(surnameIndex);
+    ui->cbLanguage->setCurrentIndex(ui->cbLanguage->findText(_lang));
+    // Locale
+    ui->leDateFormat->setText(settings.value("Locale/DateFormat", QLocale::system().dateFormat()).toString());
+    ui->leTimeFormat->setText(settings.value("Locale/TimeFormat", QLocale::system().timeFormat()).toString());
+    ui->cbUseSystemDateTimeFormat->setChecked(settings.value("Locale/UseSystemDateTimeFormat", true).toBool());
+    on_cbUseSystemDateTimeFormat_clicked(ui->cbUseSystemDateTimeFormat->isChecked());
     // Misc
     ui->cbOpenLastFilesAtStartup->setChecked(settings.value("General/OpenLastFilesAtStartup", true).toBool());
     // Column view
@@ -55,16 +55,29 @@ bool SettingsDialog::readConfig()
     for (int i=0; i<validColumnNames.count(); i++) // Fill available columns list
         if (ui->lwVisibleColumns->findItems(validColumnNames[i], Qt::MatchCaseSensitive).isEmpty())
             ui->lwAvailableColumns->addItem(validColumnNames[i]);
+    // Saving
+    int verIndex = ui->cbPrefVCardVer->findText(settings.value("Saving/PreferredVCardVersion", "2.1").toString());
+    if (verIndex!=-1)
+        ui->cbPrefVCardVer->setCurrentIndex(verIndex);
+    ui->cbUseOrigVer->setChecked(settings.value("Saving/UseOriginalFileVCardVersion").toBool());
+    // Done
+    updateGlobalData();
     return true;
 }
 
 bool SettingsDialog::writeConfig()
 {
     // Language
-    settings.setValue("General/Language", ui->cbLanguage->currentText());
-    // Treat name ... as surname
-    settings.setValue("General/SurnameIndex",
-        ui->cbSurname->isChecked() ? ui->sbSurname->value()+1 : -1);
+    QString newLang = ui->cbLanguage->currentText();
+    settings.setValue("General/Language", newLang);
+    if (newLang!=_lang) {
+        _langChanged = true;
+        _lang = newLang;
+    }
+    // Locale
+    settings.setValue("Locale/DateFormat", ui->leDateFormat->text());
+    settings.setValue("Locale/TimeFormat", ui->leTimeFormat->text());
+    settings.setValue("Locale/UseSystemDateTimeFormat", ui->cbUseSystemDateTimeFormat->isChecked());
     // Misc
     settings.setValue("General/OpenLastFilesAtStartup", ui->cbOpenLastFilesAtStartup->isChecked());
     // Column view
@@ -72,6 +85,11 @@ bool SettingsDialog::writeConfig()
     for (int i=0; i<ui->lwVisibleColumns->count(); i++)
         settings.setValue(QString("VisibleColumns/Column%1").arg(i+1),
                           ui->lwVisibleColumns->item(i)->text());
+    // Saving
+    settings.setValue("Saving/PreferredVCardVersion", ui->cbPrefVCardVer->currentText());
+    settings.setValue("Saving/UseOriginalFileVCardVersion", ui->cbUseOrigVer->isChecked());
+    // Done
+    updateGlobalData();
     return true;
 }
 
@@ -125,9 +143,14 @@ ContactColumnList SettingsDialog::columnNames()
     return res;
 }
 
-void SettingsDialog::on_cbSurname_toggled(bool checked)
+QString SettingsDialog::lang()
 {
-    ui->sbSurname->setEnabled(checked);
+    return _lang;
+}
+
+bool SettingsDialog::langChanged()
+{
+    return _langChanged;
 }
 
 void SettingsDialog::on_btnAddCol_clicked()
@@ -141,7 +164,7 @@ void SettingsDialog::on_btnAddCol_clicked()
 void SettingsDialog::on_btnDelCol_clicked()
 {
     if (ui->lwVisibleColumns->selectedItems().count()>=ui->lwVisibleColumns->count()) {
-        QMessageBox::critical(0, tr("Error"), tr("List must contain at least one visible column"));
+        QMessageBox::critical(0, S_ERROR, tr("List must contain at least one visible column"));
     }
     else
     foreach (QListWidgetItem* item, ui->lwVisibleColumns->selectedItems()) {
@@ -176,3 +199,23 @@ void SettingsDialog::on_btnDownCol_clicked()
     }
 }
 
+void SettingsDialog::on_cbUseSystemDateTimeFormat_clicked(bool checked)
+{
+    ui->leDateFormat->setEnabled(!checked);
+    ui->leTimeFormat->setEnabled(!checked);
+}
+
+void SettingsDialog::updateGlobalData()
+{
+    if (ui->cbUseSystemDateTimeFormat->isChecked()) {
+        gd.dateFormat = QLocale::system().dateFormat();
+        gd.timeFormat = QLocale::system().timeFormat();
+    }
+    else {
+        gd.dateFormat = ui->leDateFormat->text();
+        gd.timeFormat = ui->leTimeFormat->text();
+    }
+    gd.preferredVCFVersion = ui->cbPrefVCardVer->currentText()=="2.1" ?
+                GlobalConfig::VCF21 : GlobalConfig::VCF30;
+    gd.useOriginalFileVersion = ui->cbUseOrigVer->isChecked();
+}

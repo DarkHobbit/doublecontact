@@ -19,12 +19,22 @@
 class VCardData
 {
 public:
-    static bool importRecords(QStringList& lines, ContactList& list, bool append, QStringList& errors);
-    static bool exportRecords(QStringList& lines, const ContactList& list);
+    bool importRecords(QStringList& lines, ContactList& list, bool append, QStringList& errors);
+    bool exportRecords(QStringList& lines, const ContactList& list);
+    void exportRecord(QStringList& lines, const ContactItem& item);
 private:
-    static QString decodeValue(const QString& src, const QString& encoding, const QString& charSet, QStringList& errors);
-    static void importDate(DateItem& item, const QString& src, QStringList& errors);
-    // TODO before export: maybe make class not static and move here encoding, charSet and errors as members
+    QString encoding;
+    QString charSet;
+    GlobalConfig::VCFVersion formatVersion;
+    QString decodeValue(const QString& src, QStringList& errors) const;
+    void importDate(DateItem& item, const QString& src, QStringList& errors) const;
+    void importAddress(PostalAddress& item, const QStringList& aTypes, const QStringList& values, QStringList& errors) const;
+    QString encodeValue(const QString& src, int prefixLen) const;
+    QString encodeAll(const QString& tag, const QStringList *aTypes, bool forceCharSet, const QString& value) const;
+    QString encodeTypes(const QStringList& aTypes) const;
+    QString exportDate(const DateItem& item) const;
+    QString exportAddress(const PostalAddress& item) const;
+    void checkQPSoftBreak(QString& buf, QString& lBuf, int prefixLen, int addSize, bool lastChar) const;
 };
 
 #endif // VCARDDATA_H

@@ -1,5 +1,7 @@
 # DoubleContact
-Offline DE-independent contact manager primarily for phonebooks editing/merging. Pre-alpha.
+Offline DE-independent contact manager primarily for phonebooks editing/merging.
+
+State: alpha.
 
 License: GPLv2 or above.
 

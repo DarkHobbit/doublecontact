@@ -14,10 +14,6 @@
 #include <QStringList>
 #include <QTextStream>
 
-#include "../common/vcarddata.h"
-
-#include <QMessageBox> //===>
-
 VCFFile::VCFFile()
     :FileFormat()
 {
@@ -61,6 +57,15 @@ bool VCFFile::importRecords(const QString &url, ContactList &list, bool append)
 
 bool VCFFile::exportRecords(const QString &url, ContactList &list)
 {
-    QMessageBox::information(0, "Debug", "VSF save is under construction");
-    // TODO
+    QStringList content;
+    if (!VCardData::exportRecords(content, list))
+        return false;
+    if (!openFile(url, QIODevice::WriteOnly))
+        return false;
+    _errors.clear();
+    QTextStream stream(&file);
+    foreach (const QString line, content)
+        stream << line << (char)13 << endl;
+    closeFile();
+    return true;
 }

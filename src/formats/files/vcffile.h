@@ -15,8 +15,9 @@
 #define VCFFILE_H
 
 #include "fileformat.h"
+#include "../common/vcarddata.h"
 
-class VCFFile : public FileFormat
+class VCFFile : public FileFormat, VCardData
 {
 public:
     VCFFile();

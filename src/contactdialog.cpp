@@ -12,7 +12,6 @@
  */
 
 #include <QLineEdit>
-#include <QMessageBox>
 #include <QPixmap>
 
 #include "contactdialog.h"
@@ -23,15 +22,13 @@
 #include "globals.h"
 #include "phonetypedialog.h"
 
-// Spec.value for combined phone/mail types
-const QString mixedType = QObject::tr("mixed...");
 #define MIN_VISIBLE_NAMES 2
 #define MIN_VISIBLE_TRIPLETS 1
 
 ContactDialog::ContactDialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::ContactDialog),
-    nameCount(0), phoneCount(0), emailCount(0)
+    nameCount(0), phoneCount(0), emailCount(0), anniversaryCount(0)
 {
     ui->setupUi(this);
     fillPhoneTypes(ui->cbPhoneType1);
@@ -118,13 +115,24 @@ void ContactDialog::setData(const ContactItem& c)
         photo.loadFromData(c.photo);
         ui->lbPhotoContent->setPixmap(photo);
     }
+    // Addresses
+    addAddress(ui->gbAddrHome, c.addrHome);
+    addAddress(ui->gbAddrWork, c.addrWork);
+    //Internet
+    ui->leNickName->setText(c.nickName);
+    ui->leURL->setText(c.url);
+    ui->leJabber->setText(c.jabberName);
+    ui->leICQ->setText(c.icqName);
+    ui->leSkype->setText(c.skypeName);
     // Work
     ui->leOrganization->setText(c.organization);
     ui->leTitle->setText(c.title);
     // Other
+    ui->leSortString->setText(c.sortString);
     ui->edDescription->setPlainText(c.description);
     ui->lbOriginalFormatValue->setText(c.originalFormat);
     ui->lbFormatVersionValue->setText(c.version);
+    ui->lbIDValue->setText(c.id);
     ui->twOtherTags->setRowCount(c.otherTags.count());
     int index = 0;
     foreach (const TagValue& tag, c.otherTags) {
@@ -172,12 +180,25 @@ void ContactDialog::getData(ContactItem& c)
         c.anniversaries.push_back(di);
     }
     // TODO upload photos
+    // Addresses
+    readAddress(ui->gbAddrHome, c.addrHome);
+    if (!c.addrHome.isEmpty() && !c.addrHome.paTypes.contains("home", Qt::CaseInsensitive))
+        c.addrHome.paTypes << "home";
+    readAddress(ui->gbAddrWork, c.addrWork);
+    if (!c.addrWork.isEmpty() && !c.addrWork.paTypes.contains("work", Qt::CaseInsensitive))
+        c.addrWork.paTypes << "work";
+    // Internet
+    c.nickName = ui->leNickName->text();
+    c.url = ui->leURL->text();
+    c.jabberName = ui->leJabber->text();
+    c.icqName = ui->leICQ->text();
+    c.skypeName = ui->leSkype->text();
     // Work
     c.organization = ui->leOrganization->text();
     c.title = ui->leTitle->text();
     // Other
+    c.sortString = ui->leSortString->text();
     c.description = ui->edDescription->toPlainText();
-    // TODO org, address
     c.calculateFields();
 }
 
@@ -185,14 +206,14 @@ void ContactDialog::fillPhoneTypes(QComboBox* combo)
 {
     combo->clear();
     combo->insertItems(0, Phone::standardTypes.displayValues);
-    combo->addItem(mixedType);
+    combo->addItem(S_MIXED_TYPE);
 }
 
 void ContactDialog::fillEmailTypes(QComboBox* combo)
 {
     combo->clear();
     combo->insertItems(0, Email::standardTypes.displayValues);
-    combo->addItem(mixedType);
+    combo->addItem(S_MIXED_TYPE);
 }
 
 void ContactDialog::addName(const QString& name)
@@ -269,6 +290,84 @@ void ContactDialog::readAnniversary(int num, DateItem &ann)
     if (!editor) return;
     anniversaryDetails[num-1].value = editor->dateTime();
     ann = anniversaryDetails[num-1];
+}
+
+void ContactDialog::addAddress(QWidget *parent, const PostalAddress &addr)
+{
+    QGridLayout* l = new QGridLayout(parent);
+    QLineEdit* le;
+    // Address components
+    l->addWidget(new QLabel(S_ADR_OFFICE_BOX), 0, 0);
+    le = new QLineEdit(addr.offBox);
+    le->setObjectName(S_ADR_OFFICE_BOX);
+    l->addWidget(le, 0, 1);
+    l->addWidget(new QLabel(S_ADR_EXTENDED), 1, 0);
+    le = new QLineEdit(addr.extended);
+    le->setObjectName(S_ADR_EXTENDED);
+    l->addWidget(le, 1, 1);
+    l->addWidget(new QLabel(S_ADR_STREET), 2, 0);
+    le = new QLineEdit(addr.street);
+    le->setObjectName(S_ADR_STREET);
+    l->addWidget(le, 2, 1);
+    l->addWidget(new QLabel(S_ADR_CITY), 3, 0);
+    le = new QLineEdit(addr.city);
+    le->setObjectName(S_ADR_CITY);
+    l->addWidget(le, 3, 1);
+    l->addWidget(new QLabel(S_ADR_REGION), 4, 0);
+    le = new QLineEdit(addr.region);
+    le->setObjectName(S_ADR_REGION);
+    l->addWidget(le, 4, 1);
+    l->addWidget(new QLabel(S_ADR_POST_CODE), 5, 0);
+    le = new QLineEdit(addr.postalCode);
+    le->setObjectName(S_ADR_POST_CODE);
+    l->addWidget(le, 5, 1);
+    l->addWidget(new QLabel(S_ADR_POST_CODE), 5, 0);
+    le = new QLineEdit(addr.postalCode);
+    le->setObjectName(S_ADR_POST_CODE);
+    l->addWidget(le, 5, 1);
+    l->addWidget(new QLabel(S_ADR_COUNTRY), 6, 0);
+    le = new QLineEdit(addr.country);
+    le->setObjectName(S_ADR_COUNTRY);
+    l->addWidget(le, 6, 1);
+    // TODO type box, if multy addresses will implemented
+}
+
+void ContactDialog::setAddress(QWidget *parent, const PostalAddress &addr)
+{
+    QLineEdit* le;
+    le = parent->findChild<QLineEdit*>(S_ADR_OFFICE_BOX);
+    if (le) le->setText(addr.offBox);
+    le = parent->findChild<QLineEdit*>(S_ADR_EXTENDED);
+    if (le) le->setText(addr.extended);
+    le = parent->findChild<QLineEdit*>(S_ADR_STREET);
+    if (le) le->setText(addr.street);
+    le = parent->findChild<QLineEdit*>(S_ADR_CITY);
+    if (le) le->setText(addr.city);
+    le = parent->findChild<QLineEdit*>(S_ADR_REGION);
+    if (le) le->setText(addr.region);
+    le = parent->findChild<QLineEdit*>(S_ADR_POST_CODE);
+    if (le) le->setText(addr.postalCode);
+    le = parent->findChild<QLineEdit*>(S_ADR_COUNTRY);
+    if (le) le->setText(addr.country);
+}
+
+void ContactDialog::readAddress(QWidget *parent, PostalAddress &addr)
+{
+    QLineEdit* le;
+    le = parent->findChild<QLineEdit*>(S_ADR_OFFICE_BOX);
+    if (le) addr.offBox = le->text();
+    le = parent->findChild<QLineEdit*>(S_ADR_EXTENDED);
+    if (le) addr.extended = le->text();
+    le = parent->findChild<QLineEdit*>(S_ADR_STREET);
+    if (le) addr.street = le->text();
+    le = parent->findChild<QLineEdit*>(S_ADR_CITY);
+    if (le) addr.city = le->text();
+    le = parent->findChild<QLineEdit*>(S_ADR_REGION);
+    if (le) addr.region = le->text();
+    le = parent->findChild<QLineEdit*>(S_ADR_POST_CODE);
+    if (le) addr.postalCode = le->text();
+    le = parent->findChild<QLineEdit*>(S_ADR_COUNTRY);
+    if (le) addr.country = le->text();
 }
 
 void ContactDialog::addTriplet(int& count, QGridLayout* l, const QString& nameTemplate, const QString& itemValue)
@@ -423,7 +522,7 @@ void ContactDialog::on_btnAdd_clicked()
 
 void ContactDialog::itemTypeChanged(const QString &value)
 {
-    if (value==mixedType) {
+    if (value==S_MIXED_TYPE) {
         QComboBox *cbT = dynamic_cast<QComboBox*>(sender());
         // make dialog for mixed record
         if (sender()->objectName().contains("Phone"))
@@ -488,4 +587,13 @@ void ContactDialog::slotDelAnniversary()
 void ContactDialog::on_twContact_currentChanged(int)
 {
     resizeEvent(0);
+}
+
+void ContactDialog::on_btnSwapAddresses_clicked()
+{
+    PostalAddress bH, bW;
+    readAddress(ui->gbAddrHome, bH);
+    readAddress(ui->gbAddrWork, bW);
+    setAddress(ui->gbAddrHome, bW);
+    setAddress(ui->gbAddrWork, bH);
 }

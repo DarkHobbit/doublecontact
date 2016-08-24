@@ -16,6 +16,7 @@
 #include <QFileInfo>
 #include <QItemSelectionModel>
 #include <QMessageBox>
+#include <QTranslator>
 
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
@@ -27,8 +28,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    modLeft = new ContactModel(this, tr("New contact list"));
-    modRight = new ContactModel(this, tr("New contact list 2"));
+    modLeft = new ContactModel(this, S_NEW_LIST);
+    modRight = new ContactModel(this, S_NEW_LIST + " 2");
     proxyLeft  = new ContactSorterFilter(this);
     proxyRight  = new ContactSorterFilter(this);
     /*ui->tvLeft->setModel(modLeft);
@@ -45,16 +46,10 @@ MainWindow::MainWindow(QWidget *parent) :
     // Settings
     setDlg = new SettingsDialog(0);
     setDlg->readConfig();
+    setLanguage(setDlg->lang());
     // Track selected view
     connect(qApp, SIGNAL(focusChanged(QWidget*,QWidget*)), this, SLOT(anyFocusChanged(QWidget*,QWidget*)));
-    connect(ui->tvLeft->selectionModel(), SIGNAL(currentChanged(const QModelIndex&, const QModelIndex&)),
-            this, SLOT(setButtonsAccess()));
-    connect(ui->tvRight->selectionModel(), SIGNAL(currentChanged(const QModelIndex&, const QModelIndex&)),
-            this, SLOT(setButtonsAccess()));
-    connect(ui->tvLeft->selectionModel(), SIGNAL(selectionChanged( const QItemSelection&, const QItemSelection&)),
-            this, SLOT(on_Selection_Changed()));
-    connect(ui->tvRight->selectionModel(), SIGNAL(selectionChanged( const QItemSelection&, const QItemSelection&)),
-            this, SLOT(on_Selection_Changed()));
+    setSelectionModelEvents();
     connect(ui->tvLeft, SIGNAL(doubleClicked (const QModelIndex&)), this, SLOT(rowDoubleClicked(const QModelIndex&)));
     connect(ui->tvRight, SIGNAL(doubleClicked (const QModelIndex&)), this, SLOT(rowDoubleClicked(const QModelIndex&)));
     selectView(ui->tvLeft);
@@ -63,7 +58,7 @@ MainWindow::MainWindow(QWidget *parent) :
     if (qApp->arguments().contains("-d"))
         modLeft->testList();
     // File command-line data
-    else if (qApp->arguments().count()>1) {
+    else if (qApp->arguments().count()>1 && !qApp->arguments().contains("-q")) {
         modLeft->open(qApp->arguments()[1]);
         if (qApp->arguments().count()>2) {
             ui->action_Two_panels->setChecked(true);
@@ -71,14 +66,17 @@ MainWindow::MainWindow(QWidget *parent) :
         }
     }
     // Previous session file data
-    else if (setDlg->openLastFilesAtStartup() && QFile(setDlg->lastPath()).exists() && !(QFileInfo(setDlg->lastPath()).isDir()))
+    else if (!qApp->arguments().contains("-q")
+             && setDlg->openLastFilesAtStartup()
+             && QFile(setDlg->lastPath()).exists()
+             && !(QFileInfo(setDlg->lastPath()).isDir()))
         selectedModel->open(setDlg->lastPath());
     // Show data
     ui->action_Two_panels->setChecked(setDlg->showTwoPanels());
     ui->action_Sort->setChecked(setDlg->sortingEnabled());
     setSorting(setDlg->sortingEnabled());
     updateHeaders();
-    updateMode();
+    updateModeStatus();
     on_action_Two_panels_toggled(ui->action_Two_panels->isChecked());
 }
 
@@ -125,7 +123,7 @@ void MainWindow::on_action_Two_panels_toggled(bool showTwoPanels)
     }
     setButtonsAccess();
     setDlg->setShowTwoPanels(showTwoPanels);
-    updateMode();
+    updateModeStatus();
 }
 
 void MainWindow::on_btnExit_clicked()
@@ -177,7 +175,7 @@ void MainWindow::on_action_Add_triggered()
         ContactItem c;
         d->getData(c);
         selectedModel->addRow(c);
-        selectedModel->setViewMode(selectedModel->viewMode(), oppositeModel());
+        updateViewMode();
     }
     delete d;
 }
@@ -198,7 +196,7 @@ void MainWindow::on_action_Edit_triggered()
     if (d->result()==QDialog::Accepted) {
         d->getData(c);
         selectedModel->endEditRow(selection[0]);
-        selectedModel->setViewMode(selectedModel->viewMode(), oppositeModel());
+        updateViewMode();
     }
     delete d;
 }
@@ -217,9 +215,10 @@ void MainWindow::rowDoubleClicked(const QModelIndex &)
 void MainWindow::on_action_Remove_triggered()
 {
     if (!checkSelection()) return;
-    if (QMessageBox::question(0, tr("Confirm"), tr("Are You really want to delete selected items?"), tr("Yes"), tr("No"))==0)
+    if (QMessageBox::question(0, S_CONFIRM, tr("Are You really want to delete selected items?"),
+            QMessageBox::Yes, QMessageBox::No)==QMessageBox::Yes)
         selectedModel->removeAnyRows(selection);
-    selectedModel->setViewMode(selectedModel->viewMode(), oppositeModel());
+    updateViewMode();
     updateHeaders();
 }
 
@@ -235,7 +234,7 @@ void MainWindow::on_action_Copy_triggered()
     ContactModel* target = oppositeModel();
     selectedModel->copyRows(selection, target);
     selectedView->clearSelection();
-    selectedModel->setViewMode(selectedModel->viewMode(), oppositeModel());
+    updateViewMode();
     setButtonsAccess();
     updateHeaders();
 }
@@ -253,7 +252,7 @@ void MainWindow::on_action_Move_triggered()
     selectedModel->copyRows(selection, target);
     selectedModel->removeAnyRows(selection);
     selectedView->clearSelection();
-    selectedModel->setViewMode(selectedModel->viewMode(), oppositeModel());
+    updateViewMode();
     setButtonsAccess();
     updateHeaders();
 }
@@ -268,7 +267,16 @@ void MainWindow::on_action_Swap_names_triggered()
 {
     if (!checkSelection()) return;
     selectedModel->swapNames(selection);
-    selectedModel->setViewMode(selectedModel->viewMode(), oppositeModel());
+    updateViewMode();
+    updateHeaders();
+}
+
+// Split names
+void MainWindow::on_actionS_plit_names_triggered()
+{
+    if (!checkSelection()) return;
+    selectedModel->splitNames(selection);
+    updateViewMode();
     updateHeaders();
 }
 
@@ -286,7 +294,7 @@ void MainWindow::on_actionCo_mpare_triggered()
     // Compare on
     if (selectedModel->viewMode()==ContactModel::Standard) {
         if (!ui->tvRight->isVisible() || oppositeModel()->rowCount()==0 || selectedModel->rowCount()==0) {
-            QMessageBox::critical(0, tr("Error"),
+            QMessageBox::critical(0, S_ERROR,
                 tr("Compare mode requires show two panels and load contact lists in both panels"));
             return;
         }
@@ -295,6 +303,7 @@ void MainWindow::on_actionCo_mpare_triggered()
     // Compare off
     else
         selectedModel->setViewMode(ContactModel::Standard, oppositeModel());
+    updateModeStatus();
 }
 
 void MainWindow::on_btnCompare_clicked()
@@ -307,7 +316,7 @@ void MainWindow::on_action_Sort_toggled(bool needSort)
 {
     setSorting(needSort);
     setDlg->setSortingEnabled(needSort);
-    updateMode();
+    updateModeStatus();
 }
 
 void MainWindow::on_btnSort_clicked()
@@ -328,11 +337,11 @@ bool MainWindow::checkSelection(bool errorIfNoSelected, bool onlyOneRowAllowed)
     QModelIndexList proxySelection = selectedView->selectionModel()->selectedRows();
     if (proxySelection.count()==0) {
         if (errorIfNoSelected)
-            QMessageBox::critical(0, tr("Error"), tr("Record not selected"));
+            QMessageBox::critical(0, S_ERROR, tr("Record not selected"));
         return false;
     }
-    if (proxySelection.count()>1) {
-        QMessageBox::critical(0, tr("Error"), tr("Group editing not impemented, select one record"));
+    if (onlyOneRowAllowed && (proxySelection.count()>1)) {
+        QMessageBox::critical(0, S_ERROR, tr("Group editing not impemented, select one record"));
         return false;
     }
     // If proxy models works...
@@ -350,6 +359,25 @@ void MainWindow::setSorting(bool needSort)
     int sortColumn = needSort ? 0 : -1;
     proxyLeft->sort(sortColumn);
     proxyRight->sort(sortColumn);
+}
+
+void MainWindow::setLanguage(const QString &language)
+{
+    QString langCode = "en_GB";
+    if (language==QString::fromUtf8("Русский")) // TODO dyn load?
+        langCode = "ru_RU";
+    QString langPath = qApp->applicationDirPath()+QDir::separator()+QString("doublecontact_%1.qm").arg(langCode);
+    QTranslator tr;
+    if (!tr.load(langPath))
+        QMessageBox::critical(0, S_ERROR, "UI loading error");
+    else {
+        qApp->installTranslator(&tr);
+        ui->retranslateUi(this);
+        Phone::standardTypes.fill();
+        Email::standardTypes.fill();
+        contactColumnHeaders.fill();
+        qApp->processEvents();
+    }
 }
 
 void MainWindow::updateListHeader(ContactModel *model, QLabel *header)
@@ -379,7 +407,7 @@ void MainWindow::setButtonsAccess()
     ui->btnSwapNames->setEnabled(hasSelectedRows);
 }
 
-void MainWindow::on_Selection_Changed()
+void MainWindow::selectionChanged()
 {
     static bool lockSelection = false;
     // For compare mode, select pair item(s)
@@ -425,14 +453,41 @@ void MainWindow::updateHeaders()
                        tr("Double Contact - %1").arg(selectedHeader->text()));
 }
 
-void MainWindow::updateMode()
+void MainWindow::updateModeStatus()
 {
     QString sm = tr("Mode: ");
     sm += (setDlg->showTwoPanels() ? tr("two panels") : tr("one panel")) + ", ";
     sm += (ui->action_Sort->isChecked() ? tr("sorted") : tr("not sorted")) + ", ";
-    // TODO save sorting state in settings and restore it!
-    sm += tr("simple editing"); // TODO for manual search, auto compare, duplicate search
+    switch (modLeft->viewMode()) {
+    case ContactModel::Standard:
+        sm += tr("simple editing");
+        break;
+    case ContactModel::CompareMain:
+    case ContactModel::CompareOpposite:
+        sm += tr("compare");
+        break;
+    default:
+        // TODO duplicate search
+        break;
+    }
     lbMode->setText(sm);
+}
+
+void MainWindow::updateViewMode()
+{
+    selectedModel->setViewMode(selectedModel->viewMode(), oppositeModel());
+}
+
+void MainWindow::setSelectionModelEvents()
+{
+    connect(ui->tvLeft->selectionModel(), SIGNAL(currentChanged(const QModelIndex&, const QModelIndex&)),
+            this, SLOT(setButtonsAccess()));
+    connect(ui->tvRight->selectionModel(), SIGNAL(currentChanged(const QModelIndex&, const QModelIndex&)),
+            this, SLOT(setButtonsAccess()));
+    connect(ui->tvLeft->selectionModel(), SIGNAL(selectionChanged( const QItemSelection&, const QItemSelection&)),
+            this, SLOT(selectionChanged()));
+    connect(ui->tvRight->selectionModel(), SIGNAL(selectionChanged( const QItemSelection&, const QItemSelection&)),
+            this, SLOT(selectionChanged()));
 }
 
 ContactModel* MainWindow::oppositeModel()
@@ -444,7 +499,7 @@ void MainWindow::askSaveChanges(QCloseEvent *event, ContactModel *model)
 {
     if (!model->changed())
         return;
-    int res = QMessageBox::question(0, tr("Confirmation"),
+    int res = QMessageBox::question(0, S_CONFIRM,
             tr("'%1' was changed.\nSave changes?").arg(model->source()),
             QMessageBox::Yes, QMessageBox::No, QMessageBox::Cancel);
     switch (res) {
@@ -468,7 +523,10 @@ void MainWindow::updateConfig()
     modLeft->setVisibleColumns(setDlg->columnNames());
     if (modRight)
         modRight->setVisibleColumns(setDlg->columnNames());
-    // TODO lang, surname...
+    // Language
+    setDlg->writeConfig();
+    if (setDlg->langChanged())
+        setLanguage(setDlg->lang());
 }
 
 void MainWindow::on_action_Other_panel_triggered()
@@ -483,10 +541,8 @@ void MainWindow::on_action_Other_panel_triggered()
 void MainWindow::on_actionSettings_triggered()
 {
     setDlg->exec();
-    if (setDlg->result()==QDialog::Accepted) {
-        setDlg->writeConfig();
+    if (setDlg->result()==QDialog::Accepted)
         updateConfig();
-    }
 }
 
 void MainWindow::on_action_Close_triggered()
@@ -523,16 +579,114 @@ void MainWindow::on_action_Filter_triggered()
 void MainWindow::on_actionCompare_Result_triggered()
 {
     // TODO check two panels and compare mode
+    if ((!ui->tvRight->isVisible())
+            || (selectedModel->viewMode()!=ContactModel::CompareMain
+            && selectedModel->viewMode()!=ContactModel::CompareOpposite)) {
+        QMessageBox::critical(0, S_ERROR, tr("Two panels and compare mode needed for this operation"));
+        return;
+    }
+    bool wasRight = (selectedModel==modRight);
+    if (wasRight)
+            on_action_Other_panel_triggered(); // to left
     if (!checkSelection(true, true)) return;
+    QModelIndex leftSelection = selection[0];
+    ContactItem& left = modLeft->beginEditRow(leftSelection);
+    on_action_Other_panel_triggered(); // to right
+    if (!checkSelection(true, true)) return;
+    ContactItem& right = modRight->beginEditRow(selection[0]);
     CompareDialog* d = new CompareDialog(0);
-    ContactItem& left = selectedModel->beginEditRow(selection[0]);
-    on_action_Other_panel_triggered(); // TODO G-code, need move oppositeView to selection proc
-    if (!checkSelection(true, true)) return;
-    ContactItem& right = selectedModel->beginEditRow(selection[0]);
-    on_action_Other_panel_triggered(); // TODO G-code, need move oppositeView to selection proc
+    d->setHeaders(tr("Left item"), tr("Right item"));
     d->setData(left, right);
     d->exec();
     if (d->result()==QDialog::Accepted)
         d->getData(left, right);
+        modLeft->endEditRow(leftSelection);
+        modRight->endEditRow(selection[0]);
     delete d;
+    if (!wasRight)
+        on_action_Other_panel_triggered(); // to left
+}
+
+void MainWindow::on_action_Drop_slashes_triggered()
+{
+    if (!checkSelection()) return;
+    selectedModel->dropSlashes(selection);
+    updateViewMode();
+    updateHeaders();
+}
+
+void MainWindow::on_action_Join_triggered()
+{
+    if (!checkSelection()) return;
+    // Operation required strongly 2 records
+    if (selection.count()!=2) {
+        QMessageBox::critical(0, S_ERROR, tr("Strongly two records on current panel must be selected for this operation"));
+        return;
+    }
+    ContactItem& i1 = selectedModel->beginEditRow(selection[0]);
+    ContactItem& i2 = selectedModel->beginEditRow(selection[1]);
+    CompareDialog* d = new CompareDialog(0);
+    d->setHeaders(tr("Item 1"), tr("Item 2"));
+    d->setData(i1, i2);
+    d->exec();
+    if (d->result()==QDialog::Accepted) {
+        d->getData(i1, i2);
+        selectedModel->endEditRow(selection[0]);
+        selectedModel->endEditRow(selection[1]);
+        updateViewMode();
+        updateHeaders();
+    }
+    delete d;
+}
+
+void MainWindow::on_actionSp_lit_triggered()
+{
+    if (!checkSelection()) return;
+    selectedModel->splitNumbers(selection);
+    updateViewMode();
+    updateHeaders();
+}
+
+void MainWindow::on_action_Generate_full_name_triggered()
+{
+    if (!checkSelection()) return;
+    selectedModel->generateFullNames(selection);
+    updateViewMode();
+    updateHeaders();
+}
+
+void MainWindow::on_actionDrop_full_name_triggered()
+{
+    if (!checkSelection()) return;
+    selectedModel->dropFullNames(selection);
+    updateViewMode();
+    updateHeaders();
+}
+
+
+void MainWindow::on_actionIntl_phone_prefix_triggered()
+{
+    if (!checkSelection()) return;
+    selectedModel->intlPhonePrefix(selection);
+    updateViewMode();
+    updateHeaders();
+}
+
+void MainWindow::on_actionS_wap_Panels_triggered()
+{
+    if (!ui->tvRight->isVisible()) {
+        QMessageBox::critical(0, S_ERROR,
+            tr("Operation requires show two panels"));
+        return;
+    }
+    ContactModel* bufModel = modLeft;
+    modLeft = modRight;
+    modRight = bufModel;
+    ContactSorterFilter * bufProxy = proxyLeft;
+    proxyLeft = proxyRight;
+    proxyRight = bufProxy;
+    ui->tvLeft->setModel(proxyLeft);
+    ui->tvRight->setModel(proxyRight);
+    updateHeaders();
+    setSelectionModelEvents();
 }

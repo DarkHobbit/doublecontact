@@ -19,6 +19,8 @@
 #include <QStringList>
 #include "globals.h"
 
+#define MAX_COMPARE_PRIORITY_LEVEL 5
+
 struct TagValue { // for non-editing ang unknown tags
     QString tag, value;
     TagValue(const QString& _tag, const QString& _value);
@@ -33,6 +35,7 @@ struct Phone {
     static class StandardTypes: public ::StandardTypes {
         public:
         StandardTypes();
+        void fill();
     } standardTypes;
 };
 
@@ -43,6 +46,7 @@ struct Email {
     static class StandardTypes: public ::StandardTypes {
         public:
         StandardTypes();
+        void fill();
     } standardTypes;
 };
 
@@ -51,8 +55,28 @@ struct DateItem { // Birthday and anniversaries
     bool hasTime; // false if date only was in file
     bool hasTimeZone; // record contains TZ info
     short zoneHour, zoneMin; // TZ value
+    enum DateFormat {
+        ISOBasic,    // basic ISO 8601 format (in general, for vCard 2.1)
+        ISOExtended, // extended ISO 8601 format (in general, for vCard 3.0)
+        Local        // human-readable, according current locale
+    };
     bool operator ==(const DateItem& d);
     void clear();
+    QString toString(DateFormat format) const;
+    inline bool isEmpty() const {return value.isNull(); }
+};
+
+struct PostalAddress {
+    QString offBox, extended, street, city, region, postalCode, country;
+    QStringList paTypes; // home, work, dom, postal, etc.
+    bool operator ==(const PostalAddress& a);
+    void clear();
+    bool isEmpty() const;
+    static class StandardTypes: public ::StandardTypes {
+        public:
+        StandardTypes();
+        void fill();
+    } standardTypes;
 };
 
 struct ContactItem {
@@ -62,6 +86,7 @@ struct ContactItem {
     QList<Email> emails;
     DateItem birthday;
     QList<DateItem> anniversaries;
+    QString sortString;
     QString description;
     // Photo
     QString photoType; // URL, JPEG, PNG or unsupported, but stored value
@@ -70,7 +95,10 @@ struct ContactItem {
     // Work
     QString organization, title;
     // TODO role, logo?
-    // TODO address
+    // Addresses
+    PostalAddress addrHome, addrWork; // TODO are vCards with more addresses exists in wild nature?
+    // Internet
+    QString nickName, url, jabberName, icqName, skypeName;
     // Format internals
     QString id; // optional record unique id (udx Sequence, vcf X-IRMC-LUID, etc)
     QString originalFormat;
@@ -87,13 +115,17 @@ struct ContactItem {
     } pairState;
     ContactItem* pairItem;
     int pairIndex;
-    // Aux methods
+    // Editing
     void clear();
     bool swapNames();
-    // bool splitNames(int index) TODO
+    bool splitNames(); // TODO int index
+    bool dropSlashes();
+    bool intlPhonePrefix();
+    // Aux methods
     void calculateFields();
-    QString formatNames();
-    bool similarTo(const ContactItem& pair);
+    QString formatNames() const;
+    void dropFinalEmptyNames(); // If empty parts not in-middle, remove it
+    bool similarTo(const ContactItem& pair, int priorityLevel);
     bool identicalTo(const ContactItem& pair);
 };
 
