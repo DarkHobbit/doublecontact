@@ -467,8 +467,8 @@ QString VCardData::encodeValue(const QString &src, int prefixLen) const
         return buf;
     }
     else {
-        //return codec->fromUnicode(src.toLocal8Bit());
-        return src;
+        return QString::fromLocal8Bit(codec->fromUnicode(src));
+        //return src; // Linux
     }
 }
 
