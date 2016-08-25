@@ -466,10 +466,8 @@ QString VCardData::encodeValue(const QString &src, int prefixLen) const
         // Rule 4. Line Breaks - apply in caller
         return buf;
     }
-    else {
+    else
         return QString::fromLocal8Bit(codec->fromUnicode(src));
-        //return src; // Linux
-    }
 }
 
 QString VCardData::encodeAll(const QString &tag, const QStringList *aTypes, bool forceCharSet, const QString &value) const
