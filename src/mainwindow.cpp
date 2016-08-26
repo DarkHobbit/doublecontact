@@ -22,6 +22,7 @@
 #include "ui_mainwindow.h"
 #include "contactdialog.h"
 #include "comparedialog.h"
+#include "multicontactdialog.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -188,17 +189,37 @@ void MainWindow::on_btnAdd_clicked()
 // Edit
 void MainWindow::on_action_Edit_triggered()
 {
-    if (!checkSelection(true, true)) return;
-    ContactDialog* d = new ContactDialog(0);
-    ContactItem& c = selectedModel->beginEditRow(selection[0]);
-    d->setData(c);
-    d->exec();
-    if (d->result()==QDialog::Accepted) {
-        d->getData(c);
-        selectedModel->endEditRow(selection[0]);
-        updateViewMode();
+    if (!checkSelection(true/*, true TODO change errmsg or drop 2nd checkSelection param and check in comparizon */)) return;
+    if (selection.count()==1) // Ordinary edition
+    {
+        ContactDialog* d = new ContactDialog(0);
+        ContactItem& c = selectedModel->beginEditRow(selection[0]);
+        d->setData(c);
+        d->exec();
+        if (d->result()==QDialog::Accepted) {
+            d->getData(c);
+            selectedModel->endEditRow(selection[0]);
+            updateViewMode();
+        }
+        delete d;
     }
-    delete d;
+    else
+    if (QMessageBox::question(0, S_CONFIRM, tr("Are You really want to edit more than one record?\nOnly some fields can this edited in this mode"),
+                QMessageBox::Yes, QMessageBox::No)==QMessageBox::Yes)
+    { // Multi-record edition
+        MultiContactDialog* d = new MultiContactDialog(0);
+        for (int i=0; i<selection.count(); i++)
+            d->setData(selectedModel->beginEditRow(selection[i]), i==0);
+        d->exec();
+        if (d->result()==QDialog::Accepted) {
+            for (int i=0; i<selection.count(); i++) {
+                d->getData(selectedModel->beginEditRow(selection[i]));
+                selectedModel->endEditRow(selection[i]);
+            }
+            updateViewMode();
+        }
+        delete d;
+    }
 }
 
 void MainWindow::on_btnEdit_clicked()
@@ -396,13 +417,13 @@ void MainWindow::setButtonsAccess()
     ui->action_Copy->setEnabled(hasSelectedRows && twoPanels);
     ui->action_Move->setEnabled(hasSelectedRows && twoPanels);
     ui->actionCo_mpare->setEnabled(twoPanels);
-    ui->action_Edit->setEnabled(hasSelectedRows && (selectedView->selectionModel()->selectedRows().count()==1));
+    ui->action_Edit->setEnabled(hasSelectedRows);
     ui->action_Remove->setEnabled(hasSelectedRows);
     ui->action_Swap_names->setEnabled(hasSelectedRows);
     ui->btnCopy->setEnabled(hasSelectedRows && twoPanels);
     ui->btnMove->setEnabled(hasSelectedRows && twoPanels);
     ui->btnCompare->setEnabled(hasSelectedRows && twoPanels);
-    ui->btnEdit->setEnabled(hasSelectedRows && (selectedView->selectionModel()->selectedRows().count()==1));
+    ui->btnEdit->setEnabled(hasSelectedRows);
     ui->btnRemove->setEnabled(hasSelectedRows);
     ui->btnSwapNames->setEnabled(hasSelectedRows);
 }

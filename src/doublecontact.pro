@@ -24,7 +24,8 @@ SOURCES += main.cpp \
     contactsorterfilter.cpp \
     formats/files/udxfile.cpp \
     comparecontainers.cpp \
-    comparedialog.cpp
+    comparedialog.cpp \
+    multicontactdialog.cpp
 HEADERS += mainwindow.h \
     contactmodel.h \
     contactlist.h \
@@ -42,14 +43,16 @@ HEADERS += mainwindow.h \
     contactsorterfilter.h \
     formats/files/udxfile.h \
     comparecontainers.h \
-    comparedialog.h
+    comparedialog.h \
+    multicontactdialog.h
 FORMS += mainwindow.ui \
     contactdialog.ui \
     phonetypedialog.ui \
     logwindow.ui \
     settingsdialog.ui \
     datedetailsdialog.ui \
-    comparedialog.ui
+    comparedialog.ui \
+    multicontactdialog.ui
 unix { 
     OBJECTS_DIR = .obj
     UI_DIR = .ui

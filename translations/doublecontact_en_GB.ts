@@ -373,7 +373,7 @@
     <name>MainWindow</name>
     <message>
         <location filename="../src/mainwindow.ui" line="14"/>
-        <location filename="../src/mainwindow.cpp" line="453"/>
+        <location filename="../src/mainwindow.cpp" line="473"/>
         <source>Double Contact</source>
         <translation type="unfinished"></translation>
     </message>
@@ -695,104 +695,133 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="219"/>
+        <location filename="../src/mainwindow.cpp" line="207"/>
+        <source>Are You really want to edit more than one record?
+Only some fields can this edited in this mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="239"/>
         <source>Are You really want to delete selected items?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="299"/>
+        <location filename="../src/mainwindow.cpp" line="319"/>
         <source>Compare mode requires show two panels and load contact lists in both panels</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="341"/>
+        <location filename="../src/mainwindow.cpp" line="361"/>
         <source>Record not selected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="345"/>
+        <location filename="../src/mainwindow.cpp" line="365"/>
         <source>Group editing not impemented, select one record</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="454"/>
+        <location filename="../src/mainwindow.cpp" line="474"/>
         <source>Double Contact - %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="459"/>
+        <location filename="../src/mainwindow.cpp" line="479"/>
         <source>Mode: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="460"/>
+        <location filename="../src/mainwindow.cpp" line="480"/>
         <source>two panels</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="460"/>
+        <location filename="../src/mainwindow.cpp" line="480"/>
         <source>one panel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="461"/>
+        <location filename="../src/mainwindow.cpp" line="481"/>
         <source>sorted</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="461"/>
+        <location filename="../src/mainwindow.cpp" line="481"/>
         <source>not sorted</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="464"/>
+        <location filename="../src/mainwindow.cpp" line="484"/>
         <source>simple editing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="468"/>
+        <location filename="../src/mainwindow.cpp" line="488"/>
         <source>compare</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="504"/>
+        <location filename="../src/mainwindow.cpp" line="524"/>
         <source>&apos;%1&apos; was changed.
 Save changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="586"/>
+        <location filename="../src/mainwindow.cpp" line="606"/>
         <source>Two panels and compare mode needed for this operation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="599"/>
+        <location filename="../src/mainwindow.cpp" line="619"/>
         <source>Left item</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="599"/>
+        <location filename="../src/mainwindow.cpp" line="619"/>
         <source>Right item</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="624"/>
+        <location filename="../src/mainwindow.cpp" line="644"/>
         <source>Strongly two records on current panel must be selected for this operation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="630"/>
+        <location filename="../src/mainwindow.cpp" line="650"/>
         <source>Item 1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="630"/>
+        <location filename="../src/mainwindow.cpp" line="650"/>
         <source>Item 2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="680"/>
+        <location filename="../src/mainwindow.cpp" line="700"/>
         <source>Operation requires show two panels</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>MultiContactDialog</name>
+    <message>
+        <location filename="../src/multicontactdialog.ui" line="14"/>
+        <source>Edit some contacts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/multicontactdialog.ui" line="22"/>
+        <source>Title</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/multicontactdialog.ui" line="32"/>
+        <source>Organization</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/multicontactdialog.ui" line="42"/>
+        <source>Description</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -916,63 +945,63 @@ Save changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/formats/common/vcarddata.cpp" line="49"/>
+        <location filename="../src/formats/common/vcarddata.cpp" line="50"/>
         <source>Unclosed record before line %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/formats/common/vcarddata.cpp" line="90"/>
+        <location filename="../src/formats/common/vcarddata.cpp" line="91"/>
         <source>Unexpected TYPE appearance at line %1: tag %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/formats/common/vcarddata.cpp" line="111"/>
+        <location filename="../src/formats/common/vcarddata.cpp" line="112"/>
         <source>Missing phone type at line %1: %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/formats/common/vcarddata.cpp" line="145"/>
+        <location filename="../src/formats/common/vcarddata.cpp" line="146"/>
         <source>Unsupported photo type at line %1: %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/formats/common/vcarddata.cpp" line="156"/>
+        <location filename="../src/formats/common/vcarddata.cpp" line="157"/>
         <source>Unknown encoding type at line %1: %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/formats/common/vcarddata.cpp" line="169"/>
+        <location filename="../src/formats/common/vcarddata.cpp" line="170"/>
         <source>Unknown address type at line %1: %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/formats/common/vcarddata.cpp" line="201"/>
+        <location filename="../src/formats/common/vcarddata.cpp" line="202"/>
         <source>Last section not closed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/formats/common/vcarddata.cpp" line="208"/>
+        <location filename="../src/formats/common/vcarddata.cpp" line="209"/>
         <location filename="../src/formats/files/udxfile.cpp" line="162"/>
         <source>%1 unknown tags found</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/formats/common/vcarddata.cpp" line="316"/>
+        <location filename="../src/formats/common/vcarddata.cpp" line="325"/>
         <source>Unknown charset: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/formats/common/vcarddata.cpp" line="339"/>
+        <location filename="../src/formats/common/vcarddata.cpp" line="348"/>
         <source>Unknown encoding: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/formats/common/vcarddata.cpp" line="362"/>
+        <location filename="../src/formats/common/vcarddata.cpp" line="371"/>
         <source>Invalid timezone: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/formats/common/vcarddata.cpp" line="381"/>
+        <location filename="../src/formats/common/vcarddata.cpp" line="390"/>
         <source>Invalid datetime: </source>
         <translation type="unfinished"></translation>
     </message>
