@@ -71,6 +71,7 @@ struct PostalAddress {
     QStringList paTypes; // home, work, dom, postal, etc.
     bool operator ==(const PostalAddress& a);
     void clear();
+    QString toString() const;
     bool isEmpty() const;
     static class StandardTypes: public ::StandardTypes {
         public:

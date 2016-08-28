@@ -438,6 +438,14 @@ void PostalAddress::clear()
     country.clear();
 }
 
+QString PostalAddress::toString() const
+{
+    return offBox + ", " + extended
+            + ", " + street + " st., " + city + ", " + region
+            + ", " + postalCode + ", " + country;
+    // TODO make localized output
+}
+
 bool PostalAddress::isEmpty() const
 {
     return offBox.isEmpty() && extended.isEmpty()

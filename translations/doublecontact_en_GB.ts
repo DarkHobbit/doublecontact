@@ -865,7 +865,7 @@ Save changes?</source>
     <name>QObject</name>
     <message>
         <location filename="../src/contactlist.cpp" line="42"/>
-        <location filename="../src/contactlist.cpp" line="458"/>
+        <location filename="../src/contactlist.cpp" line="465"/>
         <source>Home</source>
         <translation type="unfinished"></translation>
     </message>
@@ -876,14 +876,14 @@ Save changes?</source>
     </message>
     <message>
         <location filename="../src/contactlist.cpp" line="44"/>
-        <location filename="../src/contactlist.cpp" line="459"/>
+        <location filename="../src/contactlist.cpp" line="466"/>
         <source>Work</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/contactlist.cpp" line="45"/>
         <location filename="../src/contactlist.cpp" line="82"/>
-        <location filename="../src/contactlist.cpp" line="460"/>
+        <location filename="../src/contactlist.cpp" line="467"/>
         <source>Preferable</source>
         <translation type="unfinished"></translation>
     </message>
@@ -953,22 +953,22 @@ Save changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/contactlist.cpp" line="461"/>
+        <location filename="../src/contactlist.cpp" line="468"/>
         <source>Domestic</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/contactlist.cpp" line="462"/>
+        <location filename="../src/contactlist.cpp" line="469"/>
         <source>International</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/contactlist.cpp" line="463"/>
+        <location filename="../src/contactlist.cpp" line="470"/>
         <source>Postal</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/contactlist.cpp" line="464"/>
+        <location filename="../src/contactlist.cpp" line="471"/>
         <source>Parcel</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1165,127 +1165,142 @@ line %3, col %4
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="39"/>
+        <location filename="../src/globals.h" line="42"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="40"/>
+        <location filename="../src/globals.h" line="43"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="41"/>
+        <location filename="../src/globals.h" line="44"/>
         <source>Confirmation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="42"/>
+        <location filename="../src/globals.h" line="45"/>
         <source>New contact list</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="44"/>
+        <location filename="../src/globals.h" line="47"/>
         <source>mixed...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="46"/>
+        <location filename="../src/globals.h" line="49"/>
         <source>Firstname</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="47"/>
+        <location filename="../src/globals.h" line="50"/>
         <source>Lastname</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="48"/>
+        <location filename="../src/globals.h" line="51"/>
         <source>Middlename</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="49"/>
+        <location filename="../src/globals.h" line="52"/>
         <source>Full name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="50"/>
+        <location filename="../src/globals.h" line="53"/>
         <source>Generic name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="51"/>
+        <location filename="../src/globals.h" line="54"/>
         <source>Phone</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="52"/>
+        <location filename="../src/globals.h" line="55"/>
         <source>Email</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="53"/>
+        <location filename="../src/globals.h" line="56"/>
         <source>Birthday</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="54"/>
-        <source>Has phone</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/globals.h" line="55"/>
-        <source>Has email</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/globals.h" line="56"/>
-        <source>Has birthday</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/globals.h" line="57"/>
-        <source>Some phones</source>
+        <source>Job title</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/globals.h" line="58"/>
-        <source>Some emails</source>
+        <source>Organization</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/globals.h" line="59"/>
+        <source>Address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/globals.h" line="60"/>
-        <source>P.o. box</source>
+        <source>Has phone</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/globals.h" line="61"/>
-        <source>Ext.addr.</source>
+        <source>Has email</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/globals.h" line="62"/>
-        <source>Street</source>
+        <source>Has birthday</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/globals.h" line="63"/>
-        <source>City/Locality</source>
+        <source>Some phones</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/globals.h" line="64"/>
-        <source>Region</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/globals.h" line="65"/>
-        <source>Postal code</source>
+        <source>Some emails</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/globals.h" line="66"/>
+        <source>P.o. box</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/globals.h" line="67"/>
+        <source>Ext.addr.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/globals.h" line="68"/>
+        <source>Street</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/globals.h" line="69"/>
+        <source>City/Locality</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/globals.h" line="70"/>
+        <source>Region</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/globals.h" line="71"/>
+        <source>Postal code</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/globals.h" line="72"/>
         <source>Country</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1311,7 +1326,7 @@ line %3, col %4
 <context>
     <name>ReadOnlyTableDelegate</name>
     <message>
-        <location filename="../src/globals.cpp" line="70"/>
+        <location filename="../src/globals.cpp" line="73"/>
         <source>This table is read only</source>
         <translation type="unfinished"></translation>
     </message>

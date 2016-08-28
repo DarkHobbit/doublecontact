@@ -23,12 +23,15 @@
 enum ContactColumn {
   ccFirstName, ccLastName, ccMiddleName, // names
   ccFullName, ccGenericName, // formatted names
-  ccPhone, // first or preferred phone
-  ccEMail, // first or preferred email
-  ccBDay,  // birthday
-  ccHasPhone, // contact has at least one phone
-  ccHasEmail, // contact has at least one phone
-  ccHasBDay, // contact has birthday
+  ccPhone,      // first or preferred phone
+  ccEMail,      // first or preferred email
+  ccBDay,       // birthday
+  ccTitle,      // Job title
+  ccOrg,        // Organization
+  ccAddr,       // postal address
+  ccHasPhone,   // contact has at least one phone
+  ccHasEmail,   // contact has at least one phone
+  ccHasBDay,    // contact has birthday
   ccSomePhones, // contact has more than one phone
   ccSomeEmails, // contact has more than one email
   ccLast
@@ -51,6 +54,9 @@ enum ContactColumn {
 #define S_PHONE QObject::tr("Phone")
 #define S_EMAIL QObject::tr("Email")
 #define S_BDAY QObject::tr("Birthday")
+#define S_TITLE QObject::tr("Job title")
+#define S_ORG QObject::tr("Organization")
+#define S_ADDR QObject::tr("Address")
 #define S_HAS_PHONE QObject::tr("Has phone")
 #define S_HAS_EMAIL QObject::tr("Has email")
 #define S_HAS_BDAY QObject::tr("Has birthday")

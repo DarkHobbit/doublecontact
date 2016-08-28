@@ -866,7 +866,7 @@ Save changes?</source>
     <name>QObject</name>
     <message>
         <location filename="../src/contactlist.cpp" line="42"/>
-        <location filename="../src/contactlist.cpp" line="458"/>
+        <location filename="../src/contactlist.cpp" line="465"/>
         <source>Home</source>
         <translation>Домашний</translation>
     </message>
@@ -877,14 +877,14 @@ Save changes?</source>
     </message>
     <message>
         <location filename="../src/contactlist.cpp" line="44"/>
-        <location filename="../src/contactlist.cpp" line="459"/>
+        <location filename="../src/contactlist.cpp" line="466"/>
         <source>Work</source>
         <translation>Служебный</translation>
     </message>
     <message>
         <location filename="../src/contactlist.cpp" line="45"/>
         <location filename="../src/contactlist.cpp" line="82"/>
-        <location filename="../src/contactlist.cpp" line="460"/>
+        <location filename="../src/contactlist.cpp" line="467"/>
         <source>Preferable</source>
         <translation>Предпочтительный</translation>
     </message>
@@ -954,22 +954,22 @@ Save changes?</source>
         <translation>Странный пустой контакт</translation>
     </message>
     <message>
-        <location filename="../src/contactlist.cpp" line="461"/>
+        <location filename="../src/contactlist.cpp" line="468"/>
         <source>Domestic</source>
         <translation>Внутренний</translation>
     </message>
     <message>
-        <location filename="../src/contactlist.cpp" line="462"/>
+        <location filename="../src/contactlist.cpp" line="469"/>
         <source>International</source>
         <translation>Международный</translation>
     </message>
     <message>
-        <location filename="../src/contactlist.cpp" line="463"/>
+        <location filename="../src/contactlist.cpp" line="470"/>
         <source>Postal</source>
         <translation>Почтовый</translation>
     </message>
     <message>
-        <location filename="../src/contactlist.cpp" line="464"/>
+        <location filename="../src/contactlist.cpp" line="471"/>
         <source>Parcel</source>
         <translation>Для посылок</translation>
     </message>
@@ -1176,127 +1176,142 @@ line %3, col %4
 %1</translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="39"/>
+        <location filename="../src/globals.h" line="42"/>
         <source>Error</source>
         <translation>Ошибка</translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="40"/>
+        <location filename="../src/globals.h" line="43"/>
         <source>Warning</source>
         <translation>Предупреждение</translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="41"/>
+        <location filename="../src/globals.h" line="44"/>
         <source>Confirmation</source>
         <translation>Подтверждение</translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="42"/>
+        <location filename="../src/globals.h" line="45"/>
         <source>New contact list</source>
         <translation>Новая адресная книга</translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="44"/>
+        <location filename="../src/globals.h" line="47"/>
         <source>mixed...</source>
         <translation>составной...</translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="46"/>
+        <location filename="../src/globals.h" line="49"/>
         <source>Firstname</source>
         <translation>Имя</translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="47"/>
+        <location filename="../src/globals.h" line="50"/>
         <source>Lastname</source>
         <translation>Фамилия</translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="48"/>
+        <location filename="../src/globals.h" line="51"/>
         <source>Middlename</source>
         <translation>Отчество</translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="49"/>
+        <location filename="../src/globals.h" line="52"/>
         <source>Full name</source>
         <translation>Полное имя</translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="50"/>
+        <location filename="../src/globals.h" line="53"/>
         <source>Generic name</source>
         <translation>Универсальное имя</translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="51"/>
+        <location filename="../src/globals.h" line="54"/>
         <source>Phone</source>
         <translation>Телефон</translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="52"/>
+        <location filename="../src/globals.h" line="55"/>
         <source>Email</source>
         <translation>Электропочта</translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="53"/>
+        <location filename="../src/globals.h" line="56"/>
         <source>Birthday</source>
         <translation>День рождения</translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="54"/>
+        <location filename="../src/globals.h" line="57"/>
+        <source>Job title</source>
+        <translation>Должность</translation>
+    </message>
+    <message>
+        <location filename="../src/globals.h" line="58"/>
+        <source>Organization</source>
+        <translation>Организация</translation>
+    </message>
+    <message>
+        <location filename="../src/globals.h" line="59"/>
+        <source>Address</source>
+        <translation>Адрес</translation>
+    </message>
+    <message>
+        <location filename="../src/globals.h" line="60"/>
         <source>Has phone</source>
         <translation>Есть телефон</translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="55"/>
+        <location filename="../src/globals.h" line="61"/>
         <source>Has email</source>
         <translation>Есть почта</translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="56"/>
+        <location filename="../src/globals.h" line="62"/>
         <source>Has birthday</source>
         <translation>Есть день рождения</translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="57"/>
+        <location filename="../src/globals.h" line="63"/>
         <source>Some phones</source>
         <translation>Много телефонов</translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="58"/>
+        <location filename="../src/globals.h" line="64"/>
         <source>Some emails</source>
         <translation>Много ящиков</translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="60"/>
+        <location filename="../src/globals.h" line="66"/>
         <source>P.o. box</source>
         <translation>П/я</translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="61"/>
+        <location filename="../src/globals.h" line="67"/>
         <source>Ext.addr.</source>
         <translation>Расш.адрес</translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="62"/>
+        <location filename="../src/globals.h" line="68"/>
         <source>Street</source>
         <translation>Улица</translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="63"/>
+        <location filename="../src/globals.h" line="69"/>
         <source>City/Locality</source>
         <translation>Населённый пункт</translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="64"/>
+        <location filename="../src/globals.h" line="70"/>
         <source>Region</source>
         <translation>Регион</translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="65"/>
+        <location filename="../src/globals.h" line="71"/>
         <source>Postal code</source>
         <translation>Индекс</translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="66"/>
+        <location filename="../src/globals.h" line="72"/>
         <source>Country</source>
         <translation>Страна</translation>
     </message>
@@ -1325,7 +1340,7 @@ line %3, col %4
 <context>
     <name>ReadOnlyTableDelegate</name>
     <message>
-        <location filename="../src/globals.cpp" line="70"/>
+        <location filename="../src/globals.cpp" line="73"/>
         <source>This table is read only</source>
         <translation>Эту таблицу изменять нельзя</translation>
     </message>

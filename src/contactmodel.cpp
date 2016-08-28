@@ -99,6 +99,19 @@ QVariant ContactModel::data(const QModelIndex &index, int role) const
             case ccPhone:       return c.prefPhone;
             case ccEMail:       return c.prefEmail;
             case ccBDay:        return c.birthday.toString(DateItem::Local);
+            case ccTitle:       return c.title;
+            case ccOrg:         return c.organization;
+            case ccAddr:  {
+                QString res = "";
+                if (!c.addrHome.isEmpty()) {
+                    res += c.addrHome.toString();
+                    if (!c.addrWork.isEmpty())
+                        res += "; ";
+                }
+                if (!c.addrWork.isEmpty())
+                    res += c.addrWork.toString();
+                return res;
+            }
             case ccHasPhone:    return !c.phones.isEmpty() ? "*" : QVariant();
             case ccHasEmail:    return !c.emails.isEmpty() ? "*" : QVariant();
             case ccHasBDay:     return !c.birthday.isEmpty() ? "*" : QVariant();
