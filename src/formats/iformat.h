@@ -18,6 +18,14 @@
 #include <QStringList>
 #include "../contactlist.h"
 
+enum FormatType {
+    ftNew,
+    ftFile,
+    ftDirectory,
+    ftAuto // file or dir - only for open existing source
+    // TODO ftNetwork
+};
+
 class IFormat {
 public:
     virtual ~IFormat() {};

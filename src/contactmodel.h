@@ -28,6 +28,7 @@ public:
     explicit ContactModel(QObject *parent, const QString& source);
     ~ContactModel();
     QString source(); // file path or network source
+    FormatType sourceType();
     bool changed();    // has contact book unsaved changes?
     void setVisibleColumns(const ContactColumnList& colNames);
     enum ContactViewMode {
@@ -43,8 +44,8 @@ public:
     QVariant headerData(int section, Qt::Orientation orientation, int role) const;
     QVariant data(const QModelIndex &index, int role) const;
     // Save and open methods
-    bool open(const QString& path);
-    bool saveAs(const QString& path);
+    bool open(const QString& path, FormatType fType);
+    bool saveAs(const QString& path, FormatType fType);
     void close();
     // Contact operation methods
     void addRow(const ContactItem& c);
@@ -69,6 +70,7 @@ signals:
 public slots:
 private:
     QString _source; // file path or network source
+    FormatType _sourceType;
     bool _changed;   // has contact book unsaved changes?
     ContactList items;
     ContactColumnList visibleColumns;

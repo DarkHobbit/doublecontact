@@ -63,9 +63,10 @@ private slots:
     void on_tvRight_clicked(const QModelIndex&);
     void on_action_Sort_toggled(bool needSort);
     void on_btnSort_clicked();
-    void on_action_Open_triggered();
+    void on_action_OpenFile_triggered();
+    void on_action_OpenDir_triggered();
     void on_action_Save_triggered();
-    void on_actionSave_as_triggered();
+    void on_action_SaveAsFile_triggered();
     void rowDoubleClicked(const QModelIndex&);
     void on_actionSettings_triggered();
     void on_action_Close_triggered();
@@ -75,18 +76,13 @@ private slots:
     void on_actionCompare_Result_triggered();
     void on_actionS_plit_names_triggered();
     void on_action_Drop_slashes_triggered();
-
     void on_action_Generate_full_name_triggered();
-
     void on_action_Join_triggered();
-
     void on_actionDrop_full_name_triggered();
-
     void on_actionSp_lit_triggered();
-
     void on_actionIntl_phone_prefix_triggered();
-
     void on_actionS_wap_Panels_triggered();
+    void on_action_SaveAsDir_triggered();
 
 private:
     Ui::MainWindow *ui;

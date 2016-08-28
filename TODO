@@ -5,20 +5,20 @@ I:
 * more grid columns: title, org, mb. address 
 
 0.1:
-* groups support, if testdata will found
+* unify: --fullscreen but -d and -q (and begin write doc for option)
 * --fullscreen not works on Mac
-* unify: --fullscreen but -d and -q
 * "домашняя папка" вместо "домашний" в диалоге сравнения
 * заставить * исчезать сразу после save, без ресайза
-* vcf directory
 * см. все TODO в проекте
+* recent url list
+* switch to left panel at startup by default, if two panels works
 * photo editing (replace) support (and change status to beta)
 * export delete time from bday mode if receiver not support it
 * settings - fonts
-* experimental csv support (full write)
 * add statistics in List menu
 * проверить, как работает на charset, отличных от utf-8 (codec->toUnicode, у меня везде toLocal8Bit, а это, вероятно, неправильно)
 * About dialog
+* write PRODID!
 * full language selection support (not only russian)
 * ukrainian and belarussian language files (po, Rosetta or weblate)
 * проверить на всех доступных телефонах и андроидах
@@ -26,11 +26,16 @@ I:
 * рус. описание (особ. отображение, Generic Name, операции редактирования, про сплиттинг и др., багрепортинг, --fullscreen и другие ключи)
 * англ. описание?
 * set doxygen labels
+* make changelog file with 1 line :)
 
 * duplicate search (and merging, probably make unified merging dialog with panels compare merging)
 
 0.2:
-* full csv support
+* csv support
+* groups support, if testdata will found.
+Samples with CATEGORIES and apple-way https://forums.bitfire.at/topic/511/fastmail-carddav-and-groups/10 
+See also ownCloud and iCloud.
+LG Leon in vcf2.1 use X-GROUP (in my sample - empty)
 * C++11?
 
 0.3:

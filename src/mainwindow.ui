@@ -192,16 +192,30 @@
      <x>0</x>
      <y>0</y>
      <width>763</width>
-     <height>26</height>
+     <height>19</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_File">
     <property name="title">
      <string>&amp;File</string>
     </property>
-    <addaction name="action_Open"/>
+    <widget class="QMenu" name="menuOpen">
+     <property name="title">
+      <string>&amp;Open</string>
+     </property>
+     <addaction name="action_OpenFile"/>
+     <addaction name="action_OpenDir"/>
+    </widget>
+    <widget class="QMenu" name="menuSaveAs">
+     <property name="title">
+      <string>S&amp;ave as</string>
+     </property>
+     <addaction name="action_SaveAsFile"/>
+     <addaction name="action_SaveAsDir"/>
+    </widget>
+    <addaction name="menuOpen"/>
     <addaction name="action_Save"/>
-    <addaction name="actionSave_as"/>
+    <addaction name="menuSaveAs"/>
     <addaction name="action_Close"/>
     <addaction name="separator"/>
     <addaction name="actionE_xit"/>
@@ -265,12 +279,17 @@
    </attribute>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
-  <action name="action_Open">
+  <action name="action_OpenFile">
    <property name="text">
-    <string>&amp;Open</string>
+    <string>&amp;File</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="action_OpenDir">
+   <property name="text">
+    <string>&amp;Directory</string>
    </property>
   </action>
   <action name="action_Close">
@@ -292,12 +311,17 @@
     <string>Ctrl+S</string>
    </property>
   </action>
-  <action name="actionSave_as">
+  <action name="action_SaveAsFile">
    <property name="text">
-    <string>Save &amp;as...</string>
+    <string>&amp;File</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+Shift+S</string>
+   </property>
+  </action>
+  <action name="action_SaveAsDir">
+   <property name="text">
+    <string>&amp;Directory</string>
    </property>
   </action>
   <action name="actionE_xit">

@@ -12,13 +12,15 @@
  */
 
 #include <QtAlgorithms>
+#include <QFileInfo>
 #include <QMessageBox>
 
 #include "contactmodel.h"
 #include "logwindow.h"
+#include "formats/files/vcfdirectory.h"
 
 ContactModel::ContactModel(QObject *parent, const QString& source) :
-    QAbstractTableModel(parent), _source(source), _changed(false)
+    QAbstractTableModel(parent), _source(source), _sourceType(ftNew), _changed(false)
 {
     // Default visible columns
     visibleColumns.clear();
@@ -34,6 +36,11 @@ ContactModel::~ContactModel()
 QString ContactModel::source()
 {
     return _source;
+}
+
+FormatType ContactModel::sourceType()
+{
+    return _sourceType;
 }
 
 bool ContactModel::changed()
@@ -118,14 +125,29 @@ QVariant ContactModel::data(const QModelIndex &index, int role) const
     return QVariant();
 }
 
-bool ContactModel::open(const QString& path)
+bool ContactModel::open(const QString& path, FormatType fType)
 {
     if (path.isEmpty()) return false;
-    IFormat* format = factory.createObject(path);
+    FormatType realType = fType;
+    if (fType==ftAuto)
+        realType = QFileInfo(path).isDir() ? ftDirectory : ftFile;
+    IFormat* format = 0;
+    switch (realType) {
+    case ftFile:
+        format = factory.createObject(path);
+        break;
+    case ftDirectory:
+        format = new VCFDirectory();
+        break;
+    case ftAuto: // Only to avoid warning :(
+    case ftNew: // Only to avoid warning :(
+        break;
+    }
     if (!format) return false;
     beginResetModel();
     format->importRecords(path, items, false);
     _source = path;
+    _sourceType = realType;
     if (!format->errors().isEmpty()) {
         LogWindow* w = new LogWindow(0);
         w->setData(path, items, format->errors());
@@ -138,14 +160,28 @@ bool ContactModel::open(const QString& path)
     return true;
 }
 
-bool ContactModel::saveAs(const QString& path)
+bool ContactModel::saveAs(const QString& path, FormatType fType)
 {
     if (path.isEmpty()) return false;
-    IFormat* format = factory.createObject(path);
+    IFormat* format = 0;
+    switch (fType) {
+    case ftFile:
+        format = factory.createObject(path);
+        break;
+    case ftDirectory:
+        format = new VCFDirectory();
+        break;
+    case ftAuto:
+    case ftNew: // Only to avoid warning :(
+        return false;
+    }
     if (!format) return false;
     bool res = format->exportRecords(path, items);
-    if (res)
+    if (res) {
         _source = path;
+        _sourceType = fType;
+        _changed = false;
+    }
     if (!format->errors().isEmpty()) {
         LogWindow* w = new LogWindow(0);
         w->setData(path, items, format->errors());
@@ -153,7 +189,6 @@ bool ContactModel::saveAs(const QString& path)
         delete w;
     }
     delete format;
-    _changed = false;
     return res;
 }
 

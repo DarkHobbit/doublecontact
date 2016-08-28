@@ -13,7 +13,6 @@
 
 #include <QCloseEvent>
 #include <QFileDialog>
-#include <QFileInfo>
 #include <QItemSelectionModel>
 #include <QMessageBox>
 #include <QTranslator>
@@ -23,6 +22,7 @@
 #include "contactdialog.h"
 #include "comparedialog.h"
 #include "multicontactdialog.h"
+#include "formats/iformat.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -60,18 +60,17 @@ MainWindow::MainWindow(QWidget *parent) :
         modLeft->testList();
     // File command-line data
     else if (qApp->arguments().count()>1 && !qApp->arguments().contains("-q")) {
-        modLeft->open(qApp->arguments()[1]);
+        modLeft->open(qApp->arguments()[1], ftAuto);
         if (qApp->arguments().count()>2) {
             ui->action_Two_panels->setChecked(true);
-            modRight->open(qApp->arguments()[2]);
+            modRight->open(qApp->arguments()[2], ftAuto);
         }
     }
     // Previous session file data
     else if (!qApp->arguments().contains("-q")
              && setDlg->openLastFilesAtStartup()
-             && QFile(setDlg->lastPath()).exists()
-             && !(QFileInfo(setDlg->lastPath()).isDir()))
-        selectedModel->open(setDlg->lastPath());
+             && QFile(setDlg->lastPath()).exists())
+        selectedModel->open(setDlg->lastPath(), ftAuto);
     // Show data
     ui->action_Two_panels->setChecked(setDlg->showTwoPanels());
     ui->action_Sort->setChecked(setDlg->sortingEnabled());
@@ -133,14 +132,27 @@ void MainWindow::on_btnExit_clicked()
 }
 
 // Open
-void MainWindow::on_action_Open_triggered()
+void MainWindow::on_action_OpenFile_triggered()
 {
-    // TODO ask if model has unsaved changes (after save implementation)
+    // TODO ask if model has unsaved changes (after askSaveChanges refactoring)
     QString selectedFilter;
     QString path = QFileDialog::getOpenFileName(0, tr("Open contact file"),
         setDlg->lastPath(), FormatFactory::supportedFilters().join(";;"), &selectedFilter);
     if (!path.isEmpty()) {
-        selectedModel->open(path);
+        selectedModel->open(path, ftFile);
+        setDlg->setLastPath(path);
+        updateHeaders();
+    }
+}
+
+void MainWindow::on_action_OpenDir_triggered()
+{
+    // TODO ask if model has unsaved changes (after askSaveChanges refactoring)
+    QString path = QFileDialog::getExistingDirectory(this,
+        tr("Open VCF Directory"), setDlg->lastPath(),
+        QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
+    if (!path.isEmpty()) {
+        selectedModel->open(path, ftDirectory);
         setDlg->setLastPath(path);
         updateHeaders();
     }
@@ -149,18 +161,43 @@ void MainWindow::on_action_Open_triggered()
 // Save
 void MainWindow::on_action_Save_triggered()
 {
-    // TODO check if list was loaded from file, else call save as
-    selectedModel->saveAs(selectedModel->source());
+    if (selectedModel->sourceType()==ftNew)
+        on_action_SaveAsFile_triggered();
+    else
+        selectedModel->saveAs(selectedModel->source(), selectedModel->sourceType());
+    updateHeaders();
 }
 
 // Save as
-void MainWindow::on_actionSave_as_triggered()
+void MainWindow::on_action_SaveAsFile_triggered()
 {
     QString selectedFilter;
     QString path = QFileDialog::getSaveFileName(0, tr("Save contact file"),
         setDlg->lastPath(), FormatFactory::supportedFilters().join(";;"), &selectedFilter);
     if (!path.isEmpty()) {
-        selectedModel->saveAs(path);
+        selectedModel->saveAs(path, ftFile);
+        setDlg->setLastPath(path);
+        updateHeaders();
+    }
+}
+
+void MainWindow::on_action_SaveAsDir_triggered()
+{
+    QString path = QFileDialog::getExistingDirectory(this,
+        tr("Save VCF Directory"), setDlg->lastPath(),
+        QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
+    if (!path.isEmpty()) {
+        QDir d(path);
+        if (d.exists()) {
+            QStringList entries = QDir(path).entryList();
+            entries.removeOne(".");
+            entries.removeOne("..");
+            if (!entries.isEmpty())
+                if (QMessageBox::question(0, S_CONFIRM, tr("Directory exists. Are You really want rewrite it?"),
+                   QMessageBox::Yes, QMessageBox::No)!=QMessageBox::Yes)
+                    return;
+        }
+        selectedModel->saveAs(path, ftDirectory);
         setDlg->setLastPath(path);
         updateHeaders();
     }
@@ -407,6 +444,8 @@ void MainWindow::updateListHeader(ContactModel *model, QLabel *header)
     QString src = model->source();
     if (src.contains(QDir::separator()))
         src = src.mid(src.lastIndexOf(QDir::separator())+1);
+    if (model->sourceType()==ftDirectory)
+        src += tr(" (directory)");
     header->setText(sChanged+src);
 }
 
@@ -518,6 +557,7 @@ ContactModel* MainWindow::oppositeModel()
 
 void MainWindow::askSaveChanges(QCloseEvent *event, ContactModel *model)
 {
+    // TODO return result for use in open, etc.
     if (!model->changed())
         return;
     int res = QMessageBox::question(0, S_CONFIRM,
@@ -525,7 +565,7 @@ void MainWindow::askSaveChanges(QCloseEvent *event, ContactModel *model)
             QMessageBox::Yes, QMessageBox::No, QMessageBox::Cancel);
     switch (res) {
     case QMessageBox::Yes:
-        if (model->saveAs(model->source()))
+        if (model->saveAs(model->source(), model->sourceType()))
             event->accept();
         else
             event->ignore();
@@ -568,7 +608,7 @@ void MainWindow::on_actionSettings_triggered()
 
 void MainWindow::on_action_Close_triggered()
 {
-    // TODO ask if model has unsaved changes (after save implementation)
+    // TODO ask if model has unsaved changes (after askSaveChanges refactoring)
     selectedModel->close();
     updateHeaders();
 }
@@ -711,3 +751,4 @@ void MainWindow::on_actionS_wap_Panels_triggered()
     updateHeaders();
     setSelectionModelEvents();
 }
+
