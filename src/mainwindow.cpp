@@ -115,10 +115,14 @@ void MainWindow::on_action_Two_panels_toggled(bool showTwoPanels)
     if (showTwoPanels) {
         ui->tvRight->show();
         ui->lbRight->show();
+        ui->lbFilterRight->show();
+        ui->leFilterRight->show();
     }
     else {
         ui->tvRight->hide();
         ui->lbRight->hide();
+        ui->lbFilterRight->hide();
+        ui->leFilterRight->hide();
         selectView(ui->tvLeft);
     }
     setButtonsAccess();

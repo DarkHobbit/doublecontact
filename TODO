@@ -1,9 +1,6 @@
 This file contains English and Russian (CP1251) issues. Sorry for this mixing, it's alpha.
 You can contact me at pub@zvyozdochkin.ru.
 
-I:
-* bad layout in single panel mode
-
 0.1:
 * unify: --fullscreen but -d and -q (and begin write doc for option)
 * --fullscreen not works on Mac
