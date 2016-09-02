@@ -373,7 +373,7 @@
     <name>MainWindow</name>
     <message>
         <location filename="../src/mainwindow.ui" line="14"/>
-        <location filename="../src/mainwindow.cpp" line="512"/>
+        <location filename="../src/mainwindow.cpp" line="520"/>
         <source>Double Contact</source>
         <translation type="unfinished"></translation>
     </message>
@@ -693,139 +693,139 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="139"/>
+        <location filename="../src/mainwindow.cpp" line="143"/>
         <source>Open contact file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="152"/>
+        <location filename="../src/mainwindow.cpp" line="158"/>
         <source>Open VCF Directory</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="175"/>
+        <location filename="../src/mainwindow.cpp" line="181"/>
         <source>Save contact file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="187"/>
+        <location filename="../src/mainwindow.cpp" line="195"/>
         <source>Save VCF Directory</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="196"/>
+        <location filename="../src/mainwindow.cpp" line="204"/>
         <source>Directory exists. Are You really want rewrite it?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="244"/>
+        <location filename="../src/mainwindow.cpp" line="252"/>
         <source>Are You really want to edit more than one record?
 Only some fields can this edited in this mode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="276"/>
+        <location filename="../src/mainwindow.cpp" line="284"/>
         <source>Are You really want to delete selected items?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="356"/>
+        <location filename="../src/mainwindow.cpp" line="364"/>
         <source>Compare mode requires show two panels and load contact lists in both panels</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="398"/>
+        <location filename="../src/mainwindow.cpp" line="406"/>
         <source>Record not selected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="402"/>
+        <location filename="../src/mainwindow.cpp" line="410"/>
         <source>Group editing not impemented, select one record</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="448"/>
+        <location filename="../src/mainwindow.cpp" line="456"/>
         <source> (directory)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="513"/>
+        <location filename="../src/mainwindow.cpp" line="521"/>
         <source>Double Contact - %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="518"/>
+        <location filename="../src/mainwindow.cpp" line="526"/>
         <source>Mode: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="519"/>
+        <location filename="../src/mainwindow.cpp" line="527"/>
         <source>two panels</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="519"/>
+        <location filename="../src/mainwindow.cpp" line="527"/>
         <source>one panel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="520"/>
+        <location filename="../src/mainwindow.cpp" line="528"/>
         <source>sorted</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="520"/>
+        <location filename="../src/mainwindow.cpp" line="528"/>
         <source>not sorted</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="523"/>
+        <location filename="../src/mainwindow.cpp" line="531"/>
         <source>simple editing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="527"/>
+        <location filename="../src/mainwindow.cpp" line="535"/>
         <source>compare</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="564"/>
+        <location filename="../src/mainwindow.cpp" line="572"/>
         <source>&apos;%1&apos; was changed.
 Save changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="646"/>
+        <location filename="../src/mainwindow.cpp" line="654"/>
         <source>Two panels and compare mode needed for this operation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="659"/>
+        <location filename="../src/mainwindow.cpp" line="667"/>
         <source>Left item</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="659"/>
+        <location filename="../src/mainwindow.cpp" line="667"/>
         <source>Right item</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="684"/>
+        <location filename="../src/mainwindow.cpp" line="692"/>
         <source>Strongly two records on current panel must be selected for this operation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="690"/>
+        <location filename="../src/mainwindow.cpp" line="698"/>
         <source>Item 1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="690"/>
+        <location filename="../src/mainwindow.cpp" line="698"/>
         <source>Item 2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="740"/>
+        <location filename="../src/mainwindow.cpp" line="748"/>
         <source>Operation requires show two panels</source>
         <translation type="unfinished"></translation>
     </message>
@@ -865,7 +865,7 @@ Save changes?</source>
     <name>QObject</name>
     <message>
         <location filename="../src/contactlist.cpp" line="42"/>
-        <location filename="../src/contactlist.cpp" line="465"/>
+        <location filename="../src/contactlist.cpp" line="466"/>
         <source>Home</source>
         <translation type="unfinished"></translation>
     </message>
@@ -876,14 +876,14 @@ Save changes?</source>
     </message>
     <message>
         <location filename="../src/contactlist.cpp" line="44"/>
-        <location filename="../src/contactlist.cpp" line="466"/>
+        <location filename="../src/contactlist.cpp" line="467"/>
         <source>Work</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/contactlist.cpp" line="45"/>
         <location filename="../src/contactlist.cpp" line="82"/>
-        <location filename="../src/contactlist.cpp" line="467"/>
+        <location filename="../src/contactlist.cpp" line="468"/>
         <source>Preferable</source>
         <translation type="unfinished"></translation>
     </message>
@@ -953,22 +953,22 @@ Save changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/contactlist.cpp" line="468"/>
+        <location filename="../src/contactlist.cpp" line="469"/>
         <source>Domestic</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/contactlist.cpp" line="469"/>
+        <location filename="../src/contactlist.cpp" line="470"/>
         <source>International</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/contactlist.cpp" line="470"/>
+        <location filename="../src/contactlist.cpp" line="471"/>
         <source>Postal</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/contactlist.cpp" line="471"/>
+        <location filename="../src/contactlist.cpp" line="472"/>
         <source>Parcel</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1003,33 +1003,33 @@ Save changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/formats/common/vcarddata.cpp" line="202"/>
+        <location filename="../src/formats/common/vcarddata.cpp" line="206"/>
         <source>Last section not closed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/formats/common/vcarddata.cpp" line="209"/>
+        <location filename="../src/formats/common/vcarddata.cpp" line="213"/>
         <location filename="../src/formats/files/udxfile.cpp" line="162"/>
         <source>%1 unknown tags found</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/formats/common/vcarddata.cpp" line="325"/>
+        <location filename="../src/formats/common/vcarddata.cpp" line="329"/>
         <source>Unknown charset: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/formats/common/vcarddata.cpp" line="348"/>
+        <location filename="../src/formats/common/vcarddata.cpp" line="352"/>
         <source>Unknown encoding: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/formats/common/vcarddata.cpp" line="371"/>
+        <location filename="../src/formats/common/vcarddata.cpp" line="375"/>
         <source>Invalid timezone: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/formats/common/vcarddata.cpp" line="390"/>
+        <location filename="../src/formats/common/vcarddata.cpp" line="394"/>
         <source>Invalid datetime: </source>
         <translation type="unfinished"></translation>
     </message>
@@ -1144,22 +1144,22 @@ line %3, col %4
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/formats/formatfactory.cpp" line="21"/>
+        <location filename="../src/formats/formatfactory.cpp" line="25"/>
         <source>All supported files (%1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/formats/formatfactory.cpp" line="26"/>
+        <location filename="../src/formats/formatfactory.cpp" line="33"/>
         <source>All files (*.*)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/formats/formatfactory.cpp" line="33"/>
+        <location filename="../src/formats/formatfactory.cpp" line="40"/>
         <source>Empty file name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/formats/formatfactory.cpp" line="52"/>
+        <location filename="../src/formats/formatfactory.cpp" line="61"/>
         <source>Unknown file format:
 %1</source>
         <translation type="unfinished"></translation>
@@ -1180,127 +1180,132 @@ line %3, col %4
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/globals.h" line="45"/>
+        <location filename="../src/globals.h" line="46"/>
         <source>New contact list</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/globals.h" line="47"/>
-        <source>mixed...</source>
+        <source>This format is read only</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/globals.h" line="49"/>
-        <source>Firstname</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/globals.h" line="50"/>
-        <source>Lastname</source>
+        <source>mixed...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/globals.h" line="51"/>
-        <source>Middlename</source>
+        <source>Firstname</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/globals.h" line="52"/>
-        <source>Full name</source>
+        <source>Lastname</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/globals.h" line="53"/>
-        <source>Generic name</source>
+        <source>Middlename</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/globals.h" line="54"/>
-        <source>Phone</source>
+        <source>Full name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/globals.h" line="55"/>
-        <source>Email</source>
+        <source>Generic name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/globals.h" line="56"/>
-        <source>Birthday</source>
+        <source>Phone</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/globals.h" line="57"/>
-        <source>Job title</source>
+        <source>Email</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/globals.h" line="58"/>
-        <source>Organization</source>
+        <source>Birthday</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/globals.h" line="59"/>
-        <source>Address</source>
+        <source>Job title</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/globals.h" line="60"/>
-        <source>Has phone</source>
+        <source>Organization</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/globals.h" line="61"/>
-        <source>Has email</source>
+        <source>Address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/globals.h" line="62"/>
-        <source>Has birthday</source>
+        <source>Has phone</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/globals.h" line="63"/>
-        <source>Some phones</source>
+        <source>Has email</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/globals.h" line="64"/>
-        <source>Some emails</source>
+        <source>Has birthday</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/globals.h" line="65"/>
+        <source>Some phones</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/globals.h" line="66"/>
-        <source>P.o. box</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/globals.h" line="67"/>
-        <source>Ext.addr.</source>
+        <source>Some emails</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/globals.h" line="68"/>
-        <source>Street</source>
+        <source>P.o. box</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/globals.h" line="69"/>
-        <source>City/Locality</source>
+        <source>Ext.addr.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/globals.h" line="70"/>
-        <source>Region</source>
+        <source>Street</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/globals.h" line="71"/>
-        <source>Postal code</source>
+        <source>City/Locality</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/globals.h" line="72"/>
+        <source>Region</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/globals.h" line="73"/>
+        <source>Postal code</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/globals.h" line="74"/>
         <source>Country</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1320,6 +1325,11 @@ line %3, col %4
         <location filename="../src/formats/files/vcfdirectory.cpp" line="66"/>
         <source>Can&apos;t create directory
 %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/formats/files/mpbfile.cpp" line="57"/>
+        <source>No contact records in this file</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

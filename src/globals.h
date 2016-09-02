@@ -42,7 +42,9 @@ enum ContactColumn {
 #define S_ERROR QObject::tr("Error")
 #define S_WARNING QObject::tr("Warning")
 #define S_CONFIRM QObject::tr("Confirmation")
+// Misc
 #define S_NEW_LIST QObject::tr("New contact list")
+#define S_READ_ONLY_FORMAT QObject::tr("This format is read only")
 // Spec.value for combined phone/mail/addr. types
 #define S_MIXED_TYPE QObject::tr("mixed...")
 // Column names

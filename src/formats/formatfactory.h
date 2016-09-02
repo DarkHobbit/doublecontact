@@ -13,6 +13,7 @@
 #ifndef FORMATFACTORY_H
 #define FORMATFACTORY_H
 
+#include <QIODevice>
 #include <QStringList>
 #include "iformat.h"
 
@@ -20,7 +21,7 @@ class FormatFactory
 {
 public:
     FormatFactory();
-    static QStringList supportedFilters();
+    static QStringList supportedFilters(QIODevice::OpenMode mode);
     IFormat* createObject(const QString& url);
 };
 

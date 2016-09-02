@@ -141,7 +141,9 @@ void MainWindow::on_action_OpenFile_triggered()
     // TODO ask if model has unsaved changes (after askSaveChanges refactoring)
     QString selectedFilter;
     QString path = QFileDialog::getOpenFileName(0, tr("Open contact file"),
-        setDlg->lastPath(), FormatFactory::supportedFilters().join(";;"), &selectedFilter);
+        setDlg->lastPath(),
+        FormatFactory::supportedFilters(QIODevice::ReadOnly).join(";;"),
+        &selectedFilter);
     if (!path.isEmpty()) {
         selectedModel->open(path, ftFile);
         setDlg->setLastPath(path);
@@ -177,7 +179,9 @@ void MainWindow::on_action_SaveAsFile_triggered()
 {
     QString selectedFilter;
     QString path = QFileDialog::getSaveFileName(0, tr("Save contact file"),
-        setDlg->lastPath(), FormatFactory::supportedFilters().join(";;"), &selectedFilter);
+        setDlg->lastPath(),
+        FormatFactory::supportedFilters(QIODevice::WriteOnly).join(";;"),
+        &selectedFilter);
     if (!path.isEmpty()) {
         selectedModel->saveAs(path, ftFile);
         setDlg->setLastPath(path);

@@ -3,25 +3,32 @@
 #include <QMessageBox>
 #include <QObject>
 
-#include "files/vcffile.h"
+#include "files/mpbfile.h"
 #include "files/udxfile.h"
+#include "files/vcffile.h"
 
 FormatFactory::FormatFactory()
 {
 }
 
-QStringList FormatFactory::supportedFilters()
+QStringList FormatFactory::supportedFilters(QIODevice::OpenMode mode)
 {
     QStringList allTypes;
     // Known formats (all supported)
     QString allSupported;
     allSupported += "*." + VCFFile::supportedExtensions().join(" *.");
     allSupported += "*." + UDXFile::supportedExtensions().join(" *.");
+    if (mode==QIODevice::ReadOnly) {
+        allSupported += "*." + MPBFile::supportedExtensions().join(" *.");
+    }
     // ...here add supportedExtensions() for new format
     allTypes << QObject::tr("All supported files (%1)").arg(allSupported);
     // Known formats (separate)
     allTypes << VCFFile::supportedFilters();
     allTypes << UDXFile::supportedFilters();
+    if (mode==QIODevice::ReadOnly) {
+        allTypes << MPBFile::supportedFilters();
+    }
     // ...here add supportedFilters() for new format
     allTypes << QObject::tr("All files (*.*)");
     return allTypes;
@@ -40,6 +47,8 @@ IFormat *FormatFactory::createObject(const QString &url)
         return new VCFFile();
     if (UDXFile::supportedExtensions().contains(ext, Qt::CaseInsensitive))
         return new UDXFile();
+    if (MPBFile::supportedExtensions().contains(ext, Qt::CaseInsensitive))
+        return new MPBFile();
     // ...here add supportedExtensions() for new format
     // Known formats with non-standard extension
     if (VCFFile::detect(url))

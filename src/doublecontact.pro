@@ -26,7 +26,8 @@ SOURCES += main.cpp \
     comparecontainers.cpp \
     comparedialog.cpp \
     multicontactdialog.cpp \
-    formats/files/vcfdirectory.cpp
+    formats/files/vcfdirectory.cpp \
+    formats/files/mpbfile.cpp
 HEADERS += mainwindow.h \
     contactmodel.h \
     contactlist.h \
@@ -46,7 +47,8 @@ HEADERS += mainwindow.h \
     comparecontainers.h \
     comparedialog.h \
     multicontactdialog.h \
-    formats/files/vcfdirectory.h
+    formats/files/vcfdirectory.h \
+    formats/files/mpbfile.h
 FORMS += mainwindow.ui \
     contactdialog.ui \
     phonetypedialog.ui \

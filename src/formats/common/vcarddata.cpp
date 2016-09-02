@@ -180,14 +180,18 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                 item.icqName = decodeValue(vValue[0], errors);
             else if (tag=="X-SKYPE-USERNAME")
                 item.skypeName = decodeValue(vValue[0], errors);
+            // TODO IMPP decode!!!
             // Identifier
             else if (tag=="X-IRMC-LUID")
                 item.id = decodeValue(vValue[0], errors);
             // Known but un-editing tags
-            else if (tag=="LABEL") { // TODO other from rfc 2426
+            else if (
+                tag=="LABEL" || tag=="CATEGORIES" || tag=="X-ACCOUNT"
+            )
+            { // TODO other from rfc 2426
                 item.otherTags.push_back(TagValue(vType.join(";"),
                     decodeValue(vValue.join(";"), errors)));
-            }
+            }            
             // Unknown tags
             else {
                 item.unknownTags.push_back(TagValue(vType.join(";"),
