@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
         qApp->installTranslator(&tr);
     // TODO end of stub
     MainWindow w;
-    if (qApp->arguments().contains("--fullscreen"))
+    if (qApp->arguments().contains("--fullscreen") || qApp->arguments().contains("-f"))
         w.showMaximized();
     else
         w.show();

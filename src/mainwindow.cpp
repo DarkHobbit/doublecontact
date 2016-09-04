@@ -56,10 +56,11 @@ MainWindow::MainWindow(QWidget *parent) :
     selectView(ui->tvLeft);
     selection = selectedView->selectionModel()->selectedRows();
     // Test data
-    if (qApp->arguments().contains("-d"))
+    if (qApp->arguments().contains("--debugdata") || qApp->arguments().contains("-d"))
         modLeft->testList();
     // File command-line data
-    else if (qApp->arguments().count()>1 && !qApp->arguments().contains("-q")) {
+    else if (qApp->arguments().count()>1 &&
+             !(qApp->arguments().contains("--quiet") || qApp->arguments().contains("-q"))) {
         modLeft->open(qApp->arguments()[1], ftAuto);
         if (qApp->arguments().count()>2) {
             ui->action_Two_panels->setChecked(true);

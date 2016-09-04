@@ -3,7 +3,6 @@ You can contact me at pub@zvyozdochkin.ru.
 
 0.1:
 * IMPP and probably X-RINGTONE decode
-* unify: --fullscreen but -d and -q (and begin write doc for option)
 * --fullscreen not works on Mac
 * "домашн€€ папка" вместо "домашний" в диалоге сравнени€
 * заставить * исчезать сразу после save, без ресайза
