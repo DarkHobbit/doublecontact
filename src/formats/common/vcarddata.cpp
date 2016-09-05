@@ -180,13 +180,19 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                 item.icqName = decodeValue(vValue[0], errors);
             else if (tag=="X-SKYPE-USERNAME")
                 item.skypeName = decodeValue(vValue[0], errors);
-            // TODO IMPP decode!!!
+            /*else if (tag=="IMPP") {
+                // Second : in vValue[0]; vType also contains X-SYNCMLREF
+                // TODO implement in vCard 4.0 as alternative
+
+            }*/
             // Identifier
             else if (tag=="X-IRMC-LUID")
                 item.id = decodeValue(vValue[0], errors);
             // Known but un-editing tags
             else if (
-                tag=="LABEL" || tag=="CATEGORIES" || tag=="X-ACCOUNT"
+                tag=="LABEL"
+                || tag=="CATEGORIES"// MyPhoneExplorer YES, embedded android export NO
+                || tag=="X-ACCOUNT" // MyPhoneExplorer YES, embedded android export NO
             )
             { // TODO other from rfc 2426
                 item.otherTags.push_back(TagValue(vType.join(";"),
@@ -278,7 +284,7 @@ void VCardData::exportRecord(QStringList &lines, const ContactItem &item)
         lines << encodeAll("ORG", 0, true, item.organization);
     if (!item.title.isEmpty())
         lines << encodeAll("TITLE", 0, true, item.title);
-    // Internet
+    // Internet 1
     if (!item.url.isEmpty())
         lines << encodeAll("URL", 0, false, item.url);
     // Photos
@@ -298,6 +304,7 @@ void VCardData::exportRecord(QStringList &lines, const ContactItem &item)
     if (!item.description.isEmpty())
         lines << encodeAll("NOTE", 0, true, item.description);
     // Internet 2
+    // TODO use IMPP instead this, if vcard4 profile selected
     if (!item.jabberName.isEmpty())
         lines << encodeAll("X-JABBER", 0, false, item.jabberName);
     if (!item.icqName.isEmpty())

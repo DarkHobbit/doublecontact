@@ -2,7 +2,6 @@ This file contains English and Russian (CP1251) issues. Sorry for this mixing, i
 You can contact me at pub@zvyozdochkin.ru.
 
 0.1:
-* IMPP and probably X-RINGTONE decode
 * --fullscreen not works on Mac
 * "домашн€€ папка" вместо "домашний" в диалоге сравнени€
 * заставить * исчезать сразу после save, без ресайза
@@ -29,6 +28,8 @@ You can contact me at pub@zvyozdochkin.ru.
 
 0.2:
 * csv support
+* vCard 4.0 support
+* X-SYNCMLREF in vType decode
 * groups support, if testdata will found.
 Samples with CATEGORIES and apple-way https://forums.bitfire.at/topic/511/fastmail-carddav-and-groups/10 
 See also ownCloud and iCloud.
