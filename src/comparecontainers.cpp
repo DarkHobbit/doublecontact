@@ -15,8 +15,6 @@
 #include <QVBoxLayout>
 #include "comparecontainers.h"
 
-#include <QMessageBox> // TODO ==>
-
 ItemPair::ItemPair(const QString& title, QGridLayout* layout, bool multiItem)
     :QObject(layout), _multiItem(multiItem)
 {
