@@ -1,3 +1,5 @@
+language: cpp
+
 before_install:
  - sudo apt-get update -qq
  - sudo apt-get install qt4-dev-tools qt4-qmake
