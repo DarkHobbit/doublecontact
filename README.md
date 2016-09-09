@@ -1,4 +1,5 @@
-# DoubleContact https://travis-ci.org/DarkHobbit/doublecontact.svg?branch=master
+# DoubleContact
+https://travis-ci.org/DarkHobbit/doublecontact.svg?branch=master
 Offline DE-independent contact manager primarily for phonebooks editing/merging.
 
 State: alpha.
