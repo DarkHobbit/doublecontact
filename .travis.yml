@@ -6,5 +6,5 @@ before_install:
 
 script:
  - cd src
- - qmake Ultron.pro
+ - qmake doublecontact.pro
  - make
