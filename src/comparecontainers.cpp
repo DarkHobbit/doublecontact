@@ -206,7 +206,6 @@ TypedPair::TypedPair(const QString &title, QGridLayout *layout)
 
 TypedPair::~TypedPair()
 {
-    delete standardTypes;
 }
 
 void TypedPair::addValue(const QString &value, const QStringList &types, bool toLeft)
@@ -316,7 +315,7 @@ void TypedPair::copyOneItem(bool toLeft, int srcIndex)
 PhonesPair::PhonesPair(const QString &title, QGridLayout *layout, const QList<Phone> &leftPhones, const QList<Phone> &rightPhones)
     :TypedPair(title, layout)
 {
-    standardTypes = new Phone::StandardTypes();
+    standardTypes = &Phone::standardTypes;
     foreach(const Phone& p, leftPhones)
         addValue(p.number, p.tTypes, true);
     foreach(const Phone& p, rightPhones)
@@ -344,7 +343,7 @@ void PhonesPair::getData(QList<Phone> &leftPhones, QList<Phone> &rightPhones)
 EmailsPair::EmailsPair(const QString &title, QGridLayout *layout, const QList<Email> &leftEmails, const QList<Email> &rightEmails)
     :TypedPair(title, layout)
 {
-    standardTypes = new Email::StandardTypes();
+    standardTypes = &Email::standardTypes;
     foreach(const Email& p, leftEmails)
         addValue(p.address, p.emTypes, true);
     foreach(const Email& p, rightEmails)
