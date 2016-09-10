@@ -19,6 +19,8 @@
 
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+
+#include "aboutdialog.h"
 #include "contactdialog.h"
 #include "comparedialog.h"
 #include "multicontactdialog.h"
@@ -761,3 +763,10 @@ void MainWindow::on_actionS_wap_Panels_triggered()
     setSelectionModelEvents();
 }
 
+
+void MainWindow::on_action_About_triggered()
+{
+    AboutDialog* d = new AboutDialog(0);
+    d->exec();
+    delete d;
+}

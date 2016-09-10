@@ -84,6 +84,8 @@ private slots:
     void on_actionS_wap_Panels_triggered();
     void on_action_SaveAsDir_triggered();
 
+    void on_action_About_triggered();
+
 private:
     Ui::MainWindow *ui;
     ContactModel *modLeft, *modRight;

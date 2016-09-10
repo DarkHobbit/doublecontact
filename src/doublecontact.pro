@@ -27,7 +27,8 @@ SOURCES += main.cpp \
     comparedialog.cpp \
     multicontactdialog.cpp \
     formats/files/vcfdirectory.cpp \
-    formats/files/mpbfile.cpp
+    formats/files/mpbfile.cpp \
+    aboutdialog.cpp
 HEADERS += mainwindow.h \
     contactmodel.h \
     contactlist.h \
@@ -48,7 +49,8 @@ HEADERS += mainwindow.h \
     comparedialog.h \
     multicontactdialog.h \
     formats/files/vcfdirectory.h \
-    formats/files/mpbfile.h
+    formats/files/mpbfile.h \
+    aboutdialog.h
 FORMS += mainwindow.ui \
     contactdialog.ui \
     phonetypedialog.ui \
@@ -56,7 +58,8 @@ FORMS += mainwindow.ui \
     settingsdialog.ui \
     datedetailsdialog.ui \
     comparedialog.ui \
-    multicontactdialog.ui
+    multicontactdialog.ui \
+    aboutdialog.ui
 unix { 
     OBJECTS_DIR = .obj
     UI_DIR = .ui

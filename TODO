@@ -2,6 +2,7 @@ This file contains English and Russian (CP1251) issues. Sorry for this mixing, i
 You can contact me at pub@zvyozdochkin.ru.
 
 0.1:
+* full language selection support (not only russian)
 * --fullscreen not works on Mac
 * см. все TODO в проекте
 * recent url list
@@ -11,9 +12,7 @@ You can contact me at pub@zvyozdochkin.ru.
 * settings - fonts
 * add statistics in List menu
 * проверить, как работает на charset, отличных от utf-8 (codec->toUnicode, у меня везде toLocal8Bit, а это, вероятно, неправильно)
-* About dialog
 * write PRODID!
-* full language selection support (not only russian)
 * ukrainian and belarussian language files (po, Rosetta or weblate)
 * проверить на всех доступных телефонах и андроидах
 * проверить на RFC
