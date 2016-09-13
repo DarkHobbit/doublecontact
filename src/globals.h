@@ -42,6 +42,7 @@ enum ContactColumn {
 #define S_ERROR QObject::tr("Error")
 #define S_WARNING QObject::tr("Warning")
 #define S_CONFIRM QObject::tr("Confirmation")
+#define S_INFORM QObject::tr("Information")
 // Misc
 #define S_NEW_LIST QObject::tr("New contact list")
 #define S_READ_ONLY_FORMAT QObject::tr("This format is read only")

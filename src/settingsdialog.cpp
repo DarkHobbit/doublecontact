@@ -28,10 +28,7 @@ SettingsDialog::~SettingsDialog()
 bool SettingsDialog::readConfig()
 {
     // Language
-    _lang = settings.value("General/Language", "Unknown").toString();
-    if (_lang=="Unknown") {
-        _lang = "English"; // TODO use system language
-    }
+    _lang = readLanguage(settings);
     ui->cbLanguage->setCurrentIndex(ui->cbLanguage->findText(_lang));
     // Locale
     ui->leDateFormat->setText(settings.value("Locale/DateFormat", QLocale::system().dateFormat()).toString());
@@ -91,6 +88,15 @@ bool SettingsDialog::writeConfig()
     // Done
     updateGlobalData();
     return true;
+}
+
+QString SettingsDialog::readLanguage(QSettings &ss)
+{
+    QString lang = ss.value("General/Language", "Unknown").toString();
+    if (lang=="Unknown") {
+        lang = "English"; // TODO use system language
+    }
+    return lang;
 }
 
 QString SettingsDialog::lastPath()

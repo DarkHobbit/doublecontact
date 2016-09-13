@@ -11,11 +11,13 @@
  *
  */
 
-#include "mainwindow.h"
 #include <QApplication>
-
 #include <QDir>
+#include <QMessageBox>
 #include <QTranslator>
+
+#include "mainwindow.h"
+#include "settingsdialog.h"
 
 int main(int argc, char *argv[])
 {
@@ -23,11 +25,23 @@ int main(int argc, char *argv[])
     // Settings settings :)
     a.setOrganizationName("doublecontact");
     a.setApplicationName("doublecontact");
-    // TODO temporary language stub
+    // Set UI language
+    QSettings settings;
+    QString language = SettingsDialog::readLanguage(settings);
+    QString langCode = "en_GB";
+    if (language==QString::fromUtf8("Русский")) // TODO dyn load?
+        langCode = "ru_RU";
+    QString langPath = a.applicationDirPath()+QDir::separator()+QString("doublecontact_%1.qm").arg(langCode);
     QTranslator tr;
-    tr.load(qApp->applicationDirPath()+QDir::separator()+"doublecontact_ru_RU.qm");
-        qApp->installTranslator(&tr);
-    // TODO end of stub
+    if (!tr.load(langPath))
+        QMessageBox::critical(0, S_ERROR, "UI loading error");
+    else {
+        a.installTranslator(&tr);
+        Phone::standardTypes.fill();
+        Email::standardTypes.fill();
+        contactColumnHeaders.fill();
+    }
+    // Main Window
     MainWindow w;
     if (qApp->arguments().contains("--fullscreen") || qApp->arguments().contains("-f"))
         w.showMaximized();

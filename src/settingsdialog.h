@@ -20,6 +20,7 @@ public:
     // Common configuration, managed by dialog
     bool readConfig();
     bool writeConfig();
+    static QString readLanguage(QSettings& ss);
     ContactColumnList columnNames();
     QString lang();
     bool langChanged();

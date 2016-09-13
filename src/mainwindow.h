@@ -101,7 +101,6 @@ private:
     void selectView(QTableView* view);
     bool checkSelection(bool errorIfNoSelected = true, bool onlyOneRowAllowed = false);
     void setSorting(bool needSort);
-    void setLanguage(const QString& language);
     void updateListHeader(ContactModel* model, QLabel* header);
     void updateHeaders();
     void updateModeStatus();

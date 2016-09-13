@@ -15,7 +15,6 @@
 #include <QFileDialog>
 #include <QItemSelectionModel>
 #include <QMessageBox>
-#include <QTranslator>
 
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
@@ -49,7 +48,7 @@ MainWindow::MainWindow(QWidget *parent) :
     // Settings
     setDlg = new SettingsDialog(0);
     setDlg->readConfig();
-    setLanguage(setDlg->lang());
+    ui->retranslateUi(this);
     // Track selected view
     connect(qApp, SIGNAL(focusChanged(QWidget*,QWidget*)), this, SLOT(anyFocusChanged(QWidget*,QWidget*)));
     setSelectionModelEvents();
@@ -430,25 +429,6 @@ void MainWindow::setSorting(bool needSort)
     proxyRight->sort(sortColumn);
 }
 
-void MainWindow::setLanguage(const QString &language)
-{
-    QString langCode = "en_GB";
-    if (language==QString::fromUtf8("Русский")) // TODO dyn load?
-        langCode = "ru_RU";
-    QString langPath = qApp->applicationDirPath()+QDir::separator()+QString("doublecontact_%1.qm").arg(langCode);
-    QTranslator tr;
-    if (!tr.load(langPath))
-        QMessageBox::critical(0, S_ERROR, "UI loading error");
-    else {
-        qApp->installTranslator(&tr);
-        ui->retranslateUi(this);
-        Phone::standardTypes.fill();
-        Email::standardTypes.fill();
-        contactColumnHeaders.fill();
-        qApp->processEvents();
-    }
-}
-
 void MainWindow::updateListHeader(ContactModel *model, QLabel *header)
 {
     QString sChanged = model->changed() ? "*" : "";
@@ -598,7 +578,7 @@ void MainWindow::updateConfig()
     // Language
     setDlg->writeConfig();
     if (setDlg->langChanged())
-        setLanguage(setDlg->lang());
+        QMessageBox::information(0, S_INFORM, tr("Restart program to apply language change"));
 }
 
 void MainWindow::on_action_Other_panel_triggered()

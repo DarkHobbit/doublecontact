@@ -54,7 +54,7 @@
        <item>
         <widget class="QLabel" name="lbVer">
          <property name="text">
-          <string>v 0.1</string>
+          <string notr="true">v 0.1</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -77,7 +77,7 @@
        <item>
         <widget class="QLabel" name="lbYear_2">
          <property name="text">
-          <string>2016</string>
+          <string notr="true">2016</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
