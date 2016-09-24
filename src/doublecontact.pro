@@ -28,7 +28,8 @@ SOURCES += main.cpp \
     multicontactdialog.cpp \
     formats/files/vcfdirectory.cpp \
     formats/files/mpbfile.cpp \
-    aboutdialog.cpp
+    aboutdialog.cpp \
+    languagemanager.cpp
 HEADERS += mainwindow.h \
     contactmodel.h \
     contactlist.h \
@@ -50,7 +51,8 @@ HEADERS += mainwindow.h \
     multicontactdialog.h \
     formats/files/vcfdirectory.h \
     formats/files/mpbfile.h \
-    aboutdialog.h
+    aboutdialog.h \
+    languagemanager.h
 FORMS += mainwindow.ui \
     contactdialog.ui \
     phonetypedialog.ui \

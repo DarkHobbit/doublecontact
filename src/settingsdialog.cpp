@@ -8,6 +8,7 @@
 #include <QDesktopServices>
 #endif
 
+#include "languagemanager.h"
 #include "settingsdialog.h"
 #include "ui_settingsdialog.h"
 
@@ -28,6 +29,7 @@ SettingsDialog::~SettingsDialog()
 bool SettingsDialog::readConfig()
 {
     // Language
+    ui->cbLanguage->insertItems(0, languageManager.nativeNames());
     _lang = readLanguage(settings);
     ui->cbLanguage->setCurrentIndex(ui->cbLanguage->findText(_lang));
     // Locale
@@ -94,7 +96,7 @@ QString SettingsDialog::readLanguage(QSettings &ss)
 {
     QString lang = ss.value("General/Language", "Unknown").toString();
     if (lang=="Unknown") {
-        lang = "English"; // TODO use system language
+        lang = "English (United Kingdom)"; // TODO use system language (call from main.cpp, here only tune)
     }
     return lang;
 }
