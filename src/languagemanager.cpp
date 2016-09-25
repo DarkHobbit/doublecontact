@@ -12,6 +12,7 @@
  */
 
 #include <QFile>
+#include <QLocale>
 #include <QRegExp>
 #include "languagemanager.h"
 
@@ -34,6 +35,7 @@ bool LanguageManager::load(const QString &fileName)
         record.remove(QRegExp("[\\n\\r]*$")); // chomp new lines
         const QStringList& fields = record.split("\t", QString::SkipEmptyParts);
         iso639codes.insert(fields.at(2), fields.at(0));
+        nativeNamesByEnglish.insert(fields.at(1), fields.at(2));
     }
     return true;
 }
@@ -53,6 +55,16 @@ QString LanguageManager::nativeNameToCode(const QString& name)
         return iso639codes[name];
     else
         return "en_GB";
+}
+
+QString LanguageManager::systemLanguageNativeName()
+{
+    QString englishName = QLocale::system().languageToString(QLocale::system().language());
+    // In Qt 4.8 we can use QLocale::system().nativeLanguageName(), not today :)
+    if (nativeNamesByEnglish.contains(englishName))
+            return nativeNamesByEnglish[englishName];
+    else
+        return "English (United Kingdom)";
 }
 
 LanguageManager languageManager;

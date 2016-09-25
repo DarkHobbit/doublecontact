@@ -94,11 +94,7 @@ bool SettingsDialog::writeConfig()
 
 QString SettingsDialog::readLanguage(QSettings &ss)
 {
-    QString lang = ss.value("General/Language", "Unknown").toString();
-    if (lang=="Unknown") {
-        lang = "English (United Kingdom)"; // TODO use system language (call from main.cpp, here only tune)
-    }
-    return lang;
+    return ss.value("General/Language", "").toString();
 }
 
 QString SettingsDialog::lastPath()

@@ -25,10 +25,13 @@ public:
     bool load(const QString& fileName);
     QStringList nativeNames();
     QString nativeNameToCode(const QString& name);
+    QString systemLanguageNativeName();
 private:
     // Ported from Stellarium, but map is reversed
     // Native name is key, code is value
     QMap<QString, QString> iso639codes;
+    // English name is key, native name is value
+    QMap<QString, QString> nativeNamesByEnglish;
 };
 
 extern LanguageManager languageManager;
