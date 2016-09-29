@@ -21,6 +21,7 @@ public:
     bool readConfig();
     bool writeConfig();
     static QString readLanguage(QSettings& ss);
+    static void writeLanguage(QSettings& ss, const QString& language);
     ContactColumnList columnNames();
     QString lang();
     bool langChanged();

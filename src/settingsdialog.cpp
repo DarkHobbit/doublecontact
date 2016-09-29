@@ -68,7 +68,7 @@ bool SettingsDialog::writeConfig()
 {
     // Language
     QString newLang = ui->cbLanguage->currentText();
-    settings.setValue("General/Language", newLang);
+    writeLanguage(settings, newLang);
     if (newLang!=_lang) {
         _langChanged = true;
         _lang = newLang;
@@ -95,6 +95,11 @@ bool SettingsDialog::writeConfig()
 QString SettingsDialog::readLanguage(QSettings &ss)
 {
     return ss.value("General/Language", "").toString();
+}
+
+void SettingsDialog::writeLanguage(QSettings &ss, const QString &language)
+{
+    ss.setValue("General/Language", language);
 }
 
 QString SettingsDialog::lastPath()

@@ -29,7 +29,8 @@ SOURCES += main.cpp \
     formats/files/vcfdirectory.cpp \
     formats/files/mpbfile.cpp \
     aboutdialog.cpp \
-    languagemanager.cpp
+    languagemanager.cpp \
+    languageselectdialog.cpp
 HEADERS += mainwindow.h \
     contactmodel.h \
     contactlist.h \
@@ -52,7 +53,8 @@ HEADERS += mainwindow.h \
     formats/files/vcfdirectory.h \
     formats/files/mpbfile.h \
     aboutdialog.h \
-    languagemanager.h
+    languagemanager.h \
+    languageselectdialog.h
 FORMS += mainwindow.ui \
     contactdialog.ui \
     phonetypedialog.ui \
@@ -61,7 +63,8 @@ FORMS += mainwindow.ui \
     datedetailsdialog.ui \
     comparedialog.ui \
     multicontactdialog.ui \
-    aboutdialog.ui
+    aboutdialog.ui \
+    languageselectdialog.ui
 unix { 
     OBJECTS_DIR = .obj
     UI_DIR = .ui

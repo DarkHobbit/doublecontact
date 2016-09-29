@@ -1421,67 +1421,67 @@ line %3, col %4
         <translation>Язык</translation>
     </message>
     <message>
-        <location filename="../src/settingsdialog.ui" line="53"/>
+        <location filename="../src/settingsdialog.ui" line="42"/>
         <source>Date format</source>
         <translation>Формат даты</translation>
     </message>
     <message>
-        <location filename="../src/settingsdialog.ui" line="63"/>
+        <location filename="../src/settingsdialog.ui" line="52"/>
         <source>Time format</source>
         <translation>Формат времени</translation>
     </message>
     <message>
-        <location filename="../src/settingsdialog.ui" line="75"/>
+        <location filename="../src/settingsdialog.ui" line="64"/>
         <source>Use system date/time format</source>
         <translation>Использовать системный формат</translation>
     </message>
     <message>
-        <location filename="../src/settingsdialog.ui" line="82"/>
+        <location filename="../src/settingsdialog.ui" line="71"/>
         <source>Open last files at startup</source>
         <translation>Открывать последние файлы при запуске</translation>
     </message>
     <message>
-        <location filename="../src/settingsdialog.ui" line="110"/>
+        <location filename="../src/settingsdialog.ui" line="99"/>
         <source>Columns</source>
         <translation>Столбцы</translation>
     </message>
     <message>
-        <location filename="../src/settingsdialog.ui" line="116"/>
+        <location filename="../src/settingsdialog.ui" line="105"/>
         <source>Visible</source>
         <translation>Видимые</translation>
     </message>
     <message>
-        <location filename="../src/settingsdialog.ui" line="123"/>
+        <location filename="../src/settingsdialog.ui" line="112"/>
         <source>Available</source>
         <translation>Доступные</translation>
     </message>
     <message>
-        <location filename="../src/settingsdialog.ui" line="177"/>
+        <location filename="../src/settingsdialog.ui" line="166"/>
         <source>Saving</source>
         <translation>Сохранение</translation>
     </message>
     <message>
-        <location filename="../src/settingsdialog.ui" line="185"/>
+        <location filename="../src/settingsdialog.ui" line="174"/>
         <source>Preferred vCard version</source>
         <translation>Предпочтительная версия vCard</translation>
     </message>
     <message>
-        <location filename="../src/settingsdialog.ui" line="193"/>
+        <location filename="../src/settingsdialog.ui" line="182"/>
         <source>2.1</source>
         <translation>2.1</translation>
     </message>
     <message>
-        <location filename="../src/settingsdialog.ui" line="198"/>
+        <location filename="../src/settingsdialog.ui" line="187"/>
         <source>3.0</source>
         <translation>3.0</translation>
     </message>
     <message>
-        <location filename="../src/settingsdialog.ui" line="208"/>
+        <location filename="../src/settingsdialog.ui" line="197"/>
         <source>Use original file version (if present)</source>
         <translation>Брать версию из исходного файла (если есть)</translation>
     </message>
     <message>
-        <location filename="../src/settingsdialog.cpp" line="173"/>
+        <location filename="../src/settingsdialog.cpp" line="176"/>
         <source>List must contain at least one visible column</source>
         <translation>В списке должен быть хотя бы один видимый столбец</translation>
     </message>
