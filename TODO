@@ -4,7 +4,6 @@ You can contact me at pub@zvyozdochkin.ru.
 0.1:
 * --fullscreen not works on Mac
 * см. все TODO в проекте
-* recent url list
 * copy to clipboard button in log window
 * switch to left panel at startup by default, if two panels works
 * photo editing (replace) support (and change status to beta)

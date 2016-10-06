@@ -19,8 +19,9 @@
 #include "logwindow.h"
 #include "formats/files/vcfdirectory.h"
 
-ContactModel::ContactModel(QObject *parent, const QString& source) :
-    QAbstractTableModel(parent), _source(source), _sourceType(ftNew), _changed(false)
+ContactModel::ContactModel(QObject *parent, const QString& source, RecentList& recent) :
+    QAbstractTableModel(parent), _source(source), _sourceType(ftNew),
+    _changed(false), _recent(recent)
 {
     // Default visible columns
     visibleColumns.clear();
@@ -170,6 +171,7 @@ bool ContactModel::open(const QString& path, FormatType fType)
     delete format;
     endResetModel();
     _changed = false;
+    _recent.removeItem(path);
     return true;
 }
 

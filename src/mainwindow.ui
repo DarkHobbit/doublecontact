@@ -213,10 +213,16 @@
      <addaction name="action_SaveAsFile"/>
      <addaction name="action_SaveAsDir"/>
     </widget>
+    <widget class="QMenu" name="menuRecent">
+     <property name="title">
+      <string>&amp;Recent</string>
+     </property>
+    </widget>
     <addaction name="menuOpen"/>
     <addaction name="action_Save"/>
     <addaction name="menuSaveAs"/>
     <addaction name="action_Close"/>
+    <addaction name="menuRecent"/>
     <addaction name="separator"/>
     <addaction name="actionE_xit"/>
    </widget>

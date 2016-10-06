@@ -30,7 +30,8 @@ SOURCES += main.cpp \
     formats/files/mpbfile.cpp \
     aboutdialog.cpp \
     languagemanager.cpp \
-    languageselectdialog.cpp
+    languageselectdialog.cpp \
+    recentlist.cpp
 HEADERS += mainwindow.h \
     contactmodel.h \
     contactlist.h \
@@ -54,7 +55,8 @@ HEADERS += mainwindow.h \
     formats/files/mpbfile.h \
     aboutdialog.h \
     languagemanager.h \
-    languageselectdialog.h
+    languageselectdialog.h \
+    recentlist.h
 FORMS += mainwindow.ui \
     contactdialog.ui \
     phonetypedialog.ui \

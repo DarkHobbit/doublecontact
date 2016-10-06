@@ -30,8 +30,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    modLeft = new ContactModel(this, S_NEW_LIST);
-    modRight = new ContactModel(this, S_NEW_LIST + " 2");
+    modLeft = new ContactModel(this, S_NEW_LIST, recent);
+    modRight = new ContactModel(this, S_NEW_LIST + " 2", recent);
     proxyLeft  = new ContactSorterFilter(this);
     proxyRight  = new ContactSorterFilter(this);
     /*ui->tvLeft->setModel(modLeft);
@@ -56,12 +56,14 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->tvRight, SIGNAL(doubleClicked (const QModelIndex&)), this, SLOT(rowDoubleClicked(const QModelIndex&)));
     selectView(ui->tvLeft);
     selection = selectedView->selectionModel()->selectedRows();
+    recent.read();
     // Test data
     if (qApp->arguments().contains("--debugdata") || qApp->arguments().contains("-d"))
         modLeft->testList();
     // File command-line data
     else if (qApp->arguments().count()>1 &&
-             !(qApp->arguments().contains("--quiet") || qApp->arguments().contains("-q"))) {
+             !(qApp->arguments().contains("--quiet") || qApp->arguments().contains("-q")))
+    {
         modLeft->open(qApp->arguments()[1], ftAuto);
         if (qApp->arguments().count()>2) {
             ui->action_Two_panels->setChecked(true);
@@ -79,6 +81,7 @@ MainWindow::MainWindow(QWidget *parent) :
     setSorting(setDlg->sortingEnabled());
     updateHeaders();
     updateModeStatus();
+    updateRecent();
     on_action_Two_panels_toggled(ui->action_Two_panels->isChecked());
 }
 
@@ -90,8 +93,11 @@ MainWindow::~MainWindow()
 
 void MainWindow::closeEvent(QCloseEvent *event)
 {
-    askSaveChanges(event, modLeft);
-    askSaveChanges(event, modRight);
+    if (askSaveChanges(modLeft)
+    && askSaveChanges(modRight))
+        event->accept();
+    else
+        event->ignore();
 }
 
 void MainWindow::showEvent(QShowEvent*)
@@ -140,7 +146,8 @@ void MainWindow::on_btnExit_clicked()
 // Open
 void MainWindow::on_action_OpenFile_triggered()
 {
-    // TODO ask if model has unsaved changes (after askSaveChanges refactoring)
+    if (!askSaveChanges(selectedModel))
+        return;
     QString selectedFilter;
     QString path = QFileDialog::getOpenFileName(0, tr("Open contact file"),
         setDlg->lastPath(),
@@ -150,12 +157,14 @@ void MainWindow::on_action_OpenFile_triggered()
         selectedModel->open(path, ftFile);
         setDlg->setLastPath(path);
         updateHeaders();
+        updateRecent();
     }
 }
 
 void MainWindow::on_action_OpenDir_triggered()
 {
-    // TODO ask if model has unsaved changes (after askSaveChanges refactoring)
+    if (!askSaveChanges(selectedModel))
+        return;
     QString path = QFileDialog::getExistingDirectory(this,
         tr("Open VCF Directory"), setDlg->lastPath(),
         QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
@@ -163,6 +172,7 @@ void MainWindow::on_action_OpenDir_triggered()
         selectedModel->open(path, ftDirectory);
         setDlg->setLastPath(path);
         updateHeaders();
+        updateRecent();
     }
 }
 
@@ -485,6 +495,22 @@ void MainWindow::selectionChanged()
     setButtonsAccess();
 }
 
+void MainWindow::recentItemClicked()
+{
+    QAction* action = dynamic_cast<QAction*>(sender());
+    if (action) {
+        QString path = action->text();
+        QFileInfo fi(path);
+        if (fi.exists()) {
+            if (!askSaveChanges(selectedModel))
+                return;
+            selectedModel->open(path, ftAuto);
+        }
+        updateRecent();
+        updateHeaders();
+    }
+}
+
 void MainWindow::on_tvLeft_clicked(const QModelIndex&)
 {
     setButtonsAccess();
@@ -546,28 +572,33 @@ ContactModel* MainWindow::oppositeModel()
     return (selectedView==ui->tvLeft) ? modRight : modLeft;
 }
 
-void MainWindow::askSaveChanges(QCloseEvent *event, ContactModel *model)
+bool MainWindow::askSaveChanges(ContactModel *model)
 {
-    // TODO return result for use in open, etc.
-    if (!model->changed())
-        return;
-    int res = QMessageBox::question(0, S_CONFIRM,
-            tr("'%1' was changed.\nSave changes?").arg(model->source()),
-            QMessageBox::Yes, QMessageBox::No, QMessageBox::Cancel);
-    switch (res) {
-    case QMessageBox::Yes:
-        if (model->saveAs(model->source(), model->sourceType()))
-            event->accept();
-        else
-            event->ignore();
-        break;
-    case QMessageBox::No:
-        event->accept();
-        break;
-    case QMessageBox::Cancel:
-        event->ignore();
-        break;
+    bool res = false;
+    if (!model->changed()) {
+        res = true;
     }
+    else {
+        int btn = QMessageBox::question(0, S_CONFIRM,
+             tr("'%1' was changed.\nSave changes?").arg(model->source()),
+             QMessageBox::Yes, QMessageBox::No, QMessageBox::Cancel);
+        switch (btn) {
+        case QMessageBox::Yes:
+            on_action_Save_triggered();
+            res = model->sourceType()!=ftNew;
+            break;
+        case QMessageBox::No:
+            res = true;
+            break;
+        case QMessageBox::Cancel:
+            res = false;
+        }
+    }
+    if (res && (model->sourceType()!=ftNew) && (!model->source().isEmpty())) {
+        recent.addItem(model->source());
+        updateRecent();
+    }
+    return res;
 }
 
 void MainWindow::updateConfig()
@@ -579,6 +610,14 @@ void MainWindow::updateConfig()
     setDlg->writeConfig();
     if (setDlg->langChanged())
         QMessageBox::information(0, S_INFORM, tr("Restart program to apply language change"));
+}
+
+void MainWindow::updateRecent()
+{
+    ui->menuRecent->clear();
+    foreach (const QString& s, recent)
+        ui->menuRecent->addAction(s, this, SLOT(recentItemClicked()));
+    ui->menuRecent->setEnabled(recent.count()>0);
 }
 
 void MainWindow::on_action_Other_panel_triggered()
@@ -599,7 +638,8 @@ void MainWindow::on_actionSettings_triggered()
 
 void MainWindow::on_action_Close_triggered()
 {
-    // TODO ask if model has unsaved changes (after askSaveChanges refactoring)
+    if (!askSaveChanges(selectedModel))
+        return;
     selectedModel->close();
     updateHeaders();
 }

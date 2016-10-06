@@ -21,6 +21,7 @@
 
 #include "contactmodel.h"
 #include "contactsorterfilter.h"
+#include "recentlist.h"
 #include "settingsdialog.h"
 
 namespace Ui {
@@ -41,6 +42,7 @@ private slots:
     void on_action_Other_panel_triggered();
     void setButtonsAccess();
     void selectionChanged();
+    void recentItemClicked();
     void on_actionCo_mpare_triggered();
     void on_btnCompare_clicked();
     void anyFocusChanged (QWidget*, QWidget* now);
@@ -89,6 +91,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
     ContactModel *modLeft, *modRight;
+    RecentList recent;
     // Three potentially unsafe pointers (covered by selectView() in all changed)
     QTableView* selectedView;
     ContactModel* selectedModel;
@@ -107,8 +110,9 @@ private:
     void updateViewMode();
     void setSelectionModelEvents();
     inline ContactModel* oppositeModel();
-    void askSaveChanges(QCloseEvent *event, ContactModel *model);
+    bool askSaveChanges(ContactModel *model);
     void updateConfig();
+    void updateRecent();
 };
 
 #endif // MAINWINDOW_H

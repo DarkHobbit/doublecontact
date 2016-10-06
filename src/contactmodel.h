@@ -17,15 +17,17 @@
 #include <QAbstractTableModel>
 #include <QString>
 #include <QVector>
+
 #include "contactlist.h"
 #include "formats/formatfactory.h"
 #include "globals.h"
+#include "recentlist.h"
 
 class ContactModel : public QAbstractTableModel
 {
     Q_OBJECT
 public:
-    explicit ContactModel(QObject *parent, const QString& source);
+    explicit ContactModel(QObject *parent, const QString& source, RecentList& recent);
     ~ContactModel();
     QString source(); // file path or network source
     FormatType sourceType();
@@ -76,6 +78,7 @@ private:
     ContactColumnList visibleColumns;
     FormatFactory factory;
     ContactViewMode _viewMode;
+    RecentList& _recent;
 };
 
 #endif // CONTACTMODEL_H
