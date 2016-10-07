@@ -4,7 +4,6 @@ You can contact me at pub@zvyozdochkin.ru.
 0.1:
 * --fullscreen not works on Mac
 * см. все TODO в проекте
-* copy to clipboard button in log window
 * switch to left panel at startup by default, if two panels works
 * photo editing (replace) support (and change status to beta)
 * export delete time from bday mode if receiver not support it
@@ -36,7 +35,7 @@ LG Leon in vcf2.1 use X-GROUP (in my sample - empty)
 * network export/import
 
 0.4:
-* integration with mail clients, import contacts from mailboxes
+@s* integration with mail clients, import contacts from mailboxes
 * export birthday in calendarzzz
 
 0.5 or 1.0

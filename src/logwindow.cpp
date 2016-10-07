@@ -1,3 +1,18 @@
+/* Double Contact
+ *
+ * Module: Export/Import log window
+ *
+ * Copyright 2016 Mikhail Y. Zvyozdochkin aka DarkHobbit <pub@zvyozdochkin.ru>
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version. See COPYING file for more details.
+ *
+ */
+
+#include <QApplication>
+#include <QClipboard>
 #include "logwindow.h"
 #include "ui_logwindow.h"
 
@@ -31,4 +46,15 @@ void LogWindow::changeEvent(QEvent *e)
     default:
         break;
     }
+}
+
+void LogWindow::on_btnToClipboard_clicked()
+{
+    QString content = "";
+    for (int i=0; i<ui->lwErrors->count(); i++) {
+        if (i>0)
+            content += "\n";
+        content += ui->lwErrors->item(i)->text();
+    }
+    qApp->clipboard()->setText(content);
 }

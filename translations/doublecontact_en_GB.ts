@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="en_GB">
+<TS version="2.1" language="en_GB">
 <context>
     <name>AboutDialog</name>
     <message>
@@ -392,12 +392,17 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/logwindow.cpp" line="18"/>
+        <location filename="../src/logwindow.ui" line="32"/>
+        <source>Copy to clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/logwindow.cpp" line="33"/>
         <source>File %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/logwindow.cpp" line="19"/>
+        <location filename="../src/logwindow.cpp" line="34"/>
         <source>%1 records has been read</source>
         <translation type="unfinished"></translation>
     </message>

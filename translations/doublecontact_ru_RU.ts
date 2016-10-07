@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="ru_RU">
+<TS version="2.1" language="ru_RU">
 <context>
     <name>AboutDialog</name>
     <message>
@@ -392,12 +392,17 @@
         <translation>Сводка</translation>
     </message>
     <message>
-        <location filename="../src/logwindow.cpp" line="18"/>
+        <location filename="../src/logwindow.ui" line="32"/>
+        <source>Copy to clipboard</source>
+        <translation>Копировать в буфер</translation>
+    </message>
+    <message>
+        <location filename="../src/logwindow.cpp" line="33"/>
         <source>File %1</source>
         <translation>Файл %1</translation>
     </message>
     <message>
-        <location filename="../src/logwindow.cpp" line="19"/>
+        <location filename="../src/logwindow.cpp" line="34"/>
         <source>%1 records has been read</source>
         <translation>Прочитано записей: %1</translation>
     </message>
