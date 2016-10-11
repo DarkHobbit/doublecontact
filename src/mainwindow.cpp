@@ -131,8 +131,9 @@ void MainWindow::on_action_Two_panels_toggled(bool showTwoPanels)
         ui->lbRight->hide();
         ui->lbFilterRight->hide();
         ui->leFilterRight->hide();
-        selectView(ui->tvLeft);
     }
+    selectView(ui->tvLeft);
+    ui->tvLeft->setFocus();
     setButtonsAccess();
     setDlg->setShowTwoPanels(showTwoPanels);
     updateModeStatus();
