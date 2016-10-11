@@ -13,6 +13,8 @@
 
 #include <QApplication>
 #include <QClipboard>
+#include <QPushButton>
+
 #include "logwindow.h"
 #include "ui_logwindow.h"
 
@@ -21,6 +23,13 @@ LogWindow::LogWindow(QWidget *parent) :
     ui(new Ui::LogWindow)
 {
     ui->setupUi(this);
+    // Hack to set button from box as default
+    if (ui->buttonBox->buttons().count()>0) {
+        QAbstractButton* abtnClose = ui->buttonBox->buttons()[0];
+        QPushButton* btnClose = dynamic_cast<QPushButton*>(abtnClose);
+        if (btnClose)
+            btnClose->setDefault(true);
+    }
 }
 
 LogWindow::~LogWindow()
