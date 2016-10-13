@@ -380,6 +380,8 @@ void ContactModel::testList()
     ph.tTypes << "work" << "pref";
     c.phones.push_back(ph);
     c.emails.clear();
+    c.photoType = "URL";
+    c.photoUrl = "http://www.abc.com/pub/photos/jqpublic.gif";
     c.calculateFields();
     items.push_back(c);
 

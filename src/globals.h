@@ -73,6 +73,11 @@ enum ContactColumn {
 #define S_ADR_REGION QObject::tr("Region")
 #define S_ADR_POST_CODE QObject::tr("Postal code")
 #define S_ADR_COUNTRY QObject::tr("Country")
+// Photo editing
+#define S_PH_UNKNOWN_FORMAT QObject::tr("[Unknown photo format]")
+#define S_PH_LOAD_IMAGE QObject::tr("Load image")
+#define S_PH_SET_URL QObject::tr("Set URL")
+#define S_PH_REMOVE QObject::tr("Remove photo")
 
 // Visible columns headers
 // (It was a simple string array, but its translation not worked)

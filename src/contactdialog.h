@@ -14,6 +14,7 @@
 #ifndef CONTACTDIALOG_H
 #define CONTACTDIALOG_H
 
+#include <QByteArray>
 #include <QComboBox>
 #include <QDateTimeEdit>
 #include <QDialog>
@@ -48,6 +49,7 @@ private:
     int nameCount, phoneCount, emailCount, anniversaryCount;
     DateItem birthdayDetails;
     QList<DateItem> anniversaryDetails;
+    QByteArray photo;
     void fillPhoneTypes(QComboBox* combo);
     void fillEmailTypes(QComboBox* combo);
     void addName(const QString& name);

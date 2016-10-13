@@ -108,13 +108,17 @@ void ContactDialog::setData(const ContactItem& c)
         addAnniversary(c.anniversaries[i]);
     // Photo
     if (c.photoType=="URL") {
-        // TODO
+        ui->lbPhotoContent->setText(c.photoUrl);
+        ui->lbPhotoContent->setTextInteractionFlags(Qt::TextEditorInteraction);
     }
     else if (c.photoType.toUpper()=="JPEG" || c.photoType.toUpper()=="PNG") {
-        QPixmap photo;
-        photo.loadFromData(c.photo);
-        ui->lbPhotoContent->setPixmap(photo);
+        QPixmap pixPhoto;
+        pixPhoto.loadFromData(c.photo);
+        ui->lbPhotoContent->setPixmap(pixPhoto);
+        photo = c.photo;
     }
+    else
+        ui->lbPhotoContent->setText(S_PH_UNKNOWN_FORMAT);
     // Addresses
     addAddress(ui->gbAddrHome, c.addrHome);
     addAddress(ui->gbAddrWork, c.addrWork);
@@ -179,7 +183,16 @@ void ContactDialog::getData(ContactItem& c)
         readAnniversary(i+1, di);
         c.anniversaries.push_back(di);
     }
-    // TODO upload photos
+    // Photo
+    QString photoText = ui->lbPhotoContent->text();
+    if ((!photoText.isEmpty()) && photoText!=S_PH_UNKNOWN_FORMAT) {
+        c.photoType = "URL";
+        c.photoUrl = photoText;
+    }
+    else if (!photo.isEmpty()) {
+        c.photoType = "JPEG"; // TODO autodetect by byte array
+        c.photo = photo;
+    }
     // Addresses
     readAddress(ui->gbAddrHome, c.addrHome);
     if (!c.addrHome.isEmpty() && !c.addrHome.paTypes.contains("home", Qt::CaseInsensitive))
