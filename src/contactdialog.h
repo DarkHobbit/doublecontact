@@ -73,7 +73,9 @@ private:
     inline QLineEdit* nameEditorByNum(int num);
     inline QLineEdit* editorByNum(const QString& nameTemplate, int num);
     void editDateDetails(QDateTimeEdit* editor, DateItem& details);
+    // Photo helpers
     void updatePhotoMenu();
+    QString detectPhotoFormat();
 private slots:
     void slotDelName();
     void slotDelTriplet();
@@ -86,6 +88,7 @@ private slots:
     void on_twContact_currentChanged(int);
     void on_btnSwapAddresses_clicked();
     void onLoadImage();
+    void onSaveImage();
 };
 
 #endif // CONTACTDIALOG_H

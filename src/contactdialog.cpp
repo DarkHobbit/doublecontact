@@ -197,7 +197,7 @@ void ContactDialog::getData(ContactItem& c)
         c.photoUrl = photoText;
     }
     else if (!photo.isEmpty()) {
-        c.photoType = "JPEG"; // TODO autodetect by byte array
+        c.photoType = detectPhotoFormat();
         c.photo = photo;
     }
     // Addresses
@@ -531,8 +531,20 @@ void ContactDialog::updatePhotoMenu()
 {
     menuPhotoEdit->clear();
     menuPhotoEdit->addAction(S_PH_LOAD_IMAGE, this, SLOT(onLoadImage()));
+    if (!photo.isEmpty())
+        menuPhotoEdit->addAction(S_PH_SAVE_IMAGE, this, SLOT(onSaveImage()));
 
-    // TODO save, set url, remove
+    // TODO set url, remove
+}
+
+QString ContactDialog::detectPhotoFormat()
+{
+    QString format = "UNKNOWN";
+    if (photo.mid(6, 4).contains("JFIF"))
+        format = "JPEG";
+    else if (photo.mid(1, 3).contains("PNG"))
+        format = "PNG";
+    return format;
 }
 
 void ContactDialog::on_btnAdd_clicked()
@@ -648,5 +660,28 @@ void ContactDialog::onLoadImage()
     pixPhoto.loadFromData(photo);
     ui->lbPhotoContent->setPixmap(pixPhoto);
     updatePhotoMenu();
+}
+
+void ContactDialog::onSaveImage()
+{
+    QString path = ""; // TODO use lastImageFile() after ConfigManager implementation
+    // but only dir!!!
+    QString format = detectPhotoFormat();
+    QString filter = "Binary (*.bin)";
+    if (format=="JPEG")
+        filter = "JPEG (*.jpg)";
+    else if (format=="PNG")
+        filter = "PNG (*.png)";
+    path = QFileDialog::getSaveFileName(0, tr("Save image file"), path, filter);
+    if (path.isEmpty())
+        return;
+    // TODO use setLastImageFile() after ConfigManager implementation
+    QFile f(path);
+    if (!f.open(QIODevice::WriteOnly)) {
+        QMessageBox::critical(0, S_ERROR, S_WRITE_ERR.arg(path));
+        return;
+    }
+    f.write(photo);
+    f.close();
 }
 

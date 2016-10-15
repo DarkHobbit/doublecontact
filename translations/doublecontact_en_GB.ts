@@ -166,25 +166,25 @@
     </message>
     <message>
         <location filename="../src/contactdialog.ui" line="149"/>
-        <location filename="../src/contactdialog.cpp" line="541"/>
+        <location filename="../src/contactdialog.cpp" line="543"/>
         <source>name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/contactdialog.ui" line="154"/>
-        <location filename="../src/contactdialog.cpp" line="543"/>
+        <location filename="../src/contactdialog.cpp" line="545"/>
         <source>phone</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/contactdialog.ui" line="159"/>
-        <location filename="../src/contactdialog.cpp" line="545"/>
+        <location filename="../src/contactdialog.cpp" line="547"/>
         <source>email</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/contactdialog.ui" line="164"/>
-        <location filename="../src/contactdialog.cpp" line="547"/>
+        <location filename="../src/contactdialog.cpp" line="549"/>
         <source>anniversary</source>
         <translation type="unfinished"></translation>
     </message>
@@ -337,18 +337,23 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/contactdialog.cpp" line="557"/>
+        <location filename="../src/contactdialog.cpp" line="559"/>
         <source>Phone type</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/contactdialog.cpp" line="559"/>
+        <location filename="../src/contactdialog.cpp" line="561"/>
         <source>Email type</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/contactdialog.cpp" line="632"/>
+        <location filename="../src/contactdialog.cpp" line="634"/>
         <source>Open image file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/contactdialog.cpp" line="658"/>
+        <source>Save image file</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

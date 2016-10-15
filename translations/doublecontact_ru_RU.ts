@@ -166,25 +166,25 @@
     </message>
     <message>
         <location filename="../src/contactdialog.ui" line="149"/>
-        <location filename="../src/contactdialog.cpp" line="541"/>
+        <location filename="../src/contactdialog.cpp" line="543"/>
         <source>name</source>
         <translation>имя</translation>
     </message>
     <message>
         <location filename="../src/contactdialog.ui" line="154"/>
-        <location filename="../src/contactdialog.cpp" line="543"/>
+        <location filename="../src/contactdialog.cpp" line="545"/>
         <source>phone</source>
         <translation>телефон</translation>
     </message>
     <message>
         <location filename="../src/contactdialog.ui" line="159"/>
-        <location filename="../src/contactdialog.cpp" line="545"/>
+        <location filename="../src/contactdialog.cpp" line="547"/>
         <source>email</source>
         <translation>электропочту</translation>
     </message>
     <message>
         <location filename="../src/contactdialog.ui" line="164"/>
-        <location filename="../src/contactdialog.cpp" line="547"/>
+        <location filename="../src/contactdialog.cpp" line="549"/>
         <source>anniversary</source>
         <translation>годовщину</translation>
     </message>
@@ -337,19 +337,24 @@
         <translation>Правка контакта</translation>
     </message>
     <message>
-        <location filename="../src/contactdialog.cpp" line="557"/>
+        <location filename="../src/contactdialog.cpp" line="559"/>
         <source>Phone type</source>
         <translation>Тип телефона</translation>
     </message>
     <message>
-        <location filename="../src/contactdialog.cpp" line="559"/>
+        <location filename="../src/contactdialog.cpp" line="561"/>
         <source>Email type</source>
         <translation>Тип электропочты</translation>
     </message>
     <message>
-        <location filename="../src/contactdialog.cpp" line="632"/>
+        <location filename="../src/contactdialog.cpp" line="634"/>
         <source>Open image file</source>
         <translation>Открыть картинку</translation>
+    </message>
+    <message>
+        <location filename="../src/contactdialog.cpp" line="658"/>
+        <source>Save image file</source>
+        <translation>Сохранить картинку</translation>
     </message>
 </context>
 <context>
