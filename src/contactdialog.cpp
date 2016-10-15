@@ -11,7 +11,9 @@
  *
  */
 
+#include <QFileDialog>
 #include <QLineEdit>
+#include <QMessageBox>
 #include <QPixmap>
 
 #include "contactdialog.h"
@@ -38,6 +40,10 @@ ContactDialog::ContactDialog(QWidget *parent) :
     connect(ui->cbEmailType1, SIGNAL(currentIndexChanged(const QString&)), this, SLOT(itemTypeChanged(const QString&)));
     connect(ui->btnDelEmail1, SIGNAL(clicked()), this, SLOT(slotDelTriplet()));
     layAnniversaries = new QGridLayout(ui->gbAnniversaries);
+    // Photo editing
+    menuPhotoEdit = new QMenu(this);
+    ui->btnPhotoEdit->setMenu(menuPhotoEdit);
+    // Other known and unknown tags tables
     ui->twOtherTags->setItemDelegate(new ReadOnlyTableDelegate());
     ui->twUnknownTags->setItemDelegate(new ReadOnlyTableDelegate());
 }
@@ -112,13 +118,14 @@ void ContactDialog::setData(const ContactItem& c)
         ui->lbPhotoContent->setTextInteractionFlags(Qt::TextEditorInteraction);
     }
     else if (c.photoType.toUpper()=="JPEG" || c.photoType.toUpper()=="PNG") {
-        QPixmap pixPhoto;
-        pixPhoto.loadFromData(c.photo);
-        ui->lbPhotoContent->setPixmap(pixPhoto);
         photo = c.photo;
+        QPixmap pixPhoto;
+        pixPhoto.loadFromData(photo);
+        ui->lbPhotoContent->setPixmap(pixPhoto);
     }
-    else
+    else if (!c.photo.isEmpty())
         ui->lbPhotoContent->setText(S_PH_UNKNOWN_FORMAT);
+    updatePhotoMenu();
     // Addresses
     addAddress(ui->gbAddrHome, c.addrHome);
     addAddress(ui->gbAddrWork, c.addrWork);
@@ -520,6 +527,14 @@ void ContactDialog::editDateDetails(QDateTimeEdit *editor, DateItem &details)
     delete dlg;
 }
 
+void ContactDialog::updatePhotoMenu()
+{
+    menuPhotoEdit->clear();
+    menuPhotoEdit->addAction(S_PH_LOAD_IMAGE, this, SLOT(onLoadImage()));
+
+    // TODO save, set url, remove
+}
+
 void ContactDialog::on_btnAdd_clicked()
 {
     QString subj = ui->cbAdd->currentText();
@@ -610,3 +625,28 @@ void ContactDialog::on_btnSwapAddresses_clicked()
     setAddress(ui->gbAddrHome, bW);
     setAddress(ui->gbAddrWork, bH);
 }
+
+void ContactDialog::onLoadImage()
+{
+    QString path = ""; // TODO use lastImageFile() after ConfigManager implementation
+    path = QFileDialog::getOpenFileName(0, tr("Open image file"), path,
+        S_ALL_SUPPORTED.arg("(*.png *.PNG *.jpg *.JPG *.jpeg *.JPEG)") +
+        ";;JPEG (*.jpg *.JPG *.jpeg *.JPEG)" +
+        ";;PNG (*.png *.PNG)" +
+        ";;" + S_ALL_FILES);
+    if (path.isEmpty())
+        return;
+    // TODO use setLastImageFile() after ConfigManager implementation
+    QFile f(path);
+    if (!f.open(QIODevice::ReadOnly)) {
+        QMessageBox::critical(0, S_ERROR, S_READ_ERR.arg(path));
+        return;
+    }
+    photo = f.readAll();
+    f.close();
+    QPixmap pixPhoto;
+    pixPhoto.loadFromData(photo);
+    ui->lbPhotoContent->setPixmap(pixPhoto);
+    updatePhotoMenu();
+}
+

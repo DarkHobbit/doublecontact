@@ -3,26 +3,29 @@ You can contact me at pub@zvyozdochkin.ru.
 
 0.1:
 * --fullscreen not works on Mac
-* см. все TODO в проекте
 * photo editing (replace) support (and change status to beta)
+* ConfigManager? (move all non-widget stuff for SettingsDialog. M.b. it must be in gui (not core), because under Qt4 QDesktopServices depends on QtGui)
+* см. все TODO в проекте
 * export delete time from bday mode if receiver not support it
 * settings - fonts
 * add statistics in List menu
 * проверить, как работает на charset, отличных от utf-8 (codec->toUnicode, у меня везде toLocal8Bit, а это, вероятно, неправильно)
 * write PRODID!
-* ukrainian and belarussian language files (po, Rosetta or weblate)
 * проверить на всех доступных телефонах и андроидах
 * проверить на RFC
-* рус. описание (особ. отображение, Generic Name, операции редактирования, про сплиттинг и др., багрепортинг, --fullscreen и другие ключи)
-* англ. описание?
+* рус. описание (багрепортинг, convertcontact и меню ред. фото)
+* english manual
+* before translations - separate sources (core, gui (model, recent, config, ReadOnlyTableDelegate (gui or widgets)), doublecontact/src, convertcontact)
+* separate translation files???
+* register on weblate (transifex?)
+* ukrainian and belarussian language files
 * set doxygen labels
 * make changelog file with 1 line :)
-
-* duplicate search (and merging, probably make unified merging dialog with panels compare merging)
 
 0.2:
 * csv support
 * vCard 4.0 support
+* duplicate search (and merging, probably make unified merging dialog with panels compare merging)
 * X-SYNCMLREF in vType decode
 * groups support, if testdata will found.
 Samples with CATEGORIES and apple-way https://forums.bitfire.at/topic/511/fastmail-carddav-and-groups/10 
@@ -34,10 +37,10 @@ LG Leon in vcf2.1 use X-GROUP (in my sample - empty)
 * network export/import
 
 0.4:
-@s* integration with mail clients, import contacts from mailboxes
+* integration with mail clients, import contacts from mailboxes
 * export birthday in calendarzzz
 
 0.5 or 1.0
-* mobile version???
+* QML mobile version (how to unify UI translations)
 
 

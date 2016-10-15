@@ -25,9 +25,11 @@ public:
     ContactColumnList columnNames();
     QString lang();
     bool langChanged();
-    // Separate settings, managed by main window commands
-    QString lastPath();
-    void setLastPath(const QString& path);
+    // Separate settings, managed by main window and contact dialog commands
+    QString lastContactFile();
+    void setLastContactFile(const QString& path);
+    QString lastImageFile();
+    void setLastImageFile(const QString& path);
     bool showTwoPanels();
     void setShowTwoPanels(bool value);
     bool openLastFilesAtStartup();

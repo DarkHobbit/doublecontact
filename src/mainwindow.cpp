@@ -73,8 +73,8 @@ MainWindow::MainWindow(QWidget *parent) :
     // Previous session file data
     else if (!qApp->arguments().contains("-q")
              && setDlg->openLastFilesAtStartup()
-             && QFile(setDlg->lastPath()).exists())
-        selectedModel->open(setDlg->lastPath(), ftAuto);
+             && QFile(setDlg->lastContactFile()).exists())
+        selectedModel->open(setDlg->lastContactFile(), ftAuto);
     // Show data
     ui->action_Two_panels->setChecked(setDlg->showTwoPanels());
     ui->action_Sort->setChecked(setDlg->sortingEnabled());
@@ -151,12 +151,12 @@ void MainWindow::on_action_OpenFile_triggered()
         return;
     QString selectedFilter;
     QString path = QFileDialog::getOpenFileName(0, tr("Open contact file"),
-        setDlg->lastPath(),
+        setDlg->lastContactFile(),
         FormatFactory::supportedFilters(QIODevice::ReadOnly).join(";;"),
         &selectedFilter);
     if (!path.isEmpty()) {
         selectedModel->open(path, ftFile);
-        setDlg->setLastPath(path);
+        setDlg->setLastContactFile(path);
         updateHeaders();
         updateRecent();
     }
@@ -167,11 +167,11 @@ void MainWindow::on_action_OpenDir_triggered()
     if (!askSaveChanges(selectedModel))
         return;
     QString path = QFileDialog::getExistingDirectory(this,
-        tr("Open VCF Directory"), setDlg->lastPath(),
+        tr("Open VCF Directory"), setDlg->lastContactFile(),
         QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
     if (!path.isEmpty()) {
         selectedModel->open(path, ftDirectory);
-        setDlg->setLastPath(path);
+        setDlg->setLastContactFile(path);
         updateHeaders();
         updateRecent();
     }
@@ -192,12 +192,12 @@ void MainWindow::on_action_SaveAsFile_triggered()
 {
     QString selectedFilter;
     QString path = QFileDialog::getSaveFileName(0, tr("Save contact file"),
-        setDlg->lastPath(),
+        setDlg->lastContactFile(),
         FormatFactory::supportedFilters(QIODevice::WriteOnly).join(";;"),
         &selectedFilter);
     if (!path.isEmpty()) {
         selectedModel->saveAs(path, ftFile);
-        setDlg->setLastPath(path);
+        setDlg->setLastContactFile(path);
         updateHeaders();
     }
 }
@@ -205,7 +205,7 @@ void MainWindow::on_action_SaveAsFile_triggered()
 void MainWindow::on_action_SaveAsDir_triggered()
 {
     QString path = QFileDialog::getExistingDirectory(this,
-        tr("Save VCF Directory"), setDlg->lastPath(),
+        tr("Save VCF Directory"), setDlg->lastContactFile(),
         QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
     if (!path.isEmpty()) {
         QDir d(path);
@@ -219,7 +219,7 @@ void MainWindow::on_action_SaveAsDir_triggered()
                     return;
         }
         selectedModel->saveAs(path, ftDirectory);
-        setDlg->setLastPath(path);
+        setDlg->setLastContactFile(path);
         updateHeaders();
     }
 }

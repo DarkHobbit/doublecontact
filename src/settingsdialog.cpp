@@ -102,7 +102,7 @@ void SettingsDialog::writeLanguage(QSettings &ss, const QString &language)
     ss.setValue("General/Language", language);
 }
 
-QString SettingsDialog::lastPath()
+QString SettingsDialog::lastContactFile()
 {
     QString defaultDir =
 #if QT_VERSION >= 0x050000
@@ -110,12 +110,28 @@ QString SettingsDialog::lastPath()
 #else
         QDesktopServices::storageLocation( QDesktopServices::DocumentsLocation);
 #endif
-    return settings.value("General/LastFile", defaultDir).toString();
+    return settings.value("General/LastContactFile", defaultDir).toString();
 }
 
-void SettingsDialog::setLastPath(const QString &path)
+void SettingsDialog::setLastContactFile(const QString &path)
 {
-    settings.setValue("General/LastFile", path);
+    settings.setValue("General/LastContactFile", path);
+}
+
+QString SettingsDialog::lastImageFile()
+{
+    QString defaultDir =
+#if QT_VERSION >= 0x050000
+        QStandardPaths::writableLocation(QStandardPaths::PicturesLocation);
+#else
+        QDesktopServices::storageLocation( QDesktopServices::PicturesLocation);
+#endif
+    return settings.value("General/LastImageFile", defaultDir).toString();
+}
+
+void SettingsDialog::setLastImageFile(const QString &path)
+{
+    settings.setValue("General/LastImageFile", path);
 }
 
 bool SettingsDialog::showTwoPanels()

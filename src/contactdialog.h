@@ -19,6 +19,7 @@
 #include <QDateTimeEdit>
 #include <QDialog>
 #include <QGridLayout>
+#include <QMenu>
 #include <QResizeEvent>
 #include <QShowEvent>
 #include <QToolButton>
@@ -46,6 +47,7 @@ protected:
 private:
     Ui::ContactDialog *ui;
     QGridLayout* layAnniversaries;
+    QMenu* menuPhotoEdit;
     int nameCount, phoneCount, emailCount, anniversaryCount;
     DateItem birthdayDetails;
     QList<DateItem> anniversaryDetails;
@@ -71,6 +73,7 @@ private:
     inline QLineEdit* nameEditorByNum(int num);
     inline QLineEdit* editorByNum(const QString& nameTemplate, int num);
     void editDateDetails(QDateTimeEdit* editor, DateItem& details);
+    void updatePhotoMenu();
 private slots:
     void slotDelName();
     void slotDelTriplet();
@@ -82,6 +85,7 @@ private slots:
     void slotDelAnniversary();
     void on_twContact_currentChanged(int);
     void on_btnSwapAddresses_clicked();
+    void onLoadImage();
 };
 
 #endif // CONTACTDIALOG_H

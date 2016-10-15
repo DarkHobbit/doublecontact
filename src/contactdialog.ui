@@ -230,6 +230,16 @@
              </property>
             </widget>
            </item>
+           <item row="2" column="1">
+            <widget class="QPlainTextEdit" name="edDescription">
+             <property name="maximumSize">
+              <size>
+               <width>200</width>
+               <height>16777215</height>
+              </size>
+             </property>
+            </widget>
+           </item>
            <item row="0" column="1">
             <widget class="QLabel" name="lbDescription">
              <property name="sizePolicy">
@@ -240,16 +250,6 @@
              </property>
              <property name="text">
               <string>Description</string>
-             </property>
-            </widget>
-           </item>
-           <item row="2" column="1">
-            <widget class="QPlainTextEdit" name="edDescription">
-             <property name="maximumSize">
-              <size>
-               <width>200</width>
-               <height>16777215</height>
-              </size>
              </property>
             </widget>
            </item>
@@ -278,6 +278,13 @@
              </property>
              <property name="alignment">
               <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QPushButton" name="btnPhotoEdit">
+             <property name="text">
+              <string>Photo</string>
              </property>
             </widget>
            </item>

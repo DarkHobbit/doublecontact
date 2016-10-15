@@ -76,8 +76,14 @@ enum ContactColumn {
 // Photo editing
 #define S_PH_UNKNOWN_FORMAT QObject::tr("[Unknown photo format]")
 #define S_PH_LOAD_IMAGE QObject::tr("Load image")
+#define S_PH_SAVE_IMAGE QObject::tr("Save image")
 #define S_PH_SET_URL QObject::tr("Set URL")
 #define S_PH_REMOVE QObject::tr("Remove photo")
+// File ops
+#define S_ALL_SUPPORTED QObject::tr("All supported files (%1)")
+#define S_ALL_FILES QObject::tr("All files (*.*)")
+#define S_READ_ERR QObject::tr("Can't read file\n%1")
+#define S_WRITE_ERR QObject::tr("Can't write file\n%1")
 
 // Visible columns headers
 // (It was a simple string array, but its translation not worked)

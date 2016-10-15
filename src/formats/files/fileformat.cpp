@@ -33,9 +33,7 @@ bool FileFormat::openFile(QString path, QIODevice::OpenMode mode)
     file.setFileName(path);
     bool res = file.open(mode);
     if (!res) {
-        QString msgTempl = (mode==QIODevice::ReadOnly)
-            ? QObject::tr("Can't read file\n%1")
-            : QObject::tr("Can't write file\n%1");
+        QString msgTempl = (mode==QIODevice::ReadOnly) ? S_READ_ERR : S_WRITE_ERR;
         QMessageBox::critical(0, S_ERROR, msgTempl.arg(path));
     }
     return res;
