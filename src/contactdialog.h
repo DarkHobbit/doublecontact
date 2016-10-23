@@ -89,6 +89,8 @@ private slots:
     void on_btnSwapAddresses_clicked();
     void onLoadImage();
     void onSaveImage();
+    void onSetPhotoUrl();
+    void onRemovePhoto();
 };
 
 #endif // CONTACTDIALOG_H

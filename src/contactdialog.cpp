@@ -11,10 +11,12 @@
  *
  */
 
+#include <QDialogButtonBox>
 #include <QFileDialog>
 #include <QLineEdit>
 #include <QMessageBox>
 #include <QPixmap>
+#include <QVBoxLayout>
 
 #include "contactdialog.h"
 #include "ui_contactdialog.h"
@@ -113,10 +115,8 @@ void ContactDialog::setData(const ContactItem& c)
     for (int i=0; i<c.anniversaries.count(); i++)
         addAnniversary(c.anniversaries[i]);
     // Photo
-    if (c.photoType=="URL") {
+    if (c.photoType=="URL")
         ui->lbPhotoContent->setText(c.photoUrl);
-        ui->lbPhotoContent->setTextInteractionFlags(Qt::TextEditorInteraction);
-    }
     else if (c.photoType.toUpper()=="JPEG" || c.photoType.toUpper()=="PNG") {
         photo = c.photo;
         QPixmap pixPhoto;
@@ -192,13 +192,18 @@ void ContactDialog::getData(ContactItem& c)
     }
     // Photo
     QString photoText = ui->lbPhotoContent->text();
-    if ((!photoText.isEmpty()) && photoText!=S_PH_UNKNOWN_FORMAT) {
+    if ((!photoText.isEmpty()) && photoText!=S_PH_UNKNOWN_FORMAT) { // URL
         c.photoType = "URL";
         c.photoUrl = photoText;
     }
-    else if (!photo.isEmpty()) {
+    else if (!photo.isEmpty()) { // image
         c.photoType = detectPhotoFormat();
         c.photo = photo;
+    }
+    else { // deleted by user
+        c.photoType.clear();
+        c.photoUrl.clear();
+        c.photo.clear();
     }
     // Addresses
     readAddress(ui->gbAddrHome, c.addrHome);
@@ -533,8 +538,8 @@ void ContactDialog::updatePhotoMenu()
     menuPhotoEdit->addAction(S_PH_LOAD_IMAGE, this, SLOT(onLoadImage()));
     if (!photo.isEmpty())
         menuPhotoEdit->addAction(S_PH_SAVE_IMAGE, this, SLOT(onSaveImage()));
-
-    // TODO set url, remove
+    menuPhotoEdit->addAction(S_PH_SET_URL, this, SLOT(onSetPhotoUrl()));
+    menuPhotoEdit->addAction(S_PH_REMOVE, this, SLOT(onRemovePhoto()));
 }
 
 QString ContactDialog::detectPhotoFormat()
@@ -654,6 +659,7 @@ void ContactDialog::onLoadImage()
         QMessageBox::critical(0, S_ERROR, S_READ_ERR.arg(path));
         return;
     }
+    onRemovePhoto();
     photo = f.readAll();
     f.close();
     QPixmap pixPhoto;
@@ -683,5 +689,31 @@ void ContactDialog::onSaveImage()
     }
     f.write(photo);
     f.close();
+}
+
+void ContactDialog::onSetPhotoUrl()
+{
+    QDialog* d = new QDialog(0);
+    d->setWindowTitle(S_PH_SET_URL);
+    QVBoxLayout* l = new QVBoxLayout();
+    d->setLayout(l);
+    QLineEdit* leURL = new QLineEdit(ui->lbPhotoContent->text());
+    l->addWidget(leURL);
+    QDialogButtonBox* bb = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
+    connect(bb, SIGNAL(accepted()), d, SLOT(accept()));
+    connect(bb, SIGNAL(rejected()), d, SLOT(reject()));
+    l->addWidget(bb);
+    d->exec();
+    if (d->result()==QDialog::Accepted) {
+        onRemovePhoto();
+        ui->lbPhotoContent->setText(leURL->text());
+    }
+    delete d;
+}
+
+void ContactDialog::onRemovePhoto()
+{
+    photo.clear();
+    ui->lbPhotoContent->clear(); // remove pixmap and text, if were
 }
 
