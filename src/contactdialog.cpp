@@ -536,8 +536,12 @@ void ContactDialog::updatePhotoMenu()
 {
     menuPhotoEdit->clear();
     menuPhotoEdit->addAction(S_PH_LOAD_IMAGE, this, SLOT(onLoadImage()));
+    QAction* actSave = new QAction(S_PH_SAVE_IMAGE, this);
     if (!photo.isEmpty())
-        menuPhotoEdit->addAction(S_PH_SAVE_IMAGE, this, SLOT(onSaveImage()));
+        connect(actSave, SIGNAL(triggered()), this, SLOT(onSaveImage()));
+    else
+        actSave->setEnabled(false);
+    menuPhotoEdit->addAction(actSave);
     menuPhotoEdit->addAction(S_PH_SET_URL, this, SLOT(onSetPhotoUrl()));
     menuPhotoEdit->addAction(S_PH_REMOVE, this, SLOT(onRemovePhoto()));
 }
