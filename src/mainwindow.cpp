@@ -19,6 +19,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
+#include "../gui/configmanager.h"
 #include "aboutdialog.h"
 #include "contactdialog.h"
 #include "comparedialog.h"
@@ -72,13 +73,13 @@ MainWindow::MainWindow(QWidget *parent) :
     }
     // Previous session file data
     else if (!qApp->arguments().contains("-q")
-             && setDlg->openLastFilesAtStartup()
-             && QFile(setDlg->lastContactFile()).exists())
-        selectedModel->open(setDlg->lastContactFile(), ftAuto);
+             && gd.openLastFilesAtStartup
+             && QFile(configManager.lastContactFile()).exists())
+        selectedModel->open(configManager.lastContactFile(), ftAuto);
     // Show data
-    ui->action_Two_panels->setChecked(setDlg->showTwoPanels());
-    ui->action_Sort->setChecked(setDlg->sortingEnabled());
-    setSorting(setDlg->sortingEnabled());
+    ui->action_Two_panels->setChecked(configManager.showTwoPanels());
+    ui->action_Sort->setChecked(configManager.sortingEnabled());
+    setSorting(configManager.sortingEnabled());
     updateHeaders();
     updateModeStatus();
     updateRecent();
@@ -135,7 +136,7 @@ void MainWindow::on_action_Two_panels_toggled(bool showTwoPanels)
     selectView(ui->tvLeft);
     ui->tvLeft->setFocus();
     setButtonsAccess();
-    setDlg->setShowTwoPanels(showTwoPanels);
+    configManager.setShowTwoPanels(showTwoPanels);
     updateModeStatus();
 }
 
@@ -151,12 +152,12 @@ void MainWindow::on_action_OpenFile_triggered()
         return;
     QString selectedFilter;
     QString path = QFileDialog::getOpenFileName(0, tr("Open contact file"),
-        setDlg->lastContactFile(),
+        configManager.lastContactFile(),
         FormatFactory::supportedFilters(QIODevice::ReadOnly).join(";;"),
         &selectedFilter);
     if (!path.isEmpty()) {
         selectedModel->open(path, ftFile);
-        setDlg->setLastContactFile(path);
+        configManager.setLastContactFile(path);
         updateHeaders();
         updateRecent();
     }
@@ -167,11 +168,11 @@ void MainWindow::on_action_OpenDir_triggered()
     if (!askSaveChanges(selectedModel))
         return;
     QString path = QFileDialog::getExistingDirectory(this,
-        tr("Open VCF Directory"), setDlg->lastContactFile(),
+        tr("Open VCF Directory"), configManager.lastContactFile(),
         QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
     if (!path.isEmpty()) {
         selectedModel->open(path, ftDirectory);
-        setDlg->setLastContactFile(path);
+        configManager.setLastContactFile(path);
         updateHeaders();
         updateRecent();
     }
@@ -192,12 +193,12 @@ void MainWindow::on_action_SaveAsFile_triggered()
 {
     QString selectedFilter;
     QString path = QFileDialog::getSaveFileName(0, tr("Save contact file"),
-        setDlg->lastContactFile(),
+        configManager.lastContactFile(),
         FormatFactory::supportedFilters(QIODevice::WriteOnly).join(";;"),
         &selectedFilter);
     if (!path.isEmpty()) {
         selectedModel->saveAs(path, ftFile);
-        setDlg->setLastContactFile(path);
+        configManager.setLastContactFile(path);
         updateHeaders();
     }
 }
@@ -205,7 +206,7 @@ void MainWindow::on_action_SaveAsFile_triggered()
 void MainWindow::on_action_SaveAsDir_triggered()
 {
     QString path = QFileDialog::getExistingDirectory(this,
-        tr("Save VCF Directory"), setDlg->lastContactFile(),
+        tr("Save VCF Directory"), configManager.lastContactFile(),
         QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
     if (!path.isEmpty()) {
         QDir d(path);
@@ -219,7 +220,7 @@ void MainWindow::on_action_SaveAsDir_triggered()
                     return;
         }
         selectedModel->saveAs(path, ftDirectory);
-        setDlg->setLastContactFile(path);
+        configManager.setLastContactFile(path);
         updateHeaders();
     }
 }
@@ -394,7 +395,7 @@ void MainWindow::on_btnCompare_clicked()
 void MainWindow::on_action_Sort_toggled(bool needSort)
 {
     setSorting(needSort);
-    setDlg->setSortingEnabled(needSort);
+    configManager.setSortingEnabled(needSort);
     updateModeStatus();
 }
 
@@ -534,7 +535,7 @@ void MainWindow::updateHeaders()
 void MainWindow::updateModeStatus()
 {
     QString sm = tr("Mode: ");
-    sm += (setDlg->showTwoPanels() ? tr("two panels") : tr("one panel")) + ", ";
+    sm += (configManager.showTwoPanels() ? tr("two panels") : tr("one panel")) + ", ";
     sm += (ui->action_Sort->isChecked() ? tr("sorted") : tr("not sorted")) + ", ";
     switch (modLeft->viewMode()) {
     case ContactModel::Standard:

@@ -16,6 +16,7 @@
 #include <QMessageBox>
 #include <QTranslator>
 
+#include "../gui/configmanager.h"
 #include "languagemanager.h"
 #include "languageselectdialog.h"
 #include "mainwindow.h"
@@ -29,14 +30,14 @@ int main(int argc, char *argv[])
     a.setApplicationName("doublecontact");
     // Set UI language
     QSettings settings;
-    QString language = SettingsDialog::readLanguage(settings);
+    QString language = configManager.readLanguage();
     QTranslator tr;
     if (!languageManager.load(a.applicationDirPath()+QDir::separator()+QString("iso639-1.utf8")))
         QMessageBox::warning(0, S_WARNING, "Language list loading error");
     else {
         if (language.isEmpty()) {
             language = LanguageSelectDialog::selectLanguage();
-            SettingsDialog::writeLanguage(settings, language);
+            configManager.writeLanguage(language);
         }
         QString langCode = languageManager.nativeNameToCode(language);
         QString langPath = a.applicationDirPath()+QDir::separator()+QString("doublecontact_%1.qm").arg(langCode);

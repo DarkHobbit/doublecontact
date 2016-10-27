@@ -2,12 +2,7 @@
 #include <QLocale>
 #include <QMessageBox>
 
-#if QT_VERSION >= 0x050000
-#include <QStandardPaths>
-#else
-#include <QDesktopServices>
-#endif
-
+#include "../gui/configmanager.h"
 #include "languagemanager.h"
 #include "settingsdialog.h"
 #include "ui_settingsdialog.h"
@@ -30,7 +25,7 @@ bool SettingsDialog::readConfig()
 {
     // Language
     ui->cbLanguage->insertItems(0, languageManager.nativeNames());
-    _lang = readLanguage(settings);
+    _lang = configManager.readLanguage();
     ui->cbLanguage->setCurrentIndex(ui->cbLanguage->findText(_lang));
     // Locale
     ui->leDateFormat->setText(settings.value("Locale/DateFormat", QLocale::system().dateFormat()).toString());
@@ -68,7 +63,7 @@ bool SettingsDialog::writeConfig()
 {
     // Language
     QString newLang = ui->cbLanguage->currentText();
-    writeLanguage(settings, newLang);
+    configManager.writeLanguage(newLang);
     if (newLang!=_lang) {
         _langChanged = true;
         _lang = newLang;
@@ -90,74 +85,6 @@ bool SettingsDialog::writeConfig()
     // Done
     updateGlobalData();
     return true;
-}
-
-QString SettingsDialog::readLanguage(QSettings &ss)
-{
-    return ss.value("General/Language", "").toString();
-}
-
-void SettingsDialog::writeLanguage(QSettings &ss, const QString &language)
-{
-    ss.setValue("General/Language", language);
-}
-
-QString SettingsDialog::lastContactFile()
-{
-    QString defaultDir =
-#if QT_VERSION >= 0x050000
-        QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
-#else
-        QDesktopServices::storageLocation( QDesktopServices::DocumentsLocation);
-#endif
-    return settings.value("General/LastContactFile", defaultDir).toString();
-}
-
-void SettingsDialog::setLastContactFile(const QString &path)
-{
-    settings.setValue("General/LastContactFile", path);
-}
-
-QString SettingsDialog::lastImageFile()
-{
-    QString defaultDir =
-#if QT_VERSION >= 0x050000
-        QStandardPaths::writableLocation(QStandardPaths::PicturesLocation);
-#else
-        QDesktopServices::storageLocation( QDesktopServices::PicturesLocation);
-#endif
-    return settings.value("General/LastImageFile", defaultDir).toString();
-}
-
-void SettingsDialog::setLastImageFile(const QString &path)
-{
-    settings.setValue("General/LastImageFile", path);
-}
-
-bool SettingsDialog::showTwoPanels()
-{
-    return settings.value("General/ShowTwoPanels", true).toBool();
-}
-
-void SettingsDialog::setShowTwoPanels(bool value)
-{
-    settings.setValue("General/ShowTwoPanels", value);
-}
-
-bool SettingsDialog::openLastFilesAtStartup()
-{
-    return ui->cbOpenLastFilesAtStartup->isChecked();
-}
-
-bool SettingsDialog::sortingEnabled()
-{
-    return settings.value("General/SortingEnabled", false).toBool();
-}
-
-void SettingsDialog::setSortingEnabled(bool value)
-{
-    settings.setValue("General/SortingEnabled", value);
-
 }
 
 ContactColumnList SettingsDialog::columnNames()
@@ -232,6 +159,7 @@ void SettingsDialog::on_cbUseSystemDateTimeFormat_clicked(bool checked)
 
 void SettingsDialog::updateGlobalData()
 {
+    gd.openLastFilesAtStartup = ui->cbOpenLastFilesAtStartup->isChecked();
     if (ui->cbUseSystemDateTimeFormat->isChecked()) {
         gd.dateFormat = QLocale::system().dateFormat();
         gd.timeFormat = QLocale::system().timeFormat();

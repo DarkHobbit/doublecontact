@@ -2,8 +2,9 @@
 #define SETTINGSDIALOG_H
 
 #include <QDialog>
-#include <QSettings>
 #include <QVector>
+
+#include "../gui/configmanager.h"
 #include "globals.h"
 
 namespace Ui {
@@ -20,22 +21,9 @@ public:
     // Common configuration, managed by dialog
     bool readConfig();
     bool writeConfig();
-    static QString readLanguage(QSettings& ss);
-    static void writeLanguage(QSettings& ss, const QString& language);
     ContactColumnList columnNames();
     QString lang();
     bool langChanged();
-    // Separate settings, managed by main window and contact dialog commands
-    QString lastContactFile();
-    void setLastContactFile(const QString& path);
-    QString lastImageFile();
-    void setLastImageFile(const QString& path);
-    bool showTwoPanels();
-    void setShowTwoPanels(bool value);
-    bool openLastFilesAtStartup();
-    void setOpenLastFilesAtStartup();
-    bool sortingEnabled();
-    void setSortingEnabled(bool value);
 private slots:
     void on_btnAddCol_clicked();
     void on_btnDelCol_clicked();

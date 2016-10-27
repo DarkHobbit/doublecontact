@@ -45,6 +45,7 @@ ContactDialog::ContactDialog(QWidget *parent) :
     // Photo editing
     menuPhotoEdit = new QMenu(this);
     ui->btnPhotoEdit->setMenu(menuPhotoEdit);
+  //    ui->lbPhotoContent->setTextInteractionFlags(Qt::TextEditorInteraction);
     // Other known and unknown tags tables
     ui->twOtherTags->setItemDelegate(new ReadOnlyTableDelegate());
     ui->twUnknownTags->setItemDelegate(new ReadOnlyTableDelegate());

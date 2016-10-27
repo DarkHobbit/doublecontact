@@ -121,6 +121,7 @@ public:
 
 extern
 struct GlobalConfig {
+    bool openLastFilesAtStartup;
     QString dateFormat, timeFormat;
     enum VCFVersion {
         VCF21,

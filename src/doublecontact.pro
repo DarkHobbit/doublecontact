@@ -31,7 +31,9 @@ SOURCES += main.cpp \
     aboutdialog.cpp \
     languagemanager.cpp \
     languageselectdialog.cpp \
-    recentlist.cpp
+    recentlist.cpp \
+    ../gui/configmanager.cpp
+
 HEADERS += mainwindow.h \
     contactmodel.h \
     contactlist.h \
@@ -56,7 +58,9 @@ HEADERS += mainwindow.h \
     aboutdialog.h \
     languagemanager.h \
     languageselectdialog.h \
-    recentlist.h
+    recentlist.h \
+    ../gui/configmanager.h
+
 FORMS += mainwindow.ui \
     contactdialog.ui \
     phonetypedialog.ui \
