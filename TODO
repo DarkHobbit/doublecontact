@@ -3,7 +3,6 @@ You can contact me at pub@zvyozdochkin.ru.
 
 0.1:
 * --fullscreen not works on Mac
-* ConfigManager? (move all non-widget stuff for SettingsDialog. M.b. it must be in gui (not core), because under Qt4 QDesktopServices depends on QtGui)
 * см. все TODO в проекте
 * export delete time from bday mode if receiver not support it
 * settings - fonts

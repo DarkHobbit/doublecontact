@@ -2,7 +2,7 @@
 #define SETTINGSDIALOG_H
 
 #include <QDialog>
-#include <QVector>
+#include <QStringList>
 
 #include "../gui/configmanager.h"
 #include "globals.h"
@@ -18,11 +18,8 @@ class SettingsDialog : public QDialog
 public:
     explicit SettingsDialog(QWidget *parent = 0);
     ~SettingsDialog();
-    // Common configuration, managed by dialog
-    bool readConfig();
-    bool writeConfig();
-    ContactColumnList columnNames();
-    QString lang();
+    bool setData();
+    bool getData();
     bool langChanged();
 private slots:
     void on_btnAddCol_clicked();
@@ -35,9 +32,6 @@ private:
     QString _lang;
     bool _langChanged;
     Ui::SettingsDialog *ui;
-    QSettings settings;
-    QStringList validColumnNames; // Available list
-    void updateGlobalData();
 };
 
 #endif // SETTINGSDIALOG_H

@@ -15,11 +15,15 @@
 #define CONFIGMANAGER_H
 
 #include <QSettings>
+#include <QStringList>
 
 class ConfigManager
 {
 public:
     ConfigManager();
+    // Common configuration, managed by dialog
+    void readConfig();
+    void writeConfig();
     // Separate settings, managed by main window and contact dialog commands
     QString readLanguage();
     void writeLanguage(const QString& language);
@@ -31,9 +35,10 @@ public:
     void setShowTwoPanels(bool value);
     bool sortingEnabled();
     void setSortingEnabled(bool value);
+    QStringList validColumnNames; // Available list
 private:
     QSettings settings;
-
+    void updateFormats();
 };
 
 extern ConfigManager configManager;

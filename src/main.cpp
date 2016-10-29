@@ -25,11 +25,7 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    // Settings settings :)
-    a.setOrganizationName("doublecontact");
-    a.setApplicationName("doublecontact");
     // Set UI language
-    QSettings settings;
     QString language = configManager.readLanguage();
     QTranslator tr;
     if (!languageManager.load(a.applicationDirPath()+QDir::separator()+QString("iso639-1.utf8")))
@@ -50,6 +46,7 @@ int main(int argc, char *argv[])
             contactColumnHeaders.fill();
         }
     }
+    configManager.readConfig(); // After contactColumnHeaders.fill()! Else national UI not works
     // Main Window
     MainWindow w;
     if (qApp->arguments().contains("--fullscreen") || qApp->arguments().contains("-f"))

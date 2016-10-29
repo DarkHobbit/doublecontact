@@ -123,6 +123,8 @@ extern
 struct GlobalConfig {
     bool openLastFilesAtStartup;
     QString dateFormat, timeFormat;
+    bool useSystemDateTimeFormat;
+    ContactColumnList columnNames;
     enum VCFVersion {
         VCF21,
         VCF30

@@ -24,6 +24,7 @@
 #include "contactdialog.h"
 #include "comparedialog.h"
 #include "multicontactdialog.h"
+#include "settingsdialog.h"
 #include "formats/iformat.h"
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -47,8 +48,6 @@ MainWindow::MainWindow(QWidget *parent) :
     lbMode = new QLabel(0);
     statusBar()->addWidget(lbMode);
     // Settings
-    setDlg = new SettingsDialog(0);
-    setDlg->readConfig();
     ui->retranslateUi(this);
     // Track selected view
     connect(qApp, SIGNAL(focusChanged(QWidget*,QWidget*)), this, SLOT(anyFocusChanged(QWidget*,QWidget*)));
@@ -88,7 +87,6 @@ MainWindow::MainWindow(QWidget *parent) :
 
 MainWindow::~MainWindow()
 {
-    delete setDlg;
     delete ui;
 }
 
@@ -603,15 +601,13 @@ bool MainWindow::askSaveChanges(ContactModel *model)
     return res;
 }
 
-void MainWindow::updateConfig()
+void MainWindow::updateConfig() // TODO setVisibleColumns will be without arguments after moving columnNames to gd
 {
-    modLeft->setVisibleColumns(setDlg->columnNames());
+    // Table(s) visible columns
+    modLeft->setVisibleColumns(gd.columnNames);
     if (modRight)
-        modRight->setVisibleColumns(setDlg->columnNames());
-    // Language
-    setDlg->writeConfig();
-    if (setDlg->langChanged())
-        QMessageBox::information(0, S_INFORM, tr("Restart program to apply language change"));
+        modRight->setVisibleColumns(gd.columnNames);
+    // TODO Move here font changes and other immediately applied but settings window managed options
 }
 
 void MainWindow::updateRecent()
@@ -633,9 +629,18 @@ void MainWindow::on_action_Other_panel_triggered()
 
 void MainWindow::on_actionSettings_triggered()
 {
+    SettingsDialog* setDlg = new SettingsDialog(0);
+    setDlg->setData();
     setDlg->exec();
-    if (setDlg->result()==QDialog::Accepted)
+    if (setDlg->result()==QDialog::Accepted) {
+        setDlg->getData();
+        configManager.writeConfig();
         updateConfig();
+        // Language
+        if (setDlg->langChanged())
+            QMessageBox::information(0, S_INFORM, tr("Restart program to apply language change"));
+    }
+    delete setDlg;
 }
 
 void MainWindow::on_action_Close_triggered()

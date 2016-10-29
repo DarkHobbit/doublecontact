@@ -22,7 +22,6 @@
 #include "contactmodel.h"
 #include "contactsorterfilter.h"
 #include "recentlist.h"
-#include "settingsdialog.h"
 
 namespace Ui {
 class MainWindow;
@@ -99,7 +98,6 @@ private:
     ContactSorterFilter *proxyLeft, *proxyRight;
     // End of potentially unsafe pointers
     QModelIndexList selection;
-    SettingsDialog* setDlg;
     QLabel* lbMode;
     void selectView(QTableView* view);
     bool checkSelection(bool errorIfNoSelected = true, bool onlyOneRowAllowed = false);
@@ -111,6 +109,7 @@ private:
     void setSelectionModelEvents();
     inline ContactModel* oppositeModel();
     bool askSaveChanges(ContactModel *model);
+    // Update visual configuration changes at startup and after settings dialog call
     void updateConfig();
     void updateRecent();
 };

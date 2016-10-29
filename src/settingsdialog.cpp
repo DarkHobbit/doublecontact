@@ -1,5 +1,4 @@
 #include <QApplication>
-#include <QLocale>
 #include <QMessageBox>
 
 #include "../gui/configmanager.h"
@@ -12,8 +11,6 @@ SettingsDialog::SettingsDialog(QWidget *parent) :
     _lang(""), _langChanged(false), ui(new Ui::SettingsDialog)
 {
     ui->setupUi(this);
-    for (int i=0; i<ccLast; i++)
-         validColumnNames << contactColumnHeaders[i];
 }
 
 SettingsDialog::~SettingsDialog()
@@ -21,45 +18,33 @@ SettingsDialog::~SettingsDialog()
     delete ui;
 }
 
-bool SettingsDialog::readConfig()
+bool SettingsDialog::setData()
 {
     // Language
     ui->cbLanguage->insertItems(0, languageManager.nativeNames());
     _lang = configManager.readLanguage();
     ui->cbLanguage->setCurrentIndex(ui->cbLanguage->findText(_lang));
     // Locale
-    ui->leDateFormat->setText(settings.value("Locale/DateFormat", QLocale::system().dateFormat()).toString());
-    ui->leTimeFormat->setText(settings.value("Locale/TimeFormat", QLocale::system().timeFormat()).toString());
-    ui->cbUseSystemDateTimeFormat->setChecked(settings.value("Locale/UseSystemDateTimeFormat", true).toBool());
+    ui->leDateFormat->setText(gd.dateFormat);
+    ui->leTimeFormat->setText(gd.timeFormat);
+    ui->cbUseSystemDateTimeFormat->setChecked(gd.useSystemDateTimeFormat);
     on_cbUseSystemDateTimeFormat_clicked(ui->cbUseSystemDateTimeFormat->isChecked());
     // Misc
-    ui->cbOpenLastFilesAtStartup->setChecked(settings.value("General/OpenLastFilesAtStartup", true).toBool());
+    ui->cbOpenLastFilesAtStartup->setChecked(gd.openLastFilesAtStartup);
     // Column view
-    int visibleColumnCount = settings.value("VisibleColumns/Count", 0).toInt();
-    for (int i=0; i<visibleColumnCount; i++) { // Fill visible columns list
-        QString columnCandidate = settings.value(QString("VisibleColumns/Column%1").arg(i+1)).toString();
-        if (validColumnNames.contains(columnCandidate))
-            ui->lwVisibleColumns->addItem(columnCandidate);
-    }
-    if (ui->lwVisibleColumns->count()==0) { // if list is empty, set default
-        ui->lwVisibleColumns->addItem(contactColumnHeaders[ccLastName]);
-        ui->lwVisibleColumns->addItem(contactColumnHeaders[ccFirstName]);
-        ui->lwVisibleColumns->addItem(contactColumnHeaders[ccPhone]);
-    }
-    for (int i=0; i<validColumnNames.count(); i++) // Fill available columns list
-        if (ui->lwVisibleColumns->findItems(validColumnNames[i], Qt::MatchCaseSensitive).isEmpty())
-            ui->lwAvailableColumns->addItem(validColumnNames[i]);
+    for (int i=0; i<gd.columnNames.count(); i++) // Fill visible columns list
+            ui->lwVisibleColumns->addItem(contactColumnHeaders[gd.columnNames[i]]);
+    for (int i=0; i<configManager.validColumnNames.count(); i++) // Fill available columns list
+        if (ui->lwVisibleColumns->findItems(configManager.validColumnNames[i], Qt::MatchCaseSensitive).isEmpty())
+            ui->lwAvailableColumns->addItem(configManager.validColumnNames[i]);
     // Saving
-    int verIndex = ui->cbPrefVCardVer->findText(settings.value("Saving/PreferredVCardVersion", "2.1").toString());
-    if (verIndex!=-1)
-        ui->cbPrefVCardVer->setCurrentIndex(verIndex);
-    ui->cbUseOrigVer->setChecked(settings.value("Saving/UseOriginalFileVCardVersion").toBool());
+    ui->cbPrefVCardVer->setCurrentIndex((short)gd.preferredVCFVersion);
+    ui->cbUseOrigVer->setChecked(gd.useOriginalFileVersion);
     // Done
-    updateGlobalData();
     return true;
 }
 
-bool SettingsDialog::writeConfig()
+bool SettingsDialog::getData()
 {
     // Language
     QString newLang = ui->cbLanguage->currentText();
@@ -69,35 +54,20 @@ bool SettingsDialog::writeConfig()
         _lang = newLang;
     }
     // Locale
-    settings.setValue("Locale/DateFormat", ui->leDateFormat->text());
-    settings.setValue("Locale/TimeFormat", ui->leTimeFormat->text());
-    settings.setValue("Locale/UseSystemDateTimeFormat", ui->cbUseSystemDateTimeFormat->isChecked());
+    gd.dateFormat = ui->leDateFormat->text();
+    gd.timeFormat = ui->leTimeFormat->text();
+    gd.useSystemDateTimeFormat = ui->cbUseSystemDateTimeFormat->isChecked();
     // Misc
-    settings.setValue("General/OpenLastFilesAtStartup", ui->cbOpenLastFilesAtStartup->isChecked());
+    gd.openLastFilesAtStartup = ui->cbOpenLastFilesAtStartup->isChecked();
     // Column view
-    settings.setValue("VisibleColumns/Count", ui->lwVisibleColumns->count());
+    gd.columnNames.clear();
     for (int i=0; i<ui->lwVisibleColumns->count(); i++)
-        settings.setValue(QString("VisibleColumns/Column%1").arg(i+1),
-                          ui->lwVisibleColumns->item(i)->text());
+        gd.columnNames << (ContactColumn)configManager.validColumnNames.indexOf(ui->lwVisibleColumns->item(i)->text());
     // Saving
-    settings.setValue("Saving/PreferredVCardVersion", ui->cbPrefVCardVer->currentText());
-    settings.setValue("Saving/UseOriginalFileVCardVersion", ui->cbUseOrigVer->isChecked());
+    gd.preferredVCFVersion = (GlobalConfig::VCFVersion) ui->cbPrefVCardVer->currentIndex();
+    gd.useOriginalFileVersion = ui->cbUseOrigVer->isChecked();
     // Done
-    updateGlobalData();
     return true;
-}
-
-ContactColumnList SettingsDialog::columnNames()
-{
-    ContactColumnList res;
-    for (int i=0; i<ui->lwVisibleColumns->count(); i++)
-        res << (ContactColumn)validColumnNames.indexOf(ui->lwVisibleColumns->item(i)->text());
-    return res;
-}
-
-QString SettingsDialog::lang()
-{
-    return _lang;
 }
 
 bool SettingsDialog::langChanged()
@@ -155,20 +125,4 @@ void SettingsDialog::on_cbUseSystemDateTimeFormat_clicked(bool checked)
 {
     ui->leDateFormat->setEnabled(!checked);
     ui->leTimeFormat->setEnabled(!checked);
-}
-
-void SettingsDialog::updateGlobalData()
-{
-    gd.openLastFilesAtStartup = ui->cbOpenLastFilesAtStartup->isChecked();
-    if (ui->cbUseSystemDateTimeFormat->isChecked()) {
-        gd.dateFormat = QLocale::system().dateFormat();
-        gd.timeFormat = QLocale::system().timeFormat();
-    }
-    else {
-        gd.dateFormat = ui->leDateFormat->text();
-        gd.timeFormat = ui->leTimeFormat->text();
-    }
-    gd.preferredVCFVersion = ui->cbPrefVCardVer->currentText()=="2.1" ?
-                GlobalConfig::VCF21 : GlobalConfig::VCF30;
-    gd.useOriginalFileVersion = ui->cbUseOrigVer->isChecked();
 }

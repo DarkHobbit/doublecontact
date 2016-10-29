@@ -21,7 +21,7 @@
 
 ContactModel::ContactModel(QObject *parent, const QString& source, RecentList& recent) :
     QAbstractTableModel(parent), _source(source), _sourceType(ftNew),
-    _changed(false), _recent(recent)
+    _changed(false), _viewMode(ContactModel::Standard), _recent(recent)
 {
     // Default visible columns
     visibleColumns.clear();
