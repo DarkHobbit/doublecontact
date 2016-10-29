@@ -21,6 +21,7 @@
 #include "contactdialog.h"
 #include "ui_contactdialog.h"
 
+#include "../gui/configmanager.h"
 #include "contactlist.h"
 #include "datedetailsdialog.h"
 #include "globals.h"
@@ -45,7 +46,6 @@ ContactDialog::ContactDialog(QWidget *parent) :
     // Photo editing
     menuPhotoEdit = new QMenu(this);
     ui->btnPhotoEdit->setMenu(menuPhotoEdit);
-  //    ui->lbPhotoContent->setTextInteractionFlags(Qt::TextEditorInteraction);
     // Other known and unknown tags tables
     ui->twOtherTags->setItemDelegate(new ReadOnlyTableDelegate());
     ui->twUnknownTags->setItemDelegate(new ReadOnlyTableDelegate());
@@ -650,7 +650,7 @@ void ContactDialog::on_btnSwapAddresses_clicked()
 
 void ContactDialog::onLoadImage()
 {
-    QString path = ""; // TODO use lastImageFile() after ConfigManager implementation
+    QString path = configManager.lastImageFile();
     path = QFileDialog::getOpenFileName(0, tr("Open image file"), path,
         S_ALL_SUPPORTED.arg("(*.png *.PNG *.jpg *.JPG *.jpeg *.JPEG)") +
         ";;JPEG (*.jpg *.JPG *.jpeg *.JPEG)" +
@@ -658,7 +658,7 @@ void ContactDialog::onLoadImage()
         ";;" + S_ALL_FILES);
     if (path.isEmpty())
         return;
-    // TODO use setLastImageFile() after ConfigManager implementation
+    configManager.setLastImageFile(path);
     QFile f(path);
     if (!f.open(QIODevice::ReadOnly)) {
         QMessageBox::critical(0, S_ERROR, S_READ_ERR.arg(path));
@@ -675,8 +675,10 @@ void ContactDialog::onLoadImage()
 
 void ContactDialog::onSaveImage()
 {
-    QString path = ""; // TODO use lastImageFile() after ConfigManager implementation
-    // but only dir!!!
+    QString path = configManager.lastImageFile();
+    // Only dir!
+    if (path.contains("/") && QFile(path).exists())
+        path = path.left(path.lastIndexOf("/"));
     QString format = detectPhotoFormat();
     QString filter = "Binary (*.bin)";
     if (format=="JPEG")
@@ -686,7 +688,7 @@ void ContactDialog::onSaveImage()
     path = QFileDialog::getSaveFileName(0, tr("Save image file"), path, filter);
     if (path.isEmpty())
         return;
-    // TODO use setLastImageFile() after ConfigManager implementation
+    configManager.setLastImageFile(path);
     QFile f(path);
     if (!f.open(QIODevice::WriteOnly)) {
         QMessageBox::critical(0, S_ERROR, S_WRITE_ERR.arg(path));
