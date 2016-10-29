@@ -39,7 +39,6 @@ public:
     void clearData();
     void setData(const ContactItem& c);
     void getData(ContactItem& c);
-    // TODO checkData
 protected:
     void changeEvent(QEvent *e);
     virtual void resizeEvent(QResizeEvent* event);

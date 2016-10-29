@@ -14,7 +14,7 @@ You can contact me at pub@zvyozdochkin.ru.
 * рус. описание (багрепортинг, convertcontact и меню ред. фото)
 * english manual
 * before translations - separate sources (core, gui (model, recent, config, ReadOnlyTableDelegate (gui or widgets)), doublecontact/src, convertcontact)
-* separate translation files???
+* separate translation files??? learn, can some projects have one translation set?
 * register on weblate (transifex?)
 * ukrainian and belarussian language files
 * set doxygen labels
