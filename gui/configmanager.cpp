@@ -106,13 +106,7 @@ void ConfigManager::writeLanguage(const QString &language)
 
 QString ConfigManager::lastContactFile()
 {
-    QString defaultDir =
-#if QT_VERSION >= 0x050000
-        QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
-#else
-        QDesktopServices::storageLocation( QDesktopServices::DocumentsLocation);
-#endif
-    return settings.value("General/LastContactFile", defaultDir).toString();
+    return settings.value("General/LastContactFile", defaultDocDir()).toString();
 }
 
 void ConfigManager::setLastContactFile(const QString &path)
@@ -122,13 +116,7 @@ void ConfigManager::setLastContactFile(const QString &path)
 
 QString ConfigManager::lastImageFile()
 {
-    QString defaultDir =
-#if QT_VERSION >= 0x050000
-        QStandardPaths::writableLocation(QStandardPaths::PicturesLocation);
-#else
-        QDesktopServices::storageLocation( QDesktopServices::PicturesLocation);
-#endif
-    return settings.value("General/LastImageFile", defaultDir).toString();
+    return settings.value("General/LastImageFile", defaultImageDir()).toString();
 }
 
 void ConfigManager::setLastImageFile(const QString &path)
@@ -155,6 +143,26 @@ void ConfigManager::setSortingEnabled(bool value)
 {
     settings.setValue("General/SortingEnabled", value);
 
+}
+
+QString ConfigManager::defaultDocDir()
+{
+    return
+        #if QT_VERSION >= 0x050000
+                QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
+        #else
+                QDesktopServices::storageLocation( QDesktopServices::DocumentsLocation);
+        #endif
+}
+
+QString ConfigManager::defaultImageDir()
+{
+    return
+        #if QT_VERSION >= 0x050000
+                QStandardPaths::writableLocation(QStandardPaths::PicturesLocation);
+        #else
+                QDesktopServices::storageLocation( QDesktopServices::PicturesLocation);
+        #endif
 }
 
 void ConfigManager::updateFormats()

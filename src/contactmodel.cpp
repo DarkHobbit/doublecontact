@@ -159,9 +159,7 @@ bool ContactModel::open(const QString& path, FormatType fType)
     }
     if (!format) return false;
     beginResetModel();
-    format->importRecords(path, items, false);
-    _source = path;
-    _sourceType = realType;
+    bool res = format->importRecords(path, items, false);
     if (!format->errors().isEmpty()) {
         LogWindow* w = new LogWindow(0);
         w->setData(path, items, format->errors());
@@ -170,6 +168,10 @@ bool ContactModel::open(const QString& path, FormatType fType)
     }
     delete format;
     endResetModel();
+    if (!res)
+        return false;
+    _source = path;
+    _sourceType = realType;
     _changed = false;
     _recent.removeItem(path);
     return true;

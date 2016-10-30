@@ -35,6 +35,8 @@ public:
     void setShowTwoPanels(bool value);
     bool sortingEnabled();
     void setSortingEnabled(bool value);
+    static QString defaultDocDir();
+    static QString defaultImageDir();
     QStringList validColumnNames; // Available list
 private:
     QSettings settings;

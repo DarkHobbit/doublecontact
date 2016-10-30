@@ -17,6 +17,7 @@
 #include <QTextStream>
 
 #include "globals.h"
+#include "../../gui/configmanager.h"
 #include "../common/vcarddata.h"
 
 VCFDirectory::VCFDirectory()
@@ -38,7 +39,8 @@ bool VCFDirectory::importRecords(const QString &url, ContactList &list, bool app
     }
     QStringList entries = d.entryList(QStringList("*.vcf"), QDir::Files, QDir::Name | QDir::IgnoreCase);
     if (entries.isEmpty()) {
-        QMessageBox::critical(0, S_ERROR, QObject::tr("Directory not contains VCF files:\n%1").arg(url));
+        if (url!=configManager.defaultDocDir()) // Against first run
+            QMessageBox::critical(0, S_ERROR, QObject::tr("Directory not contains VCF files:\n%1").arg(url));
         return false;
     }
     VCardData data;
