@@ -19,7 +19,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-#include "../gui/configmanager.h"
+#include "configmanager.h"
 #include "aboutdialog.h"
 #include "contactdialog.h"
 #include "comparedialog.h"

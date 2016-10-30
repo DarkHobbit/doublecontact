@@ -17,7 +17,7 @@
 #include <QTextStream>
 
 #include "globals.h"
-#include "../../gui/configmanager.h"
+#include "configmanager.h"
 #include "../common/vcarddata.h"
 
 VCFDirectory::VCFDirectory()

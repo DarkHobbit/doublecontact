@@ -1,7 +1,7 @@
 #include <QApplication>
 #include <QMessageBox>
 
-#include "../gui/configmanager.h"
+#include "configmanager.h"
 #include "languagemanager.h"
 #include "settingsdialog.h"
 #include "ui_settingsdialog.h"

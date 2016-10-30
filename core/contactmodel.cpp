@@ -13,7 +13,6 @@
 
 #include <QtAlgorithms>
 #include <QFileInfo>
-#include <QMessageBox>
 
 #include "contactmodel.h"
 #include "logwindow.h"

@@ -16,7 +16,7 @@
 #include <QMessageBox>
 #include <QTranslator>
 
-#include "../gui/configmanager.h"
+#include "configmanager.h"
 #include "languagemanager.h"
 #include "languageselectdialog.h"
 #include "mainwindow.h"
