@@ -11,7 +11,6 @@
  *
  */
 
-#include <QMessageBox>
 #include <QObject>
 
 #include "fileformat.h"
@@ -28,14 +27,17 @@ QStringList FileFormat::errors()
     return _errors;
 }
 
+QString FileFormat::fatalError()
+{
+    return _fatalError;
+}
+
 bool FileFormat::openFile(QString path, QIODevice::OpenMode mode)
 {
     file.setFileName(path);
     bool res = file.open(mode);
-    if (!res) {
-        QString msgTempl = (mode==QIODevice::ReadOnly) ? S_READ_ERR : S_WRITE_ERR;
-        QMessageBox::critical(0, S_ERROR, msgTempl.arg(path));
-    }
+    if (!res)
+        _fatalError = ((mode==QIODevice::ReadOnly) ? S_READ_ERR : S_WRITE_ERR).arg(path);
     return res;
 }
 

@@ -1,6 +1,8 @@
 # Desktop application of DoubleContact
 
-include(../gui/gui.pri)
+include(../model/model.pri)
+
+QT += gui
 greaterThan(QT_MAJOR_VERSION, 4):QT += widgets
 
 TARGET = doublecontact
@@ -12,6 +14,7 @@ SOURCES += main.cpp \
     logwindow.cpp \
     settingsdialog.cpp \
     datedetailsdialog.cpp \
+    helpers.cpp \
     comparecontainers.cpp \
     comparedialog.cpp \
     multicontactdialog.cpp \
@@ -24,6 +27,7 @@ HEADERS += mainwindow.h \
     logwindow.h \
     settingsdialog.h \
     datedetailsdialog.h \
+    helpers.h \
     comparecontainers.h \
     comparedialog.h \
     multicontactdialog.h \

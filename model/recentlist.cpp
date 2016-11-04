@@ -20,7 +20,7 @@ RecentList::RecentList() : QStringList()
 void RecentList::read()
 {
     clear();
-    QSettings settings;
+    QSettings settings("DarkHobbit", "doublecontact");
     int _count = settings.value("Recent/Count", 0).toInt();
     for (int i=1; i<=_count; i++)
         push_back(settings.value(QString("Recent/Item%1").arg(i)).toString());

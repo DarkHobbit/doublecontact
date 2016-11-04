@@ -4,7 +4,7 @@
 #include <QDialog>
 #include <QStringList>
 
-#include "../gui/configmanager.h"
+#include "configmanager.h"
 #include "globals.h"
 
 namespace Ui {

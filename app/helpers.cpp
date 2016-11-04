@@ -1,6 +1,6 @@
 /* Double Contact
  *
- * Module: Creator of file/network export/import format classes
+ * Module: Widget helpers
  *
  * Copyright 2016 Mikhail Y. Zvyozdochkin aka DarkHobbit <pub@zvyozdochkin.ru>
  *
@@ -10,20 +10,19 @@
  * (at your option) any later version. See COPYING file for more details.
  *
  */
-#ifndef FORMATFACTORY_H
-#define FORMATFACTORY_H
 
-#include <QIODevice>
-#include <QStringList>
-#include "iformat.h"
+#include <QMessageBox>
+#include "globals.h"
+#include "helpers.h"
 
-class FormatFactory
+ReadOnlyTableDelegate::ReadOnlyTableDelegate(QObject* parent)
+    : QItemDelegate(parent)
+{}
+
+QWidget* ReadOnlyTableDelegate::createEditor(
+     QWidget*, const QStyleOptionViewItem&, const QModelIndex &) const
 {
-public:
-    FormatFactory();
-    static QStringList supportedFilters(QIODevice::OpenMode mode);
-    IFormat* createObject(const QString& url);
-    QString error;
-};
+    QMessageBox::critical(0, S_ERROR, tr("This table is read only"));
+    return 0;
+}
 
-#endif // FORMATFACTORY_H

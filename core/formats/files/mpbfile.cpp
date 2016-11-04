@@ -11,7 +11,6 @@
  *
  */
 #include "mpbfile.h"
-#include <QMessageBox>
 #include <QStringList>
 #include <QTextStream>
 
@@ -55,7 +54,7 @@ bool MPBFile::importRecords(const QString &url, ContactList &list, bool append)
     closeFile();
     if (!vCardsFound) {
         // TODO maybe move this string to global for other formats
-        QMessageBox::critical(0, S_ERROR, QObject::tr("No contact records in this file"));
+        _fatalError = QObject::tr("No contact records in this file");
         return false;
     }
     return VCardData::importRecords(content, list, append, _errors);
@@ -63,6 +62,6 @@ bool MPBFile::importRecords(const QString &url, ContactList &list, bool append)
 
 bool MPBFile::exportRecords(const QString&, ContactList&)
 {
-    QMessageBox::critical(0, S_ERROR, S_READ_ONLY_FORMAT);
+    _fatalError =  S_READ_ONLY_FORMAT;
     return false;
 }

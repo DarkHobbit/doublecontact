@@ -1,6 +1,5 @@
 #include "formatfactory.h"
 #include <QFileInfo>
-#include <QMessageBox>
 #include <QObject>
 
 #include "files/mpbfile.h"
@@ -8,6 +7,7 @@
 #include "files/vcffile.h"
 
 FormatFactory::FormatFactory()
+    :error("")
 {
 }
 
@@ -37,7 +37,7 @@ QStringList FormatFactory::supportedFilters(QIODevice::OpenMode mode)
 IFormat *FormatFactory::createObject(const QString &url)
 {
     if (url.isEmpty()) {
-        QMessageBox::critical(0, S_ERROR, QObject::tr("Empty file name"));
+        error = QObject::tr("Empty file name");
         return 0;
     }
     QFileInfo info(url);
@@ -57,7 +57,6 @@ IFormat *FormatFactory::createObject(const QString &url)
         return new UDXFile();
     // ...here add detect() for new format
     // Sad but true
-    QMessageBox::critical(0,
-        S_ERROR, QObject::tr("Unknown file format:\n%1").arg(url));
+    error = QObject::tr("Unknown file format:\n%1").arg(url);
     return 0;
 }

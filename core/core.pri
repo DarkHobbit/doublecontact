@@ -6,8 +6,6 @@ INCLUDEPATH += $$PWD
 
 HEADERS	+= \
     $$PWD/contactlist.h \
-    $$PWD/contactmodel.h \
-    $$PWD/contactsorterfilter.h \
     $$PWD/globals.h \
     $$PWD/languagemanager.h \
     $$PWD/formats/iformat.h \
@@ -21,8 +19,6 @@ HEADERS	+= \
 
 SOURCES	+= \
     $$PWD/contactlist.cpp \
-    $$PWD/contactmodel.cpp \
-    $$PWD/contactsorterfilter.cpp \
     $$PWD/globals.cpp \
     $$PWD/languagemanager.cpp \
     $$PWD/formats/formatfactory.cpp \

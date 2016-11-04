@@ -13,6 +13,8 @@
 
 #include <QtAlgorithms>
 #include <QFileInfo>
+#include <QMessageBox>
+// TODO for Qt5 and QML, remove it here
 
 #include "contactmodel.h"
 #include "logwindow.h"
@@ -156,9 +158,14 @@ bool ContactModel::open(const QString& path, FormatType fType)
     case ftNew: // Only to avoid warning :(
         break;
     }
-    if (!format) return false;
+    if (!format) {
+        QMessageBox::critical(0, S_ERROR, factory.error);
+        return false;
+    }
     beginResetModel();
     bool res = format->importRecords(path, items, false);
+    if (!format->fatalError().isEmpty())
+        QMessageBox::critical(0, S_ERROR, format->fatalError());
     if (!format->errors().isEmpty()) {
         LogWindow* w = new LogWindow(0);
         w->setData(path, items, format->errors());

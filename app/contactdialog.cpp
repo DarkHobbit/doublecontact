@@ -21,10 +21,11 @@
 #include "contactdialog.h"
 #include "ui_contactdialog.h"
 
-#include "../gui/configmanager.h"
+#include "configmanager.h"
 #include "contactlist.h"
 #include "datedetailsdialog.h"
 #include "globals.h"
+#include "helpers.h"
 #include "phonetypedialog.h"
 
 #define MIN_VISIBLE_NAMES 2

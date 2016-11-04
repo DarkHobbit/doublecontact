@@ -12,12 +12,10 @@
  */
 #include "vcfdirectory.h"
 #include <QDir>
-#include <QMessageBox>
 #include <QStringList>
 #include <QTextStream>
 
 #include "globals.h"
-#include "configmanager.h"
 #include "../common/vcarddata.h"
 
 VCFDirectory::VCFDirectory()
@@ -34,13 +32,12 @@ bool VCFDirectory::importRecords(const QString &url, ContactList &list, bool app
     if (!append) list.clear(); // VCardData::importRecords must be called with append=true
     QDir d(url, "*.vcf", QDir::Name | QDir::IgnoreCase, QDir::Files);
     if (!d.exists()) {
-        QMessageBox::critical(0, S_ERROR, QObject::tr("Directory not exists:\n%1").arg(url));
+        _fatalError =  QObject::tr("Directory not exists:\n%1").arg(url);
         return false;
     }
     QStringList entries = d.entryList(QStringList("*.vcf"), QDir::Files, QDir::Name | QDir::IgnoreCase);
     if (entries.isEmpty()) {
-        if (url!=configManager.defaultDocDir()) // Against first run
-            QMessageBox::critical(0, S_ERROR, QObject::tr("Directory not contains VCF files:\n%1").arg(url));
+        _fatalError =  QObject::tr("Directory not contains VCF files:\n%1").arg(url);
         return false;
     }
     VCardData data;
@@ -65,7 +62,7 @@ bool VCFDirectory::exportRecords(const QString &url, ContactList &list)
     QDir d;
     d.rmpath(url);
     if (!d.mkpath(url)) {
-        QMessageBox::critical(0, S_ERROR, QObject::tr("Can't create directory\n%1").arg(url));
+        _fatalError = QObject::tr("Can't create directory\n%1").arg(url);
         return false;
     }
     int i = 1;

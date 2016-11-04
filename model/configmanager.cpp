@@ -23,7 +23,7 @@
 #include "globals.h"
 
 ConfigManager::ConfigManager()
-    :settings("doublecontact", "doublecontact")
+    :settings("DarkHobbit", "doublecontact")
 {
 }
 

@@ -12,8 +12,6 @@
  */
 
 #include "contactlist.h"
-#include <QMessageBox>
-#include <iostream>
 
 QString Phone::expandNumber() const
 {

@@ -73,7 +73,8 @@ MainWindow::MainWindow(QWidget *parent) :
     // Previous session file data
     else if (!qApp->arguments().contains("-q")
              && gd.openLastFilesAtStartup
-             && QFile(configManager.lastContactFile()).exists())
+             && QFile(configManager.lastContactFile()).exists()
+             && (configManager.lastContactFile()!=ConfigManager::defaultDocDir())) // against falseerrormessage at first run
         selectedModel->open(configManager.lastContactFile(), ftAuto);
     // Show data
     ui->action_Two_panels->setChecked(configManager.showTwoPanels());

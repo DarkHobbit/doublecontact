@@ -23,9 +23,11 @@ public:
     FileFormat();
     virtual ~FileFormat();
     QStringList errors();
+    QString fatalError();
 protected:
     QFile file;
     QStringList _errors;
+    QString _fatalError;
     bool openFile(QString path, QIODevice::OpenMode mode);
     void closeFile();
 };
