@@ -506,6 +506,7 @@ void MainWindow::recentItemClicked()
             if (!askSaveChanges(selectedModel))
                 return;
             selectedModel->open(path, ftAuto);
+            configManager.setLastContactFile(path);
         }
         updateRecent();
         updateHeaders();
