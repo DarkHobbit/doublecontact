@@ -29,7 +29,7 @@ class LogWindow : public QDialog
 public:
     explicit LogWindow(QWidget *parent = 0);
     ~LogWindow();
-    void setData(const QString& path, const ContactList& items, const QStringList& errors);
+    void setData(const QString& path, int itemCount, const QStringList& errors);
 
 protected:
     void changeEvent(QEvent *e);

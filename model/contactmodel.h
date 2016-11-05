@@ -46,8 +46,8 @@ public:
     QVariant headerData(int section, Qt::Orientation orientation, int role) const;
     QVariant data(const QModelIndex &index, int role) const;
     // Save and open methods
-    bool open(const QString& path, FormatType fType);
-    bool saveAs(const QString& path, FormatType fType);
+    bool open(const QString& path, FormatType fType, QStringList &errors, QString &fatalError);
+    bool saveAs(const QString& path, FormatType fType, QStringList &errors, QString &fatalError);
     void close();
     // Contact operation methods
     void addRow(const ContactItem& c);

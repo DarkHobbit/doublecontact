@@ -8,7 +8,6 @@ QT       += core
 QT       -= gui
 include(../core/core.pri)
 
-
 TARGET = contconv
 CONFIG   += console
 CONFIG   -= app_bundle

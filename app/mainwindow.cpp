@@ -23,6 +23,7 @@
 #include "aboutdialog.h"
 #include "contactdialog.h"
 #include "comparedialog.h"
+#include "logwindow.h"
 #include "multicontactdialog.h"
 #include "settingsdialog.h"
 #include "formats/iformat.h"
@@ -64,10 +65,10 @@ MainWindow::MainWindow(QWidget *parent) :
     else if (qApp->arguments().count()>1 &&
              !(qApp->arguments().contains("--quiet") || qApp->arguments().contains("-q")))
     {
-        modLeft->open(qApp->arguments()[1], ftAuto);
+        open(modLeft, qApp->arguments()[1], ftAuto);
         if (qApp->arguments().count()>2) {
             ui->action_Two_panels->setChecked(true);
-            modRight->open(qApp->arguments()[2], ftAuto);
+            open(modRight, qApp->arguments()[2], ftAuto);
         }
     }
     // Previous session file data
@@ -75,7 +76,7 @@ MainWindow::MainWindow(QWidget *parent) :
              && gd.openLastFilesAtStartup
              && QFile(configManager.lastContactFile()).exists()
              && (configManager.lastContactFile()!=ConfigManager::defaultDocDir())) // against falseerrormessage at first run
-        selectedModel->open(configManager.lastContactFile(), ftAuto);
+        open(selectedModel, configManager.lastContactFile(), ftAuto);
     // Show data
     ui->action_Two_panels->setChecked(configManager.showTwoPanels());
     ui->action_Sort->setChecked(configManager.sortingEnabled());
@@ -155,7 +156,7 @@ void MainWindow::on_action_OpenFile_triggered()
         FormatFactory::supportedFilters(QIODevice::ReadOnly).join(";;"),
         &selectedFilter);
     if (!path.isEmpty()) {
-        selectedModel->open(path, ftFile);
+        open(selectedModel, path, ftFile);
         configManager.setLastContactFile(path);
         updateHeaders();
         updateRecent();
@@ -170,7 +171,7 @@ void MainWindow::on_action_OpenDir_triggered()
         tr("Open VCF Directory"), configManager.lastContactFile(),
         QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
     if (!path.isEmpty()) {
-        selectedModel->open(path, ftDirectory);
+        open(selectedModel, path, ftDirectory);
         configManager.setLastContactFile(path);
         updateHeaders();
         updateRecent();
@@ -183,7 +184,7 @@ void MainWindow::on_action_Save_triggered()
     if (selectedModel->sourceType()==ftNew)
         on_action_SaveAsFile_triggered();
     else
-        selectedModel->saveAs(selectedModel->source(), selectedModel->sourceType());
+        saveAs(selectedModel, selectedModel->source(), selectedModel->sourceType());
     updateHeaders();
 }
 
@@ -196,7 +197,7 @@ void MainWindow::on_action_SaveAsFile_triggered()
         FormatFactory::supportedFilters(QIODevice::WriteOnly).join(";;"),
         &selectedFilter);
     if (!path.isEmpty()) {
-        selectedModel->saveAs(path, ftFile);
+        saveAs(selectedModel, path, ftFile);
         configManager.setLastContactFile(path);
         updateHeaders();
     }
@@ -218,7 +219,7 @@ void MainWindow::on_action_SaveAsDir_triggered()
                    QMessageBox::Yes, QMessageBox::No)!=QMessageBox::Yes)
                     return;
         }
-        selectedModel->saveAs(path, ftDirectory);
+        saveAs(selectedModel, path, ftDirectory);
         configManager.setLastContactFile(path);
         updateHeaders();
     }
@@ -505,7 +506,7 @@ void MainWindow::recentItemClicked()
         if (fi.exists()) {
             if (!askSaveChanges(selectedModel))
                 return;
-            selectedModel->open(path, ftAuto);
+            open(selectedModel, path, ftAuto);
             configManager.setLastContactFile(path);
         }
         updateRecent();
@@ -601,6 +602,36 @@ bool MainWindow::askSaveChanges(ContactModel *model)
         updateRecent();
     }
     return res;
+}
+
+bool MainWindow::open(ContactModel *model, const QString &path, FormatType fType)
+{
+    QStringList errors;
+    QString fatalError;
+    bool res = model->open(path, fType, errors, fatalError);
+    showIOErrors(path, model->rowCount(), errors, fatalError);
+    return res;
+}
+
+bool MainWindow::saveAs(ContactModel *model, const QString &path, FormatType fType)
+{
+    QStringList errors;
+    QString fatalError;
+    bool res = model->saveAs(path, fType, errors, fatalError);
+    showIOErrors(path, model->rowCount(), errors, fatalError);
+    return res;
+}
+
+void MainWindow::showIOErrors(const QString &path, int count, const QStringList &errors, const QString &fatalError)
+{
+    if (!errors.isEmpty()) {
+        LogWindow* w = new LogWindow(0);
+        w->setData(path, count, errors);
+        w->exec();
+        delete w;
+    }
+    if (!fatalError.isEmpty())
+        QMessageBox::critical(0, S_ERROR, fatalError);
 }
 
 void MainWindow::updateConfig() // TODO setVisibleColumns will be without arguments after moving columnNames to gd

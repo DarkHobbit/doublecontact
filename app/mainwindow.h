@@ -109,6 +109,10 @@ private:
     void setSelectionModelEvents();
     inline ContactModel* oppositeModel();
     bool askSaveChanges(ContactModel *model);
+    // Save and open methods
+    bool open(ContactModel* model, const QString& path, FormatType fType);
+    bool saveAs(ContactModel* model, const QString& path, FormatType fType);
+    void showIOErrors(const QString &path, int count, const QStringList& errors, const QString& fatalError);
     // Update visual configuration changes at startup and after settings dialog call
     void updateConfig();
     void updateRecent();

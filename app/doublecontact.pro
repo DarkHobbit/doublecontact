@@ -1,5 +1,6 @@
 # Desktop application of DoubleContact
 
+include(../core/core.pri)
 include(../model/model.pri)
 
 QT += gui

@@ -37,10 +37,10 @@ LogWindow::~LogWindow()
     delete ui;
 }
 
-void LogWindow::setData(const QString& path, const ContactList &items, const QStringList &errors)
+void LogWindow::setData(const QString& path, int itemCount, const QStringList &errors)
 {
     setWindowTitle(tr("File %1").arg(path));
-    ui->lbSummary->setText(tr("%1 records has been read").arg(items.count()));
+    ui->lbSummary->setText(tr("%1 records has been read").arg(itemCount));
     ui->lwErrors->clear();
     ui->lwErrors->addItems(errors);
 }

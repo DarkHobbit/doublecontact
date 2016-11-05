@@ -1,7 +1,6 @@
 # Model-related part of DoubleContact
 
-include(../core/core.pri)
-lessThan(QT_MAJOR_VERSION, 5):QT += gui
+QT += gui
 
 INCLUDEPATH += $$PWD
 

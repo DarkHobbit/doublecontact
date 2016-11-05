@@ -12,12 +12,10 @@
  */
 
 #include <QtAlgorithms>
+#include <QBrush>
 #include <QFileInfo>
-#include <QMessageBox>
-// TODO for Qt5 and QML, remove it here
 
 #include "contactmodel.h"
-#include "logwindow.h"
 #include "formats/files/vcfdirectory.h"
 
 ContactModel::ContactModel(QObject *parent, const QString& source, RecentList& recent) :
@@ -140,7 +138,7 @@ QVariant ContactModel::data(const QModelIndex &index, int role) const
     return QVariant();
 }
 
-bool ContactModel::open(const QString& path, FormatType fType)
+bool ContactModel::open(const QString& path, FormatType fType, QStringList &errors, QString &fatalError)
 {
     if (path.isEmpty()) return false;
     FormatType realType = fType;
@@ -159,19 +157,13 @@ bool ContactModel::open(const QString& path, FormatType fType)
         break;
     }
     if (!format) {
-        QMessageBox::critical(0, S_ERROR, factory.error);
+        fatalError = factory.error;
         return false;
     }
     beginResetModel();
     bool res = format->importRecords(path, items, false);
-    if (!format->fatalError().isEmpty())
-        QMessageBox::critical(0, S_ERROR, format->fatalError());
-    if (!format->errors().isEmpty()) {
-        LogWindow* w = new LogWindow(0);
-        w->setData(path, items, format->errors());
-        w->exec();
-        delete w;
-    }
+    fatalError = format->fatalError();
+    errors = format->errors();
     delete format;
     endResetModel();
     if (!res)
@@ -183,7 +175,7 @@ bool ContactModel::open(const QString& path, FormatType fType)
     return true;
 }
 
-bool ContactModel::saveAs(const QString& path, FormatType fType)
+bool ContactModel::saveAs(const QString& path, FormatType fType, QStringList &errors, QString &fatalError)
 {
     if (path.isEmpty()) return false;
     IFormat* format = 0;
@@ -198,19 +190,18 @@ bool ContactModel::saveAs(const QString& path, FormatType fType)
     case ftNew: // Only to avoid warning :(
         return false;
     }
-    if (!format) return false;
+    if (!format) {
+        fatalError = factory.error;
+        return false;
+    }
     bool res = format->exportRecords(path, items);
     if (res) {
         _source = path;
         _sourceType = fType;
         _changed = false;
     }
-    if (!format->errors().isEmpty()) {
-        LogWindow* w = new LogWindow(0);
-        w->setData(path, items, format->errors());
-        w->exec();
-        delete w;
-    }
+    fatalError = format->fatalError();
+    errors = format->errors();
     delete format;
     return res;
 }
