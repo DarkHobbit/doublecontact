@@ -28,7 +28,6 @@ public:
     void printUsage();
 private:
     QTextStream out;
-    IFormat* createFormat(const QString& path, FormatType ft);
     void logFormat(IFormat* format);
 };
 

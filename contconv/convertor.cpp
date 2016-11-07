@@ -16,7 +16,10 @@
 #include <QStringList>
 #include "convertor.h"
 #include "formats/formatfactory.h"
+#include "formats/files/mpbfile.h"
+#include "formats/files/udxfile.h"
 #include "formats/files/vcfdirectory.h"
+#include "formats/files/vcffile.h"
 
 Convertor::Convertor(int &argc, char **argv)
     : QCoreApplication(argc, argv),
@@ -66,7 +69,7 @@ int Convertor::start()
                 return 4;
             }
             outFormat = arguments()[i];
-            if (outFormat!="vcf21" && outFormat!="vcf30" && outFormat!="udx" && outFormat!="copy") {
+            if (outFormat!="vcf21" && outFormat!="vcf30" && outFormat!="vcfauto" && outFormat!="udx" && outFormat!="copy") {
                 out << tr("Unknown output format: %1\n").arg(outFormat);
                 printUsage();
                 return 5;
@@ -106,12 +109,16 @@ int Convertor::start()
         printUsage();
         return 10;
     }
+    if (forceDirectory && !outFormat.contains("vcf") && outFormat!="copy") {
+        out << tr("-d option applicable only for vCard format");
+        return 11;
+    }
     // Check if output file exists
     QFile of(outPath);
     if (of.exists() && !forceOverwrite && !QFileInfo(outPath).isDir()) {
         out << tr("Output file already exists, use -w if necessary\n");
         printUsage();
-        return 11;
+        return 12;
     }
     // Define, create file or directory at output
     // (default: as input)
@@ -122,26 +129,59 @@ int Convertor::start()
     else if (forceDirectory)
         oft = ftDirectory;
     // Read
-    IFormat* iFormat = createFormat(inPath, ift);
-    if (!iFormat)
-        return 12;
+    IFormat* iFormat = 0;
+    FormatFactory factory;
+    if (ift==ftFile)
+        iFormat = factory.createObject(inPath);
+    else
+        iFormat = new VCFDirectory();
+    if (!iFormat) {
+        out << factory.error << "\n";
+        return 13;
+    }
     ContactList items;
     bool res = iFormat->importRecords(inPath, items, false);
     logFormat(iFormat);
     delete iFormat;
     if (!res)
-        return 13;
-    out << tr("%1 records read\n").arg(items.count());
-    // Write
-    IFormat* oFormat = createFormat(outPath, oft);
-    if (!oFormat)
         return 14;
-    // TODO set format
+    out << tr("%1 records read\n").arg(items.count());
+    //Define output format
+    gd.preferredVCFVersion = GlobalConfig::VCF21;
+    IFormat* oFormat = 0;
+    if (oft==ftDirectory)
+        oFormat = new VCFDirectory();
+    else if (outFormat.contains("vcf")) {
+        if (outFormat=="vcf30")
+            gd.preferredVCFVersion = GlobalConfig::VCF30;
+        gd.useOriginalFileVersion = (outFormat=="vcfauto");
+        oFormat = new VCFFile();
+    }
+    else if (outFormat.contains("udx"))
+        oFormat = new UDXFile();
+    else { // copy input format
+        if (VCFFile::detect(inPath)) {
+            gd.useOriginalFileVersion = true;
+            oFormat = new VCFFile();
+        }
+        else if (UDXFile::detect(inPath))
+            oFormat = new UDXFile();
+        // else if (MPBFile::detect(inPath)) { TODO m.b. implement?
+        else if (inPath.contains(".mpb", Qt::CaseInsensitive)) { // temp hack
+            out << "MPB format is read-only and incompatible with 'copy' option. Use VCF or UDX for output file\n";
+            return 15;
+        }
+        else {
+            out << "Can't autodetect input format\n";
+            return 16;
+        }
+    }
+    // Write
     res = oFormat->exportRecords(outPath, items);
     logFormat(oFormat);
     delete oFormat;
     out << "Output file successfully written\n";
-    return res ? 0 : 15;
+    return res ? 0 : 17;
 }
 
 // Print program usage if error occured
@@ -155,6 +195,7 @@ void Convertor::printUsage()
         "copy - same as input format, if atodetected (not works with MPB)\n" \
         "vcf21 - vCard version 2.1\n" \
         "vcf30 - vCard version 3.0\n" \
+        "vcfauto - vCard version as in input file\n" \
         "udx - Philips Xenium UDX\n" \
         "\n" \
         "Options:\n" \
@@ -162,19 +203,6 @@ void Convertor::printUsage()
         "-s - write VCF as single file (by default, write as in input)\n" \
         "-d - write VCFs as directory (not compatible with -d)\n" \
         "\n"); // TODO filter
-}
-
-IFormat *Convertor::createFormat(const QString &path, FormatType ft)
-{
-    IFormat* format = 0;
-    FormatFactory factory;
-    if (ft==ftFile)
-        format = factory.createObject(path);
-    else
-        format = new VCFDirectory();
-    if (!format)
-        out << factory.error << "\n";
-    return format;
 }
 
 void Convertor::logFormat(IFormat* format)

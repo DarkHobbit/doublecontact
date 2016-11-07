@@ -3,6 +3,7 @@ You can contact me at pub@zvyozdochkin.ru.
 
 0.1:
 * --fullscreen not works on Mac
+* UDX под Windows (только ли?) в обоих клиентах пишется в CP1251 вместо UTF-8
 * см. все TODO в проекте
 * export delete time from bday mode if receiver not support it
 * settings - fonts
@@ -13,7 +14,6 @@ You can contact me at pub@zvyozdochkin.ru.
 * проверить на RFC
 * рус. описание (багрепортинг, convertcontact и меню ред. фото)
 * english manual
-* before translations - check module separation, move ReadOnlyTableDelegate to widgets, write convertcontact
 * separate translation files??? learn, can some projects have one translation set?
 * register on weblate (transifex?)
 * ukrainian and belarussian language files
