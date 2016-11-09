@@ -830,3 +830,11 @@ void MainWindow::on_action_About_triggered()
     d->exec();
     delete d;
 }
+
+void MainWindow::on_actionReverse_full_name_triggered()
+{
+    if (!checkSelection()) return;
+    selectedModel->reverseFullNames(selection);
+    updateViewMode();
+    updateHeaders();
+}

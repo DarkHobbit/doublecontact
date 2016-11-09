@@ -301,6 +301,16 @@ void ContactModel::dropFullNames(const QModelIndexList &indices)
     _changed = true;
 }
 
+void ContactModel::reverseFullNames(const QModelIndexList &indices)
+{
+    foreach(QModelIndex index, indices) {
+        beginEditRow(index);
+        items[index.row()].reverseFullName();
+        endEditRow(index);
+    }
+    _changed = true;
+}
+
 void ContactModel::splitNumbers(const QModelIndexList &indices)
 {
     foreach(QModelIndex index, indices) {

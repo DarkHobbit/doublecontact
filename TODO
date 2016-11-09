@@ -3,6 +3,7 @@ You can contact me at pub@zvyozdochkin.ru.
 
 0.1:
 * --fullscreen not works on Mac
+* treat empty phonetypes as...
 * UDX под Windows (только ли?) в обоих клиентах пишется в CP1251 вместо UTF-8
 * см. все TODO в проекте
 * export delete time from bday mode if receiver not support it
@@ -10,6 +11,7 @@ You can contact me at pub@zvyozdochkin.ru.
 * add statistics in List menu
 * проверить, как работает на charset, отличных от utf-8 (codec->toUnicode, у меня везде toLocal8Bit, а это, вероятно, неправильно)
 * write PRODID!
+* add group operations to console convertor (8 - +7, fullnames, etc.)
 * проверить на всех доступных телефонах и андроидах
 * проверить на RFC
 * рус. описание (багрепортинг, convertcontact и меню ред. фото)

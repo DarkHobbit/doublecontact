@@ -208,16 +208,32 @@ void ContactItem::calculateFields()
 
 QString ContactItem::formatNames() const
 {
+    // We don't use QStringList::join
+    // because field order is'nt completely regular
     QString res = names[0]; // Last name
-    if (names.count()>1) // First name
-        res += " " + names[1];
-    if (names.count()>2) // Middle name
+    if (names.count()>1) {// First name
+        if (!res.isEmpty())
+            res += " ";
+        res += names[1];
+    }
+    if (names.count()>2) {// Middle name
+        if (!res.isEmpty())
+            res += " ";
         res += " " + names[2];
+    }
     if (names.count()>3) // Honorific Prefixes
         res = names[3] + " " + res;
     if (names.count()>4) // Honorific Suffixes, rank, degree
-        res += ", " + names[2];
+        res += ", " + names[4];
     return res;
+}
+
+void ContactItem::reverseFullName()
+{
+    int sPos = fullName.indexOf(" ");
+    if (sPos!=-1)
+        fullName = fullName.right(fullName.length()-sPos-1)
+           + " " + fullName.left(sPos);
 }
 
 void ContactItem::dropFinalEmptyNames()

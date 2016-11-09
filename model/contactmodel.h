@@ -60,6 +60,7 @@ public:
     void dropSlashes(const QModelIndexList& indices);
     void generateFullNames(const QModelIndexList& indices);
     void dropFullNames(const QModelIndexList& indices);
+    void reverseFullNames(const QModelIndexList& indices);
     void splitNumbers(const QModelIndexList& indices);
     void intlPhonePrefix(const QModelIndexList& indices);
     void setViewMode(ContactViewMode mode, ContactModel* target);

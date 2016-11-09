@@ -244,9 +244,11 @@
     <addaction name="actionCompare_Result"/>
     <addaction name="actionS_plit_names"/>
     <addaction name="action_Drop_slashes"/>
+    <addaction name="actionIntl_phone_prefix"/>
+    <addaction name="separator"/>
     <addaction name="action_Generate_full_name"/>
     <addaction name="actionDrop_full_name"/>
-    <addaction name="actionIntl_phone_prefix"/>
+    <addaction name="actionReverse_full_name"/>
    </widget>
    <widget class="QMenu" name="menu_Help">
     <property name="title">
@@ -500,6 +502,11 @@
   <action name="action_About">
    <property name="text">
     <string>&amp;About</string>
+   </property>
+  </action>
+  <action name="actionReverse_full_name">
+   <property name="text">
+    <string>Reverse full name</string>
    </property>
   </action>
  </widget>
