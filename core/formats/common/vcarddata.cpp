@@ -148,7 +148,7 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                     item.photoType = types[0];
                     if (item.photoType.toUpper()!="JPEG" && item.photoType.toUpper()!="PNG")
                         errors << QObject::tr("Unsupported photo type at line %1: %2").arg(line+1).arg(typeVal);
-                    if (encoding=="B") {
+                    if (encoding=="B" || encoding=="BASE64") {
                         QString binaryData = vValue[0];
                         while (line<lines.count()-1 && !lines[line+1].trimmed().isEmpty() && lines[line+1].left(1)==" ") {
                             binaryData += lines[line+1];
