@@ -934,7 +934,7 @@ Save changes?</source>
     <name>QObject</name>
     <message>
         <location filename="../core/contactlist.cpp" line="40"/>
-        <location filename="../core/contactlist.cpp" line="471"/>
+        <location filename="../core/contactlist.cpp" line="480"/>
         <source>Home</source>
         <translation type="unfinished"></translation>
     </message>
@@ -945,14 +945,14 @@ Save changes?</source>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="42"/>
-        <location filename="../core/contactlist.cpp" line="472"/>
+        <location filename="../core/contactlist.cpp" line="481"/>
         <source>Work</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="43"/>
         <location filename="../core/contactlist.cpp" line="80"/>
-        <location filename="../core/contactlist.cpp" line="473"/>
+        <location filename="../core/contactlist.cpp" line="482"/>
         <source>Preferable</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1022,22 +1022,22 @@ Save changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="474"/>
+        <location filename="../core/contactlist.cpp" line="483"/>
         <source>Domestic</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="475"/>
+        <location filename="../core/contactlist.cpp" line="484"/>
         <source>International</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="476"/>
+        <location filename="../core/contactlist.cpp" line="485"/>
         <source>Postal</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="477"/>
+        <location filename="../core/contactlist.cpp" line="486"/>
         <source>Parcel</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1321,7 +1321,22 @@ line %3, col %4
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.cpp" line="89"/>
+        <location filename="../app/settingsdialog.ui" line="218"/>
+        <source>Loading</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/settingsdialog.ui" line="226"/>
+        <source>Default type if empty</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/settingsdialog.ui" line="238"/>
+        <source>(many phones treats &apos;Voice&apos; as &apos;Other&apos;)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/settingsdialog.cpp" line="98"/>
         <source>List must contain at least one visible column</source>
         <translation type="unfinished"></translation>
     </message>

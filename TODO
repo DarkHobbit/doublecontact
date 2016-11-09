@@ -3,8 +3,8 @@ You can contact me at pub@zvyozdochkin.ru.
 
 0.1:
 * --fullscreen not works on Mac
-* treat empty phonetypes as...
-* UDX под Windows (только ли?) в обоих клиентах пишется в CP1251 вместо UTF-8
+* UDX под Windows в обоих клиентах пишется в CP1251 вместо UTF-8 (STOPPER)
+* под Windows (только ли?) имена столбцов английские даже при национальном UI (STOPPER)
 * см. все TODO в проекте
 * export delete time from bday mode if receiver not support it
 * settings - fonts

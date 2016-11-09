@@ -20,6 +20,7 @@
 
 #include "configmanager.h"
 #include "globals.h"
+#include "contactlist.h"
 
 ConfigManager::ConfigManager()
     :settings("DarkHobbit", "doublecontact")
@@ -59,7 +60,10 @@ void ConfigManager::readConfig()
     else
         gd.preferredVCFVersion = GlobalConfig::VCF30;
     // TODO 4.0
-    gd.useOriginalFileVersion = settings.value("Saving/UseOriginalFileVCardVersion").toBool();
+    gd.useOriginalFileVersion = settings.value("Saving/UseOriginalFileVCardVersion", true).toBool();
+    // Loading
+    gd.defaultEmptyPhoneType = settings.value("Loading/DefaultEmptyPhoneType",
+        Phone::standardTypes.translate("voice")).toString(); // many phones treat type 'voice' as 'other'
 }
 
 void ConfigManager::writeConfig()
@@ -91,6 +95,8 @@ void ConfigManager::writeConfig()
     }
     settings.setValue("Saving/PreferredVCardVersion", sPrefVer);
     settings.setValue("Saving/UseOriginalFileVCardVersion", gd.useOriginalFileVersion);
+    // Loading
+    settings.setValue("Loading/DefaultEmptyPhoneType", gd.defaultEmptyPhoneType);
 }
 
 QString ConfigManager::readLanguage()

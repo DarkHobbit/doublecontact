@@ -113,12 +113,15 @@ struct GlobalConfig {
     QString dateFormat, timeFormat;
     bool useSystemDateTimeFormat;
     ContactColumnList columnNames;
+    // Save
     enum VCFVersion {
         VCF21,
         VCF30
         //VCF40
     } preferredVCFVersion;
     bool useOriginalFileVersion;
+    // Load
+    QString defaultEmptyPhoneType; // if phone w/o type was in loaded file
 } gd;
 
 #endif // GLOBALS_H

@@ -2,6 +2,7 @@
 #include <QMessageBox>
 
 #include "configmanager.h"
+#include "contactlist.h"
 #include "languagemanager.h"
 #include "settingsdialog.h"
 #include "ui_settingsdialog.h"
@@ -40,6 +41,12 @@ bool SettingsDialog::setData()
     // Saving
     ui->cbPrefVCardVer->setCurrentIndex((short)gd.preferredVCFVersion);
     ui->cbUseOrigVer->setChecked(gd.useOriginalFileVersion);
+    // Loading
+    ui->cbDefaultEmptyPhoneType->clear();
+    ui->cbDefaultEmptyPhoneType->insertItems(0, Phone::standardTypes.displayValues);
+    int index = ui->cbDefaultEmptyPhoneType->findText(gd.defaultEmptyPhoneType);
+    if (index!=-1)
+        ui->cbDefaultEmptyPhoneType->setCurrentIndex(index);
     // Done
     return true;
 }
@@ -66,6 +73,8 @@ bool SettingsDialog::getData()
     // Saving
     gd.preferredVCFVersion = (GlobalConfig::VCFVersion) ui->cbPrefVCardVer->currentIndex();
     gd.useOriginalFileVersion = ui->cbUseOrigVer->isChecked();
+    // Loading
+    gd.defaultEmptyPhoneType = ui->cbDefaultEmptyPhoneType->currentText();
     // Done
     return true;
 }

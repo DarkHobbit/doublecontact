@@ -27,6 +27,7 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
 {
     bool recordOpened = false;
     QTextCodec* codec = QTextCodec::codecForName("UTF-8"); // non-standart types also may be non-latin
+    QString defaultEmptyPhoneType =  Phone::standardTypes.unTranslate(gd.defaultEmptyPhoneType);
     ContactItem item;
     if (!append)
         list.clear();
@@ -109,9 +110,12 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                 phone.number = decodeValue(vValue[0], errors);
                 // Phone type(s)
                 if (types.isEmpty()) {
-                    errors << QObject::tr("Missing phone type at line %1: %2").arg(line+1).arg(vValue[0]);
+                    QString surName = "";
+                    if (!item.names.isEmpty())
+                        surName = " (" + item.names[0] + ")"; // TODO m.b. use it in other messages AFTER NAME!!!
+                    errors << QObject::tr("Missing phone type at line %1: %2%3").arg(line+1).arg(vValue[0]).arg(surName);
                     // TODO mb. no type is valid (in this case compare container and contact edit dialog must be updated)
-                    phone.tTypes << "pref";
+                    phone.tTypes << defaultEmptyPhoneType;
                 }
                 else phone.tTypes = types;
                 item.phones.push_back(phone);

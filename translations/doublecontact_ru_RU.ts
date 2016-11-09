@@ -935,7 +935,7 @@ Save changes?</source>
     <name>QObject</name>
     <message>
         <location filename="../core/contactlist.cpp" line="40"/>
-        <location filename="../core/contactlist.cpp" line="471"/>
+        <location filename="../core/contactlist.cpp" line="480"/>
         <source>Home</source>
         <translation>Домашний</translation>
     </message>
@@ -946,14 +946,14 @@ Save changes?</source>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="42"/>
-        <location filename="../core/contactlist.cpp" line="472"/>
+        <location filename="../core/contactlist.cpp" line="481"/>
         <source>Work</source>
         <translation>Служебный</translation>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="43"/>
         <location filename="../core/contactlist.cpp" line="80"/>
-        <location filename="../core/contactlist.cpp" line="473"/>
+        <location filename="../core/contactlist.cpp" line="482"/>
         <source>Preferable</source>
         <translation>Предпочтительный</translation>
     </message>
@@ -1023,22 +1023,22 @@ Save changes?</source>
         <translation>Странный пустой контакт</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="474"/>
+        <location filename="../core/contactlist.cpp" line="483"/>
         <source>Domestic</source>
         <translation>Внутренний</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="475"/>
+        <location filename="../core/contactlist.cpp" line="484"/>
         <source>International</source>
         <translation>Международный</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="476"/>
+        <location filename="../core/contactlist.cpp" line="485"/>
         <source>Postal</source>
         <translation>Почтовый</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="477"/>
+        <location filename="../core/contactlist.cpp" line="486"/>
         <source>Parcel</source>
         <translation>Для посылок</translation>
     </message>
@@ -1493,7 +1493,22 @@ line %3, col %4
         <translation>Брать версию из исходного файла (если есть)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.cpp" line="89"/>
+        <location filename="../app/settingsdialog.ui" line="218"/>
+        <source>Loading</source>
+        <translation>Загрузка</translation>
+    </message>
+    <message>
+        <location filename="../app/settingsdialog.ui" line="226"/>
+        <source>Default type if empty</source>
+        <translation>Тип телефона, если пустой</translation>
+    </message>
+    <message>
+        <location filename="../app/settingsdialog.ui" line="238"/>
+        <source>(many phones treats &apos;Voice&apos; as &apos;Other&apos;)</source>
+        <translation>(многие телефоны трактуют &apos;Голосовой&apos; как &apos;Прочий&apos;)</translation>
+    </message>
+    <message>
+        <location filename="../app/settingsdialog.cpp" line="98"/>
         <source>List must contain at least one visible column</source>
         <translation>В списке должен быть хотя бы один видимый столбец</translation>
     </message>
