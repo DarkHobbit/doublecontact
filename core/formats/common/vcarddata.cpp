@@ -90,6 +90,7 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
             }
             if ((!types.isEmpty()) && (tag!="TEL") && (tag!="EMAIL") && (tag!="ADR") && (tag!="PHOTO"))
                 errors << QObject::tr("Unexpected TYPE appearance at line %1: tag %2").arg(line+1).arg(tag);
+            // TODO x-syncmlref save!!!
             // Known tags
             if (tag=="VERSION")
                 item.version = decodeValue(vValue[0], errors);
