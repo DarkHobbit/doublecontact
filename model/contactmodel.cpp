@@ -322,7 +322,7 @@ void ContactModel::splitNumbers(const QModelIndexList &indices)
         for (int i=1; i<item.phones.count(); i++) {
             ContactItem nc;
             nc.names = item.names;
-            QString tType = Phone::standardTypes.translate(item.phones[i].tTypes[0]);
+            QString tType = Phone::standardTypes.translate(item.phones[i].types[0]);
             if (nc.names.count()<3)
                 nc.names.push_back(tType);
             else
@@ -385,8 +385,8 @@ void ContactModel::testList()
     c.names.push_back("John");
     c.names.push_back("Doe");
     c.phones.clear();
-    ph.number = "+1-213-555-1234"; // example from  RFC 2426
-    ph.tTypes << "work" << "pref";
+    ph.value = "+1-213-555-1234"; // example from  RFC 2426
+    ph.types << "work" << "pref";
     c.phones.push_back(ph);
     c.emails.clear();
     c.photoType = "URL";
@@ -400,13 +400,13 @@ void ContactModel::testList()
     c.names.push_back(QString::fromUtf8("Александр"));
     c.names.push_back(QString::fromUtf8("Попов"));
     c.phones.clear();
-    ph.number = "+79101234567"; // example for any cellular operator
-    ph.tTypes.clear();
-    ph.tTypes << "cell";
+    ph.value = "+79101234567"; // example for any cellular operator
+    ph.types.clear();
+    ph.types << "cell";
     c.phones.push_back(ph);
     c.emails.clear();
-    em.address = "alexpopov@spb.ru";
-    em.emTypes.push_back("internet");
+    em.value = "alexpopov@spb.ru";
+    em.types.push_back("internet");
     c.emails.push_back(em);
     c.calculateFields();
     items.push_back(c);
@@ -417,13 +417,13 @@ void ContactModel::testList()
     c.names.push_back(QString::fromUtf8("Hans"));
     c.names.push_back(QString::fromUtf8("Köster"));
     c.phones.clear();
-    ph.number = "233";
-    ph.tTypes.clear();
-    ph.tTypes << "home";
+    ph.value = "233";
+    ph.types.clear();
+    ph.types << "home";
     c.phones.push_back(ph);
-    ph.number = "322";
-    ph.tTypes.clear();
-    ph.tTypes << "work";
+    ph.value = "322";
+    ph.types.clear();
+    ph.types << "work";
     c.phones.push_back(ph);
     c.emails.clear();
     c.calculateFields();

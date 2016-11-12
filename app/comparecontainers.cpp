@@ -208,13 +208,13 @@ TypedPair::~TypedPair()
 {
 }
 
-void TypedPair::addValue(const QString &value, const QStringList &types, bool toLeft)
+void TypedPair::addValue(const TypedDataItem& item, bool toLeft)
 {
     QGridLayout* layout = toLeft ? layLeft : layRight;
     QList<QLineEdit*>& edSet = toLeft ? leftEdSet : rightEdSet;
     QList<QComboBox*>& comboSet = toLeft ? leftComboSet : rightComboSet;
     int prevCount = edSet.count();
-    edSet.push_back(new QLineEdit(value));
+    edSet.push_back(new QLineEdit(item.value));
     layout->addWidget(edSet.last(), prevCount, 0);
     QComboBox* combo = new QComboBox();
     comboSet.push_back(combo);
@@ -223,14 +223,14 @@ void TypedPair::addValue(const QString &value, const QStringList &types, bool to
             combo->addItem(sv);
     // Add current value(s)
     QString dType;
-    if (types.count()==1) {
+    if (item.types.count()==1) {
         bool isStandard;
-        dType = standardTypes->translate(types[0], &isStandard);
+        dType = standardTypes->translate(item.types[0], &isStandard);
         if (!isStandard)
             combo->addItem(dType);
     }
     else {
-        dType = types.join("+");
+        dType = item.types.join("+");
         combo->addItem(dType);
     }
     combo->setCurrentIndex(combo->findText(dType, Qt::MatchExactly));
@@ -242,23 +242,23 @@ int TypedPair::count(bool onLeft)
     return (onLeft ? layLeft : layRight)->rowCount();
 }
 
-bool TypedPair::getValue(int index, QString &value, QStringList &types, bool fromLeft)
+bool TypedPair::getValue(int index, TypedDataItem& item, bool fromLeft)
 {
     QList<QLineEdit*>& edSet = fromLeft ? leftEdSet : rightEdSet;
     QList<QComboBox*>& comboSet = fromLeft ? leftComboSet : rightComboSet;
     if (index>=edSet.count()) return false;
-    value = edSet[index]->text();
-    types.clear();
+    item.value = edSet[index]->text();
+    item.types.clear();
     QString typeValue = comboSet[index]->currentText();
     if (typeValue.contains("+")) {
         QStringList tl = typeValue.split("+");
-        types.clear();
+        item.types.clear();
         foreach(const QString& te, tl)
-            types << standardTypes->unTranslate(te);
+            item.types << standardTypes->unTranslate(te);
         // TODO compare for multi-type typed pairs
     }
     else
-        types << standardTypes->unTranslate(typeValue);
+        item.types << standardTypes->unTranslate(typeValue);
     return true;
 }
 
@@ -317,9 +317,9 @@ PhonesPair::PhonesPair(const QString &title, QGridLayout *layout, const QList<Ph
 {
     standardTypes = &Phone::standardTypes;
     foreach(const Phone& p, leftPhones)
-        addValue(p.number, p.tTypes, true);
+        addValue(p, true);
     foreach(const Phone& p, rightPhones)
-        addValue(p.number, p.tTypes, false);
+        addValue(p, false);
     highlightDiff(leftPhones!=rightPhones);
     buildOneItemButtons(2);
 }
@@ -329,13 +329,13 @@ void PhonesPair::getData(QList<Phone> &leftPhones, QList<Phone> &rightPhones)
     leftPhones.clear();
     for (int i=0; i<count(true); i++) {
         Phone p;
-        getValue(i, p.number, p.tTypes, true);
+        getValue(i, p, true);
         leftPhones << p;
     }
     rightPhones.clear();
     for (int i=0; i<count(false); i++) {
         Phone p;
-        getValue(i, p.number, p.tTypes, false);
+        getValue(i, p, false);
         rightPhones << p;
     }
 }
@@ -345,9 +345,9 @@ EmailsPair::EmailsPair(const QString &title, QGridLayout *layout, const QList<Em
 {
     standardTypes = &Email::standardTypes;
     foreach(const Email& p, leftEmails)
-        addValue(p.address, p.emTypes, true);
+        addValue(p, true);
     foreach(const Email& p, rightEmails)
-        addValue(p.address, p.emTypes, false);
+        addValue(p, false);
     highlightDiff(leftEmails!=rightEmails);
     buildOneItemButtons(2);
 }
@@ -357,17 +357,16 @@ void EmailsPair::getData(QList<Email> &leftEmails, QList<Email> &rightEmails)
     leftEmails.clear();
     for (int i=0; i<count(true); i++) {
         Email p;
-        getValue(i, p.address, p.emTypes, true);
+        getValue(i, p, true);
         leftEmails << p;
     }
     rightEmails.clear();
     for (int i=0; i<count(false); i++) {
         Email p;
-        getValue(i, p.address, p.emTypes, false);
+        getValue(i, p, false);
         rightEmails << p;
     }
 }
-
 
 DateItemListPair::DateItemListPair(const QString &title, QGridLayout *layout,
     const QList<DateItem> &leftData, const QList<DateItem> &rightData, bool multiItem)

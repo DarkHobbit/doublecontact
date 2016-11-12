@@ -15,16 +15,16 @@
 
 QString Phone::expandNumber() const
 {
-    QString res = number;
+    QString res = value;
     // TODO currently only Russian codes supported. Need more countries!
-    if (number.startsWith("8")) // Russia; TODO: make table for some countries!
+    if (res.startsWith("8")) // Russia; TODO: make table for some countries!
             res = res.replace(0, 1, "+7");
     return res;
 }
 
 bool Phone::operator ==(const Phone &p)
 {
-    return (number==p.number && tTypes==p.tTypes);
+    return (value==p.value && types==p.types);
 }
 
 Phone::StandardTypes::StandardTypes()
@@ -62,7 +62,7 @@ void Phone::StandardTypes::fill()
 
 bool Email::operator ==(const Email &e)
 {
-    return (address==e.address && emTypes==e.emTypes);
+    return (value==e.value && types==e.types);
 }
 
 Email::StandardTypes::StandardTypes()
@@ -159,9 +159,9 @@ bool ContactItem::intlPhonePrefix()
     int res = false;
     for (int i=0; i<phones.count();i++) {
         QString newNumber = phones[i].expandNumber();
-        if (newNumber!=phones[i].number)
+        if (newNumber!=phones[i].value)
             res = true;
-        phones[i].number = newNumber;
+        phones[i].value = newNumber;
     }
     return res;
 }
@@ -178,9 +178,9 @@ void ContactItem::calculateFields()
     else if (!description.isEmpty())
         visibleName = description;
     else if (!emails.isEmpty())
-        visibleName = emails[0].address;
+        visibleName = emails[0].value;
     else if (!phones.isEmpty())
-        visibleName = phones[0].number;
+        visibleName = phones[0].value;
     else if (!sortString.isEmpty())
         visibleName = sortString;
     else if (!nickName.isEmpty())
@@ -190,19 +190,19 @@ void ContactItem::calculateFields()
     // First or preferred phone number
     prefPhone.clear();
     if (phones.count()>0) {
-        prefPhone = phones[0].number;
+        prefPhone = phones[0].value;
         for (int i=0; i<phones.count();i++) {
-            if (phones[i].tTypes.contains("pref", Qt::CaseInsensitive))
-                prefPhone = phones[i].number;
+            if (phones[i].types.contains("pref", Qt::CaseInsensitive))
+                prefPhone = phones[i].value;
         }
     }
     // First or preferred email
     prefEmail.clear();
     if (emails.count()>0) {
-        prefEmail = emails[0].address;
+        prefEmail = emails[0].value;
         for (int i=0; i<emails.count(); i++)
-            if (emails[i].emTypes.contains("pref", Qt::CaseInsensitive))
-                prefEmail = emails[i].address;
+            if (emails[i].types.contains("pref", Qt::CaseInsensitive))
+                prefEmail = emails[i].value;
     }
 }
 
@@ -257,7 +257,7 @@ bool ContactItem::similarTo(const ContactItem &pair, int priorityLevel)
         // Emails
         foreach (const Email& thisEmail, emails)
             foreach (const Email& pairEmail, pair.emails)
-                if (thisEmail.address.toUpper()==pairEmail.address.toUpper())
+                if (thisEmail.value.toUpper()==pairEmail.value.toUpper())
                     return true;
         break;
         case 2:

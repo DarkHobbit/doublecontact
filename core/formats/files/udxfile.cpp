@@ -121,17 +121,18 @@ bool UDXFile::importRecords(const QString &url, ContactList &list, bool append)
             }
             else if (fldName.startsWith("TEL")) {
                 Phone phone;
-                phone.number = fldValue;
+                phone.value = fldValue;
                 if (fldName=="TEL")
-                    phone.tTypes << "CELL";
+                    phone.types << "CELL";
                 else if (fldName=="TELHOME")
-                    phone.tTypes << "HOME";
+                    phone.types << "HOME";
                 else if (fldName=="TELWORK")
-                    phone.tTypes << "WORK";
+                    phone.types << "WORK";
                 else if (fldName=="TELFAX")
-                    phone.tTypes << "FAX";
+                    phone.types << "FAX";
                 else
-                    _errors << QObject::tr("Unknown phone type: %1 (%2)").arg(phone.number).arg(item.names[0]);
+                    _errors << QObject::tr("Unknown phone type: %1 (%2)").arg(phone.value).arg(item.names[0]);
+                phone.syncMLRef = -1;
                 item.phones.push_back(phone);
             }
             else if (fldName=="ORGNAME")
@@ -140,8 +141,9 @@ bool UDXFile::importRecords(const QString &url, ContactList &list, bool append)
                 item.birthday.value = QDateTime::fromString(fldValue, "yyyyMMdd"); // TODO Maybe, use DateItem::fromString
             else if (fldName=="EMAIL") {
                 Email email;
-                email.address = fldValue;
-                email.emTypes << "pref";
+                email.value = fldValue;
+                email.types << "pref";
+                email.syncMLRef = -1;
                 item.emails.push_back(email);
             }
             else
@@ -242,23 +244,23 @@ bool UDXFile::exportRecords(const QString &url, ContactList &list)
         addElement(vCardField, "N", QString(";")+item.names.join(" ")); // sad but true
         // Phones
         foreach (const Phone& ph, item.phones) {
-            if (ph.tTypes.contains("CELL", Qt::CaseInsensitive))
-                addElement(vCardField, "TEL", ph.number);
-            else if (ph.tTypes.contains("HOME", Qt::CaseInsensitive))
-                addElement(vCardField, "TELHOME", ph.number);
-            else if (ph.tTypes.contains("WORK", Qt::CaseInsensitive))
-                addElement(vCardField, "TELWORK", ph.number);
-            else if (ph.tTypes.contains("FAX", Qt::CaseInsensitive))
-                addElement(vCardField, "TELFAX", ph.number);
-            else if (ph.tTypes.join(";").toUpper()!="PREF") {
-                addElement(vCardField, "TEL", ph.number);
+            if (ph.types.contains("CELL", Qt::CaseInsensitive))
+                addElement(vCardField, "TEL", ph.value);
+            else if (ph.types.contains("HOME", Qt::CaseInsensitive))
+                addElement(vCardField, "TELHOME", ph.value);
+            else if (ph.types.contains("WORK", Qt::CaseInsensitive))
+                addElement(vCardField, "TELWORK", ph.value);
+            else if (ph.types.contains("FAX", Qt::CaseInsensitive))
+                addElement(vCardField, "TELFAX", ph.value);
+            else if (ph.types.join(";").toUpper()!="PREF") {
+                addElement(vCardField, "TEL", ph.value);
                 _errors << QObject::tr("Warning: contact %1, unknown tel type:\n%2\n saved as cellular")
-                     .arg(item.visibleName).arg(ph.tTypes.join(";"));
+                     .arg(item.visibleName).arg(ph.types.join(";"));
             }
         }
         // Emails
         foreach (const Email& em, item.emails)
-            addElement(vCardField, "EMAIL", em.address);
+            addElement(vCardField, "EMAIL", em.value);
         // TODO what if save some EMAIL tags? (also some one-type TEL)
         // Organization/title
         if (!item.organization.isEmpty()) {

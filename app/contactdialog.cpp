@@ -174,14 +174,14 @@ void ContactDialog::getData(ContactItem& c)
     c.phones.clear();
     for (int i=0; i<phoneCount; i++) {
         Phone ph;
-        readTriplet("Phone", i+1, ph.number, ph.tTypes, Phone::standardTypes);
+        readTriplet("Phone", i+1, ph, Phone::standardTypes);
         c.phones.push_back(ph);
     }
     // Emails
     c.emails.clear();
     for (int i=0; i<emailCount; i++) {
         Email em;
-        readTriplet("Email", i+1, em.address, em.emTypes, Email::standardTypes);
+        readTriplet("Email", i+1, em, Email::standardTypes);
         c.emails.push_back(em);
     }
     // Birthday and anniversaries
@@ -272,20 +272,20 @@ void ContactDialog::slotDelName()
 
 void ContactDialog::addPhone(const Phone& ph)
 {
-    addTriplet(phoneCount, ui->layPhones, "Phone", ph.number);
+    addTriplet(phoneCount, ui->layPhones, "Phone", ph.value);
     QComboBox* cbT = findChild<QComboBox*>(QString("cbPhoneType%1").arg(phoneCount));
     if (phoneCount>MIN_VISIBLE_TRIPLETS)
         fillPhoneTypes(cbT);
-    addTypeList(phoneCount, "Phone", ph.tTypes, Phone::standardTypes);
+    addTypeList(phoneCount, "Phone", ph.types, Phone::standardTypes);
 }
 
 void ContactDialog::addEmail(const Email &em)
 {
-    addTriplet(emailCount, ui->layEmails, "Email", em.address);
+    addTriplet(emailCount, ui->layEmails, "Email", em.value);
     QComboBox* cbT = findChild<QComboBox*>(QString("cbEmailType%1").arg(emailCount));
     if (emailCount>MIN_VISIBLE_TRIPLETS)
         fillEmailTypes(cbT);
-    addTypeList(emailCount, "Email", em.emTypes, Email::standardTypes);
+    addTypeList(emailCount, "Email", em.types, Email::standardTypes);
 }
 
 void ContactDialog::addAnniversary(const DateItem &ann)
@@ -419,17 +419,17 @@ void ContactDialog::addTriplet(int& count, QGridLayout* l, const QString& nameTe
     count++;
 }
 
-void ContactDialog::readTriplet(const QString &nameTemplate, int num, QString &itemValue, QStringList &types, const ::StandardTypes& sTypes)
+void ContactDialog::readTriplet(const QString &nameTemplate, int num, TypedDataItem& item, const ::StandardTypes& sTypes)
 {
     QLineEdit* editor = findChild<QLineEdit*>(QString("le%1%2").arg(nameTemplate).arg(num));
     QComboBox* typeBox = findChild<QComboBox*>(QString("cb%1Type%2").arg(nameTemplate).arg(num));
     if (!editor || !typeBox) return;
-    itemValue = editor->text();
+    item.value = editor->text();
     QString t = typeBox->currentText();
     QStringList tl = t.split("+");
-    types.clear();
+    item.types.clear();
     foreach(const QString& te, tl)
-        types.push_back(sTypes.unTranslate(te));
+        item.types.push_back(sTypes.unTranslate(te));
     // TODO maybe store non-standart type in common list if operator changed it to standard?
 }
 

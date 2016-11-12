@@ -73,24 +73,27 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
             charSet = "";
             QString typeVal = ""; // for PHOTO/URI, at least
             QStringList types;
+            int syncMLRef = -1;
             for (int i=1; i<vType.count(); i++) {
                 if (vType[i].startsWith("ENCODING=", Qt::CaseInsensitive))
                     encoding = vType[i].mid(QString("ENCODING=").length());
                 else if (vType[i].startsWith("CHARSET=", Qt::CaseInsensitive))
                     charSet = vType[i].mid(QString("CHARSET=").length());
-                else if (vType[i].startsWith("TYPE=", Qt::CaseInsensitive))
+                else if (vType[i].startsWith("TYPE=", Qt::CaseInsensitive)
+                         || vType[i].startsWith("LABEL=", Qt::CaseInsensitive)) // TODO see vCard 4.0, m.b. LABEL= points to non-standard?
                     // non-standart types may be non-latin
                     types << codec->toUnicode(vType[i].mid(QString("TYPE=").length()).toLocal8Bit());
                     // TODO split such records as home,pref,cell in one type
                 else if (vType[i].startsWith("VALUE=", Qt::CaseInsensitive))
                     // for PHOTO/URI, at least
                     typeVal = vType[i].mid(QString("VALUE=").length());
+                else if (vType[i].startsWith("X-SYNCMLREF", Qt::CaseInsensitive))
+                    syncMLRef = vType[i].mid(QString("X-SYNCMLREF").length()).toInt();
                 else // "TYPE=" can be omitted in some addressbooks
                     types << codec->toUnicode(vType[i].toLocal8Bit());
             }
             if ((!types.isEmpty()) && (tag!="TEL") && (tag!="EMAIL") && (tag!="ADR") && (tag!="PHOTO"))
                 errors << QObject::tr("Unexpected TYPE appearance at line %1: tag %2").arg(line+1).arg(tag);
-            // TODO x-syncmlref save!!!
             // Known tags
             if (tag=="VERSION")
                 item.version = decodeValue(vValue[0], errors);
@@ -108,7 +111,7 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                 item.sortString = decodeValue(vValue[0], errors);
             else if (tag=="TEL") {
                 Phone phone;
-                phone.number = decodeValue(vValue[0], errors);
+                phone.value = decodeValue(vValue[0], errors);
                 // Phone type(s)
                 if (types.isEmpty()) {
                     QString surName = "";
@@ -116,9 +119,10 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                         surName = " (" + item.names[0] + ")"; // TODO m.b. use it in other messages AFTER NAME!!!
                     errors << QObject::tr("Missing phone type at line %1: %2%3").arg(line+1).arg(vValue[0]).arg(surName);
                     // TODO mb. no type is valid (in this case compare container and contact edit dialog must be updated)
-                    phone.tTypes << defaultEmptyPhoneType;
+                    phone.types << defaultEmptyPhoneType;
                 }
-                else phone.tTypes = types;
+                else phone.types = types;
+                phone.syncMLRef = syncMLRef;
                 item.phones.push_back(phone);
             }
             else if (tag=="EMAIL") {
@@ -126,11 +130,12 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                 if (vValue[0].isEmpty())
                     continue;
                 Email email;
-                email.address = decodeValue(vValue[0], errors);
+                email.value = decodeValue(vValue[0], errors);
                 if (types.isEmpty()) // maybe, it not a bug; some devices allows email without type
-                    email.emTypes << "pref";
+                    email.types << "pref";
                 else
-                    email.emTypes = types;
+                    email.types = types;
+                email.syncMLRef = syncMLRef;
                 item.emails.push_back(email);
             }
             else if (tag=="BDAY")
@@ -190,6 +195,7 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                 // TODO implement in vCard 4.0 as alternative
 
             }*/
+            // TODO nickname and url also can require x-syncmlref
             // Identifier
             else if (tag=="X-IRMC-LUID")
                 item.id = decodeValue(vValue[0], errors);
@@ -264,9 +270,9 @@ void VCardData::exportRecord(QStringList &lines, const ContactItem &item)
     if (!item.nickName.isEmpty())
         lines << encodeAll("NICKNAME", 0, false, item.nickName);
     foreach (const Phone& ph, item.phones)
-        lines << (QString("TEL") + encodeTypes(ph.tTypes)+":"+ph.number);
+        lines << (QString("TEL") + encodeTypes(ph.types, ph.syncMLRef)+":"+ph.value);
     foreach (const Email& em, item.emails)
-        lines << QString("EMAIL") + encodeTypes(em.emTypes)+":"+em.address;
+        lines << QString("EMAIL") + encodeTypes(em.types, em.syncMLRef)+":"+em.value;
     /*
     // for Sony Ericsson devices TODO to settings (emulate, fake...)
     if (item.emails.isEmpty())
@@ -505,13 +511,15 @@ QString VCardData::encodeAll(const QString &tag, const QStringList *aTypes, bool
     return encStr + valStr;
 }
 
-QString VCardData::encodeTypes(const QStringList &aTypes) const
+QString VCardData::encodeTypes(const QStringList &aTypes, int syncMLRef) const
 {
     QString typeStr = ";";
     if (formatVersion!=GlobalConfig::VCF21)
         typeStr += "TYPE=";
     // typeStr += aTypes.join(","); // value list
     typeStr += aTypes.join(formatVersion==GlobalConfig::VCF21 ? ";" : ";TYPE="); // parameter list; RFC 2426 allows both form
+    if (syncMLRef!=-1)
+        typeStr += ";X-SYNCMLREF" + QString::number(syncMLRef);
     return encodeValue(typeStr, 0);
 }
 

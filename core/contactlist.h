@@ -26,9 +26,16 @@ struct TagValue { // for non-editing ang unknown tags
     TagValue(const QString& _tag, const QString& _value);
 };
 
-struct Phone {
-    QString number;
-    QStringList tTypes; // some devices & addressbooks may allow create any tel type (not RFC, but...)
+// vCard item with one of more types (one phone, email, impp, etc.)
+struct TypedDataItem {
+    QString value;
+    QStringList types;
+    // Phone: some devices & addressbooks may allow create any tel type (not RFC, but...)
+    // Email: according RFC 2426, may be non-standard
+    int syncMLRef;
+};
+
+struct Phone: public TypedDataItem {
     QString expandNumber() const; // international number representation from particular
     bool operator ==(const Phone& p);
     // standart types
@@ -39,9 +46,7 @@ struct Phone {
     } standardTypes;
 };
 
-struct Email {
-    QString address;
-    QStringList emTypes;  // according RFC 2426, may be non-standard
+struct Email: public TypedDataItem {
     bool operator ==(const Email& e);
     static class StandardTypes: public ::StandardTypes {
         public:

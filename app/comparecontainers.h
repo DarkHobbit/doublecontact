@@ -87,9 +87,9 @@ public:
     virtual ~TypedPair();
 protected:
     StandardTypes* standardTypes;
-    void addValue(const QString& value, const QStringList& types, bool toLeft);
+    void addValue(const TypedDataItem& item, bool toLeft);
     int count(bool onLeft);
-    bool getValue(int index, QString& value, QStringList& types, bool fromLeft);
+    bool getValue(int index, TypedDataItem& item, bool fromLeft);
     virtual void copyData(bool toLeft);
     virtual void copyOneItem(bool toLeft, int srcIndex);
 private:
