@@ -3,6 +3,7 @@ You can contact me at pub@zvyozdochkin.ru.
 
 0.1:
 * --fullscreen not works on Mac
+* чтобы записалось им€, надо сначала нажать ƒќЅј¬»“№, или пропадЄт (STOPPER)
 * UDX под Windows в обоих клиентах пишетс€ в CP1251 вместо UTF-8 (STOPPER)
 * под Windows (только ли?) имена столбцов английские даже при национальном UI (STOPPER)
 * см. все TODO в проекте
