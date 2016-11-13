@@ -6,10 +6,13 @@ You can contact me at pub@zvyozdochkin.ru.
 * чтобы записалось им€, надо сначала нажать ƒќЅј¬»“№, или пропадЄт (STOPPER)
 * UDX под Windows в обоих клиентах пишетс€ в CP1251 вместо UTF-8 (STOPPER)
 * под Windows (только ли?) имена столбцов английские даже при национальном UI (STOPPER)
+* проверить: нестандартный тип телефона в vcard 3.0 зачем-то пишетс€ в quoted-printable, но без отметки. ѕотом, естественно, бьЄтс€
 * см. все TODO в проекте
 * export delete time from bday mode if receiver not support it
 * settings - fonts
 * add statistics in List menu
+* только по желанию пользовател€ (не по умолчанию) подсвечивать жЄлтым не только неизвестные, но и нередактируемые
+* подумать над сортировкой контактов не только дл€ отображени€, но и дл€ экспорта
 * проверить, как работает на charset, отличных от utf-8 (codec->toUnicode, у мен€ везде toLocal8Bit, а это, веро€тно, неправильно)
 * write PRODID!
 * add group operations to console convertor (8 - +7, fullnames, etc.)
