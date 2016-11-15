@@ -518,8 +518,15 @@ QString VCardData::encodeTypes(const QStringList &aTypes, int syncMLRef) const
         typeStr += "TYPE=";
     // typeStr += aTypes.join(","); // value list
     typeStr += aTypes.join(formatVersion==GlobalConfig::VCF21 ? ";" : ";TYPE="); // parameter list; RFC 2426 allows both form
+    /*
+     * TODO now syncMLRef recording is switched off, because it corrupted while editing/comparing
+     * need:
+     * fix it;
+     * make syncMLRef recording optional (some phones show it as types);
+     * show it on phone/email editing triplet
     if (syncMLRef!=-1)
         typeStr += ";X-SYNCMLREF" + QString::number(syncMLRef);
+    */
     return encodeValue(typeStr, 0);
 }
 

@@ -18,9 +18,10 @@ You can contact me at pub@zvyozdochkin.ru.
 * add group operations to console convertor (8 - +7, fullnames, etc.)
 * проверить на всех доступных телефонах и андроидах
 * проверить на RFC
+* coverity scan integration
+* cmake and cpack support for various packaging
 * рус. описание (багрепортинг, convertcontact и меню ред. фото)
 * english manual
-* separate translation files??? learn, can some projects have one translation set?
 * register on weblate (transifex?)
 * ukrainian and belarussian language files
 * set doxygen labels
@@ -45,6 +46,6 @@ LG Leon in vcf2.1 use X-GROUP (in my sample - empty)
 * export birthday in calendarzzz
 
 0.5 or 1.0
-* QML mobile version (how to unify UI translations)
+* QML mobile version (how to unify UI translations - separate translation files??? learn, can some projects have one translation set?)
 
 
