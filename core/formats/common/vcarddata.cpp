@@ -511,7 +511,7 @@ QString VCardData::encodeAll(const QString &tag, const QStringList *aTypes, bool
     return encStr + valStr;
 }
 
-QString VCardData::encodeTypes(const QStringList &aTypes, int syncMLRef) const
+QString VCardData::encodeTypes(const QStringList &aTypes, int /*syncMLRef*/) const
 {
     QString typeStr = ";";
     if (formatVersion!=GlobalConfig::VCF21)
