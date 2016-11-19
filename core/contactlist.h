@@ -142,6 +142,8 @@ public:
     ContactList();
     int findById(const QString& idValue);
     void compareWith(ContactList& pairList);
+    // MPB-specific storage
+    QStringList contentBefore, contentAfter;
 };
 
 #endif // CONTACTLIST_H

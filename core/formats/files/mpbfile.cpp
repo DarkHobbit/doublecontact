@@ -31,28 +31,41 @@ QStringList MPBFile::supportedFilters()
 
 bool MPBFile::importRecords(const QString &url, ContactList &list, bool append)
 {
-    QStringList data;
     if (!openFile(url, QIODevice::ReadOnly))
         return false;
     _errors.clear();
     QStringList content;
+    list.contentBefore.clear();
+    list.contentAfter.clear();
     QTextStream stream(&file);
-    bool vCardsFound = false;
+    enum Section {
+        secTempBefore, // TODO m.b. in future implement other custom sections: Model, TimeStamp, Organizer, Notes, Calls, SMS
+        secPhonebook,
+        secTempAfter
+    };
+    Section section = secTempBefore;
     do {
         QString line = stream.readLine();
-        if (!vCardsFound) {
+        switch (section) {
+        case secTempBefore:
+            list.contentBefore << line;
             if (line.contains("MyPhoneExplorer_ContentID:Phonebook"))
-                vCardsFound = true;
-        }
-        else {
-            if (line[0]=='\xff')
-                break;
+                section = secPhonebook;
+            break;
+        case secPhonebook:
+            if (line[0]=='\xff') {
+                list.contentAfter << line;
+                section = secTempAfter;
+            }
             else
-                content.push_back(line);
+                content << line;
+            break;
+        case secTempAfter:
+            list.contentAfter << line;
         }
     } while (!stream.atEnd());
     closeFile();
-    if (!vCardsFound) {
+    if (content.isEmpty()) {
         // TODO maybe move this string to global for other formats
         _fatalError = QObject::tr("No contact records in this file");
         return false;
