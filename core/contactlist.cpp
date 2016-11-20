@@ -375,6 +375,12 @@ void ContactList::compareWith(ContactList &pairList)
     }
 }
 
+void ContactList::clear()
+{
+    QList::clear();
+    extra.clear();
+}
+
 TagValue::TagValue(const QString& _tag, const QString& _value)
     :tag(_tag), value(_value)
 {}
@@ -490,3 +496,13 @@ void PostalAddress::StandardTypes::fill()
         << (*this)["intl"] << (*this)["postal"] << (*this)["parcel"];
 }
 
+void MPBExtra::clear()
+{
+    model.clear();
+    timeStamp.clear();
+    organizer.clear();
+    notes.clear();
+    SMS.clear();
+    SMSArchive.clear();
+    calls.clear();
+}

@@ -15,7 +15,7 @@ You can contact me at pub@zvyozdochkin.ru.
 * подумать над сортировкой контактов не только для отображения, но и для экспорта
 * проверить, как работает на charset, отличных от utf-8 (codec->toUnicode, у меня везде toLocal8Bit, а это, вероятно, неправильно)
 * write PRODID!
-* add group operations to console convertor (8 - +7, fullnames, etc.)
+* add group operations, statistics and filter to console convertor (8 - +7, fullnames, etc.)
 * проверить на всех доступных телефонах и андроидах
 * проверить на RFC
 * coverity scan integration

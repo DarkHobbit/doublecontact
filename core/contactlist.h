@@ -136,14 +136,28 @@ struct ContactItem {
     bool identicalTo(const ContactItem& pair);
 };
 
+// MPB-specific storage
+struct CallInfo {
+    QString cType, timeStamp, wtf, // TODO wtf - probably, duration, but strange unit
+    number, name;
+};
+
+struct MPBExtra {
+    QString model, timeStamp;
+    QStringList organizer, notes, SMS, SMSArchive;
+    QList<CallInfo> calls;
+    void clear();
+};
+
+// Entire address book
 class ContactList : public QList<ContactItem>
 {
 public:
     ContactList();
     int findById(const QString& idValue);
     void compareWith(ContactList& pairList);
-    // MPB-specific storage
-    QStringList contentBefore, contentAfter;
+    void clear();
+    MPBExtra extra;
 };
 
 #endif // CONTACTLIST_H

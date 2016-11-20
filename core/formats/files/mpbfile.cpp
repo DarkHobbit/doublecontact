@@ -31,40 +31,91 @@ QStringList MPBFile::supportedFilters()
 
 bool MPBFile::importRecords(const QString &url, ContactList &list, bool append)
 {
+    const QString SECTION_BEGIN = QString("MyPhoneExplorer_ContentID:");
     if (!openFile(url, QIODevice::ReadOnly))
         return false;
     _errors.clear();
+    if (!append)
+        list.extra.clear();
+    // Read file
     QStringList content;
-    list.contentBefore.clear();
-    list.contentAfter.clear();
     QTextStream stream(&file);
     enum Section {
-        secTempBefore, // TODO m.b. in future implement other custom sections: Model, TimeStamp, Organizer, Notes, Calls, SMS
+        secNotFound,
+        secUnknown,
         secPhonebook,
-        secTempAfter
+        secCalls,
+        secOrganizer,
+        secNotes,
+        secSMS,
+        secSMSArchive
     };
-    Section section = secTempBefore;
+    Section section = secNotFound;
     do {
         QString line = stream.readLine();
-        switch (section) {
-        case secTempBefore:
-            list.contentBefore << line;
-            if (line.contains("MyPhoneExplorer_ContentID:Phonebook"))
+        // MPB section changes
+        if (line.contains(SECTION_BEGIN)) {
+            QString secName = line.mid(SECTION_BEGIN.length());
+            if (secName=="Model")
+                list.extra.model = stream.readLine();
+            else if (secName=="TimeStamp")
+                list.extra.timeStamp = stream.readLine();
+            else if (secName=="Phonebook")
                 section = secPhonebook;
+            else if (secName=="Calls")
+                section = secCalls;
+            else if (secName=="Organizer")
+                section = secOrganizer;
+            else if (secName=="Notes")
+                section = secNotes;
+            else if (secName=="SMS")
+                section = secSMS;
+            else if (secName=="SMSArchive")
+                section = secSMSArchive;
+            else if (secName=="EndofData")
+                break;
+            else
+                _errors << QObject::tr("Unsupported MPB section: ") + secName;
+        }
+        // MPB section content
+        else
+        switch (section) {
+        case secNotFound:
+            _fatalError = QObject::tr("File isn't MPB file or corrupted");
+            return false;
+        case secUnknown:
             break;
         case secPhonebook:
-            if (line[0]=='\xff') {
-                list.contentAfter << line;
-                section = secTempAfter;
-            }
-            else
-                content << line;
+            content << line;
             break;
-        case secTempAfter:
-            list.contentAfter << line;
+        case secCalls: {
+            QStringList cells = line.split('\t');
+            if (cells.count()!=6)
+                _errors << QObject::tr("Strange call item: %1, size %2")
+                           .arg(line).arg(cells.count());
+            if (cells.count()>=6) {
+                CallInfo call;
+                call.cType = cells[0];
+                call.timeStamp = cells[1];
+                call.wtf = cells[2];
+                call.number = cells[3];
+                call.name = cells[4];
+                list.extra.calls << call;
+            }
+            break;
+        }
+        case secOrganizer:
+            list.extra.organizer << line;
+        case secNotes:
+            list.extra.notes << line;
+        case secSMS:
+            list.extra.SMS << line;
+        case secSMSArchive:
+            list.extra.SMSArchive << line;
         }
     } while (!stream.atEnd());
     closeFile();
+    // Parse contact list
     if (content.isEmpty()) {
         // TODO maybe move this string to global for other formats
         _fatalError = QObject::tr("No contact records in this file");
