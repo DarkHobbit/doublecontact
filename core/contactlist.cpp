@@ -377,7 +377,7 @@ void ContactList::compareWith(ContactList &pairList)
 
 void ContactList::clear()
 {
-    QList::clear();
+    QList<ContactItem>::clear();
     extra.clear();
 }
 
