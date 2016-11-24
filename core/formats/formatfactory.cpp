@@ -18,16 +18,18 @@ QStringList FormatFactory::supportedFilters(QIODevice::OpenMode mode)
     QString allSupported;
     allSupported += "*." + VCFFile::supportedExtensions().join(" *.");
     allSupported += "*." + UDXFile::supportedExtensions().join(" *.");
+    allSupported += "*." + MPBFile::supportedExtensions().join(" *.");
     if (mode==QIODevice::ReadOnly) {
-        allSupported += "*." + MPBFile::supportedExtensions().join(" *.");
+        // ...here add read-only formats
     }
     // ...here add supportedExtensions() for new format
     allTypes << S_ALL_SUPPORTED.arg(allSupported);
     // Known formats (separate)
     allTypes << VCFFile::supportedFilters();
     allTypes << UDXFile::supportedFilters();
+    allTypes << MPBFile::supportedFilters();
     if (mode==QIODevice::ReadOnly) {
-        allTypes << MPBFile::supportedFilters();
+        // ...here add filters for read-only formats
     }
     // ...here add supportedFilters() for new format
     allTypes << S_ALL_FILES;

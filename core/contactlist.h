@@ -138,8 +138,7 @@ struct ContactItem {
 
 // MPB-specific storage
 struct CallInfo {
-    QString cType, timeStamp, wtf, // TODO wtf - probably, duration, but strange unit
-    number, name;
+    QString cType, timeStamp, duration, number, name;
 };
 
 struct MPBExtra {
