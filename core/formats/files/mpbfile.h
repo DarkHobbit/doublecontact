@@ -33,6 +33,7 @@ public:
 private:
     void writeSectionHeader(QTextStream& stream, const QString& sectionName,
         const char* codecAfter="UTF-8", bool writeEOL=true);
+    void winEndl(QTextStream & stream);
 };
 
 #endif // MPBFILE_H

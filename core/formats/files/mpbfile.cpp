@@ -79,6 +79,10 @@ bool MPBFile::importRecords(const QString &url, ContactList &list, bool append)
                 break;
             else
                 _errors << QObject::tr("Unsupported MPB section: ") + secName;
+            if (section==secSMSArchive)
+                stream.setCodec("CP1251");
+            else if (section==secCalls)
+                stream.setCodec("UTF-8");
         }
         // MPB section content
         else
@@ -109,10 +113,13 @@ bool MPBFile::importRecords(const QString &url, ContactList &list, bool append)
         }
         case secOrganizer:
             list.extra.organizer << line;
+            break;
         case secNotes:
             list.extra.notes << line;
+            break;
         case secSMS:
             list.extra.SMS << line;
+            break;
         case secSMSArchive:
             list.extra.SMSArchive << line;
         }
@@ -138,23 +145,35 @@ bool MPBFile::exportRecords(const QString &url, ContactList &list)
     }
     QStringList content;
     // vCard data
+    for (int i=0; i<list.count(); i++)
+        if (list[i].version.isEmpty())
+            list[i].version = "3.0"; // some MPB files not contains vCard version number
     // TODO force vCard 3.0 or original format? see LG Leon
-    if (!VCardData::exportRecords(content, list))
+    bool oldUOFV = gd.useOriginalFileVersion;
+    gd.useOriginalFileVersion = true;
+    if (!VCardData::exportRecords(content, list)) {
+        gd.useOriginalFileVersion = oldUOFV;
         return false;
+    }
+    gd.useOriginalFileVersion = oldUOFV;
     if (!openFile(url, QIODevice::WriteOnly))
         return false;
     _errors.clear();
     QTextStream stream(&file);
     // Prelude sections
     writeSectionHeader(stream, "Model");
-    stream << list.extra.model << endl;
+    stream << list.extra.model;
+    winEndl(stream);
     writeSectionHeader(stream, "TimeStamp");
-    stream << list.extra.timeStamp << endl;
+    stream << list.extra.timeStamp;
+    winEndl(stream);
     // Phone book
     writeSectionHeader(stream, "Phonebook");
-    foreach (const QString& line, content)
-        stream << line << (char)13 << endl;
-    stream << endl;
+    foreach (const QString& line, content) {
+        stream << line;
+        winEndl(stream);
+    }
+    winEndl(stream);
     // Call history
     writeSectionHeader(stream, "Calls");
     foreach (const CallInfo& call, list.extra.calls) {
@@ -164,26 +183,34 @@ bool MPBFile::exportRecords(const QString &url, ContactList &list)
             << call.timeStamp << '\t'
             << call.duration << '\t'
             << call.number << '\t'
-            << call.name << '\t' << endl;
+            << call.name << '\t';
+        winEndl(stream);
     }
     // Interlude sections
     writeSectionHeader(stream, "Organizer");
-    foreach (const QString& line, list.extra.organizer)
-        stream << line << endl;
+    foreach (const QString& line, list.extra.organizer) {
+        stream << line;
+        winEndl(stream);
+    }
     writeSectionHeader(stream, "Notes");
-    foreach (const QString& line, list.extra.notes)
-        stream << line << endl;
+    foreach (const QString& line, list.extra.notes) {
+        stream << line;
+        winEndl(stream);
+    }
     // SMS
-    writeSectionHeader(stream, "SMS" /* , CP1251 */); // TODO check with various countries/locales
-    foreach (const QString& line, list.extra.SMS)
-        stream << line << endl;
+    writeSectionHeader(stream, "SMS");
+    foreach (const QString& line, list.extra.SMS) {
+        stream << line;
+        winEndl(stream);
+    }
     // SMS archive
-    writeSectionHeader(stream, "SMSArchive" /*, "Windows-1251"*/); // TODO check with various countries/locales.
-    // TODO 1251 still not work!!!
-    foreach (const QString& line, list.extra.SMSArchive)
-        stream << line << endl;
+    writeSectionHeader(stream, "SMSArchive","CP1251"); // TODO check with various countries/locales.
+    foreach (const QString& line, list.extra.SMSArchive) {
+        stream << line;
+        winEndl(stream);
+    }
     // Coda
-    writeSectionHeader(stream, "EndofData", "UTF-8", false); // without endl!
+    writeSectionHeader(stream, "EndofData", "ISO 8859-1", false); // without endl!
     closeFile();
     return true;
 }
@@ -193,6 +220,11 @@ void MPBFile::writeSectionHeader(QTextStream &stream, const QString &sectionName
     stream.setCodec("ISO 8859-1"); // to provide correct 0xff write
     stream << '\xff' << SECTION_BEGIN << sectionName;
     if (writeEOL)
-            stream << endl;
+        winEndl(stream);
     stream.setCodec(codecAfter);
+}
+
+void MPBFile::winEndl(QTextStream &stream)
+{
+    stream << (char)13 << endl;
 }

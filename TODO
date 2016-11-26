@@ -31,6 +31,7 @@ You can contact me at pub@zvyozdochkin.ru.
 * csv support
 * vCard 4.0 support
 * duplicate search (and merging, probably make unified merging dialog with panels compare merging)
+* extra data view (SMS, calls...) need write core/focmats/common/pdudata.*
 * X-SYNCMLREF in vType decode
 * groups support, if testdata will found.
 Samples with CATEGORIES and apple-way https://forums.bitfire.at/topic/511/fastmail-carddav-and-groups/10 
