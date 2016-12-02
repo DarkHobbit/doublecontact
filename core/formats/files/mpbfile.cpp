@@ -177,13 +177,45 @@ bool MPBFile::exportRecords(const QString &url, ContactList &list)
     // Call history
     writeSectionHeader(stream, "Calls");
     foreach (const CallInfo& call, list.extra.calls) {
-        // TODO change name if was edited!!!
+        // Change name if was edited
+        QString aboName = call.name;
+        QString foundName = "";
+        foreach(const ContactItem& candItem, list) {
+            foreach(const Phone& candPhone, candItem.phones) {
+                if (candPhone.value==call.number) {
+                    foundName = candItem.fullName; // !!! see later
+                    if (foundName.isEmpty())
+                        foundName = candItem.formatNames(); // TODO extract makeName from calculateFields!!!
+                    break;
+                }
+            }
+            if (!foundName.isEmpty()) break;
+        }
+        if (!foundName.isEmpty()) {
+            if (aboName != foundName && !foundName.isEmpty())
+                _errors << QObject::tr("Name for number %1 changed from %2 to %3")
+                           .arg(call.number).arg(aboName).arg(foundName);
+            aboName = foundName;
+        }
+        else if (!aboName.isEmpty()) {
+            foreach(const ContactItem& candItem, list) {
+                if (candItem.fullName==aboName) {
+                    foundName = candItem.fullName;
+                    break;
+                }
+            }
+            if (foundName.isEmpty())
+                _errors << QObject::tr("Number %1 without original name not found in addressbook").arg(call.number);
+            else
+                _errors << QObject::tr("Number %1 not found in addressbook. Original name (%2) saved").arg(call.number).arg(aboName);
+        }
+        // Write call item
         stream
             << call.cType << '\t'
             << call.timeStamp << '\t'
             << call.duration << '\t'
             << call.number << '\t'
-            << call.name << '\t';
+            << aboName << '\t';
         winEndl(stream);
     }
     // Interlude sections
