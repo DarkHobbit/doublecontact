@@ -182,7 +182,7 @@ bool MPBFile::exportRecords(const QString &url, ContactList &list)
         QString foundName = "";
         foreach(const ContactItem& candItem, list) {
             foreach(const Phone& candPhone, candItem.phones) {
-                if (candPhone.value==call.number) {
+                if (candPhone.expandNumber(gd.defaultCountry)==Phone::expandNumber(call.number, gd.defaultCountry)) {
                     foundName = candItem.fullName; // !!! see later
                     if (foundName.isEmpty())
                         foundName = candItem.formatNames(); // TODO extract makeName from calculateFields!!!

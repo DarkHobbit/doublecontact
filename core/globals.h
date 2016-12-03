@@ -122,6 +122,8 @@ struct GlobalConfig {
     bool useOriginalFileVersion;
     // Load
     QString defaultEmptyPhoneType; // if phone w/o type was in loaded file
+    // Compare
+    QString defaultCountry; // for phone i18n during compare numbers (i.e. for Russia +7 = 8)
 } gd;
 
 #endif // GLOBALS_H

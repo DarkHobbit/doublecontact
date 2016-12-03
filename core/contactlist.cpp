@@ -13,9 +13,14 @@
 
 #include "contactlist.h"
 
-QString Phone::expandNumber() const
+QString Phone::expandNumber(const QString& country) const
 {
-    QString res = value;
+    return expandNumber(value, country);
+}
+
+QString Phone::expandNumber(const QString &number, const QString &/*country*/)
+{
+    QString res = number;
     // TODO currently only Russian codes supported. Need more countries!
     if (res.startsWith("8")) // Russia; TODO: make table for some countries!
             res = res.replace(0, 1, "+7");
@@ -158,7 +163,7 @@ bool ContactItem::intlPhonePrefix()
 {
     int res = false;
     for (int i=0; i<phones.count();i++) {
-        QString newNumber = phones[i].expandNumber();
+        QString newNumber = phones[i].expandNumber("Russia"); // TODO select in dialog
         if (newNumber!=phones[i].value)
             res = true;
         phones[i].value = newNumber;
@@ -252,7 +257,7 @@ bool ContactItem::similarTo(const ContactItem &pair, int priorityLevel)
         // Phones
         foreach (const Phone& thisPhone, phones)
             foreach (const Phone& pairPhone, pair.phones)
-                if (thisPhone.expandNumber()==pairPhone.expandNumber())
+                if (thisPhone.expandNumber(gd.defaultCountry)==pairPhone.expandNumber(gd.defaultCountry))
                     return true;
         // Emails
         foreach (const Email& thisEmail, emails)

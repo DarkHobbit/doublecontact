@@ -36,7 +36,8 @@ struct TypedDataItem {
 };
 
 struct Phone: public TypedDataItem {
-    QString expandNumber() const; // international number representation from particular
+    QString expandNumber(const QString& country) const; // international number representation from particular
+    static QString expandNumber(const QString& number, const QString& /*country*/);
     bool operator ==(const Phone& p);
     // standart types
     static class StandardTypes: public ::StandardTypes {
