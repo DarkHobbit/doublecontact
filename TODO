@@ -10,7 +10,6 @@ You can contact me at pub@zvyozdochkin.ru.
 * см. все TODO в проекте
 * export delete time from bday mode if receiver not support it
 * settings - fonts
-* add statistics in List menu
 * только по желанию пользователя (не по умолчанию) подсвечивать жёлтым не только неизвестные, но и нередактируемые
 * подумать над сортировкой контактов не только для отображения, но и для экспорта
 * проверить, как работает на charset, отличных от utf-8 (codec->toUnicode, у меня везде toLocal8Bit, а это, вероятно, неправильно)

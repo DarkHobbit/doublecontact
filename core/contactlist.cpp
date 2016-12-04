@@ -386,6 +386,29 @@ void ContactList::clear()
     extra.clear();
 }
 
+QString ContactList::statistics()
+{
+    int phoneCount = 0;
+    int emailCount = 0;
+    int addrCount = 0;
+    int bdayCount = 0;
+    foreach (const ContactItem& item, *this) {
+        phoneCount += item.phones.count();
+        emailCount += item.emails.count();
+        if (!item.addrHome.isEmpty())
+            addrCount++;
+        if (!item.addrWork.isEmpty())
+            addrCount++;
+        if (!item.birthday.isEmpty())
+            bdayCount++;
+    }
+    return QObject::
+        tr("%1 records\n%2 phones\n%3 emails\n%4 addresses\n%5 birthdays\n%6 calls\n%7 SMS\n%8 archived SMS\n%9 %10")
+        .arg(count()).arg(phoneCount).arg(emailCount).arg(addrCount).arg(bdayCount)
+        .arg(extra.calls.count()).arg(extra.SMS.count()).arg(extra.SMSArchive.count())
+        .arg(extra.model).arg(extra.timeStamp);
+}
+
 TagValue::TagValue(const QString& _tag, const QString& _value)
     :tag(_tag), value(_value)
 {}
