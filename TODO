@@ -32,7 +32,6 @@ You can contact me at pub@zvyozdochkin.ru.
 * duplicate search (and merging, probably make unified merging dialog with panels compare merging)
 * extra data view (SMS, calls...) need write core/focmats/common/pdudata.*
 * X-SYNCMLREF in vType decode (now badly work, loss via editing)
-* enable MPB save: now bad encoding in Phonebook section at Windows; on Linux, work properly. Also, see X-SYNCMLREF bug
 * groups support, if testdata will found.
 Samples with CATEGORIES and apple-way https://forums.bitfire.at/topic/511/fastmail-carddav-and-groups/10 
 See also ownCloud and iCloud.
