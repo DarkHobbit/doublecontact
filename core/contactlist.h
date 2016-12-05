@@ -157,6 +157,7 @@ public:
     int findById(const QString& idValue);
     void compareWith(ContactList& pairList);
     void clear();
+    QString statistics();
     MPBExtra extra;
 };
 

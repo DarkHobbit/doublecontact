@@ -10,7 +10,6 @@ You can contact me at pub@zvyozdochkin.ru.
 * см. все TODO в проекте
 * export delete time from bday mode if receiver not support it
 * settings - fonts
-* add statistics in List menu
 * только по желанию пользователя (не по умолчанию) подсвечивать жёлтым не только неизвестные, но и нередактируемые
 * подумать над сортировкой контактов не только для отображения, но и для экспорта
 * проверить, как работает на charset, отличных от utf-8 (codec->toUnicode, у меня везде toLocal8Bit, а это, вероятно, неправильно)
@@ -32,7 +31,8 @@ You can contact me at pub@zvyozdochkin.ru.
 * vCard 4.0 support
 * duplicate search (and merging, probably make unified merging dialog with panels compare merging)
 * extra data view (SMS, calls...) need write core/focmats/common/pdudata.*
-* X-SYNCMLREF in vType decode
+* X-SYNCMLREF in vType decode (now badly work, loss via editing)
+* enable MPB save: now bad encoding in Phonebook section at Windows; on Linux, work properly. Also, see X-SYNCMLREF bug
 * groups support, if testdata will found.
 Samples with CATEGORIES and apple-way https://forums.bitfire.at/topic/511/fastmail-carddav-and-groups/10 
 See also ownCloud and iCloud.

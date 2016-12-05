@@ -89,6 +89,8 @@ private slots:
 
     void on_actionReverse_full_name_triggered();
 
+    void on_actionS_tatistics_triggered();
+
 private:
     Ui::MainWindow *ui;
     ContactModel *modLeft, *modRight;

@@ -838,3 +838,9 @@ void MainWindow::on_actionReverse_full_name_triggered()
     updateViewMode();
     updateHeaders();
 }
+
+void MainWindow::on_actionS_tatistics_triggered()
+{
+    QMessageBox::information(0, tr("Statitics"),
+        selectedModel->itemList().statistics());
+}
