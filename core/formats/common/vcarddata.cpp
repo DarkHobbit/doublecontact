@@ -23,6 +23,12 @@
 #define MAX_BASE64_LEN 74
 #define MAX_QUOTED_PRINTABLE_LEN 76
 
+VCardData::VCardData()
+{
+    useOriginalFileVersion = gd.useOriginalFileVersion;
+    skipEncoding = false;
+}
+
 bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append, QStringList& errors)
 {
     bool recordOpened = false;
@@ -243,7 +249,7 @@ void VCardData::exportRecord(QStringList &lines, const ContactItem &item)
 {
     // Format version
     formatVersion = gd.preferredVCFVersion;
-    if (gd.useOriginalFileVersion && (item.originalFormat=="VCARD")) {
+    if (useOriginalFileVersion && (item.originalFormat=="VCARD")) {
         if (item.version=="2.1")
             formatVersion = GlobalConfig::VCF21;
         else if (item.version=="3.0")
@@ -488,8 +494,10 @@ QString VCardData::encodeValue(const QString &src, int prefixLen) const
         // Rule 4. Line Breaks - apply in caller
         return buf;
     }
-    else
+    else if (!skipEncoding)
         return QString::fromLocal8Bit(codec->fromUnicode(src));
+    else
+        return src;
 }
 
 QString VCardData::encodeAll(const QString &tag, const QStringList *aTypes, bool forceCharSet, const QString &value) const

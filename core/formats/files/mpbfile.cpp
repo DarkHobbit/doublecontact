@@ -136,8 +136,7 @@ bool MPBFile::importRecords(const QString &url, ContactList &list, bool append)
 
 bool MPBFile::exportRecords(const QString &url, ContactList &list)
 {
-    _fatalError =  S_READ_ONLY_FORMAT;
-    return false; //===>
+    //_fatalError =  S_READ_ONLY_FORMAT;
     // Check format
     if (list.extra.model.isEmpty()) {
         _fatalError = QObject::tr("MPB record allowed only for MPB source");
@@ -147,15 +146,11 @@ bool MPBFile::exportRecords(const QString &url, ContactList &list)
     // vCard data
     for (int i=0; i<list.count(); i++)
         if (list[i].version.isEmpty())
-            list[i].version = "3.0"; // some MPB files not contains vCard version number
-    // TODO force vCard 3.0 or original format? see LG Leon
-    bool oldUOFV = gd.useOriginalFileVersion;
-    gd.useOriginalFileVersion = true;
-    if (!VCardData::exportRecords(content, list)) {
-        gd.useOriginalFileVersion = oldUOFV;
+            list[i].version = "3.0"; // some MPB files not contains vCard version number   
+    useOriginalFileVersion = true; // TODO force vCard 3.0 or original format? see LG Leon
+    skipEncoding = true; // disable pre-encoding via VCardData::encodeValue
+    if (!VCardData::exportRecords(content, list))
         return false;
-    }
-    gd.useOriginalFileVersion = oldUOFV;
     if (!openFile(url, QIODevice::WriteOnly))
         return false;
     _errors.clear();

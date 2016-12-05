@@ -19,9 +19,12 @@
 class VCardData
 {
 public:
+    VCardData();
     bool importRecords(QStringList& lines, ContactList& list, bool append, QStringList& errors);
     bool exportRecords(QStringList& lines, const ContactList& list);
     void exportRecord(QStringList& lines, const ContactItem& item);
+protected:
+    bool useOriginalFileVersion, skipEncoding;
 private:
     QString encoding;
     QString charSet;
