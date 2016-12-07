@@ -72,6 +72,7 @@ private:
     inline QLineEdit* nameEditorByNum(int num);
     inline QLineEdit* editorByNum(const QString& nameTemplate, int num);
     void editDateDetails(QDateTimeEdit* editor, DateItem& details);
+    void fixCount(int& count, const QString& nameTemplate, int minVisibleEditors);
     // Photo helpers
     void updatePhotoMenu();
     QString detectPhotoFormat();

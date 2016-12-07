@@ -167,10 +167,12 @@ void ContactDialog::getData(ContactItem& c)
 {
     // Names
     c.fullName = ui->leFullName->text();
+    fixCount(nameCount, "Name", MIN_VISIBLE_NAMES);
     c.names.clear();
     for (int i=0; i<nameCount; i++)
         c.names.push_back(findChild<QLineEdit*>(QString("leName%1").arg(i+1))->text());
     // Phones
+    fixCount(phoneCount, "Phone", MIN_VISIBLE_TRIPLETS);
     c.phones.clear();
     for (int i=0; i<phoneCount; i++) {
         Phone ph;
@@ -178,6 +180,7 @@ void ContactDialog::getData(ContactItem& c)
         c.phones.push_back(ph);
     }
     // Emails
+    fixCount(emailCount, "Email", MIN_VISIBLE_TRIPLETS);
     c.emails.clear();
     for (int i=0; i<emailCount; i++) {
         Email em;
@@ -245,6 +248,7 @@ void ContactDialog::fillEmailTypes(QComboBox* combo)
 
 void ContactDialog::addName(const QString& name)
 {
+    fixCount(nameCount, "Name", MIN_VISIBLE_NAMES);
     if (nameCount>=MIN_VISIBLE_NAMES) {
         QLineEdit* le = new QLineEdit(this);
         le->setObjectName(QString("leName%1").arg(nameCount+1));
@@ -272,6 +276,7 @@ void ContactDialog::slotDelName()
 
 void ContactDialog::addPhone(const Phone& ph)
 {
+    fixCount(phoneCount, "Phone", MIN_VISIBLE_TRIPLETS);
     addTriplet(phoneCount, ui->layPhones, "Phone", ph.value);
     QComboBox* cbT = findChild<QComboBox*>(QString("cbPhoneType%1").arg(phoneCount));
     if (phoneCount>MIN_VISIBLE_TRIPLETS)
@@ -281,6 +286,7 @@ void ContactDialog::addPhone(const Phone& ph)
 
 void ContactDialog::addEmail(const Email &em)
 {
+    fixCount(emailCount, "Email", MIN_VISIBLE_TRIPLETS);
     addTriplet(emailCount, ui->layEmails, "Email", em.value);
     QComboBox* cbT = findChild<QComboBox*>(QString("cbEmailType%1").arg(emailCount));
     if (emailCount>MIN_VISIBLE_TRIPLETS)
@@ -532,6 +538,17 @@ void ContactDialog::editDateDetails(QDateTimeEdit *editor, DateItem &details)
         editor->setDateTime(details.value);
     }
     delete dlg;
+}
+
+void ContactDialog::fixCount(int &count, const QString &nameTemplate, int minVisibleEditors)
+{
+    for (int i=count+1; i<=minVisibleEditors; i++) {
+        QLineEdit* editor = findChild<QLineEdit*>(QString("le%1%2").arg(nameTemplate).arg(i));
+        if (!editor)
+            break;
+        if (!editor->text().isEmpty())
+            count = i;
+    }
 }
 
 void ContactDialog::updatePhotoMenu()
