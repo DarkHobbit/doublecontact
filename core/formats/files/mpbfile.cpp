@@ -149,6 +149,7 @@ bool MPBFile::exportRecords(const QString &url, ContactList &list)
             list[i].version = "3.0"; // some MPB files not contains vCard version number   
     useOriginalFileVersion = true; // TODO force vCard 3.0 or original format? see LG Leon
     skipEncoding = true; // disable pre-encoding via VCardData::encodeValue
+    forceShortType = true; // disable TYPE= before phone/email types
     if (!VCardData::exportRecords(content, list))
         return false;
     if (!openFile(url, QIODevice::WriteOnly))

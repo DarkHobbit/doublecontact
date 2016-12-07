@@ -27,6 +27,7 @@ VCardData::VCardData()
 {
     useOriginalFileVersion = gd.useOriginalFileVersion;
     skipEncoding = false;
+    forceShortType = false;
 }
 
 bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append, QStringList& errors)
@@ -125,7 +126,7 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                         surName = " (" + item.names[0] + ")"; // TODO m.b. use it in other messages AFTER NAME!!!
                     errors << QObject::tr("Missing phone type at line %1: %2%3").arg(line+1).arg(vValue[0]).arg(surName);
                     // TODO mb. no type is valid (in this case compare container and contact edit dialog must be updated)
-                    phone.types << defaultEmptyPhoneType;
+                    phone.types << defaultEmptyPhoneType.toUpper();
                 }
                 else phone.types = types;
                 phone.syncMLRef = syncMLRef;
@@ -522,7 +523,7 @@ QString VCardData::encodeAll(const QString &tag, const QStringList *aTypes, bool
 QString VCardData::encodeTypes(const QStringList &aTypes, int /*syncMLRef*/) const
 {
     QString typeStr = ";";
-    if (formatVersion!=GlobalConfig::VCF21)
+    if (formatVersion!=GlobalConfig::VCF21 && !forceShortType)
         typeStr += "TYPE=";
     // typeStr += aTypes.join(","); // value list
     typeStr += aTypes.join(formatVersion==GlobalConfig::VCF21 ? ";" : ";TYPE="); // parameter list; RFC 2426 allows both form
