@@ -303,6 +303,7 @@ bool UDXFile::exportRecords(const QString &url, ContactList &list)
     if (!openFile(url, QIODevice::WriteOnly))
         return false;
     QTextStream stream(&file);
+    stream.setCodec("UTF-8");
     stream << content;
     closeFile();
     return true;
