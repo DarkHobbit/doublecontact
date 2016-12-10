@@ -3,11 +3,13 @@ You can contact me at pub@zvyozdochkin.ru.
 
 0.1:
 * --fullscreen not works on Mac
-* под Windows (только ли?) имена столбцов английские даже при национальном UI (STOPPER)
+* UDX под Windows в обоих клиентах пишется в CP1251 вместо UTF-8 (STOPPER)
+* под Windows имена столбцов английские даже при национальном UI (STOPPER)
+* add conditional defines for MPB save (Qt 4.8 or greater)
 * проверить: нестандартный тип телефона в vcard 3.0 зачем-то пишется в quoted-printable, но без отметки. Потом, естественно, бьётся
 * см. все TODO в проекте
 * export delete time from bday mode if receiver not support it
-* settings - fonts
+* settings - fonts???
 * только по желанию пользователя (не по умолчанию) подсвечивать жёлтым не только неизвестные, но и нередактируемые
 * подумать над сортировкой контактов не только для отображения, но и для экспорта
 * проверить, как работает на charset, отличных от utf-8 (codec->toUnicode, у меня везде toLocal8Bit, а это, вероятно, неправильно) - на 2счёта, кажется, упоминался пример?
@@ -45,6 +47,7 @@ LG Leon in vcf2.1 use X-GROUP (in my sample - empty)
 * export birthday in calendarzzz
 
 0.5 or 1.0
+* solve or delete all (most?) TODOs
 * QML mobile version (how to unify UI translations - separate translation files??? learn, can some projects have one translation set?)
 
 
