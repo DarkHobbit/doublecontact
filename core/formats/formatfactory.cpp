@@ -18,7 +18,11 @@ QStringList FormatFactory::supportedFilters(QIODevice::OpenMode mode)
     QString allSupported;
     allSupported += "*." + VCFFile::supportedExtensions().join(" *.");
     allSupported += "*." + UDXFile::supportedExtensions().join(" *.");
+#if QT_VERSION >= 0x040800
     allSupported += "*." + MPBFile::supportedExtensions().join(" *.");
+#else
+#warning MPB save and load will not work under Qt earlier than 4.8
+#endif
     if (mode==QIODevice::ReadOnly) {
         // ...here add read-only formats
     }
@@ -27,7 +31,9 @@ QStringList FormatFactory::supportedFilters(QIODevice::OpenMode mode)
     // Known formats (separate)
     allTypes << VCFFile::supportedFilters();
     allTypes << UDXFile::supportedFilters();
+#if QT_VERSION >= 0x040800
     allTypes << MPBFile::supportedFilters();
+#endif
     if (mode==QIODevice::ReadOnly) {
         // ...here add filters for read-only formats
     }
@@ -49,8 +55,10 @@ IFormat *FormatFactory::createObject(const QString &url)
         return new VCFFile();
     if (UDXFile::supportedExtensions().contains(ext, Qt::CaseInsensitive))
         return new UDXFile();
+#if QT_VERSION >= 0x040800
     if (MPBFile::supportedExtensions().contains(ext, Qt::CaseInsensitive))
         return new MPBFile();
+#endif
     // ...here add supportedExtensions() for new format
     // Known formats with non-standard extension
     if (VCFFile::detect(url))
