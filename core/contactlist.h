@@ -20,6 +20,7 @@
 #include "globals.h"
 
 #define MAX_COMPARE_PRIORITY_LEVEL 5
+#define COUNTRY_RULES_COUNT 3
 
 struct TagValue { // for non-editing ang unknown tags
     QString tag, value;

@@ -41,6 +41,10 @@ bool SettingsDialog::setData()
     // Saving
     ui->cbPrefVCardVer->setCurrentIndex((short)gd.preferredVCFVersion);
     ui->cbUseOrigVer->setChecked(gd.useOriginalFileVersion);
+    ui->cbDefaultCountryRules->clear();
+    ui->cbDefaultCountryRules->addItems(Phone::availableCountryRules());
+    if (gd.defaultCountryRule>=0 && gd.defaultCountryRule<COUNTRY_RULES_COUNT)
+        ui->cbDefaultCountryRules->setCurrentIndex(gd.defaultCountryRule);
     // Loading
     ui->cbDefaultEmptyPhoneType->clear();
     ui->cbDefaultEmptyPhoneType->insertItems(0, Phone::standardTypes.displayValues);
@@ -73,6 +77,7 @@ bool SettingsDialog::getData()
     // Saving
     gd.preferredVCFVersion = (GlobalConfig::VCFVersion) ui->cbPrefVCardVer->currentIndex();
     gd.useOriginalFileVersion = ui->cbUseOrigVer->isChecked();
+    gd.defaultCountryRule = ui->cbDefaultCountryRules->currentIndex();
     // Loading
     gd.defaultEmptyPhoneType = ui->cbDefaultEmptyPhoneType->currentText();
     // Done

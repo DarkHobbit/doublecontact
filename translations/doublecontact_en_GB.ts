@@ -899,12 +899,12 @@ Save changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="830"/>
+        <location filename="../app/mainwindow.cpp" line="832"/>
         <source>Operation requires show two panels</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="863"/>
+        <location filename="../app/mainwindow.cpp" line="865"/>
         <source>Statitics</source>
         <translation type="unfinished"></translation>
     </message>
@@ -943,96 +943,96 @@ Save changes?</source>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../core/contactlist.cpp" line="67"/>
-        <location filename="../core/contactlist.cpp" line="536"/>
+        <location filename="../core/contactlist.cpp" line="66"/>
+        <location filename="../core/contactlist.cpp" line="535"/>
         <source>Home</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="68"/>
+        <location filename="../core/contactlist.cpp" line="67"/>
         <source>Message</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="69"/>
-        <location filename="../core/contactlist.cpp" line="537"/>
+        <location filename="../core/contactlist.cpp" line="68"/>
+        <location filename="../core/contactlist.cpp" line="536"/>
         <source>Work</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="70"/>
-        <location filename="../core/contactlist.cpp" line="107"/>
-        <location filename="../core/contactlist.cpp" line="538"/>
+        <location filename="../core/contactlist.cpp" line="69"/>
+        <location filename="../core/contactlist.cpp" line="106"/>
+        <location filename="../core/contactlist.cpp" line="537"/>
         <source>Preferable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="71"/>
+        <location filename="../core/contactlist.cpp" line="70"/>
         <source>Voice</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="72"/>
+        <location filename="../core/contactlist.cpp" line="71"/>
         <source>Fax</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="73"/>
+        <location filename="../core/contactlist.cpp" line="72"/>
         <source>Cell</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="74"/>
+        <location filename="../core/contactlist.cpp" line="73"/>
         <source>Video</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="75"/>
+        <location filename="../core/contactlist.cpp" line="74"/>
         <source>Pager</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="76"/>
+        <location filename="../core/contactlist.cpp" line="75"/>
         <source>BBS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="77"/>
+        <location filename="../core/contactlist.cpp" line="76"/>
         <source>Modem</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="78"/>
+        <location filename="../core/contactlist.cpp" line="77"/>
         <source>Car</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="79"/>
+        <location filename="../core/contactlist.cpp" line="78"/>
         <source>ISDN</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="80"/>
+        <location filename="../core/contactlist.cpp" line="79"/>
         <source>PCS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="105"/>
+        <location filename="../core/contactlist.cpp" line="104"/>
         <source>Internet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="106"/>
+        <location filename="../core/contactlist.cpp" line="105"/>
         <source>X.400</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="216"/>
+        <location filename="../core/contactlist.cpp" line="215"/>
         <source>Strange empty contact</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="428"/>
+        <location filename="../core/contactlist.cpp" line="427"/>
         <source>%1 records
 %2 phones
 %3 emails
@@ -1045,22 +1045,22 @@ Save changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="539"/>
+        <location filename="../core/contactlist.cpp" line="538"/>
         <source>Domestic</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="540"/>
+        <location filename="../core/contactlist.cpp" line="539"/>
         <source>International</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="541"/>
+        <location filename="../core/contactlist.cpp" line="540"/>
         <source>Postal</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="542"/>
+        <location filename="../core/contactlist.cpp" line="541"/>
         <source>Parcel</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1541,62 +1541,72 @@ line %3, col %4
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="99"/>
+        <location filename="../app/settingsdialog.ui" line="92"/>
         <source>Columns</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="105"/>
+        <location filename="../app/settingsdialog.ui" line="98"/>
         <source>Visible</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="112"/>
+        <location filename="../app/settingsdialog.ui" line="105"/>
         <source>Available</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="166"/>
+        <location filename="../app/settingsdialog.ui" line="159"/>
         <source>Saving</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="174"/>
+        <location filename="../app/settingsdialog.ui" line="167"/>
         <source>Preferred vCard version</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="182"/>
+        <location filename="../app/settingsdialog.ui" line="175"/>
         <source>2.1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="187"/>
+        <location filename="../app/settingsdialog.ui" line="180"/>
         <source>3.0</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="197"/>
+        <location filename="../app/settingsdialog.ui" line="190"/>
         <source>Use original file version (if present)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="218"/>
+        <location filename="../app/settingsdialog.ui" line="199"/>
+        <source>Default country</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/settingsdialog.ui" line="211"/>
+        <source>(for phone number internationalization)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/settingsdialog.ui" line="232"/>
         <source>Loading</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="226"/>
+        <location filename="../app/settingsdialog.ui" line="240"/>
         <source>Default type if empty</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="238"/>
+        <location filename="../app/settingsdialog.ui" line="252"/>
         <source>(many phones treats &apos;Voice&apos; as &apos;Other&apos;)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.cpp" line="98"/>
+        <location filename="../app/settingsdialog.cpp" line="103"/>
         <source>List must contain at least one visible column</source>
         <translation type="unfinished"></translation>
     </message>

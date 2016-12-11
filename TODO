@@ -6,7 +6,6 @@ You can contact me at pub@zvyozdochkin.ru.
 * проверить: нестандартный тип телефона в vcard 3.0 зачем-то пишется в quoted-printable, но без отметки. Потом, естественно, бьётся
 * см. все TODO в проекте
 * export delete time from bday mode if receiver not support it
-* settings - fonts???
 * только по желанию пользователя (не по умолчанию) подсвечивать жёлтым не только неизвестные, но и нередактируемые
 * подумать над сортировкой контактов не только для отображения, но и для экспорта
 * проверить, как работает на charset, отличных от utf-8 (codec->toUnicode, у меня везде toLocal8Bit, а это, вероятно, неправильно) - на 2счёта, кажется, упоминался пример?
@@ -26,6 +25,7 @@ You can contact me at pub@zvyozdochkin.ru.
 0.2:
 * csv support
 * duplicate search (and merging, probably make unified merging dialog with panels compare merging)
+* settings - fonts
 * vCard 4.0 support
 * extra data view (SMS, calls...) need write core/focmats/common/pdudata.*
 * X-SYNCMLREF in vType decode (now badly work, loss via editing)

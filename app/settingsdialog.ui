@@ -73,13 +73,6 @@
         </widget>
        </item>
        <item>
-        <widget class="QLabel" name="labelTODO">
-         <property name="text">
-          <string notr="true">font dialog call???</string>
-         </property>
-        </widget>
-       </item>
-       <item>
         <spacer name="spacerGeneral">
          <property name="orientation">
           <enum>Qt::Vertical</enum>
@@ -195,6 +188,27 @@
         <widget class="QCheckBox" name="cbUseOrigVer">
          <property name="text">
           <string>Use original file version (if present)</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item>
+          <widget class="QLabel" name="lbDefaultCountryRules">
+           <property name="text">
+            <string>Default country</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="cbDefaultCountryRules"/>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QLabel" name="lbDefaultCountryRules2">
+         <property name="text">
+          <string>(for phone number internationalization)</string>
          </property>
         </widget>
        </item>

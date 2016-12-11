@@ -809,6 +809,8 @@ void MainWindow::on_actionIntl_phone_prefix_triggered()
     d->setLayout(l);
     QComboBox* cbCountryRule = new QComboBox();
     cbCountryRule->addItems(Phone::availableCountryRules());
+    if (gd.defaultCountryRule>=0 && gd.defaultCountryRule<COUNTRY_RULES_COUNT)
+        cbCountryRule->setCurrentIndex(gd.defaultCountryRule);
     l->addWidget(cbCountryRule);
     QDialogButtonBox* bb = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
     connect(bb, SIGNAL(accepted()), d, SLOT(accept()));

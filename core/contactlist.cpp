@@ -14,7 +14,6 @@
 #include "contactlist.h"
 
 // Rules for phone number internationalization
-#define COUNTRY_RULES_COUNT 3
 struct CountryRule{
     QString country, nPrefix, iPrefix;
 } countryRules [COUNTRY_RULES_COUNT] ={

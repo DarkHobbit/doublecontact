@@ -61,6 +61,7 @@ void ConfigManager::readConfig()
         gd.preferredVCFVersion = GlobalConfig::VCF30;
     // TODO 4.0
     gd.useOriginalFileVersion = settings.value("Saving/UseOriginalFileVCardVersion", true).toBool();
+    gd.defaultCountryRule = settings.value("Saving/DefaultCountryRule", 0).toInt();
     // Loading
     gd.defaultEmptyPhoneType = settings.value("Loading/DefaultEmptyPhoneType",
         Phone::standardTypes.translate("voice")).toString(); // many phones treat type 'voice' as 'other'
@@ -95,6 +96,7 @@ void ConfigManager::writeConfig()
     }
     settings.setValue("Saving/PreferredVCardVersion", sPrefVer);
     settings.setValue("Saving/UseOriginalFileVCardVersion", gd.useOriginalFileVersion);
+    settings.setValue("Saving/DefaultCountryRule", gd.defaultCountryRule);
     // Loading
     settings.setValue("Loading/DefaultEmptyPhoneType", gd.defaultEmptyPhoneType);
 }
