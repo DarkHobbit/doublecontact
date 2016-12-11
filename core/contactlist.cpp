@@ -468,20 +468,20 @@ QString DateItem::toString(DateFormat format) const
         break;
     }
     if (hasTime) {
-        s += (format==DateItem::Local) ? " " : "T";
         switch (format) {
         case DateItem::ISOBasic:
-            s += value.time().toString("Thhmmss");
+            if (!gd.skipTimeFromDate)
+                s += value.time().toString("Thhmmss");
             break;
         case DateItem::ISOExtended:
-            s += value.time().toString("Thh:mm:ss");
+            if (!gd.skipTimeFromDate)
+                s += value.time().toString("Thh:mm:ss");
             break;
         default:
-            s += value.time().toString(gd.timeFormat);
+            s += " " + value.time().toString(gd.timeFormat);
             break;
         }
-        s += value.time().toString("Thhmmss");
-        if (hasTimeZone) // TODO search Xamples with positive TZ hour and short form
+        if (hasTimeZone && !gd.skipTimeFromDate) // TODO search Xamples with positive TZ hour and short form
             s += QString("%1:%2").arg(zoneHour).arg(zoneMin);
     }
     return s;

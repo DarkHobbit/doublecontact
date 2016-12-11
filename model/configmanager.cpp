@@ -62,6 +62,7 @@ void ConfigManager::readConfig()
     // TODO 4.0
     gd.useOriginalFileVersion = settings.value("Saving/UseOriginalFileVCardVersion", true).toBool();
     gd.defaultCountryRule = settings.value("Saving/DefaultCountryRule", 0).toInt();
+    gd.skipTimeFromDate = settings.value("Saving/SkipTimeFromDate", false).toBool();
     // Loading
     gd.defaultEmptyPhoneType = settings.value("Loading/DefaultEmptyPhoneType",
         Phone::standardTypes.translate("voice")).toString(); // many phones treat type 'voice' as 'other'
@@ -97,6 +98,7 @@ void ConfigManager::writeConfig()
     settings.setValue("Saving/PreferredVCardVersion", sPrefVer);
     settings.setValue("Saving/UseOriginalFileVCardVersion", gd.useOriginalFileVersion);
     settings.setValue("Saving/DefaultCountryRule", gd.defaultCountryRule);
+    settings.setValue("Saving/SkipTimeFromDate", gd.skipTimeFromDate);
     // Loading
     settings.setValue("Loading/DefaultEmptyPhoneType", gd.defaultEmptyPhoneType);
 }

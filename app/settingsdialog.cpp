@@ -51,6 +51,7 @@ bool SettingsDialog::setData()
     int index = ui->cbDefaultEmptyPhoneType->findText(gd.defaultEmptyPhoneType);
     if (index!=-1)
         ui->cbDefaultEmptyPhoneType->setCurrentIndex(index);
+    ui->cbSkipTimeFromDate->setChecked(gd.skipTimeFromDate);
     // Done
     return true;
 }
@@ -78,6 +79,7 @@ bool SettingsDialog::getData()
     gd.preferredVCFVersion = (GlobalConfig::VCFVersion) ui->cbPrefVCardVer->currentIndex();
     gd.useOriginalFileVersion = ui->cbUseOrigVer->isChecked();
     gd.defaultCountryRule = ui->cbDefaultCountryRules->currentIndex();
+    gd.skipTimeFromDate = ui->cbSkipTimeFromDate->isChecked();
     // Loading
     gd.defaultEmptyPhoneType = ui->cbDefaultEmptyPhoneType->currentText();
     // Done

@@ -213,6 +213,13 @@
         </widget>
        </item>
        <item>
+        <widget class="QCheckBox" name="cbSkipTimeFromDate">
+         <property name="text">
+          <string>Skip time from birthday and anniversaries</string>
+         </property>
+        </widget>
+       </item>
+       <item>
         <spacer name="verticalSpacer">
          <property name="orientation">
           <enum>Qt::Vertical</enum>

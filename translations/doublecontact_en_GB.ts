@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="en_GB">
+<TS version="2.1" language="en_GB">
 <context>
     <name>AboutDialog</name>
     <message>
@@ -1591,22 +1591,27 @@ line %3, col %4
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="232"/>
+        <location filename="../app/settingsdialog.ui" line="218"/>
+        <source>Skip time from birthday and anniversaries</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/settingsdialog.ui" line="239"/>
         <source>Loading</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="240"/>
+        <location filename="../app/settingsdialog.ui" line="247"/>
         <source>Default type if empty</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="252"/>
+        <location filename="../app/settingsdialog.ui" line="259"/>
         <source>(many phones treats &apos;Voice&apos; as &apos;Other&apos;)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.cpp" line="103"/>
+        <location filename="../app/settingsdialog.cpp" line="105"/>
         <source>List must contain at least one visible column</source>
         <translation type="unfinished"></translation>
     </message>

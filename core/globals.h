@@ -121,10 +121,10 @@ struct GlobalConfig {
         //VCF40
     } preferredVCFVersion;
     bool useOriginalFileVersion;
+    int defaultCountryRule; // for phone i18n during compare numbers (i.e. for Russia +7 = 8)
+    bool skipTimeFromDate;
     // Load
     QString defaultEmptyPhoneType; // if phone w/o type was in loaded file
-    // Compare
-    int defaultCountryRule; // for phone i18n during compare numbers (i.e. for Russia +7 = 8)
 } gd;
 
 #endif // GLOBALS_H

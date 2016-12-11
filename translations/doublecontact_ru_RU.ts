@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="ru_RU">
+<TS version="2.1" language="ru_RU">
 <context>
     <name>AboutDialog</name>
     <message>
@@ -1617,22 +1617,27 @@ line %3, col %4
         <translation>(для интернационализации телефонных номеров)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="232"/>
+        <location filename="../app/settingsdialog.ui" line="218"/>
+        <source>Skip time from birthday and anniversaries</source>
+        <translation>Удалять время из дней рождения и годовщин</translation>
+    </message>
+    <message>
+        <location filename="../app/settingsdialog.ui" line="239"/>
         <source>Loading</source>
         <translation>Загрузка</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="240"/>
+        <location filename="../app/settingsdialog.ui" line="247"/>
         <source>Default type if empty</source>
         <translation>Тип телефона, если пустой</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="252"/>
+        <location filename="../app/settingsdialog.ui" line="259"/>
         <source>(many phones treats &apos;Voice&apos; as &apos;Other&apos;)</source>
         <translation>(многие телефоны трактуют &apos;Голосовой&apos; как &apos;Прочий&apos;)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.cpp" line="103"/>
+        <location filename="../app/settingsdialog.cpp" line="105"/>
         <source>List must contain at least one visible column</source>
         <translation>В списке должен быть хотя бы один видимый столбец</translation>
     </message>
