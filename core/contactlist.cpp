@@ -13,23 +13,45 @@
 
 #include "contactlist.h"
 
-QString Phone::expandNumber(const QString& country) const
+// Rules for phone number internationalization
+#define COUNTRY_RULES_COUNT 3
+struct CountryRule{
+    QString country, nPrefix, iPrefix;
+} countryRules [COUNTRY_RULES_COUNT] ={
+    // Here we use _national_ names of countries
+    // If list will expanded, may be port it into separate list, such as languages in LanguageManager
+    {QString::fromUtf8("Беларусь"), "8", "+375"},
+    {QString::fromUtf8("Россия"),   "8", "+7"},
+    {QString::fromUtf8("Україна"),  "0", "+380"}
+};
+
+QString Phone::expandNumber(int countryRule) const
 {
-    return expandNumber(value, country);
+    return expandNumber(value, countryRule);
 }
 
-QString Phone::expandNumber(const QString &number, const QString &/*country*/)
+QString Phone::expandNumber(const QString &number, int countryRule)
 {
     QString res = number;
-    // TODO currently only Russian codes supported. Need more countries!
-    if (res.startsWith("8")) // Russia; TODO: make table for some countries!
-            res = res.replace(0, 1, "+7");
+    if (res.startsWith(countryRules[countryRule].nPrefix)) // for example, 8 -> +7 for Russia
+            res = res.replace(0, 1, countryRules[countryRule].iPrefix);
     return res;
 }
 
 bool Phone::operator ==(const Phone &p)
 {
     return (value==p.value && types==p.types);
+}
+
+QStringList Phone::availableCountryRules()
+{
+    QStringList rules;
+    for (int i=0; i<COUNTRY_RULES_COUNT; i++) {
+        CountryRule& rule = countryRules[i];
+        rules << QString("%1 (%2 -> %3)")
+            .arg(rule.country).arg(rule.nPrefix).arg(rule.iPrefix);
+    }
+    return rules;
 }
 
 Phone::StandardTypes::StandardTypes()
@@ -159,11 +181,11 @@ bool ContactItem::dropSlashes()
     return true;
 }
 
-bool ContactItem::intlPhonePrefix()
+bool ContactItem::intlPhonePrefix(int countryRule)
 {
     int res = false;
     for (int i=0; i<phones.count();i++) {
-        QString newNumber = phones[i].expandNumber("Russia"); // TODO select in dialog
+        QString newNumber = phones[i].expandNumber(countryRule);
         if (newNumber!=phones[i].value)
             res = true;
         phones[i].value = newNumber;
@@ -257,7 +279,7 @@ bool ContactItem::similarTo(const ContactItem &pair, int priorityLevel)
         // Phones
         foreach (const Phone& thisPhone, phones)
             foreach (const Phone& pairPhone, pair.phones)
-                if (thisPhone.expandNumber(gd.defaultCountry)==pairPhone.expandNumber(gd.defaultCountry))
+                if (thisPhone.expandNumber(gd.defaultCountryRule)==pairPhone.expandNumber(gd.defaultCountryRule))
                     return true;
         // Emails
         foreach (const Email& thisEmail, emails)

@@ -3,9 +3,6 @@ You can contact me at pub@zvyozdochkin.ru.
 
 0.1:
 * --fullscreen not works on Mac
-* UDX под Windows в обоих клиентах пишется в CP1251 вместо UTF-8 (STOPPER)
-* под Windows имена столбцов английские даже при национальном UI (STOPPER)
-* add conditional defines for MPB save (Qt 4.8 or greater)
 * проверить: нестандартный тип телефона в vcard 3.0 зачем-то пишется в quoted-printable, но без отметки. Потом, естественно, бьётся
 * см. все TODO в проекте
 * export delete time from bday mode if receiver not support it
@@ -32,7 +29,8 @@ You can contact me at pub@zvyozdochkin.ru.
 * vCard 4.0 support
 * extra data view (SMS, calls...) need write core/focmats/common/pdudata.*
 * X-SYNCMLREF in vType decode (now badly work, loss via editing)
-* enable MPB save: now bad encoding in Phonebook section at Windows; on Linux, work properly. Also, see X-SYNCMLREF bug
+* maybe, rewrite MPB save/load on Qt 4.6/4.7 (open file 4 times with differ codecs). Also, see X-SYNCMLREF bug
+* in some cases, under Windows and Qt4 column names not translated (Qt 4.6, 4.7, and, sometimes, 4.8)
 * groups support, if testdata will found.
 Samples with CATEGORIES and apple-way https://forums.bitfire.at/topic/511/fastmail-carddav-and-groups/10 
 See also ownCloud and iCloud.

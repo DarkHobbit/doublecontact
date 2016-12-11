@@ -45,6 +45,7 @@ enum ContactColumn {
 // Misc
 #define S_NEW_LIST QObject::tr("New contact list")
 #define S_READ_ONLY_FORMAT QObject::tr("This format is read only")
+#define S_COUNTRY_RULE_SELECT QObject::tr("Select country rule")
 // Spec.value for combined phone/mail/addr. types
 #define S_MIXED_TYPE QObject::tr("mixed...")
 // Column names
@@ -123,7 +124,7 @@ struct GlobalConfig {
     // Load
     QString defaultEmptyPhoneType; // if phone w/o type was in loaded file
     // Compare
-    QString defaultCountry; // for phone i18n during compare numbers (i.e. for Russia +7 = 8)
+    int defaultCountryRule; // for phone i18n during compare numbers (i.e. for Russia +7 = 8)
 } gd;
 
 #endif // GLOBALS_H

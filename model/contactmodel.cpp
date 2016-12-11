@@ -337,11 +337,11 @@ void ContactModel::splitNumbers(const QModelIndexList &indices)
     _changed = true;
 }
 
-void ContactModel::intlPhonePrefix(const QModelIndexList &indices)
+void ContactModel::intlPhonePrefix(const QModelIndexList &indices, int countryRule)
 {
     foreach(QModelIndex index, indices) {
         beginEditRow(index);
-        if (items[index.row()].intlPhonePrefix())
+        if (items[index.row()].intlPhonePrefix(countryRule))
             items[index.row()].calculateFields();
         endEditRow(index);
     }

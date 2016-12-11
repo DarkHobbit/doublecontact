@@ -62,7 +62,7 @@ public:
     void dropFullNames(const QModelIndexList& indices);
     void reverseFullNames(const QModelIndexList& indices);
     void splitNumbers(const QModelIndexList& indices);
-    void intlPhonePrefix(const QModelIndexList& indices);
+    void intlPhonePrefix(const QModelIndexList& indices, int countryRule);
     void setViewMode(ContactViewMode mode, ContactModel* target);
     ContactViewMode viewMode();
     ContactList& itemList();

@@ -36,9 +36,11 @@ struct TypedDataItem {
 };
 
 struct Phone: public TypedDataItem {
-    QString expandNumber(const QString& country) const; // international number representation from particular
-    static QString expandNumber(const QString& number, const QString& /*country*/);
     bool operator ==(const Phone& p);
+    // international number representation from particular
+    static QStringList availableCountryRules();
+    QString expandNumber(int countryRule) const;
+    static QString expandNumber(const QString& number, int countryRule);
     // standart types
     static class StandardTypes: public ::StandardTypes {
         public:
@@ -127,7 +129,7 @@ struct ContactItem {
     bool swapNames();
     bool splitNames(); // TODO int index
     bool dropSlashes();
-    bool intlPhonePrefix();
+    bool intlPhonePrefix(int countryRule);
     // Aux methods
     void calculateFields();
     QString formatNames() const;

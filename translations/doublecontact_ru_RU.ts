@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ru_RU">
+<TS version="2.0" language="ru_RU">
 <context>
     <name>AboutDialog</name>
     <message>
@@ -166,25 +166,25 @@
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="149"/>
-        <location filename="../app/contactdialog.cpp" line="564"/>
+        <location filename="../app/contactdialog.cpp" line="581"/>
         <source>name</source>
         <translation>имя</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="154"/>
-        <location filename="../app/contactdialog.cpp" line="566"/>
+        <location filename="../app/contactdialog.cpp" line="583"/>
         <source>phone</source>
         <translation>телефон</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="159"/>
-        <location filename="../app/contactdialog.cpp" line="568"/>
+        <location filename="../app/contactdialog.cpp" line="585"/>
         <source>email</source>
         <translation>электропочту</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="164"/>
-        <location filename="../app/contactdialog.cpp" line="570"/>
+        <location filename="../app/contactdialog.cpp" line="587"/>
         <source>anniversary</source>
         <translation>годовщину</translation>
     </message>
@@ -337,22 +337,22 @@
         <translation>Правка контакта</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="580"/>
+        <location filename="../app/contactdialog.cpp" line="597"/>
         <source>Phone type</source>
         <translation>Тип телефона</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="582"/>
+        <location filename="../app/contactdialog.cpp" line="599"/>
         <source>Email type</source>
         <translation>Тип электропочты</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="655"/>
+        <location filename="../app/contactdialog.cpp" line="672"/>
         <source>Open image file</source>
         <translation>Открыть картинку</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="689"/>
+        <location filename="../app/contactdialog.cpp" line="706"/>
         <source>Save image file</source>
         <translation>Сохранить картинку</translation>
     </message>
@@ -422,7 +422,7 @@
     <name>MainWindow</name>
     <message>
         <location filename="../app/mainwindow.ui" line="14"/>
-        <location filename="../app/mainwindow.cpp" line="532"/>
+        <location filename="../app/mainwindow.cpp" line="536"/>
         <source>Double Contact</source>
         <translation>Double Contact</translation>
     </message>
@@ -762,150 +762,150 @@
         <translation>С&amp;татистика</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="154"/>
+        <location filename="../app/mainwindow.cpp" line="158"/>
         <source>Open contact file</source>
         <translation>Открыть адресную книгу</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="171"/>
+        <location filename="../app/mainwindow.cpp" line="175"/>
         <source>Open VCF Directory</source>
         <translation>Открыть каталог VCF</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="195"/>
+        <location filename="../app/mainwindow.cpp" line="199"/>
         <source>Save contact file</source>
         <translation>Сохранить адресную книгу</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="209"/>
+        <location filename="../app/mainwindow.cpp" line="213"/>
         <source>Save VCF Directory</source>
         <translation>Сохранить каталог VCF</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="218"/>
+        <location filename="../app/mainwindow.cpp" line="222"/>
         <source>Directory exists. Are You really want rewrite it?</source>
         <translation>Каталог существует. Вы хотите переписать его содержимое?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="266"/>
+        <location filename="../app/mainwindow.cpp" line="270"/>
         <source>Are You really want to edit more than one record?
 Only some fields can this edited in this mode</source>
         <translation>Вы действительно хотите отредактировать более одной записи?
 Так можно изменить лишь некоторые поля</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="298"/>
+        <location filename="../app/mainwindow.cpp" line="302"/>
         <source>Are You really want to delete selected items?</source>
         <translation>Вы действительно хотите удалить выбранные записи?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="378"/>
+        <location filename="../app/mainwindow.cpp" line="382"/>
         <source>Compare mode requires show two panels and load contact lists in both panels</source>
         <translation>Для сравнения адресных книг необходимо включить 2 панели и загрузить файлы в обе панели</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="420"/>
+        <location filename="../app/mainwindow.cpp" line="424"/>
         <source>Record not selected</source>
         <translation>Сперва выберите запись</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="424"/>
+        <location filename="../app/mainwindow.cpp" line="428"/>
         <source>Group editing not impemented, select one record</source>
         <translation>Групповая операция не реализована, выберите одну запись</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="451"/>
+        <location filename="../app/mainwindow.cpp" line="455"/>
         <source> (directory)</source>
         <translation> (каталог)</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="533"/>
+        <location filename="../app/mainwindow.cpp" line="537"/>
         <source>Double Contact - %1</source>
         <translation>Double Contact - %1</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="538"/>
+        <location filename="../app/mainwindow.cpp" line="542"/>
         <source>Mode: </source>
         <translation>Режим: </translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="539"/>
+        <location filename="../app/mainwindow.cpp" line="543"/>
         <source>two panels</source>
         <translation>2 панели</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="539"/>
+        <location filename="../app/mainwindow.cpp" line="543"/>
         <source>one panel</source>
         <translation>1 панель</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="540"/>
+        <location filename="../app/mainwindow.cpp" line="544"/>
         <source>sorted</source>
         <translation>сорт.</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="540"/>
+        <location filename="../app/mainwindow.cpp" line="544"/>
         <source>not sorted</source>
         <translation>не сорт.</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="543"/>
+        <location filename="../app/mainwindow.cpp" line="547"/>
         <source>simple editing</source>
         <translation>простая правка</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="547"/>
+        <location filename="../app/mainwindow.cpp" line="551"/>
         <source>compare</source>
         <translation>сравнение</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="586"/>
+        <location filename="../app/mainwindow.cpp" line="590"/>
         <source>&apos;%1&apos; was changed.
 Save changes?</source>
         <translation>%1 изменился. Сохранить?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="674"/>
+        <location filename="../app/mainwindow.cpp" line="678"/>
         <source>Restart program to apply language change</source>
         <translation>Язык сменится после перезапуска программы</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="717"/>
+        <location filename="../app/mainwindow.cpp" line="721"/>
         <source>Two panels and compare mode needed for this operation</source>
         <translation>Сначала нужно включить 2 панели и режим сравнения</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="730"/>
+        <location filename="../app/mainwindow.cpp" line="734"/>
         <source>Left item</source>
         <translation>Левый контакт</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="730"/>
+        <location filename="../app/mainwindow.cpp" line="734"/>
         <source>Right item</source>
         <translation>Правый контакт</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="755"/>
+        <location filename="../app/mainwindow.cpp" line="759"/>
         <source>Strongly two records on current panel must be selected for this operation</source>
         <translation>Сначала надо выбрать ровно2 записи на текущей панели</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="761"/>
+        <location filename="../app/mainwindow.cpp" line="765"/>
         <source>Item 1</source>
         <translation>Контакт 1</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="761"/>
+        <location filename="../app/mainwindow.cpp" line="765"/>
         <source>Item 2</source>
         <translation>Контакт 2</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="811"/>
+        <location filename="../app/mainwindow.cpp" line="830"/>
         <source>Operation requires show two panels</source>
         <translation>Необходимо включить 2 панели</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="844"/>
+        <location filename="../app/mainwindow.cpp" line="863"/>
         <source>Statitics</source>
         <translation>Статистика</translation>
     </message>
@@ -944,96 +944,96 @@ Save changes?</source>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../core/contactlist.cpp" line="45"/>
-        <location filename="../core/contactlist.cpp" line="514"/>
+        <location filename="../core/contactlist.cpp" line="67"/>
+        <location filename="../core/contactlist.cpp" line="536"/>
         <source>Home</source>
         <translation>Домашний</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="46"/>
+        <location filename="../core/contactlist.cpp" line="68"/>
         <source>Message</source>
         <translation>Для сообщений</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="47"/>
-        <location filename="../core/contactlist.cpp" line="515"/>
+        <location filename="../core/contactlist.cpp" line="69"/>
+        <location filename="../core/contactlist.cpp" line="537"/>
         <source>Work</source>
         <translation>Служебный</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="48"/>
-        <location filename="../core/contactlist.cpp" line="85"/>
-        <location filename="../core/contactlist.cpp" line="516"/>
+        <location filename="../core/contactlist.cpp" line="70"/>
+        <location filename="../core/contactlist.cpp" line="107"/>
+        <location filename="../core/contactlist.cpp" line="538"/>
         <source>Preferable</source>
         <translation>Предпочтительный</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="49"/>
+        <location filename="../core/contactlist.cpp" line="71"/>
         <source>Voice</source>
         <translation>Голосовой</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="50"/>
+        <location filename="../core/contactlist.cpp" line="72"/>
         <source>Fax</source>
         <translation>Факс</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="51"/>
+        <location filename="../core/contactlist.cpp" line="73"/>
         <source>Cell</source>
         <translation>Мобильный</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="52"/>
+        <location filename="../core/contactlist.cpp" line="74"/>
         <source>Video</source>
         <translation>Видеофон</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="53"/>
+        <location filename="../core/contactlist.cpp" line="75"/>
         <source>Pager</source>
         <translation>Пейджер</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="54"/>
+        <location filename="../core/contactlist.cpp" line="76"/>
         <source>BBS</source>
         <translation>BBS</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="55"/>
+        <location filename="../core/contactlist.cpp" line="77"/>
         <source>Modem</source>
         <translation>Модем</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="56"/>
+        <location filename="../core/contactlist.cpp" line="78"/>
         <source>Car</source>
         <translation>Автомобильный</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="57"/>
+        <location filename="../core/contactlist.cpp" line="79"/>
         <source>ISDN</source>
         <translation>ISDN</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="58"/>
+        <location filename="../core/contactlist.cpp" line="80"/>
         <source>PCS</source>
         <translation>PCS</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="83"/>
+        <location filename="../core/contactlist.cpp" line="105"/>
         <source>Internet</source>
         <translation>Интернет</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="84"/>
+        <location filename="../core/contactlist.cpp" line="106"/>
         <source>X.400</source>
         <translation>X.400</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="194"/>
+        <location filename="../core/contactlist.cpp" line="216"/>
         <source>Strange empty contact</source>
         <translation>Странный пустой контакт</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="406"/>
+        <location filename="../core/contactlist.cpp" line="428"/>
         <source>%1 records
 %2 phones
 %3 emails
@@ -1054,87 +1054,87 @@ SMS: %7
 %9 %10</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="517"/>
+        <location filename="../core/contactlist.cpp" line="539"/>
         <source>Domestic</source>
         <translation>Внутренний</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="518"/>
+        <location filename="../core/contactlist.cpp" line="540"/>
         <source>International</source>
         <translation>Международный</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="519"/>
+        <location filename="../core/contactlist.cpp" line="541"/>
         <source>Postal</source>
         <translation>Почтовый</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="520"/>
+        <location filename="../core/contactlist.cpp" line="542"/>
         <source>Parcel</source>
         <translation>Для посылок</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="51"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="58"/>
         <source>Unclosed record before line %1</source>
         <translation>Неоконченная запись перед строкой %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="96"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="103"/>
         <source>Unexpected TYPE appearance at line %1: tag %2</source>
         <translation>Неожиданный TYPE в строке %1: тег %2</translation>
     </message>
     <message>
         <source>Missing phone type at line %1: %2</source>
-        <translation type="vanished">Телефон без типа в строке %1: %2</translation>
+        <translation type="obsolete">Телефон без типа в строке %1: %2</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="120"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="127"/>
         <source>Missing phone type at line %1: %2%3</source>
         <translation>Телефон без типа в строке %1: %2%3 {1:?}</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="156"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="163"/>
         <source>Unsupported photo type at line %1: %2</source>
         <translation>Неподдерживаемый тип фотографии в строке %1: %2</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="167"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="174"/>
         <source>Unknown encoding type at line %1: %2</source>
         <translation>Неизвестное кодирование в строке %1: %2</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="180"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="187"/>
         <source>Unknown address type at line %1: %2</source>
         <translation>Неизвестный тип адреса в строке %1: %2</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="223"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="230"/>
         <source>Last section not closed</source>
         <translation>Последняя секция не закрыта</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="230"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="237"/>
         <location filename="../core/formats/files/udxfile.cpp" line="164"/>
         <source>%1 unknown tags found</source>
         <translation>Неизвестных тегов: %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="347"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="354"/>
         <source>Unknown charset: </source>
         <translation>Неизвестная кодировка: </translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="370"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="377"/>
         <source>Unknown encoding: </source>
         <translation>Неизвестное кодирование: </translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="393"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="400"/>
         <source>Invalid timezone: </source>
         <translation>Неправильный часовой пояс: </translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="412"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="419"/>
         <source>Invalid datetime: </source>
         <translation>Неправильная дата/время</translation>
     </message>
@@ -1244,12 +1244,12 @@ line %3, col %4
         <translation>Предупреждение: у контакта %1 есть годовщины, не реализовано в UDX</translation>
     </message>
     <message>
-        <location filename="../core/formats/formatfactory.cpp" line="42"/>
+        <location filename="../core/formats/formatfactory.cpp" line="48"/>
         <source>Empty file name</source>
         <translation>Пустое имя файла</translation>
     </message>
     <message>
-        <location filename="../core/formats/formatfactory.cpp" line="62"/>
+        <location filename="../core/formats/formatfactory.cpp" line="70"/>
         <source>Unknown file format:
 %1</source>
         <translation>Неизвестный формат файла:
@@ -1286,169 +1286,174 @@ line %3, col %4
         <translation>Этот формат поддерживается только при чтении</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="49"/>
+        <location filename="../core/globals.h" line="48"/>
+        <source>Select country rule</source>
+        <translation>Выберите правило для страны</translation>
+    </message>
+    <message>
+        <location filename="../core/globals.h" line="50"/>
         <source>mixed...</source>
         <translation>составной...</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="51"/>
+        <location filename="../core/globals.h" line="52"/>
         <source>Firstname</source>
         <translation>Имя</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="52"/>
+        <location filename="../core/globals.h" line="53"/>
         <source>Lastname</source>
         <translation>Фамилия</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="53"/>
+        <location filename="../core/globals.h" line="54"/>
         <source>Middlename</source>
         <translation>Отчество</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="54"/>
+        <location filename="../core/globals.h" line="55"/>
         <source>Full name</source>
         <translation>Полное имя</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="55"/>
+        <location filename="../core/globals.h" line="56"/>
         <source>Generic name</source>
         <translation>Универсальное имя</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="56"/>
+        <location filename="../core/globals.h" line="57"/>
         <source>Phone</source>
         <translation>Телефон</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="57"/>
+        <location filename="../core/globals.h" line="58"/>
         <source>Email</source>
         <translation>Электропочта</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="58"/>
+        <location filename="../core/globals.h" line="59"/>
         <source>Birthday</source>
         <translation>День рождения</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="59"/>
+        <location filename="../core/globals.h" line="60"/>
         <source>Job title</source>
         <translation>Должность</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="60"/>
+        <location filename="../core/globals.h" line="61"/>
         <source>Organization</source>
         <translation>Организация</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="61"/>
+        <location filename="../core/globals.h" line="62"/>
         <source>Address</source>
         <translation>Адрес</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="62"/>
+        <location filename="../core/globals.h" line="63"/>
         <source>Has phone</source>
         <translation>Есть телефон</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="63"/>
+        <location filename="../core/globals.h" line="64"/>
         <source>Has email</source>
         <translation>Есть почта</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="64"/>
+        <location filename="../core/globals.h" line="65"/>
         <source>Has birthday</source>
         <translation>Есть день рождения</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="65"/>
+        <location filename="../core/globals.h" line="66"/>
         <source>Some phones</source>
         <translation>Много телефонов</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="66"/>
+        <location filename="../core/globals.h" line="67"/>
         <source>Some emails</source>
         <translation>Много ящиков</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="68"/>
+        <location filename="../core/globals.h" line="69"/>
         <source>P.o. box</source>
         <translation>П/я</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="69"/>
+        <location filename="../core/globals.h" line="70"/>
         <source>Ext.addr.</source>
         <translation>Расш.адрес</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="70"/>
+        <location filename="../core/globals.h" line="71"/>
         <source>Street</source>
         <translation>Улица</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="71"/>
+        <location filename="../core/globals.h" line="72"/>
         <source>City/Locality</source>
         <translation>Населённый пункт</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="72"/>
+        <location filename="../core/globals.h" line="73"/>
         <source>Region</source>
         <translation>Регион</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="73"/>
+        <location filename="../core/globals.h" line="74"/>
         <source>Postal code</source>
         <translation>Индекс</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="74"/>
+        <location filename="../core/globals.h" line="75"/>
         <source>Country</source>
         <translation>Страна</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="76"/>
+        <location filename="../core/globals.h" line="77"/>
         <source>[Unknown photo format]</source>
         <translation>[Неизвестный формат фото]</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="77"/>
+        <location filename="../core/globals.h" line="78"/>
         <source>Load image</source>
         <translation>Загрузить картинку</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="78"/>
+        <location filename="../core/globals.h" line="79"/>
         <source>Save image</source>
         <translation>Сохранить картинку</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="79"/>
+        <location filename="../core/globals.h" line="80"/>
         <source>Set URL</source>
         <translation>Задать адрес</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="80"/>
+        <location filename="../core/globals.h" line="81"/>
         <source>Remove photo</source>
         <translation>Удалить фото</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="82"/>
+        <location filename="../core/globals.h" line="83"/>
         <source>All supported files (%1)</source>
         <translation>Все поддерживаемые (%1)</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="83"/>
+        <location filename="../core/globals.h" line="84"/>
         <source>All files (*.*)</source>
         <translation>Все файлы (*.*)</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="84"/>
+        <location filename="../core/globals.h" line="85"/>
         <source>Can&apos;t read file
 %1</source>
         <translation>Не могу прочесть файл
 %1</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="85"/>
+        <location filename="../core/globals.h" line="86"/>
         <source>Can&apos;t write file
 %1</source>
         <translation>Не могу записать файл
@@ -1496,22 +1501,22 @@ line %3, col %4
         <translation>В файле не обнаружено контактов</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="143"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="142"/>
         <source>MPB record allowed only for MPB source</source>
         <translation>Запись файла MPB допускается только, если оригинал также был формата MPB</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="196"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="192"/>
         <source>Name for number %1 changed from %2 to %3</source>
         <translation>Имя для телефона %1 изменено с %2 на %3</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="208"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="204"/>
         <source>Number %1 without original name not found in addressbook</source>
         <translation>Номер %1 без имени не найден в адресной книге</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="210"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="206"/>
         <source>Number %1 not found in addressbook. Original name (%2) saved</source>
         <translation>Номер %1 не найден в адресной книге. Сохранено исходное имя (%2)</translation>
     </message>

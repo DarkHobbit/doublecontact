@@ -12,9 +12,13 @@
  */
 
 #include <QCloseEvent>
+#include <QComboBox>
+#include <QDialog>
+#include <QDialogButtonBox>
 #include <QFileDialog>
 #include <QItemSelectionModel>
 #include <QMessageBox>
+#include <QVBoxLayout>
 
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
@@ -799,9 +803,24 @@ void MainWindow::on_actionDrop_full_name_triggered()
 void MainWindow::on_actionIntl_phone_prefix_triggered()
 {
     if (!checkSelection()) return;
-    selectedModel->intlPhonePrefix(selection);
-    updateViewMode();
-    updateHeaders();
+    QDialog* d = new QDialog(0);
+    d->setWindowTitle(S_COUNTRY_RULE_SELECT);
+    QVBoxLayout* l = new QVBoxLayout();
+    d->setLayout(l);
+    QComboBox* cbCountryRule = new QComboBox();
+    cbCountryRule->addItems(Phone::availableCountryRules());
+    l->addWidget(cbCountryRule);
+    QDialogButtonBox* bb = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
+    connect(bb, SIGNAL(accepted()), d, SLOT(accept()));
+    connect(bb, SIGNAL(rejected()), d, SLOT(reject()));
+    l->addWidget(bb);
+    d->exec();
+    if (d->result()==QDialog::Accepted) {
+        selectedModel->intlPhonePrefix(selection, cbCountryRule->currentIndex());
+        updateViewMode();
+        updateHeaders();
+    }
+    delete d;
 }
 
 void MainWindow::on_actionS_wap_Panels_triggered()
