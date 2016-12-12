@@ -5,6 +5,7 @@ You can contact me at pub@zvyozdochkin.ru.
 * --fullscreen not works on Mac
 * check how written contact with no phone number
 * проверить: нестандартный тип телефона в vcard 3.0 зачем-то пишется в quoted-printable, но без отметки. Потом, естественно, бьётся (? win?)
+(на самом деле проблема точно есть в vcard 2.1, но для её решения надо знать, как телефоны пишут нестандартный тип в 2.1, см. LG Leon)
 * см. все TODO в проекте
 * подумать над сортировкой контактов не только для отображения, но и для экспорта
 * проверить, как работает на charset, отличных от utf-8 (codec->toUnicode, у меня везде toLocal8Bit, а это, вероятно, неправильно) - на 2счёта, кажется, упоминался пример?
@@ -27,7 +28,7 @@ You can contact me at pub@zvyozdochkin.ru.
 * settings - fonts
 * только по желанию пользователя (не по умолчанию) подсвечивать жёлтым не только неизвестные, но и нередактируемые?
 * vCard 4.0 support
-* extra data view (SMS, calls...) need write core/focmats/common/pdudata.*
+* extra data view (SMS, calls...) need write core/formats/common/pdudata.*
 * X-SYNCMLREF in vType decode (now badly work, loss via editing)
 * maybe, rewrite MPB save/load on Qt 4.6/4.7 (open file 4 times with differ codecs). Also, see X-SYNCMLREF bug
 * in some cases, under Windows and Qt4 column names not translated (Qt 4.6, 4.7, and, sometimes, 4.8)
