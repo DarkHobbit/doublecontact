@@ -230,7 +230,11 @@ void TypedPair::addValue(const TypedDataItem& item, bool toLeft)
             combo->addItem(dType);
     }
     else {
-        dType = item.types.join("+");
+        foreach (const QString& ut, item.types) {
+            if (!dType.isEmpty())
+                dType += "+";
+            dType += standardTypes->translate(ut);
+        }
         combo->addItem(dType);
     }
     combo->setCurrentIndex(combo->findText(dType, Qt::MatchExactly));
@@ -255,7 +259,6 @@ bool TypedPair::getValue(int index, TypedDataItem& item, bool fromLeft)
         item.types.clear();
         foreach(const QString& te, tl)
             item.types << standardTypes->unTranslate(te);
-        // TODO compare for multi-type typed pairs
     }
     else
         item.types << standardTypes->unTranslate(typeValue);
