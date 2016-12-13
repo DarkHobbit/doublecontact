@@ -3,7 +3,7 @@ You can contact me at pub@zvyozdochkin.ru.
 
 0.1:
 * --fullscreen not works on Mac
-* check how written contact with no phone number
+* check BDAY in MPB export (see explorer, phone), m.b. need force short date form
 * проверить: нестандартный тип телефона в vcard 2.1 пишется в quoted-printable, но без отметки. Потом, естественно, бьётся
 (для её решения надо знать, как телефоны пишут нестандартный тип в 2.1, см. LG Leon)
 * см. все TODO в проекте
@@ -17,6 +17,8 @@ You can contact me at pub@zvyozdochkin.ru.
 * cmake and cpack support for various packaging
 * рус. описание (багрепортинг, convertcontact и меню ред. фото)
 * english manual
+* show to friends :)
+* add donate page
 * register on weblate (transifex?)
 * ukrainian and belarussian language files
 * set doxygen labels

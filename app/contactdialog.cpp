@@ -86,8 +86,7 @@ void ContactDialog::showEvent(QShowEvent*)
 void ContactDialog::clearData()
 {
     setWindowTitle(tr("Add contact"));
-    nameCount = MIN_VISIBLE_NAMES;
-    phoneCount = emailCount = MIN_VISIBLE_TRIPLETS;
+    nameCount = phoneCount = emailCount = 0;
     ui->cbBirthday->setChecked(false);
     ui->dteBirthday->setEnabled(false);
 }
