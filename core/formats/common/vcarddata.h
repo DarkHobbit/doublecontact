@@ -24,7 +24,7 @@ public:
     bool exportRecords(QStringList& lines, const ContactList& list);
     void exportRecord(QStringList& lines, const ContactItem& item);
 protected:
-    bool useOriginalFileVersion, skipEncoding, forceShortType;
+    bool useOriginalFileVersion, skipEncoding, forceShortType, forceShortDate;
 private:
     QString encoding;
     QString charSet;

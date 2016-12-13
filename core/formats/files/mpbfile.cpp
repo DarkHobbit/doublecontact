@@ -150,6 +150,7 @@ bool MPBFile::exportRecords(const QString &url, ContactList &list)
     useOriginalFileVersion = true; // TODO force vCard 3.0 or original format? see LG Leon
     skipEncoding = true; // disable pre-encoding via VCardData::encodeValue
     forceShortType = true; // disable TYPE= before phone/email types
+    forceShortDate = true; // force ISO basic date format
     if (!VCardData::exportRecords(content, list))
         return false;
     if (!openFile(url, QIODevice::WriteOnly))

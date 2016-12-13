@@ -28,6 +28,7 @@ VCardData::VCardData()
     useOriginalFileVersion = gd.useOriginalFileVersion;
     skipEncoding = false;
     forceShortType = false;
+    forceShortDate = false;
 }
 
 bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append, QStringList& errors)
@@ -542,7 +543,7 @@ QString VCardData::encodeTypes(const QStringList &aTypes, int /*syncMLRef*/) con
 QString VCardData::exportDate(const DateItem &item) const
 {
     return
-        formatVersion==GlobalConfig::VCF21 ?
+        (formatVersion==GlobalConfig::VCF21 || forceShortDate) ?
                 item.toString(DateItem::ISOBasic) : item.toString(DateItem::ISOExtended);
 }
 
