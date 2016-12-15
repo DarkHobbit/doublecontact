@@ -32,7 +32,7 @@ public:
     QString source(); // file path or network source
     FormatType sourceType();
     bool changed();    // has contact book unsaved changes?
-    void setVisibleColumns(const ContactColumnList& colNames);
+    void updateVisibleColumns();
     enum ContactViewMode {
         Standard,
         CompareMain,

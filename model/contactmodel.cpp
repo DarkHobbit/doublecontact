@@ -48,11 +48,11 @@ bool ContactModel::changed()
     return _changed;
 }
 
-void ContactModel::setVisibleColumns(const ContactColumnList& colNames)
+void ContactModel::updateVisibleColumns()
 {
     beginResetModel();
     visibleColumns.clear();
-    foreach (const ContactColumn& col, colNames)
+    foreach (const ContactColumn& col, gd.columnNames)
         visibleColumns.push_back(col);
     endResetModel();
 }

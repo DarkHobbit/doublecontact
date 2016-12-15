@@ -252,7 +252,8 @@ void MainWindow::on_btnAdd_clicked()
 // Edit
 void MainWindow::on_action_Edit_triggered()
 {
-    if (!checkSelection(true/*, true TODO change errmsg or drop 2nd checkSelection param and check in comparizon */)) return;
+    if (!checkSelection(true))
+        return;
     if (selection.count()==1) // Ordinary edition
     {
         ContactDialog* d = new ContactDialog(0);
@@ -425,7 +426,7 @@ bool MainWindow::checkSelection(bool errorIfNoSelected, bool onlyOneRowAllowed)
         return false;
     }
     if (onlyOneRowAllowed && (proxySelection.count()>1)) {
-        QMessageBox::critical(0, S_ERROR, tr("Group editing not impemented, select one record"));
+        QMessageBox::critical(0, S_ERROR, tr("Group operation not impemented, select one record"));
         return false;
     }
     // If proxy models works...
@@ -638,13 +639,13 @@ void MainWindow::showIOErrors(const QString &path, int count, const QStringList 
         QMessageBox::critical(0, S_ERROR, fatalError);
 }
 
-void MainWindow::updateConfig() // TODO setVisibleColumns will be without arguments after moving columnNames to gd
+void MainWindow::updateConfig()
 {
     // Table(s) visible columns
-    modLeft->setVisibleColumns(gd.columnNames);
+    modLeft->updateVisibleColumns();
     if (modRight)
-        modRight->setVisibleColumns(gd.columnNames);
-    // TODO Move here font changes and other immediately applied but settings window managed options
+        modRight->updateVisibleColumns();
+    // TODO add here font changes and other immediately applied but settings window managed options
 }
 
 void MainWindow::updateRecent()
@@ -714,13 +715,14 @@ void MainWindow::on_action_Filter_triggered()
 
 void MainWindow::on_actionCompare_Result_triggered()
 {
-    // TODO check two panels and compare mode
+    // Check two panels and compare mode
     if ((!ui->tvRight->isVisible())
             || (selectedModel->viewMode()!=ContactModel::CompareMain
             && selectedModel->viewMode()!=ContactModel::CompareOpposite)) {
         QMessageBox::critical(0, S_ERROR, tr("Two panels and compare mode needed for this operation"));
         return;
     }
+    // Remember panel and prepare op
     bool wasRight = (selectedModel==modRight);
     if (wasRight)
             on_action_Other_panel_triggered(); // to left
@@ -730,15 +732,17 @@ void MainWindow::on_actionCompare_Result_triggered()
     on_action_Other_panel_triggered(); // to right
     if (!checkSelection(true, true)) return;
     ContactItem& right = modRight->beginEditRow(selection[0]);
+    // Show results
     CompareDialog* d = new CompareDialog(0);
     d->setHeaders(tr("Left item"), tr("Right item"));
     d->setData(left, right);
     d->exec();
     if (d->result()==QDialog::Accepted)
         d->getData(left, right);
-        modLeft->endEditRow(leftSelection);
-        modRight->endEditRow(selection[0]);
+    modLeft->endEditRow(leftSelection);
+    modRight->endEditRow(selection[0]);
     delete d;
+    // Restore panel
     if (!wasRight)
         on_action_Other_panel_triggered(); // to left
 }

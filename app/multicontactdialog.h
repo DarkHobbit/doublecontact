@@ -32,7 +32,6 @@ public:
     void getData(ContactItem& item);
 private:
     Ui::MultiContactDialog *ui;
-    // TODO highlight * as gray?
 };
 
 #endif // MULTICONTACTDIALOG_H

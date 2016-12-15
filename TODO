@@ -3,12 +3,14 @@ You can contact me at pub@zvyozdochkin.ru.
 
 0.1:
 * --fullscreen not works on Mac
-* проверить: нестандартный тип телефона в vcard 2.1 пишетс€ в quoted-printable, но без отметки. ѕотом, естественно, бьЄтс€
-(дл€ еЄ решени€ надо знать, как телефоны пишут нестандартный тип в 2.1, см. LG Leon)
-* см. все TODO в проекте
+* MPB: phone/email types must be capitalized before write
+* need: split such records as home,pref,cell in one type (vcarddata.cpp, line 94). Remove this TODO in source.
+* write non-standard phone types with X- prefix (latin) or ignore it (non-latin). This is LG Leon (vCard 2.1) behaviour. Need tune it in settings dialog
+* см. все TODO в проекте. Compare - photo, vcarddata/contactdialog - MAX_NAMES, mpbfile makename
 * подумать над сортировкой контактов не только дл€ отображени€, но и дл€ экспорта
 * проверить, как работает на charset, отличных от utf-8 (codec->toUnicode, у мен€ везде toLocal8Bit, а это, веро€тно, неправильно) - на 2счЄта, кажетс€, упоминалс€ пример?
-* write PRODID!
+* write PRODID. Need tune it in settings dialog
+* Load: warning on non-standard phone types. Need tune it in settings dialog
 * add group operations, statistics and filter to console convertor (8 - +7, fullnames, etc.)
 * проверить на всех доступных телефонах и андроидах
 * проверить на RFC
@@ -17,7 +19,7 @@ You can contact me at pub@zvyozdochkin.ru.
 * рус. описание (багрепортинг, convertcontact и меню ред. фото)
 * english manual
 * show to friends :)
-* add donate page
+* add do-page (Yandex?)
 * register on weblate (transifex?)
 * ukrainian and belarussian language files
 * set doxygen labels

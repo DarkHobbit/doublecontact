@@ -55,7 +55,6 @@ bool MPBFile::importRecords(const QString &url, ContactList &list, bool append)
         QString line = stream.readLine();
         // MPB section changes
         int secPos = line.indexOf(SECTION_BEGIN);
-        // TODO check on Windows; on Linux, secPos==0
         if (secPos!=-1) {
             // qDebug() << "sP " << secPos;
             QString secName = line.mid(secPos+SECTION_BEGIN.length());

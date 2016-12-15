@@ -435,7 +435,6 @@ void ContactDialog::readTriplet(const QString &nameTemplate, int num, TypedDataI
     item.types.clear();
     foreach(const QString& te, tl)
         item.types.push_back(sTypes.unTranslate(te));
-    // TODO maybe store non-standart type in common list if operator changed it to standard?
 }
 
 void ContactDialog::slotDelTriplet()
