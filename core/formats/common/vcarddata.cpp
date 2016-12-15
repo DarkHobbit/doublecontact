@@ -524,10 +524,11 @@ QString VCardData::encodeAll(const QString &tag, const QStringList *aTypes, bool
 QString VCardData::encodeTypes(const QStringList &aTypes, int /*syncMLRef*/) const
 {
     QString typeStr = ";";
-    if (formatVersion!=GlobalConfig::VCF21 && !forceShortType)
+    bool shortType = (formatVersion==GlobalConfig::VCF21) || forceShortType;
+    if (!shortType)
         typeStr += "TYPE=";
     // typeStr += aTypes.join(","); // value list
-    typeStr += aTypes.join(formatVersion==GlobalConfig::VCF21 ? ";" : ";TYPE="); // parameter list; RFC 2426 allows both form
+    typeStr += aTypes.join(shortType ? ";" : ";TYPE=").toUpper(); // parameter list; RFC 2426 allows both form
     /*
      * TODO now syncMLRef recording is switched off, because it corrupted while editing/comparing
      * need:
