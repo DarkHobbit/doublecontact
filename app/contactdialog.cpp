@@ -248,6 +248,8 @@ void ContactDialog::fillEmailTypes(QComboBox* combo)
 void ContactDialog::addName(const QString& name)
 {
     fixCount(nameCount, "Name", MIN_VISIBLE_NAMES);
+    if (nameCount>=MAX_NAMES)
+        return;
     if (nameCount>=MIN_VISIBLE_NAMES) {
         QLineEdit* le = new QLineEdit(this);
         le->setObjectName(QString("leName%1").arg(nameCount+1));

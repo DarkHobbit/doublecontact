@@ -18,8 +18,6 @@
 #include "globals.h"
 #include "vcarddata.h"
 
-#define MAX_NAMES 5
-// TODO move MAX_NAMES to globals and use in contact dialog as high editors limit
 #define MAX_BASE64_LEN 74
 #define MAX_QUOTED_PRINTABLE_LEN 76
 
