@@ -88,10 +88,18 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                 else if (vType[i].startsWith("CHARSET=", Qt::CaseInsensitive))
                     charSet = vType[i].mid(QString("CHARSET=").length());
                 else if (vType[i].startsWith("TYPE=", Qt::CaseInsensitive)
-                         || vType[i].startsWith("LABEL=", Qt::CaseInsensitive)) // TODO see vCard 4.0, m.b. LABEL= points to non-standard?
+                         || vType[i].startsWith("LABEL=", Qt::CaseInsensitive)) {// TODO see vCard 4.0, m.b. LABEL= points to non-standard?
                     // non-standart types may be non-latin
-                    types << codec->toUnicode(vType[i].mid(QString("TYPE=").length()).toLocal8Bit());
-                    // TODO split such records as home,pref,cell in one type
+                    QString typeCand = codec->toUnicode(vType[i].mid(QString("TYPE=").length()).toLocal8Bit());
+                    // Detect and split types, composed as value list (RFC)
+                    if (typeCand.contains(",")) {
+                        QStringList typesAsValueList = typeCand.split(",");
+                        foreach (const QString& vlType, typesAsValueList)
+                            types << vlType;
+                    }
+                    else // one value - it's more fast in most cases
+                        types << typeCand;
+                }
                 else if (vType[i].startsWith("VALUE=", Qt::CaseInsensitive))
                     // for PHOTO/URI, at least
                     typeVal = vType[i].mid(QString("VALUE=").length());
