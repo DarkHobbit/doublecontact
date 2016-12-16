@@ -135,6 +135,7 @@ struct ContactItem {
     // Aux methods
     void calculateFields();
     QString formatNames() const;
+    QString makeGenericName() const;
     void reverseFullName();
     void dropFinalEmptyNames(); // If empty parts not in-middle, remove it
     bool similarTo(const ContactItem& pair, int priorityLevel);

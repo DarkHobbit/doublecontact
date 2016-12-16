@@ -194,25 +194,8 @@ bool ContactItem::intlPhonePrefix(int countryRule)
 
 void ContactItem::calculateFields()
 {
-    // Visible name depend of filled fields
-    if (!fullName.isEmpty())
-        visibleName = fullName;
-    else if (!names.isEmpty())
-        visibleName = formatNames();
-    else if (!organization.isEmpty())
-        visibleName = organization;
-    else if (!description.isEmpty())
-        visibleName = description;
-    else if (!emails.isEmpty())
-        visibleName = emails[0].value;
-    else if (!phones.isEmpty())
-        visibleName = phones[0].value;
-    else if (!sortString.isEmpty())
-        visibleName = sortString;
-    else if (!nickName.isEmpty())
-        visibleName = nickName;
-    else // WTF???
-        visibleName = QObject::tr("Strange empty contact");
+    // Visible name (depend of filled fields)
+    visibleName = makeGenericName();
     // First or preferred phone number
     prefPhone.clear();
     if (phones.count()>0) {
@@ -251,6 +234,31 @@ QString ContactItem::formatNames() const
         res = names[3] + " " + res;
     if (names.count()>4) // Honorific Suffixes, rank, degree
         res += ", " + names[4];
+    return res;
+}
+
+QString ContactItem::makeGenericName() const
+{
+    QString res;
+    // Visible name depend of filled fields
+    if (!fullName.isEmpty())
+        res = fullName;
+    else if (!names.isEmpty())
+        res = formatNames();
+    else if (!organization.isEmpty())
+        res = organization;
+    else if (!description.isEmpty())
+        res = description;
+    else if (!emails.isEmpty())
+        res = emails[0].value;
+    else if (!phones.isEmpty())
+        res = phones[0].value;
+    else if (!sortString.isEmpty())
+        res = sortString;
+    else if (!nickName.isEmpty())
+        res = nickName;
+    else // WTF???
+        res = QObject::tr("Strange empty contact");
     return res;
 }
 

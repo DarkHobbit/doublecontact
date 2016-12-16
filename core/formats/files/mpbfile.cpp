@@ -179,9 +179,7 @@ bool MPBFile::exportRecords(const QString &url, ContactList &list)
         foreach(const ContactItem& candItem, list) {
             foreach(const Phone& candPhone, candItem.phones) {
                 if (candPhone.expandNumber(gd.defaultCountryRule)==Phone::expandNumber(call.number, gd.defaultCountryRule)) {
-                    foundName = candItem.fullName; // !!! see later
-                    if (foundName.isEmpty())
-                        foundName = candItem.formatNames(); // TODO extract makeName from calculateFields!!!
+                    foundName = candItem.makeGenericName();
                     break;
                 }
             }
