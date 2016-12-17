@@ -39,6 +39,8 @@ protected:
     void buildOneItemButtonSide(bool toLeft, int column);
     void buildOneItemButtons(int column);
     void addOneItemButton(bool toLeft, int column);
+    QLineEdit* addEditor(const QString& text);
+    QComboBox* addCombo();
     void highlightDiff(bool hasDiff);
 private:
     QGroupBox* gbLeft;
@@ -48,6 +50,7 @@ private:
     QList<QToolButton*> btnsOneItemToLeft;
     QList<QToolButton*> btnsOneItemToRight;
 private slots:
+    void onItemChanged();
     void onToLeftClicked();
     void onToRightClicked();
     void onOneItemToLeftClicked();

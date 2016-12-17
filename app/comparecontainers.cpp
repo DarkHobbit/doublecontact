@@ -15,8 +15,7 @@
 #include <QVBoxLayout>
 #include "comparecontainers.h"
 
-// TODO check highlight after text editing, not only after copying
-// TODO make arrows up and down, not only left and right
+// TODO make arrows up and down (to reorder items), not only left and right
 
 ItemPair::ItemPair(const QString& title, QGridLayout* layout, bool multiItem)
     :QObject(layout), _multiItem(multiItem)
@@ -77,6 +76,11 @@ void ItemPair::highlightDiff(bool hasDiff)
     gbRight->setStyleSheet(sheet);
 }
 
+void ItemPair::onItemChanged()
+{
+    highlightDiff(checkDiff());
+}
+
 void ItemPair::buildOneItemButtons(int column)
 {
     buildOneItemButtonSide(true, column);
@@ -105,6 +109,20 @@ void ItemPair::addOneItemButton(bool toLeft, int column)
     btn->setArrowType(toLeft ? Qt::LeftArrow : Qt::RightArrow);
     layout->addWidget(btn, btnSet.count()-1, column);
     connect(btn, SIGNAL(clicked()), this, toLeft ? SLOT(onOneItemToLeftClicked()) : SLOT(onOneItemToRightClicked()));
+}
+
+QLineEdit *ItemPair::addEditor(const QString& text)
+{
+    QLineEdit* ed = new QLineEdit(text);
+    connect(ed, SIGNAL(textChanged(const QString &)), this, SLOT(onItemChanged()));
+    return ed;
+}
+
+QComboBox *ItemPair::addCombo()
+{
+    QComboBox* cb = new QComboBox();
+    connect(cb, SIGNAL(currentIndexChanged(int)), this, SLOT(onItemChanged()));
+    return cb;
 }
 
 void ItemPair::onToLeftClicked()
@@ -163,7 +181,7 @@ void StringListPair::copyData(bool toLeft)
         edSetDest.removeLast();
     }
     while (edSetDest.count()<edSetSrc.count()) {
-        edSetDest.push_back(new QLineEdit());
+        edSetDest.push_back(addEditor(""));
         layDest->addWidget(edSetDest.last());
         this->addOneItemButton(!toLeft, 1);
     }
@@ -176,7 +194,7 @@ void StringListPair::copyOneItem(bool toLeft, int srcIndex)
     QList<QLineEdit*>& edSetDest = toLeft ? leftSet : rightSet;
     QList<QLineEdit*>& edSetSrc = toLeft ? rightSet : leftSet;
     QGridLayout *layDest = toLeft ? layLeft : layRight;
-    edSetDest.push_back(new QLineEdit());
+    edSetDest.push_back(addEditor(""));
     edSetDest.last()->setText(edSetSrc[srcIndex]->text());
     layDest->addWidget(edSetDest.last());
     this->addOneItemButton(!toLeft, 1);
@@ -192,7 +210,7 @@ bool StringListPair::checkDiff()
 void StringListPair::fillBox(QGridLayout* layout, const QStringList &data, QList<QLineEdit*>& edSet)
 {
     foreach(const QString& s, data) {
-        edSet.push_back(new QLineEdit(s));
+        edSet.push_back(addEditor(s));
         layout->addWidget(edSet.last());
     }
 }
@@ -241,9 +259,9 @@ void TypedPair::addValue(const TypedDataItem& item, bool toLeft)
     QList<QLineEdit*>& edSet = toLeft ? leftEdSet : rightEdSet;
     QList<QComboBox*>& comboSet = toLeft ? leftComboSet : rightComboSet;
     int prevCount = edSet.count();
-    edSet.push_back(new QLineEdit(item.value));
+    edSet.push_back(addEditor(item.value));
     layout->addWidget(edSet.last(), prevCount, 0);
-    QComboBox* combo = new QComboBox();
+    QComboBox* combo = addCombo();
     comboSet.push_back(combo);
     // Add standard values
     foreach(const QString& sv, standardTypes->displayValues)
@@ -308,9 +326,9 @@ void TypedPair::copyData(bool toLeft)
     }
     while (edSetDest.count()<edSetSrc.count()) {
         int prevCount = layDest->rowCount();
-        edSetDest.push_back(new QLineEdit());
+        edSetDest.push_back(addEditor(""));
         layDest->addWidget(edSetDest.last(), prevCount, 0);
-        comboSetDest.push_back(new QComboBox());
+        comboSetDest.push_back(addCombo());
         layDest->addWidget(comboSetDest.last(), prevCount, 1);
         this->addOneItemButton(!toLeft, 2);
     }
@@ -331,10 +349,10 @@ void TypedPair::copyOneItem(bool toLeft, int srcIndex)
     QList<QComboBox*>& comboSetSrc = toLeft ? rightComboSet : leftComboSet;
     QGridLayout* layDest = toLeft ? layLeft : layRight;
     int prevCount = layDest->rowCount();
-    edSetDest.push_back(new QLineEdit());
+    edSetDest.push_back(addEditor(""));
     edSetDest.last()->setText(edSetSrc[srcIndex]->text());
     layDest->addWidget(edSetDest.last());
-    comboSetDest.push_back(new QComboBox());
+    comboSetDest.push_back(addCombo());
     layDest->addWidget(comboSetDest.last(), prevCount, 1);
     for (int i=0; i<comboSetSrc[srcIndex]->count(); i++)
         comboSetDest.last()->addItem(comboSetSrc[srcIndex]->itemText(i));
