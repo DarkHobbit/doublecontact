@@ -35,7 +35,7 @@ protected:
     QGridLayout* layRight;
     virtual void copyData(bool toLeft)=0;
     virtual void copyOneItem(bool toLeft, int srcIndex)=0;
-    bool checkDiff() { return true; }; // TODO=0;
+    virtual bool checkDiff()=0;
     void buildOneItemButtonSide(bool toLeft, int column);
     void buildOneItemButtons(int column);
     void addOneItemButton(bool toLeft, int column);
@@ -64,6 +64,7 @@ public:
 protected:
     virtual void copyData(bool toLeft);
     virtual void copyOneItem(bool toLeft, int srcIndex);
+    virtual bool checkDiff();
 private:
     QList<QLineEdit*> leftSet;
     QList<QLineEdit*> rightSet;
@@ -85,6 +86,8 @@ class TypedPair: public ItemPair
 public:
     TypedPair(const QString& title, QGridLayout* layout);
     virtual ~TypedPair();
+    template<class T>
+    void getData(QList<T>& leftItems, QList<T>& rightItems);
 protected:
     StandardTypes* standardTypes;
     void addValue(const TypedDataItem& item, bool toLeft);
@@ -104,7 +107,8 @@ class PhonesPair: public TypedPair
     Q_OBJECT
 public:
     PhonesPair(const QString& title, QGridLayout* layout, const QList<Phone>& leftPhones, const QList<Phone>& rightPhones);
-    void getData(QList<Phone>& leftPhones, QList<Phone>& rightPhones);
+protected:
+    virtual bool checkDiff();
 };
 
 class EmailsPair: public TypedPair
@@ -112,8 +116,9 @@ class EmailsPair: public TypedPair
     Q_OBJECT
 public:
     EmailsPair(const QString& title, QGridLayout* layout, const QList<Email>& leftEmails, const QList<Email>& rightEmails);
-    void getData(QList<Email>& leftEmails, QList<Email>& rightEmails);
-};
+protected:
+    virtual bool checkDiff();
+ };
 
 class DateItemListPair: public ItemPair
 {
@@ -125,6 +130,7 @@ public:
 protected:
     virtual void copyData(bool toLeft);
     virtual void copyOneItem(bool toLeft, int srcIndex);
+    virtual bool checkDiff();
 private:
     QList<QLabel*> leftSet;
     QList<QLabel*> rightSet;

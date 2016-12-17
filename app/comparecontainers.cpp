@@ -15,6 +15,9 @@
 #include <QVBoxLayout>
 #include "comparecontainers.h"
 
+// TODO check highlight after text editing, not only after copying
+// TODO make arrows up and down, not only left and right
+
 ItemPair::ItemPair(const QString& title, QGridLayout* layout, bool multiItem)
     :QObject(layout), _multiItem(multiItem)
 {
@@ -179,6 +182,13 @@ void StringListPair::copyOneItem(bool toLeft, int srcIndex)
     this->addOneItemButton(!toLeft, 1);
 }
 
+bool StringListPair::checkDiff()
+{
+    QStringList left, right;
+    getData(left, right);
+    return left!=right;
+}
+
 void StringListPair::fillBox(QGridLayout* layout, const QStringList &data, QList<QLineEdit*>& edSet)
 {
     foreach(const QString& s, data) {
@@ -206,6 +216,23 @@ TypedPair::TypedPair(const QString &title, QGridLayout *layout)
 
 TypedPair::~TypedPair()
 {
+}
+
+template<class T>
+void TypedPair::getData(QList<T> &leftItems, QList<T> &rightItems)
+{
+    leftItems.clear();
+    for (int i=0; i<count(true); i++) {
+        T p;
+        getValue(i, p, true);
+        leftItems << p;
+    }
+    rightItems.clear();
+    for (int i=0; i<count(false); i++) {
+        T p;
+        getValue(i, p, false);
+        rightItems << p;
+    }
 }
 
 void TypedPair::addValue(const TypedDataItem& item, bool toLeft)
@@ -327,20 +354,11 @@ PhonesPair::PhonesPair(const QString &title, QGridLayout *layout, const QList<Ph
     buildOneItemButtons(2);
 }
 
-void PhonesPair::getData(QList<Phone> &leftPhones, QList<Phone> &rightPhones)
+bool PhonesPair::checkDiff()
 {
-    leftPhones.clear();
-    for (int i=0; i<count(true); i++) {
-        Phone p;
-        getValue(i, p, true);
-        leftPhones << p;
-    }
-    rightPhones.clear();
-    for (int i=0; i<count(false); i++) {
-        Phone p;
-        getValue(i, p, false);
-        rightPhones << p;
-    }
+    QList<Phone> leftPhones, rightPhones;
+    getData(leftPhones, rightPhones);
+    return leftPhones!=rightPhones;
 }
 
 EmailsPair::EmailsPair(const QString &title, QGridLayout *layout, const QList<Email> &leftEmails, const QList<Email> &rightEmails)
@@ -355,20 +373,11 @@ EmailsPair::EmailsPair(const QString &title, QGridLayout *layout, const QList<Em
     buildOneItemButtons(2);
 }
 
-void EmailsPair::getData(QList<Email> &leftEmails, QList<Email> &rightEmails)
+bool EmailsPair::checkDiff()
 {
-    leftEmails.clear();
-    for (int i=0; i<count(true); i++) {
-        Email p;
-        getValue(i, p, true);
-        leftEmails << p;
-    }
-    rightEmails.clear();
-    for (int i=0; i<count(false); i++) {
-        Email p;
-        getValue(i, p, false);
-        rightEmails << p;
-    }
+    QList<Email> leftEmails, rightEmails;
+    getData(leftEmails, rightEmails);
+    return leftEmails!=rightEmails;
 }
 
 DateItemListPair::DateItemListPair(const QString &title, QGridLayout *layout,
@@ -418,6 +427,14 @@ void DateItemListPair::copyOneItem(bool toLeft, int srcIndex)
     layDest->addWidget(lbSetDest.last());
     dsDest.push_back(dsSrc[srcIndex]);
     this->addOneItemButton(!toLeft, 1);
+}
+
+bool DateItemListPair::checkDiff()
+{
+    QList<DateItem> left, right;
+    getData(left, right);
+    return left!=right;
+
 }
 
 void DateItemListPair::fillBox(QGridLayout* layout, const QList<DateItem> &data, QList<QLabel *> &lbSet)

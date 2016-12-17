@@ -4,7 +4,7 @@ You can contact me at pub@zvyozdochkin.ru.
 0.1:
 * --fullscreen not works on Mac
 * write non-standard phone types with X- prefix (latin) or ignore it (non-latin). This is LG Leon (vCard 2.1) behaviour. Need tune it in settings dialog
-* см. все TODO в проекте. Compare - photo
+* см. все TODO в проекте. Compare - photo, edit check
 * проверить, как работает на charset, отличных от utf-8 (codec->toUnicode, у меня везде toLocal8Bit, а это, вероятно, неправильно) - на 2счёта, кажется, упоминался пример?
 * write PRODID. Need tune it in settings dialog
 * Load: warning on non-standard phone types. Need tune it in settings dialog
@@ -30,6 +30,7 @@ You can contact me at pub@zvyozdochkin.ru.
 * vCard 4.0 support
 * MPB: extra data view (SMS, calls...) need write core/formats/common/pdudata.*
 * MPB: maybe, names in call list must be swapped (Name 2, Name 1)
+* see all TODOs. Compare - arrows, etc.
 * X-SYNCMLREF in vType decode (now badly work, loss via editing)
 * maybe, rewrite MPB save/load on Qt 4.6/4.7 (open file 4 times with differ codecs). Also, see X-SYNCMLREF bug
 * подумать над сортировкой контактов не только для отображения, но и для экспорта
