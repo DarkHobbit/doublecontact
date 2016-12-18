@@ -15,6 +15,8 @@
 #define HELPERS_H
 
 #include <QItemDelegate>
+#include <QLabel>
+#include "contactlist.h"
 
 // Delegate for making table widgets read only
 // Thanx to Axis - http://axis.bplaced.net/news/460
@@ -27,5 +29,7 @@ public:
         QWidget*, const QStyleOptionViewItem&, const QModelIndex &) const;
 };
 
+// Show photo on label
+void showPhoto(const Photo& photo, QLabel* label);
 
 #endif // HELPERS_H

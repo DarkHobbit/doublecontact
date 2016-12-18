@@ -90,6 +90,16 @@ struct PostalAddress {
     } standardTypes;
 };
 
+struct Photo {
+    QString pType; // URL, JPEG, PNG or unsupported, but stored value
+    QByteArray data;
+    QString url;
+    bool operator ==(const Photo& p) const;
+    void clear();
+    bool isEmpty() const;
+    QString detectFormat() const;
+};
+
 struct ContactItem {
     QString fullName;
     QStringList names;
@@ -99,12 +109,7 @@ struct ContactItem {
     QList<DateItem> anniversaries;
     QString sortString;
     QString description;
-    // Photo
-    QString photoType; // URL, JPEG, PNG or unsupported, but stored value
-    QByteArray photo;
-    QString photoUrl;
-    // TODO move photo in separate type. Move there == (need in compare), detectFormat...
-    // and, probably piece for setdata/getdata in graphic module (helpers.h)
+    Photo photo;
     // Work
     QString organization, title;
     // TODO role, logo?

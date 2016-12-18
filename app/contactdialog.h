@@ -50,7 +50,7 @@ private:
     int nameCount, phoneCount, emailCount, anniversaryCount;
     DateItem birthdayDetails;
     QList<DateItem> anniversaryDetails;
-    QByteArray photo;
+    Photo photo;
     void fillPhoneTypes(QComboBox* combo);
     void fillEmailTypes(QComboBox* combo);
     void addName(const QString& name);
@@ -75,7 +75,6 @@ private:
     void fixCount(int& count, const QString& nameTemplate, int minVisibleEditors);
     // Photo helpers
     void updatePhotoMenu();
-    QString detectPhotoFormat();
 private slots:
     void slotDelName();
     void slotDelTriplet();

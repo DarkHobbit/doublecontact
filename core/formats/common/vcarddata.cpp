@@ -176,12 +176,12 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
             }
             else if (tag=="PHOTO") {
                 if (typeVal.startsWith("URI", Qt::CaseInsensitive)) {
-                    item.photoType = "URL";
-                    item.photoUrl = decodeValue(vValue[0], errors);
+                    item.photo.pType = "URL";
+                    item.photo.url = decodeValue(vValue[0], errors);
                 }
                 else {
-                    item.photoType = types[0];
-                    if (item.photoType.toUpper()!="JPEG" && item.photoType.toUpper()!="PNG")
+                    item.photo.pType = types[0];
+                    if (item.photo.pType.toUpper()!="JPEG" && item.photo.pType.toUpper()!="PNG")
                         errors << QObject::tr("Unsupported photo type at line %1: %2").arg(line+1).arg(typeVal);
                     if (encoding=="B" || encoding=="BASE64") {
                         QString binaryData = vValue[0];
@@ -190,7 +190,7 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                             line++;
                         }
                         if (lines[line+1].trimmed().isEmpty()) line++;
-                        item.photo = QByteArray::fromBase64(binaryData.toLatin1());
+                        item.photo.data = QByteArray::fromBase64(binaryData.toLatin1());
                     }
                     else
                         errors << QObject::tr("Unknown encoding type at line %1: %2").arg(line+1).arg(encoding);
@@ -328,10 +328,10 @@ void VCardData::exportRecord(QStringList &lines, const ContactItem &item)
     if (!item.url.isEmpty())
         lines << encodeAll("URL", 0, false, item.url);
     // Photos
-    if (item.photoType=="URL")
-        lines << QString("PHOTO;VALUE=uri:") + item.photoUrl;
-    else if (!item.photoType.isEmpty()) {
-        QString base64Line = QString("PHOTO;ENCODING=B;TYPE=") + item.photoType + ":" + item.photo.toBase64();
+    if (item.photo.pType=="URL")
+        lines << QString("PHOTO;VALUE=uri:") + item.photo.url;
+    else if (!item.photo.pType.isEmpty()) {
+        QString base64Line = QString("PHOTO;ENCODING=B;TYPE=") + item.photo.pType + ":" + item.photo.data.toBase64();
         while (base64Line.length()>MAX_BASE64_LEN) {
             lines << base64Line.left(MAX_BASE64_LEN);
             base64Line.remove(0, MAX_BASE64_LEN);

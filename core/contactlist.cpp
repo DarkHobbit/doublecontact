@@ -118,10 +118,7 @@ void ContactItem::clear()
     anniversaries.clear();
     sortString.clear();
     description.clear();
-    photoType.clear();
-    if (!photo.isEmpty())
-        photo.clear();
-    photoUrl.clear();
+    photo.clear();
     addrHome.clear();
     addrWork.clear();
     organization.clear();
@@ -339,9 +336,7 @@ bool ContactItem::identicalTo(const ContactItem &pair)
     if (anniversaries!=pair.anniversaries) return false;
     if (sortString!=pair.sortString) return false;
     if (description!=pair.description) return false;
-    if (photoType!=pair.photoType) return false;
-    if (photo!=pair.photo) return false;
-    if (photoUrl!=pair.photoUrl) return false;
+    if (!(photo==pair.photo)) return false;
     if (organization!=pair.organization) return false;
     if (title!=pair.title) return false;
     if (!(addrHome==pair.addrHome)) return false;
@@ -563,3 +558,32 @@ void MPBExtra::clear()
     SMSArchive.clear();
     calls.clear();
 }
+
+bool Photo::operator ==(const Photo &p) const
+{
+    return pType==p.pType && url==p.url && data==p.data;
+}
+
+void Photo::clear()
+{
+    pType.clear();
+    url.clear();
+    if (!data.isEmpty())
+        data.clear();
+}
+
+bool Photo::isEmpty() const
+{
+    return data.isEmpty() && url.isEmpty();
+}
+
+QString Photo::detectFormat() const
+{
+    QString format = "UNKNOWN";
+    if (data.mid(6, 4).contains("JFIF"))
+        format = "JPEG";
+    else if (data.mid(1, 3).contains("PNG"))
+        format = "PNG";
+    return format;
+}
+

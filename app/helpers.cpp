@@ -12,6 +12,8 @@
  */
 
 #include <QMessageBox>
+#include <QPixmap>
+
 #include "globals.h"
 #include "helpers.h"
 
@@ -26,3 +28,17 @@ QWidget* ReadOnlyTableDelegate::createEditor(
     return 0;
 }
 
+void showPhoto(const Photo &photo, QLabel *label)
+{
+    label->clear();
+    QString pt = photo.pType.toUpper();
+    if (pt=="URL")
+        label->setText(photo.url);
+    else if (pt=="JPEG" || pt=="PNG") {
+        QPixmap pixPhoto;
+        pixPhoto.loadFromData(photo.data);
+        label->setPixmap(pixPhoto);
+    }
+    else if (!photo.isEmpty())
+        label->setText(S_PH_UNKNOWN_FORMAT);
+}

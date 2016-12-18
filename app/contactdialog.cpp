@@ -15,7 +15,6 @@
 #include <QFileDialog>
 #include <QLineEdit>
 #include <QMessageBox>
-#include <QPixmap>
 #include <QVBoxLayout>
 
 #include "contactdialog.h"
@@ -116,16 +115,8 @@ void ContactDialog::setData(const ContactItem& c)
     for (int i=0; i<c.anniversaries.count(); i++)
         addAnniversary(c.anniversaries[i]);
     // Photo
-    if (c.photoType=="URL")
-        ui->lbPhotoContent->setText(c.photoUrl);
-    else if (c.photoType.toUpper()=="JPEG" || c.photoType.toUpper()=="PNG") {
-        photo = c.photo;
-        QPixmap pixPhoto;
-        pixPhoto.loadFromData(photo);
-        ui->lbPhotoContent->setPixmap(pixPhoto);
-    }
-    else if (!c.photo.isEmpty())
-        ui->lbPhotoContent->setText(S_PH_UNKNOWN_FORMAT);
+    photo = c.photo;
+    showPhoto(c.photo, ui->lbPhotoContent);
     updatePhotoMenu();
     // Addresses
     addAddress(ui->gbAddrHome, c.addrHome);
@@ -195,20 +186,7 @@ void ContactDialog::getData(ContactItem& c)
         c.anniversaries.push_back(di);
     }
     // Photo
-    QString photoText = ui->lbPhotoContent->text();
-    if ((!photoText.isEmpty()) && photoText!=S_PH_UNKNOWN_FORMAT) { // URL
-        c.photoType = "URL";
-        c.photoUrl = photoText;
-    }
-    else if (!photo.isEmpty()) { // image
-        c.photoType = detectPhotoFormat();
-        c.photo = photo;
-    }
-    else { // deleted by user
-        c.photoType.clear();
-        c.photoUrl.clear();
-        c.photo.clear();
-    }
+    c.photo = photo;
     // Addresses
     readAddress(ui->gbAddrHome, c.addrHome);
     if (!c.addrHome.isEmpty() && !c.addrHome.paTypes.contains("home", Qt::CaseInsensitive))
@@ -565,16 +543,6 @@ void ContactDialog::updatePhotoMenu()
     menuPhotoEdit->addAction(S_PH_REMOVE, this, SLOT(onRemovePhoto()));
 }
 
-QString ContactDialog::detectPhotoFormat()
-{
-    QString format = "UNKNOWN";
-    if (photo.mid(6, 4).contains("JFIF"))
-        format = "JPEG";
-    else if (photo.mid(1, 3).contains("PNG"))
-        format = "PNG";
-    return format;
-}
-
 void ContactDialog::on_btnAdd_clicked()
 {
     QString subj = ui->cbAdd->currentText();
@@ -683,11 +651,10 @@ void ContactDialog::onLoadImage()
         return;
     }
     onRemovePhoto();
-    photo = f.readAll();
+    photo.data = f.readAll();
     f.close();
-    QPixmap pixPhoto;
-    pixPhoto.loadFromData(photo);
-    ui->lbPhotoContent->setPixmap(pixPhoto);
+    photo.pType = photo.detectFormat();
+    showPhoto(photo, ui->lbPhotoContent);
     updatePhotoMenu();
 }
 
@@ -697,11 +664,10 @@ void ContactDialog::onSaveImage()
     // Only dir!
     if (path.contains("/") && QFile(path).exists())
         path = path.left(path.lastIndexOf("/"));
-    QString format = detectPhotoFormat();
     QString filter = "Binary (*.bin)";
-    if (format=="JPEG")
+    if (photo.pType=="JPEG")
         filter = "JPEG (*.jpg)";
-    else if (format=="PNG")
+    else if (photo.pType=="PNG")
         filter = "PNG (*.png)";
     path = QFileDialog::getSaveFileName(0, tr("Save image file"), path, filter);
     if (path.isEmpty())
@@ -712,7 +678,7 @@ void ContactDialog::onSaveImage()
         QMessageBox::critical(0, S_ERROR, S_WRITE_ERR.arg(path));
         return;
     }
-    f.write(photo);
+    f.write(photo.data);
     f.close();
 }
 
@@ -731,7 +697,9 @@ void ContactDialog::onSetPhotoUrl()
     d->exec();
     if (d->result()==QDialog::Accepted) {
         onRemovePhoto();
-        ui->lbPhotoContent->setText(leURL->text());
+        photo.pType = "URL";
+        photo.url = leURL->text();
+        ui->lbPhotoContent->setText(photo.url);
     }
     delete d;
 }

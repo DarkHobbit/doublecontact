@@ -280,7 +280,7 @@ bool UDXFile::exportRecords(const QString &url, ContactList &list)
         if (!item.addrHome.isEmpty() || !item.addrWork.isEmpty())
             _errors << QObject::tr("Warning: contact %1 has address(es), not implemented in UDX")
                  .arg(item.visibleName);
-        if ((!item.photo.isEmpty()) || (!item.photoUrl.isEmpty()))
+        if (!item.photo.isEmpty())
             _errors << QObject::tr("Warning: contact %1 has photo, not implemented in UDX").arg(item.visibleName);
         if (!item.description.isEmpty())
             _errors << QObject::tr("Warning: contact %1 has description, not implemented in UDX").arg(item.visibleName);

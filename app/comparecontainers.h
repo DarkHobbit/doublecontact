@@ -165,16 +165,16 @@ class PhotoPair: public ItemPair
     Q_OBJECT
 public:
     PhotoPair(const QString& title, QGridLayout* layout,
-        const ContactItem& leftData, const ContactItem& rightData);
-    void getData(ContactItem& leftData, ContactItem& rightData);
+        const Photo& leftData, const Photo& rightData);
+    void getData(Photo& leftData, Photo& rightData);
 protected:
     virtual void copyData(bool toLeft);
     virtual void copyOneItem(bool, int) {};
     virtual bool checkDiff();
 private:
     QLabel *lbLeft, *lbRight;
-    QByteArray photoLeft, photoRight;
-    void fillPhoto(QGridLayout* layout, const ContactItem& data, QLabel** lb);
+    Photo photoLeft, photoRight;
+    void fillPhoto(QGridLayout* layout, const Photo& data, QLabel** lb);
 };
 
 #endif // COMPARECONTAINERS_H
