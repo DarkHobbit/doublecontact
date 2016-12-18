@@ -103,6 +103,8 @@ struct ContactItem {
     QString photoType; // URL, JPEG, PNG or unsupported, but stored value
     QByteArray photo;
     QString photoUrl;
+    // TODO move photo in separate type. Move there == (need in compare), detectFormat...
+    // and, probably piece for setdata/getdata in graphic module (helpers.h)
     // Work
     QString organization, title;
     // TODO role, logo?

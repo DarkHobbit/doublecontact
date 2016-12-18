@@ -57,7 +57,13 @@ void CompareDialog::setData(const ContactItem &left, const ContactItem &right)
     checkPair(tr("Anniversaries"), &pAnn, left.anniversaries, right.anniversaries);
     checkPair(tr("Description"), &pDesc, left.description, right.description);
     checkPair(tr("Sort string"), &pSortString, left.sortString, right.sortString);
-    // TODO photo*
+    // TODO rewrite on checkPair and Photo.isEmpty, when will implemented
+    bool leftPhotoIsEmpty = left.photo.isEmpty() && left.photoUrl.isEmpty();
+    bool rightPhotoIsEmpty = right.photo.isEmpty() && right.photoUrl.isEmpty();
+    pPhoto = 0;
+    if (!leftPhotoIsEmpty || !rightPhotoIsEmpty)
+        pPhoto = new PhotoPair(tr("Photo"), ui->layPairs, left, right);
+    // TODO end of rewritten section
     checkPair(tr("Organization"), &pOrg, left.organization, right.organization);
     checkPair(tr("Job title"), &pTitle, left.title, right.title);
     checkPair(tr("Home Address"), &pAddrHome, left.addrHome, right.addrHome);
@@ -87,7 +93,8 @@ void CompareDialog::getData(ContactItem &left, ContactItem &right)
         pDesc->getData(left.description, right.description);
     if (pSortString)
         pSortString->getData(left.sortString, right.sortString);
-    // TODO photo*
+    if (pPhoto)
+        pPhoto->getData(left, right);
     if (pOrg)
         pOrg->getData(left.organization, right.organization);
     if (pTitle)

@@ -12,8 +12,11 @@
  */
 
 #include <QPalette>
+#include <QPixmap>
 #include <QVBoxLayout>
 #include "comparecontainers.h"
+
+#include <QMessageBox>
 
 // TODO make arrows up and down (to reorder items), not only left and right
 
@@ -504,4 +507,62 @@ void PostalAddressPair::getData(PostalAddress &leftData, PostalAddress &rightDat
     rightData.region = rl[4];
     rightData.postalCode = rl[5];
     rightData.country = rl[6];
+}
+
+
+PhotoPair::PhotoPair(const QString &title, QGridLayout *layout, const ContactItem &leftData, const ContactItem &rightData)
+    :ItemPair(title, layout, false)
+{
+    photoLeft = leftData.photo;
+    photoRight = rightData.photo;
+    fillPhoto(layLeft, leftData, &lbLeft);
+    fillPhoto(layRight, rightData, &lbRight);
+    // TODO rewrite on Photo::==
+    highlightDiff(leftData.photoType!=rightData.photoType
+            || leftData.photoUrl!=rightData.photoUrl
+            || leftData.photo!=rightData.photo);
+}
+
+void PhotoPair::getData(ContactItem &leftData, ContactItem &rightData)
+{
+    QMessageBox::information(0, "Under construction", "Photo changes will not saved, sorry");
+    // TODO use Photo::autodetect or format
+}
+
+void PhotoPair::copyData(bool toLeft)
+{
+    QLabel* lbDest = toLeft ? lbLeft : lbRight;
+    QLabel* lbSrc = toLeft ? lbRight : lbLeft;
+    QByteArray& baDest = toLeft ? photoLeft : photoRight;
+    if (toLeft)
+        photoLeft = photoRight;
+    else
+        photoRight = photoLeft;
+    if (!lbSrc->text().isEmpty())
+        lbDest->setText(lbSrc->text());
+    if (!baDest.isEmpty()) {
+        QPixmap pixPhoto;
+        pixPhoto.loadFromData(baDest);
+        lbDest->setPixmap(pixPhoto);
+    }
+}
+
+bool PhotoPair::checkDiff()
+{
+    return (photoLeft!=photoRight || lbLeft->text()!=lbRight->text());
+}
+
+void PhotoPair::fillPhoto(QGridLayout *layout, const ContactItem &data, QLabel** lb)
+{
+    *lb = new QLabel();
+    layout->addWidget(*lb);
+    if (data.photoType=="URL")
+        (*lb)->setText(data.photoUrl);
+    else if (data.photoType.toUpper()=="JPEG" || data.photoType.toUpper()=="PNG") {
+        QPixmap pixPhoto;
+        pixPhoto.loadFromData(data.photo);
+        (*lb)->setPixmap(pixPhoto);
+    }
+    else if (!data.photo.isEmpty())
+        (*lb)->setText(S_PH_UNKNOWN_FORMAT);
 }

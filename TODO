@@ -4,7 +4,7 @@ You can contact me at pub@zvyozdochkin.ru.
 0.1:
 * --fullscreen not works on Mac
 * write non-standard phone types with X- prefix (latin) or ignore it (non-latin). This is LG Leon (vCard 2.1) behaviour. Need tune it in settings dialog
-* Compare photozzz in compare dialog
+* Compare photozzz in compare dialog - getData
 * проверить, как работает на charset, отличных от utf-8 (codec->toUnicode, у меня везде toLocal8Bit, а это, вероятно, неправильно) - на 2счёта, кажется, упоминался пример?
 * write PRODID. Need tune it in settings dialog
 * Load: warning on non-standard phone types. Need tune it in settings dialog

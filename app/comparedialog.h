@@ -40,7 +40,7 @@ private:
     DateItemPair* pBDay;
     DateItemListPair* pAnn;
     StringPair *pDesc, *pSortString;
-    // TODO photo*
+    PhotoPair* pPhoto;
     StringPair *pOrg, *pTitle;
     PostalAddressPair *pAddrHome, *pAddrWork;
     StringPair *pNickName, *pURL, *pJabber, *pICQ, *pSkype;
