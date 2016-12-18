@@ -1098,48 +1098,58 @@ SMS: %7
         <translation>Телефон без типа в строке %1: %2%3 {1:?}</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="170"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="145"/>
+        <source>Non-standard phone type at line %1: %2</source>
+        <translation>Нестандартный тип телефона в строке %1: %2</translation>
+    </message>
+    <message>
+        <location filename="../core/formats/common/vcarddata.cpp" line="165"/>
+        <source>Non-standard email type at line %1: %2</source>
+        <translation>Нестандартный тип электронной почты в строке %1: %2</translation>
+    </message>
+    <message>
+        <location filename="../core/formats/common/vcarddata.cpp" line="185"/>
         <source>Unsupported photo type at line %1: %2</source>
         <translation>Неподдерживаемый тип фотографии в строке %1: %2</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="181"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="196"/>
         <source>Unknown encoding type at line %1: %2</source>
         <translation>Неизвестное кодирование в строке %1: %2</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="194"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="209"/>
         <source>Unknown address type at line %1: %2</source>
         <translation>Неизвестный тип адреса в строке %1: %2</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="237"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="252"/>
         <source>Last section not closed</source>
         <translation>Последняя секция не закрыта</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="244"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="259"/>
         <location filename="../core/formats/files/udxfile.cpp" line="164"/>
         <source>%1 unknown tags found</source>
         <translation>Неизвестных тегов: %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="361"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="376"/>
         <source>Unknown charset: </source>
         <translation>Неизвестная кодировка: </translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="384"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="399"/>
         <source>Unknown encoding: </source>
         <translation>Неизвестное кодирование: </translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="407"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="422"/>
         <source>Invalid timezone: </source>
         <translation>Неправильный часовой пояс: </translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="426"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="441"/>
         <source>Invalid datetime: </source>
         <translation>Неправильная дата/время</translation>
     </message>
@@ -1642,7 +1652,12 @@ line %3, col %4
         <translation>(многие телефоны трактуют &apos;Голосовой&apos; как &apos;Прочий&apos;)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.cpp" line="105"/>
+        <location filename="../app/settingsdialog.ui" line="266"/>
+        <source>Warning on non-standard phone/email types</source>
+        <translation>Предупреждать о нестандартных типах телефонов/почты</translation>
+    </message>
+    <message>
+        <location filename="../app/settingsdialog.cpp" line="107"/>
         <source>List must contain at least one visible column</source>
         <translation>В списке должен быть хотя бы один видимый столбец</translation>
     </message>

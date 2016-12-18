@@ -45,13 +45,14 @@ bool SettingsDialog::setData()
     ui->cbDefaultCountryRules->addItems(Phone::availableCountryRules());
     if (gd.defaultCountryRule>=0 && gd.defaultCountryRule<COUNTRY_RULES_COUNT)
         ui->cbDefaultCountryRules->setCurrentIndex(gd.defaultCountryRule);
+    ui->cbSkipTimeFromDate->setChecked(gd.skipTimeFromDate);
     // Loading
     ui->cbDefaultEmptyPhoneType->clear();
     ui->cbDefaultEmptyPhoneType->insertItems(0, Phone::standardTypes.displayValues);
     int index = ui->cbDefaultEmptyPhoneType->findText(gd.defaultEmptyPhoneType);
     if (index!=-1)
         ui->cbDefaultEmptyPhoneType->setCurrentIndex(index);
-    ui->cbSkipTimeFromDate->setChecked(gd.skipTimeFromDate);
+    ui->cbWarnOnNonStandardTypes->setChecked(gd.warnOnNonStandardTypes);
     // Done
     return true;
 }
@@ -82,6 +83,7 @@ bool SettingsDialog::getData()
     gd.skipTimeFromDate = ui->cbSkipTimeFromDate->isChecked();
     // Loading
     gd.defaultEmptyPhoneType = ui->cbDefaultEmptyPhoneType->currentText();
+    gd.warnOnNonStandardTypes = ui->cbWarnOnNonStandardTypes->isChecked();
     // Done
     return true;
 }

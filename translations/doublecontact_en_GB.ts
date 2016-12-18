@@ -1085,48 +1085,58 @@ Save changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="170"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="145"/>
+        <source>Non-standard phone type at line %1: %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/formats/common/vcarddata.cpp" line="165"/>
+        <source>Non-standard email type at line %1: %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/formats/common/vcarddata.cpp" line="185"/>
         <source>Unsupported photo type at line %1: %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="181"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="196"/>
         <source>Unknown encoding type at line %1: %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="194"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="209"/>
         <source>Unknown address type at line %1: %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="237"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="252"/>
         <source>Last section not closed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="244"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="259"/>
         <location filename="../core/formats/files/udxfile.cpp" line="164"/>
         <source>%1 unknown tags found</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="361"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="376"/>
         <source>Unknown charset: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="384"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="399"/>
         <source>Unknown encoding: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="407"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="422"/>
         <source>Invalid timezone: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="426"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="441"/>
         <source>Invalid datetime: </source>
         <translation type="unfinished"></translation>
     </message>
@@ -1616,7 +1626,12 @@ line %3, col %4
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.cpp" line="105"/>
+        <location filename="../app/settingsdialog.ui" line="266"/>
+        <source>Warning on non-standard phone/email types</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/settingsdialog.cpp" line="107"/>
         <source>List must contain at least one visible column</source>
         <translation type="unfinished"></translation>
     </message>

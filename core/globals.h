@@ -125,6 +125,7 @@ struct GlobalConfig {
     bool skipTimeFromDate;
     // Load
     QString defaultEmptyPhoneType; // if phone w/o type was in loaded file
+    bool warnOnNonStandardTypes;
 } gd;
 
 #endif // GLOBALS_H

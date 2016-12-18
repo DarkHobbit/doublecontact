@@ -130,12 +130,20 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                 if (types.isEmpty()) {
                     QString surName = "";
                     if (!item.names.isEmpty())
-                        surName = " (" + item.names[0] + ")"; // TODO m.b. use it in other messages AFTER NAME!!!
+                        surName = " (" + item.names[0] + ")"; // TODO m.b. use it in other messages AFTER NAME!!! Before trans?
                     errors << QObject::tr("Missing phone type at line %1: %2%3").arg(line+1).arg(vValue[0]).arg(surName);
                     // TODO mb. no type is valid (in this case compare container and contact edit dialog must be updated)
+                    // TODO in this case make warning optional in settings (and, probably, false by default)
                     phone.types << defaultEmptyPhoneType.toUpper();
                 }
                 else phone.types = types;
+                if (gd.warnOnNonStandardTypes)
+                    foreach(const QString& tType, types) {
+                        bool isStandard;
+                        Phone::standardTypes.translate(tType, &isStandard);
+                        if (!isStandard)
+                            errors << QObject::tr("Non-standard phone type at line %1: %2").arg(line+1).arg(tType);
+                    }
                 phone.syncMLRef = syncMLRef;
                 item.phones.push_back(phone);
             }
@@ -149,6 +157,13 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                     email.types << "pref";
                 else
                     email.types = types;
+                if (gd.warnOnNonStandardTypes)
+                    foreach(const QString& eType, types) {
+                        bool isStandard;
+                        Email::standardTypes.translate(eType, &isStandard);
+                        if (!isStandard)
+                            errors << QObject::tr("Non-standard email type at line %1: %2").arg(line+1).arg(eType);
+                    }
                 email.syncMLRef = syncMLRef;
                 item.emails.push_back(email);
             }

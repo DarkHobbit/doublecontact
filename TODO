@@ -7,7 +7,6 @@ You can contact me at pub@zvyozdochkin.ru.
 * Compare photozzz in compare dialog - getData
 * проверить, как работает на charset, отличных от utf-8 (codec->toUnicode, у меня везде toLocal8Bit, а это, вероятно, неправильно) - на 2счёта, кажется, упоминался пример?
 * write PRODID. Need tune it in settings dialog
-* Load: warning on non-standard phone types. Need tune it in settings dialog
 * add group operations, statistics and filter to console convertor (8 - +7, fullnames, etc.)
 * проверить на всех доступных телефонах и андроидах
 * проверить на RFC
@@ -17,6 +16,7 @@ You can contact me at pub@zvyozdochkin.ru.
 * english manual
 * show to friends :)
 * add do-page (Yandex?)
+* before translations: insert surname ref in messages in vcarddata.cpp (need modify some translated messages)
 * register on weblate (transifex?)
 * ukrainian and belarussian language files
 * set doxygen labels

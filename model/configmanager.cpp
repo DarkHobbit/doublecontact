@@ -66,6 +66,7 @@ void ConfigManager::readConfig()
     // Loading
     gd.defaultEmptyPhoneType = settings.value("Loading/DefaultEmptyPhoneType",
         Phone::standardTypes.translate("voice")).toString(); // many phones treat type 'voice' as 'other'
+    gd.warnOnNonStandardTypes = settings.value("Loading/WarnOnNonStandardTypes", true).toBool();
 }
 
 void ConfigManager::writeConfig()
@@ -101,6 +102,7 @@ void ConfigManager::writeConfig()
     settings.setValue("Saving/SkipTimeFromDate", gd.skipTimeFromDate);
     // Loading
     settings.setValue("Loading/DefaultEmptyPhoneType", gd.defaultEmptyPhoneType);
+    settings.setValue("Loading/WarnOnNonStandardTypes", gd.warnOnNonStandardTypes);
 }
 
 QString ConfigManager::readLanguage()
