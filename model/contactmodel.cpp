@@ -387,8 +387,8 @@ void ContactModel::testList()
     ph.value = "+1-213-555-1234"; // example from  RFC 2426
     ph.types << "work" << "pref";
     c.phones.push_back(ph);
-    c.photoType = "URL";
-    c.photoUrl = "http://www.abc.com/pub/photos/jqpublic.gif";
+    c.photo.pType = "URL";
+    c.photo.url = "http://www.abc.com/pub/photos/jqpublic.gif";
     c.calculateFields();
     items.push_back(c);
 
