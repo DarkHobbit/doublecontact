@@ -299,9 +299,9 @@ void VCardData::exportRecord(QStringList &lines, const ContactItem &item)
     if (!item.nickName.isEmpty())
         lines << encodeAll("NICKNAME", 0, false, item.nickName);
     foreach (const Phone& ph, item.phones)
-        lines << (QString("TEL") + encodeTypes(ph.types, ph.syncMLRef)+":"+ph.value);
+        lines << (QString("TEL") + encodeTypes(ph.types, &Phone::standardTypes, ph.syncMLRef)+":"+ph.value);
     foreach (const Email& em, item.emails)
-        lines << QString("EMAIL") + encodeTypes(em.types, em.syncMLRef)+":"+em.value;
+        lines << QString("EMAIL") + encodeTypes(em.types, &Email::standardTypes, em.syncMLRef)+":"+em.value;
     /*
     // for Sony Ericsson devices TODO to settings (emulate, fake...)
     if (item.emails.isEmpty())
@@ -542,14 +542,32 @@ QString VCardData::encodeAll(const QString &tag, const QStringList *aTypes, bool
     return encStr + valStr;
 }
 
-QString VCardData::encodeTypes(const QStringList &aTypes, int /*syncMLRef*/) const
+QString VCardData::encodeTypes(const QStringList &aTypes, StandardTypes* st, int /*syncMLRef*/) const
 {
-    QString typeStr = ";";
     bool shortType = (formatVersion==GlobalConfig::VCF21) || forceShortType;
-    if (!shortType)
-        typeStr += "TYPE=";
-    // typeStr += aTypes.join(","); // value list
-    typeStr += aTypes.join(shortType ? ";" : ";TYPE=").toUpper(); // parameter list; RFC 2426 allows both form
+    QString separator = shortType ? ";" : ";TYPE=";
+    QString typeStr = "";
+    if (st!=0 && (gd.addXToNonStandardTypes || gd.replaceNLNSNames)) { // very rare case
+        foreach (const QString& typeVal, aTypes) {
+            bool isStandard;
+            st->translate(typeVal, &isStandard);
+            if (isStandard)
+                typeStr += separator + typeVal;
+            else { // very-very rare case
+                QString mTypeVal = typeVal;
+                if (gd.replaceNLNSNames && mTypeVal.toLatin1()!=mTypeVal.toUtf8()) //non-latin
+                    mTypeVal = "PREF"; // TODO m.b. use spec. value (separate for phones, emails, addresses, etc.)? define virtual defaultValue() in StandardType...
+                else if (gd.addXToNonStandardTypes)
+                    mTypeVal = QString("X-")+mTypeVal;
+                typeStr += separator + mTypeVal;
+            }
+        }
+    }
+    else { // general case
+        QString typeStr = separator;
+        // typeStr += aTypes.join(","); // value list
+        typeStr += aTypes.join(separator).toUpper(); // parameter list; RFC 2426 allows both form
+    }
     /*
      * TODO now syncMLRef recording is switched off, because it corrupted while editing/comparing
      * need:

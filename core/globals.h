@@ -123,6 +123,10 @@ struct GlobalConfig {
     bool useOriginalFileVersion;
     int defaultCountryRule; // for phone i18n during compare numbers (i.e. for Russia +7 = 8)
     bool skipTimeFromDate;
+    // addXToNonStandardTypes and replaceNLNSNames is standard behaviour of some vCard2.1-based
+    // addressbooks (LG Leon)
+    bool addXToNonStandardTypes;
+    bool replaceNLNSNames;
     // Load
     QString defaultEmptyPhoneType; // if phone w/o type was in loaded file
     bool warnOnNonStandardTypes;

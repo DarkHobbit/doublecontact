@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>315</height>
+    <width>468</width>
+    <height>319</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -158,7 +158,7 @@
       <attribute name="title">
        <string>Saving</string>
       </attribute>
-      <layout class="QVBoxLayout" name="verticalLayout_4">
+      <layout class="QVBoxLayout" name="verticalLayout_6">
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout">
          <item>
@@ -217,6 +217,29 @@
          <property name="text">
           <string>Skip time from birthday and anniversaries</string>
          </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="gbNonStandardTypes">
+         <property name="title">
+          <string>Non-standard phone/email types</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_4">
+          <item>
+           <widget class="QCheckBox" name="cbAddXToNonStandardTypes">
+            <property name="text">
+             <string>Add X- to type names</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="cbReplaceNLNSNames">
+            <property name="text">
+             <string>Replace non-latin type named</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </widget>
        </item>
        <item>

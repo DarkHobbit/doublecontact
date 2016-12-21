@@ -1611,27 +1611,42 @@ line %3, col %4
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="239"/>
+        <location filename="../app/settingsdialog.ui" line="225"/>
+        <source>Non-standard phone/email types</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/settingsdialog.ui" line="231"/>
+        <source>Add X- to type names</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/settingsdialog.ui" line="238"/>
+        <source>Replace non-latin type named</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/settingsdialog.ui" line="262"/>
         <source>Loading</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="247"/>
+        <location filename="../app/settingsdialog.ui" line="270"/>
         <source>Default type if empty</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="259"/>
+        <location filename="../app/settingsdialog.ui" line="282"/>
         <source>(many phones treats &apos;Voice&apos; as &apos;Other&apos;)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="266"/>
+        <location filename="../app/settingsdialog.ui" line="289"/>
         <source>Warning on non-standard phone/email types</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.cpp" line="107"/>
+        <location filename="../app/settingsdialog.cpp" line="111"/>
         <source>List must contain at least one visible column</source>
         <translation type="unfinished"></translation>
     </message>

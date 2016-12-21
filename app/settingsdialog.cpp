@@ -46,6 +46,8 @@ bool SettingsDialog::setData()
     if (gd.defaultCountryRule>=0 && gd.defaultCountryRule<COUNTRY_RULES_COUNT)
         ui->cbDefaultCountryRules->setCurrentIndex(gd.defaultCountryRule);
     ui->cbSkipTimeFromDate->setChecked(gd.skipTimeFromDate);
+    ui->cbAddXToNonStandardTypes->setChecked(gd.addXToNonStandardTypes);
+    ui->cbReplaceNLNSNames->setChecked(gd.replaceNLNSNames);
     // Loading
     ui->cbDefaultEmptyPhoneType->clear();
     ui->cbDefaultEmptyPhoneType->insertItems(0, Phone::standardTypes.displayValues);
@@ -81,6 +83,8 @@ bool SettingsDialog::getData()
     gd.useOriginalFileVersion = ui->cbUseOrigVer->isChecked();
     gd.defaultCountryRule = ui->cbDefaultCountryRules->currentIndex();
     gd.skipTimeFromDate = ui->cbSkipTimeFromDate->isChecked();
+    gd.addXToNonStandardTypes = ui->cbAddXToNonStandardTypes->isChecked();
+    gd.replaceNLNSNames = ui->cbReplaceNLNSNames->isChecked();
     // Loading
     gd.defaultEmptyPhoneType = ui->cbDefaultEmptyPhoneType->currentText();
     gd.warnOnNonStandardTypes = ui->cbWarnOnNonStandardTypes->isChecked();
