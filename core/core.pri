@@ -11,6 +11,7 @@ HEADERS	+= \
     $$PWD/formats/iformat.h \
     $$PWD/formats/formatfactory.h \
     $$PWD/formats/common/vcarddata.h \
+#    $$PWD/formats/files/csvfile.h \
     $$PWD/formats/files/fileformat.h \
     $$PWD/formats/files/mpbfile.h \
     $$PWD/formats/files/udxfile.h \
@@ -23,6 +24,7 @@ SOURCES	+= \
     $$PWD/languagemanager.cpp \
     $$PWD/formats/formatfactory.cpp \
     $$PWD/formats/common/vcarddata.cpp \
+#    $$PWD/formats/files/csvfile.cpp \
     $$PWD/formats/files/fileformat.cpp \
     $$PWD/formats/files/mpbfile.cpp \
     $$PWD/formats/files/udxfile.cpp \

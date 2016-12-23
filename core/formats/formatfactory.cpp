@@ -5,6 +5,7 @@
 #include "files/mpbfile.h"
 #include "files/udxfile.h"
 #include "files/vcffile.h"
+#include "files/csvfile.h"
 
 FormatFactory::FormatFactory()
     :error("")
@@ -25,6 +26,7 @@ QStringList FormatFactory::supportedFilters(QIODevice::OpenMode mode)
 #endif
     if (mode==QIODevice::ReadOnly) {
         // ...here add read-only formats
+//        allSupported += "*." + CSVFile::supportedExtensions().join(" *.");
     }
     // ...here add supportedExtensions() for new format
     allTypes << S_ALL_SUPPORTED.arg(allSupported);
@@ -36,6 +38,7 @@ QStringList FormatFactory::supportedFilters(QIODevice::OpenMode mode)
 #endif
     if (mode==QIODevice::ReadOnly) {
         // ...here add filters for read-only formats
+//        allTypes << CSVFile::supportedFilters();
     }
     // ...here add supportedFilters() for new format
     allTypes << S_ALL_FILES;
@@ -55,6 +58,8 @@ IFormat *FormatFactory::createObject(const QString &url)
         return new VCFFile();
     if (UDXFile::supportedExtensions().contains(ext, Qt::CaseInsensitive))
         return new UDXFile();
+//    if (CSVFile::supportedExtensions().contains(ext, Qt::CaseInsensitive))
+ //       return new CSVFile();
 #if QT_VERSION >= 0x040800
     if (MPBFile::supportedExtensions().contains(ext, Qt::CaseInsensitive))
         return new MPBFile();
@@ -65,6 +70,8 @@ IFormat *FormatFactory::createObject(const QString &url)
         return new VCFFile();
     if (UDXFile::detect(url))
         return new UDXFile();
+//    if (CSVFile::detect(url))
+//        return new CSVFile();
     // ...here add detect() for new format
     // Sad but true
     error = QObject::tr("Unknown file format:\n%1").arg(url);
