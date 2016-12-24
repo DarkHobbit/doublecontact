@@ -948,96 +948,96 @@ Save changes?</source>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../core/contactlist.cpp" line="66"/>
-        <location filename="../core/contactlist.cpp" line="538"/>
+        <location filename="../core/contactlist.cpp" line="78"/>
+        <location filename="../core/contactlist.cpp" line="562"/>
         <source>Home</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="67"/>
+        <location filename="../core/contactlist.cpp" line="79"/>
         <source>Message</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="68"/>
-        <location filename="../core/contactlist.cpp" line="539"/>
+        <location filename="../core/contactlist.cpp" line="80"/>
+        <location filename="../core/contactlist.cpp" line="563"/>
         <source>Work</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="69"/>
-        <location filename="../core/contactlist.cpp" line="106"/>
-        <location filename="../core/contactlist.cpp" line="540"/>
+        <location filename="../core/contactlist.cpp" line="81"/>
+        <location filename="../core/contactlist.cpp" line="130"/>
+        <location filename="../core/contactlist.cpp" line="564"/>
         <source>Preferable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="70"/>
+        <location filename="../core/contactlist.cpp" line="82"/>
         <source>Voice</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="71"/>
+        <location filename="../core/contactlist.cpp" line="83"/>
         <source>Fax</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="72"/>
+        <location filename="../core/contactlist.cpp" line="84"/>
         <source>Cell</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="73"/>
+        <location filename="../core/contactlist.cpp" line="85"/>
         <source>Video</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="74"/>
+        <location filename="../core/contactlist.cpp" line="86"/>
         <source>Pager</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="75"/>
+        <location filename="../core/contactlist.cpp" line="87"/>
         <source>BBS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="76"/>
+        <location filename="../core/contactlist.cpp" line="88"/>
         <source>Modem</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="77"/>
+        <location filename="../core/contactlist.cpp" line="89"/>
         <source>Car</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="78"/>
+        <location filename="../core/contactlist.cpp" line="90"/>
         <source>ISDN</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="79"/>
+        <location filename="../core/contactlist.cpp" line="91"/>
         <source>PCS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="104"/>
+        <location filename="../core/contactlist.cpp" line="128"/>
         <source>Internet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="105"/>
+        <location filename="../core/contactlist.cpp" line="129"/>
         <source>X.400</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="258"/>
+        <location filename="../core/contactlist.cpp" line="282"/>
         <source>Strange empty contact</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="430"/>
+        <location filename="../core/contactlist.cpp" line="454"/>
         <source>%1 records
 %2 phones
 %3 emails
@@ -1050,22 +1050,22 @@ Save changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="541"/>
+        <location filename="../core/contactlist.cpp" line="565"/>
         <source>Domestic</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="542"/>
+        <location filename="../core/contactlist.cpp" line="566"/>
         <source>International</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="543"/>
+        <location filename="../core/contactlist.cpp" line="567"/>
         <source>Postal</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="544"/>
+        <location filename="../core/contactlist.cpp" line="568"/>
         <source>Parcel</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1239,12 +1239,12 @@ line %3, col %4
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/formatfactory.cpp" line="48"/>
+        <location filename="../core/formats/formatfactory.cpp" line="51"/>
         <source>Empty file name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/formatfactory.cpp" line="70"/>
+        <location filename="../core/formats/formatfactory.cpp" line="77"/>
         <source>Unknown file format:
 %1</source>
         <translation type="unfinished"></translation>
@@ -1507,6 +1507,11 @@ line %3, col %4
         <location filename="../core/globals.h" line="86"/>
         <source>Can&apos;t write file
 %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/formats/files/csvfile.cpp" line="19"/>
+        <source>CSV row too short for this profile at line %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

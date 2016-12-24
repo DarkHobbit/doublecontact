@@ -374,68 +374,48 @@ ContactList &ContactModel::itemList()
 void ContactModel::testList()
 {
     ContactItem c;
-    Phone ph;
-    Email em;
     _source = "Test list";
     beginInsertRows(QModelIndex(), 0, 3);
 
     // Example with ASCII names and multy-type phone
-    c.fullName = "John Doe";
     c.clear();
-    c.names.push_back("John");
-    c.names.push_back("Doe");
-    ph.value = "+1-213-555-1234"; // example from  RFC 2426
-    ph.types << "work" << "pref";
-    c.phones.push_back(ph);
+    c.fullName = QString::fromUtf8("John Doe");
+    c.names << QString::fromUtf8("Doe") << QString::fromUtf8("John");
+    c.phones << Phone("+1-213-555-1234", "work", "pref"); // example from  RFC 2426
     c.photo.pType = "URL";
     c.photo.url = "http://www.abc.com/pub/photos/jqpublic.gif";
     c.calculateFields();
     items.push_back(c);
 
     // Example with UTF8 (Russian) names and email
-    c.fullName = QString::fromUtf8("Александр Попов");
     c.clear();
-    c.names.push_back(QString::fromUtf8("Александр"));
-    c.names.push_back(QString::fromUtf8("Попов"));
-    ph.value = "+79101234567"; // example for any cellular operator
-    ph.types.clear();
-    ph.types << "cell";
-    c.phones.push_back(ph);
-    em.value = "alexpopov@spb.ru";
-    em.types.push_back("internet");
-    c.emails.push_back(em);
+    c.fullName = QString::fromUtf8("Александр Попов");
+    c.names << QString::fromUtf8("Попов") << QString::fromUtf8("Александр");
+    c.phones << Phone("+79101234567", "cell"); // example for any cellular operator
+    c.emails << Email("alexpopov@spb.ru", "internet");
     c.calculateFields();
     items.push_back(c);
 
     // Example with UTF8 (German) names
-    c.fullName = QString::fromUtf8("Hans Köster");
     c.clear();
-    c.names.push_back(QString::fromUtf8("Hans"));
-    c.names.push_back(QString::fromUtf8("Köster"));
-    ph.value = "233";
-    ph.types.clear();
-    ph.types << "home";
-    c.phones.push_back(ph);
-    ph.value = "322";
-    ph.types.clear();
-    ph.types << "work";
-    c.phones.push_back(ph);
+    c.fullName = QString::fromUtf8("Hans Köster");
+    c.names << QString::fromUtf8("Köster") << QString::fromUtf8("Hans");
+    c.phones << Phone("233", "home");
+    c.phones << Phone("322", "work");
     c.calculateFields();
     items.push_back(c);
 
     // Example with 4 names and without phones
-    c.fullName = QString::fromUtf8("Ernst Theodor Amadeus Hoffmann");
     c.clear();
-    c.names.push_back(QString::fromUtf8("Ernst"));
-    c.names.push_back(QString::fromUtf8("Theodor"));
-    c.names.push_back(QString::fromUtf8("Amadeus"));
-    c.names.push_back(QString::fromUtf8("Hoffmann"));
+    c.fullName = QString::fromUtf8("Ernst Theodor Amadeus Hoffmann");
+    c.names << "Hoffmann" << "Ernst" << "Theodor Amadeus";
     c.calculateFields();
     items.push_back(c);
 
     // SIM-card-specific example with surname only;
     c.clear();
     c.names.push_back(QString::fromUtf8("SIM Name"));
+    c.phones << Phone("+78122128506", "work"); // Long live rock'n'roll!
     c.calculateFields();
     items.push_back(c);
 

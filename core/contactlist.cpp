@@ -24,6 +24,18 @@ struct CountryRule{
     {QString::fromUtf8("Україна"),  "0", "+380"}
 };
 
+Phone::Phone()
+{}
+
+Phone::Phone(const QString &_value, const QString &type1, const QString &type2)
+{
+    value = _value;
+    if (!type1.isEmpty())
+        types << type1;
+    if (!type2.isEmpty())
+        types << type2;
+}
+
 QString Phone::expandNumber(int countryRule) const
 {
     return expandNumber(value, countryRule);
@@ -84,6 +96,18 @@ void Phone::StandardTypes::fill()
         << (*this)["pager"] << (*this)["bbs"]
         << (*this)["modem"] << (*this)["car"]
         << (*this)["isdn"] << (*this)["pcs"];
+}
+
+Email::Email()
+{}
+
+Email::Email(const QString &_value, const QString &type1, const QString &type2)
+{
+    value = _value;
+    if (!type1.isEmpty())
+        types << type1;
+    if (!type2.isEmpty())
+        types << type2;
 }
 
 bool Email::operator ==(const Email &e)

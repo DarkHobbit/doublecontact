@@ -16,6 +16,8 @@
 
 // TODO csv support is very alpha
 
+#define S_CSV_ROW_TOO_SHORT QObject::tr("CSV row too short for this profile at line %1")
+
 CSVFile::CSVFile()
     :FileFormat()
 {
@@ -84,7 +86,9 @@ bool CSVFile::importRecords(const QString &url, ContactList &list, bool append)
         // TODO profile begin - it's Explay sample (not all fields)
         QStringList& row = rows[i];
         ContactItem item;
-        if (row.count()<13)
+        if (row.count()<13) {
+            _errors << S_CSV_ROW_TOO_SHORT.arg(i+1);
+        }
         item.fullName = row[0];
         item.names << row[3] << row[1] << row[2] << "" << row[4];
         item.dropFinalEmptyNames();
@@ -93,30 +97,14 @@ bool CSVFile::importRecords(const QString &url, ContactList &list, bool append)
         item.birthday.value = QDateTime::fromString(row[7]); // TODO check
         // "SIP address","Push-to-talk","Share view"
         item.id = row[11];
-        Phone phone;
-        if (!row[12].isEmpty()) { // TODO make constructor for Phone, use it here and in CintactModel testdata
-            phone.value = row[12];
-            phone.types << "pref";
-            item.phones << phone;
-        }
-        if (row.count()>13 && !row[13].isEmpty()) {
-            phone.types.clear();
-            phone.value = row[13];
-            phone.types << "home";
-            item.phones << phone;
-        }
-        if (row.count()>14 && !row[14].isEmpty()) {
-            phone.types.clear();
-            phone.value = row[14];
-            phone.types << "fax";
-            item.phones << phone;
-        }
-        if (row.count()>15 && !row[15].isEmpty()) {
-            phone.types.clear();
-            phone.value = row[15];
-            phone.types << "video";
-            item.phones << phone;
-        }
+        if (!row[12].isEmpty())
+            item.phones << Phone(row[12], "pref");
+        if (row.count()>13 && !row[13].isEmpty())
+            item.phones << Phone(row[13], "home");
+        if (row.count()>14 && !row[14].isEmpty())
+            item.phones << Phone(row[14], "fax");
+        if (row.count()>15 && !row[15].isEmpty())
+            item.phones << Phone(row[15], "video");
         if (row.count()>16)
             item.url = row[16];
         // TODO see other rows...
@@ -128,7 +116,8 @@ bool CSVFile::importRecords(const QString &url, ContactList &list, bool append)
     return (!list.isEmpty());
 }
 
-bool CSVFile::exportRecords(const QString &url, ContactList &list)
+bool CSVFile::exportRecords(const QString &/*url*/, ContactList &/*list*/)
 {
     // TODO
+    return false; //===>
 }

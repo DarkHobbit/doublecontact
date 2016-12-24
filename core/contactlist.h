@@ -38,6 +38,8 @@ struct TypedDataItem {
 };
 
 struct Phone: public TypedDataItem {
+    Phone();
+    Phone(const QString& _value, const QString& type1 = "", const QString& type2 = "");
     bool operator ==(const Phone& p);
     // international number representation from particular
     static QStringList availableCountryRules();
@@ -52,6 +54,8 @@ struct Phone: public TypedDataItem {
 };
 
 struct Email: public TypedDataItem {
+    Email();
+    Email(const QString& _value, const QString& type1 = "", const QString& type2 = "");
     bool operator ==(const Email& e);
     static class StandardTypes: public ::StandardTypes {
         public:
