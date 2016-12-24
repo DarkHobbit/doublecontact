@@ -5,7 +5,6 @@ You can contact me at pub@zvyozdochkin.ru.
 * --fullscreen not works on Mac
 * MPB save: force vCard 3.0 or original format? See, how LG Leon do it
 * проверить, как работает на charset, отличных от utf-8 (codec->toUnicode, у меня везде toLocal8Bit, а это, вероятно, неправильно) - на 2счёта, кажется, упоминался пример?
-* add maximum one anniversary
 * add group operations, statistics and filter to console convertor (8 - +7, fullnames, etc.)
 * проверить на всех доступных телефонах и андроидах
 * проверить на RFC

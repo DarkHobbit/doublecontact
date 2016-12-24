@@ -22,6 +22,8 @@
 #define MAX_COMPARE_PRIORITY_LEVEL 5
 #define COUNTRY_RULES_COUNT 3
 #define MAX_NAMES 5
+// According vCard 4.0, contact can have only one anniversary
+#define MAX_ANN 1
 
 struct TagValue { // for non-editing ang unknown tags
     QString tag, value;

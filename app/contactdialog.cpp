@@ -275,6 +275,8 @@ void ContactDialog::addEmail(const Email &em)
 
 void ContactDialog::addAnniversary(const DateItem &ann)
 {
+    if (anniversaryCount>=MAX_ANN)
+        return;
     anniversaryDetails.push_back(ann);
     // Value
     QDateTimeEdit* dte = new QDateTimeEdit(this);
