@@ -8,3 +8,6 @@ script:
  - cd app
  - qmake doublecontact.pro
  - make
+ - cd ../contconv
+ - qmake contconv.pro
+ - make

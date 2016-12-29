@@ -44,7 +44,7 @@ int Convertor::start()
         if (arguments()[i]=="-i") {
             i++;
             if (i==arguments().count()) {
-                out << tr("linvert error: -i option present, but file path is missing\n");
+                out << tr("Error: -i option present, but file path is missing\n");
                 printUsage();
                 return 2;
             }
@@ -54,7 +54,7 @@ int Convertor::start()
         else if (arguments()[i]=="-o") {
             i++;
             if (i==arguments().count()) {
-                out << tr("linvert error: -o option present, but file path is missing\n");
+                out << tr("Error: -o option present, but file path is missing\n");
                 printUsage();
                 return 3;
             }
@@ -64,13 +64,13 @@ int Convertor::start()
         else if (arguments()[i]=="-f") {
             i++;
             if (i==arguments().count()) {
-                out << tr("linvert error: -f option present, but format name is missing\n");
+                out << tr("Error: -f option present, but format name is missing\n");
                 printUsage();
                 return 4;
             }
             outFormat = arguments()[i];
-            if (outFormat!="vcf21" && outFormat!="vcf30" && outFormat!="vcfauto" && outFormat!="udx" && outFormat!="copy") {
-                out << tr("Unknown output format: %1\n").arg(outFormat);
+            if (outFormat!="vcf21" && outFormat!="vcf30" && outFormat!="vcfauto" && outFormat!="udx" && outFormat!="mpb" && outFormat!="copy") {
+                out << tr("Error: Unknown output format: %1\n").arg(outFormat);
                 printUsage();
                 return 5;
             }
@@ -90,33 +90,33 @@ int Convertor::start()
     }
     // Check input data completion
     if (inPath.isEmpty()) {
-        out << tr("Input path is missing\n");
+        out << tr("Error: Input path is missing\n");
         printUsage();
         return 7;
     }
     if (outPath.isEmpty()) {
-        out << tr("Output path is missing\n");
+        out << tr("Error: Output path is missing\n");
         printUsage();
         return 8;
     }
     if (outFormat.isEmpty()) {
-        out << tr("Output format name is missing\n");
+        out << tr("Error: Output format name is missing\n");
         printUsage();
         return 9;
     }
     if (forceSingleFile && forceDirectory) {
-        out << tr("Options -s and -d are not compatible\n");
+        out << tr("Error: Options -s and -d are not compatible\n");
         printUsage();
         return 10;
     }
     if (forceDirectory && !outFormat.contains("vcf") && outFormat!="copy") {
-        out << tr("-d option applicable only for vCard format");
+        out << tr("Error: -d option applicable only for vCard format");
         return 11;
     }
     // Check if output file exists
     QFile of(outPath);
     if (of.exists() && !forceOverwrite && !QFileInfo(outPath).isDir()) {
-        out << tr("Output file already exists, use -w if necessary\n");
+        out << tr("Error: Output file already exists, use -w if necessary\n");
         printUsage();
         return 12;
     }
@@ -159,6 +159,8 @@ int Convertor::start()
     }
     else if (outFormat.contains("udx"))
         oFormat = new UDXFile();
+    else if (outFormat.contains("mpb"))
+        oFormat = new MPBFile();
     else { // copy input format
         if (VCFFile::detect(inPath)) {
             gd.useOriginalFileVersion = true;
@@ -167,13 +169,9 @@ int Convertor::start()
         else if (UDXFile::detect(inPath))
             oFormat = new UDXFile();
         // else if (MPBFile::detect(inPath)) { TODO m.b. implement?
-        else if (inPath.contains(".mpb", Qt::CaseInsensitive)) { // temp hack
-            out << "MPB format is read-only and incompatible with 'copy' option. Use VCF or UDX for output file\n";
-            return 15;
-        }
         else {
-            out << "Can't autodetect input format\n";
-            return 16;
+            out << "Error: Can't autodetect input format\n";
+            return 15;
         }
     }
     // Write
@@ -181,7 +179,7 @@ int Convertor::start()
     logFormat(oFormat);
     delete oFormat;
     out << "Output file successfully written\n";
-    return res ? 0 : 17;
+    return res ? 0 : 16;
 }
 
 // Print program usage if error occured
@@ -189,7 +187,7 @@ void Convertor::printUsage()
 {
     out << tr(
         "Usage:\n" \
-        "contconv -i inputfile -o outfile - f outformat [-w] [-d|-s]\n" \
+        "contconv -i inputfile -o outfile -f outformat [-w] [-d|-s]\n" \
         "\n" \
         "Possible values for outformat:\n" \
         "copy - same as input format, if atodetected (not works with MPB)\n" \
@@ -197,6 +195,7 @@ void Convertor::printUsage()
         "vcf30 - vCard version 3.0\n" \
         "vcfauto - vCard version as in input file\n" \
         "udx - Philips Xenium UDX\n" \
+        "mpb - MyPhoneExplorer backup\n" \
         "\n" \
         "Options:\n" \
         "-w - force overwrite output single file, if exists (directories overwrites already)\n" \
