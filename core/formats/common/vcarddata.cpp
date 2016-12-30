@@ -564,7 +564,7 @@ QString VCardData::encodeTypes(const QStringList &aTypes, StandardTypes* st, int
         }
     }
     else { // general case
-        QString typeStr = separator;
+        typeStr = separator;
         // typeStr += aTypes.join(","); // value list
         typeStr += aTypes.join(separator).toUpper(); // parameter list; RFC 2426 allows both form
     }
