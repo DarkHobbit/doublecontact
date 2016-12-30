@@ -124,6 +124,9 @@ bool MPBFile::importRecords(const QString &url, ContactList &list, bool append)
         }
     } while (!stream.atEnd());
     closeFile();
+    // Warning on Sony Ericsson
+    if (list.extra.model.contains("Sony")||list.extra.model.contains("Eric")) // TODO remove, when test
+        _errors << "Program was tested only on Android MPB files, not SonyEricsson. Please, contact author";
     // Parse contact list
     if (content.isEmpty()) {
         // TODO maybe move this string to global for other formats
@@ -141,12 +144,15 @@ bool MPBFile::exportRecords(const QString &url, ContactList &list)
         _fatalError = QObject::tr("MPB record allowed only for MPB source");
         return false;
     }
+    // Warning on Sony Ericsson
+    if (list.extra.model.contains("Sony")||list.extra.model.contains("Eric")) // TODO remove, when test
+        _errors << "Program was tested only on Android MPB files, not SonyEricsson. Please, contact author";
     QStringList content;
     // vCard data
     for (int i=0; i<list.count(); i++)
-        if (list[i].version.isEmpty())
-            list[i].version = "3.0"; // some MPB files not contains vCard version number   
-    useOriginalFileVersion = true; // TODO force vCard 3.0 or original format? see LG Leon
+        if (list[i].version.isEmpty()) // some MPB files not contains vCard version number.
+            list[i].version = "3.0"; // TODO m.b. really it's 4.0 (CATEGORIES, LABEL=, plain-unicode text but short dates)
+    useOriginalFileVersion = true;
     skipEncoding = true; // disable pre-encoding via VCardData::encodeValue
     forceShortType = true; // disable TYPE= before phone/email types
     forceShortDate = true; // force ISO basic date format
