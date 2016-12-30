@@ -3,6 +3,7 @@ You can contact me at pub@zvyozdochkin.ru.
 
 0.1:
 * --fullscreen not works on Mac
+* TODO probably, write LABEL= on nonstandard types (at least, in mpb); now simply= (label removed)
 * проверить, как работает на charset, отличных от utf-8 (codec->toUnicode, у меня везде toLocal8Bit, а это, вероятно, неправильно) - на 2счёта, кажется, упоминался пример?
 * add group operations, statistics and filter to console convertor (8 - +7, fullnames, etc.)
 * проверить на всех доступных телефонах и андроидах

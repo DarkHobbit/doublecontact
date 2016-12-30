@@ -152,7 +152,7 @@ bool MPBFile::exportRecords(const QString &url, ContactList &list)
     for (int i=0; i<list.count(); i++)
         if (list[i].version.isEmpty()) // some MPB files not contains vCard version number.
             list[i].version = "3.0"; // TODO m.b. really it's 4.0 (CATEGORIES, LABEL=, plain-unicode text but short dates)
-    useOriginalFileVersion = true;
+    useOriginalFileVersion = false;
     skipEncoding = true; // disable pre-encoding via VCardData::encodeValue
     forceShortType = true; // disable TYPE= before phone/email types
     forceShortDate = true; // force ISO basic date format
