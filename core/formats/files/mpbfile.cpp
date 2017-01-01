@@ -20,6 +20,16 @@ MPBFile::MPBFile()
 {
 }
 
+bool MPBFile::detect(const QString &url)
+{
+    QFile f(url);
+    if (!f.open(QIODevice::ReadOnly)) return false;
+    QTextStream stream(&f);
+    QString line = stream.readLine();
+    f.close();
+    return line.contains(SECTION_BEGIN);
+}
+
 QStringList MPBFile::supportedExtensions()
 {
     return (QStringList() << "mpb" << "MPB");

@@ -26,6 +26,7 @@ public:
 
     // IFormat interface
 public:
+    static bool detect(const QString &url);
     static QStringList supportedExtensions();
     static QStringList supportedFilters();
     bool importRecords(const QString &url, ContactList &list, bool append);

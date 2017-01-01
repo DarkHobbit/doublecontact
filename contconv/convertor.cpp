@@ -168,7 +168,8 @@ int Convertor::start()
         }
         else if (UDXFile::detect(inPath))
             oFormat = new UDXFile();
-        // else if (MPBFile::detect(inPath)) { TODO m.b. implement?
+        else if (MPBFile::detect(inPath))
+            oFormat = new MPBFile();
         else {
             out << "Error: Can't autodetect input format\n";
             return 15;

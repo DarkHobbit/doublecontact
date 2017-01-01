@@ -70,6 +70,8 @@ IFormat *FormatFactory::createObject(const QString &url)
         return new VCFFile();
     if (UDXFile::detect(url))
         return new UDXFile();
+    if (MPBFile::detect(url))
+        return new MPBFile();
     if (CSVFile::detect(url))
         return new CSVFile();
     // ...here add detect() for new format
