@@ -183,7 +183,7 @@ int Convertor::start()
     return res ? 0 : 16;
 }
 
-// Print program usage if error occured
+// Print program usage
 void Convertor::printUsage()
 {
     out << tr(
