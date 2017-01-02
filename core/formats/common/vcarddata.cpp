@@ -88,7 +88,9 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                 else if (vType[i].startsWith("TYPE=", Qt::CaseInsensitive)
                          || vType[i].startsWith("LABEL=", Qt::CaseInsensitive)) {// TODO see vCard 4.0, m.b. LABEL= points to non-standard?
                     // non-standart types may be non-latin
-                    QString typeCand = codec->toUnicode(vType[i].mid(QString("TYPE=").length()).toLocal8Bit());
+                    QString typeCand = vType[i];
+                    typeCand.remove("TYPE=").remove("LABEL=");
+                    typeCand = codec->toUnicode(typeCand.toLocal8Bit());
                     // Detect and split types, composed as value list (RFC)
                     if (typeCand.contains(",")) {
                         QStringList typesAsValueList = typeCand.split(",");
