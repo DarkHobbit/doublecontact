@@ -36,7 +36,7 @@ int Convertor::start()
         printUsage();
         return 1;
     }
-    QString inPath, outPath, outFormat;
+    QString inPath, outPath, outFormat, filterString;
     bool infoMode = false;
     bool forceOverwrite = false;
     bool forceSingleFile = false;
@@ -47,6 +47,8 @@ int Convertor::start()
     bool dropFullNames = false;
     bool reverseFullNames = false;
     bool dropSlashes = false;
+    bool filterExclusive = false;
+    bool filterReverse = false;
     for (int i=1; i<arguments().count(); i++) {
         if (arguments()[i]=="-i" || arguments()[i]=="--info") {
             i++;
@@ -91,6 +93,10 @@ int Convertor::start()
             forceSingleFile = true;
         else if (arguments()[i]=="-d")
             forceDirectory = true;
+        else if (arguments()[i]=="-fe")
+            filterExclusive = true;
+        else if (arguments()[i]=="-fr")
+            filterReverse = true;
         else if (arguments()[i]=="--swap-names")
             swapNames = true;
         else if (arguments()[i]=="--split-names")
@@ -103,48 +109,61 @@ int Convertor::start()
             reverseFullNames = true;
         else if (arguments()[i]=="--drop-slashes")
             dropSlashes = true;
+        else if (arguments()[i]=="--filter") {
+            i++;
+            if (i==arguments().count()) {
+                out << tr("Error: --filter command present, but filter string is missing\n");
+                printUsage();
+                return 6;
+            }
+            filterString = arguments()[i];
+        }
         else {
             out << tr("Unknown option: %1\n").arg(arguments()[i]);
             printUsage();
-            return 6;
+            return 7;
         }
     }
     // Check input data completion
     if (inPath.isEmpty()) {
         out << tr("Error: Input path is missing\n");
         printUsage();
-        return 7;
+        return 8;
     }
     if (outPath.isEmpty() && !infoMode) {
         out << tr("Error: Output path is missing\n");
         printUsage();
-        return 8;
+        return 9;
     }
     if (outFormat.isEmpty() && !infoMode) {
         out << tr("Error: Output format name is missing\n");
         printUsage();
-        return 9;
+        return 10;
     }
     if (forceSingleFile && forceDirectory) {
         out << tr("Error: Options -s and -d are not compatible\n");
         printUsage();
-        return 10;
+        return 11;
     }
     if (forceDirectory && !outFormat.contains("vcf") && outFormat!="copy") {
         out << tr("Error: -d option applicable only for vCard format");
-        return 11;
+        return 12;
     }
     if (infoMode && !(outPath.isEmpty() && outFormat.isEmpty())) {
         out << tr("Error: Command --info is not compatible with -o and -f options\n");
         printUsage();
-        return 12;
+        return 13;
+    }
+    if ((filterExclusive || filterReverse) && filterString.isEmpty()) {
+        out << tr("Error: -fe and -fr option applicable only with --filter command");
+        return 14;
     }
     // Check if output file exists
     QFile of(outPath);
     if (of.exists() && !forceOverwrite && !QFileInfo(outPath).isDir()) {
         out << tr("Error: Output file already exists, use -w if necessary\n");
         printUsage();
-        return 13;
+        return 15;
     }
     // Define, create file or directory at output
     // (default: as input)
@@ -163,14 +182,14 @@ int Convertor::start()
         iFormat = new VCFDirectory();
     if (!iFormat) {
         out << factory.error << "\n";
-        return 14;
+        return 16;
     }
     ContactList items;
     bool res = iFormat->importRecords(inPath, items, false);
     logFormat(iFormat);
     delete iFormat;
     if (!res)
-        return 15;
+        return 17;
     out << tr("%1 records read\n").arg(items.count());
     // Show statistics, if info mode switched on
     if (infoMode) {
@@ -179,22 +198,54 @@ int Convertor::start()
     }
     // Conversions
     for (int i=0; i<items.count(); i++) {
-        if (swapNames)
-            items[i].swapNames();
-        if (splitNames)
-            items[i].splitNames();
-        // TODO splitNumbers now can't be implemented, because in GUI it works via ContactModel
-        // Probably, move it in ContactList in future
-        if (generateFullNames)
-            items[i].fullName = items[i].formatNames();
-        if (dropFullNames)
-            items[i].fullName.clear();
-        if (reverseFullNames)
-            items[i].reverseFullName();
-        if (dropSlashes)
-            items[i].dropSlashes();
-        // TODO intlPhonePrefix implement after CountryManager create
-        // items[i].intlPhonePrefix(cRule);
+        ContactItem& item = items[i];
+        bool filtered = true;
+        if (!filterString.isEmpty()) {
+            filtered = item.fullName.contains(filterString);
+            if (!filtered)
+                foreach (const QString& name, item.names)
+                    if (name.contains(filterString))
+                        filtered = true;
+            if (!filtered)
+                if (item.description.contains(filterString))
+                    filtered = true;
+            if (!filtered)
+                foreach (const Phone& p, item.phones)
+                    if (p.value.contains(filterString))
+                        filtered = true;
+            if (!filtered)
+                foreach (const Phone& p, item.phones)
+                    if (p.value.contains(filterString))
+                        filtered = true;
+            if (!filtered)
+                foreach (const Email& m, item.emails)
+                    if (m.value.contains(filterString))
+                        filtered = true;
+        }
+        if (filterReverse)
+            filtered = !filtered;
+        if (filtered) {
+            if (swapNames)
+                item.swapNames();
+            if (splitNames)
+                item.splitNames();
+            // TODO splitNumbers now can't be implemented, because in GUI it works via ContactModel
+            // Probably, move it in ContactList in future
+            if (generateFullNames)
+                item.fullName = items[i].formatNames();
+            if (dropFullNames)
+                item.fullName.clear();
+            if (reverseFullNames)
+                item.reverseFullName();
+            if (dropSlashes)
+                item.dropSlashes();
+            // TODO intlPhonePrefix implement after CountryManager create
+            // items[i].intlPhonePrefix(cRule);
+        }
+        else if (filterExclusive) {
+            items.removeAt(i);
+            i--;
+        }
     }
     //Define output format
     gd.preferredVCFVersion = GlobalConfig::VCF21;
@@ -222,15 +273,15 @@ int Convertor::start()
             oFormat = new MPBFile();
         else {
             out << "Error: Can't autodetect input format\n";
-            return 16;
+            return 18;
         }
     }
     // Write
     res = oFormat->exportRecords(outPath, items);
     logFormat(oFormat);
     delete oFormat;
-    out << "Output file successfully written\n";
-    return res ? 0 : 17;
+    out << tr("%1 records written\n").arg(items.count());
+    return res ? 0 : 19;
 }
 
 // Print program usage
@@ -254,13 +305,18 @@ void Convertor::printUsage()
         "-s - write VCF as single file (by default, write as in input)\n" \
         "-d - write VCFs as directory (not compatible with -d)\n" \
         "Commands:\n" \
-        "--swap-names - swap first and last name" \
-        "--split-names - split name by spaces" \
-        "--generate-full-names - generate full (formatted) name by names" \
-        "--drop-full-names - clear full (formatted) name" \
-        "--reverse-full-names - swap parts of full (formatted) name"
-        "--drop-slashes - remove back slashes and other SIM-legacy from names" \
-        "--info - show statistic info about inputfile (incompatible with -o and -f options)" \
+        "--swap-names - swap first and last name\n" \
+        "--split-names - split name by spaces\n" \
+        "--generate-full-names - generate full (formatted) name by names\n" \
+        "--drop-full-names - clear full (formatted) name\n" \
+        "--reverse-full-names - swap parts of full (formatted) name\n"
+        "--drop-slashes - remove back slashes and other SIM-legacy from names\n" \
+        "--info - show statistic info about inputfile (incompatible with -o and -f options)\n" \
+        "--filter string [-fo] [-fr] - commands process only for records, where string found.\n" \
+        "Search work in names, formatted names, descriptions, phones, emails.\n" \
+        "If -fe option found, other records not recorded in output file. By default,\n" \
+        "it recorded, but not processed by other commands.\n" \
+        "If -fr option found, filter is reversed (only records without string are filtered).\n" \
         "\n"); // TODO filter
 }
 
