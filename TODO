@@ -4,7 +4,7 @@ You can contact me at pub@zvyozdochkin.ru.
 0.1:
 * --fullscreen not works on Mac
 * проверить, как работает на charset, отличных от utf-8 (codec->toUnicode, у меня везде toLocal8Bit, а это, вероятно, неправильно) - на 2счёта, кажется, упоминался пример?
-* add group operations, statistics and filter to console convertor (8 - +7, fullnames, etc.)
+* add statistics and filter to console convertor
 * проверить на RFC
 * coverity scan integration
 * cmake and cpack support for various packaging
@@ -29,6 +29,7 @@ You can contact me at pub@zvyozdochkin.ru.
 * MPB: extra data view (SMS, calls...) need write core/formats/common/pdudata.*
 * MPB: maybe, names in call list must be swapped (Name 2, Name 1)
 * probably, write LABEL= on nonstandard types (at least, in mpb); now simply= (label removed)
+* probably, add more countries for phone i18n (if users will ask)
 * see all TODOs. Compare - arrows up/down, etc.
 * X-SYNCMLREF in vType decode (now badly work, loss via editing)
 * maybe, rewrite MPB save/load on Qt 4.6/4.7 (open file 4 times with differ codecs). Also, see X-SYNCMLREF bug

@@ -40,6 +40,12 @@ int Convertor::start()
     bool forceOverwrite = false;
     bool forceSingleFile = false;
     bool forceDirectory = false;
+    bool swapNames = false;
+    bool splitNames = false;
+    bool generateFullNames = false;
+    bool dropFullNames = false;
+    bool reverseFullNames = false;
+    bool dropSlashes = false;
     for (int i=1; i<arguments().count(); i++) {
         if (arguments()[i]=="-i") {
             i++;
@@ -82,6 +88,18 @@ int Convertor::start()
             forceSingleFile = true;
         else if (arguments()[i]=="-d")
             forceDirectory = true;
+        else if (arguments()[i]=="--swap-names")
+            swapNames = true;
+        else if (arguments()[i]=="--split-names")
+            splitNames = true;
+        else if (arguments()[i]=="--generate-full-names")
+            generateFullNames = true;
+        else if (arguments()[i]=="--drop-full-names")
+            dropFullNames = true;
+        else if (arguments()[i]=="--reverse-full-names")
+            reverseFullNames = true;
+        else if (arguments()[i]=="--drop-slashes")
+        dropSlashes = true;
         else {
             out << tr("Unknown option: %1\n").arg(arguments()[i]);
             printUsage();
@@ -146,6 +164,25 @@ int Convertor::start()
     if (!res)
         return 14;
     out << tr("%1 records read\n").arg(items.count());
+    // Conversions
+    for (int i=0; i<items.count(); i++) {
+        if (swapNames)
+            items[i].swapNames();
+        if (splitNames)
+            items[i].splitNames();
+        // TODO splitNumbers now can't be implemented, because in GUI it works via ContactModel
+        // Probably, move it in ContactList in future
+        if (generateFullNames)
+            items[i].fullName = items[i].formatNames();
+        if (dropFullNames)
+            items[i].fullName.clear();
+        if (reverseFullNames)
+            items[i].reverseFullName();
+        if (dropSlashes)
+            items[i].dropSlashes();
+        // TODO intlPhonePrefix implement after CountryManager create
+        // items[i].intlPhonePrefix(cRule);
+    }
     //Define output format
     gd.preferredVCFVersion = GlobalConfig::VCF21;
     IFormat* oFormat = 0;
@@ -188,7 +225,7 @@ void Convertor::printUsage()
 {
     out << tr(
         "Usage:\n" \
-        "contconv -i inputfile -o outfile -f outformat [-w] [-d|-s]\n" \
+        "contconv -i inputfile -o outfile -f outformat [-w] [-d|-s] [commands]\n" \
         "\n" \
         "Possible values for outformat:\n" \
         "copy - same as input format, if atodetected (not works with MPB)\n" \
@@ -202,6 +239,12 @@ void Convertor::printUsage()
         "-w - force overwrite output single file, if exists (directories overwrites already)\n" \
         "-s - write VCF as single file (by default, write as in input)\n" \
         "-d - write VCFs as directory (not compatible with -d)\n" \
+        "Commands:\n" \
+        "--swap-names - swap first and last name" \
+        "--split-names - split name by spaces" \
+        "--generate-full-names - generate full (formatted) name by names" \
+        "--drop-full-names - clear full (formatted) name" \
+        "--drop-slashes - remove back slashes and other SIM-legacy from names" \
         "\n"); // TODO filter
 }
 
