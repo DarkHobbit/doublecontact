@@ -3,12 +3,12 @@ You can contact me at pub@zvyozdochkin.ru.
 
 0.1:
 * --fullscreen not works on Mac
-* проверить, как работает на charset, отличных от utf-8 (codec->toUnicode, у меня везде toLocal8Bit, а это, вероятно, неправильно) - на 2счёта, кажется, упоминался пример?
-* add statistics and filter to console convertor
+* add filter to console convertor
 * проверить на RFC
+* проверить, как работает на charset, отличных от utf-8 (codec->toUnicode, у меня везде toLocal8Bit, а это, вероятно, неправильно) - на 2счёта, кажется, упоминался пример?
 * coverity scan integration
 * cmake and cpack support for various packaging
-* рус. описание (багрепортинг, convertcontact и меню ред. фото)
+* рус. описание (багрепортинг, convertcontact, меню ред. фото, благодарности)
 * english manual
 * show to friends :)
 * add do-page (Ya?)
@@ -17,6 +17,7 @@ You can contact me at pub@zvyozdochkin.ru.
 * ukrainian and belarussian language files
 * set doxygen labels
 * make changelog file with 1 line :)
+* в анонсе призвать помочь с csv и предупредить насчёт не-UTF кодировок
 
 0.2:
 * csv support

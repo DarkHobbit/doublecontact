@@ -37,6 +37,7 @@ int Convertor::start()
         return 1;
     }
     QString inPath, outPath, outFormat;
+    bool infoMode = false;
     bool forceOverwrite = false;
     bool forceSingleFile = false;
     bool forceDirectory = false;
@@ -47,14 +48,16 @@ int Convertor::start()
     bool reverseFullNames = false;
     bool dropSlashes = false;
     for (int i=1; i<arguments().count(); i++) {
-        if (arguments()[i]=="-i") {
+        if (arguments()[i]=="-i" || arguments()[i]=="--info") {
             i++;
             if (i==arguments().count()) {
-                out << tr("Error: -i option present, but file path is missing\n");
+                out << tr("Error: %1 option present, but file path is missing\n").arg(arguments()[i-1]);
                 printUsage();
                 return 2;
             }
             inPath = arguments()[i];
+            if (arguments()[i-1]=="--info")
+                    infoMode = true;
             continue;
         }
         else if (arguments()[i]=="-o") {
@@ -99,7 +102,7 @@ int Convertor::start()
         else if (arguments()[i]=="--reverse-full-names")
             reverseFullNames = true;
         else if (arguments()[i]=="--drop-slashes")
-        dropSlashes = true;
+            dropSlashes = true;
         else {
             out << tr("Unknown option: %1\n").arg(arguments()[i]);
             printUsage();
@@ -112,12 +115,12 @@ int Convertor::start()
         printUsage();
         return 7;
     }
-    if (outPath.isEmpty()) {
+    if (outPath.isEmpty() && !infoMode) {
         out << tr("Error: Output path is missing\n");
         printUsage();
         return 8;
     }
-    if (outFormat.isEmpty()) {
+    if (outFormat.isEmpty() && !infoMode) {
         out << tr("Error: Output format name is missing\n");
         printUsage();
         return 9;
@@ -131,12 +134,17 @@ int Convertor::start()
         out << tr("Error: -d option applicable only for vCard format");
         return 11;
     }
+    if (infoMode && !(outPath.isEmpty() && outFormat.isEmpty())) {
+        out << tr("Error: Command --info is not compatible with -o and -f options\n");
+        printUsage();
+        return 12;
+    }
     // Check if output file exists
     QFile of(outPath);
     if (of.exists() && !forceOverwrite && !QFileInfo(outPath).isDir()) {
         out << tr("Error: Output file already exists, use -w if necessary\n");
         printUsage();
-        return 12;
+        return 13;
     }
     // Define, create file or directory at output
     // (default: as input)
@@ -155,15 +163,20 @@ int Convertor::start()
         iFormat = new VCFDirectory();
     if (!iFormat) {
         out << factory.error << "\n";
-        return 13;
+        return 14;
     }
     ContactList items;
     bool res = iFormat->importRecords(inPath, items, false);
     logFormat(iFormat);
     delete iFormat;
     if (!res)
-        return 14;
+        return 15;
     out << tr("%1 records read\n").arg(items.count());
+    // Show statistics, if info mode switched on
+    if (infoMode) {
+        out << "\n" << items.statistics() << "\n";
+        return 0;
+    }
     // Conversions
     for (int i=0; i<items.count(); i++) {
         if (swapNames)
@@ -209,7 +222,7 @@ int Convertor::start()
             oFormat = new MPBFile();
         else {
             out << "Error: Can't autodetect input format\n";
-            return 15;
+            return 16;
         }
     }
     // Write
@@ -217,7 +230,7 @@ int Convertor::start()
     logFormat(oFormat);
     delete oFormat;
     out << "Output file successfully written\n";
-    return res ? 0 : 16;
+    return res ? 0 : 17;
 }
 
 // Print program usage
@@ -226,9 +239,10 @@ void Convertor::printUsage()
     out << tr(
         "Usage:\n" \
         "contconv -i inputfile -o outfile -f outformat [-w] [-d|-s] [commands]\n" \
+        "contconv --info inputfile\n" \
         "\n" \
         "Possible values for outformat:\n" \
-        "copy - same as input format, if atodetected (not works with MPB)\n" \
+        "copy - same as input format, if atodetected\n" \
         "vcf21 - vCard version 2.1\n" \
         "vcf30 - vCard version 3.0\n" \
         "vcfauto - vCard version as in input file\n" \
@@ -244,7 +258,9 @@ void Convertor::printUsage()
         "--split-names - split name by spaces" \
         "--generate-full-names - generate full (formatted) name by names" \
         "--drop-full-names - clear full (formatted) name" \
+        "--reverse-full-names - swap parts of full (formatted) name"
         "--drop-slashes - remove back slashes and other SIM-legacy from names" \
+        "--info - show statistic info about inputfile (incompatible with -o and -f options)" \
         "\n"); // TODO filter
 }
 
