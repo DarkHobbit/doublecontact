@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DataExchangeInfo>
+<RecordInfo>
+<VendorInfo>VendorUDX</VendorInfo>
+<DeviceInfo>DeviceUDX</DeviceInfo>
+<UdxVersion>1.0</UdxVersion>
+<UserAgent>AgentUDX</UserAgent>
+<UserInfo>UserUDX</UserInfo>
+<Encoding>UTF-8</Encoding>
+<FileSize>873       </FileSize>
+<Date>04.01.2017</Date>
+<Language>CHS</Language>
+<RecordOfvCard>
+<vCardVersion>2.1</vCardVersion>
+<vCardRecord>2</vCardRecord>
+<vCardLength>298       </vCardLength>
+</RecordOfvCard>
+<RecordOfvCalendar/>
+<RecordOfSMS/>
+<RecordOfMMS/>
+<RecordOfEmail/>
+</RecordInfo>
+<vCard>
+<vCardInfo>
+<Sequence>1</Sequence>
+<vCardField>
+<N>;Doe John</N>
+<TELWORK>+1-213-555-1234</TELWORK>
+</vCardField>
+</vCardInfo>
+<vCardInfo>
+<Sequence>2</Sequence>
+<vCardField>
+<N>;Попов Александр</N>
+<TEL>+79101234567</TEL>
+<EMAIL>alexpopov@spb.ru</EMAIL>
+</vCardField>
+</vCardInfo>
+</vCard>
+</DataExchangeInfo>

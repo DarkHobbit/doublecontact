@@ -3,7 +3,6 @@ You can contact me at pub@zvyozdochkin.ru.
 
 0.1:
 * --fullscreen not works on Mac
-* проверить на RFC
 * проверить, как работает на charset, отличных от utf-8 (codec->toUnicode, у меня везде toLocal8Bit, а это, вероятно, неправильно) - на 2счёта, кажется, упоминался пример?
 * don't remove backslashes, if it escape comma or semicolon (RFC, sec. 5)
 * escape comma or semicolon by backslash, if user entered it
@@ -25,8 +24,9 @@ You can contact me at pub@zvyozdochkin.ru.
 * duplicate search (and merging, probably make unified merging dialog with panels compare merging)
 * settings - fonts
 * только по желанию пользователя (не по умолчанию) подсвечивать жёлтым не только неизвестные, но и нередактируемые?
-* m.b. warning empty types on load (after user feedback about it)
+* m.b. switch off warning empty types on load (after user feedback about it)
 * more universal base64 support (see RFC exampple), m.b. in decodeValue
+* add vCard 2.1 example in testdata
 * before vCard 4.0: warning if cardinality violated, restructure fields with cardinality * (NOTE, ADR, etc.)
 * vCard 4.0 support
 * MPB: extra data view (SMS, calls...) need write core/formats/common/pdudata.*
