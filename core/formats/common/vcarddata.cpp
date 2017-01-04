@@ -82,7 +82,7 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
             int syncMLRef = -1;
             for (int i=1; i<vType.count(); i++) {
                 if (vType[i].startsWith("ENCODING=", Qt::CaseInsensitive))
-                    encoding = vType[i].mid(QString("ENCODING=").length());
+                    encoding = vType[i].mid(QString("ENCODING=").length()).toUpper();
                 else if (vType[i].startsWith("CHARSET=", Qt::CaseInsensitive))
                     charSet = vType[i].mid(QString("CHARSET=").length());
                 else if (vType[i].startsWith("TYPE=", Qt::CaseInsensitive)
