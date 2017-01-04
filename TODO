@@ -5,6 +5,8 @@ You can contact me at pub@zvyozdochkin.ru.
 * --fullscreen not works on Mac
 * проверить на RFC
 * проверить, как работает на charset, отличных от utf-8 (codec->toUnicode, у меня везде toLocal8Bit, а это, вероятно, неправильно) - на 2счёта, кажется, упоминался пример?
+* don't remove backslashes, if it escape comma or semicolon (RFC, sec. 5)
+* escape comma or semicolon by backslash, if user entered it
 * coverity scan integration
 * cmake and cpack support for various packaging
 * рус. описание (багрепортинг, convertcontact, меню ред. фото, благодарности)
