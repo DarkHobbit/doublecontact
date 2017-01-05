@@ -5,9 +5,5 @@ before_install:
  - sudo apt-get install qt4-dev-tools qt4-qmake
 
 script:
- - cd app
- - qmake doublecontact.pro
- - make
- - cd ../contconv
- - qmake contconv.pro
+ - qmake all.pro
  - make
