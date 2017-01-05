@@ -3,5 +3,5 @@
 TEMPLATE = subdirs
 
 SUBDIRS = \
-    ./app \
+    ./app/doublecontact.pro \
     ./contconv
