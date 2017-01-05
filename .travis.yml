@@ -1,3 +1,13 @@
+addons:
+  coverity_scan:
+    project:
+      name: "DoubleContact"
+      description: "Offline DE-independent Qt-based contact manager primarily for phonebooks editing/merging"
+    notification_email: pub@zvyozdochkin.ru
+    build_command_prepend: qmake all.pro
+    build_command: make
+    branch_pattern: master
+
 language: cpp
 
 before_install:
