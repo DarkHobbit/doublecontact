@@ -1,12 +1,15 @@
-#addons:
-#  coverity_scan:
-#    project:
-#      name: "DoubleContact"
-#      description: "Offline DE-independent Qt-based contact manager primarily for phonebooks editing/merging"
-#    notification_email: pub@zvyozdochkin.ru
-#    build_command_prepend: qmake all.pro
-#    build_command: make
-#    branch_pattern: master
+env:
+  global:
+   - secure: "Rf7ngZdoeyullT7yklka4qBQz+8pPIpxqiTUflvE8R3n1ciTbuoJHvL1lC9GhKR2YCf9ASJn4PAQnSD1lY+TlgfuuzGPIgzKn52sw5ScMzXhUyVMuObX8Nl+2XoBAITjH1I2yXcMzIuxk+aEAG850Yg7DZyRxe8dyxcPO0Tjzzz2X8cA9wZaTytA/IfNEz0v2szqOGNt0O9jf+WVr2WeAkQ+R5Q4Cg27T5Bf2NuMD6/cNyZUBlvCtm+2GygGeURPVsKc9seBbgs7env7QZtJeIq9RjF+8uVuz1vw90WJTf3simqV2eAHUp/Z2uEll5Qr/QC7LGlTcyxcUxCetwfGVEgA6vRI45XefnjAb3J9znOZFrNMZt5RHKpf1VKLppchuDoarE/RSuICFnckC1BE+cEansRvjMjKIqiHpgK65QfRZl9ajFCetNMVeHykxmFLnYdF08KtSsxggAcVCCvTVZx7lkexpq4+2sRJjN+SFCCHMZjmXBMhejzi5kP6x5/2P5qVkBdW8+8DW4HtcZG/2vjmMCrQz1ynOCtwPILnDak6K+F/MtZgdcIy7CkTh+ggoT0TCdKOXmj0Ea5Fdgl4+15FeNtwTe114SunQR0wloaW6SBNkMNnQtfKm/sGnVjJFi+wm8TDjLN1QdBQnAgiYNhHKw3i9Q9RfCgKz5qlMrw="
+addons:
+  coverity_scan:
+    project:
+      name: "DarkHobbit/doublecontact"
+      description: "Offline DE-independent Qt-based contact manager primarily for phonebooks editing/merging"
+    notification_email: pub@zvyozdochkin.ru
+    build_command_prepend: qmake all.pro
+    build_command: make
+    branch_pattern: master
 
 language: cpp
 
