@@ -3,9 +3,9 @@ You can contact me at pub@zvyozdochkin.ru.
 
 0.1:
 * --fullscreen not works on Mac
-* coverity scan integration
+* coverity scan: view errors
 * cmake and cpack support for various packaging
-* рус. описание (багрепортинг, convertcontact, меню ред. фото, благодарности)
+* рус. описание (доставить ссылки и названия фирм)
 * english manual
 * show to friends :)
 * add do-page (Ya?)
@@ -43,6 +43,7 @@ See also ownCloud and iCloud.
 
 0.3:
 * network export/import
+* add graphic editor call to menu in Photo button at contact dialog
 * C++11?
 
 0.4:
