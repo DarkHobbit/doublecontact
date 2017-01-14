@@ -9,3 +9,8 @@ Language: C++.
 
 Libraries: Qt4/5.
 
+## Build ##
+
+Use qmake for build doublecontact. Project all.pro in repo root builds both GUI (doublecontact) and console (contconv) application.
+
+Repo also contains config files for cmake, but currently it isn't usable. Use qmake.
