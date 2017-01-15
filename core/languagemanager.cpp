@@ -11,6 +11,7 @@
  *
  */
 
+#include <QCoreApplication>
 #include <QFile>
 #include <QLocale>
 #include <QRegExp>
@@ -65,6 +66,15 @@ QString LanguageManager::systemLanguageNativeName()
             return nativeNamesByEnglish[englishName];
     else
         return "English (United Kingdom)";
+}
+
+QString LanguageManager::transPath()
+{
+#ifdef WIN32
+    return qApp->applicationDirPath();
+#else
+    return "/usr/share/doublecontact/translations";
+#endif
 }
 
 LanguageManager languageManager;

@@ -26,6 +26,7 @@ public:
     QStringList nativeNames();
     QString nativeNameToCode(const QString& name);
     QString systemLanguageNativeName();
+    static QString transPath();
 private:
     // Ported from Stellarium, but map is reversed
     // Native name is key, code is value

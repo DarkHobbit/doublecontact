@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
     // Set UI language
     QString language = configManager.readLanguage();
     QTranslator tr;
-    if (!languageManager.load(a.applicationDirPath()+QDir::separator()+QString("iso639-1.utf8")))
+    if (!languageManager.load(LanguageManager::transPath()+QDir::separator()+QString("iso639-1.utf8")))
         QMessageBox::warning(0, S_WARNING, "Language list loading error");
     else {
         if (language.isEmpty()) {
@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
             configManager.writeLanguage(language);
         }
         QString langCode = languageManager.nativeNameToCode(language);
-        QString langPath = a.applicationDirPath()+QDir::separator()+QString("doublecontact_%1.qm").arg(langCode);
+        QString langPath = LanguageManager::transPath()+QDir::separator()+QString("doublecontact_%1.qm").arg(langCode);
         if (!tr.load(langPath))
             QMessageBox::warning(0, S_WARNING, "UI loading error");
         else {
