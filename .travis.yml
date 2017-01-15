@@ -20,3 +20,5 @@ before_install:
 script:
  - qmake all.pro
  - make
+ - cd pack/deb
+ - ./make-deb-pkg 0.1
