@@ -7,10 +7,10 @@ then
   exit 1
 fi
 
-PKG_NAME=doublecontact-${DC_VER}
+PKG_NAME=doublecontact_${DC_VER}_amd64
 
 cd ../..
 ./pack/make-bin-image . ./${PKG_NAME}
-# TODO change version number in control file
+# TODO change version number and arch in control file
 cp -R ./pack/deb/DEBIAN ./${PKG_NAME}/
-fakeroot dpkg-deb --build ./${PKG_NAME}/ ${PKG_NAME}
+fakeroot dpkg-deb --build ./${PKG_NAME}/ ./${PKG_NAME}.deb
