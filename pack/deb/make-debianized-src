@@ -1,0 +1,12 @@
+#!/bin/bash
+
+DC_VER=$1
+if [ -z "$DC_VER" ]
+then
+  echo "Version number is missing"
+  exit 1
+fi
+
+cd ../..
+git archive master --format=tar --prefix=doublecontact-${DC_VER}/ | tar xf -
+cp -R pack/deb/debian doublecontact-${DC_VER}/

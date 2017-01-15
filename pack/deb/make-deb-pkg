@@ -1,0 +1,16 @@
+#!/bin/bash
+
+DC_VER=$1
+if [ -z "$DC_VER" ]
+then
+  echo "Version number is missing"
+  exit 1
+fi
+
+PKG_NAME=doublecontact-${DC_VER}
+
+cd ../..
+./pack/make-bin-image . ./${PKG_NAME}
+# TODO change version number in control file
+cp -R ./pack/deb/DEBIAN ./${PKG_NAME}/
+fakeroot dpkg-deb --build ./${PKG_NAME}/ ${PKG_NAME}

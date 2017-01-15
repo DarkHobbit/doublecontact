@@ -1,0 +1,20 @@
+#!/bin/bash
+
+SRC_DIR=$1
+PKG_DIR=$2
+
+BIN_PATH=${PKG_DIR}/usr/bin
+TRANS_PATH=${PKG_DIR}/usr/share/doublecontact/translations
+DOC_PATH=${PKG_DIR}/usr/share/doc/doublecontact
+
+mkdir -p ${BIN_PATH}
+mkdir -p ${TRANS_PATH}
+mkdir -p ${DOC_PATH}
+
+cp ${SRC_DIR}/app/doublecontact ${BIN_PATH}/
+cp ${SRC_DIR}/contconv/contconv ${BIN_PATH}/
+cp ${SRC_DIR}/translations/*.qm ${TRANS_PATH}/
+cp ${SRC_DIR}/translations/iso639-1.utf8 ${TRANS_PATH}/
+cp ${SRC_DIR}/doc/* ${DOC_PATH}/
+cp ${SRC_DIR}/COPYING ${DOC_PATH}/
+cp ${SRC_DIR}/README.md ${DOC_PATH}/
