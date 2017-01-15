@@ -3,17 +3,18 @@ You can contact me at pub@zvyozdochkin.ru.
 
 0.1:
 * --fullscreen not works on Mac
-* coverity scan: view/fix errors
-* cmake and cpack support for various packaging OR make package-scripts and move cmake work to 0.2-0.3
-* version number and arch in control file
 * рус. описание (доставить ссылки и названия фирм)
 * english manual
+* coverity scan: view/fix errors
+* make package-scripts for RPM, WIN and MAC
+* version number and arch in control file
 * show to friends :)
 * add do-page (Ya?)
 * before translations: insert surname ref in messages in vcarddata.cpp (need modify some translated messages)
+* set doxygen labels
+* make prev. packages for translators???
 * register on weblate (transifex?)
 * ukrainian and belarussian language files
-* set doxygen labels
 * make doc/changelog file with 1 line :)
 * make branch for 0.1
 * в анонсе призвать помочь с csv и предупредить насчёт не-UTF кодировок
@@ -23,6 +24,7 @@ You can contact me at pub@zvyozdochkin.ru.
 * duplicate search (and merging, probably make unified merging dialog with panels compare merging)
 * settings - fonts
 * make .desktop file for deb/rpm
+* cmake and cpack support for various packaging
 * только по желанию пользователя (не по умолчанию) подсвечивать жёлтым не только неизвестные, но и нередактируемые?
 * m.b. switch off warning empty types on load (after user feedback about it)
 * more universal base64 support (see RFC exampple), m.b. in decodeValue
