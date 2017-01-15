@@ -27,6 +27,7 @@ VCardData::VCardData()
     skipEncoding = false;
     forceShortType = false;
     forceShortDate = false;
+    formatVersion = GlobalConfig::VCF30;
 }
 
 bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append, QStringList& errors)

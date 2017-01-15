@@ -24,6 +24,24 @@ CompareDialog::CompareDialog(QWidget *parent) :
     pFullName(0), pNames(0)
 {
     ui->setupUi(this);
+    pFullName = 0;
+    pNames = 0;
+    pPhones = 0;
+    pEmails = 0;
+    pBDay = 0;
+    pAnn = 0;
+    pDesc = 0;
+    pSortString = 0;
+    pPhoto = 0;
+    pOrg = 0;
+    pTitle = 0;
+    pAddrHome = 0;
+    pAddrWork = 0;
+    pNickName = 0;
+    pURL = 0;
+    pJabber = 0;
+    pICQ = 0;
+    pSkype = 0;
 }
 
 CompareDialog::~CompareDialog()

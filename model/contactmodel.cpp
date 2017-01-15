@@ -152,8 +152,7 @@ bool ContactModel::open(const QString& path, FormatType fType, QStringList &erro
     case ftDirectory:
         format = new VCFDirectory();
         break;
-    case ftAuto: // Only to avoid warning :(
-    case ftNew: // Only to avoid warning :(
+    default: // Only to avoid warning :(
         break;
     }
     if (!format) {
