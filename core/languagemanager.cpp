@@ -12,6 +12,7 @@
  */
 
 #include <QCoreApplication>
+#include <QDir>
 #include <QFile>
 #include <QLocale>
 #include <QRegExp>
@@ -73,8 +74,14 @@ QString LanguageManager::transPath()
 #ifdef WIN32
     return qApp->applicationDirPath();
 #else
-    return "/usr/share/doublecontact/translations";
+    if (QDir("/usr/share/doublecontact/translations").exists())
+        // Standard case
+        return "/usr/share/doublecontact/translations";       
+    else
+        // Developer case
+        return qApp->applicationDirPath();
 #endif
+    // TODO what for mac?
 }
 
 LanguageManager languageManager;
