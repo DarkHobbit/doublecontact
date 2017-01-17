@@ -12,12 +12,12 @@ Features:
 * two panel view of two address books, with copy/move features;
 * single record editing;
 * group operations under selected records:
-  - firstname/lastname swap;
+  - first/last name swap;
   - first/last name splitting;
   - phone number internationalization for some countries (in general, for ex-USSR);
   - contact splitting for SIM card export (one phone per contact)
   - contact merge;
-  -drop slashes and other specials;
+  - drop slashes and other specials;
   - formatted name generation;
 * two address books comparison with highlighting of identical, similar and differ contacts;
 * interactive merge according to the comparison results.
