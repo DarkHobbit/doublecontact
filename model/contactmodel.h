@@ -71,6 +71,11 @@ public:
 signals:
 
 public slots:
+protected:
+#if QT_VERSION < 0x040600
+    void beginResetModel() {};
+    void endResetModel() { reset(); };
+#endif
 private:
     QString _source; // file path or network source
     FormatType _sourceType;
