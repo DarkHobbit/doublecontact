@@ -63,16 +63,15 @@ MainWindow::MainWindow(QWidget *parent) :
     selection = selectedView->selectionModel()->selectedRows();
     recent.read();
     // Test data
-    if (qApp->arguments().contains("--debugdata") || qApp->arguments().contains("-d"))
+    if (gd.debugDataMode)
         modLeft->testList();
     // File command-line data
-    else if (qApp->arguments().count()>1 &&
-             !(qApp->arguments().contains("--quiet") || qApp->arguments().contains("-q")))
+    else if (gd.startupFiles.count()>0 && !gd.quietMode)
     {
-        open(modLeft, qApp->arguments()[1], ftAuto);
-        if (qApp->arguments().count()>2) {
+        open(modLeft, gd.startupFiles[0], ftAuto);
+        if (gd.startupFiles.count()>1) {
             ui->action_Two_panels->setChecked(true);
-            open(modRight, qApp->arguments()[2], ftAuto);
+            open(modRight, gd.startupFiles[1], ftAuto);
         }
     }
     // Previous session file data

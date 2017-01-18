@@ -47,9 +47,25 @@ int main(int argc, char *argv[])
         }
     }
     configManager.readConfig(); // After contactColumnHeaders.fill()! Else national UI not works
+    // Arguments parse TODO m.b. move this code to separate file for QML support
+    gd.debugDataMode = false;
+    gd.fullScreenMode = false;
+    gd.quietMode = false;
+    gd.startupFiles.clear();
+    for (int i=1; i<qApp->arguments().count(); i++) { // foreach not work, because arg0 is program name
+        const QString ar = qApp->arguments()[i];
+        if (ar=="--debugdata" ||ar=="-d")
+            gd.debugDataMode = true;
+        else if (ar=="--quiet" || ar=="-q")
+            gd.quietMode = true;
+        else if (ar=="--fullscreen" || ar=="-f")
+            gd.fullScreenMode = true;
+        else if (gd.startupFiles.count()<2)
+            gd.startupFiles << ar;
+    }
     // Main Window
     MainWindow w;
-    if (qApp->arguments().contains("--fullscreen") || qApp->arguments().contains("-f"))
+    if (gd.fullScreenMode)
         w.showMaximized();
     else
         w.show();

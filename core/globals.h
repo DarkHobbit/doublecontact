@@ -130,6 +130,11 @@ struct GlobalConfig {
     // Load
     QString defaultEmptyPhoneType; // if phone w/o type was in loaded file
     bool warnOnNonStandardTypes;
+    // Session-specific data from command line
+    bool fullScreenMode; // Maximize main window at startup
+    bool debugDataMode; // Show debug data at startup
+    bool quietMode; // Don't load any files
+    QStringList startupFiles;
 } gd;
 
 #endif // GLOBALS_H
