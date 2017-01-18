@@ -1099,28 +1099,28 @@ SMS: %7
     </message>
     <message>
         <location filename="../core/formats/common/vcarddata.cpp" line="145"/>
-        <source>Non-standard phone type at line %1: %2</source>
-        <translation>Нестандартный тип телефона в строке %1: %2</translation>
+        <source>Non-standard phone type at line %1: %2%3</source>
+        <translation>Нестандартный тип телефона в строке %1: %2%3</translation>
     </message>
     <message>
         <location filename="../core/formats/common/vcarddata.cpp" line="165"/>
-        <source>Non-standard email type at line %1: %2</source>
-        <translation>Нестандартный тип электронной почты в строке %1: %2</translation>
+        <source>Non-standard email type at line %1: %2%3</source>
+        <translation>Нестандартный тип электронной почты в строке %1: %2%3</translation>
     </message>
     <message>
         <location filename="../core/formats/common/vcarddata.cpp" line="185"/>
-        <source>Unsupported photo type at line %1: %2</source>
-        <translation>Неподдерживаемый тип фотографии в строке %1: %2</translation>
+        <source>Unsupported photo type at line %1: %2%3</source>
+        <translation>Неподдерживаемый тип фотографии в строке %1: %2%3</translation>
     </message>
     <message>
         <location filename="../core/formats/common/vcarddata.cpp" line="196"/>
-        <source>Unknown encoding type at line %1: %2</source>
-        <translation>Неизвестное кодирование в строке %1: %2</translation>
+        <source>Unknown encoding type at line %1: %2%3</source>
+        <translation>Неизвестное кодирование в строке %1: %2%3</translation>
     </message>
     <message>
         <location filename="../core/formats/common/vcarddata.cpp" line="209"/>
-        <source>Unknown address type at line %1: %2</source>
-        <translation>Неизвестный тип адреса в строке %1: %2</translation>
+        <source>Unknown address type at line %1: %2%3</source>
+        <translation>Неизвестный тип адреса в строке %1: %2%3</translation>
     </message>
     <message>
         <location filename="../core/formats/common/vcarddata.cpp" line="252"/>

@@ -1086,12 +1086,12 @@ Save changes?</source>
     </message>
     <message>
         <location filename="../core/formats/common/vcarddata.cpp" line="145"/>
-        <source>Non-standard phone type at line %1: %2</source>
+        <source>Non-standard phone type at line %1: %2%3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../core/formats/common/vcarddata.cpp" line="165"/>
-        <source>Non-standard email type at line %1: %2</source>
+        <source>Non-standard email type at line %1: %2%3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1101,12 +1101,12 @@ Save changes?</source>
     </message>
     <message>
         <location filename="../core/formats/common/vcarddata.cpp" line="196"/>
-        <source>Unknown encoding type at line %1: %2</source>
+        <source>Unknown encoding type at line %1: %2%3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../core/formats/common/vcarddata.cpp" line="209"/>
-        <source>Unknown address type at line %1: %2</source>
+        <source>Unknown address type at line %1: %2%3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

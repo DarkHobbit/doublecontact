@@ -3,17 +3,15 @@ You can contact me at pub@zvyozdochkin.ru.
 
 0.1:
 * --fullscreen not works on Mac
-* рус. описание (доставить ссылки и названия фирм)
 * english manual
 * coverity scan: view/fix errors
 * make package-scripts for RPM, WIN and MAC
 * version number and arch in control file
 * show to friends :)
-* add do-page (Ya?)
-* before translations: insert surname ref in messages in vcarddata.cpp (need modify some translated messages)
+* add do-page (Ya?). Correct manuals
 * set doxygen labels
 * make prev. packages for translators???
-* register on weblate (transifex?)
+* register on weblate (transifex?). Correct manuals
 * ukrainian and belarussian language files
 * make doc/changelog file with 1 line :)
 * make branch for 0.1

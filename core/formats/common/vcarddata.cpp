@@ -38,6 +38,7 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
     ContactItem item;
     if (!append)
         list.clear();
+    QString visName = "";
     // Merge quoted-printable linesets
     for (int i=0; i<lines.count(); i++) {
         if (i>=lines.count()) break; // need, because count changed inside this cycle
@@ -58,6 +59,7 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                 errors << QObject::tr("Unclosed record before line %1").arg(line+1);
             recordOpened = true;
             item.clear();
+            visName.clear();
             item.originalFormat = "VCARD";
         }
         else if (s.startsWith("END:VCARD", Qt::CaseInsensitive)) {
@@ -114,13 +116,20 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
             // Known tags
             if (tag=="VERSION")
                 item.version = decodeValue(vValue[0], errors);
-            else if (tag=="FN")
+            else if (tag=="FN") {
                 item.fullName = decodeValue(vValue[0], errors);
+                // Name compilation for error messages
+                if (visName.isEmpty() && !item.fullName.isEmpty())
+                    visName = " (" + item.fullName + ")";
+            }
             else if (tag=="N") {
                 foreach (const QString& name, vValue)
                     item.names << decodeValue(name, errors);
                 // If empty parts not in-middle, remove it
                 item.dropFinalEmptyNames();
+                // Name compilation for error messages
+                if (visName.isEmpty() && !item.names.isEmpty())
+                    visName = " (" + item.formatNames() + ")";
             }
             else if (tag=="NOTE")
                 item.description = decodeValue(vValue[0], errors);
@@ -131,10 +140,7 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                 phone.value = decodeValue(vValue[0], errors);
                 // Phone type(s)
                 if (types.isEmpty()) {
-                    QString surName = "";
-                    if (!item.names.isEmpty())
-                        surName = " (" + item.names[0] + ")"; // TODO m.b. use it in other messages AFTER NAME!!! Before trans?
-                    errors << QObject::tr("Missing phone type at line %1: %2%3").arg(line+1).arg(vValue[0]).arg(surName);
+                    errors << QObject::tr("Missing phone type at line %1: %2%3").arg(line+1).arg(vValue[0]).arg(visName);
                     // TODO mb. no type is valid (in this case compare container and contact edit dialog must be updated)
                     // TODO in this case make warning optional in settings (and, probably, false by default)
                     phone.types << defaultEmptyPhoneType.toUpper();
@@ -145,7 +151,7 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                         bool isStandard;
                         Phone::standardTypes.translate(tType, &isStandard);
                         if (!isStandard)
-                            errors << QObject::tr("Non-standard phone type at line %1: %2").arg(line+1).arg(tType);
+                            errors << QObject::tr("Non-standard phone type at line %1: %2%3").arg(line+1).arg(tType).arg(visName);
                     }
                 phone.syncMLRef = syncMLRef;
                 item.phones.push_back(phone);
@@ -165,7 +171,7 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                         bool isStandard;
                         Email::standardTypes.translate(eType, &isStandard);
                         if (!isStandard)
-                            errors << QObject::tr("Non-standard email type at line %1: %2").arg(line+1).arg(eType);
+                            errors << QObject::tr("Non-standard email type at line %1: %2%3").arg(line+1).arg(eType).arg(visName);
                     }
                 email.syncMLRef = syncMLRef;
                 item.emails.push_back(email);
@@ -185,7 +191,7 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                 else {
                     item.photo.pType = types[0];
                     if (item.photo.pType.toUpper()!="JPEG" && item.photo.pType.toUpper()!="PNG")
-                        errors << QObject::tr("Unsupported photo type at line %1: %2").arg(line+1).arg(typeVal);
+                        errors << QObject::tr("Unsupported photo type at line %1: %2%3").arg(line+1).arg(typeVal).arg(visName);
                     if (encoding=="B" || encoding=="BASE64") {
                         QString binaryData = vValue[0];
                         while (line<lines.count()-1 && !lines[line+1].trimmed().isEmpty() && lines[line+1].left(1)==" ") {
@@ -196,7 +202,7 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                         item.photo.data = QByteArray::fromBase64(binaryData.toLatin1());
                     }
                     else
-                        errors << QObject::tr("Unknown encoding type at line %1: %2").arg(line+1).arg(encoding);
+                        errors << QObject::tr("Unknown encoding type at line %1: %2%3").arg(line+1).arg(encoding).arg(visName);
                 }
             }
             else if (tag=="ORG")
@@ -209,7 +215,7 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                 else if (types.contains("work", Qt::CaseInsensitive))
                     importAddress(item.addrWork, types, vValue, errors);
                 else
-                    errors << QObject::tr("Unknown address type at line %1: %2").arg(line+1).arg(types.join(";"));
+                    errors << QObject::tr("Unknown address type at line %1: %2%3").arg(line+1).arg(types.join(";")).arg(visName);
             }
             // Internet
             else if (tag=="NICKNAME")
