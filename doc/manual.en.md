@@ -28,7 +28,7 @@ Before loading, you must prepare address book file(s).
 
 For example, Android phones allows save its address book in single VCF file (**Contacts -> Import/Export -> Export contacts to: -> SD card** in device menu). Depending on the Android version and modification, menu items may slightly differ from it. Copy result file from memory card to PC.
 
-You can get similar file from hardware phones - SonyEricsson and some other vendors. Special case - Philips Xenium phones: it use UDX, its own format. DoubleContact also support this format.
+You may get similar file from hardware phones - SonyEricsson and some other vendors. Special case - Philips Xenium phones: it use UDX, its own format. DoubleContact also support this format.
 
 Some phones and devices (for example, some Nokia PC Suite versions) save each contact in separate VCF file. In this case copy entire directory to PC.
 
@@ -86,7 +86,101 @@ Main editing mode in DoubleContact is a single-record editing. Group editing als
 
 To edit one contact, choose it and press "Edit". You also can press Enter key or double-click the contact item. DoubleContact will open an "Edit contact" dialog. It has a multi-tab view.
 
-On "General" tab, 
+On "General" tab, total fields number depends of contact fulness: names - from 2 to 5, minimal phone numbers and emails - 1 (maximum not limited). General names order: last (family) name, first () name, additional names, honorific prefixes, and honorific suffixes. All fields are optional.
+
+You can enter phone numbers and emails in free form. But if this fields contains invalid characters, your device, probably, will not recognize it.
+
+To add new name, phone, or email, select information kind in list next to the "Add..." button and press "Add...". To remove one of this fields, press red-crossed button near field.
+
+Entering phone, don't forget select its type: home, work, cellular, etc. You can want to combine this types (in most cases, one from simple types is combined with "preferable" type). In this case, select "Mixed...". Program will open "Phone type" window to let you make needed combinations by flags. Note that many devices treat "Voice" type as "Other".
+
+Contact can contain a birthday. In most cases, birthday contains only date: set flag, enter day, month and year. But vCard standard allows also set a birthday time. To do it, press "Details" button. Program will open "Date details" window. In it, besides date, you can set time and even time zone for it.
+
+Besides birthday, you can set other anniversary (in most cases, it's a marriage anniversary). Select "anniversary" in list near "Add..." button and press "Add..." button. Anniversary is edited as well as birthday.
+
+If contact contains photo or photo URL, it's shown in "Photo" field. Under it, you can see self-titled button. Press this button to get menu with items:
+
+* "Load image" - load photo from JPEG or PNG file. If contact already contains photo or photo URL, it will be removed;
+* "Save image" - save photo to file of same format as contact source;
+* "Set URL" - enter or edit photo URL in separate window. If contact already contains photo, it will be removed;
+* "Remove photo" - remove current photo or photo URL from contact.
+
+On "Addresses" tab, you can enter one or two addresses (home or/and work). If home and work addresses are confused, you can fix it pressing "<>" button. On same tab, you can set job title and organization name.
+
+"Internet" is the simplest tab. Here you can enter nickname, site URL and accounts in various IMs.
+
+"Other" tab contains technical internals. It can be used for bug report. Here you also can see vCard tags, known by DoubleContact, but not edited. Here you also can set string for contact sorting.
+
+At last, "Problems" tab contains unknown tags (attributes) of contact. As mentioned above, unknown tags are preserved during view/editing, and program will save it in output file. Please, send such tag samples to author.
+
+To save editing results, press "OK". Or save "Cancel" to reject changes.
+
+You also can select some contact items and call contact editing. But in this mode, you can change only few fields: job title, organization, note.
+
+To add new contact in current address book, press "Insert" in main window or Ins key. DoubleContact will open same window as for single editing.
+
+## Group operations ##
+
+Often first and last names in differ contacts of one address book are written in differ order (especially if address book is many year old). To fix it, select all items, where first and last names are confused (for example, last name is John, first name is Doe), and choose **Contact -> Swap names**. DoubleContact will exchange first and last name for all selected items.
+
+Next operation, name splitting, is needed, if name parts was written in address book as single string. This case is typical for address books, imported from old device SIM card. Select such items and choose **Contact -> Split names** (Shift+F2). DoubleContact will split names by whitespaces. For some items, after it, you may have to swap names (as described above), if name parts was confused initially.
+
+You may want join two items to one contact. In most cases, it's a two phones or one person, or him/her phone and email, etc. Select strongly two items on current panel and choose **Contact -> Join**. DoubleContact will open "Item Merge" window. In this window, equal and differ contact parts are highlighted by green and red. Use arrow buttons to copy data from one contact to other: names, phones, ermails, etc. After editing both contacts still saved in table. You can save most complete item and remove other manually.
+
+If you selected greater or less than 2 items before join, it will cause error message.
+
+Reverse operation, contact splitting by phones, is needed, if address book would be load to SIM card with no more than one phone per contact. Select splitting contacts (in most cases, simplest way is select all) and choose **Contact -> Split**.
+
+Next group operation is autogeneration of full (formatted) name by entered names (**Contact -> Generate full name**). Full name generation, in particular, facilitates comparison of two address book, only one of which contains full names. DoubleContact also allows delete previously entered full names (**Contact -> Drop full name**) and swap name parts in it (**Contact-> Reverse full name**).
+
+In some cases, if VCF file was imported from SIM card, it may contain special characters: contact names contains backslash, often accompanied with a digit. **Contact -> Drop slashes** command allows you remove this trash.
+
+Last group operation is a phone numbers internationalization (only for some countries). For Belarus, this operation replaces prefix 8 to country code +375, for Russia - 8 to +7, for Ukraine - 0 to +380.
+
+To internationalize phone numbers, select some contact ant choose **Contact -> Intl phone prefix**. DoubleContact prompts you to select a country. This function is implemented only for some countries. If you think that phone numbers internationalization is needed for your country, but the country is absent in list, please, contact author.
+
+ATTENTION! Automatic country selection is impossible, because one national prefix may correspond to differ international prefixes for various countries. For example, 8 is converted to +7 for Russia, same 8 converted to +375 for Belarus. If you try internationalize all contacts at one pass, it may corrupt phone numbers.
+Because, if address book contains both Russian and Belarusian phones in national forms, at first, select and internationalize Belarusian phones, then Russian, or vice versa. Of course, it's very rare case, but it can cause after merging of two address book, one of which initially created in Belarus, other in Russia. 
+
+
+## Address book comparison and interactive contact merging ##
+
+In two panel mode, DoubleContact allows compare two loaded address books semi-automatically.
+
+To compare two address books, choose **List -> Compare** (F3). Program will search contact pairs in both books and switch to compare mode. After search finish, all contacts will be highlighted:
+
+* unpaired contacts are highlighted in red;
+* similar contacts are highlighted in yellow;
+* identical contacts are highlighted in green.
+
+Contacts are identical if it have identical names, full (formatted) names, phones, emails, birthdays, anniversaries, sot strings, notes, photos, organizations, job titles, site URLs and IM accounts. If some of these fields are empty, it must be empty in both contacts.
+
+Checking for similar items is less trivial and use multi-pass algorithm. At first pass, DoubleContact checks items for identical phones and emails. If at least some of them are identical, contacts are similar. Thus, entire list would be checked. If pair not found, at next passes, program will check IDs, postal address, formatted names, standalone names, nicknames and organizations. Thus, checking will be performed on a more reliable criteria to less reliable. False positives can occur, we strongly recommend check such pairs manually.
+
+If you select item on one panel in compare mode, and this item have a pair at other panel, pair item also will be selected. Choose **Contact -> Compare result** (Shift+F3) to open "Item merge" window. Identical fields will be highlighted in green, differ - in red. You can sync fields by arrow buttons (left, right).
+
+Some sections, such as phones and emails, can have two kind of arrow buttons. Arrow inside section calls copying of separate phone (email), arrow outside section - copying of entire section.
+
+**Example** : we have two contacts file. First, backup.vcf, is a full but outdated backup of broken device address book. Second, sim.vcf, imported from SIM card after placing it into new device. We must combine all valuable information from both files and save it to backup_new.vcf file.
+
+At first, load backup.vcf into DoubleContact left panel. Load sim.vcf into right panel. Press F3. Some items at right panel will be highlighting in red. This means that they were added on SIM card after backup. Select these items and copy it ti left panel (F5). After it, for best contact view, use name swapping and name splitting, if needed (see chapter "Group operations").
+
+Now green items does not require your attention - these items are already OK. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
