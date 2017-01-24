@@ -165,11 +165,34 @@ Some sections, such as phones and emails, can have two kind of arrow buttons. Ar
 
 At first, load backup.vcf into DoubleContact left panel. Load sim.vcf into right panel. Press F3. Some items at right panel will be highlighting in red. This means that they were added on SIM card after backup. Select these items and copy it ti left panel (F5). After it, for best contact view, use name swapping and name splitting, if needed (see chapter "Group operations").
 
-Now green items does not require your attention - these items are already OK. 
+You must not do anything with green items - these items are already OK. But yellow items requires your attention. For example, DoubleContact found pair with "John Doe" names. Select any contact in this pair and press F3. In "Item merge" window, names and addresses highlighted by green, but phones and birthday highlighted by red. There is a new phone number appear in right list. Copy it to left list by arrow button. Also, only left panel contains a birthday. Copy it to right (generally speaking, it is not necessary, if you want save only left address book, but will help avoid confusion). Press "Yes" to save changes.
+
+After processing of all items, select left panel, choose **File -> Save as -> File**  and save the merged address book as backup_new.vcf.
+
+After repeated **List -> Compare** (F3) choosing, DoubleContact will switched in simple view mode again.
 
 
+## How to help ##
 
+DoubleContact is a free software, distributed under the terms of the GNU General Public License, either version 2 of the License, or (at your option) any later version.
 
+The first things you can help are bug reports and feature requests. DoubleContact bug tracker is placed at [GitHub](https://github.com/DarkHobbit/doublecontact/issues). If you can not work with the bug tracker, but found a critical error, send me at pub@zvyozdochkin.ru. Please, write on English or Russian.
+
+If some items in your address books are highlighted in yellow in simple view mode, it means that they have unknown tags. Send me files with such tags. I guarantee that your files will be used **only** for bug search and fixes in a program.
+
+If warning messages appears during address book loading or saving, you can save these messages via "Copy to clipboard" button and send it to me. Please, tell me name of device or program, in which file was created. It's desirable to attach address book file.
+
+Now, author working on CSV (comma-separated values) format support in DoubleContact. There isn't standard agreement, how contact must be stored in CSV files. If you are interested in CSV support, send me example of CSV file, created by your device/program or its fragment. If you want sent a fragment only, please check if entire file a header (it means that one or some first lines of file contains column names and, probably other internal information instead contacts). If header is present, send it too.
+
+The second thing you can help in development is translation to national languages. If you know a language, in which DoubleContact isn't translated - join now. TODO: url
+
+## Tips and tricks ##
+
+DoubleContact have some command-line options:
+
+* --debugdata or -d - run program with test data set (some contacts on differ languages);
+* --fullscreen or -f - run program in full screen mode;
+* --quiet or -q - don't run any address books at startup, even if 
 
 
 
