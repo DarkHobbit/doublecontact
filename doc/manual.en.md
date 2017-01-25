@@ -192,47 +192,15 @@ DoubleContact have some command-line options:
 
 * --debugdata or -d - run program with test data set (some contacts on differ languages);
 * --fullscreen or -f - run program in full screen mode;
-* --quiet or -q - don't run any address books at startup, even if 
+* --quiet or -q - don't run any address books at startup, even if "Open last files at startup" option is checked.
 
+In addition to GUI application, DoubleContact includes contconv - console format convertor. Run contconv without arguments to get help by its commands and options.
 
+## Thanks to... ##
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+The author is grateful to:
+* my wife and son - for moral support;
+* Richard Stallman - for free software idea and GPL license;
+* Linus Torvalds - for Linux kernel and git;
+* gcc, make, Qt SDK developers - for great tools that turn programming into joy;
+* GitHub, Inc, Travis CI, GmbH and Synopsys, Inc. - for GitHub, Travis CI and Coverity Scan, help services to write programs and bring them to the people.
