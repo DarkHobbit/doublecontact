@@ -54,9 +54,16 @@ unix {
 TRANSLATIONS += \
     ../translations/doublecontact_en_GB.ts \
     ../translations/doublecontact_ru_RU.ts
+
 greaterThan(QT_MAJOR_VERSION, 4) {
+unix {
 tr.commands = lrelease-qt5 \
     $$_PRO_FILE_
+} else {
+tr.commands = lrelease \
+    $$_PRO_FILE_
+
+}
 } else {
 tr.commands = lrelease \
     $$_PRO_FILE_
