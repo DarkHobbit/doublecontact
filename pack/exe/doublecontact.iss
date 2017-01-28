@@ -14,14 +14,14 @@ AppId={{7F7DFA90-E881-4C7E-80AB-A0342789AB25}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
 ;AppVerName={#MyAppName} {#MyAppVersion}
-;AppPublisher={#MyAppPublisher}
+AppPublisher={#MyAppPublisher}
 ;AppPublisherURL={#MyAppURL}
 ;AppSupportURL={#MyAppURL}
 ;AppUpdatesURL={#MyAppURL}
 DefaultDirName={pf}\DarkHobbit\{#MyAppName}
 DefaultGroupName=\DarkHobbit\{#MyAppName}
 ;AllowNoIcons=yes
-;OutputBaseFilename=setup
+OutputBaseFilename={#MyAppName}_{#MyAppVersion}_win32_setup
 ;Compression=lzma
 ;SolidCompression=yes
 LicenseFile=.\doc\COPYING
@@ -47,22 +47,44 @@ Source: ".\doc\README.md"; DestDir: "{app}\doc"; Flags: ignoreversion; Component
 Name: "{group}\{cm:UninstallProgram,{#MyAppName}}"; Filename: "{uninstallexe}"
 
 [Components]
-Name: "DoubleContact"; Description: "DoubleContact GUI program"; Types: full custom doublecontact
-Name: "ContConv"; Description: "Console format convertor"; Types: full custom contconv
-Name: "Docs"; Description: "Documentation"; Types: custom full doublecontact contconv; Flags: fixed
-Name: "Translations"; Description: "Translation files"; Types: custom full doublecontact; Flags: fixed
-Name: "Libraries"; Description: "Common libraries"; Types: custom full doublecontact contconv; Flags: fixed
+Name: "DoubleContact"; Description: {cm:dcname}; Types: full custom doublecontact
+Name: "ContConv"; Description: {cm:ccname}; Types: full custom contconv
+Name: "Docs"; Description: {cm:docname}; Types: custom full doublecontact contconv; Flags: fixed
+Name: "Translations"; Description: {cm:trname}; Types: custom full doublecontact; Flags: fixed
+Name: "Libraries"; Description: {cm:libname}; Types: custom full doublecontact contconv; Flags: fixed
 
 [Types]
-Name: "full"; Description: "Full"
-Name: "custom"; Description: "Custom"; Flags: iscustom
-Name: "doublecontact"; Description: "DoubleContact only"
-Name: "contconv"; Description: "ContConv only"
+Name: "full"; Description: {cm:stfull}
+Name: "custom"; Description: {cm:stcustom}; Flags: iscustom
+Name: "doublecontact"; Description: {cm:stdconly}
+Name: "contconv"; Description: {cm:stcconly}
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: "russian"; MessagesFile: "compiler:Languages\Russian.isl"
-; Name: "ukrainian"; MessagesFile: "compiler:Languages\Ukrainian.isl"
+Name: "ukrainian"; MessagesFile: "compiler:Languages\Ukrainian.isl"
+
+[CustomMessages]
+english.dcname=DoubleContact GUI application
+english.ccname=Console format convertor
+english.docname=Documentation
+english.trname=Translation files
+english.libname=Common libraries
+english.stfull=Full
+english.stcustom=Custom
+english.stdconly=DoubleContact only
+english.stcconly=ContConv only
+
+russian.dcname=Программа DoubleContact
+russian.ccname=Консольный конвертор форматов
+russian.docname=Документация
+russian.trname=Переводы
+russian.libname=Общие библиотеки
+russian.stfull=Полная
+russian.stcustom=Выборочная
+russian.stdconly=Только DoubleContact
+russian.stcconly=Только консольный конвертор
 
 [Dirs]
 Name: "{app}"
+
