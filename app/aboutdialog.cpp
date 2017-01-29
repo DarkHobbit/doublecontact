@@ -19,6 +19,7 @@ AboutDialog::AboutDialog(QWidget *parent) :
     ui(new Ui::AboutDialog)
 {
     ui->setupUi(this);
+    ui->lwContributors->addItem("icons made by Freepik from www.flaticon.com");
 }
 
 AboutDialog::~AboutDialog()

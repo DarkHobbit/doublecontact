@@ -3,6 +3,7 @@ You can contact me at pub@zvyozdochkin.ru.
 
 0.1:
 * icons?
+* add icon to about
 * make package-scripts for MAC
 * add section on zvyozdochkin.ru
 * в анонсе призвать помочь с csv и предупредить насчёт не-UTF кодировок
@@ -11,6 +12,7 @@ You can contact me at pub@zvyozdochkin.ru.
 * version number and arch in control file
 * show to friends :)
 * set doxygen labels
+* m.b. add description to translation file?
 * register on weblate (transifex?). Correct manuals
 * ukrainian and belarussian language files
 
