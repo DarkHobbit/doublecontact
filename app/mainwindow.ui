@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>Double Contact</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="doublecontact.qrc">
+    <normaloff>:/img/16x16/doublecontact_16x16.png</normaloff>:/img/16x16/doublecontact_16x16.png</iconset>
+  </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
@@ -517,6 +521,8 @@
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="doublecontact.qrc"/>
+ </resources>
  <connections/>
 </ui>

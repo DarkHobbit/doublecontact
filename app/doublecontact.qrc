@@ -1,5 +1,7 @@
 <RCC>
     <qresource prefix="/">
         <file>../img/16x16/del.png</file>
+        <file>../img/16x16/doublecontact_16x16.png</file>
+        <file>../img/64x64/doublecontact_64x64.png</file>
     </qresource>
 </RCC>

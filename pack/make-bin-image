@@ -5,11 +5,13 @@ PKG_DIR=$2
 
 BIN_PATH=${PKG_DIR}/usr/bin
 TRANS_PATH=${PKG_DIR}/usr/share/doublecontact/translations
+DSK_PATH=${PKG_DIR}/usr/share/applications
 IMG_PATH=${PKG_DIR}/usr/share/pixmaps
 DOC_PATH=${PKG_DIR}/usr/share/doc/doublecontact
 
 mkdir -p ${BIN_PATH}
 mkdir -p ${TRANS_PATH}
+mkdir -p ${DSK_PATH}
 mkdir -p ${IMG_PATH}
 mkdir -p ${DOC_PATH}
 
@@ -17,6 +19,7 @@ cp ${SRC_DIR}/app/doublecontact ${BIN_PATH}/
 cp ${SRC_DIR}/contconv/contconv ${BIN_PATH}/
 cp ${SRC_DIR}/translations/*.qm ${TRANS_PATH}/
 cp ${SRC_DIR}/translations/iso639-1.utf8 ${TRANS_PATH}/
+cp ${SRC_DIR}/app/doublecontact.desktop ${DSK_PATH}/
 cp ${SRC_DIR}/img/32x32/doublecontact_32x32.xpm ${IMG_PATH}/
 cp ${SRC_DIR}/doc/* ${DOC_PATH}/
 cp ${SRC_DIR}/COPYING ${DOC_PATH}/

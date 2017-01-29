@@ -1,0 +1,14 @@
+[Desktop Entry]
+Version=0.1
+Type=Application
+Name=DoubleContact
+Name[ru]=DoubleContact
+GenericName=Contact manager
+GenericName[ru]=Редактор контактов
+Comment=Contact manager primarily for phonebooks editing/merging
+Comment[ru]=Редактор контактов, преимущественно ориентированный на редактирование, сравнение и слияние телефонных книг
+Exec=doublecontact %U
+TryExec=doublecontact
+Icon=doublecontact_32x32
+Terminal=false
+Categories=PIM
