@@ -43,7 +43,7 @@ Source: ".\doc\manual.rus.md"; DestDir: "{app}\doc"; Flags: ignoreversion; Compo
 Source: ".\doc\README.md"; DestDir: "{app}\doc"; Flags: ignoreversion; Components: Docs
 
 [Icons]
-;Name: "{group}\DoubleContact"; Filename: "{app}\udphub.exe"; WorkingDir: "{app}"; IconFilename: "{app}\udphub.exe"; IconIndex: 0; Components: Receiver\udphub
+Name: "{group}\DoubleContact"; Filename: "{app}\doublecontact.exe"; WorkingDir: "{app}"; IconFilename: "{app}\doublecontact_32x32.png"; IconIndex: 0; Components: DoubleContact
 Name: "{group}\{cm:UninstallProgram,{#MyAppName}}"; Filename: "{uninstallexe}"
 
 [Components]
