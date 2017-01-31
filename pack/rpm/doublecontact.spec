@@ -20,7 +20,8 @@ Offline DE-independent Qt-based contact manager primarily for phonebooks editing
 %{ubin}/contconv
 %{ushare}/doublecontact/translations/*
 %{ushare}/doc/doublecontact/*
-
+%{ushare}/applications/*
+%{ushare}/pixmaps/*
 %Pre
 
 %Post
