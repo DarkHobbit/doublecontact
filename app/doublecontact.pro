@@ -56,7 +56,7 @@ TRANSLATIONS += \
     ../translations/doublecontact_ru_RU.ts
 
 greaterThan(QT_MAJOR_VERSION, 4) {
-unix {
+unix&&!macx {
 tr.commands = lrelease-qt5 \
     $$_PRO_FILE_
 } else {
@@ -71,5 +71,7 @@ tr.commands = lrelease \
     
 QMAKE_EXTRA_TARGETS += tr
 POST_TARGETDEPS += tr
+
 RESOURCES += \
     doublecontact.qrc
+macx:ICON = $${PWD}/../img/multi/doublecontact.icns

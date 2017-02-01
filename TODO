@@ -2,13 +2,14 @@ This file contains English and Russian (CP1251) issues. Sorry for this mixing, i
 You can contact me at pub@zvyozdochkin.ru.
 
 0.1:
-* make package-scripts for MAC (incl. icons)
+* make package-scripts for MAC
 * complete section on zvyozdochkin.ru
 * rewrite 0.1 release (src) or add source patch
 * в анонсе призвать помочь с csv и предупредить насчёт не-UTF кодировок
 
 0.1.1
 * version number and arch in control file
+* maybe, correct windows icon to rc
 * set doxygen labels
 * register on weblate (transifex?). Correct manuals
 * ukrainian and belarussian language files
