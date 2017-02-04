@@ -184,7 +184,9 @@ If warning messages appears during address book loading or saving, you can save 
 
 Now, author working on CSV (comma-separated values) format support in DoubleContact. There isn't standard agreement, how contact must be stored in CSV files. If you are interested in CSV support, send me example of CSV file, created by your device/program or its fragment. If you want sent a fragment only, please check if entire file a header (it means that one or some first lines of file contains column names and, probably other internal information instead contacts). If header is present, send it too.
 
-The second thing you can help in development is translation to national languages. If you know a language, in which DoubleContact isn't translated - join now. TODO: url
+The second thing you can help in development is translation to national languages. If you know a language, in which DoubleContact isn't translated - join now.
+
+TODO: here translation hosting url must be added.
 
 ## Tips and tricks ##
 
