@@ -108,8 +108,15 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                     typeVal = vType[i].mid(QString("VALUE=").length());
                 else if (vType[i].startsWith("X-SYNCMLREF", Qt::CaseInsensitive))
                     syncMLRef = vType[i].mid(QString("X-SYNCMLREF").length()).toInt();
-                else // "TYPE=" can be omitted in some addressbooks
-                    types << codec->toUnicode(vType[i].toLocal8Bit());
+                else {
+                    // "TYPE=" can be omitted in some addressbooks
+                    // But it also may be encoding (~~)
+                    if (vType[i].startsWith("QUOTED-PRINTABLE", Qt::CaseInsensitive)
+                            || vType[i].startsWith("BASE64", Qt::CaseInsensitive))
+                        encoding = vType[i];
+                    else // type, type...
+                        types << codec->toUnicode(vType[i].toLocal8Bit());
+                }
             }
             if ((!types.isEmpty()) && (tag!="TEL") && (tag!="EMAIL") && (tag!="ADR") && (tag!="PHOTO"))
                 errors << QObject::tr("Unexpected TYPE appearance at line %1: tag %2").arg(line+1).arg(tag);

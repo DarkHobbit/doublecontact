@@ -1,2 +1,5 @@
 0.1 [2017-01-28]
 First public release with VCF, UDX and MPB support
+
+current
+- Fixed: Support of vCard 2.1 records with quoted-printable, but without "ENCODING=" (for example, Mozilla Thunderbird addressbooks)
