@@ -34,6 +34,26 @@ bool CSVProileBase::condAddPhone(const QStringList &row, ContactItem &item, int 
         return false;
 }
 
+bool CSVProileBase::condReadValue(const QStringList &row, ContactItem &item, int index, QString &dest)
+{
+    if (row.count()>index && !row[index].isEmpty()) {
+        dest = row[index];
+        return true;
+    }
+    else
+        return false;
+}
+
+bool CSVProileBase::condWarning(const QStringList &row, ContactItem &item, int index, QStringList& errors)
+{
+    if (row.count()>index && !row[index].isEmpty()) {
+        errors << QString("Column %1 is not empty (%2). Please, contact author").arg(index).arg(row[index]); // Don't translate!
+        return true;
+    }
+    else
+        return false;
+}
+
 ExplayCSVProfile::ExplayCSVProfile()
 {}
 
@@ -62,15 +82,20 @@ bool ExplayCSVProfile::importRecord(const QStringList &row, ContactItem &item, Q
     item.dropFinalEmptyNames();
     item.title = row[5];
     item.organization = row[6];
-    item.birthday.value = QDateTime::fromString(row[7]); // TODO check
-    // "SIP address","Push-to-talk","Share view"
+    if (!row[7].isEmpty()) {
+        item.birthday.value = QDateTime::fromString(row[7]); // TODO check
+        errors << QString("Explay birthday in %1 format (%2). Please, contact author")
+            .arg(row[7]).arg(item.fullName); // Don't translate!
+    }
+    condWarning(row, item, 8, errors); // TODO SIP address
+    condWarning(row, item, 9, errors); // TODO Push-to-talk
+    condWarning(row, item, 10, errors); // TODO Share view
     item.id = row[11];
     condAddPhone(row, item, 12, "pref");
     condAddPhone(row, item, 13, "home");
     condAddPhone(row, item, 14, "fax");
     condAddPhone(row, item, 15, "video");
-    if (row.count()>16)
-        item.url = row[16];
+    condReadValue(row, item, 16, item.url);
     // TODO see other rows...
     return true;
 }

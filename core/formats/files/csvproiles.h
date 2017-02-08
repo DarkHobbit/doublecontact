@@ -32,6 +32,8 @@ public:
     virtual bool exportRecord(QStringList& row, const ContactItem& item)=0;
 protected:
     bool condAddPhone(const QStringList &row, ContactItem &item, int index, const QString& phType);
+    bool condReadValue(const QStringList &row, ContactItem &item, int index, QString& dest);
+    bool condWarning(const QStringList &row, ContactItem &item, int index, QStringList& errors);
 };
 
 class ExplayCSVProfile: public CSVProileBase
