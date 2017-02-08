@@ -45,6 +45,8 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
         if (lines[i].contains("QUOTED-PRINTABLE", Qt::CaseInsensitive))
             while (lines[i].right(1)=="=" && i<lines.count()-1) {
                 lines[i].remove(lines[i].length()-1, 1);
+                if (lines[i+1].left(1)=="\t") // Folding by tab, for example in Mozilla Thunderbird VCFs
+                    lines[i+1].remove(0, 1);
                 lines[i] += lines[i+1];
                 lines.removeAt(i+1);
             }
