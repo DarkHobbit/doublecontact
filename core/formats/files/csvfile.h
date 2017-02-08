@@ -16,13 +16,14 @@
 #ifndef CSVFILE_H
 #define CSVFILE_H
 
+#include "csvproiles.h"
 #include "fileformat.h"
 
 class CSVFile : public FileFormat
 {
 public:
     CSVFile();
-
+    virtual ~CSVFile();
     // IFormat interface
 public:
     static bool detect(const QString &url);
@@ -30,6 +31,8 @@ public:
     static QStringList supportedFilters();
     bool importRecords(const QString &url, ContactList &list, bool append);
     bool exportRecords(const QString &url, ContactList &list);
+private:
+    CSVProileBase* profile;
 };
 
 #endif // CSVFILE_H

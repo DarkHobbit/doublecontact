@@ -26,7 +26,7 @@ QStringList FormatFactory::supportedFilters(QIODevice::OpenMode mode)
 #endif
     if (mode==QIODevice::ReadOnly) {
         // ...here add read-only formats
-        //allSupported += "*." + CSVFile::supportedExtensions().join(" *.");
+        allSupported += "*." + CSVFile::supportedExtensions().join(" *.");
     }
     // ...here add supportedExtensions() for new format
     allTypes << S_ALL_SUPPORTED.arg(allSupported);
@@ -38,7 +38,7 @@ QStringList FormatFactory::supportedFilters(QIODevice::OpenMode mode)
 #endif
     if (mode==QIODevice::ReadOnly) {
         // ...here add filters for read-only formats
-        //allTypes << CSVFile::supportedFilters();
+        allTypes << CSVFile::supportedFilters();
     }
     // ...here add supportedFilters() for new format
     allTypes << S_ALL_FILES;

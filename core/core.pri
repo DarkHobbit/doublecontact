@@ -16,7 +16,8 @@ HEADERS	+= \
     $$PWD/formats/files/mpbfile.h \
     $$PWD/formats/files/udxfile.h \
     $$PWD/formats/files/vcfdirectory.h \
-    $$PWD/formats/files/vcffile.h
+    $$PWD/formats/files/vcffile.h \
+    $$PWD/formats/files/csvproiles.h
 
 SOURCES	+= \
     $$PWD/contactlist.cpp \
@@ -29,5 +30,6 @@ SOURCES	+= \
     $$PWD/formats/files/mpbfile.cpp \
     $$PWD/formats/files/udxfile.cpp \
     $$PWD/formats/files/vcfdirectory.cpp \
-    $$PWD/formats/files/vcffile.cpp
+    $$PWD/formats/files/vcffile.cpp \
+    $$PWD/formats/files/csvproiles.cpp
 
