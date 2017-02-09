@@ -53,7 +53,8 @@ unix {
 
 TRANSLATIONS += \
     ../translations/doublecontact_en_GB.ts \
-    ../translations/doublecontact_ru_RU.ts
+    ../translations/doublecontact_ru_RU.ts \
+    ../translations/doublecontact_uk_UA.ts
 
 greaterThan(QT_MAJOR_VERSION, 4) {
 unix&&!macx {
