@@ -33,6 +33,7 @@ Source: ".\contconv.exe"; DestDir: "{app}"; Flags: ignoreversion; Components: Co
 Source: ".\iso639-1.utf8"; DestDir: "{app}"; Flags: ignoreversion; Components: Translations
 Source: ".\doublecontact_en_GB.qm"; DestDir: "{app}"; Flags: ignoreversion; Components: Translations
 Source: ".\doublecontact_ru_RU.qm"; DestDir: "{app}"; Flags: ignoreversion; Components: Translations
+Source: ".\doublecontact_uk_UA.qm"; DestDir: "{app}"; Flags: ignoreversion; Components: Translations
 
 Source: ".\libgcc_s_dw2-1.dll"; DestDir: "{app}"; Flags: ignoreversion; Components: Libraries
 
@@ -62,7 +63,7 @@ Name: "contconv"; Description: {cm:stcconly}
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: "russian"; MessagesFile: "compiler:Languages\Russian.isl"
-; Name: "ukrainian"; MessagesFile: "compiler:Languages\Ukrainian.isl"
+Name: "ukrainian"; MessagesFile: "compiler:Languages\Ukrainian.isl"
 
 [CustomMessages]
 english.dcname=DoubleContact GUI application
@@ -84,6 +85,16 @@ russian.stfull=Полная
 russian.stcustom=Выборочная
 russian.stdconly=Только DoubleContact
 russian.stcconly=Только консольный конвертор
+
+ukrainian.dcname=Програма DoubleContact
+ukrainian.ccname=Консольний конвертор форматів
+ukrainian.docname=Документація
+ukrainian.trname=Переклади
+ukrainian.libname=Загальні бібліотеки
+ukrainian.stfull=Повна
+ukrainian.stcustom=Вибіркова
+ukrainian.stdconly=Лише DoubleContact
+ukrainian.stcconly=Лише консольний конвертор
 
 [Dirs]
 Name: "{app}"
