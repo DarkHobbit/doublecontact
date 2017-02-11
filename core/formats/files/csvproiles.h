@@ -29,11 +29,12 @@ public:
     virtual bool importRecord(const QStringList& row, ContactItem& item, QStringList& errors)=0;
     // Write
     virtual bool prepareExport(const ContactList &list);
-    virtual bool exportRecord(QStringList& row, const ContactItem& item)=0;
+    virtual bool exportRecord(QStringList& row, const ContactItem& item, QStringList& errors)=0;
 protected:
     bool condAddPhone(const QStringList &row, ContactItem &item, int index, const QString& phType);
-    bool condReadValue(const QStringList &row, ContactItem &item, int index, QString& dest);
-    bool condWarning(const QStringList &row, ContactItem &item, int index, QStringList& errors);
+    bool condReadValue(const QStringList &row, int index, QString& dest);
+    bool readWarning(const QStringList &row, int index, QStringList& errors);
+    QString saveNamePart(ContactItem &item, int nameIndex);
 };
 
 class ExplayCSVProfile: public CSVProileBase
@@ -45,7 +46,7 @@ public:
     // Read
     virtual bool importRecord(const QStringList& row, ContactItem& item, QStringList& errors);
     // Write
-    virtual bool exportRecord(QStringList& row, const ContactItem& item);
+    virtual bool exportRecord(QStringList& row, const ContactItem& item, QStringList& errors);
 };
 
 #endif // CSVPROILES_H

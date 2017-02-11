@@ -98,10 +98,22 @@ bool CSVFile::importRecords(const QString &url, ContactList &list, bool append)
     return (!list.isEmpty());
 }
 
-bool CSVFile::exportRecords(const QString &/*url*/, ContactList &/*list*/)
+bool CSVFile::exportRecords(const QString &url, ContactList &list)
 {
     if (!profile)
         return false;
-    // TODO
-    return false; //===>
+    if (!profile->prepareExport(list))
+        return false;
+    QList<QStringList> rows;
+    foreach (const ContactItem& item, list) {
+        QStringList row;
+        profile->exportRecord(row, item, _errors);
+    }
+    if (!openFile(url, QIODevice::WriteOnly))
+        return false;
+    QTextStream stream(&file);
+    foreach (const QStringList& row, rows)
+        stream << QString("\"%1\"") << row.join("\",\"") << endl;
+    closeFile();
+    return true;
 }
