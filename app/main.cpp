@@ -25,6 +25,7 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+    configManager.prepare();
     // Set UI language
     QString language = configManager.readLanguage();
     QTranslator tr;

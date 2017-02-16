@@ -21,6 +21,8 @@ class ConfigManager
 {
 public:
     ConfigManager();
+    ~ConfigManager();
+    void prepare();
     // Common configuration, managed by dialog
     void readConfig();
     void writeConfig();
@@ -39,7 +41,7 @@ public:
     static QString defaultImageDir();
     QStringList validColumnNames; // Available list
 private:
-    QSettings settings;
+    QSettings* settings;
     void updateFormats();
 };
 
