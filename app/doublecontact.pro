@@ -75,4 +75,5 @@ POST_TARGETDEPS += tr
 
 RESOURCES += \
     doublecontact.qrc
+win32:RC_FILE = doublecontact.rc
 macx:ICON = $${PWD}/../img/multi/doublecontact.icns
