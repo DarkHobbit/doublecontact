@@ -1,9 +1,10 @@
 0.1 [2017-01-28]
 First public release with VCF, UDX and MPB support
 
-current
-- Added portable disrtibution for Windows
-- Added translations: Ukrainian
-- Fixed: Support of vCard 2.1 records with quoted-printable, but without "ENCODING=" (for example, Mozilla Thunderbird addressbooks)
-- Fixed: Tab folding in quoted-printabled VCFs supported (for example, Mozilla Thunderbird addressbooks)
-- Fixed: Windows Start menu icon
+0.1.1 [2017-02-18]
+Bugfix release:
+* Added portable disrtibution for Windows
+* Added translations: Ukrainian
+* Fixed: Support of vCard 2.1 records with quoted-printable, but without "ENCODING=" (for example, Mozilla Thunderbird addressbooks)
+* Fixed: Tab folding in quoted-printabled VCFs supported (for example, Mozilla Thunderbird addressbooks)
+* Fixed: Windows Start menu icon
