@@ -1,26 +1,19 @@
 This file contains English and Russian (CP1251) issues. Sorry for this mixing, it's beta.
 You can contact me at pub@zvyozdochkin.ru.
 
-0.1:
-* make package-scripts for MAC
-* complete section on zvyozdochkin.ru
-* rewrite 0.1 release (src) or add source patch
-* в анонсе призвать помочь с csv и предупредить насчёт не-UTF кодировок
-
-0.1.1
+0.1.2
 * version number and arch in control file
-* maybe, correct windows icon to rc
 * set doxygen labels
 * register on weblate (transifex?). Correct manuals
-* ukrainian and belarussian language files
-
+* belarussian language file
 
 0.2:
 * csv support
+* add csv example in testdata
+* network export/import
 * duplicate search (and merging, probably make unified merging dialog with panels compare merging)
 * settings - fonts
 * make .desktop file for deb/rpm
-* cmake and cpack support for various packaging
 * только по желанию пользователя (не по умолчанию) подсвечивать жёлтым не только неизвестные, но и нередактируемые?
 * m.b. switch off warning empty types on load (after user feedback about it)
 * more universal base64 support (see RFC exampple), m.b. in decodeValue
@@ -44,12 +37,14 @@ Samples with CATEGORIES (LG Leon via mpb) and apple-way https://forums.bitfire.a
 See also ownCloud and iCloud.
 
 0.3:
-* network export/import
+* adb support
+* ldif support
 * add graphic editor call to menu in Photo button at contact dialog
 * C++11?
 
 0.4:
 * integration with mail clients, import contacts from mailboxes
+* cmake and cpack support for various packaging
 * export birthday in calendarzzz
 
 0.5 or 1.0

@@ -18,10 +18,10 @@
 #include "../../contactlist.h"
 
 
-class CSVProileBase
+class CSVProfileBase
 {
 public:
-    virtual ~CSVProileBase() {};
+    virtual ~CSVProfileBase() {};
     virtual bool detect(const QStringList& header) const=0;
     virtual bool hasHeader() const=0;
     // Read
@@ -29,15 +29,16 @@ public:
     virtual bool importRecord(const QStringList& row, ContactItem& item, QStringList& errors)=0;
     // Write
     virtual bool prepareExport(const ContactList &list);
+    virtual QStringList makeHeader();
     virtual bool exportRecord(QStringList& row, const ContactItem& item, QStringList& errors)=0;
 protected:
     bool condAddPhone(const QStringList &row, ContactItem &item, int index, const QString& phType);
     bool condReadValue(const QStringList &row, int index, QString& dest);
     bool readWarning(const QStringList &row, int index, QStringList& errors);
-    QString saveNamePart(ContactItem &item, int nameIndex);
+    QString saveNamePart(const ContactItem &item, int nameIndex);
 };
 
-class ExplayCSVProfile: public CSVProileBase
+class ExplayCSVProfile: public CSVProfileBase
 {
 public:
     ExplayCSVProfile();
@@ -46,6 +47,7 @@ public:
     // Read
     virtual bool importRecord(const QStringList& row, ContactItem& item, QStringList& errors);
     // Write
+    virtual QStringList makeHeader();
     virtual bool exportRecord(QStringList& row, const ContactItem& item, QStringList& errors);
 };
 

@@ -100,6 +100,7 @@ bool CSVFile::importRecords(const QString &url, ContactList &list, bool append)
 
 bool CSVFile::exportRecords(const QString &url, ContactList &list)
 {
+    profile = new ExplayCSVProfile; //===>
     if (!profile)
         return false;
     if (!profile->prepareExport(list))
@@ -108,12 +109,17 @@ bool CSVFile::exportRecords(const QString &url, ContactList &list)
     foreach (const ContactItem& item, list) {
         QStringList row;
         profile->exportRecord(row, item, _errors);
+        rows << row;
     }
     if (!openFile(url, QIODevice::WriteOnly))
         return false;
     QTextStream stream(&file);
+    // Header
+    if (profile->hasHeader())
+        stream << QString("\"%1\"").arg(profile->makeHeader().join("\",\"")) << endl;
+    // Items
     foreach (const QStringList& row, rows)
-        stream << QString("\"%1\"") << row.join("\",\"") << endl;
+        stream << QString("\"%1\"").arg(row.join("\",\"")) << endl;
     closeFile();
     return true;
 }

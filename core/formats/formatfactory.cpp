@@ -24,9 +24,9 @@ QStringList FormatFactory::supportedFilters(QIODevice::OpenMode mode)
 #else
 #warning MPB save and load will not work under Qt earlier than 4.8
 #endif
+    allSupported += "*." + CSVFile::supportedExtensions().join(" *.");
     if (mode==QIODevice::ReadOnly) {
         // ...here add read-only formats
-//        allSupported += "*." + CSVFile::supportedExtensions().join(" *.");
     }
     // ...here add supportedExtensions() for new format
     allTypes << S_ALL_SUPPORTED.arg(allSupported);
@@ -36,9 +36,9 @@ QStringList FormatFactory::supportedFilters(QIODevice::OpenMode mode)
 #if QT_VERSION >= 0x040800
     allTypes << MPBFile::supportedFilters();
 #endif
+    allTypes << CSVFile::supportedFilters();
     if (mode==QIODevice::ReadOnly) {
         // ...here add filters for read-only formats
-//        allTypes << CSVFile::supportedFilters();
     }
     // ...here add supportedFilters() for new format
     allTypes << S_ALL_FILES;
@@ -58,8 +58,8 @@ IFormat *FormatFactory::createObject(const QString &url)
         return new VCFFile();
     if (UDXFile::supportedExtensions().contains(ext, Qt::CaseInsensitive))
         return new UDXFile();
-//    if (CSVFile::supportedExtensions().contains(ext, Qt::CaseInsensitive))
- //       return new CSVFile();
+    if (CSVFile::supportedExtensions().contains(ext, Qt::CaseInsensitive))
+        return new CSVFile();
 #if QT_VERSION >= 0x040800
     if (MPBFile::supportedExtensions().contains(ext, Qt::CaseInsensitive))
         return new MPBFile();
@@ -72,8 +72,8 @@ IFormat *FormatFactory::createObject(const QString &url)
         return new UDXFile();
     if (MPBFile::detect(url))
         return new MPBFile();
-//    if (CSVFile::detect(url))
- //       return new CSVFile();
+    if (CSVFile::detect(url))
+        return new CSVFile();
     // ...here add detect() for new format
     // Sad but true
     error = QObject::tr("Unknown file format:\n%1").arg(url);

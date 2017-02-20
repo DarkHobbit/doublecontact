@@ -11,8 +11,6 @@
  *
  */
 
-// TODO csv support is very alpha
-
 #ifndef CSVFILE_H
 #define CSVFILE_H
 
@@ -32,7 +30,7 @@ public:
     bool importRecords(const QString &url, ContactList &list, bool append);
     bool exportRecords(const QString &url, ContactList &list);
 private:
-    CSVProileBase* profile;
+    CSVProfileBase* profile;
 };
 
 #endif // CSVFILE_H
