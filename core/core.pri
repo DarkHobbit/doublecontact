@@ -17,7 +17,8 @@ HEADERS	+= \
     $$PWD/formats/files/udxfile.h \
     $$PWD/formats/files/vcfdirectory.h \
     $$PWD/formats/files/vcffile.h \
-    $$PWD/formats/files/csvproiles.h
+    $$PWD/formats/profiles/csvprofilebase.h \
+    $$PWD/formats/profiles/explaybm50profile.h
 
 SOURCES	+= \
     $$PWD/contactlist.cpp \
@@ -31,5 +32,6 @@ SOURCES	+= \
     $$PWD/formats/files/udxfile.cpp \
     $$PWD/formats/files/vcfdirectory.cpp \
     $$PWD/formats/files/vcffile.cpp \
-    $$PWD/formats/files/csvproiles.cpp
+    $$PWD/formats/profiles/csvprofilebase.cpp \
+    $$PWD/formats/profiles/explaybm50profile.cpp 
 

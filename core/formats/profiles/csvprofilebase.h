@@ -1,6 +1,6 @@
 /* Double Contact
  *
- * Module: Various CSV file profiles
+ * Module: Abstract class for CSV file profiles
  *
  * Copyright 2016 Mikhail Y. Zvyozdochkin aka DarkHobbit <pub@zvyozdochkin.ru>
  *
@@ -10,13 +10,14 @@
  * (at your option) any later version. See COPYING file for more details.
  *
  */
-#ifndef CSVPROILES_H
-#define CSVPROILES_H
+#ifndef CSVPROFILEBASE_H
+#define CSVPROFILEBASE_H
 
 #include <QString>
 #include <QStringList>
 #include "../../contactlist.h"
 
+#define S_CSV_ROW_TOO_SHORT QObject::tr("CSV row too short for this profile at line %1")
 
 class CSVProfileBase
 {
@@ -38,17 +39,4 @@ protected:
     QString saveNamePart(const ContactItem &item, int nameIndex);
 };
 
-class ExplayCSVProfile: public CSVProfileBase
-{
-public:
-    ExplayCSVProfile();
-    virtual bool detect(const QStringList& header) const;
-    virtual bool hasHeader() const;
-    // Read
-    virtual bool importRecord(const QStringList& row, ContactItem& item, QStringList& errors);
-    // Write
-    virtual QStringList makeHeader();
-    virtual bool exportRecord(QStringList& row, const ContactItem& item, QStringList& errors);
-};
-
-#endif // CSVPROILES_H
+#endif // CSVPROFILEBASE_H

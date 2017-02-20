@@ -14,6 +14,7 @@
 #include <QTextStream>
 
 #include "csvfile.h"
+#include "../profiles/explaybm50profile.h" //===>
 
 CSVFile::CSVFile()
     :FileFormat(), profile(0)
@@ -49,12 +50,13 @@ QStringList CSVFile::supportedFilters()
 
 bool CSVFile::importRecords(const QString &url, ContactList &list, bool append)
 {
-    profile = new ExplayCSVProfile; //===>
+    profile = new ExplayBM50Profile; //===>
     if (!profile)
         return false;
     if (!openFile(url, QIODevice::ReadOnly))
         return false;
     _errors.clear();
+    _errors << "CSV support is very experimental, you can loss your data"; //===>
     QList<QStringList> rows;
     QTextStream stream(&file);
     do {
@@ -100,7 +102,8 @@ bool CSVFile::importRecords(const QString &url, ContactList &list, bool append)
 
 bool CSVFile::exportRecords(const QString &url, ContactList &list)
 {
-    profile = new ExplayCSVProfile; //===>
+    profile = new ExplayBM50Profile; //===>
+    _errors << "CSV support is very experimental, you can loss your data"; //===>
     if (!profile)
         return false;
     if (!profile->prepareExport(list))

@@ -14,7 +14,7 @@
 #ifndef CSVFILE_H
 #define CSVFILE_H
 
-#include "csvproiles.h"
+#include "../profiles/csvprofilebase.h"
 #include "fileformat.h"
 
 class CSVFile : public FileFormat

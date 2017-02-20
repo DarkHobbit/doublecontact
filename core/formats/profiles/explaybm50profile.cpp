@@ -1,6 +1,6 @@
 /* Double Contact
  *
- * Module: Various CSV file profiles
+ * Module: Abstract class for CSV file profiles
  *
  * Copyright 2016 Mikhail Y. Zvyozdochkin aka DarkHobbit <pub@zvyozdochkin.ru>
  *
@@ -10,68 +10,13 @@
  * (at your option) any later version. See COPYING file for more details.
  *
  */
-#include "csvproiles.h"
+#include "explaybm50profile.h"
 #include <iostream>
 
-#define S_CSV_ROW_TOO_SHORT QObject::tr("CSV row too short for this profile at line %1")
-
-bool CSVProfileBase::parseHeader(const QStringList&)
-{
-    return true;
-}
-
-bool CSVProfileBase::prepareExport(const ContactList&)
-{
-    return true;
-}
-
-QStringList CSVProfileBase::makeHeader()
-{
-    return QStringList();
-}
-
-bool CSVProfileBase::condAddPhone(const QStringList &row, ContactItem &item, int index, const QString &phType)
-{
-    if (row.count()>index && !row[index].isEmpty()) {
-        item.phones << Phone(row[index], phType);
-        return true;
-    }
-    else
-        return false;
-}
-
-bool CSVProfileBase::condReadValue(const QStringList &row, int index, QString &dest)
-{
-    if (row.count()>index && !row[index].isEmpty()) {
-        dest = row[index];
-        return true;
-    }
-    else
-        return false;
-}
-
-bool CSVProfileBase::readWarning(const QStringList &row, int index, QStringList& errors)
-{
-    if (row.count()>index && !row[index].isEmpty()) {
-        errors << QString("Column %1 is not empty (%2). Please, contact author").arg(index).arg(row[index]); // Don't translate!
-        return true;
-    }
-    else
-        return false;
-}
-
-QString CSVProfileBase::saveNamePart(const ContactItem &item, int nameIndex)
-{
-    if (item.names.count()>nameIndex && !item.names[nameIndex].isEmpty())
-        return item.names[nameIndex];
-    else
-        return "";
-}
-
-ExplayCSVProfile::ExplayCSVProfile()
+ExplayBM50Profile::ExplayBM50Profile()
 {}
 
-bool ExplayCSVProfile::detect(const QStringList &header) const
+bool ExplayBM50Profile::detect(const QStringList &header) const
 {
     return
         header[0]=="Title"
@@ -79,12 +24,12 @@ bool ExplayCSVProfile::detect(const QStringList &header) const
             && header[2]=="Middle name";
 }
 
-bool ExplayCSVProfile::hasHeader() const
+bool ExplayBM50Profile::hasHeader() const
 {
     return true;
 }
 
-bool ExplayCSVProfile::importRecord(const QStringList &row, ContactItem &item, QStringList& errors)
+bool ExplayBM50Profile::importRecord(const QStringList &row, ContactItem &item, QStringList& errors)
 {
     // TODO not all fields
     if (row.count()<13) {
@@ -114,7 +59,7 @@ bool ExplayCSVProfile::importRecord(const QStringList &row, ContactItem &item, Q
     return true;
 }
 
-QStringList ExplayCSVProfile::makeHeader()
+QStringList ExplayBM50Profile::makeHeader()
 {
     return QStringList()
         << "Title" << "First name" << "Middle name" << "Last name" << "Suffix" //[0-4]
@@ -132,7 +77,7 @@ QStringList ExplayCSVProfile::makeHeader()
         << ""; //[53]
 }
 
-bool ExplayCSVProfile::exportRecord(QStringList &row, const ContactItem &item, QStringList& errors)
+bool ExplayBM50Profile::exportRecord(QStringList &row, const ContactItem &item, QStringList& errors)
 {
     row << item.fullName; //[0]
     row << saveNamePart(item, 1);
