@@ -14,6 +14,7 @@
 #ifndef CSVFILE_H
 #define CSVFILE_H
 
+#include <QVector>
 #include "../profiles/csvprofilebase.h"
 #include "fileformat.h"
 
@@ -27,9 +28,12 @@ public:
     static bool detect(const QString &url);
     static QStringList supportedExtensions();
     static QStringList supportedFilters();
+    QStringList availableProfiles();
+    bool setProfile(const QString& name);
     bool importRecords(const QString &url, ContactList &list, bool append);
     bool exportRecords(const QString &url, ContactList &list);
 private:
+    QVector<CSVProfileBase*> profiles;
     CSVProfileBase* profile;
 };
 

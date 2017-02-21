@@ -24,6 +24,11 @@ bool ExplayBM50Profile::detect(const QStringList &header) const
             && header[2]=="Middle name";
 }
 
+QString ExplayBM50Profile::name()
+{
+    return "Explay BM50";
+}
+
 bool ExplayBM50Profile::hasHeader() const
 {
     return true;

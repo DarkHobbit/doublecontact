@@ -14,17 +14,19 @@
 #include <QTextStream>
 
 #include "csvfile.h"
+
 #include "../profiles/explaybm50profile.h" //===>
 
 CSVFile::CSVFile()
     :FileFormat(), profile(0)
 {
+    profiles << new ExplayBM50Profile;
 }
 
 CSVFile::~CSVFile()
 {
-    if (profile)
-        delete profile;
+    foreach (CSVProfileBase* _profile, profiles)
+        delete _profile;
 }
 
 bool CSVFile::detect(const QString &url)
@@ -48,9 +50,28 @@ QStringList CSVFile::supportedFilters()
     return (QStringList() << "CSV (*.csv *.CSV)");
 }
 
+QStringList CSVFile::availableProfiles()
+{
+    QStringList ap;
+    foreach (CSVProfileBase* _profile, profiles)
+        ap << _profile->name();
+    return ap;
+}
+
+bool CSVFile::setProfile(const QString &name)
+{
+    profile = 0;
+    foreach (CSVProfileBase* _profile, profiles)
+        if (_profile->name()==name){
+            profile = _profile;
+            return true;
+        }
+    return false;
+}
+
 bool CSVFile::importRecords(const QString &url, ContactList &list, bool append)
 {
-    profile = new ExplayBM50Profile; //===>
+    profile = profiles[0]; //===>
     if (!profile)
         return false;
     if (!openFile(url, QIODevice::ReadOnly))
@@ -102,7 +123,7 @@ bool CSVFile::importRecords(const QString &url, ContactList &list, bool append)
 
 bool CSVFile::exportRecords(const QString &url, ContactList &list)
 {
-    profile = new ExplayBM50Profile; //===>
+    profile = profiles[0]; //===>
     _errors << "CSV support is very experimental, you can loss your data"; //===>
     if (!profile)
         return false;

@@ -24,6 +24,7 @@ class CSVProfileBase
 public:
     virtual ~CSVProfileBase() {};
     virtual bool detect(const QStringList& header) const=0;
+    virtual QString name()=0;
     virtual bool hasHeader() const=0;
     // Read
     virtual bool parseHeader(const QStringList& header);
