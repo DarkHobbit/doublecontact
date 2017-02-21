@@ -42,6 +42,8 @@ private slots:
     void setButtonsAccess();
     void selectionChanged();
     void recentItemClicked();
+    void onRequestCSVProfile(CSVFile* format);
+
     void on_actionCo_mpare_triggered();
     void on_btnCompare_clicked();
     void anyFocusChanged (QWidget*, QWidget* now);
@@ -84,13 +86,9 @@ private slots:
     void on_actionIntl_phone_prefix_triggered();
     void on_actionS_wap_Panels_triggered();
     void on_action_SaveAsDir_triggered();
-
     void on_action_About_triggered();
-
     void on_actionReverse_full_name_triggered();
-
     void on_actionS_tatistics_triggered();
-
 private:
     Ui::MainWindow *ui;
     ContactModel *modLeft, *modRight;

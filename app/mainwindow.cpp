@@ -37,6 +37,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    // Models
     modLeft = new ContactModel(this, S_NEW_LIST, recent);
     modRight = new ContactModel(this, S_NEW_LIST + " 2", recent);
     proxyLeft  = new ContactSorterFilter(this);
@@ -49,6 +50,7 @@ MainWindow::MainWindow(QWidget *parent) :
     proxyRight->setFilterKeyColumn(-1);
     ui->tvLeft->setModel(proxyLeft);
     ui->tvRight->setModel(proxyRight);
+    connect(modLeft, SIGNAL(requestCSVProfile(CSVFile*)), this, SLOT(onRequestCSVProfile(CSVFile*)), Qt::DirectConnection);
     // Status bar
     lbMode = new QLabel(0);
     statusBar()->addWidget(lbMode);
@@ -516,6 +518,25 @@ void MainWindow::recentItemClicked()
         updateRecent();
         updateHeaders();
     }
+}
+
+void MainWindow::onRequestCSVProfile(CSVFile *format)
+{
+    QDialog* d = new QDialog(0);
+    d->setWindowTitle(S_CSV_PROFILE_SELECT);
+    QVBoxLayout* l = new QVBoxLayout();
+    d->setLayout(l);
+    QComboBox* cbProfile = new QComboBox();
+    cbProfile->addItems(format->availableProfiles());
+    l->addWidget(cbProfile);
+    QDialogButtonBox* bb = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
+    connect(bb, SIGNAL(accepted()), d, SLOT(accept()));
+    connect(bb, SIGNAL(rejected()), d, SLOT(reject()));
+    l->addWidget(bb);
+    d->exec();
+    if (d->result()==QDialog::Accepted)
+        format->setProfile(cbProfile->currentText());
+    delete d;
 }
 
 void MainWindow::on_tvLeft_clicked(const QModelIndex&)

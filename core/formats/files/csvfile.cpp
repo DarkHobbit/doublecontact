@@ -18,7 +18,7 @@
 #include "../profiles/explaybm50profile.h" //===>
 
 CSVFile::CSVFile()
-    :FileFormat(), profile(0)
+    :FileFormat(), currentProfile(0)
 {
     profiles << new ExplayBM50Profile;
 }
@@ -60,19 +60,26 @@ QStringList CSVFile::availableProfiles()
 
 bool CSVFile::setProfile(const QString &name)
 {
-    profile = 0;
+    currentProfile = 0;
     foreach (CSVProfileBase* _profile, profiles)
         if (_profile->name()==name){
-            profile = _profile;
+            currentProfile = _profile;
             return true;
         }
     return false;
 }
 
+QString CSVFile::profile()
+{
+    if (currentProfile)
+        return currentProfile->name();
+    else
+        return "";
+}
+
 bool CSVFile::importRecords(const QString &url, ContactList &list, bool append)
 {
-    profile = profiles[0]; //===>
-    if (!profile)
+    if (!currentProfile)
         return false;
     if (!openFile(url, QIODevice::ReadOnly))
         return false;
@@ -108,12 +115,12 @@ bool CSVFile::importRecords(const QString &url, ContactList &list, bool append)
         rows << row;
     } while (!stream.atEnd());
     closeFile();
-    int firstLine = profile->hasHeader() ? 1 : 0;
+    int firstLine = currentProfile->hasHeader() ? 1 : 0;
     if (!append)
         list.clear();
     for (int i=firstLine; i<rows.count(); i++) {
         ContactItem item;
-        profile->importRecord(rows[i], item, _errors);
+        currentProfile->importRecord(rows[i], item, _errors);
         item.calculateFields();
         list << item;
     }
@@ -123,24 +130,23 @@ bool CSVFile::importRecords(const QString &url, ContactList &list, bool append)
 
 bool CSVFile::exportRecords(const QString &url, ContactList &list)
 {
-    profile = profiles[0]; //===>
     _errors << "CSV support is very experimental, you can loss your data"; //===>
-    if (!profile)
+    if (!currentProfile)
         return false;
-    if (!profile->prepareExport(list))
+    if (!currentProfile->prepareExport(list))
         return false;
     QList<QStringList> rows;
     foreach (const ContactItem& item, list) {
         QStringList row;
-        profile->exportRecord(row, item, _errors);
+        currentProfile->exportRecord(row, item, _errors);
         rows << row;
     }
     if (!openFile(url, QIODevice::WriteOnly))
         return false;
     QTextStream stream(&file);
     // Header
-    if (profile->hasHeader())
-        stream << QString("\"%1\"").arg(profile->makeHeader().join("\",\"")) << endl;
+    if (currentProfile->hasHeader())
+        stream << QString("\"%1\"").arg(currentProfile->makeHeader().join("\",\"")) << endl;
     // Items
     foreach (const QStringList& row, rows)
         stream << QString("\"%1\"").arg(row.join("\",\"")) << endl;

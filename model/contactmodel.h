@@ -20,6 +20,7 @@
 
 #include "contactlist.h"
 #include "formats/formatfactory.h"
+#include "formats/files/csvfile.h"
 #include "globals.h"
 #include "recentlist.h"
 
@@ -69,7 +70,7 @@ public:
     // Test data
     void testList();
 signals:
-
+    void requestCSVProfile(CSVFile* format);
 public slots:
 protected:
 #if QT_VERSION < 0x040600
@@ -85,6 +86,7 @@ private:
     FormatFactory factory;
     ContactViewMode _viewMode;
     RecentList& _recent;
+    bool checkForCSVProfile(IFormat* format);
 };
 
 #endif // CONTACTMODEL_H

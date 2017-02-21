@@ -159,6 +159,11 @@ bool ContactModel::open(const QString& path, FormatType fType, QStringList &erro
         fatalError = factory.error;
         return false;
     }
+    if (!checkForCSVProfile(format)) {
+        fatalError = format->fatalError();
+        delete format;
+        return false;
+    }
     beginResetModel();
     bool res = format->importRecords(path, items, false);
     fatalError = format->fatalError();
@@ -191,6 +196,11 @@ bool ContactModel::saveAs(const QString& path, FormatType fType, QStringList &er
     }
     if (!format) {
         fatalError = factory.error;
+        return false;
+    }
+    if (!checkForCSVProfile(format)) {
+        fatalError = format->fatalError();
+        delete format;
         return false;
     }
     bool res = format->exportRecords(path, items);
@@ -424,4 +434,13 @@ void ContactModel::testList()
     items.push_back(c); */
 
     endInsertRows();
+}
+
+bool ContactModel::checkForCSVProfile(IFormat *format)
+{
+    CSVFile* cFormat = dynamic_cast<CSVFile*>(format);
+    if (!cFormat)
+        return true;
+    emit requestCSVProfile(cFormat); // and wait for answer immediately
+    return (!(cFormat->profile().isEmpty()));
 }

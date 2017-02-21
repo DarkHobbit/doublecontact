@@ -30,11 +30,12 @@ public:
     static QStringList supportedFilters();
     QStringList availableProfiles();
     bool setProfile(const QString& name);
+    QString profile();
     bool importRecords(const QString &url, ContactList &list, bool append);
     bool exportRecords(const QString &url, ContactList &list);
 private:
     QVector<CSVProfileBase*> profiles;
-    CSVProfileBase* profile;
+    CSVProfileBase* currentProfile;
 };
 
 #endif // CSVFILE_H
