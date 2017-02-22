@@ -432,6 +432,7 @@ void ContactList::clear()
 {
     QList<ContactItem>::clear();
     extra.clear();
+    originalProfile.clear();
 }
 
 QString ContactList::statistics()

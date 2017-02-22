@@ -86,7 +86,7 @@ private:
     FormatFactory factory;
     ContactViewMode _viewMode;
     RecentList& _recent;
-    bool checkForCSVProfile(IFormat* format);
+    bool checkForCSVProfile(IFormat* format, const QString& originalProfile);
 };
 
 #endif // CONTACTMODEL_H

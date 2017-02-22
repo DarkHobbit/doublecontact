@@ -202,6 +202,7 @@ void MainWindow::on_action_SaveAsFile_triggered()
         FormatFactory::supportedFilters(QIODevice::WriteOnly).join(";;"),
         &selectedFilter);
     if (!path.isEmpty()) {
+        selectedModel->itemList().originalProfile.clear(); // force ask profile for new file
         saveAs(selectedModel, path, ftFile);
         configManager.setLastContactFile(path);
         updateHeaders();

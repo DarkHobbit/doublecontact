@@ -177,6 +177,7 @@ public:
     void clear();
     QString statistics();
     MPBExtra extra;
+    QString originalProfile; // for CSV; see also ContactItem::originalFormat
 };
 
 #endif // CONTACTLIST_H
