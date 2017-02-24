@@ -1,6 +1,6 @@
 /* Double Contact
  *
- * Module: Abstract class for CSV file profiles
+ * Module: CSV file profile for Explay BM50
  *
  * Copyright 2016 Mikhail Y. Zvyozdochkin aka DarkHobbit <pub@zvyozdochkin.ru>
  *

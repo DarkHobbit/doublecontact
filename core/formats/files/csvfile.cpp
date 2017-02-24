@@ -15,12 +15,14 @@
 
 #include "csvfile.h"
 
-#include "../profiles/explaybm50profile.h" //===>
+#include "../profiles/explaybm50profile.h"
+#include "../profiles/explaytv240profile.h"
 
 CSVFile::CSVFile()
     :FileFormat(), currentProfile(0)
 {
     profiles << new ExplayBM50Profile;
+    profiles << new ExplayTV240Profile;
 }
 
 CSVFile::~CSVFile()
@@ -146,6 +148,8 @@ bool CSVFile::exportRecords(const QString &url, ContactList &list)
     if (!openFile(url, QIODevice::WriteOnly))
         return false;
     QTextStream stream(&file);
+    // TODO codec (UTF16 for bm50) depends from profile
+    // TODO set quoting optional (bm240 write without it)
     // Header
     if (currentProfile->hasHeader())
         stream << QString("\"%1\"").arg(currentProfile->makeHeader().join("\",\"")) << endl;

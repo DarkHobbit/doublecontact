@@ -18,7 +18,8 @@ HEADERS	+= \
     $$PWD/formats/files/vcfdirectory.h \
     $$PWD/formats/files/vcffile.h \
     $$PWD/formats/profiles/csvprofilebase.h \
-    $$PWD/formats/profiles/explaybm50profile.h
+    $$PWD/formats/profiles/explaybm50profile.h \
+    $$PWD/formats/profiles/explaytv240profile.h
 
 SOURCES	+= \
     $$PWD/contactlist.cpp \
@@ -33,5 +34,6 @@ SOURCES	+= \
     $$PWD/formats/files/vcfdirectory.cpp \
     $$PWD/formats/files/vcffile.cpp \
     $$PWD/formats/profiles/csvprofilebase.cpp \
-    $$PWD/formats/profiles/explaybm50profile.cpp 
+    $$PWD/formats/profiles/explaybm50profile.cpp \
+    $$PWD/formats/profiles/explaytv240profile.cpp
 

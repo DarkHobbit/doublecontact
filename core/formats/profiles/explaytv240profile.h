@@ -1,6 +1,6 @@
 /* Double Contact
  *
- * Module: CSV file profile for Explay BM50
+ * Module: Abstract class for CSV file profiles
  *
  * Copyright 2016 Mikhail Y. Zvyozdochkin aka DarkHobbit <pub@zvyozdochkin.ru>
  *
@@ -10,16 +10,16 @@
  * (at your option) any later version. See COPYING file for more details.
  *
  */
-#ifndef EXPlAYBM50PROFILE_H
-#define EXPlAYBM50PROFILE_H
+#ifndef EXPlAYTV240PROFILE_H
+#define EXPlAYTV240PROFILE_H
 
 #include "csvprofilebase.h"
 
 
-class ExplayBM50Profile: public CSVProfileBase
+class ExplayTV240Profile: public CSVProfileBase
 {
 public:
-    ExplayBM50Profile();
+    ExplayTV240Profile();
     virtual bool detect(const QStringList& header) const;
     virtual QString name();
     virtual bool hasHeader() const;
@@ -30,4 +30,4 @@ public:
     virtual bool exportRecord(QStringList& row, const ContactItem& item, QStringList& errors);
 };
 
-#endif // EXPlAYBM50PROFILE_H
+#endif // EXPlAYTV240PROFILE_H
