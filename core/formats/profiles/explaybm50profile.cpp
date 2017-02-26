@@ -14,7 +14,12 @@
 #include <iostream>
 
 ExplayBM50Profile::ExplayBM50Profile()
-{}
+{
+    _name = "Explay BM50";
+    _hasHeader = true;
+    _charSet = "UTF-16LE";
+    _hasBOM = true;
+}
 
 bool ExplayBM50Profile::detect(const QStringList &header) const
 {
@@ -22,26 +27,6 @@ bool ExplayBM50Profile::detect(const QStringList &header) const
         header[0]=="Title"
         && header[1]=="First name"
             && header[2]=="Middle name";
-}
-
-QString ExplayBM50Profile::name()
-{
-    return "Explay BM50";
-}
-
-bool ExplayBM50Profile::hasHeader() const
-{
-    return true;
-}
-
-QString ExplayBM50Profile::charSet()
-{
-    return "UTF-16LE";
-}
-
-bool ExplayBM50Profile::hasBOM()
-{
-    return true;
 }
 
 bool ExplayBM50Profile::importRecord(const QStringList &row, ContactItem &item, QStringList& errors)

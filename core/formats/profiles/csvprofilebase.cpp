@@ -12,9 +12,24 @@
  */
 #include "csvprofilebase.h"
 
-bool CSVProfileBase::hasBOM()
+QString CSVProfileBase::name() const
 {
-    return false;
+    return _name;
+}
+
+bool CSVProfileBase::hasHeader() const
+{
+    return _hasHeader;
+}
+
+QString CSVProfileBase::charSet() const
+{
+    return _charSet;
+}
+
+bool CSVProfileBase::hasBOM() const
+{
+    return _hasBOM;
 }
 
 bool CSVProfileBase::parseHeader(const QStringList&)

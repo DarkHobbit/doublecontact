@@ -14,7 +14,12 @@
 #include <iostream>
 
 ExplayTV240Profile::ExplayTV240Profile()
-{}
+{
+    _name = "Explay TV240";
+    _hasHeader = true;
+    _charSet = "UTF-16LE";
+    _hasBOM = false; //TODO check on 4PDA
+}
 
 bool ExplayTV240Profile::detect(const QStringList &header) const
 {
@@ -22,26 +27,6 @@ bool ExplayTV240Profile::detect(const QStringList &header) const
         header[0]=="Name"
         && header[1]=="Number"
             && header[2]=="Home Number";
-}
-
-QString ExplayTV240Profile::name()
-{
-    return "Explay TV240";
-}
-
-bool ExplayTV240Profile::hasHeader() const
-{
-    return true;
-}
-
-QString ExplayTV240Profile::charSet()
-{
-    return "UTF-16LE";
-}
-
-bool ExplayTV240Profile::hasBOM()
-{
-    return false; //TODO check on 4PDA
 }
 
 bool ExplayTV240Profile::importRecord(const QStringList &row, ContactItem &item, QStringList& errors)

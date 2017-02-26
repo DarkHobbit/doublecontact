@@ -25,10 +25,10 @@ public:
     virtual ~CSVProfileBase() {};
     virtual bool detect(const QStringList& header) const=0;
     // Profile properties
-    virtual QString name()=0;
-    virtual bool hasHeader() const=0;
-    virtual QString charSet()=0;
-    virtual bool hasBOM(); // only if charset is UTF*
+    QString name() const;
+    bool hasHeader() const;
+    QString charSet() const;
+    bool hasBOM() const; // only if charset is UTF*
     // Read
     virtual bool parseHeader(const QStringList& header);
     virtual bool importRecord(const QStringList& row, ContactItem& item, QStringList& errors)=0;
@@ -37,6 +37,8 @@ public:
     virtual QStringList makeHeader();
     virtual bool exportRecord(QStringList& row, const ContactItem& item, QStringList& errors)=0;
 protected:
+    QString _name, _charSet;
+    bool _hasHeader, _hasBOM;
     bool condAddPhone(const QStringList &row, ContactItem &item, int index, const QString& phType);
     bool condReadValue(const QStringList &row, int index, QString& dest);
     bool readWarning(const QStringList &row, int index, QStringList& errors);
