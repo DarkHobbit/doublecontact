@@ -11,7 +11,6 @@
  *
  */
 #include <QStringList>
-#include <QTextStream>
 
 #include "csvfile.h"
 
@@ -89,6 +88,7 @@ bool CSVFile::importRecords(const QString &url, ContactList &list, bool append)
     _errors << "CSV support is very experimental, you can loss your data"; //===>
     QList<QStringList> rows;
     QTextStream stream(&file);
+    stream.setCodec(currentProfile->charSet().toLatin1().data());
     do {
         QString line = stream.readLine();
         bool inQuotes = false;
@@ -112,8 +112,7 @@ bool CSVFile::importRecords(const QString &url, ContactList &list, bool append)
                 break;
             }
         }
-        if (!val.isEmpty())
-            row << val;
+        row << val;
         rows << row;
     } while (!stream.atEnd());
     closeFile();
@@ -128,6 +127,10 @@ bool CSVFile::importRecords(const QString &url, ContactList &list, bool append)
         item.calculateFields();
         list << item;
     }
+    // For new profiles debug
+    /* std::cout << url.toLocal8Bit().data() << std::endl;
+     std::cout << rows[0].count() << " " << rows[1].count()
+              << "|" << rows[0].last().toLocal8Bit().data() << std::endl; */
     // Ready
     return (!list.isEmpty());
 }
@@ -148,14 +151,21 @@ bool CSVFile::exportRecords(const QString &url, ContactList &list)
     if (!openFile(url, QIODevice::WriteOnly))
         return false;
     QTextStream stream(&file);
-    // TODO codec (UTF16 for bm50) depends from profile
-    // TODO set quoting optional (bm240 write without it)
+    stream.setCodec(currentProfile->charSet().toLatin1().data());
+    stream.setGenerateByteOrderMark(currentProfile->hasBOM());
     // Header
     if (currentProfile->hasHeader())
-        stream << QString("\"%1\"").arg(currentProfile->makeHeader().join("\",\"")) << endl;
+        makeLine(stream, currentProfile->makeHeader());
     // Items
     foreach (const QStringList& row, rows)
-        stream << QString("\"%1\"").arg(row.join("\",\"")) << endl;
+        makeLine(stream, row);
     closeFile();
     return true;
+}
+
+void CSVFile::makeLine(QTextStream& stream, const QStringList &source)
+{
+    // TODO set quoting optional (bm240 write without it)
+    stream << QString("\"%1\"").arg(source.join("\",\""));
+    stream << (char)13 << endl; // TODO 13 to profile
 }

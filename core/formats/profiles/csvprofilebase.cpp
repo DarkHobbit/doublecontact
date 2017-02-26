@@ -12,6 +12,11 @@
  */
 #include "csvprofilebase.h"
 
+bool CSVProfileBase::hasBOM()
+{
+    return false;
+}
+
 bool CSVProfileBase::parseHeader(const QStringList&)
 {
     return true;

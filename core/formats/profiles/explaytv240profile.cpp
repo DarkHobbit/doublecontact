@@ -34,6 +34,16 @@ bool ExplayTV240Profile::hasHeader() const
     return true;
 }
 
+QString ExplayTV240Profile::charSet()
+{
+    return "UTF-16LE";
+}
+
+bool ExplayTV240Profile::hasBOM()
+{
+    return false; //TODO check on 4PDA
+}
+
 bool ExplayTV240Profile::importRecord(const QStringList &row, ContactItem &item, QStringList& errors)
 {
     if (row.count()<2) {
@@ -54,12 +64,10 @@ QStringList ExplayTV240Profile::makeHeader()
 
 bool ExplayTV240Profile::exportRecord(QStringList &row, const ContactItem &item, QStringList& errors)
 {
-    // TODO UCS-2 Little Endian (encoding as profile method)
     // TODO don't quote!!!
     row << saveNamePart(item, 0);
     // One phone
     row << item.prefPhone;
-    // TODO implement inline saveTail
     for (int i=2; i<7; i++)
         row << "";
     // TODO write warnings on non-empty unsupported fields, sync with udxfile

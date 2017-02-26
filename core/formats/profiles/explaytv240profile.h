@@ -21,8 +21,11 @@ class ExplayTV240Profile: public CSVProfileBase
 public:
     ExplayTV240Profile();
     virtual bool detect(const QStringList& header) const;
+    // Profile properties
     virtual QString name();
     virtual bool hasHeader() const;
+    virtual QString charSet();
+    virtual bool hasBOM();
     // Read
     virtual bool importRecord(const QStringList& row, ContactItem& item, QStringList& errors);
     // Write

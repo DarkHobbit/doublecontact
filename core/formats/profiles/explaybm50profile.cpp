@@ -34,6 +34,16 @@ bool ExplayBM50Profile::hasHeader() const
     return true;
 }
 
+QString ExplayBM50Profile::charSet()
+{
+    return "UTF-16LE";
+}
+
+bool ExplayBM50Profile::hasBOM()
+{
+    return true;
+}
+
 bool ExplayBM50Profile::importRecord(const QStringList &row, ContactItem &item, QStringList& errors)
 {
     // TODO not all fields
@@ -101,13 +111,13 @@ bool ExplayBM50Profile::exportRecord(QStringList &row, const ContactItem &item, 
             .arg(row.last()).arg(item.fullName); // Don't translate!
     }
     else
-        row << "";
+        row << ""; // [7]
     row << "" << "" << ""; // TODO SIP address, Push-to-talk, Share view
     row << item.id; // [11]
     // One phone
-    row << item.prefPhone;
+    row << item.prefPhone; // [12]
     // TODO see other rows and check on real phone
-    for (int i=12; i<54; i++)
+    for (int i=13; i<54; i++)
         row << "";
     // TODO write warnings on non-empty unsupported fields, sync with udxfile
     return true;

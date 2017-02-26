@@ -14,6 +14,8 @@
 #ifndef CSVFILE_H
 #define CSVFILE_H
 
+#include <QStringList>
+#include <QTextStream>
 #include <QVector>
 #include "../profiles/csvprofilebase.h"
 #include "fileformat.h"
@@ -36,6 +38,7 @@ public:
 private:
     QVector<CSVProfileBase*> profiles;
     CSVProfileBase* currentProfile;
+    void makeLine(QTextStream& stream, const QStringList& source);
 };
 
 #endif // CSVFILE_H
