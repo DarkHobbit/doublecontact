@@ -37,6 +37,11 @@ CSVProfileBase::QuotingPolicy CSVProfileBase::quotingPolicy() const
     return _quotingPolicy;
 }
 
+CSVProfileBase::LineEnding CSVProfileBase::lineEnding() const
+{
+    return _lineEnding;
+}
+
 bool CSVProfileBase::parseHeader(const QStringList&)
 {
     return true;

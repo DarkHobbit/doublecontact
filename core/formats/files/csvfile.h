@@ -38,7 +38,7 @@ public:
 private:
     QVector<CSVProfileBase*> profiles;
     CSVProfileBase* currentProfile;
-    void makeLine(QTextStream& stream, const QStringList& source);
+    void putLine(QTextStream& stream, const QStringList& source);
 };
 
 #endif // CSVFILE_H

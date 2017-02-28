@@ -155,16 +155,17 @@ bool CSVFile::exportRecords(const QString &url, ContactList &list)
     stream.setGenerateByteOrderMark(currentProfile->hasBOM());
     // Header
     if (currentProfile->hasHeader())
-        makeLine(stream, currentProfile->makeHeader());
+        putLine(stream, currentProfile->makeHeader());
     // Items
     foreach (const QStringList& row, rows)
-        makeLine(stream, row);
+        putLine(stream, row);
     closeFile();
     return true;
 }
 
-void CSVFile::makeLine(QTextStream& stream, const QStringList &source)
+void CSVFile::putLine(QTextStream& stream, const QStringList &source)
 {
+    // Quoting
     switch (currentProfile->quotingPolicy()) {
     case CSVProfileBase::AlwaysQuote:
         stream << QString("\"%1\"").arg(source.join("\",\""));
@@ -184,5 +185,8 @@ void CSVFile::makeLine(QTextStream& stream, const QStringList &source)
         if (line.right(1)==",")
             line.remove(line.length()-1, 1);
     }
-    stream << (char)13 << endl; // TODO 13 to profile
+    // Line ending
+    if (currentProfile->lineEnding()==CSVProfileBase::CRLFEnding)
+        stream << (char)13;
+    stream << endl;
 }

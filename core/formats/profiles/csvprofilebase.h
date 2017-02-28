@@ -27,6 +27,10 @@ public:
         QuoteIfNeed, // ...if at least comma found in current cell
         AlwaysQuote
     };
+    enum LineEnding {
+        LFEnding,
+        CRLFEnding
+    };
     virtual ~CSVProfileBase() {};
     virtual bool detect(const QStringList& header) const=0;
     // Profile properties
@@ -35,6 +39,7 @@ public:
     QString charSet() const;
     bool hasBOM() const; // only if charset is UTF*
     QuotingPolicy quotingPolicy() const;
+    LineEnding lineEnding() const;
     // Read
     virtual bool parseHeader(const QStringList& header);
     virtual bool importRecord(const QStringList& row, ContactItem& item, QStringList& errors)=0;
@@ -47,6 +52,7 @@ protected:
     QString _name, _charSet;
     bool _hasHeader, _hasBOM;
     QuotingPolicy _quotingPolicy;
+    LineEnding _lineEnding;
     // Helpers
     bool condAddPhone(const QStringList &row, ContactItem &item, int index, const QString& phType);
     bool condReadValue(const QStringList &row, int index, QString& dest);
