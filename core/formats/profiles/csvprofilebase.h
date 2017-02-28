@@ -22,6 +22,11 @@
 class CSVProfileBase
 {
 public:
+    enum QuotingPolicy { // How to write quotes
+        NeverQuote,
+        QuoteIfNeed, // ...if at least comma found in current cell
+        AlwaysQuote
+    };
     virtual ~CSVProfileBase() {};
     virtual bool detect(const QStringList& header) const=0;
     // Profile properties
@@ -29,6 +34,7 @@ public:
     bool hasHeader() const;
     QString charSet() const;
     bool hasBOM() const; // only if charset is UTF*
+    QuotingPolicy quotingPolicy() const;
     // Read
     virtual bool parseHeader(const QStringList& header);
     virtual bool importRecord(const QStringList& row, ContactItem& item, QStringList& errors)=0;
@@ -37,8 +43,11 @@ public:
     virtual QStringList makeHeader();
     virtual bool exportRecord(QStringList& row, const ContactItem& item, QStringList& errors)=0;
 protected:
+    // Profile properties
     QString _name, _charSet;
     bool _hasHeader, _hasBOM;
+    QuotingPolicy _quotingPolicy;
+    // Helpers
     bool condAddPhone(const QStringList &row, ContactItem &item, int index, const QString& phType);
     bool condReadValue(const QStringList &row, int index, QString& dest);
     bool readWarning(const QStringList &row, int index, QStringList& errors);

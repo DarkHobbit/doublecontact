@@ -32,6 +32,11 @@ bool CSVProfileBase::hasBOM() const
     return _hasBOM;
 }
 
+CSVProfileBase::QuotingPolicy CSVProfileBase::quotingPolicy() const
+{
+    return _quotingPolicy;
+}
+
 bool CSVProfileBase::parseHeader(const QStringList&)
 {
     return true;

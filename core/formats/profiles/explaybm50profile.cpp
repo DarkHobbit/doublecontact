@@ -19,6 +19,7 @@ ExplayBM50Profile::ExplayBM50Profile()
     _hasHeader = true;
     _charSet = "UTF-16LE";
     _hasBOM = true;
+    _quotingPolicy = CSVProfileBase::AlwaysQuote;
 }
 
 bool ExplayBM50Profile::detect(const QStringList &header) const

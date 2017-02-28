@@ -165,7 +165,24 @@ bool CSVFile::exportRecords(const QString &url, ContactList &list)
 
 void CSVFile::makeLine(QTextStream& stream, const QStringList &source)
 {
-    // TODO set quoting optional (bm240 write without it)
-    stream << QString("\"%1\"").arg(source.join("\",\""));
+    switch (currentProfile->quotingPolicy()) {
+    case CSVProfileBase::AlwaysQuote:
+        stream << QString("\"%1\"").arg(source.join("\",\""));
+        break;
+    case CSVProfileBase::NeverQuote:
+        stream << source.join(",");
+        break;
+    case CSVProfileBase::QuoteIfNeed:
+        QString line;
+        foreach (const QString& cell, source) {
+            if (cell.contains(","))
+                line += QString("\"%1\"").arg(cell);
+            else
+                line += cell;
+            line += ",";
+        }
+        if (line.right(1)==",")
+            line.remove(line.length()-1, 1);
+    }
     stream << (char)13 << endl; // TODO 13 to profile
 }

@@ -19,6 +19,7 @@ ExplayTV240Profile::ExplayTV240Profile()
     _hasHeader = true;
     _charSet = "UTF-16LE";
     _hasBOM = false; //TODO check on 4PDA
+    _quotingPolicy = CSVProfileBase::NeverQuote; // TODO check on 4PDA
 }
 
 bool ExplayTV240Profile::detect(const QStringList &header) const
