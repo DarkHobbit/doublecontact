@@ -373,6 +373,29 @@ bool ContactItem::identicalTo(const ContactItem &pair)
     return true;
 }
 
+QString ContactItem::nameComponent(int compNum)
+{
+    QString res = "";
+    switch (compNum) {
+    case 0:
+        res = S_LAST_NAME;
+        break;
+    case 1:
+        res = S_FIRST_NAME;
+        break;
+    case 2:
+        res = S_MIDDLE_NAME;
+        break;
+    case 3:
+        res = S_NAME_PREFIXES;
+        break;
+    default:
+        res = S_NAME_SUFFIXES;
+        break;
+    }
+    return res;
+}
+
 ContactList::ContactList()
 {
 }

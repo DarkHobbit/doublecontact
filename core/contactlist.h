@@ -153,6 +153,7 @@ struct ContactItem {
     void dropFinalEmptyNames(); // If empty parts not in-middle, remove it
     bool similarTo(const ContactItem& pair, int priorityLevel);
     bool identicalTo(const ContactItem& pair);
+    static QString nameComponent(int compNum);
 };
 
 // MPB-specific storage

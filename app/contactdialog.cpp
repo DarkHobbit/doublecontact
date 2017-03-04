@@ -233,20 +233,7 @@ void ContactDialog::addName(const QString& name)
         // Label
         QLabel* lb = new QLabel(this);
         lb->setObjectName(QString("lbName%1").arg(nameCount+1));
-        switch (nameCount) {
-        case 1:
-            lb->setText(S_FIRST_NAME);
-            break;
-        case 2:
-            lb->setText(S_MIDDLE_NAME);
-            break;
-        case 3:
-            lb->setText(S_NAME_PREFIXES);
-            break;
-        default:
-            lb->setText(S_NAME_SUFFIXES);
-            break;
-        }
+        lb->setText(ContactItem::nameComponent(nameCount));
         ui->layNames->addWidget(lb, nameCount, 0);
         // Editor
         QLineEdit* le = new QLineEdit(this);
