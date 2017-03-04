@@ -27,7 +27,7 @@
 #include "helpers.h"
 #include "phonetypedialog.h"
 
-#define MIN_VISIBLE_NAMES 2
+#define MIN_VISIBLE_NAMES 1
 #define MIN_VISIBLE_TRIPLETS 1
 
 ContactDialog::ContactDialog(QWidget *parent) :
@@ -36,6 +36,7 @@ ContactDialog::ContactDialog(QWidget *parent) :
     nameCount(0), phoneCount(0), emailCount(0), anniversaryCount(0)
 {
     ui->setupUi(this);
+    ui->lbName1->setText(S_LAST_NAME);
     fillPhoneTypes(ui->cbPhoneType1);
     fillEmailTypes(ui->cbEmailType1);
     connect(ui->cbPhoneType1, SIGNAL(currentIndexChanged(const QString&)), this, SLOT(itemTypeChanged(const QString&)));
@@ -229,12 +230,31 @@ void ContactDialog::addName(const QString& name)
     if (nameCount>=MAX_NAMES)
         return;
     if (nameCount>=MIN_VISIBLE_NAMES) {
+        // Label
+        QLabel* lb = new QLabel(this);
+        lb->setObjectName(QString("lbName%1").arg(nameCount+1));
+        switch (nameCount) {
+        case 1:
+            lb->setText(S_FIRST_NAME);
+            break;
+        case 2:
+            lb->setText(S_MIDDLE_NAME);
+            break;
+        case 3:
+            lb->setText(S_NAME_PREFIXES);
+            break;
+        default:
+            lb->setText(S_NAME_SUFFIXES);
+            break;
+        }
+        ui->layNames->addWidget(lb, nameCount, 0);
+        // Editor
         QLineEdit* le = new QLineEdit(this);
         le->setObjectName(QString("leName%1").arg(nameCount+1));
-        ui->layNames->addWidget(le, nameCount-1, 0);
+        ui->layNames->addWidget(le, nameCount, 1);
         // Delete button
         QToolButton* btnD = addDelButton(nameCount, "Name", SLOT(slotDelName()));
-        ui->layNames->addWidget(btnD, nameCount-1, 1);
+        ui->layNames->addWidget(btnD, nameCount, 2);
     }
     nameEditorByNum(nameCount+1)->setText(name);
     nameCount++;
@@ -248,6 +268,8 @@ void ContactDialog::slotDelName()
     for (int i=oNumber; i<nameCount; i++)
         nameEditorByNum(i)->setText(nameEditorByNum(i+1)->text());
     delete nameEditorByNum(nameCount);
+    QLabel* lb = findChild<QLabel*>(QString("lbName%1").arg(nameCount));
+    delete lb;
     QToolButton* btnD = findChild<QToolButton*>(QString("btnDelName%1").arg(nameCount));
     delete btnD;
     nameCount--;
