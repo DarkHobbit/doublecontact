@@ -59,8 +59,10 @@ template<class P, class T>
 void CompareDialog::checkPair(const QString& title, P** pair, T& leftData, T& rightData)
 {
     *pair = 0;
-    if (!leftData.isEmpty() || !rightData.isEmpty())
-        *pair = new P(title, ui->layPairs, leftData, rightData);
+    if (!leftData.isEmpty() || !rightData.isEmpty()) {
+        *pair = new P(title, ui->layPairs);
+        (*pair)->setData(leftData, rightData);
+    }
 }
 
 void CompareDialog::setData(const ContactItem &left, const ContactItem &right)

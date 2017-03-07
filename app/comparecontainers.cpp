@@ -21,7 +21,7 @@
 // TODO make arrows up and down (to reorder items), not only left and right
 
 ItemPair::ItemPair(const QString& title, QGridLayout* layout, bool multiItem)
-    :QObject(layout), _multiItem(multiItem)
+    :QObject(layout), _multiItem(multiItem), _rowLimit(0)
 {
     int oldRowCount = layout->rowCount();
     gbLeft = new QGroupBox(title);
@@ -50,6 +50,7 @@ void ItemPair::highlightDiff(bool hasDiff)
              margin: 10px; \
              padding: 4px; \
          }"*/
+
          // UNION labs, http://www.prog.org.ru/index.php?topic=21738
          "QGroupBox { \
                 border: 1px solid %1; \
@@ -63,6 +64,7 @@ void ItemPair::highlightDiff(bool hasDiff)
                 padding: 4px; \
                 left: 20px; \
               }"
+
            // spirits25, http://www.prog.org.ru/index.php?topic=21738
            /*"QGroupBox::title { \
                 border: 0px outset %1; \
@@ -94,10 +96,8 @@ void ItemPair::buildOneItemButtonSide(bool toLeft, int column)
 {
     QList<QToolButton *> &btnSet = toLeft ? btnsOneItemToLeft : btnsOneItemToRight;
     QGridLayout *layout = toLeft ? layRight : layLeft;
-    while (!btnSet.isEmpty()) {
-        delete btnSet.last();
-        btnSet.removeLast();
-    }
+    while (!btnSet.isEmpty())
+        removeOneItemButton(toLeft);
     if (!layout->isEmpty())
     for (int i=0; i<layout->rowCount(); i++)
         addOneItemButton(toLeft, column);
@@ -112,6 +112,13 @@ void ItemPair::addOneItemButton(bool toLeft, int column)
     btn->setArrowType(toLeft ? Qt::LeftArrow : Qt::RightArrow);
     layout->addWidget(btn, btnSet.count()-1, column);
     connect(btn, SIGNAL(clicked()), this, toLeft ? SLOT(onOneItemToLeftClicked()) : SLOT(onOneItemToRightClicked()));
+}
+
+void ItemPair::removeOneItemButton(bool toLeft)
+{
+    QList<QToolButton *> &btnSet = toLeft ? btnsOneItemToLeft : btnsOneItemToRight;
+    delete btnSet.last();
+    btnSet.removeLast();
 }
 
 QLineEdit *ItemPair::addEditor(const QString& text)
@@ -152,15 +159,17 @@ void ItemPair::onOneItemToRightClicked()
     highlightDiff(checkDiff());
 }
 
-StringListPair::StringListPair(const QString& title, QGridLayout *layout,
-    const QStringList &leftData, const QStringList &rightData, bool multiItem)
-    :ItemPair(title, layout, multiItem)
+StringListPair::StringListPair(const QString& title, QGridLayout *layout, bool multiItem)
+    :ItemPair(title, layout, multiItem), hasLabels(false)
+{}
+
+void StringListPair::setData(const QStringList &leftData, const QStringList &rightData)
 {
-    fillBox(layLeft, leftData, leftSet);
-    fillBox(layRight, rightData, rightSet);
+    fillBox(layLeft, leftData, leftSet, leftLabels);
+    fillBox(layRight, rightData, rightSet, rightLabels);
     highlightDiff(leftData!=rightData);
     if (_multiItem)
-        buildOneItemButtons(1);
+        buildOneItemButtons(hasLabels ? 2 : 1);
 }
 
 void StringListPair::getData(QStringList &leftData, QStringList &rightData)
@@ -177,17 +186,20 @@ void StringListPair::copyData(bool toLeft)
 {
     QList<QLineEdit*>& edSetDest = toLeft ? leftSet : rightSet;
     QList<QLineEdit*>& edSetSrc = toLeft ? rightSet : leftSet;
+    QList<QLabel*>& lbSetDest = toLeft ? leftLabels : rightLabels;
     QGridLayout *layDest = toLeft ? layLeft : layRight;
     while (edSetDest.count()>edSetSrc.count())
     {
-        delete edSetDest.last();
+        delete edSetDest.last();        
         edSetDest.removeLast();
+        if (hasLabels) {
+            delete lbSetDest.last();
+            lbSetDest.removeLast();
+        }
+        removeOneItemButton(!toLeft);
     }
-    while (edSetDest.count()<edSetSrc.count()) {
-        edSetDest.push_back(addEditor(""));
-        layDest->addWidget(edSetDest.last());
-        this->addOneItemButton(!toLeft, 1);
-    }
+    while (edSetDest.count()<edSetSrc.count())
+        addLine(edSetDest.count(), "", layDest, edSetDest, lbSetDest, true);
     for (int i=0; i<edSetDest.count(); i++)
         edSetDest[i]->setText(edSetSrc[i]->text());
 }
@@ -196,11 +208,9 @@ void StringListPair::copyOneItem(bool toLeft, int srcIndex)
 {
     QList<QLineEdit*>& edSetDest = toLeft ? leftSet : rightSet;
     QList<QLineEdit*>& edSetSrc = toLeft ? rightSet : leftSet;
+    QList<QLabel*>& lbSetDest = toLeft ? leftLabels : rightLabels;
     QGridLayout *layDest = toLeft ? layLeft : layRight;
-    edSetDest.push_back(addEditor(""));
-    edSetDest.last()->setText(edSetSrc[srcIndex]->text());
-    layDest->addWidget(edSetDest.last());
-    this->addOneItemButton(!toLeft, 1);
+    addLine(edSetDest.count(), edSetSrc[srcIndex]->text(), layDest, edSetDest, lbSetDest, true);
 }
 
 bool StringListPair::checkDiff()
@@ -210,18 +220,43 @@ bool StringListPair::checkDiff()
     return left!=right;
 }
 
-void StringListPair::fillBox(QGridLayout* layout, const QStringList &data, QList<QLineEdit*>& edSet)
+QString StringListPair::label(int)
 {
-    foreach(const QString& s, data) {
-        edSet.push_back(addEditor(s));
-        layout->addWidget(edSet.last());
-    }
+    return "";
 }
 
-StringPair::StringPair(const QString &title, QGridLayout *layout,
-    const QString &leftData, const QString &rightData)
-    :StringListPair(title, layout, QStringList(leftData), QStringList(rightData), false)
+void StringListPair::fillBox(QGridLayout* layout, const QStringList &data, QList<QLineEdit*>& edSet, QList<QLabel*>& lbSet)
+{
+    for(int i=0; i<data.count(); i++)
+        addLine(i, data[i], layout, edSet, lbSet, false);
+}
+
+// TODO maybe, drop ItemPair::buildOneItemB* method and port addOneItemButton to addLine in all classes
+// After this, createOneItemButton parameter will not needed
+void StringListPair::addLine(int row, const QString &text,
+    QGridLayout* layout, QList<QLineEdit*>& edSet, QList<QLabel*>& lbSet,
+    bool createOneItemButton)
+{
+    if (_rowLimit>0 && edSet.count()>=_rowLimit)
+        return;
+    if (hasLabels) {
+        lbSet.push_back(new QLabel(label(row)));
+        layout->addWidget(lbSet.last(), row, 0);
+    }
+    edSet.push_back(addEditor(text));
+    layout->addWidget(edSet.last(), row, hasLabels ? 1 : 0);
+    if (createOneItemButton && _multiItem)
+        this->addOneItemButton(edSet==rightSet, hasLabels ? 2 : 1);
+}
+
+StringPair::StringPair(const QString &title, QGridLayout *layout)
+    :StringListPair(title, layout, false)
 {}
+
+void StringPair::setData(const QString &leftData, const QString &rightData)
+{
+    StringListPair::setData(QStringList(leftData), QStringList(rightData));
+}
 
 void StringPair::getData(QString &leftData, QString &rightData)
 {
@@ -229,6 +264,18 @@ void StringPair::getData(QString &leftData, QString &rightData)
     StringListPair::getData(ll, rl);
     leftData = ll[0];
     rightData = rl[0];
+}
+
+NamePair::NamePair(const QString &title, QGridLayout *layout)
+    :StringListPair(title, layout, true)
+{
+    hasLabels = true;
+    _rowLimit = MAX_NAMES;
+}
+
+QString NamePair::label(int row)
+{
+    return ContactItem::nameComponent(row);
 }
 
 TypedPair::TypedPair(const QString &title, QGridLayout *layout)
@@ -326,6 +373,7 @@ void TypedPair::copyData(bool toLeft)
         edSetDest.removeLast();
         delete comboSetDest.last();
         comboSetDest.removeLast();
+        removeOneItemButton(!toLeft);
     }
     while (edSetDest.count()<edSetSrc.count()) {
         int prevCount = layDest->rowCount();
@@ -333,7 +381,8 @@ void TypedPair::copyData(bool toLeft)
         layDest->addWidget(edSetDest.last(), prevCount, 0);
         comboSetDest.push_back(addCombo());
         layDest->addWidget(comboSetDest.last(), prevCount, 1);
-        this->addOneItemButton(!toLeft, 2);
+        if (_multiItem)
+            this->addOneItemButton(!toLeft, 2);
     }
     for (int i=0; i<edSetDest.count(); i++) {
         edSetDest[i]->setText(edSetSrc[i]->text());
@@ -363,10 +412,14 @@ void TypedPair::copyOneItem(bool toLeft, int srcIndex)
     this->addOneItemButton(!toLeft, 2);
 }
 
-PhonesPair::PhonesPair(const QString &title, QGridLayout *layout, const QList<Phone> &leftPhones, const QList<Phone> &rightPhones)
+PhonesPair::PhonesPair(const QString &title, QGridLayout *layout)
     :TypedPair(title, layout)
 {
     standardTypes = &Phone::standardTypes;
+}
+
+void PhonesPair::setData(const QList<Phone> &leftPhones, const QList<Phone> &rightPhones)
+{
     foreach(const Phone& p, leftPhones)
         addValue(p, true);
     foreach(const Phone& p, rightPhones)
@@ -382,10 +435,14 @@ bool PhonesPair::checkDiff()
     return leftPhones!=rightPhones;
 }
 
-EmailsPair::EmailsPair(const QString &title, QGridLayout *layout, const QList<Email> &leftEmails, const QList<Email> &rightEmails)
+EmailsPair::EmailsPair(const QString &title, QGridLayout *layout)
     :TypedPair(title, layout)
 {
     standardTypes = &Email::standardTypes;
+}
+
+void EmailsPair::setData(const QList<Email> &leftEmails, const QList<Email> &rightEmails)
+{
     foreach(const Email& p, leftEmails)
         addValue(p, true);
     foreach(const Email& p, rightEmails)
@@ -401,9 +458,11 @@ bool EmailsPair::checkDiff()
     return leftEmails!=rightEmails;
 }
 
-DateItemListPair::DateItemListPair(const QString &title, QGridLayout *layout,
-    const QList<DateItem> &leftData, const QList<DateItem> &rightData, bool multiItem)
+DateItemListPair::DateItemListPair(const QString &title, QGridLayout *layout, bool multiItem)
     :ItemPair(title, layout, multiItem)
+{}
+
+void DateItemListPair::setData(const QList<DateItem> &leftData, const QList<DateItem> &rightData)
 {
     leftDataSet = leftData;
     rightDataSet = rightData;
@@ -467,10 +526,14 @@ void DateItemListPair::fillBox(QGridLayout* layout, const QList<DateItem> &data,
 }
 
 
-DateItemPair::DateItemPair(const QString &title, QGridLayout *layout,
-    const DateItem &leftData, const DateItem &rightData)
-    :DateItemListPair(title, layout, QList<DateItem>() << leftData, QList<DateItem>() << rightData, false)
+DateItemPair::DateItemPair(const QString &title, QGridLayout *layout)
+    :DateItemListPair(title, layout, false)
 {}
+
+void DateItemPair::setData(const DateItem &leftData, const DateItem &rightData)
+{
+    DateItemListPair::setData(QList<DateItem>() << leftData, QList<DateItem>() << rightData);
+}
 
 void DateItemPair::getData(DateItem &leftData, DateItem &rightData)
 {
@@ -480,14 +543,19 @@ void DateItemPair::getData(DateItem &leftData, DateItem &rightData)
     rightData = rl[0];
 }
 
-PostalAddressPair::PostalAddressPair(const QString &title, QGridLayout *layout, const PostalAddress &leftData, const PostalAddress &rightData)
-    :StringListPair(title, layout,
-        QStringList() << leftData.offBox << leftData.extended
-            << leftData.street << leftData.city << leftData.region << leftData.postalCode << leftData.country,
-               QStringList() << rightData.offBox << rightData.extended
-                   << rightData.street << rightData.city << rightData.region << rightData.postalCode << rightData.country
-    )
+PostalAddressPair::PostalAddressPair(const QString &title, QGridLayout *layout)
+    :StringListPair(title, layout)
 {}
+
+void PostalAddressPair::setData(const PostalAddress &leftData, const PostalAddress &rightData)
+{
+    StringListPair::setData(
+        QStringList() << leftData.offBox << leftData.extended
+        << leftData.street << leftData.city << leftData.region << leftData.postalCode << leftData.country,
+        QStringList() << rightData.offBox << rightData.extended
+        << rightData.street << rightData.city << rightData.region << rightData.postalCode << rightData.country
+    );
+}
 
 void PostalAddressPair::getData(PostalAddress &leftData, PostalAddress &rightData)
 {
@@ -510,8 +578,11 @@ void PostalAddressPair::getData(PostalAddress &leftData, PostalAddress &rightDat
 }
 
 
-PhotoPair::PhotoPair(const QString &title, QGridLayout *layout, const Photo &leftData, const Photo &rightData)
+PhotoPair::PhotoPair(const QString &title, QGridLayout *layout)
     :ItemPair(title, layout, false)
+{}
+
+void PhotoPair::setData(const Photo &leftData, const Photo &rightData)
 {
     photoLeft = leftData;
     photoRight = rightData;
@@ -548,3 +619,4 @@ void PhotoPair::fillPhoto(QGridLayout *layout, const Photo &data, QLabel** lb)
     layout->addWidget(*lb);
     showPhoto(data, *lb);
 }
+

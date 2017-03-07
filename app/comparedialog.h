@@ -34,7 +34,7 @@ public:
 private:
     Ui::CompareDialog *ui;
     StringPair* pFullName;
-    StringListPair* pNames;
+    NamePair* pNames;
     PhonesPair* pPhones;
     EmailsPair* pEmails;
     DateItemPair* pBDay;
