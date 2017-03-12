@@ -21,7 +21,7 @@ class FormatFactory
 {
 public:
     FormatFactory();
-    static QStringList supportedFilters(QIODevice::OpenMode mode);
+    static QStringList supportedFilters(QIODevice::OpenMode mode, bool isReportFormat);
     IFormat* createObject(const QString& url);
     QString error;
 };

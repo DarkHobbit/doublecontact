@@ -2,6 +2,7 @@
 #include <QFileInfo>
 #include <QObject>
 
+#include "files/htmlfile.h"
 #include "files/mpbfile.h"
 #include "files/udxfile.h"
 #include "files/vcffile.h"
@@ -12,35 +13,45 @@ FormatFactory::FormatFactory()
 {
 }
 
-QStringList FormatFactory::supportedFilters(QIODevice::OpenMode mode)
+QStringList FormatFactory::supportedFilters(QIODevice::OpenMode mode, bool isReportFormat)
 {
     QStringList allTypes;
     // Known formats (all supported)
     QString allSupported;
-    allSupported += "*." + VCFFile::supportedExtensions().join(" *.");
-    allSupported += "*." + UDXFile::supportedExtensions().join(" *.");
+    if (isReportFormat){
+        allSupported += "*." + HTMLFile::supportedExtensions().join(" *.");
+        allTypes << HTMLFile::supportedFilters();
+    }
+    else {
+        allSupported += "*." + VCFFile::supportedExtensions().join(" *.");
+        allSupported += "*." + UDXFile::supportedExtensions().join(" *.");
 #if QT_VERSION >= 0x040800
-    allSupported += "*." + MPBFile::supportedExtensions().join(" *.");
+        allSupported += "*." + MPBFile::supportedExtensions().join(" *.");
 #else
 #warning MPB save and load will not work under Qt earlier than 4.8
 #endif
-    allSupported += "*." + CSVFile::supportedExtensions().join(" *.");
-    if (mode==QIODevice::ReadOnly) {
-        // ...here add read-only formats
-    }
-    // ...here add supportedExtensions() for new format
-    allTypes << S_ALL_SUPPORTED.arg(allSupported);
-    // Known formats (separate)
-    allTypes << VCFFile::supportedFilters();
-    allTypes << UDXFile::supportedFilters();
+        allSupported += "*." + CSVFile::supportedExtensions().join(" *.");
+        if (mode==QIODevice::ReadOnly) {
+            // ...here add read-only formats
+        }
+        else { // Write-only formats
+        }
+        // ...here add supportedExtensions() for new format
+        allTypes << S_ALL_SUPPORTED.arg(allSupported);
+        // Known formats (separate)
+        allTypes << VCFFile::supportedFilters();
+        allTypes << UDXFile::supportedFilters();
 #if QT_VERSION >= 0x040800
-    allTypes << MPBFile::supportedFilters();
+        allTypes << MPBFile::supportedFilters();
 #endif
-    allTypes << CSVFile::supportedFilters();
-    if (mode==QIODevice::ReadOnly) {
-        // ...here add filters for read-only formats
+        allTypes << CSVFile::supportedFilters();
+        if (mode==QIODevice::ReadOnly) {
+            // ...here add filters for read-only formats
+        }
+        else { // Write-only formats
+        }
+        // ...here add supportedFilters() for new format
     }
-    // ...here add supportedFilters() for new format
     allTypes << S_ALL_FILES;
     return allTypes;
 }
@@ -64,6 +75,8 @@ IFormat *FormatFactory::createObject(const QString &url)
     if (MPBFile::supportedExtensions().contains(ext, Qt::CaseInsensitive))
         return new MPBFile();
 #endif
+    if (HTMLFile::supportedExtensions().contains(ext, Qt::CaseInsensitive))
+        return new HTMLFile();
     // ...here add supportedExtensions() for new format
     // Known formats with non-standard extension
     if (VCFFile::detect(url))

@@ -28,9 +28,15 @@ enum ContactColumn {
   ccTitle,      // Job title
   ccOrg,        // Organization
   ccAddr,       // postal address
+  ccNickName,   // nickname
+  ccUrl,        // site url
+  ccIMJabber,   // IMs
+  ccIMICQ,
+  ccIMSkype,
   ccHasPhone,   // contact has at least one phone
   ccHasEmail,   // contact has at least one phone
   ccHasBDay,    // contact has birthday
+  ccHasPhoto,   // contact has at least one photo
   ccSomePhones, // contact has more than one phone
   ccSomeEmails, // contact has more than one email
   ccLast
@@ -43,6 +49,7 @@ enum ContactColumn {
 #define S_CONFIRM QObject::tr("Confirmation")
 #define S_INFORM QObject::tr("Information")
 // Misc
+#define S_ADDRESS_BOOK QObject::tr("Address book")
 #define S_NEW_LIST QObject::tr("New contact list")
 #define S_READ_ONLY_FORMAT QObject::tr("This format is read only")
 #define S_COUNTRY_RULE_SELECT QObject::tr("Select country rule")
@@ -58,15 +65,24 @@ enum ContactColumn {
 // Other column names
 #define S_FULL_NAME QObject::tr("Full name")
 #define S_GENERIC_NAME QObject::tr("Generic name")
+#define S_DESC QObject::tr("Description")
 #define S_PHONE QObject::tr("Phone")
 #define S_EMAIL QObject::tr("Email")
 #define S_BDAY QObject::tr("Birthday")
+#define S_ANN QObject::tr("Anniversary")
 #define S_TITLE QObject::tr("Job title")
 #define S_ORG QObject::tr("Organization")
 #define S_ADDR QObject::tr("Address")
+#define S_NICK QObject::tr("NickName")
+#define S_URL QObject::tr("URL")
+#define S_IM_JABBER QObject::tr("Jabber")
+#define S_IM_ICQ QObject::tr("ICQ")
+#define S_IM_SKYPE QObject::tr("Skype")
+// Columns-flags
 #define S_HAS_PHONE QObject::tr("Has phone")
 #define S_HAS_EMAIL QObject::tr("Has email")
 #define S_HAS_BDAY QObject::tr("Has birthday")
+#define S_HAS_PHOTO QObject::tr("Has photo")
 #define S_SOME_PHONES QObject::tr("Some phones")
 #define S_SOME_EMAILS QObject::tr("Some emails")
 // Address components

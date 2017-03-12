@@ -19,7 +19,8 @@ HEADERS	+= \
     $$PWD/formats/files/vcffile.h \
     $$PWD/formats/profiles/csvprofilebase.h \
     $$PWD/formats/profiles/explaybm50profile.h \
-    $$PWD/formats/profiles/explaytv240profile.h
+    $$PWD/formats/profiles/explaytv240profile.h \
+    $$PWD/formats/files/htmlfile.h
 
 SOURCES	+= \
     $$PWD/contactlist.cpp \
@@ -35,5 +36,6 @@ SOURCES	+= \
     $$PWD/formats/files/vcffile.cpp \
     $$PWD/formats/profiles/csvprofilebase.cpp \
     $$PWD/formats/profiles/explaybm50profile.cpp \
-    $$PWD/formats/profiles/explaytv240profile.cpp
+    $$PWD/formats/profiles/explaytv240profile.cpp \
+    $$PWD/formats/files/htmlfile.cpp
 

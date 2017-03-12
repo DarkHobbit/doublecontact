@@ -68,25 +68,24 @@ void CompareDialog::checkPair(const QString& title, P** pair, T& leftData, T& ri
 void CompareDialog::setData(const ContactItem &left, const ContactItem &right)
 {
     ui->layPairs->setAlignment(Qt::AlignTop);
-
-    checkPair(tr("Full name"), &pFullName, left.fullName, right.fullName);
+    checkPair(S_FULL_NAME, &pFullName, left.fullName, right.fullName);
     checkPair(tr("Names"), &pNames, left.names, right.names);
     checkPair(tr("Phones"), &pPhones, left.phones, right.phones);
     checkPair(tr("Emails"), &pEmails, left.emails, right.emails);
-    checkPair(tr("Birthday"), &pBDay, left.birthday, right.birthday);
+    checkPair(S_BDAY, &pBDay, left.birthday, right.birthday);
     checkPair(tr("Anniversaries"), &pAnn, left.anniversaries, right.anniversaries);
-    checkPair(tr("Description"), &pDesc, left.description, right.description);
+    checkPair(S_DESC, &pDesc, left.description, right.description);
     checkPair(tr("Sort string"), &pSortString, left.sortString, right.sortString);
     checkPair(tr("Photo"), &pPhoto, left.photo, right.photo);
-    checkPair(tr("Organization"), &pOrg, left.organization, right.organization);
-    checkPair(tr("Job title"), &pTitle, left.title, right.title);
+    checkPair(S_ORG, &pOrg, left.organization, right.organization);
+    checkPair(S_TITLE, &pTitle, left.title, right.title);
     checkPair(tr("Home Address"), &pAddrHome, left.addrHome, right.addrHome);
     checkPair(tr("Work Address"), &pAddrWork, left.addrWork, right.addrWork);
-    checkPair(tr("NickName"), &pNickName, left.nickName, right.nickName);
-    checkPair(tr("URL"), &pURL, left.url, right.url);
-    checkPair(tr("Jabber"), &pJabber, left.jabberName, right.jabberName);
-    checkPair(tr("ICQ"), &pICQ, left.icqName, right.icqName);
-    checkPair(tr("Skype"), &pSkype, left.skypeName, right.skypeName);
+    checkPair(S_NICK, &pNickName, left.nickName, right.nickName);
+    checkPair(S_URL, &pURL, left.url, right.url);
+    checkPair(S_IM_JABBER, &pJabber, left.jabberName, right.jabberName);
+    checkPair(S_IM_ICQ, &pICQ, left.icqName, right.icqName);
+    checkPair(S_IM_SKYPE, &pSkype, left.skypeName, right.skypeName);
 }
 
 void CompareDialog::getData(ContactItem &left, ContactItem &right)

@@ -112,9 +112,15 @@ QVariant ContactModel::data(const QModelIndex &index, int role) const
                     res += c.addrWork.toString();
                 return res;
             }
+            case ccNickName:    return c.nickName;
+            case ccUrl:         return c.url;
+            case ccIMJabber:    return c.jabberName;
+            case ccIMICQ:       return c.icqName;
+            case ccIMSkype:     return c.skypeName;
             case ccHasPhone:    return !c.phones.isEmpty() ? "*" : QVariant();
             case ccHasEmail:    return !c.emails.isEmpty() ? "*" : QVariant();
             case ccHasBDay:     return !c.birthday.isEmpty() ? "*" : QVariant();
+            case ccHasPhoto:    return !c.photo.isEmpty() ? "*" : QVariant();
             case ccSomePhones:  return c.phones.count()>1  ? "*" : QVariant();
             case ccSomeEmails:  return c.emails.count()>1  ? "*" : QVariant();
             case ccLast: { return QVariant(); } // Boundary case

@@ -227,6 +227,7 @@
     <addaction name="menuSaveAs"/>
     <addaction name="action_Close"/>
     <addaction name="menuRecent"/>
+    <addaction name="actionRe_port"/>
     <addaction name="separator"/>
     <addaction name="actionE_xit"/>
    </widget>
@@ -517,6 +518,14 @@
   <action name="actionS_tatistics">
    <property name="text">
     <string>S&amp;tatistics</string>
+   </property>
+  </action>
+  <action name="actionRe_port">
+   <property name="text">
+    <string>Re&amp;port</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
    </property>
   </action>
  </widget>

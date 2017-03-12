@@ -78,7 +78,7 @@ struct DateItem { // Birthday and anniversaries
     };
     bool operator ==(const DateItem& d);
     void clear();
-    QString toString(DateFormat format) const;
+    QString toString(DateFormat format=DateItem::Local) const;
     inline bool isEmpty() const {return value.isNull(); }
 };
 

@@ -158,7 +158,7 @@ void MainWindow::on_action_OpenFile_triggered()
     QString selectedFilter;
     QString path = QFileDialog::getOpenFileName(0, tr("Open contact file"),
         configManager.lastContactFile(),
-        FormatFactory::supportedFilters(QIODevice::ReadOnly).join(";;"),
+        FormatFactory::supportedFilters(QIODevice::ReadOnly, false).join(";;"),
         &selectedFilter);
     if (!path.isEmpty()) {
         open(selectedModel, path, ftFile);
@@ -199,7 +199,7 @@ void MainWindow::on_action_SaveAsFile_triggered()
     QString selectedFilter;
     QString path = QFileDialog::getSaveFileName(0, tr("Save contact file"),
         configManager.lastContactFile(),
-        FormatFactory::supportedFilters(QIODevice::WriteOnly).join(";;"),
+        FormatFactory::supportedFilters(QIODevice::WriteOnly, false).join(";;"),
         &selectedFilter);
     if (!path.isEmpty()) {
         selectedModel->itemList().originalProfile.clear(); // force ask profile for new file
@@ -889,4 +889,28 @@ void MainWindow::on_actionS_tatistics_triggered()
 {
     QMessageBox::information(0, tr("Statitics"),
         selectedModel->itemList().statistics());
+}
+
+void MainWindow::on_actionRe_port_triggered()
+{
+    QString selectedFilter;
+    QString path = QFileDialog::getSaveFileName(0, tr("Report file"),
+        ConfigManager::defaultDocDir() + QDir::separator() + "report.html",
+        FormatFactory::supportedFilters(QIODevice::WriteOnly, true).join(";;"),
+        &selectedFilter);
+    if (!path.isEmpty()) {
+        QStringList errors;
+        QString fatalError;
+        FormatFactory factory;
+        IFormat* format = factory.createObject(path);
+        if (!format)
+            fatalError = factory.error;
+        else {
+            format->exportRecords(path, selectedModel->itemList());
+            fatalError = format->fatalError();
+            errors = format->errors();
+            delete format;
+        }
+        showIOErrors(path, selectedModel->rowCount(), errors, fatalError);
+    }
 }

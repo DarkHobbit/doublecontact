@@ -38,9 +38,15 @@ void ContactColumnHeaders::fill()
     << S_TITLE
     << S_ORG
     << S_ADDR
+    << S_NICK
+    << S_URL
+    << S_IM_JABBER
+    << S_IM_ICQ
+    << S_IM_SKYPE
     << S_HAS_PHONE
     << S_HAS_EMAIL
     << S_HAS_BDAY
+    << S_HAS_PHOTO
     << S_SOME_PHONES
     << S_SOME_EMAILS;
 }
