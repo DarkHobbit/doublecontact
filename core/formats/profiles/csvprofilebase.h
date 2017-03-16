@@ -16,6 +16,7 @@
 #include <QString>
 #include <QStringList>
 #include "../../contactlist.h"
+#include "../files/fileformat.h"
 
 #define S_CSV_ROW_TOO_SHORT QObject::tr("CSV row too short for this profile at line %1")
 
@@ -59,5 +60,8 @@ protected:
     bool readWarning(const QStringList &row, int index, QStringList& errors);
     QString saveNamePart(const ContactItem &item, int nameIndex);
 };
+
+// Macros for use exclusively in exportRecord(...) methods
+#define LOSS_DATA(x, y) FileFormat::lossData(errors, item.visibleName, x, y)
 
 #endif // CSVPROFILEBASE_H

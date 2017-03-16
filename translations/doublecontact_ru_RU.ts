@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ru_RU">
+<TS version="2.0" language="ru_RU">
 <context>
     <name>AboutDialog</name>
     <message>
@@ -43,7 +43,7 @@
     </message>
     <message>
         <source>Full name</source>
-        <translation type="vanished">Полное имя</translation>
+        <translation type="obsolete">Полное имя</translation>
     </message>
     <message>
         <location filename="../app/comparedialog.cpp" line="72"/>
@@ -62,7 +62,7 @@
     </message>
     <message>
         <source>Birthday</source>
-        <translation type="vanished">День рождения</translation>
+        <translation type="obsolete">День рождения</translation>
     </message>
     <message>
         <location filename="../app/comparedialog.cpp" line="76"/>
@@ -71,7 +71,7 @@
     </message>
     <message>
         <source>Description</source>
-        <translation type="vanished">Описание</translation>
+        <translation type="obsolete">Описание</translation>
     </message>
     <message>
         <location filename="../app/comparedialog.cpp" line="78"/>
@@ -79,17 +79,16 @@
         <translation>Сорт. как</translation>
     </message>
     <message>
-        <location filename="../app/comparedialog.cpp" line="79"/>
         <source>Photo</source>
-        <translation>Фото</translation>
+        <translation type="obsolete">Фото</translation>
     </message>
     <message>
         <source>Organization</source>
-        <translation type="vanished">Организация</translation>
+        <translation type="obsolete">Организация</translation>
     </message>
     <message>
         <source>Job title</source>
-        <translation type="vanished">Должность</translation>
+        <translation type="obsolete">Должность</translation>
     </message>
     <message>
         <location filename="../app/comparedialog.cpp" line="82"/>
@@ -103,23 +102,23 @@
     </message>
     <message>
         <source>NickName</source>
-        <translation type="vanished">Псевдоним</translation>
+        <translation type="obsolete">Псевдоним</translation>
     </message>
     <message>
         <source>URL</source>
-        <translation type="vanished">Сайт</translation>
+        <translation type="obsolete">Сайт</translation>
     </message>
     <message>
         <source>Jabber</source>
-        <translation type="vanished">Jabber</translation>
+        <translation type="obsolete">Jabber</translation>
     </message>
     <message>
         <source>ICQ</source>
-        <translation type="vanished">ICQ</translation>
+        <translation type="obsolete">ICQ</translation>
     </message>
     <message>
         <source>Skype</source>
-        <translation type="vanished">Skype</translation>
+        <translation type="obsolete">Skype</translation>
     </message>
 </context>
 <context>
@@ -1387,157 +1386,169 @@ line %3, col %4
     </message>
     <message>
         <location filename="../core/globals.h" line="73"/>
+        <source>Photo</source>
+        <translation>Фото</translation>
+    </message>
+    <message>
+        <location filename="../core/globals.h" line="74"/>
         <source>Job title</source>
         <translation>Должность</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="74"/>
+        <location filename="../core/globals.h" line="75"/>
         <source>Organization</source>
         <translation>Организация</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="75"/>
+        <location filename="../core/globals.h" line="76"/>
         <source>Address</source>
         <translation>Адрес</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="76"/>
+        <location filename="../core/globals.h" line="77"/>
         <source>NickName</source>
         <translation>Псевдоним</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="77"/>
+        <location filename="../core/globals.h" line="78"/>
         <source>URL</source>
         <translation>Сайт</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="78"/>
+        <location filename="../core/globals.h" line="79"/>
         <source>Jabber</source>
         <translation>Jabber</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="79"/>
+        <location filename="../core/globals.h" line="80"/>
         <source>ICQ</source>
         <translation>ICQ</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="80"/>
+        <location filename="../core/globals.h" line="81"/>
         <source>Skype</source>
         <translation>Skype</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="82"/>
+        <location filename="../core/globals.h" line="83"/>
         <source>Has phone</source>
         <translation>Есть телефон</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="83"/>
+        <location filename="../core/globals.h" line="84"/>
         <source>Has email</source>
         <translation>Есть почта</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="84"/>
+        <location filename="../core/globals.h" line="85"/>
         <source>Has birthday</source>
         <translation>Есть день рождения</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="85"/>
+        <location filename="../core/globals.h" line="86"/>
         <source>Has photo</source>
         <translation>Есть фото</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="86"/>
+        <location filename="../core/globals.h" line="87"/>
         <source>Some phones</source>
         <translation>Много телефонов</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="87"/>
+        <location filename="../core/globals.h" line="88"/>
         <source>Some emails</source>
         <translation>Много ящиков</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="89"/>
+        <location filename="../core/globals.h" line="90"/>
         <source>P.o. box</source>
         <translation>П/я</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="90"/>
+        <location filename="../core/globals.h" line="91"/>
         <source>Ext.addr.</source>
         <translation>Расш.адрес</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="91"/>
+        <location filename="../core/globals.h" line="92"/>
         <source>Street</source>
         <translation>Улица</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="92"/>
+        <location filename="../core/globals.h" line="93"/>
         <source>City/Locality</source>
         <translation>Населённый пункт</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="93"/>
+        <location filename="../core/globals.h" line="94"/>
         <source>Region</source>
         <translation>Регион</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="94"/>
+        <location filename="../core/globals.h" line="95"/>
         <source>Postal code</source>
         <translation>Индекс</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="95"/>
+        <location filename="../core/globals.h" line="96"/>
         <source>Country</source>
         <translation>Страна</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="97"/>
+        <location filename="../core/globals.h" line="98"/>
         <source>[Unknown photo format]</source>
         <translation>[Неизвестный формат фото]</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="98"/>
+        <location filename="../core/globals.h" line="99"/>
         <source>Load image</source>
         <translation>Загрузить картинку</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="99"/>
+        <location filename="../core/globals.h" line="100"/>
         <source>Save image</source>
         <translation>Сохранить картинку</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="100"/>
+        <location filename="../core/globals.h" line="101"/>
         <source>Set URL</source>
         <translation>Задать адрес</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="101"/>
+        <location filename="../core/globals.h" line="102"/>
         <source>Remove photo</source>
         <translation>Удалить фото</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="103"/>
+        <location filename="../core/globals.h" line="104"/>
         <source>All supported files (%1)</source>
         <translation>Все поддерживаемые (%1)</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="104"/>
+        <location filename="../core/globals.h" line="105"/>
         <source>All files (*.*)</source>
         <translation>Все файлы (*.*)</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="105"/>
+        <location filename="../core/globals.h" line="107"/>
         <source>Can&apos;t read file
 %1</source>
         <translation>Не могу прочесть файл
 %1</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="106"/>
+        <location filename="../core/globals.h" line="108"/>
         <source>Can&apos;t write file
 %1</source>
         <translation>Не могу записать файл
 %1</translation>
+    </message>
+    <message>
+        <location filename="../core/globals.h" line="110"/>
+        <source>Warning: contact %1 has %2, not supported in this format.
+Data will be lost</source>
+        <translation>Предупреждение: у контакта %1 есть %2, не поддерживается в этом формате.
+Данные будут потеряны</translation>
     </message>
     <message>
         <location filename="../core/formats/files/vcfdirectory.cpp" line="35"/>
@@ -1601,7 +1612,7 @@ line %3, col %4
         <translation>Номер %1 не найден в адресной книге. Сохранено исходное имя (%2)</translation>
     </message>
     <message>
-        <location filename="../core/formats/profiles/csvprofilebase.h" line="20"/>
+        <location filename="../core/formats/profiles/csvprofilebase.h" line="21"/>
         <source>CSV row too short for this profile at line %1</source>
         <translation>Слишком короткая строка для этого профиля CSV в строке %1</translation>
     </message>

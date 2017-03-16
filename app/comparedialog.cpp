@@ -76,7 +76,7 @@ void CompareDialog::setData(const ContactItem &left, const ContactItem &right)
     checkPair(tr("Anniversaries"), &pAnn, left.anniversaries, right.anniversaries);
     checkPair(S_DESC, &pDesc, left.description, right.description);
     checkPair(tr("Sort string"), &pSortString, left.sortString, right.sortString);
-    checkPair(tr("Photo"), &pPhoto, left.photo, right.photo);
+    checkPair(S_PHOTO, &pPhoto, left.photo, right.photo);
     checkPair(S_ORG, &pOrg, left.organization, right.organization);
     checkPair(S_TITLE, &pTitle, left.title, right.title);
     checkPair(tr("Home Address"), &pAddrHome, left.addrHome, right.addrHome);

@@ -70,6 +70,7 @@ enum ContactColumn {
 #define S_EMAIL QObject::tr("Email")
 #define S_BDAY QObject::tr("Birthday")
 #define S_ANN QObject::tr("Anniversary")
+#define S_PHOTO QObject::tr("Photo")
 #define S_TITLE QObject::tr("Job title")
 #define S_ORG QObject::tr("Organization")
 #define S_ADDR QObject::tr("Address")
@@ -102,8 +103,11 @@ enum ContactColumn {
 // File ops
 #define S_ALL_SUPPORTED QObject::tr("All supported files (%1)")
 #define S_ALL_FILES QObject::tr("All files (*.*)")
+// Common errors
 #define S_READ_ERR QObject::tr("Can't read file\n%1")
 #define S_WRITE_ERR QObject::tr("Can't write file\n%1")
+#define S_ERR_UNSUPPORTED_TAG \
+    QObject::tr("Warning: contact %1 has %2, not supported in this format.\nData will be lost")
 
 // Visible columns headers
 // (It was a simple string array, but its translation not worked)

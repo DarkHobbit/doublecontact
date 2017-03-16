@@ -10,8 +10,9 @@
  * (at your option) any later version. See COPYING file for more details.
  *
  */
-#include "explaytv240profile.h"
 #include <iostream>
+
+#include "explaytv240profile.h"
 
 ExplayTV240Profile::ExplayTV240Profile()
 {
@@ -51,13 +52,26 @@ QStringList ExplayTV240Profile::makeHeader()
 
 bool ExplayTV240Profile::exportRecord(QStringList &row, const ContactItem &item, QStringList& errors)
 {
-    // TODO don't quote!!!
     row << saveNamePart(item, 0);
     // One phone
     row << item.prefPhone;
     for (int i=2; i<7; i++)
         row << "";
-    // TODO write warnings on non-empty unsupported fields, sync with udxfile
+    LOSS_DATA(S_SOME_PHONES, item.phones.count()>1);
+    LOSS_DATA(S_EMAIL, !item.emails.isEmpty());
+    LOSS_DATA(S_BDAY, !item.birthday.isEmpty());
+    LOSS_DATA(S_ANN, !item.anniversaries.isEmpty());
+    LOSS_DATA(S_DESC, item.description);
+    LOSS_DATA(S_PHOTO, !item.photo.isEmpty());
+    LOSS_DATA(S_ORG, item.organization);
+    LOSS_DATA(S_TITLE, item.title);
+    LOSS_DATA(S_ADDR, !item.addrHome.isEmpty());
+    LOSS_DATA(S_ADDR, !item.addrWork.isEmpty());
+    LOSS_DATA(S_NICK, item.nickName);
+    LOSS_DATA(S_URL, item.url);
+    LOSS_DATA(S_IM_JABBER, item.jabberName);
+    LOSS_DATA(S_IM_ICQ, item.icqName);
+    LOSS_DATA(S_IM_SKYPE, item.skypeName);
     return true;
 }
 

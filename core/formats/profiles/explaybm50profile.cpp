@@ -106,7 +106,22 @@ bool ExplayBM50Profile::exportRecord(QStringList &row, const ContactItem &item, 
     // TODO see other rows and check on real phone
     for (int i=13; i<54; i++)
         row << "";
-    // TODO write warnings on non-empty unsupported fields, sync with udxfile
+    // TODO check on real phone - maybe it will be work with some of these fields?
+    LOSS_DATA(S_SOME_PHONES, item.phones.count()>1);
+    LOSS_DATA(S_EMAIL, !item.emails.isEmpty());
+    LOSS_DATA(S_BDAY, !item.birthday.isEmpty());
+    LOSS_DATA(S_ANN, !item.anniversaries.isEmpty());
+    LOSS_DATA(S_DESC, item.description);
+    LOSS_DATA(S_PHOTO, !item.photo.isEmpty());
+    LOSS_DATA(S_ORG, item.organization);
+    LOSS_DATA(S_TITLE, item.title);
+    LOSS_DATA(S_ADDR, !item.addrHome.isEmpty());
+    LOSS_DATA(S_ADDR, !item.addrWork.isEmpty());
+    LOSS_DATA(S_NICK, item.nickName);
+    LOSS_DATA(S_URL, item.url);
+    LOSS_DATA(S_IM_JABBER, item.jabberName);
+    LOSS_DATA(S_IM_ICQ, item.icqName);
+    LOSS_DATA(S_IM_SKYPE, item.skypeName);
     return true;
 }
 

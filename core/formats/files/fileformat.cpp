@@ -46,3 +46,15 @@ void FileFormat::closeFile()
     if (file.isOpen())
         file.close();
 }
+
+void FileFormat::lossData(QStringList &errors, const QString &contactName, const QString &fieldName, bool condition)
+{
+    if (condition)
+        errors << S_ERR_UNSUPPORTED_TAG.arg(contactName).arg(fieldName.toLower());
+}
+
+void FileFormat::lossData(QStringList &errors, const QString &contactName, const QString &fieldName, const QString &field)
+{
+    lossData(errors, contactName, fieldName, !field.isEmpty());
+    // TODO unify UDXFile with it
+}

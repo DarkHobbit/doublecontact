@@ -24,6 +24,10 @@ public:
     virtual ~FileFormat();
     QStringList errors();
     QString fatalError();
+    static void lossData(QStringList& errors, const QString& contactName,
+        const QString& fieldName, bool condition);
+    static void lossData(QStringList& errors, const QString& contactName,
+        const QString& fieldName, const QString& field);
 protected:
     QFile file;
     QStringList _errors;
