@@ -3,7 +3,9 @@
 ## Explay BM50 ##
 
 Has header: yes, 54 columns.
+
 Charset: UTF-16LE with BOM.
+
 Quote cells: yes.
 
 Header fields:
@@ -67,7 +69,9 @@ Notes: TODO: need check, how many columns really read by phone.
 ## Explay TV240 ##
 
 Has header: yes, 7 columns.
+
 Charset: UTF-16LE (BOM appearance: unknown).
+
 Quote cells: no (I don't known, what will happened, if contact contains commas in name).
 
 Header fields:
@@ -80,7 +84,10 @@ Header fields:
 * Fax Number
 
 Notes: In TV240, only name and first phone are used. Other fields are ignored.
+
 TODO: In sample at source site, some commas in header replaced by semicolon; maybe, it's a mistake.
+
 TODO: check BOM presence.
+
 Source: http://4pda.ru/forum/index.php?showtopic=494378&view=findpost&p=30153623 (on Russian)
 
