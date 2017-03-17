@@ -286,7 +286,7 @@
        <item>
         <widget class="QCheckBox" name="cbWarnOnNonStandardTypes">
          <property name="text">
-          <string>Warning on non-standard phone/email types</string>
+          <string>Warning on non-standard phone types</string>
          </property>
         </widget>
        </item>

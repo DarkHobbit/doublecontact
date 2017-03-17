@@ -1107,53 +1107,52 @@ SMS: %7
         <translation>Нестандартный тип телефона в строке %1: %2%3</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="183"/>
         <source>Non-standard email type at line %1: %2%3</source>
-        <translation>Нестандартный тип электронной почты в строке %1: %2%3</translation>
+        <translation type="obsolete">Нестандартный тип электронной почты в строке %1: %2%3</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="203"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="196"/>
         <source>Unsupported photo type at line %1: %2%3</source>
         <translation>Неподдерживаемый тип фотографии в строке %1: %2%3</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="214"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="207"/>
         <source>Unknown encoding type at line %1: %2%3</source>
         <translation>Неизвестное кодирование в строке %1: %2%3</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="227"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="220"/>
         <source>Unknown address type at line %1: %2%3</source>
         <translation>Неизвестный тип адреса в строке %1: %2%3</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="270"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="263"/>
         <source>Last section not closed</source>
         <translation>Последняя секция не закрыта</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="277"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="270"/>
         <location filename="../core/formats/files/udxfile.cpp" line="164"/>
         <source>%1 unknown tags found</source>
         <translation>Неизвестных тегов: %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="394"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="387"/>
         <source>Unknown charset: </source>
         <translation>Неизвестная кодировка: </translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="417"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="410"/>
         <source>Unknown encoding: </source>
         <translation>Неизвестное кодирование: </translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="440"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="433"/>
         <source>Invalid timezone: </source>
         <translation>Неправильный часовой пояс: </translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="459"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="452"/>
         <source>Invalid datetime: </source>
         <translation>Неправильная дата/время</translation>
     </message>
@@ -1754,8 +1753,12 @@ Data will be lost</source>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="289"/>
+        <source>Warning on non-standard phone types</source>
+        <translation>Предупреждать о нестандартных типах телефонов</translation>
+    </message>
+    <message>
         <source>Warning on non-standard phone/email types</source>
-        <translation>Предупреждать о нестандартных типах телефонов/почты</translation>
+        <translation type="obsolete">Предупреждать о нестандартных типах телефонов/почты</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.cpp" line="111"/>

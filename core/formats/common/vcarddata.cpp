@@ -175,13 +175,6 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                     email.types << "pref";
                 else
                     email.types = types;
-                if (gd.warnOnNonStandardTypes)
-                    foreach(const QString& eType, types) {
-                        bool isStandard;
-                        Email::standardTypes.translate(eType, &isStandard);
-                        if (!isStandard)
-                            errors << QObject::tr("Non-standard email type at line %1: %2%3").arg(line+1).arg(eType).arg(visName);
-                    }
                 email.syncMLRef = syncMLRef;
                 item.emails.push_back(email);
             }
