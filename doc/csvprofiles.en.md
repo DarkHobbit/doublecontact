@@ -1,4 +1,4 @@
-# Supported SCV profiles list #
+# Supported CSV profiles list #
 
 ## Explay BM50 ##
 
