@@ -111,9 +111,9 @@ public:
     void getData(QList<T>& leftItems, QList<T>& rightItems);
 protected:
     StandardTypes* standardTypes;
-    void addValue(const TypedDataItem& item, bool toLeft);
+    void addValue(const TypedStringItem& item, bool toLeft);
     int count(bool onLeft);
-    bool getValue(int index, TypedDataItem& item, bool fromLeft);
+    bool getValue(int index, TypedStringItem& item, bool fromLeft);
     virtual void copyData(bool toLeft);
     virtual void copyOneItem(bool toLeft, int srcIndex);
 private:

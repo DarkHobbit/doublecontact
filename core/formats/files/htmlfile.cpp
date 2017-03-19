@@ -66,6 +66,7 @@ bool HTMLFile::exportRecords(const QString &url, ContactList &list)
         exportString(stream, item.organization, S_ORG);
         exportString(stream, item.title, S_TITLE);
         // Addresses
+        // TODO use here exportTypedItem, after moving addresses to list
         exportStringableItem(stream, item.addrHome, S_ADDR + " " +Phone::standardTypes.translate("home"));
         exportStringableItem(stream, item.addrWork, S_ADDR + " " +Phone::standardTypes.translate("work"));
         // Internet
@@ -108,7 +109,7 @@ void HTMLFile::exportTypedItem(QTextStream &stream, const QList<T> &lst, const Q
                 if (j<it.types.count()-1)
                     types += "+";
             }
-            stream << QString("%1 (%2)").arg(it.value).arg(types);
+            stream << QString("%1 (%2)").arg(it.toString()).arg(types);
             i++;
             if (i<lst.count())
                 stream << ", ";

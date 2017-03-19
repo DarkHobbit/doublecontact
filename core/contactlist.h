@@ -30,16 +30,23 @@ struct TagValue { // for non-editing ang unknown tags
     TagValue(const QString& _tag, const QString& _value);
 };
 
-// vCard item with one of more types (one phone, email, impp, etc.)
+// vCard item with one of more types (one phone, email, impp, address, etc.)
 struct TypedDataItem {
     QString value;
     QStringList types;
     // Phone: some devices & addressbooks may allow create any tel type (not RFC, but...)
     // Email: according RFC 2426, may be non-standard
     int syncMLRef;
+    virtual QString toString() const=0;
 };
 
-struct Phone: public TypedDataItem {
+// vCard item with one of more types and string content (one phone, email, impp, etc.)
+struct TypedStringItem: public TypedDataItem {
+    QString value;
+    virtual QString toString() const;
+};
+
+struct Phone: public TypedStringItem {
     Phone();
     Phone(const QString& _value, const QString& type1 = "", const QString& type2 = "");
     bool operator ==(const Phone& p);
@@ -55,7 +62,7 @@ struct Phone: public TypedDataItem {
     } standardTypes;
 };
 
-struct Email: public TypedDataItem {
+struct Email: public TypedStringItem {
     Email();
     Email(const QString& _value, const QString& type1 = "", const QString& type2 = "");
     bool operator ==(const Email& e);
@@ -82,9 +89,8 @@ struct DateItem { // Birthday and anniversaries
     inline bool isEmpty() const {return value.isNull(); }
 };
 
-struct PostalAddress {
+struct PostalAddress: public TypedDataItem {
     QString offBox, extended, street, city, region, postalCode, country;
-    QStringList paTypes; // home, work, dom, postal, etc.
     bool operator ==(const PostalAddress& a);
     void clear();
     QString toString() const;

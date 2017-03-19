@@ -24,6 +24,11 @@ struct CountryRule{
     {QString::fromUtf8("Україна"),  "0", "+380"}
 };
 
+QString TypedStringItem::toString() const
+{
+    return value;
+}
+
 Phone::Phone()
 {}
 
@@ -541,14 +546,14 @@ QString DateItem::toString(DateFormat format) const
 bool PostalAddress::operator ==(const PostalAddress &a)
 {
     return
-        paTypes==a.paTypes
+        types==types
      && offBox==a.offBox && extended==a.extended
             && street==a.street && city==a.city && region==a.region && postalCode==a.postalCode && country==a.country;
 }
 
 void PostalAddress::clear()
 {
-    paTypes.clear();
+    types.clear();
     offBox.clear();
     extended.clear();
     street.clear();

@@ -455,7 +455,7 @@ void VCardData::importDate(DateItem &item, const QString &src, QStringList& erro
 void VCardData::importAddress(PostalAddress &item, const QStringList& aTypes, const QStringList& values, QStringList &errors) const
 {
     item.clear();
-    item.paTypes = aTypes;
+    item.types = aTypes;
     if (values.count()>0) item.offBox = decodeValue(values[0], errors);
     if (values.count()>1) item.extended = decodeValue(values[1], errors);
     if (values.count()>2) item.street = decodeValue(values[2], errors);
@@ -600,7 +600,7 @@ QString VCardData::exportDate(const DateItem &item) const
 
 QString VCardData::exportAddress(const PostalAddress &item) const
 {
-    return encodeAll("ADR", &item.paTypes, true,
+    return encodeAll("ADR", &item.types, true,
                 item.offBox + ";" + item.extended
         + ";" + item.street + ";" + item.city + ";" + item.region
         + ";" + item.postalCode + ";" + item.country);

@@ -190,11 +190,11 @@ void ContactDialog::getData(ContactItem& c)
     c.photo = photo;
     // Addresses
     readAddress(ui->gbAddrHome, c.addrHome);
-    if (!c.addrHome.isEmpty() && !c.addrHome.paTypes.contains("home", Qt::CaseInsensitive))
-        c.addrHome.paTypes << "home";
+    if (!c.addrHome.isEmpty() && !c.addrHome.types.contains("home", Qt::CaseInsensitive))
+        c.addrHome.types << "home";
     readAddress(ui->gbAddrWork, c.addrWork);
-    if (!c.addrWork.isEmpty() && !c.addrWork.paTypes.contains("work", Qt::CaseInsensitive))
-        c.addrWork.paTypes << "work";
+    if (!c.addrWork.isEmpty() && !c.addrWork.types.contains("work", Qt::CaseInsensitive))
+        c.addrWork.types << "work";
     // Internet
     c.nickName = ui->leNickName->text();
     c.url = ui->leURL->text();
@@ -415,7 +415,7 @@ void ContactDialog::addTriplet(int& count, QGridLayout* l, const QString& nameTe
     count++;
 }
 
-void ContactDialog::readTriplet(const QString &nameTemplate, int num, TypedDataItem& item, const ::StandardTypes& sTypes)
+void ContactDialog::readTriplet(const QString &nameTemplate, int num, TypedStringItem& item, const ::StandardTypes& sTypes)
 {
     QLineEdit* editor = findChild<QLineEdit*>(QString("le%1%2").arg(nameTemplate).arg(num));
     QComboBox* typeBox = findChild<QComboBox*>(QString("cb%1Type%2").arg(nameTemplate).arg(num));

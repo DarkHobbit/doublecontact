@@ -303,7 +303,7 @@ void TypedPair::getData(QList<T> &leftItems, QList<T> &rightItems)
     }
 }
 
-void TypedPair::addValue(const TypedDataItem& item, bool toLeft)
+void TypedPair::addValue(const TypedStringItem& item, bool toLeft)
 {
     QGridLayout* layout = toLeft ? layLeft : layRight;
     QList<QLineEdit*>& edSet = toLeft ? leftEdSet : rightEdSet;
@@ -341,7 +341,7 @@ int TypedPair::count(bool onLeft)
     return (onLeft ? layLeft : layRight)->rowCount();
 }
 
-bool TypedPair::getValue(int index, TypedDataItem& item, bool fromLeft)
+bool TypedPair::getValue(int index, TypedStringItem& item, bool fromLeft)
 {
     QList<QLineEdit*>& edSet = fromLeft ? leftEdSet : rightEdSet;
     QList<QComboBox*>& comboSet = fromLeft ? leftComboSet : rightComboSet;
