@@ -24,6 +24,9 @@ struct CountryRule{
     {QString::fromUtf8("Україна"),  "0", "+380"}
 };
 
+TypedDataItem::~TypedDataItem()
+{}
+
 QString TypedStringItem::toString() const
 {
     return value;
@@ -639,4 +642,3 @@ QString Photo::detectFormat() const
         format = "PNG";
     return format;
 }
-

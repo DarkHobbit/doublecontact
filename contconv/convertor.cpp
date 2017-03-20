@@ -37,7 +37,7 @@ int Convertor::start()
         printUsage();
         return 1;
     }
-    QString inPath, outPath, outFormat, filterString;
+    QString inPath, outPath, outFormat, inProfile, outProfile, filterString;
     bool infoMode = false;
     bool forceOverwrite = false;
     bool forceSingleFile = false;
@@ -82,11 +82,41 @@ int Convertor::start()
             }
             outFormat = arguments()[i];
             if (outFormat!="vcf21" && outFormat!="vcf30" && outFormat!="vcfauto"
-            && outFormat!="udx" && outFormat!="mpb" && outFormat!="html"
+            && outFormat!="udx" && outFormat!="mpb" && outFormat!="csv" && outFormat!="html"
             && outFormat!="copy") {
                 out << tr("Error: Unknown output format: %1\n").arg(outFormat);
                 printUsage();
                 return 5;
+            }
+            continue;
+        }
+        else if (arguments()[i]=="-ip") {
+            i++;
+            if (i==arguments().count()) {
+                out << tr("Error: -ip option present, but profile name is missing\n");
+                printUsage();
+                return 6;
+            }
+            inProfile = arguments()[i];
+            if (inProfile!="explaybm50" && inProfile!="explaytv240" && inProfile!="generic") {
+                out << tr("Error: Unknown input profile: %1\n").arg(inProfile);
+                printUsage();
+                return 7;
+            }
+            continue;
+        }
+        else if (arguments()[i]=="-op") {
+            i++;
+            if (i==arguments().count()) {
+                out << tr("Error: -op option present, but profile name is missing\n");
+                printUsage();
+                return 8;
+            }
+            outProfile = arguments()[i];
+            if (outProfile!="explaybm50" && outProfile!="explaytv240" && outProfile!="generic") {
+                out << tr("Error: Unknown output profile: %1\n").arg(outProfile);
+                printUsage();
+                return 9;
             }
             continue;
         }
@@ -117,56 +147,70 @@ int Convertor::start()
             if (i==arguments().count()) {
                 out << tr("Error: --filter command present, but filter string is missing\n");
                 printUsage();
-                return 6;
+                return 10;
             }
             filterString = arguments()[i];
         }
         else {
             out << tr("Unknown option: %1\n").arg(arguments()[i]);
             printUsage();
-            return 7;
+            return 11;
         }
     }
     // Check input data completion
     if (inPath.isEmpty()) {
         out << tr("Error: Input path is missing\n");
         printUsage();
-        return 8;
+        return 12;
     }
     if (outPath.isEmpty() && !infoMode) {
         out << tr("Error: Output path is missing\n");
         printUsage();
-        return 9;
+        return 13;
     }
     if (outFormat.isEmpty() && !infoMode) {
         out << tr("Error: Output format name is missing\n");
         printUsage();
-        return 10;
+        return 14;
+    }
+    if (outFormat=="csv") {
+        if (outProfile.isEmpty()) {
+            out << tr("Error: Output format is CSV, but profile name is missing\n");
+            printUsage();
+            return 15;
+        }
+    }
+    else {
+        if (!outProfile.isEmpty()) {
+            out << tr("Error: Output format isn't' CSV, but profile name is present\n");
+            printUsage();
+            return 16;
+        }
     }
     if (forceSingleFile && forceDirectory) {
         out << tr("Error: Options -s and -d are not compatible\n");
         printUsage();
-        return 11;
+        return 17;
     }
     if (forceDirectory && !outFormat.contains("vcf") && outFormat!="copy") {
         out << tr("Error: -d option applicable only for vCard format");
-        return 12;
+        return 18;
     }
     if (infoMode && !(outPath.isEmpty() && outFormat.isEmpty())) {
         out << tr("Error: Command --info is not compatible with -o and -f options\n");
         printUsage();
-        return 13;
+        return 19;
     }
     if ((filterExclusive || filterReverse) && filterString.isEmpty()) {
         out << tr("Error: -fe and -fr option applicable only with --filter command");
-        return 14;
+        return 20;
     }
     // Check if output file exists
     QFile of(outPath);
     if (of.exists() && !forceOverwrite && !QFileInfo(outPath).isDir()) {
         out << tr("Error: Output file already exists, use -w if necessary\n");
         printUsage();
-        return 15;
+        return 21;
     }
     // Define, create file or directory at output
     // (default: as input)
@@ -185,14 +229,26 @@ int Convertor::start()
         iFormat = new VCFDirectory();
     if (!iFormat) {
         out << factory.error << "\n";
-        return 16;
+        return 22;
+    }
+    // Input CSV profile
+    CSVFile* csvFormat = dynamic_cast<CSVFile*>(iFormat);
+    if (csvFormat) {
+        if (inProfile.isEmpty()) {
+            out << tr("Error: Input format is CSV, but profile name is missing\n");
+            printUsage();
+            delete iFormat;
+            return 23;
+        }
+        else
+            setCSVProfile(csvFormat, inProfile);
     }
     ContactList items;
     bool res = iFormat->importRecords(inPath, items, false);
     logFormat(iFormat);
     delete iFormat;
     if (!res)
-        return 17;
+        return 24;
     out << tr("%1 records read\n").arg(items.count());
     // Show statistics, if info mode switched on
     if (infoMode) {
@@ -265,6 +321,8 @@ int Convertor::start()
         oFormat = new UDXFile();
     else if (outFormat.contains("mpb"))
         oFormat = new MPBFile();
+    else if (outFormat.contains("csv"))
+        oFormat = new CSVFile();
     else if (outFormat.contains("html"))
         oFormat = new HTMLFile();
     else { // copy input format
@@ -276,17 +334,23 @@ int Convertor::start()
             oFormat = new UDXFile();
         else if (MPBFile::detect(inPath))
             oFormat = new MPBFile();
+        else if (CSVFile::detect(inPath))
+            oFormat = new CSVFile();
         else {
             out << "Error: Can't autodetect input format\n";
-            return 18;
+            return 25;
         }
     }
+    // Output CSV profile
+    csvFormat = dynamic_cast<CSVFile*>(oFormat);
+    if (csvFormat)
+        setCSVProfile(csvFormat, outProfile);
     // Write
     res = oFormat->exportRecords(outPath, items);
     logFormat(oFormat);
     delete oFormat;
     out << tr("%1 records written\n").arg(items.count());
-    return res ? 0 : 19;
+    return res ? 0 : 26;
 }
 
 // Print program usage
@@ -294,17 +358,21 @@ void Convertor::printUsage()
 {
     out << tr(
         "Usage:\n" \
-        "contconv -i inputfile -o outfile -f outformat [-w] [-d|-s] [commands]\n" \
+        "contconv -i inputfile -o outfile -f outformat [-ip csvprofile] [-op csvprofile] [-w] [-d|-s] [commands]\n" \
         "contconv --info inputfile\n" \
         "\n" \
         "Possible values for outformat:\n" \
         "copy - same as input format, if atodetected\n" \
+        "csv - comma-separated values (-op option required)\n" \
         "vcf21 - vCard version 2.1\n" \
         "vcf30 - vCard version 3.0\n" \
         "vcfauto - vCard version as in input file\n" \
         "udx - Philips Xenium UDX\n" \
         "mpb - MyPhoneExplorer backup\n" \
-               "html - HTML report (write only)\n" \
+         "html - HTML report (write only)\n" \
+        "\n" \
+        "Possible values for csvprofile:\n" \
+        "explaybm50, explaytv240, generic\n" \
         "\n" \
         "Options:\n" \
         "-w - force overwrite output single file, if exists (directories overwrites already)\n" \
@@ -323,7 +391,7 @@ void Convertor::printUsage()
         "If -fe option found, other records not recorded in output file. By default,\n" \
         "it recorded, but not processed by other commands.\n" \
         "If -fr option found, filter is reversed (only records without string are filtered).\n" \
-        "\n"); // TODO filter
+        "\n");
 }
 
 void Convertor::logFormat(IFormat* format)
@@ -332,4 +400,14 @@ void Convertor::logFormat(IFormat* format)
         out << s << "\n";
     if (!format->fatalError().isEmpty())
         out << "Error: " << format->fatalError() << "\n";
+}
+
+void Convertor::setCSVProfile(CSVFile *csvFormat, const QString &code)
+{
+    if (code=="explaybm50")
+        csvFormat->setProfile("Explay BM50");
+    else if (code=="explaytv240")
+        csvFormat->setProfile("Explay TV240");
+    else
+        csvFormat->setProfile("Generic profile");
 }

@@ -37,6 +37,7 @@ struct TypedDataItem {
     // Phone: some devices & addressbooks may allow create any tel type (not RFC, but...)
     // Email: according RFC 2426, may be non-standard
     int syncMLRef;
+    virtual ~TypedDataItem();
     virtual QString toString() const=0;
 };
 

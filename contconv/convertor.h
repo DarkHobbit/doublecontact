@@ -19,6 +19,7 @@
 #include <QStringList>
 #include <QTextStream>
 #include "formats/iformat.h"
+#include "formats/files/csvfile.h"
 
 class Convertor : public QCoreApplication
 {
@@ -29,6 +30,7 @@ public:
 private:
     QTextStream out;
     void logFormat(IFormat* format);
+    void setCSVProfile(CSVFile* csvFormat, const QString& code);
 };
 
 #endif // CONVERTOR_H
