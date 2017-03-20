@@ -16,6 +16,7 @@
 #include <QStringList>
 #include "convertor.h"
 #include "formats/formatfactory.h"
+#include "formats/files/htmlfile.h"
 #include "formats/files/mpbfile.h"
 #include "formats/files/udxfile.h"
 #include "formats/files/vcfdirectory.h"
@@ -80,7 +81,9 @@ int Convertor::start()
                 return 4;
             }
             outFormat = arguments()[i];
-            if (outFormat!="vcf21" && outFormat!="vcf30" && outFormat!="vcfauto" && outFormat!="udx" && outFormat!="mpb" && outFormat!="copy") {
+            if (outFormat!="vcf21" && outFormat!="vcf30" && outFormat!="vcfauto"
+            && outFormat!="udx" && outFormat!="mpb" && outFormat!="html"
+            && outFormat!="copy") {
                 out << tr("Error: Unknown output format: %1\n").arg(outFormat);
                 printUsage();
                 return 5;
@@ -262,6 +265,8 @@ int Convertor::start()
         oFormat = new UDXFile();
     else if (outFormat.contains("mpb"))
         oFormat = new MPBFile();
+    else if (outFormat.contains("html"))
+        oFormat = new HTMLFile();
     else { // copy input format
         if (VCFFile::detect(inPath)) {
             gd.useOriginalFileVersion = true;
@@ -299,6 +304,7 @@ void Convertor::printUsage()
         "vcfauto - vCard version as in input file\n" \
         "udx - Philips Xenium UDX\n" \
         "mpb - MyPhoneExplorer backup\n" \
+               "html - HTML report (write only)\n" \
         "\n" \
         "Options:\n" \
         "-w - force overwrite output single file, if exists (directories overwrites already)\n" \
