@@ -15,7 +15,6 @@
 #include <QFileDialog>
 #include <QLineEdit>
 #include <QMessageBox>
-#include <QVBoxLayout>
 
 #include "contactdialog.h"
 #include "ui_contactdialog.h"
@@ -33,7 +32,7 @@
 ContactDialog::ContactDialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::ContactDialog),
-    nameCount(0), phoneCount(0), emailCount(0), anniversaryCount(0)
+    nameCount(0), phoneCount(0), emailCount(0), anniversaryCount(0), addrCount(0)
 {
     ui->setupUi(this);
     ui->lbName1->setText(S_LAST_NAME);
@@ -47,6 +46,8 @@ ContactDialog::ContactDialog(QWidget *parent) :
     // Photo editing
     menuPhotoEdit = new QMenu(this);
     ui->btnPhotoEdit->setMenu(menuPhotoEdit);
+    // Addresses
+    layAddrs = new QVBoxLayout(ui->scrollAreaWidgetContents);
     // Other known and unknown tags tables
     ui->twOtherTags->setItemDelegate(new ReadOnlyTableDelegate());
     ui->twUnknownTags->setItemDelegate(new ReadOnlyTableDelegate());
@@ -120,8 +121,8 @@ void ContactDialog::setData(const ContactItem& c)
     showPhoto(c.photo, ui->lbPhotoContent);
     updatePhotoMenu();
     // Addresses
-    addAddress(ui->gbAddrHome, c.addrHome);
-    addAddress(ui->gbAddrWork, c.addrWork);
+    for (int i=0; i<c.addrs.count(); i++)
+        addAddress(c.addrs[i]);
     //Internet
     ui->leNickName->setText(c.nickName);
     ui->leURL->setText(c.url);
@@ -168,7 +169,7 @@ void ContactDialog::getData(ContactItem& c)
     for (int i=0; i<phoneCount; i++) {
         Phone ph;
         readTriplet("Phone", i+1, ph, Phone::standardTypes);
-        c.phones.push_back(ph);
+        c.phones << ph;
     }
     // Emails
     fixCount(emailCount, "Email", MIN_VISIBLE_TRIPLETS);
@@ -176,7 +177,7 @@ void ContactDialog::getData(ContactItem& c)
     for (int i=0; i<emailCount; i++) {
         Email em;
         readTriplet("Email", i+1, em, Email::standardTypes);
-        c.emails.push_back(em);
+        c.emails << em;
     }
     // Birthday and anniversaries
     c.birthday = birthdayDetails;
@@ -189,12 +190,12 @@ void ContactDialog::getData(ContactItem& c)
     // Photo
     c.photo = photo;
     // Addresses
-    readAddress(ui->gbAddrHome, c.addrHome);
-    if (!c.addrHome.isEmpty() && !c.addrHome.types.contains("home", Qt::CaseInsensitive))
-        c.addrHome.types << "home";
-    readAddress(ui->gbAddrWork, c.addrWork);
-    if (!c.addrWork.isEmpty() && !c.addrWork.types.contains("work", Qt::CaseInsensitive))
-        c.addrWork.types << "work";
+    c.addrs.clear();
+    for (int i=0; i<addrCount; i++) {
+        PostalAddress addr;
+        readAddress(i+1, addr);
+        c.addrs << addr;
+    }
     // Internet
     c.nickName = ui->leNickName->text();
     c.url = ui->leURL->text();
@@ -221,6 +222,13 @@ void ContactDialog::fillEmailTypes(QComboBox* combo)
 {
     combo->clear();
     combo->insertItems(0, Email::standardTypes.displayValues);
+    combo->addItem(S_MIXED_TYPE);
+}
+
+void ContactDialog::fillAddrTypes(QComboBox *combo)
+{
+    combo->clear();
+    combo->insertItems(0, PostalAddress::standardTypes.displayValues);
     combo->addItem(S_MIXED_TYPE);
 }
 
@@ -315,46 +323,63 @@ void ContactDialog::readAnniversary(int num, DateItem &ann)
     ann = anniversaryDetails[num-1];
 }
 
-void ContactDialog::addAddress(QWidget *parent, const PostalAddress &addr)
+void ContactDialog::addAddress(const PostalAddress &addr)
 {
-    QGridLayout* l = new QGridLayout(parent);
+    QGroupBox* gbAddr = new QGroupBox();
+    gbAddr->setObjectName(QString("gbAddr%1").arg(addrCount+1));
+    layAddrs->addWidget(gbAddr);
+    QGridLayout* l = new QGridLayout(gbAddr);
     QLineEdit* le;
+    // Type combo box
+    QComboBox* cbT = new QComboBox();
+    cbT->setObjectName(QString("cbAddrType%1").arg(addrCount+1));
+    cbT->setMaxVisibleItems(32); // "mixed" (last item) must be strongly visible
+    connect(cbT, SIGNAL(currentIndexChanged(const QString&)), this, SLOT(itemTypeChanged(const QString&)));
+    l->addWidget(cbT, 0, 1);
+    fillAddrTypes(cbT);
+    addTypeList(addrCount+1, "Addr", addr.types, PostalAddress::standardTypes);
+    // Delete button
+    QToolButton* btnD = addDelButton(addrCount, "Addr", SLOT(slotDelAddress()));
+    l->addWidget(btnD, 0, 0);
     // Address components
-    l->addWidget(new QLabel(S_ADR_OFFICE_BOX), 0, 0);
+    l->addWidget(new QLabel(S_ADR_OFFICE_BOX), 0, 2);
     le = new QLineEdit(addr.offBox);
     le->setObjectName(S_ADR_OFFICE_BOX);
-    l->addWidget(le, 0, 1);
-    l->addWidget(new QLabel(S_ADR_EXTENDED), 1, 0);
+    l->addWidget(le, 0, 3);
+
+    l->addWidget(new QLabel(S_ADR_EXTENDED), 0, 4);
     le = new QLineEdit(addr.extended);
     le->setObjectName(S_ADR_EXTENDED);
-    l->addWidget(le, 1, 1);
-    l->addWidget(new QLabel(S_ADR_STREET), 2, 0);
+    l->addWidget(le, 0, 5);
+
+    l->addWidget(new QLabel(S_ADR_STREET), 1, 0);
     le = new QLineEdit(addr.street);
     le->setObjectName(S_ADR_STREET);
-    l->addWidget(le, 2, 1);
-    l->addWidget(new QLabel(S_ADR_CITY), 3, 0);
+    l->addWidget(le, 1, 1, 1, 2);
+
+    l->addWidget(new QLabel(S_ADR_CITY), 1, 3);
     le = new QLineEdit(addr.city);
     le->setObjectName(S_ADR_CITY);
-    l->addWidget(le, 3, 1);
-    l->addWidget(new QLabel(S_ADR_REGION), 4, 0);
+    l->addWidget(le, 1, 4, 1, 2);
+
+    l->addWidget(new QLabel(S_ADR_REGION), 2, 0);
     le = new QLineEdit(addr.region);
     le->setObjectName(S_ADR_REGION);
-    l->addWidget(le, 4, 1);
-    l->addWidget(new QLabel(S_ADR_POST_CODE), 5, 0);
+    l->addWidget(le, 2, 1);
+
+    l->addWidget(new QLabel(S_ADR_POST_CODE), 2, 2);
     le = new QLineEdit(addr.postalCode);
     le->setObjectName(S_ADR_POST_CODE);
-    l->addWidget(le, 5, 1);
-    l->addWidget(new QLabel(S_ADR_POST_CODE), 5, 0);
-    le = new QLineEdit(addr.postalCode);
-    le->setObjectName(S_ADR_POST_CODE);
-    l->addWidget(le, 5, 1);
-    l->addWidget(new QLabel(S_ADR_COUNTRY), 6, 0);
+    l->addWidget(le, 2, 3);
+
+    l->addWidget(new QLabel(S_ADR_COUNTRY), 2, 4);
     le = new QLineEdit(addr.country);
     le->setObjectName(S_ADR_COUNTRY);
-    l->addWidget(le, 6, 1);
-    // TODO type box, if multy addresses will implemented
-}
+    l->addWidget(le, 2, 5);
 
+    addrCount++;
+}
+/*
 void ContactDialog::setAddress(QWidget *parent, const PostalAddress &addr)
 {
     QLineEdit* le;
@@ -373,24 +398,26 @@ void ContactDialog::setAddress(QWidget *parent, const PostalAddress &addr)
     le = parent->findChild<QLineEdit*>(S_ADR_COUNTRY);
     if (le) le->setText(addr.country);
 }
-
-void ContactDialog::readAddress(QWidget *parent, PostalAddress &addr)
+*/
+void ContactDialog::readAddress(int num, PostalAddress &addr)
 {
+    QGroupBox* gbAddr = findChild<QGroupBox*>(QString("gbAddr%1").arg(num));
     QLineEdit* le;
-    le = parent->findChild<QLineEdit*>(S_ADR_OFFICE_BOX);
+    le = gbAddr->findChild<QLineEdit*>(S_ADR_OFFICE_BOX);
     if (le) addr.offBox = le->text();
-    le = parent->findChild<QLineEdit*>(S_ADR_EXTENDED);
+    le = gbAddr->findChild<QLineEdit*>(S_ADR_EXTENDED);
     if (le) addr.extended = le->text();
-    le = parent->findChild<QLineEdit*>(S_ADR_STREET);
+    le = gbAddr->findChild<QLineEdit*>(S_ADR_STREET);
     if (le) addr.street = le->text();
-    le = parent->findChild<QLineEdit*>(S_ADR_CITY);
+    le = gbAddr->findChild<QLineEdit*>(S_ADR_CITY);
     if (le) addr.city = le->text();
-    le = parent->findChild<QLineEdit*>(S_ADR_REGION);
+    le = gbAddr->findChild<QLineEdit*>(S_ADR_REGION);
     if (le) addr.region = le->text();
-    le = parent->findChild<QLineEdit*>(S_ADR_POST_CODE);
+    le = gbAddr->findChild<QLineEdit*>(S_ADR_POST_CODE);
     if (le) addr.postalCode = le->text();
-    le = parent->findChild<QLineEdit*>(S_ADR_COUNTRY);
+    le = gbAddr->findChild<QLineEdit*>(S_ADR_COUNTRY);
     if (le) addr.country = le->text();
+    readTypelist("Addr", num, addr.types, PostalAddress::standardTypes);
 }
 
 void ContactDialog::addTriplet(int& count, QGridLayout* l, const QString& nameTemplate, const QString& itemValue)
@@ -418,14 +445,9 @@ void ContactDialog::addTriplet(int& count, QGridLayout* l, const QString& nameTe
 void ContactDialog::readTriplet(const QString &nameTemplate, int num, TypedStringItem& item, const ::StandardTypes& sTypes)
 {
     QLineEdit* editor = findChild<QLineEdit*>(QString("le%1%2").arg(nameTemplate).arg(num));
-    QComboBox* typeBox = findChild<QComboBox*>(QString("cb%1Type%2").arg(nameTemplate).arg(num));
-    if (!editor || !typeBox) return;
+    if (!editor) return;
     item.value = editor->text();
-    QString t = typeBox->currentText();
-    QStringList tl = t.split("+");
-    item.types.clear();
-    foreach(const QString& te, tl)
-        item.types.push_back(sTypes.unTranslate(te));
+    readTypelist(nameTemplate, num, item.types, sTypes);
 }
 
 void ContactDialog::slotDelTriplet()
@@ -505,6 +527,17 @@ void ContactDialog::addTypeList(int count, const QString &nameTemplate,
     }
 }
 
+void ContactDialog::readTypelist(const QString &nameTemplate, int num, QStringList &types, const StandardTypes &sTypes)
+{
+    QComboBox* typeBox = findChild<QComboBox*>(QString("cb%1Type%2").arg(nameTemplate).arg(num));
+    if (!typeBox) return;
+    QString t = typeBox->currentText();
+    QStringList tl = t.split("+");
+    types.clear();
+    foreach(const QString& te, tl)
+        types.push_back(sTypes.unTranslate(te));
+}
+
 QLineEdit* ContactDialog::nameEditorByNum(int num)
 {
     return findChild<QLineEdit*>(QString("leName%1").arg(num));
@@ -576,6 +609,8 @@ void ContactDialog::itemTypeChanged(const QString &value)
             PhoneTypeDialog::selectType(tr("Phone type"), Phone::standardTypes, cbT);
         else if (sender()->objectName().contains("Email"))
             PhoneTypeDialog::selectType(tr("Email type"), Email::standardTypes, cbT);
+        else if (sender()->objectName().contains("Addr"))
+            PhoneTypeDialog::selectType(tr("Address type"), PostalAddress::standardTypes, cbT);
     }
 }
 
@@ -636,13 +671,25 @@ void ContactDialog::on_twContact_currentChanged(int)
     resizeEvent(0);
 }
 
-void ContactDialog::on_btnSwapAddresses_clicked()
+void ContactDialog::on_btnAddAddress_clicked()
 {
-    PostalAddress bH, bW;
-    readAddress(ui->gbAddrHome, bH);
-    readAddress(ui->gbAddrWork, bW);
-    setAddress(ui->gbAddrHome, bW);
-    setAddress(ui->gbAddrWork, bH);
+    addAddress(PostalAddress());
+}
+
+void ContactDialog::slotDelAddress()
+{
+    QString oName = sender()->objectName();
+    oName.remove("btnDelAddr");
+    int oNumber = oName.toInt();
+    // Remove current groupbox
+    QGroupBox* gbAddr = findChild<QGroupBox*>(QString("gbAddr%1").arg(oNumber));
+    delete gbAddr;
+    addrCount--;
+    // Rename groupboxes below
+    for (int i=oNumber+1; i<=addrCount+1; i++) {
+        gbAddr = findChild<QGroupBox*>(QString("gbAddr%1").arg(i));
+        gbAddr->setObjectName(QString("gbAddr%1").arg(i-1));
+    }
 }
 
 void ContactDialog::onLoadImage()

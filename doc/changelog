@@ -13,4 +13,5 @@ Current
 * Experimental CSV support (TODO: write more detail)
 * Name components are corresponded by labels in contact edit and dialog windows
 * Create addressbook report in HTML file
+* vCard 4.0: Many postal addresses now allowed for 1 contact
 * New visible columns: nickname, URL, 3 IMs

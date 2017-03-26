@@ -50,7 +50,7 @@ struct TypedStringItem: public TypedDataItem {
 struct Phone: public TypedStringItem {
     Phone();
     Phone(const QString& _value, const QString& type1 = "", const QString& type2 = "");
-    bool operator ==(const Phone& p);
+    bool operator ==(const Phone& p) const;
     // international number representation from particular
     static QStringList availableCountryRules();
     QString expandNumber(int countryRule) const;
@@ -66,7 +66,7 @@ struct Phone: public TypedStringItem {
 struct Email: public TypedStringItem {
     Email();
     Email(const QString& _value, const QString& type1 = "", const QString& type2 = "");
-    bool operator ==(const Email& e);
+    bool operator ==(const Email& e) const;
     static class StandardTypes: public ::StandardTypes {
         public:
         StandardTypes();
@@ -84,7 +84,7 @@ struct DateItem { // Birthday and anniversaries
         ISOExtended, // extended ISO 8601 format (in general, for vCard 3.0)
         Local        // human-readable, according current locale
     };
-    bool operator ==(const DateItem& d);
+    bool operator ==(const DateItem& d) const;
     void clear();
     QString toString(DateFormat format=DateItem::Local) const;
     inline bool isEmpty() const {return value.isNull(); }
@@ -92,9 +92,10 @@ struct DateItem { // Birthday and anniversaries
 
 struct PostalAddress: public TypedDataItem {
     QString offBox, extended, street, city, region, postalCode, country;
-    bool operator ==(const PostalAddress& a);
+    bool operator ==(const PostalAddress& a) const;
     void clear();
-    QString toString() const;
+    virtual QString toString() const;
+    static PostalAddress fromString(const QString& src, const QStringList& _types);
     bool isEmpty() const;
     static class StandardTypes: public ::StandardTypes {
         public:
@@ -127,7 +128,7 @@ struct ContactItem {
     QString organization, title;
     // TODO role, logo?
     // Addresses
-    PostalAddress addrHome, addrWork; // TODO are vCards with more addresses exists in wild nature?
+    QList<PostalAddress> addrs;
     // Internet
     QString nickName, url, jabberName, icqName, skypeName;
     // Format internals

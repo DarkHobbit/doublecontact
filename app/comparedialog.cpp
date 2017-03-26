@@ -35,8 +35,7 @@ CompareDialog::CompareDialog(QWidget *parent) :
     pPhoto = 0;
     pOrg = 0;
     pTitle = 0;
-    pAddrHome = 0;
-    pAddrWork = 0;
+    pAddrs = 0;
     pNickName = 0;
     pURL = 0;
     pJabber = 0;
@@ -79,8 +78,7 @@ void CompareDialog::setData(const ContactItem &left, const ContactItem &right)
     checkPair(S_PHOTO, &pPhoto, left.photo, right.photo);
     checkPair(S_ORG, &pOrg, left.organization, right.organization);
     checkPair(S_TITLE, &pTitle, left.title, right.title);
-    checkPair(tr("Home Address"), &pAddrHome, left.addrHome, right.addrHome);
-    checkPair(tr("Work Address"), &pAddrWork, left.addrWork, right.addrWork);
+    checkPair(tr("Addresses"), &pAddrs, left.addrs, right.addrs);
     checkPair(S_NICK, &pNickName, left.nickName, right.nickName);
     checkPair(S_URL, &pURL, left.url, right.url);
     checkPair(S_IM_JABBER, &pJabber, left.jabberName, right.jabberName);
@@ -112,10 +110,8 @@ void CompareDialog::getData(ContactItem &left, ContactItem &right)
         pOrg->getData(left.organization, right.organization);
     if (pTitle)
         pTitle->getData(left.title, right.title);
-    if (pAddrHome)
-        pAddrHome->getData(left.addrHome, right.addrHome);
-    if (pAddrWork)
-        pAddrWork->getData(left.addrWork, right.addrWork);
+    if (pAddrs)
+        pAddrs->getData(left.addrs, right.addrs);
     if (pNickName)
         pNickName->getData(left.nickName, right.nickName);
     if (pURL)

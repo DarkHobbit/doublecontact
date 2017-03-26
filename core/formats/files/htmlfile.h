@@ -34,7 +34,7 @@ private:
     template <class T>
     void exportStringableItem(QTextStream& stream, const T& field, const QString& title);
     template <class T>
-    void exportTypedItem(QTextStream& stream, const QList<T>& lst, const QString& title);
+    void exportTypedItems(QTextStream& stream, const QList<T>& lst, const QString& title);
 };
 
 #endif // HTMLFILE_H

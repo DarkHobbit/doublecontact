@@ -53,8 +53,8 @@ bool HTMLFile::exportRecords(const QString &url, ContactList &list)
         // Name
         stream << QString("<b>%1</b>\n").arg(item.formatNames());
         // Phone(s), email(s)
-        exportTypedItem(stream, item.phones, S_PHONE);
-        exportTypedItem(stream, item.emails, S_EMAIL);
+        exportTypedItems(stream, item.phones, S_PHONE);
+        exportTypedItems(stream, item.emails, S_EMAIL);
         // Birthday, anniversary
         exportStringableItem(stream, item.birthday, S_BDAY);
         if (!item.anniversaries.isEmpty()) // TODO simplify, if one ann. will (vCard 4.0)
@@ -66,9 +66,7 @@ bool HTMLFile::exportRecords(const QString &url, ContactList &list)
         exportString(stream, item.organization, S_ORG);
         exportString(stream, item.title, S_TITLE);
         // Addresses
-        // TODO use here exportTypedItem, after moving addresses to list
-        exportStringableItem(stream, item.addrHome, S_ADDR + " " +Phone::standardTypes.translate("home"));
-        exportStringableItem(stream, item.addrWork, S_ADDR + " " +Phone::standardTypes.translate("work"));
+        exportTypedItems(stream, item.addrs, S_ADDR);
         // Internet
         exportString(stream, item.nickName, S_NICK);
         exportString(stream, item.url, S_URL);
@@ -97,7 +95,7 @@ void HTMLFile::exportStringableItem(QTextStream &stream, const T& field, const Q
 }
 
 template <class T>
-void HTMLFile::exportTypedItem(QTextStream &stream, const QList<T> &lst, const QString& title)
+void HTMLFile::exportTypedItems(QTextStream &stream, const QList<T> &lst, const QString& title)
 {
     if (!lst.isEmpty()) {
         stream << QString("<br/><b>%1:</b> ").arg(title);

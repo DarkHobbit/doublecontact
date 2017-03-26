@@ -103,13 +103,14 @@ QVariant ContactModel::data(const QModelIndex &index, int role) const
             case ccOrg:         return c.organization;
             case ccAddr:  {
                 QString res = "";
-                if (!c.addrHome.isEmpty()) {
-                    res += c.addrHome.toString();
-                    if (!c.addrWork.isEmpty())
-                        res += "; ";
+                foreach (const PostalAddress& addr, c.addrs) {
+                    QString sAddr = addr.toString();
+                    if (!sAddr.isEmpty()) {
+                        if (!res.isEmpty())
+                            res += "; ";
+                        res += sAddr;
+                    }
                 }
-                if (!c.addrWork.isEmpty())
-                    res += c.addrWork.toString();
                 return res;
             }
             case ccNickName:    return c.nickName;

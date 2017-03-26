@@ -57,7 +57,7 @@ QString Phone::expandNumber(const QString &number, int countryRule)
     return res;
 }
 
-bool Phone::operator ==(const Phone &p)
+bool Phone::operator ==(const Phone &p) const
 {
     return (value==p.value && types==p.types);
 }
@@ -118,7 +118,7 @@ Email::Email(const QString &_value, const QString &type1, const QString &type2)
         types << type2;
 }
 
-bool Email::operator ==(const Email &e)
+bool Email::operator ==(const Email &e) const
 {
     return (value==e.value && types==e.types);
 }
@@ -151,8 +151,7 @@ void ContactItem::clear()
     sortString.clear();
     description.clear();
     photo.clear();
-    addrHome.clear();
-    addrWork.clear();
+    addrs.clear();
     organization.clear();
     title.clear();
     otherTags.clear();
@@ -328,10 +327,10 @@ bool ContactItem::similarTo(const ContactItem &pair, int priorityLevel)
             return true;
         break;
         case 3:
-        if (!addrHome.isEmpty() && addrHome==pair.addrHome)
-            return true;
-        if (!addrWork.isEmpty() && addrWork==pair.addrWork)
-            return true;
+        foreach (const PostalAddress& thisAddr, addrs)
+            foreach (const PostalAddress& pairAddr, pair.addrs)
+                if (thisAddr==pairAddr)
+                    return true;
         break;
         case 4:
         if (!fullName.isEmpty() && fullName==pair.fullName)
@@ -371,7 +370,7 @@ bool ContactItem::identicalTo(const ContactItem &pair)
     if (!(photo==pair.photo)) return false;
     if (organization!=pair.organization) return false;
     if (title!=pair.title) return false;
-    if (!(addrHome==pair.addrHome)) return false;
+    if (addrs!=pair.addrs) return false;
     if (nickName!=pair.nickName) return false;
     if (url!=pair.url) return false;
     if (jabberName!=pair.jabberName) return false;
@@ -475,10 +474,7 @@ QString ContactList::statistics()
     foreach (const ContactItem& item, *this) {
         phoneCount += item.phones.count();
         emailCount += item.emails.count();
-        if (!item.addrHome.isEmpty())
-            addrCount++;
-        if (!item.addrWork.isEmpty())
-            addrCount++;
+        addrCount  += item.addrs.count();
         if (!item.birthday.isEmpty())
             bdayCount++;
     }
@@ -495,8 +491,9 @@ TagValue::TagValue(const QString& _tag, const QString& _value)
 
 Phone::StandardTypes Phone::standardTypes;
 Email::StandardTypes Email::standardTypes;
+PostalAddress::StandardTypes PostalAddress::standardTypes;
 
-bool DateItem::operator ==(const DateItem &d)
+bool DateItem::operator ==(const DateItem &d) const
 {
     if (hasTimeZone && ((zoneHour!=d.zoneHour) || (zoneMin!=d.zoneMin)))
         return false;
@@ -546,7 +543,7 @@ QString DateItem::toString(DateFormat format) const
     return s;
 }
 
-bool PostalAddress::operator ==(const PostalAddress &a)
+bool PostalAddress::operator ==(const PostalAddress &a) const
 {
     return
         types==types
@@ -572,6 +569,30 @@ QString PostalAddress::toString() const
             + ", " + street + " st., " + city + ", " + region
             + ", " + postalCode + ", " + country;
     // TODO make localized output
+}
+
+PostalAddress PostalAddress::fromString(const QString &src, const QStringList &_types)
+{
+    PostalAddress a;
+    a.types = _types;
+    QStringList parts = src.split(", ");
+    if (parts.count()>0)
+        a.offBox = parts[0];
+    if (parts.count()>1)
+        a.extended = parts[1];
+    if (parts.count()>2) {
+        a.street = parts[2];
+        a.street.remove(" st.");
+    }
+    if (parts.count()>3)
+        a.city = parts[3];
+    if (parts.count()>4)
+        a.region = parts[4];
+    if (parts.count()>5)
+        a.postalCode = parts[5];
+    if (parts.count()>6)
+        a.country = parts[6];
+    return a;
 }
 
 bool PostalAddress::isEmpty() const

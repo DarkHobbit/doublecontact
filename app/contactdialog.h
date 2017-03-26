@@ -23,6 +23,7 @@
 #include <QResizeEvent>
 #include <QShowEvent>
 #include <QToolButton>
+#include <QVBoxLayout>
 #include "contactlist.h"
 
 namespace Ui {
@@ -46,21 +47,25 @@ protected:
 private:
     Ui::ContactDialog *ui;
     QGridLayout* layAnniversaries;
+    QVBoxLayout* layAddrs;
     QMenu* menuPhotoEdit;
-    int nameCount, phoneCount, emailCount, anniversaryCount;
+    int nameCount, phoneCount, emailCount, anniversaryCount, addrCount;
     DateItem birthdayDetails;
     QList<DateItem> anniversaryDetails;
     Photo photo;
     void fillPhoneTypes(QComboBox* combo);
     void fillEmailTypes(QComboBox* combo);
+    void fillAddrTypes(QComboBox* combocbT);
     void addName(const QString& name);
     void addPhone(const Phone& ph);
     void addEmail(const Email& em);
     void addAnniversary(const DateItem& ann);
     void readAnniversary(int num, DateItem& ann);
-    void addAddress(QWidget* parent, const PostalAddress& addr); // TODO if more 2 addresses will allowed, need post layout and num instead this
+    void addAddress(const PostalAddress& addr);
+    /*
     void setAddress(QWidget* parent, const PostalAddress& addr); // TODO if more 2 addresses will allowed, need post layout and num instead this
-    void readAddress(QWidget* parent, PostalAddress& addr);
+    */
+    void readAddress(int num, PostalAddress& addr);
     // Common helpers for phone/email
     void addTriplet(int& count, QGridLayout* l, const QString& nameTemplate, const QString& itemValue);
     void readTriplet(const QString& nameTemplate, int num, TypedStringItem& item, const  ::StandardTypes& sTypes);
@@ -69,6 +74,7 @@ private:
     QToolButton* addDelButton
         (int count, const QString& nameTemplate, const char* method/*, QGridLayout* l, int pos*/);
     void addTypeList(int count, const QString& nameTemplate, const QStringList& types, const ::StandardTypes& sTypes);
+    void readTypelist(const QString& nameTemplate, int num, QStringList& types, const  ::StandardTypes& sTypes);
     inline QLineEdit* nameEditorByNum(int num);
     inline QLineEdit* editorByNum(const QString& nameTemplate, int num);
     void editDateDetails(QDateTimeEdit* editor, DateItem& details);
@@ -85,7 +91,8 @@ private slots:
     void slotAnnDetails();
     void slotDelAnniversary();
     void on_twContact_currentChanged(int);
-    void on_btnSwapAddresses_clicked();
+    void on_btnAddAddress_clicked();
+    void slotDelAddress();
     void onLoadImage();
     void onSaveImage();
     void onSetPhotoUrl();

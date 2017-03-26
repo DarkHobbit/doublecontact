@@ -141,7 +141,7 @@ public:
     void setData(const QList<Email>& leftEmails, const QList<Email>& rightEmails);
 protected:
     virtual bool checkDiff();
- };
+};
 
 class DateItemListPair: public ItemPair
 {
@@ -171,13 +171,16 @@ public:
     void getData(DateItem& leftData, DateItem& rightData);
 };
 
-class PostalAddressPair: public StringListPair
+class PostalAddressPair: public TypedPair
 {
     Q_OBJECT
 public:
     PostalAddressPair(const QString& title, QGridLayout* layout);
-    void setData(const PostalAddress& leftData, const PostalAddress& rightData);
-    void getData(PostalAddress& leftData, PostalAddress& rightData);
+    void setData(const QList<PostalAddress>& leftData, const QList<PostalAddress>& rightData);
+    void getData(QList<PostalAddress>& leftData, QList<PostalAddress>& rightData);
+protected:
+    virtual bool checkDiff();
+    bool getValue(int index, PostalAddress& item, bool fromLeft);
 };
 
 class PhotoPair: public ItemPair

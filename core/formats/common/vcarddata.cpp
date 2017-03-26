@@ -163,7 +163,7 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                             errors << QObject::tr("Non-standard phone type at line %1: %2%3").arg(line+1).arg(tType).arg(visName);
                     }
                 phone.syncMLRef = syncMLRef;
-                item.phones.push_back(phone);
+                item.phones << phone;
             }
             else if (tag=="EMAIL") {
                 // Some phones write empty EMAIL tag even if no email (i.e SE W300i in vCard 2.1)
@@ -176,7 +176,7 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                 else
                     email.types = types;
                 email.syncMLRef = syncMLRef;
-                item.emails.push_back(email);
+                item.emails << email;
             }
             else if (tag=="BDAY")
                 importDate(item.birthday, decodeValue(vValue[0], errors), errors);
@@ -212,12 +212,14 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
             else if (tag=="TITLE")
                 item.title = decodeValue(vValue[0], errors);
             else if (tag=="ADR") {
-                if (types.contains("home", Qt::CaseInsensitive))
-                    importAddress(item.addrHome, types, vValue, errors);
-                else if (types.contains("work", Qt::CaseInsensitive))
-                    importAddress(item.addrWork, types, vValue, errors);
+                PostalAddress addr;
+                importAddress(addr, types, vValue, errors);
+                if (types.isEmpty())
+                    addr.types << "work";
                 else
-                    errors << QObject::tr("Unknown address type at line %1: %2%3").arg(line+1).arg(types.join(";")).arg(visName);
+                    addr.types = types;
+                addr.syncMLRef = syncMLRef;
+                item.addrs << addr;
             }
             // Internet
             else if (tag=="NICKNAME")
@@ -327,10 +329,8 @@ void VCardData::exportRecord(QStringList &lines, const ContactItem &item)
     foreach (const DateItem& ann, item.anniversaries)
         lines << QString("X-ANNIVERSARY:") + exportDate(ann);
     // Organization, addresses
-    if (!item.addrHome.isEmpty())
-        lines << exportAddress(item.addrHome);
-    if (!item.addrWork.isEmpty())
-        lines << exportAddress(item.addrWork);
+    foreach (const PostalAddress& addr, item.addrs)
+        lines << exportAddress(addr);
     if (!item.organization.isEmpty())
         lines << encodeAll("ORG", 0, true, item.organization);
     if (!item.title.isEmpty())

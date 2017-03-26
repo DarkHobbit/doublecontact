@@ -44,6 +44,7 @@ int main(int argc, char *argv[])
             a.installTranslator(&tr);
             Phone::standardTypes.fill();
             Email::standardTypes.fill();
+            PostalAddress::standardTypes.fill();
             contactColumnHeaders.fill();
         }
     }

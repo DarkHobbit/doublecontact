@@ -18,6 +18,8 @@
 #include "comparecontainers.h"
 #include "helpers.h"
 
+#include <iostream>
+
 // TODO make arrows up and down (to reorder items), not only left and right
 
 ItemPair::ItemPair(const QString& title, QGridLayout* layout, bool multiItem)
@@ -544,39 +546,59 @@ void DateItemPair::getData(DateItem &leftData, DateItem &rightData)
 }
 
 PostalAddressPair::PostalAddressPair(const QString &title, QGridLayout *layout)
-    :StringListPair(title, layout)
-{}
-
-void PostalAddressPair::setData(const PostalAddress &leftData, const PostalAddress &rightData)
+    :TypedPair(title, layout)
 {
-    StringListPair::setData(
-        QStringList() << leftData.offBox << leftData.extended
-        << leftData.street << leftData.city << leftData.region << leftData.postalCode << leftData.country,
-        QStringList() << rightData.offBox << rightData.extended
-        << rightData.street << rightData.city << rightData.region << rightData.postalCode << rightData.country
-    );
+    standardTypes = &PostalAddress::standardTypes;
 }
 
-void PostalAddressPair::getData(PostalAddress &leftData, PostalAddress &rightData)
+void PostalAddressPair::setData(const QList<PostalAddress> &leftData, const QList<PostalAddress> &rightData)
 {
-    QStringList ll, rl;
-    StringListPair::getData(ll, rl);
-    leftData.offBox = ll[0];
-    leftData.extended = ll[1];
-    leftData.street = ll[2];
-    leftData.city = ll[3];
-    leftData.region = ll[4];
-    leftData.postalCode = ll[5];
-    leftData.country = ll[6];
-    rightData.offBox = rl[0];
-    rightData.extended = rl[1];
-    rightData.street = rl[2];
-    rightData.city = rl[3];
-    rightData.region = rl[4];
-    rightData.postalCode = rl[5];
-    rightData.country = rl[6];
+    foreach (const PostalAddress& addr, leftData) {
+        TypedStringItem si;
+        si.types = addr.types;
+        si.value = addr.toString();
+        addValue(si, true);
+    }
+    foreach (const PostalAddress& addr, rightData) {
+        TypedStringItem si;
+        si.types = addr.types;
+        si.value = addr.toString();
+        addValue(si, false);
+    }
+    highlightDiff(leftData!=rightData);
+    buildOneItemButtons(2);
 }
 
+void PostalAddressPair::getData(QList<PostalAddress> &leftData, QList<PostalAddress> &rightData)
+{
+    leftData.clear();
+    for (int i=0; i<count(true); i++) {
+        PostalAddress p;
+        getValue(i, p, true);
+        leftData << p;
+    }
+    rightData.clear();
+    for (int i=0; i<count(false); i++) {
+        PostalAddress p;
+        getValue(i, p, false);
+        rightData << p;
+    }
+}
+
+bool PostalAddressPair::checkDiff()
+{
+    QList<PostalAddress> leftData, rightData;
+    getData(leftData, rightData);
+    return leftData!=rightData;
+}
+
+bool PostalAddressPair::getValue(int index, PostalAddress &item, bool fromLeft)
+{
+    TypedStringItem si;
+    TypedPair::getValue(index, si, fromLeft);
+    item = PostalAddress::fromString(si.value, si.types);
+    return true;
+}
 
 PhotoPair::PhotoPair(const QString &title, QGridLayout *layout)
     :ItemPair(title, layout, false)

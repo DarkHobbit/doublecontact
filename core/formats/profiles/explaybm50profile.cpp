@@ -115,8 +115,7 @@ bool ExplayBM50Profile::exportRecord(QStringList &row, const ContactItem &item, 
     LOSS_DATA(S_PHOTO, !item.photo.isEmpty());
     LOSS_DATA(S_ORG, item.organization);
     LOSS_DATA(S_TITLE, item.title);
-    LOSS_DATA(S_ADDR, !item.addrHome.isEmpty());
-    LOSS_DATA(S_ADDR, !item.addrWork.isEmpty());
+    LOSS_DATA(S_ADDR, !item.addrs.isEmpty());
     LOSS_DATA(S_NICK, item.nickName);
     LOSS_DATA(S_URL, item.url);
     LOSS_DATA(S_IM_JABBER, item.jabberName);

@@ -42,7 +42,7 @@ private:
     StringPair *pDesc, *pSortString;
     PhotoPair* pPhoto;
     StringPair *pOrg, *pTitle;
-    PostalAddressPair *pAddrHome, *pAddrWork;
+    PostalAddressPair *pAddrs;
     StringPair *pNickName, *pURL, *pJabber, *pICQ, *pSkype;
     template<class P, class T>
         void checkPair(const QString& title, P** pair, T& leftData, T& rightData);
