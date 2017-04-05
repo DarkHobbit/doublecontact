@@ -1469,7 +1469,7 @@ line %3, col %4
     <message>
         <location filename="../core/globals.h" line="91"/>
         <source>Ext.addr.</source>
-        <translation>Розширна адреса</translation>
+        <translation>Розшир. адреса</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="92"/>
