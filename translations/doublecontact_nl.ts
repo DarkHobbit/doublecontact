@@ -508,7 +508,7 @@
     <message>
         <location filename="../app/mainwindow.ui" line="218"/>
         <source>&amp;Recent</source>
-        <translation>&amp;Recent</translation>
+        <translation type="unfinished">&amp;Recent</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="231"/>
@@ -1006,7 +1006,7 @@ Wilt u de wijzigingen opslaan?</translation>
     <message>
         <location filename="../core/contactlist.cpp" line="88"/>
         <source>Modem</source>
-        <translation>Modem</translation>
+        <translation type="unfinished">Modem</translation>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="89"/>
