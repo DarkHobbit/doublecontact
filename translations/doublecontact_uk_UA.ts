@@ -39,16 +39,16 @@
     <message>
         <location filename="../app/comparedialog.ui" line="14"/>
         <source>Item Merge</source>
-        <translation>Об&apos;єднання контактів</translation>
+        <translation>Об'єднання контактів</translation>
     </message>
     <message>
         <source>Full name</source>
-        <translation type="vanished">Повне ім&apos;я</translation>
+        <translation type="vanished">Повне ім'я</translation>
     </message>
     <message>
         <location filename="../app/comparedialog.cpp" line="71"/>
         <source>Names</source>
-        <translation>Ім&apos;я</translation>
+        <translation>Ім'я</translation>
     </message>
     <message>
         <location filename="../app/comparedialog.cpp" line="72"/>
@@ -63,7 +63,7 @@
     <message>
         <location filename="../app/comparedialog.cpp" line="81"/>
         <source>Addresses</source>
-        <translation type="unfinished">Адреса</translation>
+        <translation>Адреси</translation>
     </message>
     <message>
         <source>Birthday</source>
@@ -139,12 +139,12 @@
     <message>
         <location filename="../app/contactdialog.ui" line="34"/>
         <source>Full name</source>
-        <translation>Повне ім&apos;я</translation>
+        <translation>Повне ім'я</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="46"/>
         <source>Name</source>
-        <translation>Ім&apos;я</translation>
+        <translation>Ім'я</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="65"/>
@@ -166,7 +166,7 @@
         <location filename="../app/contactdialog.ui" line="153"/>
         <location filename="../app/contactdialog.cpp" line="593"/>
         <source>name</source>
-        <translation>Ім&apos;я</translation>
+        <translation>Ім'я</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="158"/>
@@ -344,7 +344,7 @@
     <message>
         <location filename="../app/contactdialog.cpp" line="613"/>
         <source>Address type</source>
-        <translation type="unfinished"></translation>
+        <translation>Тип адреси</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.cpp" line="698"/>
@@ -714,17 +714,17 @@
     <message>
         <location filename="../app/mainwindow.ui" line="477"/>
         <source>&amp;Generate full name</source>
-        <translation>&amp;Зібрати повне ім&apos;я</translation>
+        <translation>&amp;Зібрати повне ім'я</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="482"/>
         <source>&amp;Join</source>
-        <translation>&amp;Об&apos;єднати</translation>
+        <translation>&amp;Об'єднати</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="487"/>
         <source>Drop &amp;full name</source>
-        <translation>З&amp;абрати повне ім&apos;я</translation>
+        <translation>З&amp;абрати повне ім'я</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="492"/>
@@ -754,7 +754,7 @@
     <message>
         <location filename="../app/mainwindow.ui" line="515"/>
         <source>Reverse full name</source>
-        <translation>Обернути повне ім&apos;я</translation>
+        <translation>Обернути повне ім'я</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="520"/>
@@ -764,12 +764,12 @@
     <message>
         <location filename="../app/mainwindow.ui" line="525"/>
         <source>Re&amp;port</source>
-        <translation type="unfinished"></translation>
+        <translation>Звіт</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="528"/>
         <source>Ctrl+R</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+R</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.cpp" line="159"/>
@@ -870,7 +870,7 @@ Only some fields can this edited in this mode</source>
     </message>
     <message>
         <location filename="../app/mainwindow.cpp" line="612"/>
-        <source>&apos;%1&apos; was changed.
+        <source>'%1' was changed.
 Save changes?</source>
         <translation>%1 було змінено.
 Зберегти?</translation>
@@ -923,7 +923,7 @@ Save changes?</source>
     <message>
         <location filename="../app/mainwindow.cpp" line="897"/>
         <source>Report file</source>
-        <translation type="unfinished"></translation>
+        <translation>Файл звіту</translation>
     </message>
 </context>
 <context>
@@ -1160,7 +1160,7 @@ SMS: %7
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="59"/>
-        <source>Can&apos;t read content from file %1
+        <source>Can't read content from file %1
 %2
 line %3, col %4
 </source>
@@ -1171,16 +1171,16 @@ line %3, col %4
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="68"/>
-        <source>Root node is not &apos;DataExchangeInfo&apos; at file
+        <source>Root node is not 'DataExchangeInfo' at file
 %1</source>
-        <translation>Кореневий вузол не &apos;DataExchangeInfo&apos; в файлі
+        <translation>Кореневий вузол не 'DataExchangeInfo' в файлі
 %1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="74"/>
-        <source>Can&apos;t find &apos;RecordInfo&apos; tag at file
+        <source>Can't find 'RecordInfo' tag at file
 %1</source>
-        <translation>Не можу знайти теґ &apos;RecordInfo&apos; в файлі
+        <translation>Не можу знайти теґ 'RecordInfo' в файлі
 %1</translation>
     </message>
     <message>
@@ -1195,15 +1195,15 @@ line %3, col %4
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="93"/>
-        <source>Can&apos;t find &apos;vCard&apos; records at file
+        <source>Can't find 'vCard' records at file
 %1</source>
-        <translation>Не можу знайти записи &apos;vCard&apos; в файлі
+        <translation>Не можу знайти записи 'vCard' в файлі
 %1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="109"/>
-        <source>Can&apos;t find &apos;vCardField&apos; at sequence %1</source>
-        <translation>Не можу знайти запис &apos;vCardField&apos; для контакту %1</translation>
+        <source>Can't find 'vCardField' at sequence %1</source>
+        <translation>Не можу знайти запис 'vCardField' для контакту %1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="134"/>
@@ -1212,8 +1212,8 @@ line %3, col %4
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="150"/>
-        <source>Unknown &apos;vCardfield&apos; type: %1</source>
-        <translation>Невідомий тип теґу &apos;vCardfield&apos;: %1</translation>
+        <source>Unknown 'vCardfield' type: %1</source>
+        <translation>Невідомий тип теґу 'vCardfield': %1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="158"/>
@@ -1267,7 +1267,7 @@ line %3, col %4
     <message>
         <location filename="../core/formats/formatfactory.cpp" line="62"/>
         <source>Empty file name</source>
-        <translation>Порожнє ім&apos;я файлу</translation>
+        <translation>Порожнє ім'я файлу</translation>
     </message>
     <message>
         <location filename="../core/formats/formatfactory.cpp" line="92"/>
@@ -1299,7 +1299,7 @@ line %3, col %4
     <message>
         <location filename="../core/globals.h" line="52"/>
         <source>Address book</source>
-        <translation type="unfinished"></translation>
+        <translation>Адресна книга</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="53"/>
@@ -1319,7 +1319,7 @@ line %3, col %4
     <message>
         <location filename="../core/globals.h" line="56"/>
         <source>Select CSV profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Оберіть CSV профіль</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="58"/>
@@ -1329,7 +1329,7 @@ line %3, col %4
     <message>
         <location filename="../core/globals.h" line="60"/>
         <source>Firstname</source>
-        <translation>Ім&apos;я</translation>
+        <translation>Ім'я</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="61"/>
@@ -1344,22 +1344,22 @@ line %3, col %4
     <message>
         <location filename="../core/globals.h" line="63"/>
         <source>Prefixes</source>
-        <translation type="unfinished"></translation>
+        <translation>Префікси</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="64"/>
         <source>Suffixes</source>
-        <translation type="unfinished"></translation>
+        <translation>Суфікси</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="66"/>
         <source>Full name</source>
-        <translation>Повне ім&apos;я</translation>
+        <translation>Повне ім'я</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="67"/>
         <source>Generic name</source>
-        <translation>Універсальне ім&apos;я</translation>
+        <translation>Універсальне ім'я</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="68"/>
@@ -1384,7 +1384,7 @@ line %3, col %4
     <message>
         <location filename="../core/globals.h" line="72"/>
         <source>Anniversary</source>
-        <translation type="unfinished"></translation>
+        <translation>Річниця</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="73"/>
@@ -1449,7 +1449,7 @@ line %3, col %4
     <message>
         <location filename="../core/globals.h" line="86"/>
         <source>Has photo</source>
-        <translation type="unfinished"></translation>
+        <translation>Є фото</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="87"/>
@@ -1533,14 +1533,14 @@ line %3, col %4
     </message>
     <message>
         <location filename="../core/globals.h" line="107"/>
-        <source>Can&apos;t read file
+        <source>Can't read file
 %1</source>
         <translation>Не можу прочитати файл
 %1</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="108"/>
-        <source>Can&apos;t write file
+        <source>Can't write file
 %1</source>
         <translation>Не можу записати файл
 %1</translation>
@@ -1549,7 +1549,8 @@ line %3, col %4
         <location filename="../core/globals.h" line="110"/>
         <source>Warning: contact %1 has %2, not supported in this format.
 Data will be lost</source>
-        <translation type="unfinished"></translation>
+        <translation>Попередження: контакт %1 містить %2, що не підтримується в даному форматі.
+Дані будуть втрачені</translation>
     </message>
     <message>
         <location filename="../core/formats/files/vcfdirectory.cpp" line="35"/>
@@ -1567,7 +1568,7 @@ Data will be lost</source>
     </message>
     <message>
         <location filename="../core/formats/files/vcfdirectory.cpp" line="65"/>
-        <source>Can&apos;t create directory
+        <source>Can't create directory
 %1</source>
         <translation>Не можу створити теку
 %1</translation>
@@ -1579,7 +1580,7 @@ Data will be lost</source>
     </message>
     <message>
         <location filename="../core/formats/files/mpbfile.cpp" line="100"/>
-        <source>File isn&apos;t MPB file or corrupted</source>
+        <source>File isn't MPB file or corrupted</source>
         <translation>Файл не є  MPB файлом або пошкоджено</translation>
     </message>
     <message>
@@ -1600,7 +1601,7 @@ Data will be lost</source>
     <message>
         <location filename="../core/formats/files/mpbfile.cpp" line="206"/>
         <source>Name for number %1 changed from %2 to %3</source>
-        <translation>Ім&apos;я для телефону %1 змінено з%2 на %3</translation>
+        <translation>Ім'я для телефону %1 змінено з%2 на %3</translation>
     </message>
     <message>
         <location filename="../core/formats/files/mpbfile.cpp" line="218"/>
@@ -1610,7 +1611,7 @@ Data will be lost</source>
     <message>
         <location filename="../core/formats/files/mpbfile.cpp" line="220"/>
         <source>Number %1 not found in addressbook. Original name (%2) saved</source>
-        <translation>Номер %1 не знайдено в переліку контактів. Збережено джерельне ім&apos;я (%2)</translation>
+        <translation>Номер %1 не знайдено в переліку контактів. Збережено джерельне ім'я (%2)</translation>
     </message>
     <message>
         <location filename="../core/formats/profiles/csvprofilebase.h" line="21"/>
@@ -1620,7 +1621,7 @@ Data will be lost</source>
     <message>
         <location filename="../core/formats/profiles/explaybm50profile.cpp" line="91"/>
         <source>Name prefixes merged with last name (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Префікси до імені обʼєднано з прізвищем (%1)</translation>
     </message>
 </context>
 <context>
@@ -1750,13 +1751,13 @@ Data will be lost</source>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="282"/>
-        <source>(many phones treats &apos;Voice&apos; as &apos;Other&apos;)</source>
-        <translation>(деякі телефони трактують тип &apos;Голосовий&apos; як &apos;Інший&apos;)</translation>
+        <source>(many phones treats 'Voice' as 'Other')</source>
+        <translation>(деякі телефони трактують тип 'Голосовий' як 'Інший')</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="289"/>
         <source>Warning on non-standard phone types</source>
-        <translation type="unfinished">Попереджувати про нестандартні типи телефонів</translation>
+        <translation>Попереджувати про нестандартні типи телефонів</translation>
     </message>
     <message>
         <source>Warning on non-standard phone/email types</source>
