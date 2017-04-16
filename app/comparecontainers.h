@@ -143,6 +143,16 @@ protected:
     virtual bool checkDiff();
 };
 
+class MessengersPair: public TypedPair
+{
+    Q_OBJECT
+public:
+    MessengersPair(const QString& title, QGridLayout* layout);
+    void setData(const QList<Messenger>& leftIMs, const QList<Messenger>& rightIMs);
+protected:
+    virtual bool checkDiff();
+};
+
 class DateItemListPair: public ItemPair
 {
     Q_OBJECT

@@ -71,7 +71,7 @@ bool VCFDirectory::exportRecords(const QString &url, ContactList &list)
         // TODO use id, if present, in filename?
         QString fileName = url + QDir::separator() + QString("%1.vcf").arg((uint)i, 4, 10, QChar('0'));
         QStringList content;
-        data.exportRecord(content, item);
+        data.exportRecord(content, item, _errors);
         if (!openFile(fileName, QIODevice::WriteOnly))
             return false;
         QTextStream stream(&file);

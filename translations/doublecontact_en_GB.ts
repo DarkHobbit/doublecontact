@@ -42,32 +42,32 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/comparedialog.cpp" line="71"/>
+        <location filename="../app/comparedialog.cpp" line="69"/>
         <source>Names</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/comparedialog.cpp" line="72"/>
+        <location filename="../app/comparedialog.cpp" line="70"/>
         <source>Phones</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/comparedialog.cpp" line="73"/>
+        <location filename="../app/comparedialog.cpp" line="71"/>
         <source>Emails</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/comparedialog.cpp" line="75"/>
+        <location filename="../app/comparedialog.cpp" line="73"/>
         <source>Anniversaries</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/comparedialog.cpp" line="77"/>
+        <location filename="../app/comparedialog.cpp" line="75"/>
         <source>Sort string</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/comparedialog.cpp" line="81"/>
+        <location filename="../app/comparedialog.cpp" line="79"/>
         <source>Addresses</source>
         <translation type="unfinished"></translation>
     </message>
@@ -107,30 +107,31 @@
     <message>
         <location filename="../app/contactdialog.ui" line="145"/>
         <location filename="../app/contactdialog.ui" line="350"/>
+        <location filename="../app/contactdialog.ui" line="448"/>
         <source>Add...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="153"/>
-        <location filename="../app/contactdialog.cpp" line="593"/>
+        <location filename="../app/contactdialog.cpp" line="614"/>
         <source>name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="158"/>
-        <location filename="../app/contactdialog.cpp" line="595"/>
+        <location filename="../app/contactdialog.cpp" line="616"/>
         <source>phone</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="163"/>
-        <location filename="../app/contactdialog.cpp" line="597"/>
+        <location filename="../app/contactdialog.cpp" line="618"/>
         <source>email</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="168"/>
-        <location filename="../app/contactdialog.cpp" line="599"/>
+        <location filename="../app/contactdialog.cpp" line="620"/>
         <source>anniversary</source>
         <translation type="unfinished"></translation>
     </message>
@@ -181,114 +182,109 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="364"/>
+        <location filename="../app/contactdialog.ui" line="366"/>
         <source>NickName</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="374"/>
-        <source>Jabber</source>
+        <location filename="../app/contactdialog.ui" line="409"/>
+        <source>Instant messaging</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="384"/>
+        <location filename="../app/contactdialog.ui" line="376"/>
         <source>URL</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="394"/>
-        <source>ICQ</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../app/contactdialog.ui" line="404"/>
-        <source>Skype</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../app/contactdialog.ui" line="415"/>
+        <location filename="../app/contactdialog.ui" line="458"/>
         <source>Other</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="423"/>
+        <location filename="../app/contactdialog.ui" line="466"/>
         <source>Format version:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="430"/>
+        <location filename="../app/contactdialog.ui" line="473"/>
         <source>ID</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="451"/>
+        <location filename="../app/contactdialog.ui" line="494"/>
         <source>Original format:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="468"/>
+        <location filename="../app/contactdialog.ui" line="511"/>
         <source>Sort string</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="477"/>
+        <location filename="../app/contactdialog.ui" line="520"/>
         <source>Other contact attributes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="491"/>
-        <location filename="../app/contactdialog.ui" line="522"/>
+        <location filename="../app/contactdialog.ui" line="534"/>
+        <location filename="../app/contactdialog.ui" line="565"/>
         <source>Tag</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="496"/>
-        <location filename="../app/contactdialog.ui" line="527"/>
+        <location filename="../app/contactdialog.ui" line="539"/>
+        <location filename="../app/contactdialog.ui" line="570"/>
         <source>Value</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="505"/>
+        <location filename="../app/contactdialog.ui" line="548"/>
         <source>Problems</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="511"/>
+        <location filename="../app/contactdialog.ui" line="554"/>
         <source>Unknown contact attributes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="89"/>
+        <location filename="../app/contactdialog.cpp" line="90"/>
         <source>Add contact</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="97"/>
+        <location filename="../app/contactdialog.cpp" line="98"/>
         <source>Edit contact</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="609"/>
+        <location filename="../app/contactdialog.cpp" line="630"/>
         <source>Phone type</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="611"/>
+        <location filename="../app/contactdialog.cpp" line="632"/>
         <source>Email type</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="613"/>
+        <location filename="../app/contactdialog.cpp" line="634"/>
         <source>Address type</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="698"/>
+        <location filename="../app/contactdialog.cpp" line="636"/>
+        <source>IM type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/contactdialog.cpp" line="721"/>
         <source>Open image file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="730"/>
+        <location filename="../app/contactdialog.cpp" line="753"/>
         <source>Save image file</source>
         <translation type="unfinished"></translation>
     </message>
@@ -894,96 +890,97 @@ Save changes?</source>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../core/contactlist.cpp" line="86"/>
-        <location filename="../core/contactlist.cpp" line="615"/>
+        <location filename="../core/contactlist.cpp" line="96"/>
+        <location filename="../core/contactlist.cpp" line="675"/>
         <source>Home</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="87"/>
+        <location filename="../core/contactlist.cpp" line="97"/>
         <source>Message</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="88"/>
-        <location filename="../core/contactlist.cpp" line="616"/>
+        <location filename="../core/contactlist.cpp" line="98"/>
+        <location filename="../core/contactlist.cpp" line="676"/>
         <source>Work</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="89"/>
-        <location filename="../core/contactlist.cpp" line="138"/>
-        <location filename="../core/contactlist.cpp" line="617"/>
+        <location filename="../core/contactlist.cpp" line="99"/>
+        <location filename="../core/contactlist.cpp" line="148"/>
+        <location filename="../core/contactlist.cpp" line="183"/>
+        <location filename="../core/contactlist.cpp" line="677"/>
         <source>Preferable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="90"/>
+        <location filename="../core/contactlist.cpp" line="100"/>
         <source>Voice</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="91"/>
+        <location filename="../core/contactlist.cpp" line="101"/>
         <source>Fax</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="92"/>
+        <location filename="../core/contactlist.cpp" line="102"/>
         <source>Cell</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="93"/>
+        <location filename="../core/contactlist.cpp" line="103"/>
         <source>Video</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="94"/>
+        <location filename="../core/contactlist.cpp" line="104"/>
         <source>Pager</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="95"/>
+        <location filename="../core/contactlist.cpp" line="105"/>
         <source>BBS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="96"/>
+        <location filename="../core/contactlist.cpp" line="106"/>
         <source>Modem</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="97"/>
+        <location filename="../core/contactlist.cpp" line="107"/>
         <source>Car</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="98"/>
+        <location filename="../core/contactlist.cpp" line="108"/>
         <source>ISDN</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="99"/>
+        <location filename="../core/contactlist.cpp" line="109"/>
         <source>PCS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="136"/>
+        <location filename="../core/contactlist.cpp" line="146"/>
         <source>Internet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="137"/>
+        <location filename="../core/contactlist.cpp" line="147"/>
         <source>X.400</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="289"/>
+        <location filename="../core/contactlist.cpp" line="341"/>
         <source>Strange empty contact</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="482"/>
+        <location filename="../core/contactlist.cpp" line="546"/>
         <source>%1 records
 %2 phones
 %3 emails
@@ -996,22 +993,22 @@ Save changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="618"/>
+        <location filename="../core/contactlist.cpp" line="678"/>
         <source>Domestic</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="619"/>
+        <location filename="../core/contactlist.cpp" line="679"/>
         <source>International</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="620"/>
+        <location filename="../core/contactlist.cpp" line="680"/>
         <source>Postal</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="621"/>
+        <location filename="../core/contactlist.cpp" line="681"/>
         <source>Parcel</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1046,33 +1043,33 @@ Save changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="265"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="271"/>
         <source>Last section not closed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="272"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="278"/>
         <location filename="../core/formats/files/udxfile.cpp" line="164"/>
         <source>%1 unknown tags found</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="387"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="403"/>
         <source>Unknown charset: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="410"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="426"/>
         <source>Unknown encoding: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="433"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="449"/>
         <source>Invalid timezone: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="452"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="468"/>
         <source>Invalid datetime: </source>
         <translation type="unfinished"></translation>
     </message>
@@ -1244,274 +1241,274 @@ line %3, col %4
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="47"/>
+        <location filename="../core/globals.h" line="48"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="48"/>
+        <location filename="../core/globals.h" line="49"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="49"/>
+        <location filename="../core/globals.h" line="50"/>
         <source>Confirmation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="50"/>
+        <location filename="../core/globals.h" line="51"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="52"/>
+        <location filename="../core/globals.h" line="53"/>
         <source>Address book</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="53"/>
+        <location filename="../core/globals.h" line="54"/>
         <source>New contact list</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="54"/>
+        <location filename="../core/globals.h" line="55"/>
         <source>This format is read only</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="55"/>
+        <location filename="../core/globals.h" line="56"/>
         <source>Select country rule</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="56"/>
+        <location filename="../core/globals.h" line="57"/>
         <source>Select CSV profile</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="58"/>
+        <location filename="../core/globals.h" line="59"/>
         <source>mixed...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="60"/>
+        <location filename="../core/globals.h" line="61"/>
         <source>Firstname</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="61"/>
+        <location filename="../core/globals.h" line="62"/>
         <source>Lastname</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="62"/>
+        <location filename="../core/globals.h" line="63"/>
         <source>Middlename</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="63"/>
+        <location filename="../core/globals.h" line="64"/>
         <source>Prefixes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="64"/>
+        <location filename="../core/globals.h" line="65"/>
         <source>Suffixes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="66"/>
+        <location filename="../core/globals.h" line="67"/>
         <source>Full name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="67"/>
+        <location filename="../core/globals.h" line="68"/>
         <source>Generic name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="68"/>
+        <location filename="../core/globals.h" line="69"/>
         <source>Description</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="69"/>
+        <location filename="../core/globals.h" line="70"/>
         <source>Phone</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="70"/>
+        <location filename="../core/globals.h" line="71"/>
         <source>Email</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="71"/>
+        <location filename="../core/globals.h" line="72"/>
         <source>Birthday</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="72"/>
+        <location filename="../core/globals.h" line="73"/>
         <source>Anniversary</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="73"/>
+        <location filename="../core/globals.h" line="74"/>
         <source>Photo</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="74"/>
+        <location filename="../core/globals.h" line="75"/>
         <source>Job title</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="75"/>
+        <location filename="../core/globals.h" line="76"/>
         <source>Organization</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="76"/>
+        <location filename="../core/globals.h" line="77"/>
         <source>Address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="77"/>
+        <location filename="../core/globals.h" line="78"/>
         <source>NickName</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="78"/>
+        <location filename="../core/globals.h" line="79"/>
         <source>URL</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="79"/>
+        <location filename="../core/globals.h" line="81"/>
         <source>Jabber</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="80"/>
+        <location filename="../core/globals.h" line="82"/>
         <source>ICQ</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="81"/>
+        <location filename="../core/globals.h" line="83"/>
         <source>Skype</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="83"/>
+        <location filename="../core/globals.h" line="85"/>
         <source>Has phone</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="84"/>
+        <location filename="../core/globals.h" line="86"/>
         <source>Has email</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="85"/>
+        <location filename="../core/globals.h" line="87"/>
         <source>Has birthday</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="86"/>
+        <location filename="../core/globals.h" line="88"/>
         <source>Has photo</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="87"/>
+        <location filename="../core/globals.h" line="89"/>
         <source>Some phones</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="88"/>
+        <location filename="../core/globals.h" line="90"/>
         <source>Some emails</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="90"/>
+        <location filename="../core/globals.h" line="92"/>
         <source>P.o. box</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="91"/>
+        <location filename="../core/globals.h" line="93"/>
         <source>Ext.addr.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="92"/>
+        <location filename="../core/globals.h" line="94"/>
         <source>Street</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="93"/>
+        <location filename="../core/globals.h" line="95"/>
         <source>City/Locality</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="94"/>
+        <location filename="../core/globals.h" line="96"/>
         <source>Region</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="95"/>
+        <location filename="../core/globals.h" line="97"/>
         <source>Postal code</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="96"/>
+        <location filename="../core/globals.h" line="98"/>
         <source>Country</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="98"/>
+        <location filename="../core/globals.h" line="100"/>
         <source>[Unknown photo format]</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="99"/>
+        <location filename="../core/globals.h" line="101"/>
         <source>Load image</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="100"/>
+        <location filename="../core/globals.h" line="102"/>
         <source>Save image</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="101"/>
+        <location filename="../core/globals.h" line="103"/>
         <source>Set URL</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="102"/>
+        <location filename="../core/globals.h" line="104"/>
         <source>Remove photo</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="104"/>
+        <location filename="../core/globals.h" line="106"/>
         <source>All supported files (%1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="105"/>
+        <location filename="../core/globals.h" line="107"/>
         <source>All files (*.*)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="107"/>
+        <location filename="../core/globals.h" line="109"/>
         <source>Can&apos;t read file
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="108"/>
+        <location filename="../core/globals.h" line="110"/>
         <source>Can&apos;t write file
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="110"/>
+        <location filename="../core/globals.h" line="112"/>
         <source>Warning: contact %1 has %2, not supported in this format.
 Data will be lost</source>
         <translation type="unfinished"></translation>

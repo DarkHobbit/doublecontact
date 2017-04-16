@@ -39,6 +39,8 @@ struct TypedDataItem {
     int syncMLRef;
     virtual ~TypedDataItem();
     virtual QString toString() const=0;
+    template<class T>
+    static const T* findByType(const QList<T>& list, const QString& itemType);
 };
 
 // vCard item with one of more types and string content (one phone, email, impp, etc.)
@@ -67,6 +69,17 @@ struct Email: public TypedStringItem {
     Email();
     Email(const QString& _value, const QString& type1 = "", const QString& type2 = "");
     bool operator ==(const Email& e) const;
+    static class StandardTypes: public ::StandardTypes {
+        public:
+        StandardTypes();
+        void fill();
+    } standardTypes;
+};
+
+struct Messenger: public TypedStringItem {
+    Messenger();
+    Messenger(const QString& _value, const QString& type1 = "", const QString& type2 = "");
+    bool operator ==(const Messenger& e) const;
     static class StandardTypes: public ::StandardTypes {
         public:
         StandardTypes();
@@ -130,7 +143,8 @@ struct ContactItem {
     // Addresses
     QList<PostalAddress> addrs;
     // Internet
-    QString nickName, url, jabberName, icqName, skypeName;
+    QString nickName, url;
+    QList<Messenger> ims;
     // Format internals
     QString id; // optional record unique id (udx Sequence, vcf X-IRMC-LUID, etc)
     QString originalFormat;
@@ -138,7 +152,7 @@ struct ContactItem {
     QList<TagValue> otherTags;   // Known but un-editing tags
     QList<TagValue> unknownTags; // specific tags for any file format, i.e. vcf
     // Calculated fields for higher perfomance
-    QString visibleName, prefPhone, prefEmail;
+    QString visibleName, prefPhone, prefEmail, prefIM;
     // Calculated fields for list comparison
     enum PairState {
         PairNotFound,
@@ -162,6 +176,7 @@ struct ContactItem {
     bool similarTo(const ContactItem& pair, int priorityLevel);
     bool identicalTo(const ContactItem& pair);
     static QString nameComponent(int compNum);
+    const QString findIMByType(const QString& itemType) const;
 };
 
 // MPB-specific storage

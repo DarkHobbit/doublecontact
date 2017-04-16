@@ -40,6 +40,7 @@ void ContactColumnHeaders::fill()
     << S_ADDR
     << S_NICK
     << S_URL
+    << S_IM
     << S_IM_JABBER
     << S_IM_ICQ
     << S_IM_SKYPE

@@ -45,6 +45,7 @@ int main(int argc, char *argv[])
             Phone::standardTypes.fill();
             Email::standardTypes.fill();
             PostalAddress::standardTypes.fill();
+            Messenger::standardTypes.fill();
             contactColumnHeaders.fill();
         }
     }

@@ -30,7 +30,8 @@ enum ContactColumn {
   ccAddr,       // postal address
   ccNickName,   // nickname
   ccUrl,        // site url
-  ccIMJabber,   // IMs
+  ccIM,         // IMs
+  ccIMJabber,
   ccIMICQ,
   ccIMSkype,
   ccHasPhone,   // contact has at least one phone
@@ -76,6 +77,7 @@ enum ContactColumn {
 #define S_ADDR QObject::tr("Address")
 #define S_NICK QObject::tr("NickName")
 #define S_URL QObject::tr("URL")
+#define S_IM QString("IM")
 #define S_IM_JABBER QObject::tr("Jabber")
 #define S_IM_ICQ QObject::tr("ICQ")
 #define S_IM_SKYPE QObject::tr("Skype")
@@ -141,8 +143,8 @@ struct GlobalConfig {
     // Save
     enum VCFVersion {
         VCF21,
-        VCF30
-        //VCF40
+        VCF30,
+        VCF40 // TODO currently not supported. Need add it to settings list and check all VCFVersion usages in projects
     } preferredVCFVersion;
     bool useOriginalFileVersion;
     int defaultCountryRule; // for phone i18n during compare numbers (i.e. for Russia +7 = 8)

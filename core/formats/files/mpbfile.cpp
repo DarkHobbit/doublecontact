@@ -166,7 +166,7 @@ bool MPBFile::exportRecords(const QString &url, ContactList &list)
     skipEncoding = true; // disable pre-encoding via VCardData::encodeValue
     forceShortType = true; // disable TYPE= before phone/email types
     forceShortDate = true; // force ISO basic date format
-    if (!VCardData::exportRecords(content, list))
+    if (!VCardData::exportRecords(content, list, _errors))
         return false;
     if (!openFile(url, QIODevice::WriteOnly))
         return false;

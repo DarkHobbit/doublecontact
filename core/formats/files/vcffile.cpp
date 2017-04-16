@@ -58,7 +58,7 @@ bool VCFFile::importRecords(const QString &url, ContactList &list, bool append)
 bool VCFFile::exportRecords(const QString &url, ContactList &list)
 {
     QStringList content;
-    if (!VCardData::exportRecords(content, list))
+    if (!VCardData::exportRecords(content, list, _errors))
         return false;
     if (!openFile(url, QIODevice::WriteOnly))
         return false;

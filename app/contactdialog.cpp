@@ -32,16 +32,19 @@
 ContactDialog::ContactDialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::ContactDialog),
-    nameCount(0), phoneCount(0), emailCount(0), anniversaryCount(0), addrCount(0)
+    nameCount(0), phoneCount(0), emailCount(0), anniversaryCount(0), addrCount(0), imCount(0)
 {
     ui->setupUi(this);
     ui->lbName1->setText(S_LAST_NAME);
     fillPhoneTypes(ui->cbPhoneType1);
     fillEmailTypes(ui->cbEmailType1);
+    fillIMTypes(ui->cbIMType1);
     connect(ui->cbPhoneType1, SIGNAL(currentIndexChanged(const QString&)), this, SLOT(itemTypeChanged(const QString&)));
     connect(ui->btnDelPhone1, SIGNAL(clicked()), this, SLOT(slotDelTriplet()));
     connect(ui->cbEmailType1, SIGNAL(currentIndexChanged(const QString&)), this, SLOT(itemTypeChanged(const QString&)));
     connect(ui->btnDelEmail1, SIGNAL(clicked()), this, SLOT(slotDelTriplet()));
+    connect(ui->cbIMType1, SIGNAL(currentIndexChanged(const QString&)), this, SLOT(itemTypeChanged(const QString&)));
+    connect(ui->btnDelIM1, SIGNAL(clicked()), this, SLOT(slotDelTriplet()));
     layAnniversaries = new QGridLayout(ui->gbAnniversaries);
     // Photo editing
     menuPhotoEdit = new QMenu(this);
@@ -87,7 +90,7 @@ void ContactDialog::showEvent(QShowEvent*)
 void ContactDialog::clearData()
 {
     setWindowTitle(tr("Add contact"));
-    nameCount = phoneCount = emailCount = 0;
+    nameCount = phoneCount = emailCount = addrCount = imCount = 0;
     ui->cbBirthday->setChecked(false);
     ui->dteBirthday->setEnabled(false);
 }
@@ -126,9 +129,8 @@ void ContactDialog::setData(const ContactItem& c)
     //Internet
     ui->leNickName->setText(c.nickName);
     ui->leURL->setText(c.url);
-    ui->leJabber->setText(c.jabberName);
-    ui->leICQ->setText(c.icqName);
-    ui->leSkype->setText(c.skypeName);
+    for (int i=0; i<c.ims.count(); i++)
+        addIM(c.ims[i]);
     // Work
     ui->leOrganization->setText(c.organization);
     ui->leTitle->setText(c.title);
@@ -199,9 +201,13 @@ void ContactDialog::getData(ContactItem& c)
     // Internet
     c.nickName = ui->leNickName->text();
     c.url = ui->leURL->text();
-    c.jabberName = ui->leJabber->text();
-    c.icqName = ui->leICQ->text();
-    c.skypeName = ui->leSkype->text();
+    fixCount(imCount, "IM", MIN_VISIBLE_TRIPLETS);
+    c.ims.clear();
+    for (int i=0; i<imCount; i++) {
+        Messenger im;
+        readTriplet("IM", i+1, im, Messenger::standardTypes);
+        c.ims << im;
+    }
     // Work
     c.organization = ui->leOrganization->text();
     c.title = ui->leTitle->text();
@@ -229,6 +235,13 @@ void ContactDialog::fillAddrTypes(QComboBox *combo)
 {
     combo->clear();
     combo->insertItems(0, PostalAddress::standardTypes.displayValues);
+    combo->addItem(S_MIXED_TYPE);
+}
+
+void ContactDialog::fillIMTypes(QComboBox *combo)
+{
+    combo->clear();
+    combo->insertItems(0, Messenger::standardTypes.displayValues);
     combo->addItem(S_MIXED_TYPE);
 }
 
@@ -420,6 +433,16 @@ void ContactDialog::readAddress(int num, PostalAddress &addr)
     readTypelist("Addr", num, addr.types, PostalAddress::standardTypes);
 }
 
+void ContactDialog::addIM(const Messenger &im)
+{
+    fixCount(imCount, "IM", MIN_VISIBLE_TRIPLETS);
+    addTriplet(imCount, ui->layIMs, "IM", im.value);
+    QComboBox* cbT = findChild<QComboBox*>(QString("cbIMType%1").arg(imCount));
+    if (imCount>MIN_VISIBLE_TRIPLETS)
+        fillIMTypes(cbT);
+    addTypeList(imCount, "IM", im.types, Messenger::standardTypes);
+}
+
 void ContactDialog::addTriplet(int& count, QGridLayout* l, const QString& nameTemplate, const QString& itemValue)
 {
     if (count>=MIN_VISIBLE_TRIPLETS) {
@@ -455,11 +478,14 @@ void ContactDialog::slotDelTriplet()
     QString oName = sender()->objectName();
     oName.remove("btnDelPhone");
     oName.remove("btnDelEmail");
+    oName.remove("btnDelIM");
     int oNumber = oName.toInt();
     if (sender()->objectName().contains("Phone"))
         delTriplet(phoneCount, "Phone", oNumber);
-    else
+    else if (sender()->objectName().contains("Email"))
         delTriplet(emailCount, "Email", oNumber);
+    else // IM
+        delTriplet(imCount, "IM", oNumber);
 }
 
 void ContactDialog::delTriplet(int& count, const QString& nameTemplate, int num)
@@ -611,6 +637,8 @@ void ContactDialog::itemTypeChanged(const QString &value)
             PhoneTypeDialog::selectType(tr("Email type"), Email::standardTypes, cbT);
         else if (sender()->objectName().contains("Addr"))
             PhoneTypeDialog::selectType(tr("Address type"), PostalAddress::standardTypes, cbT);
+        else if (sender()->objectName().contains("IM"))
+            PhoneTypeDialog::selectType(tr("IM type"), Messenger::standardTypes, cbT);
     }
 }
 
@@ -768,3 +796,8 @@ void ContactDialog::onRemovePhoto()
     ui->lbPhotoContent->clear(); // remove pixmap and text, if were
 }
 
+
+void ContactDialog::on_btnAddIM_clicked()
+{
+    addIM(Messenger());
+}

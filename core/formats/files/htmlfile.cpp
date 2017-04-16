@@ -70,9 +70,7 @@ bool HTMLFile::exportRecords(const QString &url, ContactList &list)
         // Internet
         exportString(stream, item.nickName, S_NICK);
         exportString(stream, item.url, S_URL);
-        exportString(stream, item.jabberName, S_IM_JABBER);
-        exportString(stream, item.icqName, S_IM_ICQ);
-        exportString(stream, item.skypeName, S_IM_SKYPE);
+        exportTypedItems(stream, item.ims, S_IM);
         stream << QString("</p>\n\n");
     }
     // TODO hr and summary here

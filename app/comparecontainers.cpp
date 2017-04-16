@@ -460,6 +460,29 @@ bool EmailsPair::checkDiff()
     return leftEmails!=rightEmails;
 }
 
+MessengersPair::MessengersPair(const QString &title, QGridLayout *layout)
+    :TypedPair(title, layout)
+{
+    standardTypes = &Messenger::standardTypes;
+}
+
+void MessengersPair::setData(const QList<Messenger> &leftIMs, const QList<Messenger> &rightIMs)
+{
+    foreach(const Messenger& im, leftIMs)
+        addValue(im, true);
+    foreach(const Messenger& im, rightIMs)
+        addValue(im, false);
+    highlightDiff(leftIMs!=rightIMs);
+    buildOneItemButtons(2);
+}
+
+bool MessengersPair::checkDiff()
+{
+    QList<Messenger> leftIMs, rightIMs;
+    getData(leftIMs, rightIMs);
+    return leftIMs!=rightIMs;
+}
+
 DateItemListPair::DateItemListPair(const QString &title, QGridLayout *layout, bool multiItem)
     :ItemPair(title, layout, multiItem)
 {}

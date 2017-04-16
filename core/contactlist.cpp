@@ -27,6 +27,16 @@ struct CountryRule{
 TypedDataItem::~TypedDataItem()
 {}
 
+template<class T>
+const T* TypedDataItem::findByType(const QList<T> &list, const QString &itemType)
+{
+    foreach (const T& item, list) {
+        if (item.types.contains(itemType, Qt::CaseInsensitive))
+            return &item;
+    }
+    return 0;
+}
+
 QString TypedStringItem::toString() const
 {
     return value;
@@ -140,6 +150,41 @@ void Email::StandardTypes::fill()
             << (*this)["internet"]  << (*this)["x400"] << (*this)["pref"];
 }
 
+Messenger::Messenger()
+{}
+
+Messenger::Messenger(const QString &_value, const QString &type1, const QString &type2)
+{
+    value = _value;
+    if (!type1.isEmpty())
+        types << type1;
+    if (!type2.isEmpty())
+        types << type2;
+}
+
+bool Messenger::operator ==(const Messenger &e) const
+{
+    return (value==e.value && types==e.types);
+}
+
+Messenger::StandardTypes::StandardTypes()
+{
+    fill();
+}
+
+void Messenger::StandardTypes::fill()
+{
+    clear();
+    displayValues.clear();
+    // Types according RFC ???
+    (*this)["xmpp"] = "Jabber";
+    (*this)["icq"] = "ICQ";
+    (*this)["skype"] = "Skype";
+    (*this)["pref"] = QObject::tr("Preferable");
+    displayValues
+            << (*this)["xmpp"]  << (*this)["icq"]  << (*this)["skype"] << (*this)["pref"];
+}
+
 void ContactItem::clear()
 {
     fullName.clear();
@@ -161,11 +206,10 @@ void ContactItem::clear()
     subVersion.clear();
     prefPhone.clear();
     prefEmail.clear();
+    prefIM.clear();
     nickName.clear();
     url.clear();
-    jabberName.clear();
-    icqName.clear();
-    skypeName.clear();
+    ims.clear();
 }
 
 bool ContactItem::swapNames()
@@ -240,6 +284,14 @@ void ContactItem::calculateFields()
         for (int i=0; i<emails.count(); i++)
             if (emails[i].types.contains("pref", Qt::CaseInsensitive))
                 prefEmail = emails[i].value;
+    }
+    // First or preferred IM
+    prefIM.clear();
+    if (ims.count()>0) {
+        prefIM = ims[0].value;
+        for (int i=0; i<ims.count(); i++)
+            if (ims[i].types.contains("pref", Qt::CaseInsensitive))
+                prefIM = ims[i].value;
     }
 }
 
@@ -321,6 +373,11 @@ bool ContactItem::similarTo(const ContactItem &pair, int priorityLevel)
             foreach (const Email& pairEmail, pair.emails)
                 if (thisEmail.value.toUpper()==pairEmail.value.toUpper())
                     return true;
+        // Messengers
+        foreach (const Messenger& thisIM, ims)
+            foreach (const Messenger& pairIM, pair.ims)
+                if (thisIM.value.toUpper()==pairIM.value.toUpper())
+                    return true;
         break;
         case 2:
         if (id.length()>4 && id==pair.id)
@@ -373,9 +430,7 @@ bool ContactItem::identicalTo(const ContactItem &pair)
     if (addrs!=pair.addrs) return false;
     if (nickName!=pair.nickName) return false;
     if (url!=pair.url) return false;
-    if (jabberName!=pair.jabberName) return false;
-    if (icqName!=pair.icqName) return false;
-    if (skypeName!=pair.skypeName) return false;
+    if (ims!=pair.ims) return false;
     // Here strongly add ALL new
     return true;
 }
@@ -401,6 +456,15 @@ QString ContactItem::nameComponent(int compNum)
         break;
     }
     return res;
+}
+
+const QString ContactItem::findIMByType(const QString &itemType) const
+{
+    const Messenger* im = TypedDataItem::findByType(ims, itemType);
+    if (im)
+        return im->value;
+    else
+        return "";
 }
 
 ContactList::ContactList()
@@ -488,10 +552,6 @@ QString ContactList::statistics()
 TagValue::TagValue(const QString& _tag, const QString& _value)
     :tag(_tag), value(_value)
 {}
-
-Phone::StandardTypes Phone::standardTypes;
-Email::StandardTypes Email::standardTypes;
-PostalAddress::StandardTypes PostalAddress::standardTypes;
 
 bool DateItem::operator ==(const DateItem &d) const
 {
@@ -663,3 +723,9 @@ QString Photo::detectFormat() const
         format = "PNG";
     return format;
 }
+
+Phone::StandardTypes Phone::standardTypes;
+Email::StandardTypes Email::standardTypes;
+PostalAddress::StandardTypes PostalAddress::standardTypes;
+Messenger::StandardTypes Messenger::standardTypes;
+

@@ -43,7 +43,8 @@ private:
     PhotoPair* pPhoto;
     StringPair *pOrg, *pTitle;
     PostalAddressPair *pAddrs;
-    StringPair *pNickName, *pURL, *pJabber, *pICQ, *pSkype;
+    StringPair *pNickName, *pURL;
+    MessengersPair *pIMs;
     template<class P, class T>
         void checkPair(const QString& title, P** pair, T& leftData, T& rightData);
 };

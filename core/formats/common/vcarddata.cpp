@@ -226,17 +226,23 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                 item.nickName = decodeValue(vValue[0], errors);
             else if (tag=="URL")
                 item.url = decodeValue(vValue[0], errors);
-            else if (tag=="X-JABBER")
-                item.jabberName = decodeValue(vValue[0], errors);
+            else if (tag=="X-JABBER") // Pre-vCard 4.0 non-standard IM tags
+                item.ims << Messenger(vValue[0], "xmpp");
             else if (tag=="X-ICQ")
-                item.icqName = decodeValue(vValue[0], errors);
+                item.ims << Messenger(vValue[0], "icq");
             else if (tag=="X-SKYPE-USERNAME")
-                item.skypeName = decodeValue(vValue[0], errors);
-            /*else if (tag=="IMPP") {
-                // Second : in vValue[0]; vType also contains X-SYNCMLREF
-                // TODO implement in vCard 4.0 as alternative
+                item.ims << Messenger(vValue[0], "skype");
+            else if (tag=="IMPP") { // vCard 4.0
+                Messenger im;
+                im.value = decodeValue(vValue[0], errors);
+                if (types.isEmpty())
+                    im.types << "pref";
+                else
+                    im.types = types;
+                im.syncMLRef = syncMLRef;
+                item.ims << im;
 
-            }*/
+            }
             // TODO nickname and url also can require x-syncmlref
             // Identifier
             else if (tag=="X-IRMC-LUID")
@@ -274,14 +280,14 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
     return (!list.isEmpty());
 }
 
-bool VCardData::exportRecords(QStringList &lines, const ContactList &list)
+bool VCardData::exportRecords(QStringList &lines, const ContactList &list, QStringList& errors)
 {
     foreach (const ContactItem& item, list)
-        exportRecord(lines, item);
+        exportRecord(lines, item, errors);
     return (!list.isEmpty());
 }
 
-void VCardData::exportRecord(QStringList &lines, const ContactItem &item)
+void VCardData::exportRecord(QStringList &lines, const ContactItem &item, QStringList& errors)
 {
     // Format version
     formatVersion = gd.preferredVCFVersion;
@@ -355,13 +361,23 @@ void VCardData::exportRecord(QStringList &lines, const ContactItem &item)
     if (!item.description.isEmpty())
         lines << encodeAll("NOTE", 0, true, item.description);
     // Internet 2
-    // TODO use IMPP instead this, if vcard4 profile selected
-    if (!item.jabberName.isEmpty())
-        lines << encodeAll("X-JABBER", 0, false, item.jabberName);
-    if (!item.icqName.isEmpty())
-        lines << encodeAll("X-ICQ", 0, false, item.icqName);
-    if (!item.skypeName.isEmpty())
-        lines << encodeAll("X-SKYPE-USERNAME", 0, false, item.skypeName);
+    foreach (const Messenger& im, item.ims) {
+        // Use IMPP only if vcard4 profile selected
+        if ((formatVersion>=GlobalConfig::VCF40))
+            lines << QString("IMPP") + encodeTypes(im.types, &Messenger::standardTypes, im.syncMLRef)+":"+im.value;
+        else {
+            if (im.types.contains("xmpp", Qt::CaseInsensitive))
+                lines << encodeAll("X-JABBER", 0, false, im.value);
+            else if (im.types.contains("icq", Qt::CaseInsensitive))
+                lines << encodeAll("X-ICQ", 0, false, im.value);
+            else if (im.types.contains("skype", Qt::CaseInsensitive))
+                lines << encodeAll("X-SKYPE-USERNAME", 0, false, im.value);
+            else if (!im.types.isEmpty())
+                lines << encodeAll("X-" + im.types.join("+"), 0, false, im.value);
+            else
+                errors << S_ERR_UNSUPPORTED_TAG.arg(item.visibleName).arg(S_IM);
+        }
+    }
     // Identifier
     // TODO need support for other identifier types (apple?) and more strong detection
     if (!item.id.isEmpty() && item.id.length()>=10) // second condition separate from other ID kinds. TODO: need more strong crit.

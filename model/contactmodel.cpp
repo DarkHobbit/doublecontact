@@ -115,9 +115,10 @@ QVariant ContactModel::data(const QModelIndex &index, int role) const
             }
             case ccNickName:    return c.nickName;
             case ccUrl:         return c.url;
-            case ccIMJabber:    return c.jabberName;
-            case ccIMICQ:       return c.icqName;
-            case ccIMSkype:     return c.skypeName;
+            case ccIM:          return c.prefIM;
+            case ccIMJabber:    return c.findIMByType("xmpp");
+            case ccIMICQ:       return c.findIMByType("icq");
+            case ccIMSkype:     return c.findIMByType("skype");
             case ccHasPhone:    return !c.phones.isEmpty() ? "*" : QVariant();
             case ccHasEmail:    return !c.emails.isEmpty() ? "*" : QVariant();
             case ccHasBDay:     return !c.birthday.isEmpty() ? "*" : QVariant();
@@ -409,6 +410,7 @@ void ContactModel::testList()
     c.names << QString::fromUtf8("Попов") << QString::fromUtf8("Александр");
     c.phones << Phone("+79101234567", "cell"); // example for any cellular operator
     c.emails << Email("alexpopov@spb.ru", "internet");
+    c.ims << Messenger("apopov.jabber.ru", "xmpp");
     c.calculateFields();
     items.push_back(c);
 

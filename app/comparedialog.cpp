@@ -38,9 +38,7 @@ CompareDialog::CompareDialog(QWidget *parent) :
     pAddrs = 0;
     pNickName = 0;
     pURL = 0;
-    pJabber = 0;
-    pICQ = 0;
-    pSkype = 0;
+    pIMs = 0;
 }
 
 CompareDialog::~CompareDialog()
@@ -81,9 +79,7 @@ void CompareDialog::setData(const ContactItem &left, const ContactItem &right)
     checkPair(tr("Addresses"), &pAddrs, left.addrs, right.addrs);
     checkPair(S_NICK, &pNickName, left.nickName, right.nickName);
     checkPair(S_URL, &pURL, left.url, right.url);
-    checkPair(S_IM_JABBER, &pJabber, left.jabberName, right.jabberName);
-    checkPair(S_IM_ICQ, &pICQ, left.icqName, right.icqName);
-    checkPair(S_IM_SKYPE, &pSkype, left.skypeName, right.skypeName);
+    checkPair(S_IM, &pIMs, left.ims, right.ims);
 }
 
 void CompareDialog::getData(ContactItem &left, ContactItem &right)
@@ -116,10 +112,6 @@ void CompareDialog::getData(ContactItem &left, ContactItem &right)
         pNickName->getData(left.nickName, right.nickName);
     if (pURL)
         pURL->getData(left.url, right.url);
-    if (pJabber)
-        pJabber->getData(left.jabberName, right.jabberName);
-    if (pICQ)
-        pICQ->getData(left.icqName, right.icqName);
-    if (pSkype)
-        pSkype->getData(left.skypeName, right.skypeName);
+    if (pIMs)
+        pIMs->getData(left.ims, right.ims);
 }
