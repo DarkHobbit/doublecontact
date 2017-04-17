@@ -165,25 +165,25 @@
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="153"/>
-        <location filename="../app/contactdialog.cpp" line="614"/>
+        <location filename="../app/contactdialog.cpp" line="619"/>
         <source>name</source>
         <translation>имя</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="158"/>
-        <location filename="../app/contactdialog.cpp" line="616"/>
+        <location filename="../app/contactdialog.cpp" line="621"/>
         <source>phone</source>
         <translation>телефон</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="163"/>
-        <location filename="../app/contactdialog.cpp" line="618"/>
+        <location filename="../app/contactdialog.cpp" line="623"/>
         <source>email</source>
         <translation>электропочту</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="168"/>
-        <location filename="../app/contactdialog.cpp" line="620"/>
+        <location filename="../app/contactdialog.cpp" line="625"/>
         <source>anniversary</source>
         <translation>годовщину</translation>
     </message>
@@ -325,42 +325,42 @@
         <translation>Неизвестные атрибуты контакта</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="90"/>
+        <location filename="../app/contactdialog.cpp" line="92"/>
         <source>Add contact</source>
         <translation>Вставка контакта</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="98"/>
+        <location filename="../app/contactdialog.cpp" line="100"/>
         <source>Edit contact</source>
         <translation>Правка контакта</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="630"/>
+        <location filename="../app/contactdialog.cpp" line="635"/>
         <source>Phone type</source>
         <translation>Тип телефона</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="632"/>
+        <location filename="../app/contactdialog.cpp" line="637"/>
         <source>Email type</source>
         <translation>Тип электропочты</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="634"/>
+        <location filename="../app/contactdialog.cpp" line="639"/>
         <source>Address type</source>
         <translation>Тип адреса</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="636"/>
+        <location filename="../app/contactdialog.cpp" line="641"/>
         <source>IM type</source>
         <translation>Тип IM</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="721"/>
+        <location filename="../app/contactdialog.cpp" line="726"/>
         <source>Open image file</source>
         <translation>Открыть картинку</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="753"/>
+        <location filename="../app/contactdialog.cpp" line="758"/>
         <source>Save image file</source>
         <translation>Сохранить картинку</translation>
     </message>

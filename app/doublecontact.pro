@@ -53,7 +53,7 @@ unix {
 
 TRANSLATIONS += \
     ../translations/doublecontact_en_GB.ts \
-    ../translations/doublecontact_nl_NL.ts \
+    ../translations/doublecontact_nl.ts \
     ../translations/doublecontact_ru_RU.ts \
     ../translations/doublecontact_uk_UA.ts
 
