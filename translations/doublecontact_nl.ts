@@ -63,7 +63,7 @@
     <message>
         <location filename="../app/comparedialog.cpp" line="79"/>
         <source>Addresses</source>
-        <translation type="unfinished">Adressen</translation>
+        <translation>Adressen</translation>
     </message>
     <message>
         <source>Birthday</source>
@@ -231,7 +231,7 @@
     <message>
         <location filename="../app/contactdialog.ui" line="409"/>
         <source>Instant messaging</source>
-        <translation type="unfinished"></translation>
+        <translation>IM</translation>
     </message>
     <message>
         <source>Home address</source>
@@ -347,12 +347,12 @@
     <message>
         <location filename="../app/contactdialog.cpp" line="639"/>
         <source>Address type</source>
-        <translation type="unfinished"></translation>
+        <translation>Soort adres</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.cpp" line="641"/>
         <source>IM type</source>
-        <translation type="unfinished"></translation>
+        <translation>Soort IM</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.cpp" line="726"/>
@@ -511,7 +511,7 @@
     <message>
         <location filename="../app/mainwindow.ui" line="222"/>
         <source>&amp;Recent</source>
-        <translation type="unfinished">&amp;Recent</translation>
+        <translation>&amp;Recent</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="236"/>
@@ -772,12 +772,12 @@
     <message>
         <location filename="../app/mainwindow.ui" line="525"/>
         <source>Re&amp;port</source>
-        <translation type="unfinished"></translation>
+        <translation>Ra&amp;pporteren</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="528"/>
         <source>Ctrl+R</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+R</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.cpp" line="159"/>
@@ -878,9 +878,9 @@ In deze modus kan slechts een beperkt aantal velden worden gewijzigd</translatio
     </message>
     <message>
         <location filename="../app/mainwindow.cpp" line="612"/>
-        <source>&apos;%1&apos; was changed.
+        <source>'%1' was changed.
 Save changes?</source>
-        <translation>&apos;%1&apos; is gewijzigd.
+        <translation>'%1' is gewijzigd.
 Wilt u de wijzigingen opslaan?</translation>
     </message>
     <message>
@@ -931,7 +931,7 @@ Wilt u de wijzigingen opslaan?</translation>
     <message>
         <location filename="../app/mainwindow.cpp" line="897"/>
         <source>Report file</source>
-        <translation type="unfinished"></translation>
+        <translation>Rapportbestand</translation>
     </message>
 </context>
 <context>
@@ -1025,7 +1025,7 @@ Wilt u de wijzigingen opslaan?</translation>
     <message>
         <location filename="../core/contactlist.cpp" line="106"/>
         <source>Modem</source>
-        <translation type="unfinished">Modem</translation>
+        <translation>Modem</translation>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="107"/>
@@ -1074,8 +1074,8 @@ Wilt u de wijzigingen opslaan?</translation>
 %4 adressen
 %5 verjaardagen
 %6 oproepen
-%7 SMS&apos;jes
-%8 gearchiveerde SMS&apos;jes
+%7 SMS'jes
+%8 gearchiveerde SMS'jes
 %9 %10</translation>
     </message>
     <message>
@@ -1138,7 +1138,7 @@ Wilt u de wijzigingen opslaan?</translation>
     <message>
         <location filename="../core/formats/common/vcarddata.cpp" line="196"/>
         <source>Unsupported photo type at line %1: %2%3</source>
-        <translation type="unfinished">Niet-ondersteund fototype op regel %1: %2%3 {1:?} {2%3?}</translation>
+        <translation>Niet-ondersteund fototype op regel %1: %2%3</translation>
     </message>
     <message>
         <location filename="../core/formats/common/vcarddata.cpp" line="271"/>
@@ -1173,7 +1173,7 @@ Wilt u de wijzigingen opslaan?</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="59"/>
-        <source>Can&apos;t read content from file %1
+        <source>Can't read content from file %1
 %2
 line %3, col %4
 </source>
@@ -1184,16 +1184,16 @@ regel %3, kolom %4
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="68"/>
-        <source>Root node is not &apos;DataExchangeInfo&apos; at file
+        <source>Root node is not 'DataExchangeInfo' at file
 %1</source>
-        <translation>De root-node is niet &apos;DataExchangeInfo&apos; in bestand
+        <translation>De root-node is niet 'DataExchangeInfo' in bestand
 %1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="74"/>
-        <source>Can&apos;t find &apos;RecordInfo&apos; tag at file
+        <source>Can't find 'RecordInfo' tag at file
 %1</source>
-        <translation>Het label &apos;RecordInfo&apos; kan niet worden gevonden in bestand
+        <translation>Het label 'RecordInfo' kan niet worden gevonden in bestand
 %1</translation>
     </message>
     <message>
@@ -1208,15 +1208,15 @@ regel %3, kolom %4
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="93"/>
-        <source>Can&apos;t find &apos;vCard&apos; records at file
+        <source>Can't find 'vCard' records at file
 %1</source>
-        <translation>&apos;vCard&apos;-items kunnen niet worden gevonden in bestand
+        <translation>'vCard'-items kunnen niet worden gevonden in bestand
 %1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="109"/>
-        <source>Can&apos;t find &apos;vCardField&apos; at sequence %1</source>
-        <translation>&apos;vCardField&apos; kan niet worden gevonden in volgorde %1</translation>
+        <source>Can't find 'vCardField' at sequence %1</source>
+        <translation>'vCardField' kan niet worden gevonden in volgorde %1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="134"/>
@@ -1225,8 +1225,8 @@ regel %3, kolom %4
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="150"/>
-        <source>Unknown &apos;vCardfield&apos; type: %1</source>
-        <translation>Onbekend &apos;vCardfield&apos;-type: %1</translation>
+        <source>Unknown 'vCardfield' type: %1</source>
+        <translation>Onbekend 'vCardfield'-type: %1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="158"/>
@@ -1305,7 +1305,7 @@ opgeslagen als mobiele telefoon</translation>
     </message>
     <message>
         <location filename="../core/formats/files/vcfdirectory.cpp" line="65"/>
-        <source>Can&apos;t create directory
+        <source>Can't create directory
 %1</source>
         <translation>Het creëren van de map is mislukt
 %1</translation>
@@ -1317,7 +1317,7 @@ opgeslagen als mobiele telefoon</translation>
     </message>
     <message>
         <location filename="../core/formats/files/mpbfile.cpp" line="100"/>
-        <source>File isn&apos;t MPB file or corrupted</source>
+        <source>File isn't MPB file or corrupted</source>
         <translation>Het bestand is geen MPB-bestand of is beschadigd</translation>
     </message>
     <message>
@@ -1373,7 +1373,7 @@ opgeslagen als mobiele telefoon</translation>
     <message>
         <location filename="../core/globals.h" line="53"/>
         <source>Address book</source>
-        <translation type="unfinished"></translation>
+        <translation>Adresboek</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="54"/>
@@ -1393,7 +1393,7 @@ opgeslagen als mobiele telefoon</translation>
     <message>
         <location filename="../core/globals.h" line="57"/>
         <source>Select CSV profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecteer CSV-profiel</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="59"/>
@@ -1418,12 +1418,12 @@ opgeslagen als mobiele telefoon</translation>
     <message>
         <location filename="../core/globals.h" line="64"/>
         <source>Prefixes</source>
-        <translation type="unfinished"></translation>
+        <translation>Voorvoegsels</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="65"/>
         <source>Suffixes</source>
-        <translation type="unfinished"></translation>
+        <translation>Achtervoegsels</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="67"/>
@@ -1438,7 +1438,7 @@ opgeslagen als mobiele telefoon</translation>
     <message>
         <location filename="../core/globals.h" line="69"/>
         <source>Description</source>
-        <translation type="unfinished">Omschrijving</translation>
+        <translation>Omschrijving</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="70"/>
@@ -1458,12 +1458,12 @@ opgeslagen als mobiele telefoon</translation>
     <message>
         <location filename="../core/globals.h" line="73"/>
         <source>Anniversary</source>
-        <translation type="unfinished"></translation>
+        <translation>Jubileum</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="74"/>
         <source>Photo</source>
-        <translation type="unfinished">Foto</translation>
+        <translation>Foto</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="75"/>
@@ -1483,27 +1483,27 @@ opgeslagen als mobiele telefoon</translation>
     <message>
         <location filename="../core/globals.h" line="78"/>
         <source>NickName</source>
-        <translation type="unfinished">Bijnaam</translation>
+        <translation>Bijnaam</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="79"/>
         <source>URL</source>
-        <translation type="unfinished">URL</translation>
+        <translation>URL</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="81"/>
         <source>Jabber</source>
-        <translation type="unfinished">Jabber</translation>
+        <translation>Jabber</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="82"/>
         <source>ICQ</source>
-        <translation type="unfinished">ICQ</translation>
+        <translation>ICQ</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="83"/>
         <source>Skype</source>
-        <translation type="unfinished">Skype</translation>
+        <translation>Skype</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="85"/>
@@ -1523,7 +1523,7 @@ opgeslagen als mobiele telefoon</translation>
     <message>
         <location filename="../core/globals.h" line="88"/>
         <source>Has photo</source>
-        <translation type="unfinished"></translation>
+        <translation>Heeft een foto</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="89"/>
@@ -1607,14 +1607,14 @@ opgeslagen als mobiele telefoon</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="109"/>
-        <source>Can&apos;t read file
+        <source>Can't read file
 %1</source>
         <translation>Het bestand kan niet worden gelezen
 %1</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="110"/>
-        <source>Can&apos;t write file
+        <source>Can't write file
 %1</source>
         <translation>Het bestand kan niet worden weggeschreven
 %1</translation>
@@ -1623,7 +1623,8 @@ opgeslagen als mobiele telefoon</translation>
         <location filename="../core/globals.h" line="112"/>
         <source>Warning: contact %1 has %2, not supported in this format.
 Data will be lost</source>
-        <translation type="unfinished"></translation>
+        <translation>Waarschuwing: contactpersoon %1 bevat %2, wat niet ondersteund wordt in dit formaat.
+De gegevens zullen verloren gaan</translation>
     </message>
     <message>
         <location filename="../core/formats/profiles/csvprofilebase.h" line="21"/>
@@ -1633,7 +1634,7 @@ Data will be lost</source>
     <message>
         <location filename="../core/formats/profiles/explaybm50profile.cpp" line="91"/>
         <source>Name prefixes merged with last name (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Voorvoegsels samengevoegd met achternaam (%1)</translation>
     </message>
 </context>
 <context>
@@ -1763,13 +1764,13 @@ Data will be lost</source>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="282"/>
-        <source>(many phones treats &apos;Voice&apos; as &apos;Other&apos;)</source>
-        <translation>(veel telefoons nemen &apos;Overig&apos; aan i.p.v. &apos;Spraak&apos;)</translation>
+        <source>(many phones treats 'Voice' as 'Other')</source>
+        <translation>(veel telefoons nemen 'Overig' aan i.p.v. 'Spraak')</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="289"/>
         <source>Warning on non-standard phone types</source>
-        <translation type="unfinished"></translation>
+        <translation>Waarschuwing bij niet-standaard telefoontypes</translation>
     </message>
     <message>
         <source>Warning on non-standard phone/email types</source>
