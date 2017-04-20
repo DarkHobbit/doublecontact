@@ -66,9 +66,10 @@ QString Phone::expandNumber(const QString &number, int countryRule)
             res = res.replace(0, 1, countryRules[countryRule].iPrefix);
     return res;
 }
-
+#include <iostream>
 bool Phone::operator ==(const Phone &p) const
 {
+    std::cout << types.join(";").toLocal8Bit().data() << " " << p.types.join(";").toLocal8Bit().data() << std::endl;
     return (value==p.value && types==p.types);
 }
 
@@ -162,9 +163,9 @@ Messenger::Messenger(const QString &_value, const QString &type1, const QString 
         types << type2;
 }
 
-bool Messenger::operator ==(const Messenger &e) const
+bool Messenger::operator ==(const Messenger &m) const
 {
-    return (value==e.value && types==e.types);
+    return (value==m.value && types==m.types);
 }
 
 Messenger::StandardTypes::StandardTypes()
@@ -292,6 +293,27 @@ void ContactItem::calculateFields()
         for (int i=0; i<ims.count(); i++)
             if (ims[i].types.contains("pref", Qt::CaseInsensitive))
                 prefIM = ims[i].value;
+    }
+    // Type sorting and lowercasing for correct compare
+    sortTypes(phones);
+    sortTypes(emails);
+    sortTypes(addrs);
+    sortTypes(ims);
+}
+
+template<class T>
+void ContactItem::sortTypes(QList<T> &values)
+{
+    for (int i=0; i<values.count(); i++) {
+        QStringList& types = values[i].types;
+        StandardTypes& sTypes = values[i].standardTypes;
+        for (int j=0; j<types.count(); j++) {
+            bool isStandard;
+            sTypes.translate(types[j], &isStandard);
+            if (isStandard)
+                types[j] = types[j].toLower();
+        }
+        types.sort();
     }
 }
 
@@ -606,7 +628,7 @@ QString DateItem::toString(DateFormat format) const
 bool PostalAddress::operator ==(const PostalAddress &a) const
 {
     return
-        types==types
+        types==a.types
      && offBox==a.offBox && extended==a.extended
             && street==a.street && city==a.city && region==a.region && postalCode==a.postalCode && country==a.country;
 }

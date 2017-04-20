@@ -120,7 +120,8 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                         types << codec->toUnicode(vType[i].toLocal8Bit());
                 }
             }
-            if ((!types.isEmpty()) && (tag!="TEL") && (tag!="EMAIL") && (tag!="ADR") && (tag!="PHOTO"))
+            if ((!types.isEmpty()) && (tag!="TEL")
+                    && (tag!="EMAIL") && (tag!="ADR") && (tag!="PHOTO") && (tag!="IMPP"))
                 errors << QObject::tr("Unexpected TYPE appearance at line %1: tag %2").arg(line+1).arg(tag);
             // Known tags
             if (tag=="VERSION")
@@ -579,7 +580,7 @@ QString VCardData::encodeTypes(const QStringList &aTypes, StandardTypes* st, int
             bool isStandard;
             st->translate(typeVal, &isStandard);
             if (isStandard)
-                typeStr += separator + typeVal;
+                typeStr += separator + typeVal.toUpper();
             else { // very-very rare case
                 QString mTypeVal = typeVal;
                 if (gd.replaceNLNSNames && mTypeVal.toLatin1()!=mTypeVal.toUtf8()) //non-latin
@@ -592,7 +593,7 @@ QString VCardData::encodeTypes(const QStringList &aTypes, StandardTypes* st, int
     }
     else { // general case
         typeStr = separator;
-        // typeStr += aTypes.join(","); // value list
+        // typeStr += aTypes.join(",").toUpper(); // value list
         typeStr += aTypes.join(separator).toUpper(); // parameter list; RFC 2426 allows both form
     }
     /*

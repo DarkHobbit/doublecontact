@@ -79,7 +79,7 @@ struct Email: public TypedStringItem {
 struct Messenger: public TypedStringItem {
     Messenger();
     Messenger(const QString& _value, const QString& type1 = "", const QString& type2 = "");
-    bool operator ==(const Messenger& e) const;
+    bool operator ==(const Messenger& m) const;
     static class StandardTypes: public ::StandardTypes {
         public:
         StandardTypes();
@@ -168,7 +168,9 @@ struct ContactItem {
     bool dropSlashes();
     bool intlPhonePrefix(int countryRule);
     // Aux methods
-    void calculateFields();
+    void calculateFields(); // For perfomance
+    template<class T>
+    void sortTypes(QList<T> &values); // Type sorting and lowercasing for correct compare
     QString formatNames() const;
     QString makeGenericName() const;
     void reverseFullName();
