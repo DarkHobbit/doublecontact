@@ -15,6 +15,7 @@
 
 #include <QMap>
 #include "csvprofilebase.h"
+#include "../common/vcarddata.h"
 
 class TypeCounter: public QMap<QString, int> {
 public:
@@ -22,7 +23,7 @@ public:
     void append(const TypeCounter& localCounter);
 };
 
-class GenericCSVProfile: public CSVProfileBase
+class GenericCSVProfile: public CSVProfileBase, VCardData
 {
 public:
     GenericCSVProfile();

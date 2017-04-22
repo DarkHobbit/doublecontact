@@ -10,6 +10,7 @@
  * (at your option) any later version. See COPYING file for more details.
  *
  */
+
 #include "genericcsvprofile.h"
 
 int TypeCounter::totalCount()
@@ -28,6 +29,7 @@ void TypeCounter::append(const TypeCounter &localCounter)
 }
 
 GenericCSVProfile::GenericCSVProfile()
+    :VCardData()
 {
     clearCounters();
     _name = QObject::tr("Generic profile");
@@ -53,8 +55,21 @@ bool GenericCSVProfile::parseHeader(const QStringList &header)
 
 bool GenericCSVProfile::importRecord(const QStringList &row, ContactItem &item, QStringList& errors)
 {
-    // TODO - check if row length != header length
-    return true;
+    if (row.count()!= _header.count())
+        errors << QObject::tr("Row length (%1) is not equal header length (%2). Possibly, incorrect CSV. \n%3")
+            .arg(row.count()).arg(_header.count()).arg(row.join(",")); // TODO separator instead ,
+    QStringList vCard;
+    vCard << "BEGIN:VCARD";
+    for (int i=0; (i<row.count() && i<_header.count()); i++)
+        if (!row[i].isEmpty())
+            vCard << _header[i] + ":" + row[i];
+    vCard << "END:VCARD";
+    ContactList list;
+    bool res = VCardData::importRecords(vCard, list, false, errors);
+    if (!list.isEmpty())
+        item = list[0];
+    return res;
+
 }
 
 bool GenericCSVProfile::prepareExport(const ContactList &list)

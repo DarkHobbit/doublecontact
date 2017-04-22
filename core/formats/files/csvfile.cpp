@@ -119,6 +119,8 @@ bool CSVFile::importRecords(const QString &url, ContactList &list, bool append)
     } while (!stream.atEnd());
     closeFile();
     int firstLine = currentProfile->hasHeader() ? 1 : 0;
+    if (currentProfile->hasHeader())
+        currentProfile->parseHeader(rows[0]);
     if (!append)
         list.clear();
     for (int i=firstLine; i<rows.count(); i++) {
