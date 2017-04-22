@@ -20,7 +20,7 @@ AboutDialog::AboutDialog(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->lwContributors->addItem("Icons made by Freepik from www.flaticon.com");
-    ui->lwContributors->addItem("Dutch UI: Heimen Stoffels");
+    ui->lwContributors->addItem("Dutch UI: Heimen Stoffels aka Vistaus");
     ui->lwContributors->addItem("Ukrainian UI: Olexandr Nesterenko aka burunduk");
 }
 

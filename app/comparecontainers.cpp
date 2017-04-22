@@ -579,13 +579,13 @@ void PostalAddressPair::setData(const QList<PostalAddress> &leftData, const QLis
     foreach (const PostalAddress& addr, leftData) {
         TypedStringItem si;
         si.types = addr.types;
-        si.value = addr.toString();
+        si.value = addr.toString(true);
         addValue(si, true);
     }
     foreach (const PostalAddress& addr, rightData) {
         TypedStringItem si;
         si.types = addr.types;
-        si.value = addr.toString();
+        si.value = addr.toString(true);
         addValue(si, false);
     }
     highlightDiff(leftData!=rightData);

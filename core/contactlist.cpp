@@ -37,7 +37,7 @@ const T* TypedDataItem::findByType(const QList<T> &list, const QString &itemType
     return 0;
 }
 
-QString TypedStringItem::toString() const
+QString TypedStringItem::toString(bool) const
 {
     return value;
 }
@@ -645,11 +645,13 @@ void PostalAddress::clear()
     country.clear();
 }
 
-QString PostalAddress::toString() const
+QString PostalAddress::toString(bool humanReadable) const
 {
-    return offBox + ", " + extended
-            + ", " + street + " st., " + city + ", " + region
-            + ", " + postalCode + ", " + country;
+    QString sep = humanReadable ? ", " : ";";
+    return offBox + sep + extended + sep + street
+            + (humanReadable ? " st." : "")
+            + sep + city + sep + region
+            + sep + postalCode + sep + country;
     // TODO make localized output
 }
 

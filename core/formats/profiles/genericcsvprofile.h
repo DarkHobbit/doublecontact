@@ -13,8 +13,14 @@
 #ifndef GENERICCSVPROFILE_H
 #define GENERICCSVPROFILE_H
 
+#include <QMap>
 #include "csvprofilebase.h"
 
+class TypeCounter: public QMap<QString, int> {
+public:
+    int totalCount();
+    void append(const TypeCounter& localCounter);
+};
 
 class GenericCSVProfile: public CSVProfileBase
 {
@@ -29,10 +35,29 @@ public:
     virtual bool prepareExport(const ContactList &list);
     virtual bool exportRecord(QStringList& row, const ContactItem& item, QStringList& errors);
 private:
-    bool hasFullNames, hasNames, hasBDay, hasAnn, hasSortString;
-    int phoneCount, emailCount, addrCount;
+    bool
+      hasVersion, hasFullNames, hasNames, hasBDay, hasAnn, hasSortString,
+      hasDesc, hasPhotoUrl, hasOrg, hasTitle,
+      hasNick, hasUrl;
+    // TODO is vCard 4.0 allow many photo?
+    TypeCounter phoneTypeCombinations, emailTypeCombinations, addrTypeCombinations, imTypeCombinations;
+    TypeCounter otherTags, unknownTags;
     QStringList _header;
     void clearCounters();
+    // prepareExport helpers
+    void checkStr(const QString& value, bool& found);
+    template<class T>
+    void checkTypeCombinations(const QList<T> &values, TypeCounter& combinations);
+    void checkAnyTags(const QList<TagValue>& tags, TypeCounter& combinations);
+    // makeHeader helpers
+    void makeHeaderGroup(QStringList& header, const QString& tagStart, TypeCounter& combinations);
+    inline void makeHeaderItem(QStringList& row, const QString& tag, bool condition)
+        { putItem(row, tag, condition); }
+    // exportRecord helpers
+    void putItem(QStringList& row, const QString& value, bool condition);
+    template<class T>
+    void putTypeCombinations(QStringList& row, const QList<T>& data, const TypeCounter& combinations);
+    void putAnyTags(QStringList& row, const QList<TagValue>& data, const TypeCounter& combinations);
 };
 
 #endif // GENERICCSVPROFILE_H

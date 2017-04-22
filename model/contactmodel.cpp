@@ -104,7 +104,7 @@ QVariant ContactModel::data(const QModelIndex &index, int role) const
             case ccAddr:  {
                 QString res = "";
                 foreach (const PostalAddress& addr, c.addrs) {
-                    QString sAddr = addr.toString();
+                    QString sAddr = addr.toString(true);
                     if (!sAddr.isEmpty()) {
                         if (!res.isEmpty())
                             res += "; ";

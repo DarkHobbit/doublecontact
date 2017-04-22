@@ -20,6 +20,7 @@ HEADERS	+= \
     $$PWD/formats/profiles/csvprofilebase.h \
     $$PWD/formats/profiles/explaybm50profile.h \
     $$PWD/formats/profiles/explaytv240profile.h \
+    $$PWD/formats/profiles/genericcsvprofile.h \
     $$PWD/formats/files/htmlfile.h
 
 SOURCES	+= \
@@ -37,5 +38,6 @@ SOURCES	+= \
     $$PWD/formats/profiles/csvprofilebase.cpp \
     $$PWD/formats/profiles/explaybm50profile.cpp \
     $$PWD/formats/profiles/explaytv240profile.cpp \
+    $$PWD/formats/profiles/genericcsvprofile.cpp \
     $$PWD/formats/files/htmlfile.cpp
 

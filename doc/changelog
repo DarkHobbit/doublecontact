@@ -16,3 +16,4 @@ Current
 * vCard 4.0: Many postal addresses (ADR) and IMs now allowed for 1 contact
 * New visible columns: nickname, URL, 3 IMs
 * Added translations: Dutch
+* Fixed: phones/emails/ims/addresses with same type combination but differ type order now treats as equal

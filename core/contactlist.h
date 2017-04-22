@@ -32,13 +32,12 @@ struct TagValue { // for non-editing ang unknown tags
 
 // vCard item with one of more types (one phone, email, impp, address, etc.)
 struct TypedDataItem {
-    QString value;
     QStringList types;
     // Phone: some devices & addressbooks may allow create any tel type (not RFC, but...)
     // Email: according RFC 2426, may be non-standard
     int syncMLRef;
     virtual ~TypedDataItem();
-    virtual QString toString() const=0;
+    virtual QString toString(bool humanReadable) const=0;
     template<class T>
     static const T* findByType(const QList<T>& list, const QString& itemType);
 };
@@ -46,7 +45,7 @@ struct TypedDataItem {
 // vCard item with one of more types and string content (one phone, email, impp, etc.)
 struct TypedStringItem: public TypedDataItem {
     QString value;
-    virtual QString toString() const;
+    virtual QString toString(bool) const;
 };
 
 struct Phone: public TypedStringItem {
@@ -107,7 +106,7 @@ struct PostalAddress: public TypedDataItem {
     QString offBox, extended, street, city, region, postalCode, country;
     bool operator ==(const PostalAddress& a) const;
     void clear();
-    virtual QString toString() const;
+    virtual QString toString(bool humanReadable) const;
     static PostalAddress fromString(const QString& src, const QStringList& _types);
     bool isEmpty() const;
     static class StandardTypes: public ::StandardTypes {

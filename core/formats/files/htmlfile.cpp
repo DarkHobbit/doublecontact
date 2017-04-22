@@ -105,7 +105,7 @@ void HTMLFile::exportTypedItems(QTextStream &stream, const QList<T> &lst, const 
                 if (j<it.types.count()-1)
                     types += "+";
             }
-            stream << QString("%1 (%2)").arg(it.toString()).arg(types);
+            stream << QString("%1 (%2)").arg(it.toString(true)).arg(types);
             i++;
             if (i<lst.count())
                 stream << ", ";
