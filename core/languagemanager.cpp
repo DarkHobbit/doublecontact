@@ -16,6 +16,7 @@
 #include <QFile>
 #include <QLocale>
 #include <QRegExp>
+#include <QTextCodec>
 #include "languagemanager.h"
 
 LanguageManager::LanguageManager()
@@ -82,6 +83,15 @@ QString LanguageManager::transPath()
         return qApp->applicationDirPath();
 #endif
     // TODO what for mac?
+}
+
+QStringList LanguageManager::availableCodecs()
+{
+    QStringList codecs;
+    foreach (const QByteArray& c, QTextCodec::availableCodecs()) {
+        codecs << c;
+    }
+    return codecs;
 }
 
 LanguageManager languageManager;

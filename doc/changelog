@@ -17,3 +17,4 @@ Current
 * New visible columns: nickname, URL, 3 IMs
 * Added translations: Dutch
 * Fixed: phones/emails/ims/addresses with same type combination but differ type order now treats as equal
+* Fixed: missing doublecontact.rc added in repository

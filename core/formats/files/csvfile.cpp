@@ -12,18 +12,19 @@
  */
 #include <QStringList>
 
+#include <QTextCodec>
 #include "csvfile.h"
-
 #include "../profiles/explaybm50profile.h"
 #include "../profiles/explaytv240profile.h"
 #include "../profiles/genericcsvprofile.h"
 
 CSVFile::CSVFile()
-    :FileFormat(), currentProfile(0)
+    :FileFormat(), currentProfile(0),
+      _encoding(""), _separator(",")
 {
-    profiles << new GenericCSVProfile;
     profiles << new ExplayBM50Profile;
     profiles << new ExplayTV240Profile;
+    profiles << new GenericCSVProfile;
 }
 
 CSVFile::~CSVFile()
@@ -72,6 +73,16 @@ bool CSVFile::setProfile(const QString &name)
     return false;
 }
 
+void CSVFile::setEncoding(const QString &encoding)
+{
+    _encoding = encoding;
+}
+
+void CSVFile::setSeparator(const QString &separator)
+{
+    _separator = separator;
+}
+
 QString CSVFile::profile()
 {
     if (currentProfile)
@@ -90,7 +101,9 @@ bool CSVFile::importRecords(const QString &url, ContactList &list, bool append)
     _errors << "CSV support is very experimental, you can loss your data"; //===>
     QList<QStringList> rows;
     QTextStream stream(&file);
-    stream.setCodec(currentProfile->charSet().toLatin1().data());
+    if (_encoding.isEmpty())
+        _encoding = currentProfile->charSet();
+    stream.setCodec(_encoding.toLatin1().data());
     do {
         QString line = stream.readLine();
         bool inQuotes = false;
@@ -155,7 +168,9 @@ bool CSVFile::exportRecords(const QString &url, ContactList &list)
     if (!openFile(url, QIODevice::WriteOnly))
         return false;
     QTextStream stream(&file);
-    stream.setCodec(currentProfile->charSet().toLatin1().data());
+    if (_encoding.isEmpty())
+        _encoding = currentProfile->charSet();
+    stream.setCodec(_encoding.toLatin1().data());
     stream.setGenerateByteOrderMark(currentProfile->hasBOM());
     // Header
     if (currentProfile->hasHeader())
@@ -166,27 +181,26 @@ bool CSVFile::exportRecords(const QString &url, ContactList &list)
     closeFile();
     return true;
 }
-
 void CSVFile::putLine(QTextStream& stream, const QStringList &source)
 {
     // Quoting
     switch (currentProfile->quotingPolicy()) {
     case CSVProfileBase::AlwaysQuote:
-        stream << QString("\"%1\"").arg(source.join("\",\""));
+        stream << QString("\"%1\"").arg(source.join("\"%1\"").arg(_separator));
         break;
     case CSVProfileBase::NeverQuote:
-        stream << source.join(",");
+        stream << source.join(_separator);
         break;
     case CSVProfileBase::QuoteIfNeed:
         QString line;
         foreach (const QString& cell, source) {
-            if (cell.contains(","))
+            if (cell.contains(_separator))
                 line += QString("\"%1\"").arg(cell);
             else
                 line += cell;
-            line += ",";
+            line += _separator;
         }
-        if (line.right(1)==",")
+        if (line.right(1)==_separator)
             line.remove(line.length()-1, 1);
     }
     // Line ending

@@ -25,6 +25,7 @@ VCardData::VCardData()
 {
     useOriginalFileVersion = gd.useOriginalFileVersion;
     skipEncoding = false;
+    skipDecoding = false;
     forceShortType = false;
     forceShortDate = false;
     formatVersion = GlobalConfig::VCF30;
@@ -95,7 +96,8 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                     // non-standart types may be non-latin
                     QString typeCand = vType[i];
                     typeCand.remove("TYPE=").remove("LABEL=");
-                    typeCand = codec->toUnicode(typeCand.toLocal8Bit());
+                    if (!skipDecoding)
+                        typeCand = codec->toUnicode(typeCand.toLocal8Bit());
                     // Detect and split types, composed as value list (RFC)
                     if (typeCand.contains(",")) {
                         QStringList typesAsValueList = typeCand.split(",");
@@ -116,8 +118,12 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                     if (vType[i].startsWith("QUOTED-PRINTABLE", Qt::CaseInsensitive)
                             || vType[i].startsWith("BASE64", Qt::CaseInsensitive))
                         encoding = vType[i];
-                    else // type, type...
-                        types << codec->toUnicode(vType[i].toLocal8Bit());
+                    else {// type, type...
+                        if (skipDecoding)
+                            types << vType[i];
+                        else
+                            types << codec->toUnicode(vType[i].toLocal8Bit());
+                    }
                 }
             }
             if ((!types.isEmpty()) && (tag!="TEL")
@@ -394,6 +400,8 @@ void VCardData::exportRecord(QStringList &lines, const ContactItem &item, QStrin
 
 QString VCardData::decodeValue(const QString &src, QStringList& errors) const
 {
+    if (skipDecoding)
+        return src;
     QTextCodec *codec; // for values
     // Charset
     if (charSet.isEmpty())

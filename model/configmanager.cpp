@@ -203,6 +203,24 @@ void ConfigManager::setSortingEnabled(bool value)
     settings->setValue("General/SortingEnabled", value);
 }
 
+void ConfigManager::csvConfig(QString &profile, QString &genEncoding, QString &genSeparator)
+{
+    if (!settings)
+        return;
+    profile = settings->value("CSV/LastProfile").toString();
+    genEncoding = settings->value("CSV/GenericProfileEncoding", "UTF-8").toString();
+    genSeparator = settings->value("CSV/GenericProfileSeparator", ",").toString();
+}
+
+void ConfigManager::setCSVConfig(const QString &profile, const QString &genEncoding, const QString &genSeparator)
+{
+    if (!settings)
+        return;
+    settings->setValue("CSV/LastProfile", profile);
+    settings->setValue("CSV/GenericProfileEncoding", genEncoding);
+    settings->setValue("CSV/GenericProfileSeparator", genSeparator);
+}
+
 QString ConfigManager::defaultDocDir()
 {
     return

@@ -12,6 +12,7 @@
  */
 
 #include "genericcsvprofile.h"
+#include "globals.h"
 
 int TypeCounter::totalCount()
 {
@@ -32,14 +33,15 @@ GenericCSVProfile::GenericCSVProfile()
     :VCardData()
 {
     clearCounters();
-    _name = QObject::tr("Generic profile");
+    _name = S_GENERIC_CSV_PROFILE;
     _hasHeader = true;
-    _charSet = "UTF-8"; // TODO select encoding and separator in settings
-    // TODO see, how ANISIMOV changes separator
-    // To open this ANISIMOV CSV with ; separator in LibreOffice 3.6.1.2, set ";" separator in LibreOffice import window; else N components will splitted
+    _charSet = "UTF-8";
+    // To open CSV from Anisimov's vcf2csv convertor with ; separator in LibreOffice 3.6.1.2, set ";" separator in LibreOffice import window; else N components will be splitted
     _hasBOM = false;
     _quotingPolicy = CSVProfileBase::AlwaysQuote;
     _lineEnding = CSVProfileBase::CRLFEnding;
+    skipDecoding = true;
+    skipEncoding = true;
 }
 
 bool GenericCSVProfile::detect(const QStringList &header) const

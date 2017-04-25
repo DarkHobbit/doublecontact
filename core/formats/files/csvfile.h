@@ -32,12 +32,15 @@ public:
     static QStringList supportedFilters();
     QStringList availableProfiles();
     bool setProfile(const QString& name);
+    void setEncoding(const QString& encoding);
+    void setSeparator(const QString& separator);
     QString profile();
     bool importRecords(const QString &url, ContactList &list, bool append);
     bool exportRecords(const QString &url, ContactList &list);
 private:
     QVector<CSVProfileBase*> profiles;
     CSVProfileBase* currentProfile;
+    QString _encoding, _separator;
     void putLine(QTextStream& stream, const QStringList& source);
 };
 

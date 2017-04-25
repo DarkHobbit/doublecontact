@@ -20,7 +20,8 @@ SOURCES += main.cpp \
     comparedialog.cpp \
     multicontactdialog.cpp \
     aboutdialog.cpp \
-    languageselectdialog.cpp
+    languageselectdialog.cpp \
+    csvprofiledialog.cpp
 
 HEADERS += mainwindow.h \
     contactdialog.h \
@@ -33,7 +34,8 @@ HEADERS += mainwindow.h \
     comparedialog.h \
     multicontactdialog.h \
     aboutdialog.h \
-    languageselectdialog.h
+    languageselectdialog.h \
+    csvprofiledialog.h
 
 FORMS += mainwindow.ui \
     contactdialog.ui \
@@ -44,7 +46,8 @@ FORMS += mainwindow.ui \
     comparedialog.ui \
     multicontactdialog.ui \
     aboutdialog.ui \
-    languageselectdialog.ui
+    languageselectdialog.ui \
+    csvprofiledialog.ui
 unix { 
     OBJECTS_DIR = .obj
     UI_DIR = .ui

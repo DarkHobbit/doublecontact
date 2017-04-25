@@ -13,12 +13,11 @@
 
 #include <QCloseEvent>
 #include <QComboBox>
-#include <QDialog>
 #include <QDialogButtonBox>
 #include <QFileDialog>
+#include <QGridLayout>
 #include <QItemSelectionModel>
 #include <QMessageBox>
-#include <QVBoxLayout>
 
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
@@ -27,6 +26,7 @@
 #include "aboutdialog.h"
 #include "contactdialog.h"
 #include "comparedialog.h"
+#include "csvprofiledialog.h"
 #include "logwindow.h"
 #include "multicontactdialog.h"
 #include "settingsdialog.h"
@@ -523,20 +523,8 @@ void MainWindow::recentItemClicked()
 
 void MainWindow::onRequestCSVProfile(CSVFile *format)
 {
-    QDialog* d = new QDialog(0);
-    d->setWindowTitle(S_CSV_PROFILE_SELECT);
-    QVBoxLayout* l = new QVBoxLayout();
-    d->setLayout(l);
-    QComboBox* cbProfile = new QComboBox();
-    cbProfile->addItems(format->availableProfiles());
-    l->addWidget(cbProfile);
-    QDialogButtonBox* bb = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
-    connect(bb, SIGNAL(accepted()), d, SLOT(accept()));
-    connect(bb, SIGNAL(rejected()), d, SLOT(reject()));
-    l->addWidget(bb);
-    d->exec();
-    if (d->result()==QDialog::Accepted)
-        format->setProfile(cbProfile->currentText());
+    CSVProfileDialog* d = new CSVProfileDialog(0);
+    d->selectProfile(format);
     delete d;
 }
 

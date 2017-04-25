@@ -23,10 +23,10 @@ public:
     ConfigManager();
     ~ConfigManager();
     void prepare();
-    // Common configuration, managed by dialog
+    // Common configuration, managed by config dialog
     void readConfig();
     void writeConfig();
-    // Separate settings, managed by main window and contact dialog commands
+    // Separate settings, managed by main window and other dialogs
     QString readLanguage();
     void writeLanguage(const QString& language);
     QString lastContactFile();
@@ -37,6 +37,8 @@ public:
     void setShowTwoPanels(bool value);
     bool sortingEnabled();
     void setSortingEnabled(bool value);
+    void csvConfig(QString& profile, QString& genEncoding, QString& genSeparator);
+    void setCSVConfig(const QString& profile, const QString& genEncoding, const QString& genSeparator);
     static QString defaultDocDir();
     static QString defaultImageDir();
     QStringList validColumnNames; // Available list
