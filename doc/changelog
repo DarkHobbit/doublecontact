@@ -9,8 +9,8 @@ Bugfix release:
 * Fixed: Tab folding in quoted-printabled VCFs supported (for example, Mozilla Thunderbird addressbooks)
 * Fixed: Windows Start menu icon
 
-Current
-* Experimental CSV support (TODO: write more detail)
+0.1.2 [2017-04-25]
+* Experimental CSV support (Explay BM50, Explay TV240, Generic)
 * Name components are corresponded by labels in contact edit and dialog windows
 * Create addressbook report in HTML file
 * vCard 4.0: Many postal addresses (ADR) and IMs now allowed for 1 contact
