@@ -11,10 +11,10 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Double Contact</string>
+   <string notr="true">Double Contact</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="doublecontact.qrc">
+   <iconset>
     <normaloff>:/img/16x16/doublecontact_16x16.png</normaloff>:/img/16x16/doublecontact_16x16.png</iconset>
   </property>
   <widget class="QWidget" name="centralWidget">
@@ -530,8 +530,6 @@
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources>
-  <include location="doublecontact.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

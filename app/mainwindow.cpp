@@ -543,8 +543,8 @@ void MainWindow::updateHeaders()
     updateListHeader(modLeft, ui->lbLeft);
     updateListHeader(modRight, ui->lbRight);
     setWindowTitle(selectedModel->source().isEmpty() ?
-        tr("Double Contact") :
-                       tr("Double Contact - %1").arg(selectedHeader->text()));
+        QString("Double Contact") :
+                       QString("Double Contact - %1").arg(selectedHeader->text()));
 }
 
 void MainWindow::updateModeStatus()

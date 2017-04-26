@@ -48,7 +48,7 @@
               </font>
              </property>
              <property name="text">
-              <string>DoubleContact</string>
+              <string notr="true">DoubleContact</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignCenter</set>
