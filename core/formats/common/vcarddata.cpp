@@ -413,7 +413,7 @@ QString VCardData::decodeValue(const QString &src, QStringList& errors) const
         return "";
     }
     // Encoding
-    if (encoding.isEmpty())
+    if (encoding.isEmpty() || encoding.startsWith("8BIT", Qt::CaseInsensitive))
         return codec->toUnicode(src.toLocal8Bit());
     else if (encoding.toUpper()=="QUOTED-PRINTABLE") {
         QByteArray res;

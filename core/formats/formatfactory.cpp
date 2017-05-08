@@ -2,11 +2,12 @@
 #include <QFileInfo>
 #include <QObject>
 
+#include "files/csvfile.h"
 #include "files/htmlfile.h"
 #include "files/mpbfile.h"
+#include "files/nbffile.h"
 #include "files/udxfile.h"
 #include "files/vcffile.h"
-#include "files/csvfile.h"
 
 FormatFactory::FormatFactory()
     :error("")
@@ -33,6 +34,7 @@ QStringList FormatFactory::supportedFilters(QIODevice::OpenMode mode, bool isRep
         allSupported += "*." + CSVFile::supportedExtensions().join(" *.");
         if (mode==QIODevice::ReadOnly) {
             // ...here add read-only formats
+            allSupported += "*." + NBFFile::supportedExtensions().join(" *.");
         }
         else { // Write-only formats
         }
@@ -47,6 +49,7 @@ QStringList FormatFactory::supportedFilters(QIODevice::OpenMode mode, bool isRep
         allTypes << CSVFile::supportedFilters();
         if (mode==QIODevice::ReadOnly) {
             // ...here add filters for read-only formats
+            allTypes << NBFFile::supportedFilters();
         }
         else { // Write-only formats
         }
@@ -71,6 +74,8 @@ IFormat *FormatFactory::createObject(const QString &url)
         return new UDXFile();
     if (CSVFile::supportedExtensions().contains(ext, Qt::CaseInsensitive))
         return new CSVFile();
+    if (NBFFile::supportedExtensions().contains(ext, Qt::CaseInsensitive))
+        return new NBFFile();
 #if QT_VERSION >= 0x040800
     if (MPBFile::supportedExtensions().contains(ext, Qt::CaseInsensitive))
         return new MPBFile();
@@ -83,8 +88,12 @@ IFormat *FormatFactory::createObject(const QString &url)
         return new VCFFile();
     if (UDXFile::detect(url))
         return new UDXFile();
+#if QT_VERSION >= 0x040800
     if (MPBFile::detect(url))
         return new MPBFile();
+#endif
+    if (NBFFile::detect(url))
+        return new NBFFile();
     if (CSVFile::detect(url))
         return new CSVFile();
     // ...here add detect() for new format

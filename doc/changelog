@@ -18,3 +18,6 @@ Bugfix release:
 * Added translations: Dutch
 * Fixed: phones/emails/ims/addresses with same type combination but differ type order now treats as equal
 * Fixed: missing doublecontact.rc added in repository
+
+Current
+* NBF (modern Nokia backup file) reading support

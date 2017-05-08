@@ -2,6 +2,11 @@
 
 QT += core xml
 
+include(../3rdparty/quazip/quazip.pri)
+DEFINES += QUAZIP_STATIC
+win32:INCLUDEPATH += C:/Qt/4.8.6.st/src/3rdparty/zlib
+unix:LIBS += -lz
+
 INCLUDEPATH += $$PWD
 
 HEADERS	+= \
@@ -14,6 +19,7 @@ HEADERS	+= \
     $$PWD/formats/files/csvfile.h \
     $$PWD/formats/files/fileformat.h \
     $$PWD/formats/files/mpbfile.h \
+    $$PWD/formats/files/nbffile.h \
     $$PWD/formats/files/udxfile.h \
     $$PWD/formats/files/vcfdirectory.h \
     $$PWD/formats/files/vcffile.h \
@@ -32,6 +38,7 @@ SOURCES	+= \
     $$PWD/formats/files/csvfile.cpp \
     $$PWD/formats/files/fileformat.cpp \
     $$PWD/formats/files/mpbfile.cpp \
+    $$PWD/formats/files/nbffile.cpp \
     $$PWD/formats/files/udxfile.cpp \
     $$PWD/formats/files/vcfdirectory.cpp \
     $$PWD/formats/files/vcffile.cpp \
