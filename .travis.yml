@@ -15,7 +15,7 @@ language: cpp
 
 before_install:
  - sudo apt-get update -qq
- - sudo apt-get install qt4-dev-tools qt4-qmake
+ - sudo apt-get install qt4-dev-tools qt4-qmake fakeroot
 
 script:
  - qmake all.pro
