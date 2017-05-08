@@ -13,4 +13,4 @@ cd ../..
 ./pack/make-bin-image . ./${PKG_NAME}
 # TODO change version number and arch in control file
 cp -R ./pack/deb/DEBIAN ./${PKG_NAME}/
-sudo fakeroot dpkg-deb --build ./${PKG_NAME}/ ./${PKG_NAME}.deb
+fakeroot dpkg-deb --build ./${PKG_NAME}/ ./${PKG_NAME}.deb
