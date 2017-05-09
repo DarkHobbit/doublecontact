@@ -150,12 +150,17 @@ bool ContactModel::open(const QString& path, FormatType fType, QStringList &erro
 {
     if (path.isEmpty()) return false;
     FormatType realType = fType;
-    if (fType==ftAuto)
-        realType = QFileInfo(path).isDir() ? ftDirectory : ftFile;
+    QString realPath = path;
+    if (fType==ftAuto) {
+        // TODO m.b. here add network protocol
+        if (path.startsWith("file://"))
+            realPath.remove("file://");
+        realType = QFileInfo(realPath).isDir() ? ftDirectory : ftFile;
+    }
     IFormat* format = 0;
     switch (realType) {
     case ftFile:
-        format = factory.createObject(path);
+        format = factory.createObject(realPath);
         break;
     case ftDirectory:
         format = new VCFDirectory();
@@ -173,7 +178,7 @@ bool ContactModel::open(const QString& path, FormatType fType, QStringList &erro
         return false;
     }
     beginResetModel();
-    bool res = format->importRecords(path, items, false);
+    bool res = format->importRecords(realPath, items, false);
     fatalError = format->fatalError();
     errors = format->errors();
     delete format;
