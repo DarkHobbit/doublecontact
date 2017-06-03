@@ -55,6 +55,7 @@ protected:
     QuotingPolicy _quotingPolicy;
     LineEnding _lineEnding;
     // Helpers
+    bool present(const QStringList &row, int index);
     bool condAddPhone(const QStringList &row, ContactItem &item, int index, const QString& phType);
     bool condReadValue(const QStringList &row, int index, QString& dest);
     bool readWarning(const QStringList &row, int index, QStringList& errors);

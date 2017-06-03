@@ -575,6 +575,18 @@ TagValue::TagValue(const QString& _tag, const QString& _value)
     :tag(_tag), value(_value)
 {}
 
+DateItem::DateItem()
+    :hasTime(false), hasTimeZone(false), zoneHour(0), zoneMin(0)
+{
+    value = QDateTime();
+}
+
+DateItem::DateItem(const QDateTime &dateTime)
+    :hasTime(false), hasTimeZone(false), zoneHour(0), zoneMin(0)
+{
+    value = dateTime;
+}
+
 bool DateItem::operator ==(const DateItem &d) const
 {
     if (hasTimeZone && ((zoneHour!=d.zoneHour) || (zoneMin!=d.zoneMin)))

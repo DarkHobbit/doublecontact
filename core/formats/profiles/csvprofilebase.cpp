@@ -57,6 +57,11 @@ QStringList CSVProfileBase::makeHeader()
     return QStringList();
 }
 
+bool CSVProfileBase::present(const QStringList &row, int index)
+{
+    return row.count()>index && !row[index].isEmpty();
+}
+
 bool CSVProfileBase::condAddPhone(const QStringList &row, ContactItem &item, int index, const QString &phType)
 {
     if (row.count()>index && !row[index].isEmpty()) {

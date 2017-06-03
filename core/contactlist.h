@@ -25,6 +25,7 @@
 // According vCard 4.0, contact can have only one anniversary
 #define MAX_ANN 1
 
+// TODO m.b. use QMap<QString,QString>?
 struct TagValue { // for non-editing ang unknown tags
     QString tag, value;
     TagValue(const QString& _tag, const QString& _value);
@@ -96,6 +97,8 @@ struct DateItem { // Birthday and anniversaries
         ISOExtended, // extended ISO 8601 format (in general, for vCard 3.0)
         Local        // human-readable, according current locale
     };
+    DateItem();
+    DateItem(const QDateTime& dateTime);
     bool operator ==(const DateItem& d) const;
     void clear();
     QString toString(DateFormat format=DateItem::Local) const;
