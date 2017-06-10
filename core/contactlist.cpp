@@ -37,6 +37,15 @@ const T* TypedDataItem::findByType(const QList<T> &list, const QString &itemType
     return 0;
 }
 
+QStringList TagList::findByName(const QString &tagName) const
+{
+    QStringList res;
+    foreach (const TagValue& pair, *this)
+        if (pair.tag.startsWith(tagName, Qt::CaseInsensitive))
+            res << pair.value;
+    return res;
+}
+
 QString TypedStringItem::toString(bool) const
 {
     return value;

@@ -164,12 +164,23 @@ bool OsmoProfile::importRecord(const QStringList &row, ContactItem &item, QStrin
     return true;
 }
 
-bool OsmoProfile::exportRecord(QStringList &row, const ContactItem &item, QStringList &errors)
+bool OsmoProfile::exportRecord(QStringList &row, const ContactItem &item, QStringList &)
 {
-    // row << group from tag TODO QMap?
+    // Group TODO full group support
+    QStringList categories = item.otherTags.findByName("CATEGORIES");
+    if (categories.count()==0)
+        // TODO save i18ned value
+        row << "No";
+    else
+        row << categories.join(",");
+    // Names
     row << saveNamePart(item, 1);
     row << saveNamePart(item, 0);
     row << saveNamePart(item, 2);
+    // TODO
+
+
+    // TODO check lost fields
 
     return false; //==>
 }

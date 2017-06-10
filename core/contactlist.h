@@ -25,10 +25,17 @@
 // According vCard 4.0, contact can have only one anniversary
 #define MAX_ANN 1
 
-// TODO m.b. use QMap<QString,QString>?
+// Tag+Value pair for read-only and unknown tags
+// We can't use QMap<QString,QString>, because
+// some tags with one tagname can be found
 struct TagValue { // for non-editing ang unknown tags
     QString tag, value;
     TagValue(const QString& _tag, const QString& _value);
+};
+
+class TagList: public QList<TagValue> {
+public:
+    QStringList findByName(const QString& tagName) const;
 };
 
 // vCard item with one of more types (one phone, email, impp, address, etc.)
@@ -151,8 +158,8 @@ struct ContactItem {
     QString id; // optional record unique id (udx Sequence, vcf X-IRMC-LUID, etc)
     QString originalFormat;
     QString version, subVersion;
-    QList<TagValue> otherTags;   // Known but un-editing tags
-    QList<TagValue> unknownTags; // specific tags for any file format, i.e. vcf
+    TagList otherTags;   // Known but un-editing tags
+    TagList unknownTags; // specific tags for any file format, i.e. vcf
     // Calculated fields for higher perfomance
     QString visibleName, prefPhone, prefEmail, prefIM;
     // Calculated fields for list comparison

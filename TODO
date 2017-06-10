@@ -36,6 +36,7 @@ You can contact me at pub@zvyozdochkin.ru.
 * groups support:
 Samples with CATEGORIES (LG Leon via mpb) and apple-way https://forums.bitfire.at/topic/511/fastmail-carddav-and-groups/10 
 See also ownCloud and iCloud.
+vCard 4.0 CATEGORIES requires , separator, but lg leon saves with ;
 
 0.3:
 * adb support
