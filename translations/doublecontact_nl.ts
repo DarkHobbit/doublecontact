@@ -892,9 +892,9 @@ In deze modus kan slechts een beperkt aantal velden worden gewijzigd</translatio
     </message>
     <message>
         <location filename="../app/mainwindow.cpp" line="600"/>
-        <source>'%1' was changed.
+        <source>&apos;%1&apos; was changed.
 Save changes?</source>
-        <translation>'%1' is gewijzigd.
+        <translation>&apos;%1&apos; is gewijzigd.
 Wilt u de wijzigingen opslaan?</translation>
     </message>
     <message>
@@ -982,97 +982,97 @@ Wilt u de wijzigingen opslaan?</translation>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../core/contactlist.cpp" line="97"/>
-        <location filename="../core/contactlist.cpp" line="699"/>
+        <location filename="../core/contactlist.cpp" line="106"/>
+        <location filename="../core/contactlist.cpp" line="720"/>
         <source>Home</source>
         <translation>Thuis</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="98"/>
+        <location filename="../core/contactlist.cpp" line="107"/>
         <source>Message</source>
         <translation>Bericht</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="99"/>
-        <location filename="../core/contactlist.cpp" line="700"/>
+        <location filename="../core/contactlist.cpp" line="108"/>
+        <location filename="../core/contactlist.cpp" line="721"/>
         <source>Work</source>
         <translation>Werk</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="100"/>
-        <location filename="../core/contactlist.cpp" line="149"/>
-        <location filename="../core/contactlist.cpp" line="184"/>
-        <location filename="../core/contactlist.cpp" line="701"/>
+        <location filename="../core/contactlist.cpp" line="109"/>
+        <location filename="../core/contactlist.cpp" line="158"/>
+        <location filename="../core/contactlist.cpp" line="193"/>
+        <location filename="../core/contactlist.cpp" line="722"/>
         <source>Preferable</source>
         <translation>Prefereren</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="101"/>
+        <location filename="../core/contactlist.cpp" line="110"/>
         <source>Voice</source>
         <translation>Spraak</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="102"/>
+        <location filename="../core/contactlist.cpp" line="111"/>
         <source>Fax</source>
         <translation>Fax</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="103"/>
+        <location filename="../core/contactlist.cpp" line="112"/>
         <source>Cell</source>
         <translation>Mobiel</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="104"/>
+        <location filename="../core/contactlist.cpp" line="113"/>
         <source>Video</source>
         <translation>Video</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="105"/>
+        <location filename="../core/contactlist.cpp" line="114"/>
         <source>Pager</source>
         <translation>Pager</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="106"/>
+        <location filename="../core/contactlist.cpp" line="115"/>
         <source>BBS</source>
         <translation>BBS</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="107"/>
+        <location filename="../core/contactlist.cpp" line="116"/>
         <source>Modem</source>
         <translation>Modem</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="108"/>
+        <location filename="../core/contactlist.cpp" line="117"/>
         <source>Car</source>
         <translation>Auto</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="109"/>
+        <location filename="../core/contactlist.cpp" line="118"/>
         <source>ISDN</source>
         <translation>ISDN</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="110"/>
+        <location filename="../core/contactlist.cpp" line="119"/>
         <source>PCS</source>
         <translation>PCS</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="147"/>
+        <location filename="../core/contactlist.cpp" line="156"/>
         <source>Internet</source>
         <translation>Internet</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="148"/>
+        <location filename="../core/contactlist.cpp" line="157"/>
         <source>X.400</source>
         <translation>X.400</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="363"/>
+        <location filename="../core/contactlist.cpp" line="372"/>
         <source>Strange empty contact</source>
         <translation>Vreemde, lege contactpersoon</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="568"/>
+        <location filename="../core/contactlist.cpp" line="577"/>
         <source>%1 records
 %2 phones
 %3 emails
@@ -1088,27 +1088,27 @@ Wilt u de wijzigingen opslaan?</translation>
 %4 adressen
 %5 verjaardagen
 %6 oproepen
-%7 SMS'jes
-%8 gearchiveerde SMS'jes
+%7 SMS&apos;jes
+%8 gearchiveerde SMS&apos;jes
 %9 %10</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="702"/>
+        <location filename="../core/contactlist.cpp" line="723"/>
         <source>Domestic</source>
         <translation>Binnenland</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="703"/>
+        <location filename="../core/contactlist.cpp" line="724"/>
         <source>International</source>
         <translation>Internationaal</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="704"/>
+        <location filename="../core/contactlist.cpp" line="725"/>
         <source>Postal</source>
         <translation>Post</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="705"/>
+        <location filename="../core/contactlist.cpp" line="726"/>
         <source>Parcel</source>
         <translation>Pakket</translation>
     </message>
@@ -1187,7 +1187,7 @@ Wilt u de wijzigingen opslaan?</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="59"/>
-        <source>Can't read content from file %1
+        <source>Can&apos;t read content from file %1
 %2
 line %3, col %4
 </source>
@@ -1198,16 +1198,16 @@ regel %3, kolom %4
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="68"/>
-        <source>Root node is not 'DataExchangeInfo' at file
+        <source>Root node is not &apos;DataExchangeInfo&apos; at file
 %1</source>
-        <translation>De root-node is niet 'DataExchangeInfo' in bestand
+        <translation>De root-node is niet &apos;DataExchangeInfo&apos; in bestand
 %1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="74"/>
-        <source>Can't find 'RecordInfo' tag at file
+        <source>Can&apos;t find &apos;RecordInfo&apos; tag at file
 %1</source>
-        <translation>Het label 'RecordInfo' kan niet worden gevonden in bestand
+        <translation>Het label &apos;RecordInfo&apos; kan niet worden gevonden in bestand
 %1</translation>
     </message>
     <message>
@@ -1222,15 +1222,15 @@ regel %3, kolom %4
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="93"/>
-        <source>Can't find 'vCard' records at file
+        <source>Can&apos;t find &apos;vCard&apos; records at file
 %1</source>
-        <translation>'vCard'-items kunnen niet worden gevonden in bestand
+        <translation>&apos;vCard&apos;-items kunnen niet worden gevonden in bestand
 %1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="109"/>
-        <source>Can't find 'vCardField' at sequence %1</source>
-        <translation>'vCardField' kan niet worden gevonden in volgorde %1</translation>
+        <source>Can&apos;t find &apos;vCardField&apos; at sequence %1</source>
+        <translation>&apos;vCardField&apos; kan niet worden gevonden in volgorde %1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="134"/>
@@ -1239,8 +1239,8 @@ regel %3, kolom %4
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="150"/>
-        <source>Unknown 'vCardfield' type: %1</source>
-        <translation>Onbekend 'vCardfield'-type: %1</translation>
+        <source>Unknown &apos;vCardfield&apos; type: %1</source>
+        <translation>Onbekend &apos;vCardfield&apos;-type: %1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="158"/>
@@ -1292,12 +1292,12 @@ opgeslagen als mobiele telefoon</translation>
         <translation>Waarschuwing: contactpersoon %1 heeft jubilea maar dit is niet geïmplementeerd in UDX</translation>
     </message>
     <message>
-        <location filename="../core/formats/formatfactory.cpp" line="62"/>
+        <location filename="../core/formats/formatfactory.cpp" line="65"/>
         <source>Empty file name</source>
         <translation>Lege bestandsnaam</translation>
     </message>
     <message>
-        <location filename="../core/formats/formatfactory.cpp" line="92"/>
+        <location filename="../core/formats/formatfactory.cpp" line="101"/>
         <source>Unknown file format:
 %1</source>
         <translation>Onbekend bestandsformaat:
@@ -1319,7 +1319,7 @@ opgeslagen als mobiele telefoon</translation>
     </message>
     <message>
         <location filename="../core/formats/files/vcfdirectory.cpp" line="65"/>
-        <source>Can't create directory
+        <source>Can&apos;t create directory
 %1</source>
         <translation>Het creëren van de map is mislukt
 %1</translation>
@@ -1331,7 +1331,7 @@ opgeslagen als mobiele telefoon</translation>
     </message>
     <message>
         <location filename="../core/formats/files/mpbfile.cpp" line="100"/>
-        <source>File isn't MPB file or corrupted</source>
+        <source>File isn&apos;t MPB file or corrupted</source>
         <translation>Het bestand is geen MPB-bestand of is beschadigd</translation>
     </message>
     <message>
@@ -1365,284 +1365,229 @@ opgeslagen als mobiele telefoon</translation>
         <translation>Het nummer, %1, kan niet worden gevonden in het adresboek. De originele naam (%2) is opgeslagen</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="48"/>
         <source>Error</source>
-        <translation>Fout</translation>
+        <translation type="obsolete">Fout</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="49"/>
         <source>Warning</source>
-        <translation>Waarschuwing</translation>
+        <translation type="obsolete">Waarschuwing</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="50"/>
         <source>Confirmation</source>
-        <translation>Bevestiging</translation>
+        <translation type="obsolete">Bevestiging</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="51"/>
         <source>Information</source>
-        <translation>Informatie</translation>
+        <translation type="obsolete">Informatie</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="53"/>
         <source>Address book</source>
-        <translation>Adresboek</translation>
+        <translation type="obsolete">Adresboek</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="54"/>
         <source>New contact list</source>
-        <translation>Nieuwe contactpersonenlijst</translation>
+        <translation type="obsolete">Nieuwe contactpersonenlijst</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="55"/>
         <source>This format is read only</source>
-        <translation>Dit formaat is alleen-lezen</translation>
+        <translation type="obsolete">Dit formaat is alleen-lezen</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="56"/>
         <source>Select country rule</source>
-        <translation>Selecteer landregel</translation>
+        <translation type="obsolete">Selecteer landregel</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="57"/>
         <source>Select CSV profile</source>
-        <translation>Selecteer CSV-profiel</translation>
+        <translation type="obsolete">Selecteer CSV-profiel</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="58"/>
         <source>Generic profile</source>
-        <translation>Algemeen profiel</translation>
+        <translation type="obsolete">Algemeen profiel</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="60"/>
         <source>mixed...</source>
-        <translation>gemengd...</translation>
+        <translation type="obsolete">gemengd...</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="62"/>
         <source>Firstname</source>
-        <translation>Voornaam</translation>
+        <translation type="obsolete">Voornaam</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="63"/>
         <source>Lastname</source>
-        <translation>Achternaam</translation>
+        <translation type="obsolete">Achternaam</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="64"/>
         <source>Middlename</source>
-        <translation>Tweede naam</translation>
+        <translation type="obsolete">Tweede naam</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="65"/>
         <source>Prefixes</source>
-        <translation>Voorvoegsels</translation>
+        <translation type="obsolete">Voorvoegsels</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="66"/>
         <source>Suffixes</source>
-        <translation>Achtervoegsels</translation>
+        <translation type="obsolete">Achtervoegsels</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="68"/>
         <source>Full name</source>
-        <translation>Volledige naam</translation>
+        <translation type="obsolete">Volledige naam</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="69"/>
         <source>Generic name</source>
-        <translation>Algemene naam</translation>
+        <translation type="obsolete">Algemene naam</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="70"/>
         <source>Description</source>
-        <translation>Omschrijving</translation>
+        <translation type="obsolete">Omschrijving</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="71"/>
         <source>Phone</source>
-        <translation>Telefoonnummer</translation>
+        <translation type="obsolete">Telefoonnummer</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="72"/>
         <source>Email</source>
-        <translation>E-mailadres</translation>
+        <translation type="obsolete">E-mailadres</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="73"/>
         <source>Birthday</source>
-        <translation>Verjaardag</translation>
+        <translation type="obsolete">Verjaardag</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="74"/>
         <source>Anniversary</source>
-        <translation>Jubileum</translation>
+        <translation type="obsolete">Jubileum</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="75"/>
         <source>Photo</source>
-        <translation>Foto</translation>
+        <translation type="obsolete">Foto</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="76"/>
         <source>Job title</source>
-        <translation>Functie</translation>
+        <translation type="obsolete">Functie</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="77"/>
         <source>Organization</source>
-        <translation>Organisatie</translation>
+        <translation type="obsolete">Organisatie</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="78"/>
         <source>Address</source>
-        <translation>Adres</translation>
+        <translation type="obsolete">Adres</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="79"/>
         <source>NickName</source>
-        <translation>Bijnaam</translation>
+        <translation type="obsolete">Bijnaam</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="80"/>
         <source>URL</source>
-        <translation>URL</translation>
+        <translation type="obsolete">URL</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="82"/>
         <source>Jabber</source>
-        <translation>Jabber</translation>
+        <translation type="obsolete">Jabber</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="83"/>
         <source>ICQ</source>
-        <translation>ICQ</translation>
+        <translation type="obsolete">ICQ</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="84"/>
         <source>Skype</source>
-        <translation>Skype</translation>
+        <translation type="obsolete">Skype</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="86"/>
         <source>Has phone</source>
-        <translation>Heeft een telefoon</translation>
+        <translation type="obsolete">Heeft een telefoon</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="87"/>
         <source>Has email</source>
-        <translation>Heeft een e-mailadres</translation>
+        <translation type="obsolete">Heeft een e-mailadres</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="88"/>
         <source>Has birthday</source>
-        <translation>Heeft een verjaardag</translation>
+        <translation type="obsolete">Heeft een verjaardag</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="89"/>
         <source>Has photo</source>
-        <translation>Heeft een foto</translation>
+        <translation type="obsolete">Heeft een foto</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="90"/>
         <source>Some phones</source>
-        <translation>Enkele telefoons</translation>
+        <translation type="obsolete">Enkele telefoons</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="91"/>
         <source>Some emails</source>
-        <translation>Enkele e-mailadressen</translation>
+        <translation type="obsolete">Enkele e-mailadressen</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="93"/>
         <source>P.o. box</source>
-        <translation>Postbus</translation>
+        <translation type="obsolete">Postbus</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="94"/>
         <source>Ext.addr.</source>
-        <translation>Antwoordnummer</translation>
+        <translation type="obsolete">Antwoordnummer</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="95"/>
         <source>Street</source>
-        <translation>Straatnaam</translation>
+        <translation type="obsolete">Straatnaam</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="96"/>
         <source>City/Locality</source>
-        <translation>Stad/Plaatsnaam</translation>
+        <translation type="obsolete">Stad/Plaatsnaam</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="97"/>
         <source>Region</source>
-        <translation>Regio</translation>
+        <translation type="obsolete">Regio</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="98"/>
         <source>Postal code</source>
-        <translation>Postcode</translation>
+        <translation type="obsolete">Postcode</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="99"/>
         <source>Country</source>
-        <translation>Land</translation>
+        <translation type="obsolete">Land</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="101"/>
         <source>[Unknown photo format]</source>
-        <translation>[Onbekend fotoformaat]</translation>
+        <translation type="obsolete">[Onbekend fotoformaat]</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="102"/>
         <source>Load image</source>
-        <translation>Afbeelding laden</translation>
+        <translation type="obsolete">Afbeelding laden</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="103"/>
         <source>Save image</source>
-        <translation>Afbeelding opslaan</translation>
+        <translation type="obsolete">Afbeelding opslaan</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="104"/>
         <source>Set URL</source>
-        <translation>URL instellen</translation>
+        <translation type="obsolete">URL instellen</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="105"/>
         <source>Remove photo</source>
-        <translation>Foto verwijderen</translation>
+        <translation type="obsolete">Foto verwijderen</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="107"/>
         <source>All supported files (%1)</source>
-        <translation>Alle ondersteunde bestanden (%1)</translation>
+        <translation type="obsolete">Alle ondersteunde bestanden (%1)</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="108"/>
         <source>All files (*.*)</source>
-        <translation>Alle bestanden (*.*)</translation>
+        <translation type="obsolete">Alle bestanden (*.*)</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="110"/>
-        <source>Can't read file
+        <source>Can&apos;t read file
 %1</source>
-        <translation>Het bestand kan niet worden gelezen
+        <translation type="obsolete">Het bestand kan niet worden gelezen
 %1</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="111"/>
-        <source>Can't write file
+        <source>Can&apos;t write file
 %1</source>
-        <translation>Het bestand kan niet worden weggeschreven
+        <translation type="obsolete">Het bestand kan niet worden weggeschreven
 %1</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="113"/>
         <source>Warning: contact %1 has %2, not supported in this format.
 Data will be lost</source>
-        <translation>Waarschuwing: contactpersoon %1 bevat %2, wat niet ondersteund wordt in dit formaat.
+        <translation type="obsolete">Waarschuwing: contactpersoon %1 bevat %2, wat niet ondersteund wordt in dit formaat.
 De gegevens zullen verloren gaan</translation>
     </message>
     <message>
@@ -1661,6 +1606,91 @@ De gegevens zullen verloren gaan</translation>
 %3</source>
         <translation>De rijlengte (%1) is niet gelijk aan de koplengte (%2). Waarschijnlijk is het CSV-bestand ongeldig.
 %3</translation>
+    </message>
+    <message>
+        <location filename="../core/formats/profiles/osmoprofile.cpp" line="20"/>
+        <source>None</source>
+        <comment>Osmo PIM marker for contacts without groups for YOUR language</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/formats/profiles/osmoprofile.cpp" line="70"/>
+        <source>Name day loaded as anniversary, contact %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/formats/profiles/osmoprofile.cpp" line="90"/>
+        <source>Department loaded as Job title, contact %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/formats/profiles/osmoprofile.cpp" line="192"/>
+        <source>Anniversary saved as name day, contact %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/formats/profiles/osmoprofile.cpp" line="209"/>
+        <source>Job title saved as Department, contact %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/formats/files/nbffile.cpp" line="57"/>
+        <source>Can&apos;t open %1 directory in archive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/formats/files/nbffile.cpp" line="65"/>
+        <source>Can&apos;t set %1 item as current in archive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/formats/files/nbffile.cpp" line="71"/>
+        <source>Can&apos;t open %1 item in archive</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>QuaGzipFile</name>
+    <message>
+        <location filename="../3rdparty/quazip/quazip/quagzipfile.cpp" line="60"/>
+        <source>QIODevice::Append is not supported for GZIP</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../3rdparty/quazip/quazip/quagzipfile.cpp" line="66"/>
+        <source>Opening gzip for both reading and writing is not supported</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../3rdparty/quazip/quazip/quagzipfile.cpp" line="74"/>
+        <source>You can open a gzip either for reading or for writing. Which is it?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../3rdparty/quazip/quazip/quagzipfile.cpp" line="80"/>
+        <source>Could not gzopen() file</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>QuaZIODevice</name>
+    <message>
+        <location filename="../3rdparty/quazip/quazip/quaziodevice.cpp" line="147"/>
+        <source>QIODevice::Append is not supported for QuaZIODevice</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../3rdparty/quazip/quazip/quaziodevice.cpp" line="152"/>
+        <source>QIODevice::ReadWrite is not supported for QuaZIODevice</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>QuaZipFile</name>
+    <message>
+        <location filename="../3rdparty/quazip/quazip/quazipfile.cpp" line="247"/>
+        <source>ZIP/UNZIP API error %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1790,8 +1820,8 @@ De gegevens zullen verloren gaan</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="282"/>
-        <source>(many phones treats 'Voice' as 'Other')</source>
-        <translation>(veel telefoons nemen 'Overig' aan i.p.v. 'Spraak')</translation>
+        <source>(many phones treats &apos;Voice&apos; as &apos;Other&apos;)</source>
+        <translation>(veel telefoons nemen &apos;Overig&apos; aan i.p.v. &apos;Spraak&apos;)</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="289"/>

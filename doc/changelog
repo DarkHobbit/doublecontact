@@ -21,4 +21,5 @@ Bugfix release:
 
 Current
 * NBF (modern Nokia backup file) reading support
+* Osmo PIM CSV files support
 * Fixed: file paths with file:// protocol prefix now opened correctly

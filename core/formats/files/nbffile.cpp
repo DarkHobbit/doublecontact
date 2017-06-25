@@ -49,7 +49,7 @@ bool NBFFile::importRecords(const QString &url, ContactList &list, bool append)
 {
     QuaZip nbf(url);
     if (!nbf.open(QuaZip::mdUnzip)) {
-        _fatalError = QObject::tr("Can't open file");
+        _fatalError = S_READ_ERR.arg(url);
         return false;
     }
     QuaZipDir nbd(&nbf);
