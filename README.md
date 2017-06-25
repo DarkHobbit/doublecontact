@@ -12,3 +12,17 @@ Libraries: Qt4/5.
 Use qmake for build doublecontact. Project all.pro in repo root builds both GUI (doublecontact) and console (contconv) application.
 
 Repo also contains config files for cmake, but currently it isn't usable. Use qmake.
+
+### Build instructions ###
+
+#### Ubuntu ####
+
+sudo apt-get install qt4-qmake
+
+git clone https://github.com/DarkHobbit/doublecontact.git
+
+cd doublecontact
+
+qmake
+
+make
