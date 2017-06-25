@@ -85,7 +85,7 @@ bool OsmoProfile::importRecord(const QStringList &row, ContactItem &item, QStrin
     item.organization = value(row, "Organization");
     item.title = value(row, "Department");
     if (!item.title.isEmpty())
-        errors << QObject::tr("Department loaded as Job title");
+        errors << QObject::tr("Department loaded as Job title, contact %1").arg(item.makeGenericName());
     // Work address
     if (present(row, "Work address") || present(row, "Work postcode")
     || present(row, "Work city") || present(row, "Work state")
@@ -204,7 +204,7 @@ bool OsmoProfile::exportRecord(QStringList &row, const ContactItem &item, QStrin
     // Work data
     row << item.organization << item.title;
     if (!item.title.isEmpty())
-        errors << QObject::tr("Job title saved as Department");
+        errors << QObject::tr("Job title saved as Department, contact %1").arg(item.visibleName);
     // Save work address
     row << workAddr.street << workAddr.postalCode << workAddr.city << workAddr.region << workAddr.country;
     // Various phone types
