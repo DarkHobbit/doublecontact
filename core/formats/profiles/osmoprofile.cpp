@@ -13,6 +13,11 @@
 #include <QObject>
 #include "osmoprofile.h"
 
+// DoubleContact language and Osmo language must be identical
+// else new phantom group will be created
+// It's bad design of Osmo CSV format.
+#define S_OSMO_NO_GROUP QObject::tr("None", "Osmo PIM marker for contacts without groups for YOUR language")
+
 OsmoProfile::OsmoProfile()
 {
     _name = "Osmo PIM";
@@ -47,8 +52,7 @@ bool OsmoProfile::importRecord(const QStringList &row, ContactItem &item, QStrin
     // Group
     if (present(row, "Group")) {
         QString grName = value(row, "Group");
-        // TODO i18n???
-        if (grName!=QString::fromUtf8("Нет"))
+        if ((!grName.isEmpty()) && (grName!=S_OSMO_NO_GROUP))
             // TODO full group support
             item.otherTags << TagValue("CATEGORIES", row[0]);
     }
@@ -61,7 +65,7 @@ bool OsmoProfile::importRecord(const QStringList &row, ContactItem &item, QStrin
     item.birthday = QDateTime::fromString(value(row, "Birthday date"), "dd.mm.yyyy");
     if (present(row, "Name day date")) {
         item.anniversaries << QDateTime::fromString(value(row, "Name day date"), "dd.mm.yyyy");
-        errors << QObject::tr("Name day loaded as anniversary");
+        errors << QObject::tr("Name day loaded as anniversary, contact %1").arg(item.makeGenericName());
     }
     // Home address
     if (present(row, "Home address") || present(row, "Home postcode")
@@ -164,25 +168,171 @@ bool OsmoProfile::importRecord(const QStringList &row, ContactItem &item, QStrin
     return true;
 }
 
-bool OsmoProfile::exportRecord(QStringList &row, const ContactItem &item, QStringList &)
+bool OsmoProfile::exportRecord(QStringList &row, const ContactItem &item, QStringList &errors)
 {
     // Group TODO full group support
     QStringList categories = item.otherTags.findByName("CATEGORIES");
     if (categories.count()==0)
-        // TODO save i18ned value
-        row << "No";
+        row << S_OSMO_NO_GROUP;
     else
         row << categories.join(",");
     // Names
     row << saveNamePart(item, 1);
     row << saveNamePart(item, 0);
     row << saveNamePart(item, 2);
-    // TODO
-
-
-    // TODO check lost fields
-
-    return false; //==>
+    // Nick, tags, birthday, name day
+    row << item.nickName;
+    row << item.unknownTags.findByName("TAGS").join(",");
+    if (!item.birthday.isEmpty())
+        row << item.birthday.value.toString("dd.mm.yyyy");
+    if (!item.anniversaries.isEmpty()) {
+        row << item.anniversaries[0].value.toString("dd.mm.yyyy");
+        errors << QObject::tr("Anniversary saved as name day, contact %1").arg(item.visibleName);
+    }
+    // Addresses (only two for this format)
+    PostalAddress homeAddr, workAddr;
+    foreach(const PostalAddress& a, item.addrs) {
+        if (a.types.contains("home", Qt::CaseInsensitive) && homeAddr.isEmpty())
+            homeAddr = a;
+        else if (a.types.contains("work", Qt::CaseInsensitive) && workAddr.isEmpty())
+            workAddr = a;
+        else // sad but true
+            errors << S_ERR_EXTRA_TAG.arg(S_ADDR).arg(a.toString(true)).arg(item.visibleName);\
+    }
+    // Save home address
+    row << homeAddr.street << homeAddr.postalCode << homeAddr.city << homeAddr.region << homeAddr.country;
+    // Work data
+    row << item.organization << item.title;
+    if (!item.title.isEmpty())
+        errors << QObject::tr("Job title saved as Department");
+    // Save work address
+    row << workAddr.street << workAddr.postalCode << workAddr.city << workAddr.region << workAddr.country;
+    // Various phone types
+    QString fax;
+    QStringList homePhones, workPhones, cellPhones;
+    foreach(const Phone& ph, item.phones) {
+        if (ph.types.contains("fax", Qt::CaseInsensitive)) {
+            if (fax.isEmpty())
+                fax = ph.value;
+            else
+                errors << S_ERR_EXTRA_TAG.arg(S_PHONE).arg(ph.value).arg(item.visibleName);
+        }
+        else if (ph.types.contains("home", Qt::CaseInsensitive)) {
+            if (homePhones.count()<4)
+                homePhones << ph.value;
+            else
+                errors << S_ERR_EXTRA_TAG.arg(S_PHONE).arg(ph.value).arg(item.visibleName);
+        }
+        else if (ph.types.contains("work", Qt::CaseInsensitive)) {
+            if (workPhones.count()<4)
+                workPhones << ph.value;
+            else
+                errors << S_ERR_EXTRA_TAG.arg(S_PHONE).arg(ph.value).arg(item.visibleName);
+        }
+        else if (ph.types.contains("cell", Qt::CaseInsensitive)) {
+            if (cellPhones.count()<4)
+                cellPhones << ph.value;
+            else
+                errors << S_ERR_EXTRA_TAG.arg(S_PHONE).arg(ph.value).arg(item.visibleName);
+        }
+    }
+    int i;
+    for (i=homePhones.count(); i<4; i++) homePhones << "";
+    for (i=workPhones.count(); i<4; i++) workPhones << "";
+    for (i=cellPhones.count(); i<4; i++) cellPhones << "";
+    row << fax;
+    foreach(const QString& number, homePhones)
+        row << number;
+    foreach(const QString& number, workPhones)
+        row << number;
+    foreach(const QString& number, cellPhones)
+        row << number;
+    // Emails
+    i=0;
+    foreach(const Email& em, item.emails) {
+        if (i<4)
+            row << em.value;
+        else
+            errors << S_ERR_EXTRA_TAG.arg(S_EMAIL).arg(em.value).arg(item.visibleName);
+        i++;
+    }
+    for (i=item.emails.count(); i<4; i++)
+        row << "";
+    // Web
+    row << item.url;
+    // TODO implement multiple urls for vCard 4.0, instead WWW2-WWW4
+    QStringList addUrls = item.unknownTags.findByName("WWW");
+    if (addUrls.count()>0)
+        row << addUrls[0];
+    else
+        row << "";
+    if (addUrls.count()>1)
+        row << addUrls[1];
+    else
+        row << "";
+    if (addUrls.count()>2)
+        row << addUrls[2];
+    else
+        row << "";
+    // IMs
+    QMap<QString, QString> ims;
+    foreach(const Messenger& im, item.ims) {
+        if (im.types.contains("gadu-gadu", Qt::CaseInsensitive)) {
+            if (!ims.contains("gadu-gadu"))
+                ims["gadu-gadu"] = im.value;
+            else
+                errors << S_ERR_EXTRA_TAG.arg(S_IM).arg(im.value).arg(item.visibleName);
+        }
+        else if (im.types.contains("Yahoo", Qt::CaseInsensitive)) {
+            if (!ims.contains("Yahoo"))
+                ims["Yahoo"] = im.value;
+            else
+                errors << S_ERR_EXTRA_TAG.arg(S_IM).arg(im.value).arg(item.visibleName);
+        }
+        else if (im.types.contains("msn", Qt::CaseInsensitive)) {
+            if (!ims.contains("msn"))
+                ims["msn"] = im.value;
+            else
+                errors << S_ERR_EXTRA_TAG.arg(S_IM).arg(im.value).arg(item.visibleName);
+        }
+        else if (im.types.contains("icq", Qt::CaseInsensitive)) {
+            if (!ims.contains("icq"))
+                ims["icq"] = im.value;
+            else
+                errors << S_ERR_EXTRA_TAG.arg(S_IM).arg(im.value).arg(item.visibleName);
+        }
+        else if (im.types.contains("aim", Qt::CaseInsensitive)) {
+            if (!ims.contains("aim"))
+                ims["aim"] = im.value;
+            else
+                errors << S_ERR_EXTRA_TAG.arg(S_IM).arg(im.value).arg(item.visibleName);
+        }
+        else if (im.types.contains("xmpp", Qt::CaseInsensitive)) {
+            if (!ims.contains("xmpp"))
+                ims["xmpp"] = im.value;
+            else
+                errors << S_ERR_EXTRA_TAG.arg(S_IM).arg(im.value).arg(item.visibleName);
+        }
+        else if (im.types.contains("skype", Qt::CaseInsensitive)) {
+            if (!ims.contains("skype"))
+                ims["skype"] = im.value;
+            else
+                errors << S_ERR_EXTRA_TAG.arg(S_IM).arg(im.value).arg(item.visibleName);
+        }
+        else if (im.types.contains("tlen", Qt::CaseInsensitive)) {
+            if (!ims.contains("tlen"))
+                ims["tlen"] = im.value;
+            else
+                errors << S_ERR_EXTRA_TAG.arg(S_IM).arg(im.value).arg(item.visibleName);
+        }
+    }
+    QStringList blog = item.unknownTags.findByName("BLOG");
+    if (!blog.isEmpty())
+        row << blog[0];
+    row << item.description;
+    // Check other lost fields
+    LOSS_DATA(S_PHOTO, !item.photo.isEmpty());
+    return true;
 }
 
 bool OsmoProfile::present(const QStringList &row, const QString &colName)

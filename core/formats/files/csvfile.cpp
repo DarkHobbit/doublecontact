@@ -203,7 +203,8 @@ void CSVFile::putLine(QTextStream& stream, const QStringList &source)
             line += _separator;
         }
         if (line.right(1)==_separator)
-            line.remove(line.length()-1, 1);
+            line.remove(line.length()-_separator.length(), _separator.length());
+        stream << line;
     }
     // Line ending
     if (currentProfile->lineEnding()==CSVProfileBase::CRLFEnding)

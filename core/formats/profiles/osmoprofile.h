@@ -26,7 +26,7 @@ public:
     virtual bool importRecord(const QStringList &row, ContactItem &item, QStringList &errors);
     // Write
     virtual QStringList makeHeader();
-    virtual bool exportRecord(QStringList &row, const ContactItem &item, QStringList &);
+    virtual bool exportRecord(QStringList &row, const ContactItem &item, QStringList &errors);
 private:
     QMap<QString, int> columnIndexes;
     // Helpers

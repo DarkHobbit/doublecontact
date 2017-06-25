@@ -111,6 +111,8 @@ enum ContactColumn {
 #define S_WRITE_ERR QObject::tr("Can't write file\n%1")
 #define S_ERR_UNSUPPORTED_TAG \
     QObject::tr("Warning: contact %1 has %2, not supported in this format.\nData will be lost")
+#define S_ERR_EXTRA_TAG \
+    QObject::tr("%1 %2 will be lost at contact %3")
 
 // Visible columns headers
 // (It was a simple string array, but its translation not worked)
