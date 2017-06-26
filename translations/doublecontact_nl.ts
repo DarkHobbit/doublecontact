@@ -892,9 +892,9 @@ In deze modus kan slechts een beperkt aantal velden worden gewijzigd</translatio
     </message>
     <message>
         <location filename="../app/mainwindow.cpp" line="600"/>
-        <source>&apos;%1&apos; was changed.
+        <source>'%1' was changed.
 Save changes?</source>
-        <translation>&apos;%1&apos; is gewijzigd.
+        <translation>'%1' is gewijzigd.
 Wilt u de wijzigingen opslaan?</translation>
     </message>
     <message>
@@ -1088,8 +1088,8 @@ Wilt u de wijzigingen opslaan?</translation>
 %4 adressen
 %5 verjaardagen
 %6 oproepen
-%7 SMS&apos;jes
-%8 gearchiveerde SMS&apos;jes
+%7 SMS'jes
+%8 gearchiveerde SMS'jes
 %9 %10</translation>
     </message>
     <message>
@@ -1187,7 +1187,7 @@ Wilt u de wijzigingen opslaan?</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="59"/>
-        <source>Can&apos;t read content from file %1
+        <source>Can't read content from file %1
 %2
 line %3, col %4
 </source>
@@ -1198,16 +1198,16 @@ regel %3, kolom %4
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="68"/>
-        <source>Root node is not &apos;DataExchangeInfo&apos; at file
+        <source>Root node is not 'DataExchangeInfo' at file
 %1</source>
-        <translation>De root-node is niet &apos;DataExchangeInfo&apos; in bestand
+        <translation>De root-node is niet 'DataExchangeInfo' in bestand
 %1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="74"/>
-        <source>Can&apos;t find &apos;RecordInfo&apos; tag at file
+        <source>Can't find 'RecordInfo' tag at file
 %1</source>
-        <translation>Het label &apos;RecordInfo&apos; kan niet worden gevonden in bestand
+        <translation>Het label 'RecordInfo' kan niet worden gevonden in bestand
 %1</translation>
     </message>
     <message>
@@ -1222,15 +1222,15 @@ regel %3, kolom %4
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="93"/>
-        <source>Can&apos;t find &apos;vCard&apos; records at file
+        <source>Can't find 'vCard' records at file
 %1</source>
-        <translation>&apos;vCard&apos;-items kunnen niet worden gevonden in bestand
+        <translation>'vCard'-items kunnen niet worden gevonden in bestand
 %1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="109"/>
-        <source>Can&apos;t find &apos;vCardField&apos; at sequence %1</source>
-        <translation>&apos;vCardField&apos; kan niet worden gevonden in volgorde %1</translation>
+        <source>Can't find 'vCardField' at sequence %1</source>
+        <translation>'vCardField' kan niet worden gevonden in volgorde %1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="134"/>
@@ -1239,8 +1239,8 @@ regel %3, kolom %4
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="150"/>
-        <source>Unknown &apos;vCardfield&apos; type: %1</source>
-        <translation>Onbekend &apos;vCardfield&apos;-type: %1</translation>
+        <source>Unknown 'vCardfield' type: %1</source>
+        <translation>Onbekend 'vCardfield'-type: %1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="158"/>
@@ -1319,7 +1319,7 @@ opgeslagen als mobiele telefoon</translation>
     </message>
     <message>
         <location filename="../core/formats/files/vcfdirectory.cpp" line="65"/>
-        <source>Can&apos;t create directory
+        <source>Can't create directory
 %1</source>
         <translation>Het creëren van de map is mislukt
 %1</translation>
@@ -1331,7 +1331,7 @@ opgeslagen als mobiele telefoon</translation>
     </message>
     <message>
         <location filename="../core/formats/files/mpbfile.cpp" line="100"/>
-        <source>File isn&apos;t MPB file or corrupted</source>
+        <source>File isn't MPB file or corrupted</source>
         <translation>Het bestand is geen MPB-bestand of is beschadigd</translation>
     </message>
     <message>
@@ -1573,13 +1573,13 @@ opgeslagen als mobiele telefoon</translation>
         <translation type="obsolete">Alle bestanden (*.*)</translation>
     </message>
     <message>
-        <source>Can&apos;t read file
+        <source>Can't read file
 %1</source>
         <translation type="obsolete">Het bestand kan niet worden gelezen
 %1</translation>
     </message>
     <message>
-        <source>Can&apos;t write file
+        <source>Can't write file
 %1</source>
         <translation type="obsolete">Het bestand kan niet worden weggeschreven
 %1</translation>
@@ -1611,42 +1611,42 @@ De gegevens zullen verloren gaan</translation>
         <location filename="../core/formats/profiles/osmoprofile.cpp" line="20"/>
         <source>None</source>
         <comment>Osmo PIM marker for contacts without groups for YOUR language</comment>
-        <translation type="unfinished"></translation>
+        <translation>Geen</translation>
     </message>
     <message>
         <location filename="../core/formats/profiles/osmoprofile.cpp" line="70"/>
         <source>Name day loaded as anniversary, contact %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Naam van dag die wordt geladen als jubileum, contactpersoon %1</translation>
     </message>
     <message>
         <location filename="../core/formats/profiles/osmoprofile.cpp" line="90"/>
         <source>Department loaded as Job title, contact %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Afdeling die wordt geladen als werktitel, contactpersoon %1</translation>
     </message>
     <message>
         <location filename="../core/formats/profiles/osmoprofile.cpp" line="192"/>
         <source>Anniversary saved as name day, contact %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Jubileum opgeslagen als naam van dag, contactpersoon %1</translation>
     </message>
     <message>
         <location filename="../core/formats/profiles/osmoprofile.cpp" line="209"/>
         <source>Job title saved as Department, contact %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Werktitel opgeslagen als afdeling, contactpersoon %1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/nbffile.cpp" line="57"/>
-        <source>Can&apos;t open %1 directory in archive</source>
-        <translation type="unfinished"></translation>
+        <source>Can't open %1 directory in archive</source>
+        <translation>Map %1 in archief kan niet worden geopend</translation>
     </message>
     <message>
         <location filename="../core/formats/files/nbffile.cpp" line="65"/>
-        <source>Can&apos;t set %1 item as current in archive</source>
-        <translation type="unfinished"></translation>
+        <source>Can't set %1 item as current in archive</source>
+        <translation>Item %1 in archief kan niet worden ingesteld als huidig</translation>
     </message>
     <message>
         <location filename="../core/formats/files/nbffile.cpp" line="71"/>
-        <source>Can&apos;t open %1 item in archive</source>
-        <translation type="unfinished"></translation>
+        <source>Can't open %1 item in archive</source>
+        <translation>Item %1 in archief kan niet worden geopend</translation>
     </message>
 </context>
 <context>
@@ -1654,22 +1654,22 @@ De gegevens zullen verloren gaan</translation>
     <message>
         <location filename="../3rdparty/quazip/quazip/quagzipfile.cpp" line="60"/>
         <source>QIODevice::Append is not supported for GZIP</source>
-        <translation type="unfinished"></translation>
+        <translation>QIODevice::Toewijzen wordt niet ondersteund voor GZIP</translation>
     </message>
     <message>
         <location filename="../3rdparty/quazip/quazip/quagzipfile.cpp" line="66"/>
         <source>Opening gzip for both reading and writing is not supported</source>
-        <translation type="unfinished"></translation>
+        <translation>Het openen van een GZIP-bestand voor zowel lezen als schrijven wordt niet ondersteund</translation>
     </message>
     <message>
         <location filename="../3rdparty/quazip/quazip/quagzipfile.cpp" line="74"/>
         <source>You can open a gzip either for reading or for writing. Which is it?</source>
-        <translation type="unfinished"></translation>
+        <translation>U kunt een GZIP-bestand openen voor zowel lezen als schrijven. Welke wordt het?</translation>
     </message>
     <message>
         <location filename="../3rdparty/quazip/quazip/quagzipfile.cpp" line="80"/>
         <source>Could not gzopen() file</source>
-        <translation type="unfinished"></translation>
+        <translation>Kan bestand niet gzopen() openen</translation>
     </message>
 </context>
 <context>
@@ -1677,12 +1677,12 @@ De gegevens zullen verloren gaan</translation>
     <message>
         <location filename="../3rdparty/quazip/quazip/quaziodevice.cpp" line="147"/>
         <source>QIODevice::Append is not supported for QuaZIODevice</source>
-        <translation type="unfinished"></translation>
+        <translation>QIODevice::Toewijzen wordt niet ondersteund voor QuaZIODevice</translation>
     </message>
     <message>
         <location filename="../3rdparty/quazip/quazip/quaziodevice.cpp" line="152"/>
         <source>QIODevice::ReadWrite is not supported for QuaZIODevice</source>
-        <translation type="unfinished"></translation>
+        <translation>QIODevice::Lezen+Schrijven wordt niet ondersteund voor QuaZIODevice</translation>
     </message>
 </context>
 <context>
@@ -1690,7 +1690,7 @@ De gegevens zullen verloren gaan</translation>
     <message>
         <location filename="../3rdparty/quazip/quazip/quazipfile.cpp" line="247"/>
         <source>ZIP/UNZIP API error %1</source>
-        <translation type="unfinished"></translation>
+        <translation>ZIP/UNZIP API-fout %1</translation>
     </message>
 </context>
 <context>
@@ -1820,8 +1820,8 @@ De gegevens zullen verloren gaan</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="282"/>
-        <source>(many phones treats &apos;Voice&apos; as &apos;Other&apos;)</source>
-        <translation>(veel telefoons nemen &apos;Overig&apos; aan i.p.v. &apos;Spraak&apos;)</translation>
+        <source>(many phones treats 'Voice' as 'Other')</source>
+        <translation>(veel telefoons nemen 'Overig' aan i.p.v. 'Spraak')</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="289"/>
