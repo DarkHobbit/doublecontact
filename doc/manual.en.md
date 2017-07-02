@@ -8,6 +8,7 @@ DoubleContact UI is similar to two panel file manages, but second panel can be d
 Features:
 
 * saving and loading VCF (vCard 2.1 and 3.0 supported, VCF files directory as single address book also supported),  UDX (Philips Xenium), MPB (MyPhoneExplorer backup);
+* import of NBF (modern Nokia backup file);
 * contact view in table, sorting and filtering supported;
 * two panel view of two address books, with copy/move features;
 * single record editing;
@@ -20,7 +21,8 @@ Features:
   - drop slashes and other specials;
   - formatted name generation;
 * two address books comparison with highlighting of identical, similar and differ contacts;
-* interactive merge according to the comparison results.
+* interactive merge according to the comparison results;
+* HTML report generation.
 
 ## Loading ##
 
@@ -40,6 +42,8 @@ The same way, you can load from MyPhoneExplorer backup file (MPB extension). In 
 
 Known MyPhoneExplorer bug: if NOTE field (contact description) contains line feed, it saved in MPB with false ENCODING=QUOTED-PRINTABLE attribute, and this cause note corruption.
 
+NBF (modern Nokia backup file) support is read-only.
+
 If you got load problems (in most cases, unknown tags), DoubleContact show log windows with problem list. Don't panic! Unknown tags are accurately preserved during view/editing, and program will save it in output file. Furthermore, you can view its content at "Problems" tab of contact edit dialog. Despite this, you are very help to the author, if send him such tas samples.
 
 ## Saving ##
@@ -53,6 +57,19 @@ Some devices don't recognize birthdays, containing time. In this case, before sa
 To save address book to single file, choose **File -> Save as -> File** in DoubleContact menu, select type (VCF, UDX or MPB) and enter file name. To save address book to VCF directory, choose **File -> Save as -> Directory**. Now you can copy result file (directory) on device and import it.
 
 DoubleContact allows save to MPB file **only** if original file also had MPB format. The reason is that MPB file contains  not only contacts, but also call history, organizer, notes and SMS (VCF and UDX not support this data). If save MPB to VCF, an then VCF to MPB, extra data will be loss!
+
+## CSV specials ##
+
+CSV is a simple format with comma-separated values. There is not any standard,
+how contats must be saving in CSV. Because, when you open or save CSV files, program
+ask you for CSV profile. Program support profiles for some Explay models. Also,
+it support CSV profile for [Osmo PIM](http://clayo.org/osmo/).
+
+These profiles save not all vCard fields. If you need CSV with all contact information,
+use profile "Generic". In this profile, you can set file charset and cell separator.
+
+Osmo PIM feature: if contact not in group, Osmo write tratnslation of "None" stop-word
+on UI language. To allow DoubleContact correctly recognize this information, DoubleContact language and Osmo language must be identical. Otherwise, DoubleContact will not recognize stop-word and will create faked group. Latest Osmo versions can save vCard 4.0 files, which are free from this problem.
 
 ## Contact view ##
 
@@ -171,6 +188,11 @@ After processing of all items, select left panel, choose **File -> Save as -> Fi
 
 After repeated **List -> Compare** (F3) choosing, DoubleContact will switched in simple view mode again.
 
+## Report generation##
+
+To create HTML report by addressbook, choose **File -> Report** (Ctrl+R). You can
+print resulting file or upload it to your website.
+
 
 ## How to help ##
 
@@ -184,11 +206,11 @@ If warning messages appears during address book loading or saving, you can save 
 
 Now, author working on CSV (comma-separated values) format support in DoubleContact. There isn't standard agreement, how contact must be stored in CSV files. If you are interested in CSV support, send me example of CSV file, created by your device/program or its fragment. If you want sent a fragment only, please check if entire file a header (it means that one or some first lines of file contains column names and, probably other internal information instead contacts). If header is present, send it too.
 
-The second thing you can help in development is translation to national languages. If you know a language, in which DoubleContact isn't translated - join now.
-
-TODO: here translation hosting url must be added.
+The second thing you can help in development is translation to national languages. If you know a language, in which DoubleContact isn't translated - join now. Collaborated translation of DoubleContact placed at [Hosted Weblate](https://hosted.weblate.org/projects/doublecontact/). If you prefer edit separate files, you can [learn ready translation samples](https://github.com/DarkHobbit/doublecontact/tree/master/translations) and send your files to author.
 
 ## Tips and tricks ##
+
+You can pass addressbook filename as a program argument. DoubleContact support simple file paths and URLs like file:///home/imp/Downloads/addressbook.vcf. Second form allow to associate addressbook files with DoubleContact in some file managers, such as PCManFM.
 
 DoubleContact have some command-line options:
 
@@ -197,6 +219,8 @@ DoubleContact have some command-line options:
 * --quiet or -q - don't run any address books at startup, even if "Open last files at startup" option is checked.
 
 In addition to GUI application, DoubleContact includes contconv - console format convertor. Run contconv without arguments to get help by its commands and options.
+
+DoubleContact written on C++ using Qt4/Qt5 libraries.
 
 ## Thanks to... ##
 
