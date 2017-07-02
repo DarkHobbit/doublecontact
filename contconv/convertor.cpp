@@ -18,6 +18,7 @@
 #include "formats/formatfactory.h"
 #include "formats/files/htmlfile.h"
 #include "formats/files/mpbfile.h"
+#include "formats/files/nbffile.h"
 #include "formats/files/udxfile.h"
 #include "formats/files/vcfdirectory.h"
 #include "formats/files/vcffile.h"
@@ -38,6 +39,7 @@ int Convertor::start()
         return 1;
     }
     QString inPath, outPath, outFormat, inProfile, outProfile, filterString;
+    ContactList::SortType sortType;
     bool infoMode = false;
     bool forceOverwrite = false;
     bool forceSingleFile = false;
@@ -48,6 +50,7 @@ int Convertor::start()
     bool dropFullNames = false;
     bool reverseFullNames = false;
     bool dropSlashes = false;
+    bool hardSort = false;
     bool filterExclusive = false;
     bool filterReverse = false;
     for (int i=1; i<arguments().count(); i++) {
@@ -142,75 +145,100 @@ int Convertor::start()
             reverseFullNames = true;
         else if (arguments()[i]=="--drop-slashes")
             dropSlashes = true;
+        else if (arguments()[i]=="--sort") {
+            i++;
+            if (i==arguments().count()) {
+                out << tr("Error: --sort command present, but sort criterion is missing\n");
+                printUsage();
+                return 10;
+            }
+            hardSort = true;
+            QString c = arguments()[i];
+            if (c=="ss")
+                sortType = ContactList::SortBySortString;
+            else if (c=="ln")
+                sortType = ContactList::SortByLastName;
+            else if (c=="frn")
+                sortType = ContactList::SortByFirstName;
+            else if (c=="fln")
+                sortType = ContactList::SortByFullName;
+            else if (c=="nn")
+                sortType = ContactList::SortByNick;
+            else {
+                out << tr("Error: Unknown sort criterion: %1\n").arg(outProfile);
+                printUsage();
+                return 11;
+            }
+        }
         else if (arguments()[i]=="--filter") {
             i++;
             if (i==arguments().count()) {
                 out << tr("Error: --filter command present, but filter string is missing\n");
                 printUsage();
-                return 10;
+                return 12;
             }
             filterString = arguments()[i];
         }
         else {
             out << tr("Unknown option: %1\n").arg(arguments()[i]);
             printUsage();
-            return 11;
+            return 13;
         }
     }
     // Check input data completion
     if (inPath.isEmpty()) {
         out << tr("Error: Input path is missing\n");
         printUsage();
-        return 12;
+        return 14;
     }
     if (outPath.isEmpty() && !infoMode) {
         out << tr("Error: Output path is missing\n");
         printUsage();
-        return 13;
+        return 15;
     }
     if (outFormat.isEmpty() && !infoMode) {
         out << tr("Error: Output format name is missing\n");
         printUsage();
-        return 14;
+        return 16;
     }
     if (outFormat=="csv") {
         if (outProfile.isEmpty()) {
             out << tr("Error: Output format is CSV, but profile name is missing\n");
             printUsage();
-            return 15;
+            return 17;
         }
     }
     else {
         if (!outProfile.isEmpty()) {
             out << tr("Error: Output format isn't' CSV, but profile name is present\n");
             printUsage();
-            return 16;
+            return 18;
         }
     }
     if (forceSingleFile && forceDirectory) {
         out << tr("Error: Options -s and -d are not compatible\n");
         printUsage();
-        return 17;
+        return 19;
     }
     if (forceDirectory && !outFormat.contains("vcf") && outFormat!="copy") {
         out << tr("Error: -d option applicable only for vCard format");
-        return 18;
+        return 20;
     }
     if (infoMode && !(outPath.isEmpty() && outFormat.isEmpty())) {
         out << tr("Error: Command --info is not compatible with -o and -f options\n");
         printUsage();
-        return 19;
+        return 21;
     }
     if ((filterExclusive || filterReverse) && filterString.isEmpty()) {
         out << tr("Error: -fe and -fr option applicable only with --filter command");
-        return 20;
+        return 22;
     }
     // Check if output file exists
     QFile of(outPath);
     if (of.exists() && !forceOverwrite && !QFileInfo(outPath).isDir()) {
         out << tr("Error: Output file already exists, use -w if necessary\n");
         printUsage();
-        return 21;
+        return 23;
     }
     // Define, create file or directory at output
     // (default: as input)
@@ -229,7 +257,7 @@ int Convertor::start()
         iFormat = new VCFDirectory();
     if (!iFormat) {
         out << factory.error << "\n";
-        return 22;
+        return 24;
     }
     // Input CSV profile
     CSVFile* csvFormat = dynamic_cast<CSVFile*>(iFormat);
@@ -238,7 +266,7 @@ int Convertor::start()
             out << tr("Error: Input format is CSV, but profile name is missing\n");
             printUsage();
             delete iFormat;
-            return 23;
+            return 25;
         }
         else
             setCSVProfile(csvFormat, inProfile);
@@ -248,7 +276,7 @@ int Convertor::start()
     logFormat(iFormat);
     delete iFormat;
     if (!res)
-        return 24;
+        return 26;
     out << tr("%1 records read\n").arg(items.count());
     // Show statistics, if info mode switched on
     if (infoMode) {
@@ -306,6 +334,9 @@ int Convertor::start()
             i--;
         }
     }
+    // Sort
+    if (hardSort)
+        items.sort(sortType);
     //Define output format
     gd.preferredVCFVersion = GlobalConfig::VCF21;
     IFormat* oFormat = 0;
@@ -338,7 +369,7 @@ int Convertor::start()
             oFormat = new CSVFile();
         else {
             out << "Error: Can't autodetect input format\n";
-            return 25;
+            return 27;
         }
     }
     // Output CSV profile
@@ -350,7 +381,7 @@ int Convertor::start()
     logFormat(oFormat);
     delete oFormat;
     out << tr("%1 records written\n").arg(items.count());
-    return res ? 0 : 26;
+    return res ? 0 : 28;
 }
 
 // Print program usage
@@ -372,7 +403,7 @@ void Convertor::printUsage()
          "html - HTML report (write only)\n" \
         "\n" \
         "Possible values for csvprofile:\n" \
-        "explaybm50, explaytv240, generic\n" \
+        "explaybm50, explaytv240, generic, osmo\n" \
         "\n" \
         "Options:\n" \
         "-w - force overwrite output single file, if exists (directories overwrites already)\n" \
@@ -386,11 +417,18 @@ void Convertor::printUsage()
         "--reverse-full-names - swap parts of full (formatted) name\n"
         "--drop-slashes - remove back slashes and other SIM-legacy from names\n" \
         "--info - show statistic info about inputfile (incompatible with -o and -f options)\n" \
+        "--sort criterion - hard sorting entire addressbook by criterion (see below)\n" \
         "--filter string [-fo] [-fr] - commands process only for records, where string found.\n" \
         "Search work in names, formatted names, descriptions, phones, emails.\n" \
         "If -fe option found, other records not recorded in output file. By default,\n" \
-        "it recorded, but not processed by other commands.\n" \
+        "it recorded, but not processed by other commands (exclude --sort).\n" \
         "If -fr option found, filter is reversed (only records without string are filtered).\n" \
+        "Possible values for sort criterion:\n" \
+        "ss - contact sort string \n" \
+        "ln - last name \n" \
+        "frn - first name \n" \
+        "fln - full name \n" \
+        "nn - nickname \n" \
         "\n");
 }
 
@@ -408,6 +446,8 @@ void Convertor::setCSVProfile(CSVFile *csvFormat, const QString &code)
         csvFormat->setProfile("Explay BM50");
     else if (code=="explaytv240")
         csvFormat->setProfile("Explay TV240");
+    else if (code=="osmo")
+        csvFormat->setProfile("Osmo PIM");
     else
         csvFormat->setProfile("Generic profile");
 }
