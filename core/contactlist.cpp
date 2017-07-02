@@ -498,16 +498,46 @@ const QString ContactItem::findIMByType(const QString &itemType) const
         return "";
 }
 
+bool ContactItem::operator <(const ContactItem &pair) const
+{
+    return actualSortString < pair.actualSortString;
+}
+
 ContactList::ContactList()
 {
 }
 
-int ContactList::findById(const QString &idValue)
+void ContactList::clear()
 {
-    for(int i=0; i<count(); i++)
-        if ((*this)[i].id==idValue)
-            return i;
-    return -1;
+    QList<ContactItem>::clear();
+    extra.clear();
+    originalProfile.clear();
+}
+
+void ContactList::sort(ContactList::SortType sortType)
+{
+    for (int i=0; i<count(); i++) {
+        ContactItem& c = (*this)[i];
+        QString lastName = !c.names.isEmpty() ? c.names[0] : "";
+        QString firstName = c.names.count()>1  ? c.names[1] : "";
+        switch (sortType) {
+        case SortBySortString:
+            c.actualSortString = c.sortString;
+            break;
+        case SortByLastName:
+            c.actualSortString = lastName + " " + firstName;
+            break;
+        case SortByFirstName:
+            c.actualSortString = firstName + " " + lastName;
+            break;
+        case SortByFullName:
+            c.actualSortString = c.fullName;
+            break;
+        case SortByNick:
+            c.actualSortString = c.nickName;
+        }
+    }
+    qSort(*this);
 }
 
 void ContactList::compareWith(ContactList &pairList)
@@ -553,14 +583,15 @@ void ContactList::compareWith(ContactList &pairList)
     }
 }
 
-void ContactList::clear()
+int ContactList::findById(const QString &idValue) const
 {
-    QList<ContactItem>::clear();
-    extra.clear();
-    originalProfile.clear();
+    for(int i=0; i<count(); i++)
+        if ((*this)[i].id==idValue)
+            return i;
+    return -1;
 }
 
-QString ContactList::statistics()
+QString ContactList::statistics() const
 {
     int phoneCount = 0;
     int emailCount = 0;

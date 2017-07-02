@@ -16,6 +16,7 @@
 
 #include <QSettings>
 #include <QStringList>
+#include "contactlist.h"
 
 class ConfigManager
 {
@@ -37,6 +38,8 @@ public:
     void setShowTwoPanels(bool value);
     bool sortingEnabled();
     void setSortingEnabled(bool value);
+    ContactList::SortType hardSortType();
+    void setHardSortType(ContactList::SortType sortType);
     void csvConfig(QString& profile, QString& genEncoding, QString& genSeparator);
     void setCSVConfig(const QString& profile, const QString& genEncoding, const QString& genSeparator);
     static QString defaultDocDir();

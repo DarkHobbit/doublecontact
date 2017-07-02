@@ -91,6 +91,8 @@ private slots:
     void on_actionS_tatistics_triggered();
     void on_actionRe_port_triggered();
 
+    void on_action_Hard_sort_triggered();
+
 private:
     Ui::MainWindow *ui;
     ContactModel *modLeft, *modRight;

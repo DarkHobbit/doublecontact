@@ -14,7 +14,7 @@
    <string notr="true">Double Contact</string>
   </property>
   <property name="windowIcon">
-   <iconset>
+   <iconset resource="doublecontact.qrc">
     <normaloff>:/img/16x16/doublecontact_16x16.png</normaloff>:/img/16x16/doublecontact_16x16.png</iconset>
   </property>
   <widget class="QWidget" name="centralWidget">
@@ -196,7 +196,7 @@
      <x>0</x>
      <y>0</y>
      <width>763</width>
-     <height>19</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_File">
@@ -278,6 +278,7 @@
     <addaction name="action_Filter"/>
     <addaction name="actionS_wap_Panels"/>
     <addaction name="actionS_tatistics"/>
+    <addaction name="action_Hard_sort"/>
    </widget>
    <addaction name="menu_File"/>
    <addaction name="menu_View"/>
@@ -528,8 +529,15 @@
     <string>Ctrl+R</string>
    </property>
   </action>
+  <action name="action_Hard_sort">
+   <property name="text">
+    <string>&amp;Hard sort</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="doublecontact.qrc"/>
+ </resources>
  <connections/>
 </ui>

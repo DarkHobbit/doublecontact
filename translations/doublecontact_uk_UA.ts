@@ -508,8 +508,8 @@
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="204"/>
-        <location filename="../app/mainwindow.ui" line="299"/>
-        <location filename="../app/mainwindow.ui" line="331"/>
+        <location filename="../app/mainwindow.ui" line="300"/>
+        <location filename="../app/mainwindow.ui" line="332"/>
         <source>&amp;File</source>
         <translation>&amp;Файл</translation>
     </message>
@@ -549,305 +549,310 @@
         <translation>К&amp;нига</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="302"/>
+        <location filename="../app/mainwindow.ui" line="303"/>
         <source>Ctrl+O</source>
         <translation>Ctrl+O</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="307"/>
-        <location filename="../app/mainwindow.ui" line="339"/>
+        <location filename="../app/mainwindow.ui" line="308"/>
+        <location filename="../app/mainwindow.ui" line="340"/>
         <source>&amp;Directory</source>
         <translation>&amp;Тека</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="312"/>
+        <location filename="../app/mainwindow.ui" line="313"/>
         <source>&amp;Close</source>
         <translation>З&amp;акрити</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="315"/>
+        <location filename="../app/mainwindow.ui" line="316"/>
         <source>Ctrl+W</source>
         <translation>Ctrl+W</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="323"/>
+        <location filename="../app/mainwindow.ui" line="324"/>
         <source>&amp;Save</source>
         <translation>З&amp;берегти</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="326"/>
+        <location filename="../app/mainwindow.ui" line="327"/>
         <source>Ctrl+S</source>
         <translation>Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="334"/>
+        <location filename="../app/mainwindow.ui" line="335"/>
         <source>Ctrl+Shift+S</source>
         <translation>Ctrl+Shift+S</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="344"/>
+        <location filename="../app/mainwindow.ui" line="345"/>
         <source>E&amp;xit</source>
         <translation>В&amp;ихід</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="355"/>
+        <location filename="../app/mainwindow.ui" line="356"/>
         <source>&amp;Two panels</source>
         <translation>&amp;Дві панелі</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="360"/>
+        <location filename="../app/mainwindow.ui" line="361"/>
         <source>&amp;Options...</source>
         <translation>&amp;Налаштування...</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="365"/>
+        <location filename="../app/mainwindow.ui" line="366"/>
         <source>&amp;Add</source>
         <translation>&amp;Додати</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="368"/>
+        <location filename="../app/mainwindow.ui" line="369"/>
         <source>Ins</source>
         <translation>Ins</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="373"/>
+        <location filename="../app/mainwindow.ui" line="374"/>
         <source>&amp;Edit</source>
         <translation>&amp;Змінити</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="376"/>
+        <location filename="../app/mainwindow.ui" line="377"/>
         <source>Return</source>
         <translation>Return</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="381"/>
+        <location filename="../app/mainwindow.ui" line="382"/>
         <source>&amp;Remove</source>
         <translation>&amp;Видалити</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="384"/>
+        <location filename="../app/mainwindow.ui" line="385"/>
         <source>Del</source>
         <translation>Del</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="389"/>
+        <location filename="../app/mainwindow.ui" line="390"/>
         <source>&amp;Copy</source>
         <translation>&amp;Копіювати</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="392"/>
+        <location filename="../app/mainwindow.ui" line="393"/>
         <source>F5</source>
         <translation>F5</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="397"/>
+        <location filename="../app/mainwindow.ui" line="398"/>
         <source>&amp;Move</source>
         <translation>&amp;Перемістити</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="400"/>
+        <location filename="../app/mainwindow.ui" line="401"/>
         <source>F6</source>
         <translation>F6</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="405"/>
+        <location filename="../app/mainwindow.ui" line="406"/>
         <source>&amp;Swap names</source>
         <translation>Переставити &amp;імена</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="408"/>
+        <location filename="../app/mainwindow.ui" line="409"/>
         <source>F2</source>
         <translation>F2</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="413"/>
+        <location filename="../app/mainwindow.ui" line="414"/>
         <source>&amp;Compare/Uncompare</source>
         <translation>&amp;Порівняти</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="416"/>
+        <location filename="../app/mainwindow.ui" line="417"/>
         <source>F3</source>
         <translation>F3</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="424"/>
+        <location filename="../app/mainwindow.ui" line="425"/>
         <source>&amp;Sort</source>
         <translation>&amp;Впорядкувати</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="427"/>
+        <location filename="../app/mainwindow.ui" line="428"/>
         <source>F4</source>
         <translation>F4</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="432"/>
+        <location filename="../app/mainwindow.ui" line="433"/>
         <source>&amp;Other panel</source>
         <translation>&amp;Інша панель</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="435"/>
+        <location filename="../app/mainwindow.ui" line="436"/>
         <source>Tab</source>
         <translation>Tab</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="440"/>
+        <location filename="../app/mainwindow.ui" line="441"/>
         <source>Settings...</source>
         <translation>Налаштування...</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="443"/>
+        <location filename="../app/mainwindow.ui" line="444"/>
         <source>Ctrl+P</source>
         <translation>Ctrl+P</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="448"/>
+        <location filename="../app/mainwindow.ui" line="449"/>
         <source>&amp;Filter</source>
         <translation>&amp;Фільтр</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="451"/>
+        <location filename="../app/mainwindow.ui" line="452"/>
         <source>Ctrl+F</source>
         <translation>Ctrl+F</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="456"/>
+        <location filename="../app/mainwindow.ui" line="457"/>
         <source>Compare &amp;Result</source>
         <translation>&amp;Результат порівняння</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="459"/>
+        <location filename="../app/mainwindow.ui" line="460"/>
         <source>Shift+F3</source>
         <translation>Shift+F3</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="464"/>
+        <location filename="../app/mainwindow.ui" line="465"/>
         <source>S&amp;plit names</source>
         <translation>Розділити &amp;імена</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="467"/>
+        <location filename="../app/mainwindow.ui" line="468"/>
         <source>Shift+F2</source>
         <translation>Shift+F2</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="472"/>
+        <location filename="../app/mainwindow.ui" line="473"/>
         <source>&amp;Drop slashes</source>
         <translation>&amp;Забрати спец символи</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="477"/>
+        <location filename="../app/mainwindow.ui" line="478"/>
         <source>&amp;Generate full name</source>
         <translation>&amp;Зібрати повне ім&apos;я</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="482"/>
+        <location filename="../app/mainwindow.ui" line="483"/>
         <source>&amp;Join</source>
         <translation>&amp;Об&apos;єднати</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="487"/>
+        <location filename="../app/mainwindow.ui" line="488"/>
         <source>Drop &amp;full name</source>
         <translation>З&amp;абрати повне ім&apos;я</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="492"/>
+        <location filename="../app/mainwindow.ui" line="493"/>
         <source>Sp&amp;lit</source>
         <translation>&amp;Розділити</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="497"/>
+        <location filename="../app/mainwindow.ui" line="498"/>
         <source>Internationalize phone prefix</source>
         <translation>Інтернаціоналізувати телефонний префікс</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="502"/>
+        <location filename="../app/mainwindow.ui" line="503"/>
         <source>S&amp;wap Panels</source>
         <translation>&amp;Обміняти панелі</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="505"/>
+        <location filename="../app/mainwindow.ui" line="506"/>
         <source>Ctrl+U</source>
         <translation>Ctrl+U</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="510"/>
+        <location filename="../app/mainwindow.ui" line="511"/>
         <source>&amp;About</source>
         <translation>Пр&amp;о програму</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="515"/>
+        <location filename="../app/mainwindow.ui" line="516"/>
         <source>Reverse full name</source>
         <translation>Обернути повне ім&apos;я</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="520"/>
+        <location filename="../app/mainwindow.ui" line="521"/>
         <source>S&amp;tatistics</source>
         <translation>С&amp;татистика</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="525"/>
+        <location filename="../app/mainwindow.ui" line="526"/>
         <source>Re&amp;port</source>
         <translation>Звіт</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="528"/>
+        <location filename="../app/mainwindow.ui" line="529"/>
         <source>Ctrl+R</source>
         <translation>Ctrl+R</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="159"/>
+        <location filename="../app/mainwindow.ui" line="534"/>
+        <source>&amp;Hard sort</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/mainwindow.cpp" line="160"/>
         <source>Open contact file</source>
         <translation>Відкрити файл контактів</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="176"/>
+        <location filename="../app/mainwindow.cpp" line="177"/>
         <source>Open VCF Directory</source>
         <translation>Відкрити теку VCF</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="200"/>
+        <location filename="../app/mainwindow.cpp" line="201"/>
         <source>Save contact file</source>
         <translation>Зберегти файл контактів</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="215"/>
+        <location filename="../app/mainwindow.cpp" line="216"/>
         <source>Save VCF Directory</source>
         <translation>Зберегти теку VCF</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="224"/>
+        <location filename="../app/mainwindow.cpp" line="225"/>
         <source>Directory exists. Are You really want rewrite it?</source>
         <translation>Тека існує. Бажаєте перезаписати її вміст?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="273"/>
+        <location filename="../app/mainwindow.cpp" line="274"/>
         <source>Are You really want to edit more than one record?
 Only some fields can this edited in this mode</source>
         <translation>Ви дійсно бажаєте відредагувати більш ніж один запис?
 Так можливо змінити лише деякі поля</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="305"/>
+        <location filename="../app/mainwindow.cpp" line="306"/>
         <source>Are You really want to delete selected items?</source>
         <translation>Ви дійсно бажаєте видалити обрані записи?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="385"/>
+        <location filename="../app/mainwindow.cpp" line="386"/>
         <source>Compare mode requires show two panels and load contact lists in both panels</source>
         <translation>Для порівняння адресних книг необхідно увімкнути 2 панелі і завантажити файли в обидві</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="427"/>
+        <location filename="../app/mainwindow.cpp" line="428"/>
         <source>Record not selected</source>
         <translation>Запис не обрано</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="431"/>
+        <location filename="../app/mainwindow.cpp" line="432"/>
         <source>Group operation not impemented, select one record</source>
         <translation>Групова операція не реалізована, оберіть один запис</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="458"/>
+        <location filename="../app/mainwindow.cpp" line="459"/>
         <source> (directory)</source>
         <translation> (тека)</translation>
     </message>
@@ -856,96 +861,102 @@ Only some fields can this edited in this mode</source>
         <translation type="obsolete">Double Contact - %1</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="552"/>
+        <location filename="../app/mainwindow.cpp" line="553"/>
         <source>Mode: </source>
         <translation>Режим: </translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="553"/>
+        <location filename="../app/mainwindow.cpp" line="554"/>
         <source>two panels</source>
         <translation>2 панелі</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="553"/>
+        <location filename="../app/mainwindow.cpp" line="554"/>
         <source>one panel</source>
         <translation>1 панель</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="554"/>
+        <location filename="../app/mainwindow.cpp" line="555"/>
         <source>sorted</source>
         <translation>впорядковано</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="554"/>
+        <location filename="../app/mainwindow.cpp" line="555"/>
         <source>not sorted</source>
         <translation>не впорядковано</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="557"/>
+        <location filename="../app/mainwindow.cpp" line="558"/>
         <source>simple editing</source>
         <translation>проста правка</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="561"/>
+        <location filename="../app/mainwindow.cpp" line="562"/>
         <source>compare</source>
         <translation>порівняння</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="600"/>
+        <location filename="../app/mainwindow.cpp" line="601"/>
         <source>&apos;%1&apos; was changed.
 Save changes?</source>
         <translation>%1 було змінено.
 Зберегти?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="688"/>
+        <location filename="../app/mainwindow.cpp" line="689"/>
         <source>Restart program to apply language change</source>
         <translation>Мову буде змінено після перезавантаження додатку</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="731"/>
+        <location filename="../app/mainwindow.cpp" line="732"/>
         <source>Two panels and compare mode needed for this operation</source>
         <translation>Спершу увімкніть дві панелі та режим порівняння</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="746"/>
+        <location filename="../app/mainwindow.cpp" line="747"/>
         <source>Left item</source>
         <translation>Лівий контакт</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="746"/>
+        <location filename="../app/mainwindow.cpp" line="747"/>
         <source>Right item</source>
         <translation>Правий контакт</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="772"/>
+        <location filename="../app/mainwindow.cpp" line="773"/>
         <source>Strongly two records on current panel must be selected for this operation</source>
         <translation>Спочатку треба вибрати рівно 2 записи на поточній панелі</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="778"/>
+        <location filename="../app/mainwindow.cpp" line="779"/>
         <source>Item 1</source>
         <translation>Контакт 1</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="778"/>
+        <location filename="../app/mainwindow.cpp" line="779"/>
         <source>Item 2</source>
         <translation>Контакт 2</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="845"/>
+        <location filename="../app/mainwindow.cpp" line="846"/>
         <source>Operation requires show two panels</source>
         <translation>Необхідно увімкнути дві панелі</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="878"/>
+        <location filename="../app/mainwindow.cpp" line="879"/>
         <source>Statitics</source>
         <translation>Статистика</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="885"/>
+        <location filename="../app/mainwindow.cpp" line="886"/>
         <source>Report file</source>
         <translation>Файл звіту</translation>
+    </message>
+    <message>
+        <location filename="../app/mainwindow.cpp" line="920"/>
+        <source>Column sorting is switched. Hard sort results are not visible.
+Are you want switch column sorting off?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -983,7 +994,7 @@ Save changes?</source>
     <name>QObject</name>
     <message>
         <location filename="../core/contactlist.cpp" line="106"/>
-        <location filename="../core/contactlist.cpp" line="720"/>
+        <location filename="../core/contactlist.cpp" line="751"/>
         <source>Home</source>
         <translation>Домашній</translation>
     </message>
@@ -994,7 +1005,7 @@ Save changes?</source>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="108"/>
-        <location filename="../core/contactlist.cpp" line="721"/>
+        <location filename="../core/contactlist.cpp" line="752"/>
         <source>Work</source>
         <translation>Службовий</translation>
     </message>
@@ -1002,7 +1013,7 @@ Save changes?</source>
         <location filename="../core/contactlist.cpp" line="109"/>
         <location filename="../core/contactlist.cpp" line="158"/>
         <location filename="../core/contactlist.cpp" line="193"/>
-        <location filename="../core/contactlist.cpp" line="722"/>
+        <location filename="../core/contactlist.cpp" line="753"/>
         <source>Preferable</source>
         <translation>Переважний</translation>
     </message>
@@ -1072,7 +1083,7 @@ Save changes?</source>
         <translation>Дивний порожній контакт</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="577"/>
+        <location filename="../core/contactlist.cpp" line="608"/>
         <source>%1 records
 %2 phones
 %3 emails
@@ -1093,22 +1104,22 @@ SMS: %7
 %9 %10</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="723"/>
+        <location filename="../core/contactlist.cpp" line="754"/>
         <source>Domestic</source>
         <translation>Внутрішній</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="724"/>
+        <location filename="../core/contactlist.cpp" line="755"/>
         <source>International</source>
         <translation>Міжнародний</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="725"/>
+        <location filename="../core/contactlist.cpp" line="756"/>
         <source>Postal</source>
         <translation>Поштовий</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="726"/>
+        <location filename="../core/contactlist.cpp" line="757"/>
         <source>Parcel</source>
         <translation>Для посилок</translation>
     </message>
@@ -1604,28 +1615,28 @@ Data will be lost</source>
 %3</translation>
     </message>
     <message>
-        <location filename="../core/formats/profiles/osmoprofile.cpp" line="20"/>
+        <location filename="../core/formats/profiles/osmoprofile.cpp" line="19"/>
         <source>None</source>
         <comment>Osmo PIM marker for contacts without groups for YOUR language</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/profiles/osmoprofile.cpp" line="70"/>
+        <location filename="../core/formats/profiles/osmoprofile.cpp" line="68"/>
         <source>Name day loaded as anniversary, contact %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/profiles/osmoprofile.cpp" line="90"/>
+        <location filename="../core/formats/profiles/osmoprofile.cpp" line="88"/>
         <source>Department loaded as Job title, contact %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/profiles/osmoprofile.cpp" line="192"/>
+        <location filename="../core/formats/profiles/osmoprofile.cpp" line="190"/>
         <source>Anniversary saved as name day, contact %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/profiles/osmoprofile.cpp" line="209"/>
+        <location filename="../core/formats/profiles/osmoprofile.cpp" line="207"/>
         <source>Job title saved as Department, contact %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1832,6 +1843,24 @@ Data will be lost</source>
         <location filename="../app/settingsdialog.cpp" line="111"/>
         <source>List must contain at least one visible column</source>
         <translation>В переліку має бути хоча б один стовпчик</translation>
+    </message>
+</context>
+<context>
+    <name>SortDialog</name>
+    <message>
+        <location filename="../app/sortdialog.ui" line="14"/>
+        <source>Sort addressbook</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/sortdialog.ui" line="20"/>
+        <source>Sort criterion</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/sortdialog.cpp" line="22"/>
+        <source>Sort string</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

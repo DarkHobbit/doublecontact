@@ -170,6 +170,8 @@ struct ContactItem {
     } pairState;
     ContactItem* pairItem;
     int pairIndex;
+    // Calculated fields for hard sorting
+    QString actualSortString; // Can be sortString, name(s), nick, depends on settings
     // Editing
     void clear();
     bool swapNames();
@@ -188,6 +190,7 @@ struct ContactItem {
     bool identicalTo(const ContactItem& pair);
     static QString nameComponent(int compNum);
     const QString findIMByType(const QString& itemType) const;
+    bool operator <(const ContactItem& pair) const;
 };
 
 // MPB-specific storage
@@ -207,10 +210,20 @@ class ContactList : public QList<ContactItem>
 {
 public:
     ContactList();
-    int findById(const QString& idValue);
-    void compareWith(ContactList& pairList);
+    // Editing
+    enum SortType {
+        SortBySortString,
+        SortByLastName,
+        SortByFirstName,
+        SortByFullName,
+        SortByNick
+    }; // TODO sort by group
     void clear();
-    QString statistics();
+    void sort(SortType sortType);
+    void compareWith(ContactList& pairList);
+    // Info
+    int findById(const QString& idValue) const;
+    QString statistics() const;
     MPBExtra extra;
     QString originalProfile; // for CSV; see also ContactItem::originalFormat
 };

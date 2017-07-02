@@ -370,6 +370,12 @@ void ContactModel::intlPhonePrefix(const QModelIndexList &indices, int countryRu
     _changed = true;
 }
 
+void ContactModel::hardSort(ContactList::SortType sortType)
+{
+    items.sort(sortType);
+    _changed = true;
+}
+
 void ContactModel::setViewMode(ContactModel::ContactViewMode mode, ContactModel *target)
 {
     beginResetModel();

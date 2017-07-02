@@ -30,6 +30,7 @@
 #include "logwindow.h"
 #include "multicontactdialog.h"
 #include "settingsdialog.h"
+#include "sortdialog.h"
 #include "formats/iformat.h"
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -901,4 +902,27 @@ void MainWindow::on_actionRe_port_triggered()
         }
         showIOErrors(path, selectedModel->rowCount(), errors, fatalError);
     }
+}
+
+void MainWindow::on_action_Hard_sort_triggered()
+{
+    // Ask for sort fields order
+    SortDialog* d = new SortDialog(0);    
+    d->setData(configManager.hardSortType());
+    d->exec();
+    if (d->result()==QDialog::Accepted) {
+        // Sort
+        configManager.setHardSortType(d->getData());
+        selectedModel->hardSort(d->getData());
+        // Warning if sort view switched on
+        if (ui->action_Sort->isChecked())
+            if (QMessageBox::question(0, S_CONFIRM,
+                                      tr("Column sorting is switched. Hard sort results are not visible.\nAre you want switch column sorting off?"),
+                                      QMessageBox::Yes, QMessageBox::No)==QMessageBox::Yes)
+                ui->action_Sort->toggle();
+    }
+    delete d;
+    // Refresh view
+    updateViewMode();
+    updateHeaders();
 }

@@ -203,6 +203,35 @@ void ConfigManager::setSortingEnabled(bool value)
     settings->setValue("General/SortingEnabled", value);
 }
 
+ContactList::SortType ConfigManager::hardSortType()
+{
+    QString t = settings->value("General/HardSortType", "ByLastName").toString();
+    if (t=="BySortString")
+        return ContactList::SortBySortString;
+    else if (t=="ByLastName")
+        return ContactList::SortByLastName;
+    else if (t=="ByFirstName")
+        return ContactList::SortByFirstName;
+    else if (t=="ByFullName")
+        return ContactList::SortByFullName;
+    else
+        return ContactList::SortByNick;
+}
+
+void ConfigManager::setHardSortType(ContactList::SortType sortType)
+{
+    QString t = "BySortString";
+    if (sortType==ContactList::SortByLastName)
+        t=="ByLastName";
+    else if (sortType==ContactList::SortByFirstName)
+        t=="ByFirstName";
+    else if (sortType==ContactList::SortByFullName)
+        t=="ByFullName";
+    else if (sortType==ContactList::SortByNick)
+        t=="ByNick";
+    settings->setValue("General/HardSortType", t);
+}
+
 void ConfigManager::csvConfig(QString &profile, QString &genEncoding, QString &genSeparator)
 {
     if (!settings)

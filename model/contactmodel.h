@@ -64,11 +64,13 @@ public:
     void reverseFullNames(const QModelIndexList& indices);
     void splitNumbers(const QModelIndexList& indices);
     void intlPhonePrefix(const QModelIndexList& indices, int countryRule);
+    // Whole addressbook operation methods
+    void hardSort(ContactList::SortType sortType);
+    void testList(); // Test data
+    // Info
     void setViewMode(ContactViewMode mode, ContactModel* target);
     ContactViewMode viewMode();
     ContactList& itemList();
-    // Test data
-    void testList();
 signals:
     void requestCSVProfile(CSVFile* format);
 public slots:

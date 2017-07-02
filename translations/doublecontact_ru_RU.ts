@@ -508,8 +508,8 @@
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="204"/>
-        <location filename="../app/mainwindow.ui" line="299"/>
-        <location filename="../app/mainwindow.ui" line="331"/>
+        <location filename="../app/mainwindow.ui" line="300"/>
+        <location filename="../app/mainwindow.ui" line="332"/>
         <source>&amp;File</source>
         <translation>&amp;Файл</translation>
     </message>
@@ -549,305 +549,310 @@
         <translation>К&amp;нига</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="302"/>
+        <location filename="../app/mainwindow.ui" line="303"/>
         <source>Ctrl+O</source>
         <translation>Ctrl+O</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="307"/>
-        <location filename="../app/mainwindow.ui" line="339"/>
+        <location filename="../app/mainwindow.ui" line="308"/>
+        <location filename="../app/mainwindow.ui" line="340"/>
         <source>&amp;Directory</source>
         <translation>&amp;Каталог</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="312"/>
+        <location filename="../app/mainwindow.ui" line="313"/>
         <source>&amp;Close</source>
         <translation>&amp;Закрыть</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="315"/>
+        <location filename="../app/mainwindow.ui" line="316"/>
         <source>Ctrl+W</source>
         <translation>Ctrl+W</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="323"/>
+        <location filename="../app/mainwindow.ui" line="324"/>
         <source>&amp;Save</source>
         <translation>&amp;Сохранить</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="326"/>
+        <location filename="../app/mainwindow.ui" line="327"/>
         <source>Ctrl+S</source>
         <translation>Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="334"/>
+        <location filename="../app/mainwindow.ui" line="335"/>
         <source>Ctrl+Shift+S</source>
         <translation>Ctrl+Shift+S</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="344"/>
+        <location filename="../app/mainwindow.ui" line="345"/>
         <source>E&amp;xit</source>
         <translation>В&amp;ыход</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="355"/>
+        <location filename="../app/mainwindow.ui" line="356"/>
         <source>&amp;Two panels</source>
         <translation>&amp;Две панели</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="360"/>
+        <location filename="../app/mainwindow.ui" line="361"/>
         <source>&amp;Options...</source>
         <translation>&amp;Настройки...</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="365"/>
+        <location filename="../app/mainwindow.ui" line="366"/>
         <source>&amp;Add</source>
         <translation>&amp;Вставить</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="368"/>
+        <location filename="../app/mainwindow.ui" line="369"/>
         <source>Ins</source>
         <translation>Ins</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="373"/>
+        <location filename="../app/mainwindow.ui" line="374"/>
         <source>&amp;Edit</source>
         <translation>&amp;Править</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="376"/>
+        <location filename="../app/mainwindow.ui" line="377"/>
         <source>Return</source>
         <translation>Return</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="381"/>
+        <location filename="../app/mainwindow.ui" line="382"/>
         <source>&amp;Remove</source>
         <translation>&amp;Удалить</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="384"/>
+        <location filename="../app/mainwindow.ui" line="385"/>
         <source>Del</source>
         <translation>Del</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="389"/>
+        <location filename="../app/mainwindow.ui" line="390"/>
         <source>&amp;Copy</source>
         <translation>&amp;Копировать</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="392"/>
+        <location filename="../app/mainwindow.ui" line="393"/>
         <source>F5</source>
         <translation>F5</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="397"/>
+        <location filename="../app/mainwindow.ui" line="398"/>
         <source>&amp;Move</source>
         <translation>&amp;Переместить</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="400"/>
+        <location filename="../app/mainwindow.ui" line="401"/>
         <source>F6</source>
         <translation>F6</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="405"/>
+        <location filename="../app/mainwindow.ui" line="406"/>
         <source>&amp;Swap names</source>
         <translation>Переставить &amp;имена</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="408"/>
+        <location filename="../app/mainwindow.ui" line="409"/>
         <source>F2</source>
         <translation>F2</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="413"/>
+        <location filename="../app/mainwindow.ui" line="414"/>
         <source>&amp;Compare/Uncompare</source>
         <translation>&amp;Сравнить</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="416"/>
+        <location filename="../app/mainwindow.ui" line="417"/>
         <source>F3</source>
         <translation>F3</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="424"/>
+        <location filename="../app/mainwindow.ui" line="425"/>
         <source>&amp;Sort</source>
         <translation>&amp;Сортировать</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="427"/>
+        <location filename="../app/mainwindow.ui" line="428"/>
         <source>F4</source>
         <translation>F4</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="432"/>
+        <location filename="../app/mainwindow.ui" line="433"/>
         <source>&amp;Other panel</source>
         <translation>&amp;Другая панель</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="435"/>
+        <location filename="../app/mainwindow.ui" line="436"/>
         <source>Tab</source>
         <translation>Tab</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="440"/>
+        <location filename="../app/mainwindow.ui" line="441"/>
         <source>Settings...</source>
         <translation>&amp;Настройки...</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="443"/>
+        <location filename="../app/mainwindow.ui" line="444"/>
         <source>Ctrl+P</source>
         <translation>Ctrl+P</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="448"/>
+        <location filename="../app/mainwindow.ui" line="449"/>
         <source>&amp;Filter</source>
         <translation>&amp;Фильтр</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="451"/>
+        <location filename="../app/mainwindow.ui" line="452"/>
         <source>Ctrl+F</source>
         <translation>Ctrl+F</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="456"/>
+        <location filename="../app/mainwindow.ui" line="457"/>
         <source>Compare &amp;Result</source>
         <translation>&amp;Результат сравнения</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="459"/>
+        <location filename="../app/mainwindow.ui" line="460"/>
         <source>Shift+F3</source>
         <translation>Shift+F3</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="464"/>
+        <location filename="../app/mainwindow.ui" line="465"/>
         <source>S&amp;plit names</source>
         <translation>Разделить &amp;имена</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="467"/>
+        <location filename="../app/mainwindow.ui" line="468"/>
         <source>Shift+F2</source>
         <translation>Shift+F2</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="472"/>
+        <location filename="../app/mainwindow.ui" line="473"/>
         <source>&amp;Drop slashes</source>
         <translation>&amp;Убрать спецсимволы</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="477"/>
+        <location filename="../app/mainwindow.ui" line="478"/>
         <source>&amp;Generate full name</source>
         <translation>&amp;Собрать полное имя</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="482"/>
+        <location filename="../app/mainwindow.ui" line="483"/>
         <source>&amp;Join</source>
         <translation>Ск&amp;леить</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="487"/>
+        <location filename="../app/mainwindow.ui" line="488"/>
         <source>Drop &amp;full name</source>
         <translation>Убрать полное имя</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="492"/>
+        <location filename="../app/mainwindow.ui" line="493"/>
         <source>Sp&amp;lit</source>
         <translation>Ра&amp;зделить</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="497"/>
+        <location filename="../app/mainwindow.ui" line="498"/>
         <source>Internationalize phone prefix</source>
         <translation>8 в +7</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="502"/>
+        <location filename="../app/mainwindow.ui" line="503"/>
         <source>S&amp;wap Panels</source>
         <translation>Обмен панелей</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="505"/>
+        <location filename="../app/mainwindow.ui" line="506"/>
         <source>Ctrl+U</source>
         <translation>Ctrl+U</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="510"/>
+        <location filename="../app/mainwindow.ui" line="511"/>
         <source>&amp;About</source>
         <translation>&amp;О программе</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="515"/>
+        <location filename="../app/mainwindow.ui" line="516"/>
         <source>Reverse full name</source>
         <translation>Обратить полное имя</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="520"/>
+        <location filename="../app/mainwindow.ui" line="521"/>
         <source>S&amp;tatistics</source>
         <translation>С&amp;татистика</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="525"/>
+        <location filename="../app/mainwindow.ui" line="526"/>
         <source>Re&amp;port</source>
         <translation>&amp;Отчёт</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="528"/>
+        <location filename="../app/mainwindow.ui" line="529"/>
         <source>Ctrl+R</source>
         <translation>Ctrl+R</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="159"/>
+        <location filename="../app/mainwindow.ui" line="534"/>
+        <source>&amp;Hard sort</source>
+        <translation>Жёсткая сортировка</translation>
+    </message>
+    <message>
+        <location filename="../app/mainwindow.cpp" line="160"/>
         <source>Open contact file</source>
         <translation>Открыть адресную книгу</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="176"/>
+        <location filename="../app/mainwindow.cpp" line="177"/>
         <source>Open VCF Directory</source>
         <translation>Открыть каталог VCF</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="200"/>
+        <location filename="../app/mainwindow.cpp" line="201"/>
         <source>Save contact file</source>
         <translation>Сохранить адресную книгу</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="215"/>
+        <location filename="../app/mainwindow.cpp" line="216"/>
         <source>Save VCF Directory</source>
         <translation>Сохранить каталог VCF</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="224"/>
+        <location filename="../app/mainwindow.cpp" line="225"/>
         <source>Directory exists. Are You really want rewrite it?</source>
         <translation>Каталог существует. Вы хотите переписать его содержимое?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="273"/>
+        <location filename="../app/mainwindow.cpp" line="274"/>
         <source>Are You really want to edit more than one record?
 Only some fields can this edited in this mode</source>
         <translation>Вы действительно хотите отредактировать более одной записи?
 Так можно изменить лишь некоторые поля</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="305"/>
+        <location filename="../app/mainwindow.cpp" line="306"/>
         <source>Are You really want to delete selected items?</source>
         <translation>Вы действительно хотите удалить выбранные записи?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="385"/>
+        <location filename="../app/mainwindow.cpp" line="386"/>
         <source>Compare mode requires show two panels and load contact lists in both panels</source>
         <translation>Для сравнения адресных книг необходимо включить 2 панели и загрузить файлы в обе панели</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="427"/>
+        <location filename="../app/mainwindow.cpp" line="428"/>
         <source>Record not selected</source>
         <translation>Сперва выберите запись</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="431"/>
+        <location filename="../app/mainwindow.cpp" line="432"/>
         <source>Group operation not impemented, select one record</source>
         <translation>Групповая операция не реализована, выберите одну запись</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="458"/>
+        <location filename="../app/mainwindow.cpp" line="459"/>
         <source> (directory)</source>
         <translation> (каталог)</translation>
     </message>
@@ -856,95 +861,102 @@ Only some fields can this edited in this mode</source>
         <translation type="obsolete">Double Contact - %1</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="552"/>
+        <location filename="../app/mainwindow.cpp" line="553"/>
         <source>Mode: </source>
         <translation>Режим: </translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="553"/>
+        <location filename="../app/mainwindow.cpp" line="554"/>
         <source>two panels</source>
         <translation>2 панели</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="553"/>
+        <location filename="../app/mainwindow.cpp" line="554"/>
         <source>one panel</source>
         <translation>1 панель</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="554"/>
+        <location filename="../app/mainwindow.cpp" line="555"/>
         <source>sorted</source>
         <translation>сорт.</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="554"/>
+        <location filename="../app/mainwindow.cpp" line="555"/>
         <source>not sorted</source>
         <translation>не сорт.</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="557"/>
+        <location filename="../app/mainwindow.cpp" line="558"/>
         <source>simple editing</source>
         <translation>простая правка</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="561"/>
+        <location filename="../app/mainwindow.cpp" line="562"/>
         <source>compare</source>
         <translation>сравнение</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="600"/>
+        <location filename="../app/mainwindow.cpp" line="601"/>
         <source>&apos;%1&apos; was changed.
 Save changes?</source>
         <translation>%1 изменился. Сохранить?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="688"/>
+        <location filename="../app/mainwindow.cpp" line="689"/>
         <source>Restart program to apply language change</source>
         <translation>Язык сменится после перезапуска программы</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="731"/>
+        <location filename="../app/mainwindow.cpp" line="732"/>
         <source>Two panels and compare mode needed for this operation</source>
         <translation>Сначала нужно включить 2 панели и режим сравнения</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="746"/>
+        <location filename="../app/mainwindow.cpp" line="747"/>
         <source>Left item</source>
         <translation>Левый контакт</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="746"/>
+        <location filename="../app/mainwindow.cpp" line="747"/>
         <source>Right item</source>
         <translation>Правый контакт</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="772"/>
+        <location filename="../app/mainwindow.cpp" line="773"/>
         <source>Strongly two records on current panel must be selected for this operation</source>
         <translation>Сначала надо выбрать ровно2 записи на текущей панели</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="778"/>
+        <location filename="../app/mainwindow.cpp" line="779"/>
         <source>Item 1</source>
         <translation>Контакт 1</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="778"/>
+        <location filename="../app/mainwindow.cpp" line="779"/>
         <source>Item 2</source>
         <translation>Контакт 2</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="845"/>
+        <location filename="../app/mainwindow.cpp" line="846"/>
         <source>Operation requires show two panels</source>
         <translation>Необходимо включить 2 панели</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="878"/>
+        <location filename="../app/mainwindow.cpp" line="879"/>
         <source>Statitics</source>
         <translation>Статистика</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="885"/>
+        <location filename="../app/mainwindow.cpp" line="886"/>
         <source>Report file</source>
         <translation>Файл отчёта</translation>
+    </message>
+    <message>
+        <location filename="../app/mainwindow.cpp" line="920"/>
+        <source>Column sorting is switched. Hard sort results are not visible.
+Are you want switch column sorting off?</source>
+        <translation>Включена сортировка по столбцам, результаты жёсткой сортировки не видны.
+Отключить сортировку по столбцам?</translation>
     </message>
 </context>
 <context>
@@ -982,7 +994,7 @@ Save changes?</source>
     <name>QObject</name>
     <message>
         <location filename="../core/contactlist.cpp" line="106"/>
-        <location filename="../core/contactlist.cpp" line="720"/>
+        <location filename="../core/contactlist.cpp" line="751"/>
         <source>Home</source>
         <translation>Домашний</translation>
     </message>
@@ -993,7 +1005,7 @@ Save changes?</source>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="108"/>
-        <location filename="../core/contactlist.cpp" line="721"/>
+        <location filename="../core/contactlist.cpp" line="752"/>
         <source>Work</source>
         <translation>Служебный</translation>
     </message>
@@ -1001,7 +1013,7 @@ Save changes?</source>
         <location filename="../core/contactlist.cpp" line="109"/>
         <location filename="../core/contactlist.cpp" line="158"/>
         <location filename="../core/contactlist.cpp" line="193"/>
-        <location filename="../core/contactlist.cpp" line="722"/>
+        <location filename="../core/contactlist.cpp" line="753"/>
         <source>Preferable</source>
         <translation>Предпочтительный</translation>
     </message>
@@ -1071,7 +1083,7 @@ Save changes?</source>
         <translation>Странный пустой контакт</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="577"/>
+        <location filename="../core/contactlist.cpp" line="608"/>
         <source>%1 records
 %2 phones
 %3 emails
@@ -1092,22 +1104,22 @@ SMS: %7
 %9 %10</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="723"/>
+        <location filename="../core/contactlist.cpp" line="754"/>
         <source>Domestic</source>
         <translation>Внутренний</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="724"/>
+        <location filename="../core/contactlist.cpp" line="755"/>
         <source>International</source>
         <translation>Международный</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="725"/>
+        <location filename="../core/contactlist.cpp" line="756"/>
         <source>Postal</source>
         <translation>Почтовый</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="726"/>
+        <location filename="../core/contactlist.cpp" line="757"/>
         <source>Parcel</source>
         <translation>Для посылок</translation>
     </message>
@@ -1605,28 +1617,28 @@ Data will be lost</source>
         <translation>Количество столбцов ячейки (%1) и заголовка (%2) не совпадают. Возможно, CSV некорректен.</translation>
     </message>
     <message>
-        <location filename="../core/formats/profiles/osmoprofile.cpp" line="20"/>
+        <location filename="../core/formats/profiles/osmoprofile.cpp" line="19"/>
         <source>None</source>
         <comment>Osmo PIM marker for contacts without groups for YOUR language</comment>
         <translation>Нет</translation>
     </message>
     <message>
-        <location filename="../core/formats/profiles/osmoprofile.cpp" line="70"/>
+        <location filename="../core/formats/profiles/osmoprofile.cpp" line="68"/>
         <source>Name day loaded as anniversary, contact %1</source>
         <translation>Именины загружены как годовщина, контакт %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/profiles/osmoprofile.cpp" line="90"/>
+        <location filename="../core/formats/profiles/osmoprofile.cpp" line="88"/>
         <source>Department loaded as Job title, contact %1</source>
         <translation>Подразделение загружено как должность, контакт %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/profiles/osmoprofile.cpp" line="192"/>
+        <location filename="../core/formats/profiles/osmoprofile.cpp" line="190"/>
         <source>Anniversary saved as name day, contact %1</source>
         <translation>Годовщина сохранена как именины, контакт %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/profiles/osmoprofile.cpp" line="209"/>
+        <location filename="../core/formats/profiles/osmoprofile.cpp" line="207"/>
         <source>Job title saved as Department, contact %1</source>
         <translation>Должность сохранена как подразделение, контакт %1</translation>
     </message>
@@ -1833,6 +1845,24 @@ Data will be lost</source>
         <location filename="../app/settingsdialog.cpp" line="111"/>
         <source>List must contain at least one visible column</source>
         <translation>В списке должен быть хотя бы один видимый столбец</translation>
+    </message>
+</context>
+<context>
+    <name>SortDialog</name>
+    <message>
+        <location filename="../app/sortdialog.ui" line="14"/>
+        <source>Sort addressbook</source>
+        <translation>Сортировка адресной книги</translation>
+    </message>
+    <message>
+        <location filename="../app/sortdialog.ui" line="20"/>
+        <source>Sort criterion</source>
+        <translation>Критерий сортировки</translation>
+    </message>
+    <message>
+        <location filename="../app/sortdialog.cpp" line="22"/>
+        <source>Sort string</source>
+        <translation>Строка сортировки</translation>
     </message>
 </context>
 </TS>
