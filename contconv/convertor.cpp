@@ -39,7 +39,7 @@ int Convertor::start()
         return 1;
     }
     QString inPath, outPath, outFormat, inProfile, outProfile, filterString;
-    ContactList::SortType sortType;
+    ContactList::SortType sortType = ContactList::SortBySortString;
     bool infoMode = false;
     bool forceOverwrite = false;
     bool forceSingleFile = false;
