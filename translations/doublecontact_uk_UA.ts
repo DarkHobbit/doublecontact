@@ -56,16 +56,16 @@
     <message>
         <location filename="../app/comparedialog.ui" line="14"/>
         <source>Item Merge</source>
-        <translation>Об&apos;єднання контактів</translation>
+        <translation>Об'єднання контактів</translation>
     </message>
     <message>
         <source>Full name</source>
-        <translation type="obsolete">Повне ім&apos;я</translation>
+        <translation type="obsolete">Повне ім'я</translation>
     </message>
     <message>
         <location filename="../app/comparedialog.cpp" line="69"/>
         <source>Names</source>
-        <translation>Ім&apos;я</translation>
+        <translation>Ім'я</translation>
     </message>
     <message>
         <location filename="../app/comparedialog.cpp" line="70"/>
@@ -156,12 +156,12 @@
     <message>
         <location filename="../app/contactdialog.ui" line="34"/>
         <source>Full name</source>
-        <translation>Повне ім&apos;я</translation>
+        <translation>Повне ім'я</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="46"/>
         <source>Name</source>
-        <translation>Ім&apos;я</translation>
+        <translation>Ім'я</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="65"/>
@@ -184,7 +184,7 @@
         <location filename="../app/contactdialog.ui" line="153"/>
         <location filename="../app/contactdialog.cpp" line="619"/>
         <source>name</source>
-        <translation>Ім&apos;я</translation>
+        <translation>Ім'я</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="158"/>
@@ -737,17 +737,17 @@
     <message>
         <location filename="../app/mainwindow.ui" line="478"/>
         <source>&amp;Generate full name</source>
-        <translation>&amp;Зібрати повне ім&apos;я</translation>
+        <translation>&amp;Зібрати повне ім'я</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="483"/>
         <source>&amp;Join</source>
-        <translation>&amp;Об&apos;єднати</translation>
+        <translation>&amp;Об'єднати</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="488"/>
         <source>Drop &amp;full name</source>
-        <translation>З&amp;абрати повне ім&apos;я</translation>
+        <translation>З&amp;абрати повне ім'я</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="493"/>
@@ -777,7 +777,7 @@
     <message>
         <location filename="../app/mainwindow.ui" line="516"/>
         <source>Reverse full name</source>
-        <translation>Обернути повне ім&apos;я</translation>
+        <translation>Обернути повне ім'я</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="521"/>
@@ -897,7 +897,7 @@ Only some fields can this edited in this mode</source>
     </message>
     <message>
         <location filename="../app/mainwindow.cpp" line="601"/>
-        <source>&apos;%1&apos; was changed.
+        <source>'%1' was changed.
 Save changes?</source>
         <translation>%1 було змінено.
 Зберегти?</translation>
@@ -1194,7 +1194,7 @@ SMS: %7
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="59"/>
-        <source>Can&apos;t read content from file %1
+        <source>Can't read content from file %1
 %2
 line %3, col %4
 </source>
@@ -1205,16 +1205,16 @@ line %3, col %4
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="68"/>
-        <source>Root node is not &apos;DataExchangeInfo&apos; at file
+        <source>Root node is not 'DataExchangeInfo' at file
 %1</source>
-        <translation>Кореневий вузол не &apos;DataExchangeInfo&apos; в файлі
+        <translation>Кореневий вузол не 'DataExchangeInfo' в файлі
 %1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="74"/>
-        <source>Can&apos;t find &apos;RecordInfo&apos; tag at file
+        <source>Can't find 'RecordInfo' tag at file
 %1</source>
-        <translation>Не можу знайти теґ &apos;RecordInfo&apos; в файлі
+        <translation>Не можу знайти теґ 'RecordInfo' в файлі
 %1</translation>
     </message>
     <message>
@@ -1229,15 +1229,15 @@ line %3, col %4
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="93"/>
-        <source>Can&apos;t find &apos;vCard&apos; records at file
+        <source>Can't find 'vCard' records at file
 %1</source>
-        <translation>Не можу знайти записи &apos;vCard&apos; в файлі
+        <translation>Не можу знайти записи 'vCard' в файлі
 %1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="109"/>
-        <source>Can&apos;t find &apos;vCardField&apos; at sequence %1</source>
-        <translation>Не можу знайти запис &apos;vCardField&apos; для контакту %1</translation>
+        <source>Can't find 'vCardField' at sequence %1</source>
+        <translation>Не можу знайти запис 'vCardField' для контакту %1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="134"/>
@@ -1246,8 +1246,8 @@ line %3, col %4
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="150"/>
-        <source>Unknown &apos;vCardfield&apos; type: %1</source>
-        <translation>Невідомий тип теґу &apos;vCardfield&apos;: %1</translation>
+        <source>Unknown 'vCardfield' type: %1</source>
+        <translation>Невідомий тип теґу 'vCardfield': %1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="158"/>
@@ -1301,7 +1301,7 @@ line %3, col %4
     <message>
         <location filename="../core/formats/formatfactory.cpp" line="65"/>
         <source>Empty file name</source>
-        <translation>Порожнє ім&apos;я файлу</translation>
+        <translation>Порожнє ім'я файлу</translation>
     </message>
     <message>
         <location filename="../core/formats/formatfactory.cpp" line="101"/>
@@ -1356,7 +1356,7 @@ line %3, col %4
     </message>
     <message>
         <source>Firstname</source>
-        <translation type="obsolete">Ім&apos;я</translation>
+        <translation type="obsolete">Ім'я</translation>
     </message>
     <message>
         <source>Lastname</source>
@@ -1376,11 +1376,11 @@ line %3, col %4
     </message>
     <message>
         <source>Full name</source>
-        <translation type="obsolete">Повне ім&apos;я</translation>
+        <translation type="obsolete">Повне ім'я</translation>
     </message>
     <message>
         <source>Generic name</source>
-        <translation type="obsolete">Універсальне ім&apos;я</translation>
+        <translation type="obsolete">Універсальне ім'я</translation>
     </message>
     <message>
         <source>Description</source>
@@ -1519,13 +1519,13 @@ line %3, col %4
         <translation type="obsolete">Всі файли (*.*)</translation>
     </message>
     <message>
-        <source>Can&apos;t read file
+        <source>Can't read file
 %1</source>
         <translation type="obsolete">Не можу прочитати файл
 %1</translation>
     </message>
     <message>
-        <source>Can&apos;t write file
+        <source>Can't write file
 %1</source>
         <translation type="obsolete">Не можу записати файл
 %1</translation>
@@ -1552,7 +1552,7 @@ Data will be lost</source>
     </message>
     <message>
         <location filename="../core/formats/files/vcfdirectory.cpp" line="65"/>
-        <source>Can&apos;t create directory
+        <source>Can't create directory
 %1</source>
         <translation>Не можу створити теку
 %1</translation>
@@ -1564,7 +1564,7 @@ Data will be lost</source>
     </message>
     <message>
         <location filename="../core/formats/files/mpbfile.cpp" line="100"/>
-        <source>File isn&apos;t MPB file or corrupted</source>
+        <source>File isn't MPB file or corrupted</source>
         <translation>Файл не є  MPB файлом або пошкоджено</translation>
     </message>
     <message>
@@ -1585,7 +1585,7 @@ Data will be lost</source>
     <message>
         <location filename="../core/formats/files/mpbfile.cpp" line="206"/>
         <source>Name for number %1 changed from %2 to %3</source>
-        <translation>Ім&apos;я для телефону %1 змінено з%2 на %3</translation>
+        <translation>Ім'я для телефону %1 змінено з%2 на %3</translation>
     </message>
     <message>
         <location filename="../core/formats/files/mpbfile.cpp" line="218"/>
@@ -1595,7 +1595,7 @@ Data will be lost</source>
     <message>
         <location filename="../core/formats/files/mpbfile.cpp" line="220"/>
         <source>Number %1 not found in addressbook. Original name (%2) saved</source>
-        <translation>Номер %1 не знайдено в переліку контактів. Збережено джерельне ім&apos;я (%2)</translation>
+        <translation>Номер %1 не знайдено в переліку контактів. Збережено джерельне ім'я (%2)</translation>
     </message>
     <message>
         <location filename="../core/formats/profiles/csvprofilebase.h" line="21"/>
@@ -1642,18 +1642,18 @@ Data will be lost</source>
     </message>
     <message>
         <location filename="../core/formats/files/nbffile.cpp" line="57"/>
-        <source>Can&apos;t open %1 directory in archive</source>
-        <translation type="unfinished"></translation>
+        <source>Can't open %1 directory in archive</source>
+        <translation>Не вдалося відкрити каталог %1 в архіві</translation>
     </message>
     <message>
         <location filename="../core/formats/files/nbffile.cpp" line="65"/>
-        <source>Can&apos;t set %1 item as current in archive</source>
-        <translation type="unfinished"></translation>
+        <source>Can't set %1 item as current in archive</source>
+        <translation>Не вдалося вибрати елемент %1 в архіві</translation>
     </message>
     <message>
         <location filename="../core/formats/files/nbffile.cpp" line="71"/>
-        <source>Can&apos;t open %1 item in archive</source>
-        <translation type="unfinished"></translation>
+        <source>Can't open %1 item in archive</source>
+        <translation>Не вдалося відкрити елемент %1 в архіві</translation>
     </message>
 </context>
 <context>
@@ -1697,7 +1697,7 @@ Data will be lost</source>
     <message>
         <location filename="../3rdparty/quazip/quazip/quazipfile.cpp" line="247"/>
         <source>ZIP/UNZIP API error %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Помилка ZIP/UNZIP API %1</translation>
     </message>
 </context>
 <context>
@@ -1827,8 +1827,8 @@ Data will be lost</source>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="282"/>
-        <source>(many phones treats &apos;Voice&apos; as &apos;Other&apos;)</source>
-        <translation>(деякі телефони трактують тип &apos;Голосовий&apos; як &apos;Інший&apos;)</translation>
+        <source>(many phones treats 'Voice' as 'Other')</source>
+        <translation>(деякі телефони трактують тип 'Голосовий' як 'Інший')</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="289"/>
