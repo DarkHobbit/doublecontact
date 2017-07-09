@@ -1,16 +1,36 @@
 #!/bin/bash
 
+set -o nounset
+set -o errexit
+# Example: make-deb-pkg 0.1.3 amd64
 DC_VER=$1
+PKG_ARCH=$2
 if [ -z "$DC_VER" ]
 then
   echo "Version number is missing"
   exit 1
 fi
+if [ -z "$PKG_ARCH" ]
+then
+  echo "Package architecture is missing"
+  exit 1
+fi
 
 PKG_NAME=doublecontact_${DC_VER}_amd64
+CTL_FIlE=./${PKG_NAME}/DEBIAN/control
 
+# Make bin image
 cd ../..
 ./pack/make-bin-image . ./${PKG_NAME}
-# TODO change version number and arch in control file
+# Copy debianization template
 cp -R ./pack/deb/DEBIAN ./${PKG_NAME}/
+# Add version number and arch to control file
+echo "Version: ${DC_VER}" >> ${CTL_FIlE}
+echo "Architecture: ${PKG_ARCH}" >> ${CTL_FIlE}
+# Add installed size to control file
+INST_SIZE=$(du -hks ./${PKG_NAME})
+INST_SIZE=(${INST_SIZE//" "/ })
+INST_SIZE=${INST_SIZE[0]}
+echo "Installed-Size: ${INST_SIZE}" >> ${CTL_FIlE}
+# Build!
 fakeroot dpkg-deb --build ./${PKG_NAME}/ ./${PKG_NAME}.deb
