@@ -21,4 +21,4 @@ script:
  - qmake all.pro
  - make
  - cd pack/deb
- - ./make-deb-pkg 0.1
+ - ./make-deb-pkg 0.1 amd64
