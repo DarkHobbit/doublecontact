@@ -5,7 +5,6 @@ You can contact me at pub@zvyozdochkin.ru.
 * belarussian language file
 
 0.2:
-* add csv example in testdata
 * network export/import
 * add homephone, workphone, cellphone columns to model
 * duplicate search (and merging, probably make unified merging dialog with panels compare merging)

@@ -100,7 +100,6 @@ bool CSVFile::importRecords(const QString &url, ContactList &list, bool append)
     if (!openFile(url, QIODevice::ReadOnly))
         return false;
     _errors.clear();
-    _errors << "CSV support is very experimental, you can loss your data"; //===>
     QList<QStringList> rows;
     QTextStream stream(&file);
     if (_encoding.isEmpty())
@@ -156,7 +155,6 @@ bool CSVFile::importRecords(const QString &url, ContactList &list, bool append)
 
 bool CSVFile::exportRecords(const QString &url, ContactList &list)
 {
-    _errors << "CSV support is very experimental, you can loss your data"; //===>
     if (!currentProfile)
         return false;
     if (!currentProfile->prepareExport(list))
