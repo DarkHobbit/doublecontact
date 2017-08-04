@@ -16,7 +16,9 @@
 
 #include <QByteArray>
 #include <QDateTime>
+#include <QMap>
 #include <QStringList>
+
 #include "globals.h"
 
 #define MAX_COMPARE_PRIORITY_LEVEL 5
@@ -146,6 +148,7 @@ struct ContactItem {
     QString sortString;
     QString description;
     Photo photo;
+    QStringList groups;
     // Work
     QString organization, title;
     // TODO role, logo?
@@ -221,10 +224,21 @@ public:
     void clear();
     void sort(SortType sortType);
     void compareWith(ContactList& pairList);
+    // Group operations
+    QMap<QString, int> groupStat();
+    bool hasGroup(const QString& group); // Call this before add/rename group!
+    void addGroup(const QString& group);
+    void renameGroup(const QString& oldName, const QString& newName);
+    void removeGroup(const QString& group);
+    void includeToGroup(const QString& group, ContactItem& item);
+    void excludeFromGroup(const QString& group, ContactItem& item);
+    void mergeGroups(const QString& unitedGroup, const QString& mergedGroup);
+    void splitGroup(const QString& existGroup, const QString& newGroup, const QList<int>& movedIndicesInGroup);
     // Info
     int findById(const QString& idValue) const;
     QString statistics() const;
     MPBExtra extra;
+    QStringList emptyGroups;
     QString originalProfile; // for CSV; see also ContactItem::originalFormat
 };
 

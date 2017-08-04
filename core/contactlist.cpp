@@ -583,6 +583,134 @@ void ContactList::compareWith(ContactList &pairList)
     }
 }
 
+QMap<QString, int> ContactList::groupStat()
+{
+    QMap<QString, int> res;
+    foreach (const QString& g, emptyGroups)
+        res[g] = 0;
+    foreach (const ContactItem& item, *this)
+        foreach(const QString& g, item.groups)
+            res[g]++;
+    return res;
+}
+
+bool ContactList::hasGroup(const QString &group)
+{
+    if (emptyGroups.contains(group))
+        return true;
+    foreach (const ContactItem& item, *this)
+        if (item.groups.contains(group))
+            return true;
+    return false;
+}
+
+void ContactList::addGroup(const QString &group)
+{
+    if (hasGroup(group))
+        return;
+    emptyGroups << group;
+    qSort(emptyGroups);
+}
+
+void ContactList::renameGroup(const QString &oldName, const QString &newName)
+{
+    if (hasGroup(newName))
+        return;
+    if (emptyGroups.contains(oldName)) {
+        emptyGroups.removeOne(oldName);
+        emptyGroups << newName;
+        qSort(emptyGroups);
+    }
+    else {
+        for (int i=0; i<this->count(); i++) {
+            ContactItem& item = (*this)[i];
+            if (item.groups.contains(oldName)) {
+                item.groups.removeOne(oldName);
+                item.groups << newName;
+                qSort(item.groups);
+            }
+        }
+    }
+}
+
+void ContactList::removeGroup(const QString &group)
+{
+    emptyGroups.removeOne(group);
+    for (int i=0; i<this->count(); i++)
+        (*this)[i].groups.removeOne(group);
+}
+
+void ContactList::includeToGroup(const QString &group, ContactItem &item)
+{
+    if (!item.groups.contains(group)) {
+        item.groups << group;
+        qSort(item.groups);
+    }
+    if (emptyGroups.contains(group))
+        emptyGroups.removeOne(group);
+}
+
+void ContactList::excludeFromGroup(const QString &group, ContactItem &item)
+{
+    item.groups.removeOne(group);
+    bool groupWillBeEmpty = true;
+    foreach(const ContactItem &cand, *this)
+        if (cand.groups.contains(group)) {
+            groupWillBeEmpty = false;
+            break;
+        }
+    if (groupWillBeEmpty) {
+        emptyGroups << group;
+        qSort(emptyGroups);
+    }
+}
+
+void ContactList::mergeGroups(const QString &unitedGroup, const QString &mergedGroup)
+{
+    for (int i=0; i<this->count(); i++) {
+        ContactItem& item = (*this)[i];
+        if (item.groups.contains(mergedGroup)) {
+            item.groups.removeOne(mergedGroup);
+            if (!item.groups.contains(unitedGroup)) {
+                item.groups << unitedGroup;
+                qSort(item.groups);
+            }
+        }
+    }
+    emptyGroups.removeOne(mergedGroup);
+    if (groupStat()[unitedGroup]==0) {
+        emptyGroups << unitedGroup;
+        qSort(emptyGroups);
+    }
+}
+
+void ContactList::splitGroup(const QString &existGroup, const QString &newGroup, const QList<int> &movedIndicesInGroup)
+{
+    int index = -1;
+    for (int i=0; i<this->count(); i++) {
+        ContactItem& item = (*this)[i];
+        if (item.groups.contains(existGroup)) { // Is contact in group?
+            index++;
+            if (movedIndicesInGroup.contains(index)) { // Is contact selected for move?
+                item.groups.removeOne(existGroup);
+                if (!item.groups.contains(newGroup)) {
+                    item.groups << newGroup;
+                    qSort(item.groups);
+                }
+            }
+        }
+    }
+    QMap<QString, int> groups = groupStat();
+    if (groups[existGroup]==0 && !emptyGroups.contains(existGroup)) {
+        emptyGroups << existGroup;
+        qSort(emptyGroups);
+    }
+    if (groups[newGroup]==0 && !emptyGroups.contains(newGroup)) {
+        emptyGroups << newGroup;
+        qSort(emptyGroups);
+    }
+}
+
 int ContactList::findById(const QString &idValue) const
 {
     for(int i=0; i<count(); i++)
