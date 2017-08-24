@@ -62,6 +62,9 @@ bool HTMLFile::exportRecords(const QString &url, ContactList &list)
         exportString(stream, item.description, S_DESC);
         if (!item.photo.isEmpty())
             exportString(stream, " ", S_HAS_PHOTO); // space, not empty string!
+        // Group(s)
+        if (!item.groups.isEmpty())
+            exportString(stream, item.groups.join(", "), S_GROUP); // space, not empty string!
         // Work
         exportString(stream, item.organization, S_ORG);
         exportString(stream, item.title, S_TITLE);

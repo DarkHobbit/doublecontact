@@ -64,6 +64,12 @@ public:
     void reverseFullNames(const QModelIndexList& indices);
     void splitNumbers(const QModelIndexList& indices);
     void intlPhonePrefix(const QModelIndexList& indices, int countryRule);
+    // Group operation methods
+    void addGroup(const QString& group);
+    void renameGroup(const QString& oldName, const QString& newName);
+    void removeGroup(const QString& group);
+    void mergeGroups(const QString& unitedGroup, const QString& mergedGroup);
+    void splitGroup(const QString& existGroup, const QString& newGroup, const QList<int>& movedIndicesInGroup);
     // Whole addressbook operation methods
     void hardSort(ContactList::SortType sortType);
     void testList(); // Test data

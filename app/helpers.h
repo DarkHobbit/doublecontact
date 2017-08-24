@@ -24,9 +24,11 @@ class ReadOnlyTableDelegate : public QItemDelegate
 {
     Q_OBJECT
 public:
-    ReadOnlyTableDelegate(QObject* parent = 0);
+    ReadOnlyTableDelegate(bool _silent, QObject* parent = 0);
     virtual QWidget* createEditor(
         QWidget*, const QStyleOptionViewItem&, const QModelIndex &) const;
+private:
+    bool silent;
 };
 
 // Show photo on label

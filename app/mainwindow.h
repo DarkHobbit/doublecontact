@@ -93,6 +93,8 @@ private slots:
 
     void on_action_Hard_sort_triggered();
 
+    void on_action_Groups_triggered();
+
 private:
     Ui::MainWindow *ui;
     ContactModel *modLeft, *modRight;

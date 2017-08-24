@@ -99,6 +99,7 @@ QVariant ContactModel::data(const QModelIndex &index, int role) const
             case ccPhone:       return c.prefPhone;
             case ccEMail:       return c.prefEmail;
             case ccBDay:        return c.birthday.toString(DateItem::Local);
+            case ccGroups:      return c.groups.join(", ");
             case ccTitle:       return c.title;
             case ccOrg:         return c.organization;
             case ccAddr:  {
@@ -370,6 +371,36 @@ void ContactModel::intlPhonePrefix(const QModelIndexList &indices, int countryRu
     _changed = true;
 }
 
+void ContactModel::addGroup(const QString &group)
+{
+    if (items.addGroup(group))
+        _changed = true;
+}
+
+void ContactModel::renameGroup(const QString &oldName, const QString &newName)
+{
+    if (items.renameGroup(oldName, newName))
+        _changed = true;
+}
+
+void ContactModel::removeGroup(const QString &group)
+{
+    if (items.removeGroup(group))
+        _changed = true;
+}
+
+void ContactModel::mergeGroups(const QString &unitedGroup, const QString &mergedGroup)
+{
+    items.mergeGroups(unitedGroup, mergedGroup);
+    _changed = true;
+}
+
+void ContactModel::splitGroup(const QString &existGroup, const QString &newGroup, const QList<int> &movedIndicesInGroup)
+{
+    items.splitGroup(existGroup, newGroup, movedIndicesInGroup);
+    _changed = true;
+}
+
 void ContactModel::hardSort(ContactList::SortType sortType)
 {
     items.sort(sortType);
@@ -403,6 +434,7 @@ void ContactModel::testList()
 {
     ContactItem c;
     _source = "Test list";
+    items.emptyGroups << QString::fromUtf8("Base");
     beginInsertRows(QModelIndex(), 0, 3);
 
     // Example with ASCII names and multy-type phone
@@ -431,6 +463,7 @@ void ContactModel::testList()
     c.names << QString::fromUtf8("Köster") << QString::fromUtf8("Hans");
     c.phones << Phone("233", "home");
     c.phones << Phone("322", "work");
+    c.groups << QString::fromUtf8("Authors");
     c.calculateFields();
     items.push_back(c);
 
@@ -438,6 +471,8 @@ void ContactModel::testList()
     c.clear();
     c.fullName = QString::fromUtf8("Ernst Theodor Amadeus Hoffmann");
     c.names << "Hoffmann" << "Ernst" << "Theodor Amadeus";
+    c.groups << QString::fromUtf8("Authors");
+    c.groups << QString::fromUtf8("Primary");
     c.calculateFields();
     items.push_back(c);
 

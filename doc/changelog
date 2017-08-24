@@ -22,6 +22,7 @@ Bugfix release:
 Current
 * Hard addressbook sorting (for saving and reports generation)
 * NBF (modern Nokia backup file) reading support
+* Group support (CATEGORIES, X-CATEGORIES, X-NOKIA-PND-GROUP tags)
 * Osmo PIM CSV files support
 * Fixed: file paths with file:// protocol prefix now opened correctly
 * Fixed: missing installed size in deb package

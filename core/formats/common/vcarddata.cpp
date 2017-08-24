@@ -214,6 +214,15 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                         errors << QObject::tr("Unknown encoding type at line %1: %2%3").arg(line+1).arg(encoding).arg(visName);
                 }
             }
+            else if (tag=="CATEGORIES"  // MyPhoneExplorer YES, embedded android export NO
+            || tag=="X-CATEGORIES") // some Nokia Suite versions
+                foreach(const QString& val, vValue)
+                    item.groups << decodeValue(val, errors);
+            else if (tag=="X-NOKIA-PND-GROUP") { // Nokia NBF
+                // For some groups per contact, each group wrote in separate X-NOKIA-PND-GROUP tag
+                QTextCodec* utf16 = QTextCodec::codecForName("UTF-16");
+                item.groups << utf16->toUnicode(vValue[0].toLocal8Bit());
+            }
             else if (tag=="ORG")
                 item.organization = decodeValue(vValue[0], errors);
             else if (tag=="TITLE")
@@ -257,7 +266,6 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
             // Known but un-editing tags
             else if (
                 tag=="LABEL"
-                || tag=="CATEGORIES"// MyPhoneExplorer YES, embedded android export NO
                 || tag=="X-ACCOUNT" // MyPhoneExplorer YES, embedded android export NO
             )
             { // TODO other from rfc 2426
@@ -341,6 +349,12 @@ void VCardData::exportRecord(QStringList &lines, const ContactItem &item, QStrin
         lines << QString("BDAY:") + exportDate(item.birthday);
     foreach (const DateItem& ann, item.anniversaries)
         lines << QString("X-ANNIVERSARY:") + exportDate(ann);
+    if (!item.groups.isEmpty()) {
+        if ((formatVersion>=GlobalConfig::VCF40) || forceShortType) // TODO dirty hack - either add yet another force*, or drop all force* and simply set vCard4.0
+            lines << QString("CATEGORIES:") + item.groups.join(";");
+        else
+            lines << QString("X-CATEGORIES:") + item.groups.join(";");
+    }
     // Organization, addresses
     foreach (const PostalAddress& addr, item.addrs)
         lines << exportAddress(addr);

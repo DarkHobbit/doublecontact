@@ -52,8 +52,8 @@ ContactDialog::ContactDialog(QWidget *parent) :
     // Addresses
     layAddrs = new QVBoxLayout(ui->scrollAreaWidgetContents);
     // Other known and unknown tags tables
-    ui->twOtherTags->setItemDelegate(new ReadOnlyTableDelegate());
-    ui->twUnknownTags->setItemDelegate(new ReadOnlyTableDelegate());
+    ui->twOtherTags->setItemDelegate(new ReadOnlyTableDelegate(false));
+    ui->twUnknownTags->setItemDelegate(new ReadOnlyTableDelegate(false));
 }
 
 ContactDialog::~ContactDialog()
@@ -95,7 +95,7 @@ void ContactDialog::clearData()
     ui->dteBirthday->setEnabled(false);
 }
 
-void ContactDialog::setData(const ContactItem& c)
+void ContactDialog::setData(const ContactItem& c, const ContactList& l)
 {
     setWindowTitle(tr("Edit contact"));
     // Names
@@ -131,6 +131,11 @@ void ContactDialog::setData(const ContactItem& c)
     ui->leURL->setText(c.url);
     for (int i=0; i<c.ims.count(); i++)
         addIM(c.ims[i]);
+    // Groups
+    ui->lwContactInGroups->addItems(c.groups);
+    foreach(const QString& g, l.groupStat().keys())
+        if (!c.groups.contains(g))
+            ui->lwAvailableGroups->addItem(g);
     // Work
     ui->leOrganization->setText(c.organization);
     ui->leTitle->setText(c.title);
@@ -157,7 +162,7 @@ void ContactDialog::setData(const ContactItem& c)
     }
 }
 
-void ContactDialog::getData(ContactItem& c)
+void ContactDialog::getData(ContactItem& c, ContactList& l)
 {
     // Names
     c.fullName = ui->leFullName->text();
@@ -208,6 +213,10 @@ void ContactDialog::getData(ContactItem& c)
         readTriplet("IM", i+1, im, Messenger::standardTypes);
         c.ims << im;
     }
+    // Groups
+    c.groups.clear();
+    for(int i=0; i<ui->lwContactInGroups->count(); i++)
+        l.includeToGroup(ui->lwContactInGroups->item(i)->text(), c);
     // Work
     c.organization = ui->leOrganization->text();
     c.title = ui->leTitle->text();
@@ -800,4 +809,22 @@ void ContactDialog::onRemovePhoto()
 void ContactDialog::on_btnAddIM_clicked()
 {
     addIM(Messenger());
+}
+
+void ContactDialog::on_btnIncludeToGroup_clicked()
+{
+    foreach(QListWidgetItem* item, ui->lwAvailableGroups->selectedItems()) {
+        ui->lwContactInGroups->addItem(item->text());
+        delete item;
+    }
+    ui->lwContactInGroups->sortItems();
+}
+
+void ContactDialog::on_btnExcludeFromGroup_clicked()
+{
+    foreach(QListWidgetItem* item, ui->lwContactInGroups->selectedItems()) {
+        ui->lwAvailableGroups->addItem(item->text());
+        delete item;
+    }
+    ui->lwAvailableGroups->sortItems();
 }

@@ -17,14 +17,15 @@
 #include "globals.h"
 #include "helpers.h"
 
-ReadOnlyTableDelegate::ReadOnlyTableDelegate(QObject* parent)
-    : QItemDelegate(parent)
+ReadOnlyTableDelegate::ReadOnlyTableDelegate(bool _silent, QObject* parent)
+    : QItemDelegate(parent), silent(_silent)
 {}
 
 QWidget* ReadOnlyTableDelegate::createEditor(
      QWidget*, const QStyleOptionViewItem&, const QModelIndex &) const
 {
-    QMessageBox::critical(0, S_ERROR, tr("This table is read only"));
+    if (!silent)
+        QMessageBox::critical(0, S_ERROR, tr("This table is read only"));
     return 0;
 }
 

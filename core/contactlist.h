@@ -219,17 +219,19 @@ public:
         SortByLastName,
         SortByFirstName,
         SortByFullName,
-        SortByNick
-    }; // TODO sort by group
+        SortByNick,
+        SortByGroup
+    };
     void clear();
     void sort(SortType sortType);
     void compareWith(ContactList& pairList);
     // Group operations
-    QMap<QString, int> groupStat();
-    bool hasGroup(const QString& group); // Call this before add/rename group!
-    void addGroup(const QString& group);
-    void renameGroup(const QString& oldName, const QString& newName);
-    void removeGroup(const QString& group);
+    QMap<QString, int> groupStat() const;
+    bool hasGroup(const QString& group) const; // Call this before add/rename group!
+    bool addGroup(const QString& group);
+    bool renameGroup(const QString& oldName, const QString& newName);
+    bool removeGroup(const QString& group);
+    QStringList contactsInGroup(const QString& group);
     void includeToGroup(const QString& group, ContactItem& item);
     void excludeFromGroup(const QString& group, ContactItem& item);
     void mergeGroups(const QString& unitedGroup, const QString& mergedGroup);

@@ -25,6 +25,7 @@ enum ContactColumn {
   ccPhone,      // first or preferred phone
   ccEMail,      // first or preferred email
   ccBDay,       // birthday
+  ccGroups,     // all groups
   ccTitle,      // Job title
   ccOrg,        // Organization
   ccAddr,       // postal address
@@ -52,7 +53,7 @@ enum ContactColumn {
 // Misc
 #define S_ADDRESS_BOOK QObject::tr("Address book")
 #define S_NEW_LIST QObject::tr("New contact list")
-#define S_READ_ONLY_FORMAT QObject::tr("This format is read only")
+#define S_GROUP_NAME QObject::tr("Group name")
 #define S_COUNTRY_RULE_SELECT QObject::tr("Select country rule")
 #define S_CSV_PROFILE_SELECT QObject::tr("Select CSV profile")
 #define S_GENERIC_CSV_PROFILE QObject::tr("Generic profile")
@@ -82,6 +83,7 @@ enum ContactColumn {
 #define S_IM_JABBER QObject::tr("Jabber")
 #define S_IM_ICQ QObject::tr("ICQ")
 #define S_IM_SKYPE QObject::tr("Skype")
+#define S_GROUP QObject::tr("Group")
 // Columns-flags
 #define S_HAS_PHONE QObject::tr("Has phone")
 #define S_HAS_EMAIL QObject::tr("Has email")
@@ -106,13 +108,16 @@ enum ContactColumn {
 // File ops
 #define S_ALL_SUPPORTED QObject::tr("All supported files (%1)")
 #define S_ALL_FILES QObject::tr("All files (*.*)")
-// Common errors
+// Common errors, warnings and questions
 #define S_READ_ERR QObject::tr("Can't read file\n%1")
 #define S_WRITE_ERR QObject::tr("Can't write file\n%1")
+#define S_REC_NOT_SEL QObject::tr("Record not selected")
+#define S_READ_ONLY_FORMAT QObject::tr("This format is read only")
 #define S_ERR_UNSUPPORTED_TAG \
     QObject::tr("Warning: contact %1 has %2, not supported in this format.\nData will be lost")
 #define S_ERR_EXTRA_TAG \
     QObject::tr("%1 %2 will be lost at contact %3")
+#define S_REMOVE_CONFIRM QObject::tr("Are You really want to delete selected items?")
 
 // Visible columns headers
 // (It was a simple string array, but its translation not worked)

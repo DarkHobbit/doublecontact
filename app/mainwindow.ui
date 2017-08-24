@@ -266,6 +266,7 @@
      <string>&amp;View</string>
     </property>
     <addaction name="action_Two_panels"/>
+    <addaction name="action_Groups"/>
     <addaction name="actionSettings"/>
    </widget>
    <widget class="QMenu" name="menu_List">
@@ -532,6 +533,14 @@
   <action name="action_Hard_sort">
    <property name="text">
     <string>&amp;Hard sort</string>
+   </property>
+  </action>
+  <action name="action_Groups">
+   <property name="text">
+    <string>&amp;Groups...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+G</string>
    </property>
   </action>
  </widget>

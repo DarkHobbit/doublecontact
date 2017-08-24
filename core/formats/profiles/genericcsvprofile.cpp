@@ -94,6 +94,7 @@ bool GenericCSVProfile::prepareExport(const ContactList &list)
         checkStr(c.description, hasDesc);
         if (c.photo.pType=="URL")
             hasPhotoUrl = true;
+        checkStr(c.groups.join(""), hasGroups);
         checkStr(c.organization, hasOrg);
         checkStr(c.title, hasTitle);
         // TODO role, logo?
@@ -121,6 +122,7 @@ QStringList GenericCSVProfile::makeHeader()
     makeHeaderItem(header, "SORT-STRING", hasSortString);
     makeHeaderItem(header, "NOTE", hasDesc);
     makeHeaderItem(header, "PHOTO;VALUE=uri", hasPhotoUrl);
+    makeHeaderItem(header, "X-CATEGORIES", hasGroups); // TODO categories if 40
     makeHeaderItem(header, "ORG", hasOrg);
     makeHeaderItem(header, "TITLE", hasTitle);
     makeHeaderGroup(header, "ADR", addrTypeCombinations);
@@ -149,7 +151,8 @@ bool GenericCSVProfile::exportRecord(QStringList &row, const ContactItem &item, 
     if ((!item.photo.isEmpty()) && !hasPhotoUrl)
         errors << QString("%1 (%2) contains photo files, data will be lost")
                   .arg(item.fullName).arg(item.names.join(" "));
-    // TODO for not-url phones, save in separate files
+    // TODO for not-url photos, save in separate files
+    putItem(row, item.groups.join(";"), hasGroups);
     putItem(row, item.organization, hasOrg);
     putItem(row, item.title, hasTitle);
     putTypeCombinations(row, item.addrs, addrTypeCombinations);
@@ -171,7 +174,7 @@ void GenericCSVProfile::clearCounters()
     addrTypeCombinations.clear();
     imTypeCombinations.clear();
     hasBDay = hasAnn = hasSortString = hasDesc = hasPhotoUrl = false;
-    hasOrg = hasTitle = hasNick = hasUrl = false;
+    hasGroups = hasOrg = hasTitle = hasNick = hasUrl = false;
     otherTags.clear();
     unknownTags.clear();
 }

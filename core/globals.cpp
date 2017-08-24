@@ -35,6 +35,7 @@ void ContactColumnHeaders::fill()
     << S_PHONE
     << S_EMAIL
     << S_BDAY
+    << S_GROUP
     << S_TITLE
     << S_ORG
     << S_ADDR

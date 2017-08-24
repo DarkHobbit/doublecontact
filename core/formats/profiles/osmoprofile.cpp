@@ -53,8 +53,8 @@ bool OsmoProfile::importRecord(const QStringList &row, ContactItem &item, QStrin
     if (present(row, "Group")) {
         QString grName = value(row, "Group");
         if ((!grName.isEmpty()) && (grName!=S_OSMO_NO_GROUP))
-            // TODO full group support
-            item.otherTags << TagValue("CATEGORIES", row[0]);
+            // TODO check, can osmo write more than one group
+            item.groups << grName;
     }
     // Names and dates
     item.names << value(row, "Last name") << value(row, "First name") << value(row, "Second name");
@@ -170,12 +170,8 @@ bool OsmoProfile::importRecord(const QStringList &row, ContactItem &item, QStrin
 
 bool OsmoProfile::exportRecord(QStringList &row, const ContactItem &item, QStringList &errors)
 {
-    // Group TODO full group support
-    QStringList categories = item.otherTags.findByName("CATEGORIES");
-    if (categories.count()==0)
-        row << S_OSMO_NO_GROUP;
-    else
-        row << categories.join(",");
+    // Groups
+    row << (item.groups.isEmpty() ? S_OSMO_NO_GROUP : item.groups.join(","));
     // Names
     row << saveNamePart(item, 1);
     row << saveNamePart(item, 0);
@@ -184,11 +180,15 @@ bool OsmoProfile::exportRecord(QStringList &row, const ContactItem &item, QStrin
     row << item.nickName;
     row << item.unknownTags.findByName("TAGS").join(",");
     if (!item.birthday.isEmpty())
-        row << item.birthday.value.toString("dd.mm.yyyy");
+        row << item.birthday.value.toString("dd.MM.yyyy");
+    else
+        row << "";
     if (!item.anniversaries.isEmpty()) {
-        row << item.anniversaries[0].value.toString("dd.mm.yyyy");
+        row << item.anniversaries[0].value.toString("dd.MM.yyyy");
         errors << QObject::tr("Anniversary saved as name day, contact %1").arg(item.visibleName);
     }
+    else
+        row << "";
     // Addresses (only two for this format)
     PostalAddress homeAddr, workAddr;
     foreach(const PostalAddress& a, item.addrs) {
@@ -326,6 +326,8 @@ bool OsmoProfile::exportRecord(QStringList &row, const ContactItem &item, QStrin
                 errors << S_ERR_EXTRA_TAG.arg(S_IM).arg(im.value).arg(item.visibleName);
         }
     }
+    row << ims["gadu-gadu"] << ims["Yahoo"] << ims["msn"] << ims["icq"];
+    row << ims["aim"] << ims["xmpp"] << ims["skype"] << ims["tlen"];
     QStringList blog = item.unknownTags.findByName("BLOG");
     if (!blog.isEmpty())
         row << blog[0];

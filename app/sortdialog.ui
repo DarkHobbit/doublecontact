@@ -55,6 +55,13 @@
         </property>
        </widget>
       </item>
+      <item>
+       <widget class="QRadioButton" name="rbByGroup">
+        <property name="text">
+         <string>6</string>
+        </property>
+       </widget>
+      </item>
      </layout>
     </widget>
    </item>

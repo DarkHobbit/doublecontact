@@ -207,6 +207,7 @@ void ContactItem::clear()
     description.clear();
     photo.clear();
     addrs.clear();
+    groups.clear();
     organization.clear();
     title.clear();
     otherTags.clear();
@@ -510,6 +511,7 @@ ContactList::ContactList()
 void ContactList::clear()
 {
     QList<ContactItem>::clear();
+    emptyGroups.clear();
     extra.clear();
     originalProfile.clear();
 }
@@ -535,6 +537,8 @@ void ContactList::sort(ContactList::SortType sortType)
             break;
         case SortByNick:
             c.actualSortString = c.nickName;
+        case SortByGroup:
+            c.actualSortString = c.groups.join(", ");
         }
     }
     qSort(*this);
@@ -583,7 +587,7 @@ void ContactList::compareWith(ContactList &pairList)
     }
 }
 
-QMap<QString, int> ContactList::groupStat()
+QMap<QString, int> ContactList::groupStat() const
 {
     QMap<QString, int> res;
     foreach (const QString& g, emptyGroups)
@@ -594,7 +598,7 @@ QMap<QString, int> ContactList::groupStat()
     return res;
 }
 
-bool ContactList::hasGroup(const QString &group)
+bool ContactList::hasGroup(const QString &group) const
 {
     if (emptyGroups.contains(group))
         return true;
@@ -604,18 +608,19 @@ bool ContactList::hasGroup(const QString &group)
     return false;
 }
 
-void ContactList::addGroup(const QString &group)
+bool ContactList::addGroup(const QString &group)
 {
     if (hasGroup(group))
-        return;
+        return false;
     emptyGroups << group;
     qSort(emptyGroups);
+    return true;
 }
 
-void ContactList::renameGroup(const QString &oldName, const QString &newName)
+bool ContactList::renameGroup(const QString &oldName, const QString &newName)
 {
     if (hasGroup(newName))
-        return;
+        return false;
     if (emptyGroups.contains(oldName)) {
         emptyGroups.removeOne(oldName);
         emptyGroups << newName;
@@ -631,13 +636,24 @@ void ContactList::renameGroup(const QString &oldName, const QString &newName)
             }
         }
     }
+    return true;
 }
 
-void ContactList::removeGroup(const QString &group)
+bool ContactList::removeGroup(const QString &group)
 {
-    emptyGroups.removeOne(group);
+    bool changed = emptyGroups.removeOne(group);
     for (int i=0; i<this->count(); i++)
-        (*this)[i].groups.removeOne(group);
+        changed = changed || ((*this)[i].groups.removeOne(group));
+    return changed;
+}
+
+QStringList ContactList::contactsInGroup(const QString &group)
+{
+    QStringList contacts;
+    foreach (const ContactItem& item, *this)
+        if (item.groups.contains(group))
+            contacts << item.visibleName;
+    return contacts;
 }
 
 void ContactList::includeToGroup(const QString &group, ContactItem &item)

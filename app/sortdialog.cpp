@@ -24,6 +24,7 @@ SortDialog::SortDialog(QWidget *parent) :
     ui->rbByFirstName->setText(S_FIRST_NAME);
     ui->rbByFullName->setText(S_FULL_NAME);
     ui->rbByNick->setText(S_NICK);
+    ui->rbByGroup->setText(S_GROUP);
 }
 
 SortDialog::~SortDialog()
@@ -41,8 +42,10 @@ ContactList::SortType SortDialog::getData()
         return ContactList::SortByFirstName;
     else if (ui->rbByFullName->isChecked())
         return ContactList::SortByFullName;
-    else
+    else if (ui->rbByNick->isChecked())
         return ContactList::SortByNick;
+    else
+        return ContactList::SortByGroup;
 }
 
 void SortDialog::setData(ContactList::SortType sortType)
@@ -55,6 +58,8 @@ void SortDialog::setData(ContactList::SortType sortType)
         ui->rbByFirstName->setChecked(true);
     else if (sortType==ContactList::SortByFullName)
         ui->rbByFullName->setChecked(true);
-    else
+    else if (sortType==ContactList::SortByNick)
         ui->rbByNick->setChecked(true);
+    else
+        ui->rbByGroup->setChecked(true);
 }

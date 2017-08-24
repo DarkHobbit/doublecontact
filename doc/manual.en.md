@@ -126,6 +126,8 @@ On "Addresses" tab, you can enter one or two addresses (home or/and work). If ho
 
 "Internet" is the simplest tab. Here you can enter nickname, site URL and accounts in various IMs.
 
+"Group" tab allows you to add contact in one or more groups. If you need create a new group, at first, call **View -> Groups** and, after it, edit a contact.
+
 "Other" tab contains technical internals. It can be used for bug report. Here you also can see vCard tags, known by DoubleContact, but not edited. Here you also can set string for contact sorting.
 
 At last, "Problems" tab contains unknown tags (attributes) of contact. As mentioned above, unknown tags are preserved during view/editing, and program will save it in output file. Please, send such tag samples to author.

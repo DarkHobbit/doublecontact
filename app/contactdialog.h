@@ -38,8 +38,8 @@ public:
     explicit ContactDialog(QWidget *parent = 0);
     ~ContactDialog();
     void clearData();
-    void setData(const ContactItem& c);
-    void getData(ContactItem& c);
+    void setData(const ContactItem& c, const ContactList& l);
+    void getData(ContactItem& c, ContactList& l);
 protected:
     void changeEvent(QEvent *e);
     virtual void resizeEvent(QResizeEvent* event);
@@ -100,6 +100,8 @@ private slots:
     void onSetPhotoUrl();
     void onRemovePhoto();
     void on_btnAddIM_clicked();
+    void on_btnIncludeToGroup_clicked();
+    void on_btnExcludeFromGroup_clicked();
 };
 
 #endif // CONTACTDIALOG_H

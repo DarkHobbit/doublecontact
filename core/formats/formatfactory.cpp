@@ -9,8 +9,6 @@
 #include "files/udxfile.h"
 #include "files/vcffile.h"
 
-#include "QDebug"
-
 FormatFactory::FormatFactory()
     :error("")
 {
@@ -40,7 +38,6 @@ QStringList FormatFactory::supportedFilters(QIODevice::OpenMode mode, bool isRep
         }
         else { // Write-only formats
         }
-        qDebug() << allSupported;
         // ...here add supportedExtensions() for new format
         allTypes << S_ALL_SUPPORTED.arg(allSupported);
         // Known formats (separate)

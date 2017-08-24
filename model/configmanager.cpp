@@ -214,8 +214,10 @@ ContactList::SortType ConfigManager::hardSortType()
         return ContactList::SortByFirstName;
     else if (t=="ByFullName")
         return ContactList::SortByFullName;
-    else
+    else if (t=="ByNick")
         return ContactList::SortByNick;
+    else
+        return ContactList::SortByGroup;
 }
 
 void ConfigManager::setHardSortType(ContactList::SortType sortType)
@@ -229,6 +231,8 @@ void ConfigManager::setHardSortType(ContactList::SortType sortType)
         t=="ByFullName";
     else if (sortType==ContactList::SortByNick)
         t=="ByNick";
+    else if (sortType==ContactList::SortByGroup)
+        t=="ByGroup";
     settings->setValue("General/HardSortType", t);
 }
 

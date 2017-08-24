@@ -27,6 +27,7 @@
 #include "contactdialog.h"
 #include "comparedialog.h"
 #include "csvprofiledialog.h"
+#include "groupdialog.h"
 #include "logwindow.h"
 #include "multicontactdialog.h"
 #include "settingsdialog.h"
@@ -240,7 +241,7 @@ void MainWindow::on_action_Add_triggered()
     d->exec();
     if (d->result()==QDialog::Accepted) {
         ContactItem c;
-        d->getData(c);
+        d->getData(c, selectedModel->itemList());
         selectedModel->addRow(c);
         updateViewMode();
     }
@@ -261,10 +262,10 @@ void MainWindow::on_action_Edit_triggered()
     {
         ContactDialog* d = new ContactDialog(0);
         ContactItem& c = selectedModel->beginEditRow(selection[0]);
-        d->setData(c);
+        d->setData(c, selectedModel->itemList());
         d->exec();
         if (d->result()==QDialog::Accepted) {
-            d->getData(c);
+            d->getData(c, selectedModel->itemList());
             selectedModel->endEditRow(selection[0]);
             updateViewMode();
         }
@@ -303,7 +304,7 @@ void MainWindow::rowDoubleClicked(const QModelIndex &)
 void MainWindow::on_action_Remove_triggered()
 {
     if (!checkSelection()) return;
-    if (QMessageBox::question(0, S_CONFIRM, tr("Are You really want to delete selected items?"),
+    if (QMessageBox::question(0, S_CONFIRM, S_REMOVE_CONFIRM,
             QMessageBox::Yes, QMessageBox::No)==QMessageBox::Yes)
         selectedModel->removeAnyRows(selection);
     updateViewMode();
@@ -425,7 +426,7 @@ bool MainWindow::checkSelection(bool errorIfNoSelected, bool onlyOneRowAllowed)
     QModelIndexList proxySelection = selectedView->selectionModel()->selectedRows();
     if (proxySelection.count()==0) {
         if (errorIfNoSelected)
-            QMessageBox::critical(0, S_ERROR, tr("Record not selected"));
+            QMessageBox::critical(0, S_ERROR, S_REC_NOT_SEL);
         return false;
     }
     if (onlyOneRowAllowed && (proxySelection.count()>1)) {
@@ -923,6 +924,15 @@ void MainWindow::on_action_Hard_sort_triggered()
     }
     delete d;
     // Refresh view
+    updateViewMode();
+    updateHeaders();
+}
+
+void MainWindow::on_action_Groups_triggered()
+{
+    GroupDialog* d = new GroupDialog(*selectedModel);
+    d->exec();
+    delete d;
     updateViewMode();
     updateHeaders();
 }

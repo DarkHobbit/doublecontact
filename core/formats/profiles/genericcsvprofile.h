@@ -38,7 +38,7 @@ public:
 private:
     bool
       hasVersion, hasFullNames, hasNames, hasBDay, hasAnn, hasSortString,
-      hasDesc, hasPhotoUrl, hasOrg, hasTitle,
+      hasDesc, hasPhotoUrl, hasGroups, hasOrg, hasTitle,
       hasNick, hasUrl;
     // TODO is vCard 4.0 allow many photo?
     TypeCounter phoneTypeCombinations, emailTypeCombinations, addrTypeCombinations, imTypeCombinations;
