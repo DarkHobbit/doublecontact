@@ -253,17 +253,17 @@
     <message>
         <location filename="../app/contactdialog.ui" line="458"/>
         <source>Groups</source>
-        <translation type="unfinished"></translation>
+        <translation>Groepen</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="464"/>
         <source>Contact in groups</source>
-        <translation type="unfinished"></translation>
+        <translation>Contactpersoon in groepen</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="471"/>
         <source>Available groups</source>
-        <translation type="unfinished"></translation>
+        <translation>Beschikbare groepen</translation>
     </message>
     <message>
         <source>Home address</source>
@@ -435,83 +435,83 @@
     <message>
         <location filename="../app/groupdialog.ui" line="14"/>
         <source>Groups</source>
-        <translation type="unfinished"></translation>
+        <translation>Groepen</translation>
     </message>
     <message>
         <location filename="../app/groupdialog.ui" line="30"/>
         <source>1</source>
-        <translation type="unfinished">1</translation>
+        <translation>1</translation>
     </message>
     <message>
         <location filename="../app/groupdialog.ui" line="35"/>
         <source>2</source>
-        <translation type="unfinished">2</translation>
+        <translation>2</translation>
     </message>
     <message>
         <location filename="../app/groupdialog.ui" line="45"/>
         <source>Add (Ins)</source>
-        <translation type="unfinished">Toevoegen (Ins)</translation>
+        <translation>Toevoegen (Ins)</translation>
     </message>
     <message>
         <location filename="../app/groupdialog.ui" line="52"/>
         <source>Edit (Enter)</source>
-        <translation type="unfinished">Bewerken (Enter)</translation>
+        <translation>Bewerken (Enter)</translation>
     </message>
     <message>
         <location filename="../app/groupdialog.ui" line="59"/>
         <source>Remove (Del)</source>
-        <translation type="unfinished">Verwijderen (Del)</translation>
+        <translation>Verwijderen (Del)</translation>
     </message>
     <message>
         <location filename="../app/groupdialog.ui" line="70"/>
         <source>&amp;Merge groups...</source>
-        <translation type="unfinished"></translation>
+        <translation>Groepen sa&amp;menvoegen...</translation>
     </message>
     <message>
         <location filename="../app/groupdialog.ui" line="77"/>
         <source>&amp;Split group...</source>
-        <translation type="unfinished"></translation>
+        <translation>Groepen &amp;splitsen...</translation>
     </message>
     <message>
         <location filename="../app/groupdialog.ui" line="86"/>
         <source>NOTE: empty groups (without any contact) will exists only per session and will be removed at program exit, because vCard files cant&apos;t store empty groups. To save a group, add at least one contact to it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Let op: lege groepen (zonder contactpersonen) zullen slechts één keer per sessie bestaan en worden verwijderd na het afsluiten van de applicatie omdat vCard-bestanden geen lege groepen kunnen bevatten. Voeg minimaal één contactpersoon toe aan een groep om deze op te slaan.</translation>
     </message>
     <message>
         <location filename="../app/groupdialog.cpp" line="58"/>
         <source>Contacts</source>
         <comment>In group</comment>
-        <translation type="unfinished"></translation>
+        <translation>Contactpersonen</translation>
     </message>
     <message>
         <location filename="../app/groupdialog.cpp" line="114"/>
         <source>Group merge</source>
-        <translation type="unfinished"></translation>
+        <translation>Groepssamenvoeging</translation>
     </message>
     <message>
         <location filename="../app/groupdialog.cpp" line="117"/>
         <source>United group</source>
-        <translation type="unfinished"></translation>
+        <translation>Samengevoegde groep</translation>
     </message>
     <message>
         <location filename="../app/groupdialog.cpp" line="122"/>
         <source>Merged group</source>
-        <translation type="unfinished"></translation>
+        <translation>Samengevoegde groep</translation>
     </message>
     <message>
         <location filename="../app/groupdialog.cpp" line="147"/>
         <source>Group split</source>
-        <translation type="unfinished"></translation>
+        <translation>Groepssplitsing</translation>
     </message>
     <message>
         <location filename="../app/groupdialog.cpp" line="150"/>
         <source>New group</source>
-        <translation type="unfinished"></translation>
+        <translation>Nieuwe groep</translation>
     </message>
     <message>
         <location filename="../app/groupdialog.cpp" line="153"/>
         <source>Contacts for move</source>
-        <translation type="unfinished"></translation>
+        <translation>Te verplaatsen contactpersonen</translation>
     </message>
 </context>
 <context>
@@ -901,12 +901,12 @@
     <message>
         <location filename="../app/mainwindow.ui" line="540"/>
         <source>&amp;Groups...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Groepen...</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="543"/>
         <source>Ctrl+G</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+G</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.cpp" line="161"/>
@@ -1526,7 +1526,7 @@ opgeslagen als mobiele telefoon</translation>
     <message>
         <location filename="../core/globals.h" line="56"/>
         <source>Group name</source>
-        <translation type="unfinished"></translation>
+        <translation>Groepsnaam</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="58"/>
@@ -1651,7 +1651,7 @@ opgeslagen als mobiele telefoon</translation>
     <message>
         <location filename="../core/globals.h" line="86"/>
         <source>Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Groep</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="88"/>
@@ -1770,7 +1770,7 @@ opgeslagen als mobiele telefoon</translation>
     <message>
         <location filename="../core/globals.h" line="114"/>
         <source>Record not selected</source>
-        <translation type="unfinished">Item niet geselecteerd</translation>
+        <translation>Item niet geselecteerd</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="117"/>
@@ -1787,7 +1787,7 @@ De gegevens zullen verloren gaan</translation>
     <message>
         <location filename="../core/globals.h" line="120"/>
         <source>Are You really want to delete selected items?</source>
-        <translation type="unfinished">Weet u zeker u de geselecteerde items wilt verwijderen?</translation>
+        <translation>Weet u zeker dat u de geselecteerde items wilt verwijderen?</translation>
     </message>
     <message>
         <location filename="../core/formats/profiles/csvprofilebase.h" line="21"/>
@@ -1850,12 +1850,12 @@ De gegevens zullen verloren gaan</translation>
     <message>
         <location filename="../app/groupdialog.cpp" line="29"/>
         <source>Empty group name</source>
-        <translation type="unfinished"></translation>
+        <translation>Naamloze groep</translation>
     </message>
     <message>
         <location filename="../app/groupdialog.cpp" line="30"/>
         <source>Group already exists</source>
-        <translation type="unfinished"></translation>
+        <translation>Groep bestaat al</translation>
     </message>
 </context>
 <context>
@@ -2062,7 +2062,7 @@ De gegevens zullen verloren gaan</translation>
     <message>
         <location filename="../app/sortdialog.ui" line="61"/>
         <source>6</source>
-        <translation type="unfinished">6</translation>
+        <translation>6</translation>
     </message>
     <message>
         <location filename="../app/sortdialog.cpp" line="22"/>
