@@ -224,15 +224,15 @@ void ConfigManager::setHardSortType(ContactList::SortType sortType)
 {
     QString t = "BySortString";
     if (sortType==ContactList::SortByLastName)
-        t=="ByLastName";
+        t = "ByLastName";
     else if (sortType==ContactList::SortByFirstName)
-        t=="ByFirstName";
+        t = "ByFirstName";
     else if (sortType==ContactList::SortByFullName)
-        t=="ByFullName";
+        t = "ByFullName";
     else if (sortType==ContactList::SortByNick)
-        t=="ByNick";
+        t = "ByNick";
     else if (sortType==ContactList::SortByGroup)
-        t=="ByGroup";
+        t = "ByGroup";
     settings->setValue("General/HardSortType", t);
 }
 

@@ -26,3 +26,6 @@ Bugfix release:
 * Osmo PIM CSV files support
 * Fixed: file paths with file:// protocol prefix now opened correctly
 * Fixed: missing installed size in deb package
+
+Current
+* Fixed: saving hard sort type to config
