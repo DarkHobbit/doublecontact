@@ -38,7 +38,7 @@ You may get similar file from hardware phones - SonyEricsson and some other vend
 
 Some phones and devices (for example, some Nokia PC Suite versions) save each contact in separate VCF file. In this case copy entire directory to PC.
 
-If address book was saved in single file, choose **File -> Open -> File** in DoubleContact menu and open received file with VCF, UDX or MPB extension. If address book is a directory, choose **File -> Open -> Directory**.
+If address book was saved in single file, choose **File -> Open -> File** in DoubleContact menu and open received file with VCF, UDX, CSV, NBF or MPB extension. If address book is a directory, choose **File -> Open -> Directory**.
 
 In both cases, DoubleContact load address book and show it as a table.
 
