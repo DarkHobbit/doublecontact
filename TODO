@@ -1,14 +1,9 @@
 This file contains English and Russian (CP1251) issues. Sorry for this mixing, it's beta.
 You can contact me at pub@zvyozdochkin.ru.
 
-0.1.3
-* verify OSMO csv save under windows & linux (commas)
-* belarussian language file
-
 0.2:
 * network export/import
-* add all phones, homephone, workphone, cellphone columns to model
-* duplicate search (and merging, probably make unified merging dialog with panels compare merging)
+* verify OSMO csv save under windows & linux (commas)
 * settings - fonts
 * make .desktop file for deb/rpm
 * только по желанию пользователя (не по умолчанию) подсвечивать жёлтым не только неизвестные, но и нередактируемые?
@@ -35,10 +30,12 @@ vCard 4.0 CATEGORIES requires , separator, but lg leon saves with ;
 0.3:
 * adb support
 * ldif support
+* duplicate search (and merging, probably make unified merging dialog with panels compare merging)
 * set doxygen labels
 * add graphic editor call to menu in Photo button at contact dialog
 
 1.0
+* more translations on world languages
 * integration with mail clients, import contacts from mailboxes
 * cmake and cpack support for various packaging
 * export birthday in calendarzzz
