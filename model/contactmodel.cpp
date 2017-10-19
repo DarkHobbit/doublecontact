@@ -97,6 +97,10 @@ QVariant ContactModel::data(const QModelIndex &index, int role) const
             case ccFullName:    return c.fullName;
             case ccGenericName: return c.visibleName; // must be calculated
             case ccPhone:       return c.prefPhone;
+            case ccAllPhones:   return c.allPhones;
+            case ccHomePhone:   return c.homePhone;
+            case ccWorkPhone:   return c.workPhone;
+            case ccCellPhone:   return c.cellPhone;
             case ccEMail:       return c.prefEmail;
             case ccBDay:        return c.birthday.toString(DateItem::Local);
             case ccGroups:      return c.groups.join(", ");

@@ -33,6 +33,10 @@ void ContactColumnHeaders::fill()
     << S_FULL_NAME
     << S_GENERIC_NAME
     << S_PHONE
+    << S_ALL_PHONES
+    << S_HOME_PHONE
+    << S_WORK_PHONE
+    << S_CELL_PHONE
     << S_EMAIL
     << S_BDAY
     << S_GROUP

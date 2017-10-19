@@ -19,10 +19,14 @@ Bugfix release:
 * Fixed: phones/emails/ims/addresses with same type combination but differ type order now treats as equal
 * Fixed: missing doublecontact.rc added in repository
 
-Current
+0.1.3 [2017-09-03]
 * Hard addressbook sorting (for saving and reports generation)
 * NBF (modern Nokia backup file) reading support
 * Group support (CATEGORIES, X-CATEGORIES, X-NOKIA-PND-GROUP tags)
 * Osmo PIM CSV files support
 * Fixed: file paths with file:// protocol prefix now opened correctly
 * Fixed: missing installed size in deb package
+
+Current
+* Fixed: saving hard sort type to config
+* Fixed: outdated manuals

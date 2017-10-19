@@ -7,8 +7,12 @@ DoubleContact UI is similar to two panel file manages, but second panel can be d
 
 Features:
 
-* saving and loading VCF (vCard 2.1 and 3.0 supported, VCF files directory as single address book also supported),  UDX (Philips Xenium), MPB (MyPhoneExplorer backup);
-* import of NBF (modern Nokia backup file);
+* saving and loading addressbooks files:
+  - VCF (vCard 2.1 and 3.0 supported, VCF files directory as single address book also supported);
+  - CSV (profiles for some Explay models, OSMO PIM and generic profile for full contact information save);
+  - MPB (MyPhoneExplorer backup);
+  - NBF (modern Nokia backup file, **read only**);
+  - UDX (Philips Xenium file);
 * contact view in table, sorting and filtering supported;
 * two panel view of two address books, with copy/move features;
 * single record editing;
@@ -34,7 +38,7 @@ You may get similar file from hardware phones - SonyEricsson and some other vend
 
 Some phones and devices (for example, some Nokia PC Suite versions) save each contact in separate VCF file. In this case copy entire directory to PC.
 
-If address book was saved in single file, choose **File -> Open -> File** in DoubleContact menu and open received file with VCF, UDX or MPB extension. If address book is a directory, choose **File -> Open -> Directory**.
+If address book was saved in single file, choose **File -> Open -> File** in DoubleContact menu and open received file with VCF, UDX, CSV, NBF or MPB extension. If address book is a directory, choose **File -> Open -> Directory**.
 
 In both cases, DoubleContact load address book and show it as a table.
 
@@ -84,6 +88,9 @@ Some columns are flags: it show \* character, if any condition is true. So, cond
 "Generic name" is designed to show contact info even contact entered badly. If full (formatted) name is exists, it shown in this column. Otherwise, program try to construct it from names. If names are empty, program try use organization name, note, phone or email, and, at last, sort string.
 
 Sorting switched on/off by F4 key. Click on any column header to set sort order.
+
+Note that column sorting don't changes an addressbook and does not affect records order in recording files. If You need sort resulting file,
+use hard sort - **List -> Hard sort**. This operation allow to sort contacts by names, nickname, groups, and sort string.
 
 By default, all contacts are visible. To activate fitering, press Ctrl+F. Focus will moved to text field under table. If you enter name of name part here, only records, containing this part, will be visible. For example, enter "Ja" - contacts "James Bond", "George Jackson" will be shown. Enter "213", and contact with "+1-213-555-1234" phone will be shown. If you clear filter field, all contacts will be visible again. Note: filtering work only by visible column. For example, if you remove "Phone" from visible columns, my second example will not work.
 

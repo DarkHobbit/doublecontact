@@ -164,7 +164,8 @@ struct ContactItem {
     TagList otherTags;   // Known but un-editing tags
     TagList unknownTags; // specific tags for any file format, i.e. vcf
     // Calculated fields for higher perfomance
-    QString visibleName, prefPhone, prefEmail, prefIM;
+    QString visibleName, prefPhone, prefEmail, prefIM,
+        allPhones, homePhone, workPhone, cellPhone;
     // Calculated fields for list comparison
     enum PairState {
         PairNotFound,

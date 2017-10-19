@@ -2,9 +2,10 @@
 
 set -o nounset
 set -o errexit
-# Example: make-deb-pkg 0.1.3 amd64
+# Example: make-deb-pkg 0.1.3 jessie amd64
 DC_VER=$1
-PKG_ARCH=$2
+PKG_DIST=$2
+PKG_ARCH=$3
 if [ -z "$DC_VER" ]
 then
   echo "Version number is missing"
@@ -16,7 +17,7 @@ then
   exit 1
 fi
 
-PKG_NAME=doublecontact_${DC_VER}_amd64
+PKG_NAME=doublecontact_${DC_VER}-${PKG_DIST}_${PKG_ARCH}
 CTL_FIlE=./${PKG_NAME}/DEBIAN/control
 
 # Make bin image

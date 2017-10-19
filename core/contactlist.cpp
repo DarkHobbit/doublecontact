@@ -218,6 +218,11 @@ void ContactItem::clear()
     prefPhone.clear();
     prefEmail.clear();
     prefIM.clear();
+    visibleName.clear();
+    allPhones.clear();
+    homePhone.clear();
+    workPhone.clear();
+    cellPhone.clear();
     nickName.clear();
     url.clear();
     ims.clear();
@@ -279,13 +284,35 @@ void ContactItem::calculateFields()
 {
     // Visible name (depend of filled fields)
     visibleName = makeGenericName();
-    // First or preferred phone number
+    // Phones
     prefPhone.clear();
+    allPhones.clear();
+    homePhone.clear();
+    workPhone.clear();
+    cellPhone.clear();
     if (phones.count()>0) {
         prefPhone = phones[0].value;
         for (int i=0; i<phones.count();i++) {
             if (phones[i].types.contains("pref", Qt::CaseInsensitive))
                 prefPhone = phones[i].value;
+            if (!allPhones.isEmpty())
+                allPhones += ", ";
+            allPhones += phones[i].value;
+            if (phones[i].types.contains("home", Qt::CaseInsensitive)) {
+                if (!homePhone.isEmpty())
+                    homePhone += ", ";
+                homePhone += phones[i].value;
+            }
+            if (phones[i].types.contains("work", Qt::CaseInsensitive)) {
+                if (!workPhone.isEmpty())
+                    workPhone += ", ";
+                workPhone += phones[i].value;
+            }
+            if (phones[i].types.contains("cell", Qt::CaseInsensitive)) {
+                if (!cellPhone.isEmpty())
+                    cellPhone += ", ";
+                cellPhone += phones[i].value;
+            }
         }
     }
     // First or preferred email

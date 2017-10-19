@@ -23,6 +23,10 @@ enum ContactColumn {
   ccFirstName, ccLastName, ccMiddleName, // names
   ccFullName, ccGenericName, // formatted names
   ccPhone,      // first or preferred phone
+  ccAllPhones,
+  ccHomePhone,
+  ccWorkPhone,
+  ccCellPhone,
   ccEMail,      // first or preferred email
   ccBDay,       // birthday
   ccGroups,     // all groups
@@ -70,6 +74,10 @@ enum ContactColumn {
 #define S_GENERIC_NAME QObject::tr("Generic name")
 #define S_DESC QObject::tr("Description")
 #define S_PHONE QObject::tr("Phone")
+#define S_ALL_PHONES QObject::tr("All phones")
+#define S_HOME_PHONE QObject::tr("Home phone")
+#define S_WORK_PHONE QObject::tr("Work phone")
+#define S_CELL_PHONE QObject::tr("Cell phone")
 #define S_EMAIL QObject::tr("Email")
 #define S_BDAY QObject::tr("Birthday")
 #define S_ANN QObject::tr("Anniversary")
