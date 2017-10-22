@@ -28,5 +28,7 @@ Bugfix release:
 * Fixed: missing installed size in deb package
 
 Current
+* More table columns for phones added: all phones, home phone, work phone, cell phone
+* Table rows by default use alternate colors (can be disabled in settings)
 * Fixed: saving hard sort type to config
 * Fixed: outdated manuals

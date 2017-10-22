@@ -650,13 +650,17 @@ void MainWindow::showIOErrors(const QString &path, int count, const QStringList 
         QMessageBox::critical(0, S_ERROR, fatalError);
 }
 
+// Manage immediately applied but settings window managed options
 void MainWindow::updateConfig()
 {
+    // Table(s) alternating row colors
+    ui->tvLeft->setAlternatingRowColors(gd.useTableAlternateColors);
+    ui->tvRight->setAlternatingRowColors(gd.useTableAlternateColors);
     // Table(s) visible columns
     modLeft->updateVisibleColumns();
     if (modRight)
         modRight->updateVisibleColumns();
-    // TODO add here font changes and other immediately applied but settings window managed options
+    // TODO add here font changes, etc.
 }
 
 void MainWindow::updateRecent()

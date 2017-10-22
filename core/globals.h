@@ -152,9 +152,13 @@ class StandardTypes: public QHash<QString, QString> {
 
 extern
 struct GlobalConfig {
+    // Misc
     bool openLastFilesAtStartup;
+    bool useTableAlternateColors;
+    // Locale
     QString dateFormat, timeFormat;
     bool useSystemDateTimeFormat;
+    // Columns
     ContactColumnList columnNames;
     // Save
     enum VCFVersion {
