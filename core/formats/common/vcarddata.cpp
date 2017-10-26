@@ -26,9 +26,19 @@ VCardData::VCardData()
     useOriginalFileVersion = gd.useOriginalFileVersion;
     skipEncoding = false;
     skipDecoding = false;
-    forceShortType = false;
-    forceShortDate = false;
     formatVersion = GlobalConfig::VCF30;
+    _forceVersion = false;
+}
+
+void VCardData::forceVersion(GlobalConfig::VCFVersion version)
+{
+    _forceVersion = true;
+    formatVersion = version;
+}
+
+void VCardData::unforceVersion()
+{
+    _forceVersion = false;
 }
 
 bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append, QStringList& errors)
@@ -305,20 +315,34 @@ bool VCardData::exportRecords(QStringList &lines, const ContactList &list, QStri
 void VCardData::exportRecord(QStringList &lines, const ContactItem &item, QStringList& errors)
 {
     // Format version
-    formatVersion = gd.preferredVCFVersion;
-    if (useOriginalFileVersion && (item.originalFormat=="VCARD")) {
-        if (item.version=="2.1")
-            formatVersion = GlobalConfig::VCF21;
-        else if (item.version=="3.0")
-            formatVersion = GlobalConfig::VCF30;
-        // TODO VCF40
+    if (!_forceVersion) {
+        formatVersion = gd.preferredVCFVersion;
+        if (useOriginalFileVersion && (item.originalFormat=="VCARD")) {
+            if (item.version=="2.1")
+                formatVersion = GlobalConfig::VCF21;
+            else if (item.version=="3.0")
+                formatVersion = GlobalConfig::VCF30;
+            else
+                formatVersion = GlobalConfig::VCF40;
+        }
     }
     // Encoding/charSet prefix
     charSet = "UTF-8"; // TODO save original charset in ContactItem
     encoding = formatVersion==GlobalConfig::VCF21 ? "QUOTED-PRINTABLE" : "";
     // Header
     lines << "BEGIN:VCARD";
-    lines << QString("VERSION:") + (formatVersion==GlobalConfig::VCF21 ? "2.1" : "3.0");
+    QString sVersion;
+    switch (formatVersion) {
+    case GlobalConfig::VCF21:
+        sVersion = "2.1";
+        break;
+    case GlobalConfig::VCF30:
+        sVersion = "3.0";
+        break;
+    default:
+        sVersion = "4.0";
+    }
+    lines << QString("VERSION:") + sVersion;
     // Known tags
     if (!item.names.isEmpty()) {
         QString seps = "";
@@ -350,7 +374,7 @@ void VCardData::exportRecord(QStringList &lines, const ContactItem &item, QStrin
     foreach (const DateItem& ann, item.anniversaries)
         lines << QString("X-ANNIVERSARY:") + exportDate(ann);
     if (!item.groups.isEmpty()) {
-        if ((formatVersion>=GlobalConfig::VCF40) || forceShortType) // TODO dirty hack - either add yet another force*, or drop all force* and simply set vCard4.0
+        if (formatVersion>=GlobalConfig::VCF40)
             lines << QString("CATEGORIES:") + item.groups.join(";");
         else
             lines << QString("X-CATEGORIES:") + item.groups.join(";");
@@ -594,7 +618,7 @@ QString VCardData::encodeAll(const QString &tag, const QStringList *aTypes, bool
 
 QString VCardData::encodeTypes(const QStringList &aTypes, StandardTypes* st, int /*syncMLRef*/) const
 {
-    bool shortType = (formatVersion==GlobalConfig::VCF21) || forceShortType;
+    bool shortType = (formatVersion!=GlobalConfig::VCF30);
     QString separator = shortType ? ";" : ";TYPE=";
     QString typeStr = "";
     if (st!=0 && (gd.addXToNonStandardTypes || gd.replaceNLNSNames)) { // very rare case
@@ -633,7 +657,7 @@ QString VCardData::encodeTypes(const QStringList &aTypes, StandardTypes* st, int
 QString VCardData::exportDate(const DateItem &item) const
 {
     return
-        (formatVersion==GlobalConfig::VCF21 || forceShortDate) ?
+        (formatVersion!=GlobalConfig::VCF30) ?
                 item.toString(DateItem::ISOBasic) : item.toString(DateItem::ISOExtended);
 }
 

@@ -164,7 +164,7 @@ struct GlobalConfig {
     enum VCFVersion {
         VCF21,
         VCF30,
-        VCF40 // TODO currently not supported. Need add it to settings list and check all VCFVersion usages in projects
+        VCF40
     } preferredVCFVersion;
     bool useOriginalFileVersion;
     int defaultCountryRule; // for phone i18n during compare numbers (i.e. for Russia +7 = 8)

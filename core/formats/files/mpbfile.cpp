@@ -161,13 +161,13 @@ bool MPBFile::exportRecords(const QString &url, ContactList &list)
     // vCard data
     for (int i=0; i<list.count(); i++)
         if (list[i].version.isEmpty()) // some MPB files not contains vCard version number.
-            list[i].version = "3.0"; // TODO m.b. really it's 4.0 (CATEGORIES, LABEL=, plain-unicode text but short dates)
+            list[i].version = "4.0";
     useOriginalFileVersion = false;
     skipEncoding = true; // disable pre-encoding via VCardData::encodeValue
-    forceShortType = true; // disable TYPE= before phone/email types
-    forceShortDate = true; // force ISO basic date format
+    forceVersion(GlobalConfig::VCF40); // MPB vCard section is vCard 4.0 without VERSION tag
     if (!VCardData::exportRecords(content, list, _errors))
         return false;
+    unforceVersion();
     if (!openFile(url, QIODevice::WriteOnly))
         return false;
     _errors.clear();
