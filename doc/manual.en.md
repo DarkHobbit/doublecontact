@@ -8,7 +8,7 @@ DoubleContact UI is similar to two panel file manages, but second panel can be d
 Features:
 
 * saving and loading addressbooks files:
-  - VCF (vCard 2.1 and 3.0 supported, VCF files directory as single address book also supported);
+  - VCF (vCard 2.1, 3.0 and 4.0 supported, VCF files directory as single address book also supported);
   - CSV (profiles for some Explay models, OSMO PIM and generic profile for full contact information save);
   - MPB (MyPhoneExplorer backup);
   - NBF (modern Nokia backup file, **read only**);
