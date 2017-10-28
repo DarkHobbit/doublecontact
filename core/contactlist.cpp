@@ -202,7 +202,7 @@ void ContactItem::clear()
     phones.clear();
     emails.clear();
     birthday.clear();
-    anniversaries.clear();
+    anniversary.clear();
     sortString.clear();
     description.clear();
     photo.clear();
@@ -480,7 +480,7 @@ bool ContactItem::identicalTo(const ContactItem &pair)
     if (phones!=pair.phones) return false;
     if (emails!=pair.emails) return false;
     if (!(birthday==pair.birthday)) return false;
-    if (anniversaries!=pair.anniversaries) return false;
+    if (!(anniversary==pair.anniversary)) return false;
     if (sortString!=pair.sortString) return false;
     if (description!=pair.description) return false;
     if (!(photo==pair.photo)) return false;
@@ -842,8 +842,10 @@ QString DateItem::toString(DateFormat format) const
             s += " " + value.time().toString(gd.timeFormat);
             break;
         }
-        if (hasTimeZone && !gd.skipTimeFromDate) // TODO search Xamples with positive TZ hour and short form
-            s += QString("%1:%2").arg(zoneHour).arg(zoneMin);
+        if (hasTimeZone && !gd.skipTimeFromDate)
+            // TODO search Xamples with positive TZ hour and short form
+            //s += QString("%1:%2").arg(zoneHour).arg(zoneMin);
+            s += "Z"; // temp workaround
     }
     return s;
 }

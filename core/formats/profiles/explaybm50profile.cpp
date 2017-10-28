@@ -110,7 +110,7 @@ bool ExplayBM50Profile::exportRecord(QStringList &row, const ContactItem &item, 
     LOSS_DATA(S_SOME_PHONES, item.phones.count()>1);
     LOSS_DATA(S_EMAIL, !item.emails.isEmpty());
     LOSS_DATA(S_BDAY, !item.birthday.isEmpty());
-    LOSS_DATA(S_ANN, !item.anniversaries.isEmpty());
+    LOSS_DATA(S_ANN, !item.anniversary.isEmpty());
     LOSS_DATA(S_DESC, item.description);
     LOSS_DATA(S_PHOTO, !item.photo.isEmpty());
     LOSS_DATA(S_ORG, item.organization);

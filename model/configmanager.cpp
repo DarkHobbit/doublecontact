@@ -80,9 +80,10 @@ void ConfigManager::readConfig()
     QString sPrefVer = settings->value("Saving/PreferredVCardVersion", "2.1").toString();
     if (sPrefVer=="2.1")
         gd.preferredVCFVersion = GlobalConfig::VCF21;
-    else
+    else if (sPrefVer=="3.0")
         gd.preferredVCFVersion = GlobalConfig::VCF30;
-    // TODO 4.0
+    else
+        gd.preferredVCFVersion = GlobalConfig::VCF40;
     gd.useOriginalFileVersion = settings->value("Saving/UseOriginalFileVCardVersion", true).toBool();
     gd.defaultCountryRule = settings->value("Saving/DefaultCountryRule", 0).toInt();
     gd.skipTimeFromDate = settings->value("Saving/SkipTimeFromDate", false).toBool();
@@ -119,9 +120,8 @@ void ConfigManager::writeConfig()
     case GlobalConfig::VCF30:
         sPrefVer = "3.0";
         break;
-        // TODO 4.0
     default:
-        sPrefVer = "2.1";
+        sPrefVer = "4.0";
         break;
     }
     settings->setValue("Saving/PreferredVCardVersion", sPrefVer);

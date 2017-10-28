@@ -197,11 +197,8 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
             }
             else if (tag=="BDAY")
                 importDate(item.birthday, decodeValue(vValue[0], errors), errors);
-            else if (tag=="X-ANNIVERSARY") {
-                DateItem di;
-                importDate(di, decodeValue(vValue[0], errors), errors);
-                item.anniversaries.push_back(di);
-            }
+            else if ((tag=="ANNIVERSARY") || (tag=="X-ANNIVERSARY"))
+                importDate(item.anniversary, decodeValue(vValue[0], errors), errors);
             else if (tag=="PHOTO") {
                 if (typeVal.startsWith("URI", Qt::CaseInsensitive)) {
                     item.photo.pType = "URL";
@@ -371,8 +368,12 @@ void VCardData::exportRecord(QStringList &lines, const ContactItem &item, QStrin
     */
     if (!item.birthday.isEmpty())
         lines << QString("BDAY:") + exportDate(item.birthday);
-    foreach (const DateItem& ann, item.anniversaries)
-        lines << QString("X-ANNIVERSARY:") + exportDate(ann);
+    if (!item.anniversary.isEmpty()) {
+        if (formatVersion>=GlobalConfig::VCF40)
+            lines << QString("ANNIVERSARY:") + exportDate(item.anniversary);
+        else
+            lines << QString("X-ANNIVERSARY:") + exportDate(item.anniversary);
+    }
     if (!item.groups.isEmpty()) {
         if (formatVersion>=GlobalConfig::VCF40)
             lines << QString("CATEGORIES:") + item.groups.join(";");
@@ -408,6 +409,8 @@ void VCardData::exportRecord(QStringList &lines, const ContactItem &item, QStrin
     // Internet 2
     foreach (const Messenger& im, item.ims) {
         // Use IMPP only if vcard4 profile selected
+        // RFC 4770 defines IMPP for vcard3, but some devices with vcard3 don't know it
+        // TODO maybe add additional restrictions for Ancient Android 2, Soneric, iPhone, etc.
         if ((formatVersion>=GlobalConfig::VCF40))
             lines << QString("IMPP") + encodeTypes(im.types, &Messenger::standardTypes, im.syncMLRef)+":"+im.value;
         else {
@@ -481,34 +484,50 @@ void VCardData::importDate(DateItem &item, const QString &src, QStringList& erro
     int tPos = src.indexOf("T", 0, Qt::CaseInsensitive);
     item.hasTime = (tPos!=-1);
     if (item.hasTime) {
-        int sPos = src.mid(tPos+1).indexOf("-");
-        int zPos = src.mid(tPos+1).indexOf("Z", 0, Qt::CaseInsensitive);
-        item.hasTimeZone = (sPos!=-1) || (zPos!=-1);
-        if (sPos!=-1) { // 1987-09-27T08:30:00-06:00
-            item.value = QDateTime::fromString(
-                src.left(tPos+sPos+1), "yyyy-MM-ddTHH:mm:ss");
+        int sdPos = src.left(tPos).indexOf("-"); // - in long date format
+        int stPos = src.mid(tPos+1).indexOf("-"); // - in timezone
+        int zPos = src.mid(tPos+1).indexOf("Z", 0, Qt::CaseInsensitive); // timezone
+        item.hasTimeZone = (stPos!=-1) || (zPos!=-1);
+        if (stPos!=-1) { // 1987-09-27T08:30:00-06:00 or 19870927T083000-0600
+            if (sdPos!=-1)
+                item.value = QDateTime::fromString(
+                    src.left(tPos+stPos+1), "yyyy-MM-ddTHH:mm:ss");
+            else
+                item.value = QDateTime::fromString(
+                    src.left(tPos+stPos+1), "yyyyMMddTHHmmss");
             QString zone = src.mid(tPos+tPos+1);
             bool ok;
-            item.zoneHour = zone.left(zone.indexOf(":")).toShort(&ok);
+            item.zoneHour = zone.left(2).toShort(&ok);
             if (ok)
-                item.zoneMin = zone.right(zone.indexOf(":")).toShort(&ok);
+                item.zoneMin = zone.right(2).toShort(&ok);
             if (!ok)
                 errors << QObject::tr("Invalid timezone: ") + src;
         }
-        else if (zPos!=-1) { // 1953-10-15T23:10:00Z
-            item.value = QDateTime::fromString(
-                src.left(tPos+zPos+1), "yyyy-MM-ddTHH:mm:ss");
+        else if (zPos!=-1) { // 1953-10-15T23:10:00Z or 19531015T231000Z
+            if (sdPos!=-1)
+                item.value = QDateTime::fromString(
+                    src.left(tPos+zPos+1), "yyyy-MM-ddTHH:mm:ss");
+            else
+                item.value = QDateTime::fromString(
+                    src.left(tPos+zPos+1), "yyyyMMddTHHmmss");
             item.zoneHour = 0;
             item.zoneMin = 0;
         }
-        else
-            item.value = QDateTime::fromString(
-                src, "yyyy-MM-ddTHH:mm:ss");
+        else {
+            if (sdPos!=-1)
+                item.value = QDateTime::fromString(
+                    src, "yyyy-MM-ddTHH:mm:ss");
+            else
+                item.value = QDateTime::fromString(
+                    src, "yyyyMMddTHHmmss");
+        }
     }
-    else {
-        item.value = QDateTime::fromString(src, "yyyy-MM-dd");
-        if (!item.value.isValid())
-            // try non-standard format from some old Nokias
+    else { // without time
+        // TODO implement date without year: --0415 according vCard 4.0. Need flag or incorrect year
+        int sdPos = src.indexOf("-"); // - in long date format
+        if (sdPos!=-1)
+            item.value = QDateTime::fromString(src, "yyyy-MM-dd");
+        else
             item.value = QDateTime::fromString(src, "yyyyMMdd");
     }
     if (!item.value.isValid())

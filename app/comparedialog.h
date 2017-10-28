@@ -38,7 +38,7 @@ private:
     PhonesPair* pPhones;
     EmailsPair* pEmails;
     DateItemPair* pBDay;
-    DateItemListPair* pAnn;
+    DateItemPair* pAnn;
     StringPair *pDesc, *pSortString;
     PhotoPair* pPhoto;
     StringPair *pOrg, *pTitle;

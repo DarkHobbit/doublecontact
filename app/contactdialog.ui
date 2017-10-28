@@ -163,11 +163,6 @@
                <string>email</string>
               </property>
              </item>
-             <item>
-              <property name="text">
-               <string>anniversary</string>
-              </property>
-             </item>
             </widget>
            </item>
           </layout>
@@ -181,7 +176,7 @@
            <property name="title">
             <string/>
            </property>
-           <layout class="QHBoxLayout" name="horizontalLayout_3">
+           <layout class="QHBoxLayout" name="hlBirthday">
             <item>
              <widget class="QCheckBox" name="cbBirthday">
               <property name="text">
@@ -207,16 +202,39 @@
           </widget>
          </item>
          <item>
-          <widget class="QGroupBox" name="gbAnniversaries">
+          <widget class="QGroupBox" name="gbAnniversary">
            <property name="minimumSize">
             <size>
              <width>0</width>
-             <height>96</height>
+             <height>0</height>
             </size>
            </property>
            <property name="title">
-            <string>Anniversaries</string>
+            <string/>
            </property>
+           <layout class="QHBoxLayout" name="hlAnniversary">
+            <item>
+             <widget class="QCheckBox" name="cbAnniversary">
+              <property name="text">
+               <string>Anniversary</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QDateTimeEdit" name="dteAnniversary">
+              <property name="calendarPopup">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btnAnnDetails">
+              <property name="text">
+               <string>Details</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </widget>
          </item>
          <item>
@@ -337,8 +355,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>98</width>
-            <height>28</height>
+            <width>748</width>
+            <height>404</height>
            </rect>
           </property>
          </widget>

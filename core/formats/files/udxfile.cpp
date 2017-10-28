@@ -286,7 +286,7 @@ bool UDXFile::exportRecords(const QString &url, ContactList &list)
             _errors << QObject::tr("Warning: contact %1 has description, not implemented in UDX").arg(item.visibleName);
         if (!item.title.isEmpty())
             _errors << QObject::tr("Warning: contact %1 has job title, not implemented in UDX").arg(item.visibleName);
-        if (!item.anniversaries.isEmpty())
+        if (!item.anniversary.isEmpty())
             _errors << QObject::tr("Warning: contact %1 has anniversaries, not implemented in UDX").arg(item.visibleName);
         // Here place warning on all other udx-unsupported things
     }

@@ -88,7 +88,7 @@ bool GenericCSVProfile::prepareExport(const ContactList &list)
         checkTypeCombinations(c.emails, emailTypeCombinations);
         if (!c.birthday.isEmpty())
             hasBDay = true;
-        if (!c.anniversaries.isEmpty())
+        if (!c.anniversary.isEmpty())
             hasAnn = true;
         checkStr(c.sortString, hasSortString);
         checkStr(c.description, hasDesc);
@@ -143,8 +143,7 @@ bool GenericCSVProfile::exportRecord(QStringList &row, const ContactItem &item, 
     putTypeCombinations(row, item.phones, phoneTypeCombinations);
     putTypeCombinations(row, item.emails, emailTypeCombinations);
     putItem(row, item.birthday.toString(), hasBDay);
-    if (hasAnn)
-        row << item.anniversaries[0].toString();
+    putItem(row, item.anniversary.toString(), hasAnn);
     putItem(row, item.sortString, hasSortString);
     putItem(row, item.description, hasDesc);
     putItem(row, item.photo.url, hasPhotoUrl);

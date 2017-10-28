@@ -2,7 +2,8 @@ This file contains English and Russian (CP1251) issues. Sorry for this mixing, i
 You can contact me at pub@zvyozdochkin.ru.
 
 0.2:
-* vCard 4.0: warning if cardinality violated, restructure fields with cardinality * (NOTE, ANNIVERSARY)
+* vCard 4.0: warning if cardinality violated, restructure fields with cardinality * (NOTE, etc.)
+* implement date without year: --0415 according vCard 4.0. Need flag or incorrect year!
 * check 2.1, 3.0, 4.0 by wiki
 * remove SonyEricsson MPB warning (l.o.r.)
 * network export/import
