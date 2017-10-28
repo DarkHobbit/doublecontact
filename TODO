@@ -2,9 +2,8 @@ This file contains English and Russian (CP1251) issues. Sorry for this mixing, i
 You can contact me at pub@zvyozdochkin.ru.
 
 0.2:
-* vCard 4.0: warning if cardinality violated, restructure fields with cardinality * (NOTE, etc.)
 * implement date without year: --0415 according vCard 4.0. Need flag or incorrect year!
-* check 2.1, 3.0, 4.0 by wiki
+* vCard 4.0: new PHOTO format (MEDIATYPE=image/gif or data:image/jpeg;base64)
 * network export/import
 * verify OSMO csv save under windows & linux (commas)
 * settings - fonts
@@ -32,6 +31,7 @@ vCard 4.0 CATEGORIES requires , separator, but lg leon saves with ;
 * adb support
 * ldif support
 * duplicate search (and merging, probably make unified merging dialog with panels compare merging)
+* vCard 4.0: warning if cardinality violated, restructure fields with cardinality * (NOTE, etc.)
 * check all tags in all standard versions
 * set doxygen labels
 * add graphic editor call to menu in Photo button at contact dialog
