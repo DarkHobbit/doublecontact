@@ -873,10 +873,14 @@ void PostalAddress::clear()
 QString PostalAddress::toString(bool humanReadable) const
 {
     QString sep = humanReadable ? ", " : ";";
-    return offBox + sep + extended + sep + street
+    QString s = offBox + sep + extended + sep + street
             + (humanReadable ? " st." : "")
             + sep + city + sep + region
             + sep + postalCode + sep + country;
+    if (humanReadable)
+        while (s.startsWith(sep))
+            s.remove(0, sep.length());
+    return s;
     // TODO make localized output
 }
 

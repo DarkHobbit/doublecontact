@@ -5,7 +5,6 @@ You can contact me at pub@zvyozdochkin.ru.
 * vCard 4.0: warning if cardinality violated, restructure fields with cardinality * (NOTE, etc.)
 * implement date without year: --0415 according vCard 4.0. Need flag or incorrect year!
 * check 2.1, 3.0, 4.0 by wiki
-* remove SonyEricsson MPB warning (l.o.r.)
 * network export/import
 * verify OSMO csv save under windows & linux (commas)
 * settings - fonts
