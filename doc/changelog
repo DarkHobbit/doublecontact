@@ -31,6 +31,7 @@ Current
 * Initial vCard 4.0 support (not all tags are recognized)
 * More table columns for phones added: all phones, home phone, work phone, cell phone
 * Table rows by default use alternate colors (can be disabled in settings)
+* SonyEricsson MPB file open tested, warning removed (thanks to bodqhrohro_promo at l.o.r)
 * Timezone setting in hh:mm temporarily disabled (too many info in RFC)
 * Refactoring: multiple anniversaries removed from code according vCard 4.0 cardinality
 * Fixed: short datetime format reanding (BDAY, ANNIVERSARY)

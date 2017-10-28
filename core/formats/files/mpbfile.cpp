@@ -134,9 +134,6 @@ bool MPBFile::importRecords(const QString &url, ContactList &list, bool append)
         }
     } while (!stream.atEnd());
     closeFile();
-    // Warning on Sony Ericsson
-    if (list.extra.model.contains("Sony")||list.extra.model.contains("Eric")) // TODO remove, when test
-        _errors << "Program was tested only on Android MPB files, not SonyEricsson. Please, contact author";
     // Parse contact list
     if (content.isEmpty()) {
         // TODO maybe move this string to global for other formats
