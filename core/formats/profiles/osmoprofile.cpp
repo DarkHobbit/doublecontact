@@ -61,10 +61,11 @@ bool OsmoProfile::importRecord(const QStringList &row, ContactItem &item, QStrin
     item.nickName = value(row, "Nickname");
     if (present(row, "Tags"))
         item.unknownTags << TagValue("TAGS", value(row, "Tags"));
-    // TODO check on invalid date
-    item.birthday = QDateTime::fromString(value(row, "Birthday date"), "dd.mm.yyyy");
+    // TODO check on invalid dates
+    if (present(row, "Birthday date"))
+        item.birthday = QDateTime::fromString(value(row, "Birthday date"), "dd.mm.yyyy");
     if (present(row, "Name day date")) {
-        item.anniversaries << QDateTime::fromString(value(row, "Name day date"), "dd.mm.yyyy");
+        item.anniversary = QDateTime::fromString(value(row, "Name day date"), "dd.mm.yyyy");
         errors << QObject::tr("Name day loaded as anniversary, contact %1").arg(item.makeGenericName());
     }
     // Home address
@@ -183,8 +184,8 @@ bool OsmoProfile::exportRecord(QStringList &row, const ContactItem &item, QStrin
         row << item.birthday.value.toString("dd.MM.yyyy");
     else
         row << "";
-    if (!item.anniversaries.isEmpty()) {
-        row << item.anniversaries[0].value.toString("dd.MM.yyyy");
+    if (!item.anniversary.isEmpty()) {
+        row << item.anniversary.value.toString("dd.MM.yyyy");
         errors << QObject::tr("Anniversary saved as name day, contact %1").arg(item.visibleName);
     }
     else

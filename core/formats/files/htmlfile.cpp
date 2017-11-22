@@ -57,8 +57,7 @@ bool HTMLFile::exportRecords(const QString &url, ContactList &list)
         exportTypedItems(stream, item.emails, S_EMAIL);
         // Birthday, anniversary
         exportStringableItem(stream, item.birthday, S_BDAY);
-        if (!item.anniversaries.isEmpty()) // TODO simplify, if one ann. will (vCard 4.0)
-            exportStringableItem(stream, item.anniversaries[0], S_ANN);
+        exportStringableItem(stream, item.anniversary, S_ANN);
         exportString(stream, item.description, S_DESC);
         if (!item.photo.isEmpty())
             exportString(stream, " ", S_HAS_PHOTO); // space, not empty string!

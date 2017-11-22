@@ -45,7 +45,6 @@ ContactDialog::ContactDialog(QWidget *parent) :
     connect(ui->btnDelEmail1, SIGNAL(clicked()), this, SLOT(slotDelTriplet()));
     connect(ui->cbIMType1, SIGNAL(currentIndexChanged(const QString&)), this, SLOT(itemTypeChanged(const QString&)));
     connect(ui->btnDelIM1, SIGNAL(clicked()), this, SLOT(slotDelTriplet()));
-    layAnniversaries = new QGridLayout(ui->gbAnniversaries);
     // Photo editing
     menuPhotoEdit = new QMenu(this);
     ui->btnPhotoEdit->setMenu(menuPhotoEdit);
@@ -108,7 +107,7 @@ void ContactDialog::setData(const ContactItem& c, const ContactList& l)
     // Emails
     for (int i=0; i<c.emails.count(); i++)
         addEmail(c.emails[i]);
-    // Birthday and anniversaries
+    // Birthday
     ui->cbBirthday->setChecked(c.birthday.value.isValid());
     ui->dteBirthday->setEnabled(c.birthday.value.isValid());
     ui->btnBDayDetails->setEnabled(c.birthday.value.isValid());
@@ -116,9 +115,14 @@ void ContactDialog::setData(const ContactItem& c, const ContactList& l)
         ui->dteBirthday->setDateTime(c.birthday.value);
     birthdayDetails = c.birthday;
     DateDetailsDialog::setDateFormat(ui->dteBirthday, birthdayDetails.hasTime);
-    anniversaryDetails.clear();
-    for (int i=0; i<c.anniversaries.count(); i++)
-        addAnniversary(c.anniversaries[i]);
+    // Anniversary
+    ui->cbAnniversary->setChecked(c.anniversary.value.isValid());
+    ui->dteAnniversary->setEnabled(c.anniversary.value.isValid());
+    ui->btnAnnDetails->setEnabled(c.anniversary.value.isValid());
+    if (c.anniversary.value.isValid())
+        ui->dteAnniversary->setDateTime(c.anniversary.value);
+    anniversaryDetails = c.anniversary;
+    DateDetailsDialog::setDateFormat(ui->dteAnniversary, anniversaryDetails.hasTime);
     // Photo
     photo = c.photo;
     showPhoto(c.photo, ui->lbPhotoContent);
@@ -186,14 +190,11 @@ void ContactDialog::getData(ContactItem& c, ContactList& l)
         readTriplet("Email", i+1, em, Email::standardTypes);
         c.emails << em;
     }
-    // Birthday and anniversaries
+    // Birthday and anniversary
     c.birthday = birthdayDetails;
     c.birthday.value = (ui->cbBirthday->isChecked()) ? ui->dteBirthday->dateTime() : QDateTime();
-    for (int i=0; i<anniversaryCount; i++) {
-        DateItem di;
-        readAnniversary(i+1, di);
-        c.anniversaries.push_back(di);
-    }
+    c.anniversary = anniversaryDetails;
+    c.anniversary.value = (ui->cbAnniversary->isChecked()) ? ui->dteAnniversary->dateTime() : QDateTime();
     // Photo
     c.photo = photo;
     // Addresses
@@ -310,39 +311,6 @@ void ContactDialog::addEmail(const Email &em)
     if (emailCount>MIN_VISIBLE_TRIPLETS)
         fillEmailTypes(cbT);
     addTypeList(emailCount, "Email", em.types, Email::standardTypes);
-}
-
-void ContactDialog::addAnniversary(const DateItem &ann)
-{
-    if (anniversaryCount>=MAX_ANN)
-        return;
-    anniversaryDetails.push_back(ann);
-    // Value
-    QDateTimeEdit* dte = new QDateTimeEdit(this);
-    dte->setObjectName(QString("dteAnn%1Date").arg(anniversaryCount+1));
-    dte->setDateTime(ann.value);
-    DateDetailsDialog::setDateFormat(dte, ann.hasTime);
-    dte->setCalendarPopup(true);
-    layAnniversaries->addWidget(dte, anniversaryCount, 0);
-    // Details button
-    QPushButton* btnDet = new QPushButton(this);
-    btnDet->setObjectName(QString("btnAnn%1Details").arg(anniversaryCount+1));
-    btnDet->setText(ui->btnBDayDetails->text());
-    connect(btnDet, SIGNAL(clicked()), this, SLOT(slotAnnDetails()));
-    layAnniversaries->addWidget(btnDet, anniversaryCount, 1);
-    // Delete button
-    QToolButton* btnD = addDelButton(anniversaryCount, "Ann", SLOT(slotDelAnniversary()));
-    layAnniversaries->addWidget(btnD, anniversaryCount, 2);
-    anniversaryCount++;
-}
-
-void ContactDialog::readAnniversary(int num, DateItem &ann)
-{
-    QDateTimeEdit* editor = findChild<QDateTimeEdit*>
-        (QString("dteAnn%1Date").arg(num));
-    if (!editor) return;
-    anniversaryDetails[num-1].value = editor->dateTime();
-    ann = anniversaryDetails[num-1];
 }
 
 void ContactDialog::addAddress(const PostalAddress &addr)
@@ -631,8 +599,6 @@ void ContactDialog::on_btnAdd_clicked()
         addPhone(Phone());
     else if (subj==tr("email"))
         addEmail(Email());
-    else if (subj==tr("anniversary"))
-        addAnniversary(DateItem());
 }
 
 void ContactDialog::itemTypeChanged(const QString &value)
@@ -660,18 +626,6 @@ void ContactDialog::on_cbBirthday_toggled(bool checked)
 void ContactDialog::on_btnBDayDetails_clicked()
 {
     editDateDetails(ui->dteBirthday, birthdayDetails);
-}
-
-void ContactDialog::slotAnnDetails()
-{
-    QString oName = sender()->objectName();
-    oName.remove("btnAnn");
-    oName.remove("Details");
-    int oNumber = oName.toInt();
-    QDateTimeEdit* editor = findChild<QDateTimeEdit*>
-        (QString("dteAnn%1Date").arg(oNumber));
-    if (editor)
-        editDateDetails(editor, anniversaryDetails[oNumber-1]);
 }
 
 void ContactDialog::slotDelAnniversary()
@@ -827,4 +781,15 @@ void ContactDialog::on_btnExcludeFromGroup_clicked()
         delete item;
     }
     ui->lwAvailableGroups->sortItems();
+}
+
+void ContactDialog::on_btnAnnDetails_clicked()
+{
+    editDateDetails(ui->dteAnniversary, anniversaryDetails);
+}
+
+void ContactDialog::on_cbAnniversary_toggled(bool checked)
+{
+    ui->dteAnniversary->setEnabled(checked);
+    ui->btnAnnDetails->setEnabled(checked);
 }

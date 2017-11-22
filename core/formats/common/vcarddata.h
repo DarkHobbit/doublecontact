@@ -20,15 +20,18 @@ class VCardData
 {
 public:
     VCardData();
+    void forceVersion(GlobalConfig::VCFVersion version);
+    void unforceVersion();
     bool importRecords(QStringList& lines, ContactList& list, bool append, QStringList& errors);
     bool exportRecords(QStringList& lines, const ContactList& list, QStringList& errors);
     void exportRecord(QStringList& lines, const ContactItem& item, QStringList& errors);
 protected:
-    bool useOriginalFileVersion, skipEncoding, skipDecoding, forceShortType, forceShortDate;
+    bool useOriginalFileVersion, skipEncoding, skipDecoding;
 private:
     QString encoding;
     QString charSet;
     GlobalConfig::VCFVersion formatVersion;
+    bool _forceVersion;
     QString decodeValue(const QString& src, QStringList& errors) const;
     void importDate(DateItem& item, const QString& src, QStringList& errors) const;
     void importAddress(PostalAddress& item, const QStringList& aTypes, const QStringList& values, QStringList& errors) const;

@@ -63,22 +63,22 @@
         <translation type="obsolete">Повне ім&apos;я</translation>
     </message>
     <message>
-        <location filename="../app/comparedialog.cpp" line="69"/>
+        <location filename="../app/comparedialog.cpp" line="67"/>
         <source>Names</source>
         <translation>Ім&apos;я</translation>
     </message>
     <message>
-        <location filename="../app/comparedialog.cpp" line="70"/>
+        <location filename="../app/comparedialog.cpp" line="68"/>
         <source>Phones</source>
         <translation>Телефони</translation>
     </message>
     <message>
-        <location filename="../app/comparedialog.cpp" line="71"/>
+        <location filename="../app/comparedialog.cpp" line="69"/>
         <source>Emails</source>
         <translation>Електронна пошта</translation>
     </message>
     <message>
-        <location filename="../app/comparedialog.cpp" line="79"/>
+        <location filename="../app/comparedialog.cpp" line="77"/>
         <source>Addresses</source>
         <translation>Адреси</translation>
     </message>
@@ -87,7 +87,7 @@
         <translation type="obsolete">День народження</translation>
     </message>
     <message>
-        <location filename="../app/comparedialog.cpp" line="73"/>
+        <location filename="../app/comparedialog.cpp" line="71"/>
         <source>Anniversaries</source>
         <translation>Річниці</translation>
     </message>
@@ -96,7 +96,7 @@
         <translation type="obsolete">Опис</translation>
     </message>
     <message>
-        <location filename="../app/comparedialog.cpp" line="75"/>
+        <location filename="../app/comparedialog.cpp" line="73"/>
         <source>Sort string</source>
         <translation>Впорядкувати за</translation>
     </message>
@@ -175,93 +175,96 @@
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="145"/>
-        <location filename="../app/contactdialog.ui" line="350"/>
-        <location filename="../app/contactdialog.ui" line="448"/>
+        <location filename="../app/contactdialog.ui" line="368"/>
+        <location filename="../app/contactdialog.ui" line="466"/>
         <source>Add...</source>
         <translation>Додати...</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="153"/>
-        <location filename="../app/contactdialog.cpp" line="628"/>
+        <location filename="../app/contactdialog.cpp" line="596"/>
         <source>name</source>
         <translation>Ім&apos;я</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="158"/>
-        <location filename="../app/contactdialog.cpp" line="630"/>
+        <location filename="../app/contactdialog.cpp" line="598"/>
         <source>phone</source>
         <translation>Телефон</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="163"/>
-        <location filename="../app/contactdialog.cpp" line="632"/>
+        <location filename="../app/contactdialog.cpp" line="600"/>
         <source>email</source>
         <translation>Електронну пошту</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="168"/>
-        <location filename="../app/contactdialog.cpp" line="634"/>
-        <source>anniversary</source>
-        <translation>Річницю</translation>
+        <location filename="../app/contactdialog.ui" line="219"/>
+        <source>Anniversary</source>
+        <translation type="unfinished">Річниця</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="188"/>
+        <source>anniversary</source>
+        <translation type="obsolete">Річницю</translation>
+    </message>
+    <message>
+        <location filename="../app/contactdialog.ui" line="183"/>
         <source>Birthday</source>
         <translation>День народження</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="202"/>
+        <location filename="../app/contactdialog.ui" line="197"/>
+        <location filename="../app/contactdialog.ui" line="233"/>
         <source>Details</source>
         <translation>Детальніше</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="218"/>
         <source>Anniversaries</source>
-        <translation>Річниці</translation>
+        <translation type="obsolete">Річниці</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="233"/>
-        <location filename="../app/contactdialog.ui" line="291"/>
+        <location filename="../app/contactdialog.ui" line="251"/>
+        <location filename="../app/contactdialog.ui" line="309"/>
         <source>Photo</source>
         <translation>Фотографія</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="256"/>
+        <location filename="../app/contactdialog.ui" line="274"/>
         <source>Description</source>
         <translation>Опис</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="303"/>
+        <location filename="../app/contactdialog.ui" line="321"/>
         <source>Addresses</source>
         <translation>Адреса</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="311"/>
+        <location filename="../app/contactdialog.ui" line="329"/>
         <source>Organization</source>
         <translation>Організація</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="321"/>
+        <location filename="../app/contactdialog.ui" line="339"/>
         <source>Job Title</source>
         <translation>Посада</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="409"/>
+        <location filename="../app/contactdialog.ui" line="427"/>
         <source>Instant messaging</source>
         <translation>Миттєві повідомлення</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="458"/>
+        <location filename="../app/contactdialog.ui" line="476"/>
         <source>Groups</source>
         <translation>Групи</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="464"/>
+        <location filename="../app/contactdialog.ui" line="482"/>
         <source>Contact in groups</source>
         <translation>Контакт в групах</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="471"/>
+        <location filename="../app/contactdialog.ui" line="489"/>
         <source>Available groups</source>
         <translation>Доступні групи</translation>
     </message>
@@ -278,12 +281,12 @@
         <translation type="obsolete">&lt;&gt;</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="358"/>
+        <location filename="../app/contactdialog.ui" line="376"/>
         <source>Internet</source>
         <translation>Інтернет</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="366"/>
+        <location filename="../app/contactdialog.ui" line="384"/>
         <source>NickName</source>
         <translation>Псевдонім</translation>
     </message>
@@ -292,7 +295,7 @@
         <translation type="obsolete">Jabber</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="376"/>
+        <location filename="../app/contactdialog.ui" line="394"/>
         <source>URL</source>
         <translation>Сайт</translation>
     </message>
@@ -305,94 +308,94 @@
         <translation type="obsolete">Skype</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="511"/>
+        <location filename="../app/contactdialog.ui" line="529"/>
         <source>Other</source>
         <translation>Інше</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="519"/>
+        <location filename="../app/contactdialog.ui" line="537"/>
         <source>Format version:</source>
         <translation>Версія формату:</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="526"/>
+        <location filename="../app/contactdialog.ui" line="544"/>
         <source>ID</source>
         <translation>ИД</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="547"/>
+        <location filename="../app/contactdialog.ui" line="565"/>
         <source>Original format:</source>
         <translation>Джерельний формат:</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="564"/>
+        <location filename="../app/contactdialog.ui" line="582"/>
         <source>Sort string</source>
         <translation>Впорядк. як</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="573"/>
+        <location filename="../app/contactdialog.ui" line="591"/>
         <source>Other contact attributes</source>
         <translation>Інші атрибути контакту</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="587"/>
-        <location filename="../app/contactdialog.ui" line="618"/>
+        <location filename="../app/contactdialog.ui" line="605"/>
+        <location filename="../app/contactdialog.ui" line="636"/>
         <source>Tag</source>
         <translation>Теґ</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="592"/>
-        <location filename="../app/contactdialog.ui" line="623"/>
+        <location filename="../app/contactdialog.ui" line="610"/>
+        <location filename="../app/contactdialog.ui" line="641"/>
         <source>Value</source>
         <translation>Значення</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="601"/>
+        <location filename="../app/contactdialog.ui" line="619"/>
         <source>Problems</source>
         <translation>Проблеми</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="607"/>
+        <location filename="../app/contactdialog.ui" line="625"/>
         <source>Unknown contact attributes</source>
         <translation>Невідомі атрибути контакту</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="92"/>
+        <location filename="../app/contactdialog.cpp" line="91"/>
         <source>Add contact</source>
         <translation>Додати контакт</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="100"/>
+        <location filename="../app/contactdialog.cpp" line="99"/>
         <source>Edit contact</source>
         <translation>Редагувати контакт</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="644"/>
+        <location filename="../app/contactdialog.cpp" line="610"/>
         <source>Phone type</source>
         <translation>Тип телефону</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="646"/>
+        <location filename="../app/contactdialog.cpp" line="612"/>
         <source>Email type</source>
         <translation>Тип електронної пошти</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="648"/>
+        <location filename="../app/contactdialog.cpp" line="614"/>
         <source>Address type</source>
         <translation>Тип адреси</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="650"/>
+        <location filename="../app/contactdialog.cpp" line="616"/>
         <source>IM type</source>
         <translation>Тип IM</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="735"/>
+        <location filename="../app/contactdialog.cpp" line="689"/>
         <source>Open image file</source>
         <translation>Відкрити файл зображення</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="767"/>
+        <location filename="../app/contactdialog.cpp" line="721"/>
         <source>Save image file</source>
         <translation>Зберегти файл зображення</translation>
     </message>
@@ -1010,57 +1013,57 @@ Save changes?</source>
 Зберегти?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="690"/>
+        <location filename="../app/mainwindow.cpp" line="694"/>
         <source>Restart program to apply language change</source>
         <translation>Мову буде змінено після перезавантаження додатку</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="733"/>
+        <location filename="../app/mainwindow.cpp" line="737"/>
         <source>Two panels and compare mode needed for this operation</source>
         <translation>Спершу увімкніть дві панелі та режим порівняння</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="748"/>
+        <location filename="../app/mainwindow.cpp" line="752"/>
         <source>Left item</source>
         <translation>Лівий контакт</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="748"/>
+        <location filename="../app/mainwindow.cpp" line="752"/>
         <source>Right item</source>
         <translation>Правий контакт</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="774"/>
+        <location filename="../app/mainwindow.cpp" line="778"/>
         <source>Strongly two records on current panel must be selected for this operation</source>
         <translation>Спочатку треба вибрати рівно 2 записи на поточній панелі</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="780"/>
+        <location filename="../app/mainwindow.cpp" line="784"/>
         <source>Item 1</source>
         <translation>Контакт 1</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="780"/>
+        <location filename="../app/mainwindow.cpp" line="784"/>
         <source>Item 2</source>
         <translation>Контакт 2</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="847"/>
+        <location filename="../app/mainwindow.cpp" line="851"/>
         <source>Operation requires show two panels</source>
         <translation>Необхідно увімкнути дві панелі</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="880"/>
+        <location filename="../app/mainwindow.cpp" line="884"/>
         <source>Statitics</source>
         <translation>Статистика</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="887"/>
+        <location filename="../app/mainwindow.cpp" line="891"/>
         <source>Report file</source>
         <translation>Файл звіту</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="921"/>
+        <location filename="../app/mainwindow.cpp" line="925"/>
         <source>Column sorting is switched. Hard sort results are not visible.
 Are you want switch column sorting off?</source>
         <translation type="unfinished"></translation>
@@ -1101,7 +1104,7 @@ Are you want switch column sorting off?</source>
     <name>QObject</name>
     <message>
         <location filename="../core/contactlist.cpp" line="106"/>
-        <location filename="../core/contactlist.cpp" line="895"/>
+        <location filename="../core/contactlist.cpp" line="924"/>
         <source>Home</source>
         <translation>Домашній</translation>
     </message>
@@ -1112,7 +1115,7 @@ Are you want switch column sorting off?</source>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="108"/>
-        <location filename="../core/contactlist.cpp" line="896"/>
+        <location filename="../core/contactlist.cpp" line="925"/>
         <source>Work</source>
         <translation>Службовий</translation>
     </message>
@@ -1120,7 +1123,7 @@ Are you want switch column sorting off?</source>
         <location filename="../core/contactlist.cpp" line="109"/>
         <location filename="../core/contactlist.cpp" line="158"/>
         <location filename="../core/contactlist.cpp" line="193"/>
-        <location filename="../core/contactlist.cpp" line="897"/>
+        <location filename="../core/contactlist.cpp" line="926"/>
         <source>Preferable</source>
         <translation>Переважний</translation>
     </message>
@@ -1185,12 +1188,12 @@ Are you want switch column sorting off?</source>
         <translation>X.400</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="373"/>
+        <location filename="../core/contactlist.cpp" line="400"/>
         <source>Strange empty contact</source>
         <translation>Дивний порожній контакт</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="752"/>
+        <location filename="../core/contactlist.cpp" line="779"/>
         <source>%1 records
 %2 phones
 %3 emails
@@ -1211,42 +1214,42 @@ SMS: %7
 %9 %10</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="898"/>
+        <location filename="../core/contactlist.cpp" line="927"/>
         <source>Domestic</source>
         <translation>Внутрішній</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="899"/>
+        <location filename="../core/contactlist.cpp" line="928"/>
         <source>International</source>
         <translation>Міжнародний</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="900"/>
+        <location filename="../core/contactlist.cpp" line="929"/>
         <source>Postal</source>
         <translation>Поштовий</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="901"/>
+        <location filename="../core/contactlist.cpp" line="930"/>
         <source>Parcel</source>
         <translation>Для посилок</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="62"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="72"/>
         <source>Unclosed record before line %1</source>
         <translation>Незавершений запис перед рядком %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="131"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="141"/>
         <source>Unexpected TYPE appearance at line %1: tag %2</source>
         <translation>Несподіваний TYPE в рядку %1: теґ %2</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="159"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="169"/>
         <source>Missing phone type at line %1: %2%3</source>
         <translation>Телефон без типу в рядку %1: %2%3</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="170"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="180"/>
         <source>Non-standard phone type at line %1: %2%3</source>
         <translation>Нестандартний тип телефону в рядку %1: %2%3</translation>
     </message>
@@ -1255,12 +1258,12 @@ SMS: %7
         <translation type="obsolete">Нестандартний тип електронної пошти в рядку %1: %2%3</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="203"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="210"/>
         <source>Unsupported photo type at line %1: %2%3</source>
         <translation>Не підтримується тип фотографії в рядку %1: %2%3</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="214"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="221"/>
         <source>Unknown encoding type at line %1: %2%3</source>
         <translation>Невідоме кодування в рядку %1: %2%3</translation>
     </message>
@@ -1269,33 +1272,33 @@ SMS: %7
         <translation type="obsolete">Невідомий тип адреси в рядку %1: %2%3</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="286"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="293"/>
         <source>Last section not closed</source>
         <translation>Остання секція не закрита</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="293"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="300"/>
         <location filename="../core/formats/files/udxfile.cpp" line="164"/>
         <source>%1 unknown tags found</source>
         <translation>Невідомих теґів: %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="426"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="453"/>
         <source>Unknown charset: </source>
         <translation>Невідомий набір символів: </translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="449"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="476"/>
         <source>Unknown encoding: </source>
         <translation>Невідоме кодування: </translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="472"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="504"/>
         <source>Invalid timezone: </source>
         <translation>Неправильний часовий пояс: </translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="491"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="534"/>
         <source>Invalid datetime: </source>
         <translation>Неправильна дата/час: </translation>
     </message>
@@ -1418,308 +1421,328 @@ line %3, col %4
 %1</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="49"/>
+        <location filename="../core/globals.h" line="53"/>
         <source>Error</source>
         <translation>Помилка</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="50"/>
+        <location filename="../core/globals.h" line="54"/>
         <source>Warning</source>
         <translation>Увага</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="51"/>
+        <location filename="../core/globals.h" line="55"/>
         <source>Confirmation</source>
         <translation>Підтвердження</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="52"/>
+        <location filename="../core/globals.h" line="56"/>
         <source>Information</source>
         <translation>Інформація</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="54"/>
+        <location filename="../core/globals.h" line="58"/>
         <source>Address book</source>
         <translation>Адресна книга</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="55"/>
+        <location filename="../core/globals.h" line="59"/>
         <source>New contact list</source>
         <translation>Новий перелік контактів</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="115"/>
+        <location filename="../core/globals.h" line="123"/>
         <source>This format is read only</source>
         <translation>Цей формат підтримується лише в режимі читання</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="57"/>
+        <location filename="../core/globals.h" line="61"/>
         <source>Select country rule</source>
         <translation>Оберіть правило для країни</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="56"/>
+        <location filename="../core/globals.h" line="60"/>
         <source>Group name</source>
         <translation>Ім&apos;я групи</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="58"/>
+        <location filename="../core/globals.h" line="62"/>
         <source>Select CSV profile</source>
         <translation>Оберіть CSV профіль</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="59"/>
+        <location filename="../core/globals.h" line="63"/>
         <source>Generic profile</source>
         <translation>Загальний профіль</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="61"/>
+        <location filename="../core/globals.h" line="65"/>
         <source>mixed...</source>
         <translation type="unfinished">Складений...</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="63"/>
+        <location filename="../core/globals.h" line="67"/>
         <source>Firstname</source>
         <translation>Ім&apos;я</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="64"/>
+        <location filename="../core/globals.h" line="68"/>
         <source>Lastname</source>
         <translation>Прізвище</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="65"/>
+        <location filename="../core/globals.h" line="69"/>
         <source>Middlename</source>
         <translation>По батькові</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="66"/>
+        <location filename="../core/globals.h" line="70"/>
         <source>Prefixes</source>
         <translation>Префікси</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="67"/>
+        <location filename="../core/globals.h" line="71"/>
         <source>Suffixes</source>
         <translation>Суфікси</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="69"/>
+        <location filename="../core/globals.h" line="73"/>
         <source>Full name</source>
         <translation>Повне ім&apos;я</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="70"/>
+        <location filename="../core/globals.h" line="74"/>
         <source>Generic name</source>
         <translation>Універсальне ім&apos;я</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="71"/>
+        <location filename="../core/globals.h" line="75"/>
         <source>Description</source>
         <translation>Опис</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="72"/>
+        <location filename="../core/globals.h" line="76"/>
         <source>Phone</source>
         <translation>Телефон</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="73"/>
+        <location filename="../core/globals.h" line="77"/>
+        <source>All phones</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/globals.h" line="78"/>
+        <source>Home phone</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/globals.h" line="79"/>
+        <source>Work phone</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/globals.h" line="80"/>
+        <source>Cell phone</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/globals.h" line="81"/>
         <source>Email</source>
         <translation>Електронна пошта</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="74"/>
+        <location filename="../core/globals.h" line="82"/>
         <source>Birthday</source>
         <translation>День народження</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="75"/>
+        <location filename="../core/globals.h" line="83"/>
         <source>Anniversary</source>
         <translation>Річниця</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="76"/>
+        <location filename="../core/globals.h" line="84"/>
         <source>Photo</source>
         <translation>Фотографія</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="77"/>
+        <location filename="../core/globals.h" line="85"/>
         <source>Job title</source>
         <translation>Посада</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="78"/>
+        <location filename="../core/globals.h" line="86"/>
         <source>Organization</source>
         <translation>Організація</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="79"/>
+        <location filename="../core/globals.h" line="87"/>
         <source>Address</source>
         <translation>Адреса</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="80"/>
+        <location filename="../core/globals.h" line="88"/>
         <source>NickName</source>
         <translation>Псевдонім</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="81"/>
+        <location filename="../core/globals.h" line="89"/>
         <source>URL</source>
         <translation>Сайт</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="83"/>
+        <location filename="../core/globals.h" line="91"/>
         <source>Jabber</source>
         <translation>Jabber</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="84"/>
+        <location filename="../core/globals.h" line="92"/>
         <source>ICQ</source>
         <translation>ICQ</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="85"/>
+        <location filename="../core/globals.h" line="93"/>
         <source>Skype</source>
         <translation>Skype</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="86"/>
+        <location filename="../core/globals.h" line="94"/>
         <source>Group</source>
         <translation>Група</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="88"/>
+        <location filename="../core/globals.h" line="96"/>
         <source>Has phone</source>
         <translation>Має телефон</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="89"/>
+        <location filename="../core/globals.h" line="97"/>
         <source>Has email</source>
         <translation>Має електронну пошту</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="90"/>
+        <location filename="../core/globals.h" line="98"/>
         <source>Has birthday</source>
         <translation>Має день народження</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="91"/>
+        <location filename="../core/globals.h" line="99"/>
         <source>Has photo</source>
         <translation>Має фото</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="92"/>
+        <location filename="../core/globals.h" line="100"/>
         <source>Some phones</source>
         <translation>Декілька телефонів</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="93"/>
+        <location filename="../core/globals.h" line="101"/>
         <source>Some emails</source>
         <translation>Декілька скриньок</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="95"/>
+        <location filename="../core/globals.h" line="103"/>
         <source>P.o. box</source>
         <translation>Поштова скринька</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="96"/>
+        <location filename="../core/globals.h" line="104"/>
         <source>Ext.addr.</source>
         <translation>Розшир. адреса</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="97"/>
+        <location filename="../core/globals.h" line="105"/>
         <source>Street</source>
         <translation>Вулиця</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="98"/>
+        <location filename="../core/globals.h" line="106"/>
         <source>City/Locality</source>
         <translation>Населений пункт</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="99"/>
+        <location filename="../core/globals.h" line="107"/>
         <source>Region</source>
         <translation>Регіон</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="100"/>
+        <location filename="../core/globals.h" line="108"/>
         <source>Postal code</source>
         <translation>Поштовий індекс</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="101"/>
+        <location filename="../core/globals.h" line="109"/>
         <source>Country</source>
         <translation>Країна</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="103"/>
+        <location filename="../core/globals.h" line="111"/>
         <source>[Unknown photo format]</source>
         <translation>[Невідомий формат фотографії]</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="104"/>
+        <location filename="../core/globals.h" line="112"/>
         <source>Load image</source>
         <translation>Завантажити зображення</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="105"/>
+        <location filename="../core/globals.h" line="113"/>
         <source>Save image</source>
         <translation>Зберегти зображення</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="106"/>
+        <location filename="../core/globals.h" line="114"/>
         <source>Set URL</source>
         <translation>Встановити сайт</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="107"/>
+        <location filename="../core/globals.h" line="115"/>
         <source>Remove photo</source>
         <translation>Видалити фотографію</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="109"/>
+        <location filename="../core/globals.h" line="117"/>
         <source>All supported files (%1)</source>
         <translation>Всі що підтримуються (%1)</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="110"/>
+        <location filename="../core/globals.h" line="118"/>
         <source>All files (*.*)</source>
         <translation>Всі файли (*.*)</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="112"/>
+        <location filename="../core/globals.h" line="120"/>
         <source>Can&apos;t read file
 %1</source>
         <translation>Не можу прочитати файл
 %1</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="113"/>
+        <location filename="../core/globals.h" line="121"/>
         <source>Can&apos;t write file
 %1</source>
         <translation>Не можу записати файл
 %1</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="114"/>
+        <location filename="../core/globals.h" line="122"/>
         <source>Record not selected</source>
         <translation>Запис не обрано</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="117"/>
+        <location filename="../core/globals.h" line="125"/>
         <source>Warning: contact %1 has %2, not supported in this format.
 Data will be lost</source>
         <translation>Попередження: контакт %1 містить %2, що не підтримується в даному форматі.
 Дані будуть втрачені</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="119"/>
+        <location filename="../core/globals.h" line="127"/>
         <source>%1 %2 will be lost at contact %3</source>
         <translation>%1 %2 буде втрачено для контакту %3</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="120"/>
+        <location filename="../core/globals.h" line="128"/>
         <source>Are You really want to delete selected items?</source>
         <translation>Ви дійсно бажаєте видалити обрані записи?</translation>
     </message>
@@ -1808,22 +1831,22 @@ Data will be lost</source>
         <translation>Немає</translation>
     </message>
     <message>
-        <location filename="../core/formats/profiles/osmoprofile.cpp" line="68"/>
+        <location filename="../core/formats/profiles/osmoprofile.cpp" line="69"/>
         <source>Name day loaded as anniversary, contact %1</source>
         <translation>Іменини завантажені як річниця, контакт %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/profiles/osmoprofile.cpp" line="88"/>
+        <location filename="../core/formats/profiles/osmoprofile.cpp" line="89"/>
         <source>Department loaded as Job title, contact %1</source>
         <translation>Підрозділ завантажено як посада, контакт %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/profiles/osmoprofile.cpp" line="188"/>
+        <location filename="../core/formats/profiles/osmoprofile.cpp" line="189"/>
         <source>Anniversary saved as name day, contact %1</source>
         <translation>Річниця збережена як іменини, контакт %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/profiles/osmoprofile.cpp" line="207"/>
+        <location filename="../core/formats/profiles/osmoprofile.cpp" line="208"/>
         <source>Job title saved as Department, contact %1</source>
         <translation>Посада збережена як підрозділ, контакт %1</translation>
     </message>
@@ -1943,92 +1966,102 @@ Data will be lost</source>
         <translation>Відкривати останній файл під час запуску</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="92"/>
+        <location filename="../app/settingsdialog.ui" line="78"/>
+        <source>Use alternate row colors in table</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/settingsdialog.ui" line="99"/>
         <source>Columns</source>
         <translation>Стовпчики</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="98"/>
+        <location filename="../app/settingsdialog.ui" line="105"/>
         <source>Visible</source>
         <translation>Видимі</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="105"/>
+        <location filename="../app/settingsdialog.ui" line="112"/>
         <source>Available</source>
         <translation>Доступні</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="159"/>
+        <location filename="../app/settingsdialog.ui" line="166"/>
         <source>Saving</source>
         <translation>Збереження</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="167"/>
+        <location filename="../app/settingsdialog.ui" line="174"/>
         <source>Preferred vCard version</source>
         <translation>Переважна версія vCard</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="175"/>
+        <location filename="../app/settingsdialog.ui" line="182"/>
         <source>2.1</source>
         <translation>2.1</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="180"/>
+        <location filename="../app/settingsdialog.ui" line="187"/>
         <source>3.0</source>
         <translation>3.0</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="190"/>
+        <location filename="../app/settingsdialog.ui" line="192"/>
+        <source>4.0</source>
+        <translation type="unfinished">4.0</translation>
+    </message>
+    <message>
+        <location filename="../app/settingsdialog.ui" line="202"/>
         <source>Use original file version (if present)</source>
         <translation>Брати версію з джерельного файлу (якщо є)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="199"/>
+        <location filename="../app/settingsdialog.ui" line="211"/>
         <source>Default country</source>
         <translation>Типова країна</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="211"/>
+        <location filename="../app/settingsdialog.ui" line="223"/>
         <source>(for phone number internationalization)</source>
         <translation>(для інтернаціоналізації телефонних номерів)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="218"/>
+        <location filename="../app/settingsdialog.ui" line="230"/>
         <source>Skip time from birthday and anniversaries</source>
         <translation>Вилучати час з днів народжень та річниць</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="225"/>
+        <location filename="../app/settingsdialog.ui" line="237"/>
         <source>Non-standard phone/email types</source>
         <translation>Нестандартні типи телефонів/пошти</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="231"/>
+        <location filename="../app/settingsdialog.ui" line="243"/>
         <source>Add X- to type names</source>
         <translation>Додавати X- до назв типів</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="238"/>
+        <location filename="../app/settingsdialog.ui" line="250"/>
         <source>Replace non-latin type named</source>
         <translation>Замінювати не латинські назви типів</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="262"/>
+        <location filename="../app/settingsdialog.ui" line="274"/>
         <source>Loading</source>
         <translation>Завантаження</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="270"/>
+        <location filename="../app/settingsdialog.ui" line="282"/>
         <source>Default type if empty</source>
         <translation>Тип телефону, якщо порожній</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="282"/>
+        <location filename="../app/settingsdialog.ui" line="294"/>
         <source>(many phones treats &apos;Voice&apos; as &apos;Other&apos;)</source>
         <translation>(деякі телефони трактують тип &apos;Голосовий&apos; як &apos;Інший&apos;)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="289"/>
+        <location filename="../app/settingsdialog.ui" line="301"/>
         <source>Warning on non-standard phone types</source>
         <translation>Попереджувати про нестандартні типи телефонів</translation>
     </message>
@@ -2037,7 +2070,7 @@ Data will be lost</source>
         <translation type="obsolete">Попереджувати про нестандартні типи телефонів/пошти</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.cpp" line="111"/>
+        <location filename="../app/settingsdialog.cpp" line="113"/>
         <source>List must contain at least one visible column</source>
         <translation>В переліку має бути хоча б один стовпчик</translation>
     </message>

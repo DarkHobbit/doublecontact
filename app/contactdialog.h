@@ -51,7 +51,7 @@ private:
     QMenu* menuPhotoEdit;
     int nameCount, phoneCount, emailCount, anniversaryCount, addrCount, imCount;
     DateItem birthdayDetails;
-    QList<DateItem> anniversaryDetails;
+    DateItem anniversaryDetails;
     Photo photo;
     void fillPhoneTypes(QComboBox* combo);
     void fillEmailTypes(QComboBox* combo);
@@ -60,8 +60,6 @@ private:
     void addName(const QString& name);
     void addPhone(const Phone& ph);
     void addEmail(const Email& em);
-    void addAnniversary(const DateItem& ann);
-    void readAnniversary(int num, DateItem& ann);
     void addAddress(const PostalAddress& addr);
     /*
     void setAddress(QWidget* parent, const PostalAddress& addr); // TODO if more 2 addresses will allowed, need post layout and num instead this
@@ -90,7 +88,6 @@ private slots:
     void itemTypeChanged(const QString& value);
     void on_cbBirthday_toggled(bool checked);
     void on_btnBDayDetails_clicked();
-    void slotAnnDetails();
     void slotDelAnniversary();
     void on_twContact_currentChanged(int);
     void on_btnAddAddress_clicked();
@@ -102,6 +99,8 @@ private slots:
     void on_btnAddIM_clicked();
     void on_btnIncludeToGroup_clicked();
     void on_btnExcludeFromGroup_clicked();
+    void on_btnAnnDetails_clicked();
+    void on_cbAnniversary_toggled(bool checked);
 };
 
 #endif // CONTACTDIALOG_H

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>468</width>
-    <height>319</height>
+    <height>342</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,7 +17,7 @@
    <item>
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>0</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="tabGeneral">
       <attribute name="title">
@@ -69,6 +69,13 @@
         <widget class="QCheckBox" name="cbOpenLastFilesAtStartup">
          <property name="text">
           <string>Open last files at startup</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="cbUseTableAlternateColors">
+         <property name="text">
+          <string>Use alternate row colors in table</string>
          </property>
         </widget>
        </item>
@@ -178,6 +185,11 @@
            <item>
             <property name="text">
              <string>3.0</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>4.0</string>
             </property>
            </item>
           </widget>

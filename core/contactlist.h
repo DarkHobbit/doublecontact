@@ -144,7 +144,7 @@ struct ContactItem {
     QList<Phone> phones;
     QList<Email> emails;
     DateItem birthday;
-    QList<DateItem> anniversaries;
+    DateItem anniversary;
     QString sortString;
     QString description;
     Photo photo;

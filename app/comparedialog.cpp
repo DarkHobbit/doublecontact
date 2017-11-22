@@ -16,8 +16,6 @@
 #include "comparedialog.h"
 #include "ui_comparedialog.h"
 
-#include <QDebug>
-
 CompareDialog::CompareDialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::CompareDialog),
@@ -70,7 +68,7 @@ void CompareDialog::setData(const ContactItem &left, const ContactItem &right)
     checkPair(tr("Phones"), &pPhones, left.phones, right.phones);
     checkPair(tr("Emails"), &pEmails, left.emails, right.emails);
     checkPair(S_BDAY, &pBDay, left.birthday, right.birthday);
-    checkPair(tr("Anniversaries"), &pAnn, left.anniversaries, right.anniversaries);
+    checkPair(tr("Anniversaries"), &pAnn, left.anniversary, right.anniversary);
     checkPair(S_DESC, &pDesc, left.description, right.description);
     checkPair(tr("Sort string"), &pSortString, left.sortString, right.sortString);
     checkPair(S_PHOTO, &pPhoto, left.photo, right.photo);
@@ -95,7 +93,7 @@ void CompareDialog::getData(ContactItem &left, ContactItem &right)
     if (pBDay)
         pBDay->getData(left.birthday, right.birthday);
     if (pAnn)
-        pAnn->getData(left.anniversaries, right.anniversaries);
+        pAnn->getData(left.anniversary, right.anniversary);
     if (pDesc)
         pDesc->getData(left.description, right.description);
     if (pSortString)

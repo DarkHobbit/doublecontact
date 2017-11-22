@@ -19,6 +19,8 @@ DateDetailsDialog::DateDetailsDialog(QWidget *parent) :
     ui(new Ui::DateDetailsDialog)
 {
     ui->setupUi(this);
+    ui->sbHour->setEnabled(false); //==>
+    ui->sbMin->setEnabled(false); //==>
 }
 
 DateDetailsDialog::~DateDetailsDialog()
@@ -70,6 +72,8 @@ void DateDetailsDialog::on_cbHasTimeZone_toggled(bool checked)
     }
     ui->sbHour->setEnabled(checked);
     ui->sbMin->setEnabled(checked);
+    ui->sbHour->setEnabled(false); //==>
+    ui->sbMin->setEnabled(false); //==>
 }
 
 void DateDetailsDialog::setDateFormat(QDateTimeEdit *editor, const bool hasTime)

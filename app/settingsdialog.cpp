@@ -32,6 +32,7 @@ bool SettingsDialog::setData()
     on_cbUseSystemDateTimeFormat_clicked(ui->cbUseSystemDateTimeFormat->isChecked());
     // Misc
     ui->cbOpenLastFilesAtStartup->setChecked(gd.openLastFilesAtStartup);
+    ui->cbUseTableAlternateColors->setChecked(gd.useTableAlternateColors);
     // Column view
     for (int i=0; i<gd.columnNames.count(); i++) // Fill visible columns list
             ui->lwVisibleColumns->addItem(contactColumnHeaders[gd.columnNames[i]]);
@@ -74,6 +75,7 @@ bool SettingsDialog::getData()
     gd.useSystemDateTimeFormat = ui->cbUseSystemDateTimeFormat->isChecked();
     // Misc
     gd.openLastFilesAtStartup = ui->cbOpenLastFilesAtStartup->isChecked();
+    gd.useTableAlternateColors = ui->cbUseTableAlternateColors->isChecked();
     // Column view
     gd.columnNames.clear();
     for (int i=0; i<ui->lwVisibleColumns->count(); i++)

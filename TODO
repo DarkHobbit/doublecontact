@@ -2,19 +2,19 @@ This file contains English and Russian (CP1251) issues. Sorry for this mixing, i
 You can contact me at pub@zvyozdochkin.ru.
 
 0.2:
+* implement date without year: --0415 according vCard 4.0. Need flag or incorrect year!
+* vCard 4.0: new PHOTO format (MEDIATYPE=image/gif or data:image/jpeg;base64)
 * network export/import
 * verify OSMO csv save under windows & linux (commas)
 * settings - fonts
 * make .desktop file for deb/rpm
 * только по желанию пользователя (не по умолчанию) подсвечивать жёлтым не только неизвестные, но и нередактируемые?
 * m.b. switch off warning empty types on load (after user feedback about it)
-* more universal base64 support (see RFC exampple), m.b. in decodeValue
+* more universal base64 support (see RFC example), m.b. in decodeValue
 * remove backslashes before comma or semicolon on read (RFC, sec. 5) and restore it on write (NOT EVERYWHERE! in N, middlename, comma not slashed)
-* add vCard 2.1 example in testdata
+* add vCard 2.1 and vCard 4.0 example in testdata
 * coverity scan: drop moc_* errors
 * check quoted-printable koi8 data read/write, add this example in testdata
-* before vCard 4.0: warning if cardinality violated, restructure fields with cardinality * (NOTE, ANNIVERSARY)
-* vCard 4.0 support
 * MPB: extra data view (SMS, calls...) need write core/formats/common/pdudata.*
 * MPB: maybe, names in call list must be swapped (Name 2, Name 1)
 * probably, write LABEL= on nonstandard types (at least, in mpb); now simply= (label removed)
@@ -31,6 +31,8 @@ vCard 4.0 CATEGORIES requires , separator, but lg leon saves with ;
 * adb support
 * ldif support
 * duplicate search (and merging, probably make unified merging dialog with panels compare merging)
+* vCard 4.0: warning if cardinality violated, restructure fields with cardinality * (NOTE, etc.)
+* check all tags in all standard versions
 * set doxygen labels
 * add graphic editor call to menu in Photo button at contact dialog
 

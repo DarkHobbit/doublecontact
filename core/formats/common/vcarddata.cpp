@@ -26,9 +26,19 @@ VCardData::VCardData()
     useOriginalFileVersion = gd.useOriginalFileVersion;
     skipEncoding = false;
     skipDecoding = false;
-    forceShortType = false;
-    forceShortDate = false;
     formatVersion = GlobalConfig::VCF30;
+    _forceVersion = false;
+}
+
+void VCardData::forceVersion(GlobalConfig::VCFVersion version)
+{
+    _forceVersion = true;
+    formatVersion = version;
+}
+
+void VCardData::unforceVersion()
+{
+    _forceVersion = false;
 }
 
 bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append, QStringList& errors)
@@ -187,11 +197,8 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
             }
             else if (tag=="BDAY")
                 importDate(item.birthday, decodeValue(vValue[0], errors), errors);
-            else if (tag=="X-ANNIVERSARY") {
-                DateItem di;
-                importDate(di, decodeValue(vValue[0], errors), errors);
-                item.anniversaries.push_back(di);
-            }
+            else if ((tag=="ANNIVERSARY") || (tag=="X-ANNIVERSARY"))
+                importDate(item.anniversary, decodeValue(vValue[0], errors), errors);
             else if (tag=="PHOTO") {
                 if (typeVal.startsWith("URI", Qt::CaseInsensitive)) {
                     item.photo.pType = "URL";
@@ -305,20 +312,34 @@ bool VCardData::exportRecords(QStringList &lines, const ContactList &list, QStri
 void VCardData::exportRecord(QStringList &lines, const ContactItem &item, QStringList& errors)
 {
     // Format version
-    formatVersion = gd.preferredVCFVersion;
-    if (useOriginalFileVersion && (item.originalFormat=="VCARD")) {
-        if (item.version=="2.1")
-            formatVersion = GlobalConfig::VCF21;
-        else if (item.version=="3.0")
-            formatVersion = GlobalConfig::VCF30;
-        // TODO VCF40
+    if (!_forceVersion) {
+        formatVersion = gd.preferredVCFVersion;
+        if (useOriginalFileVersion && (item.originalFormat=="VCARD")) {
+            if (item.version=="2.1")
+                formatVersion = GlobalConfig::VCF21;
+            else if (item.version=="3.0")
+                formatVersion = GlobalConfig::VCF30;
+            else
+                formatVersion = GlobalConfig::VCF40;
+        }
     }
     // Encoding/charSet prefix
     charSet = "UTF-8"; // TODO save original charset in ContactItem
     encoding = formatVersion==GlobalConfig::VCF21 ? "QUOTED-PRINTABLE" : "";
     // Header
     lines << "BEGIN:VCARD";
-    lines << QString("VERSION:") + (formatVersion==GlobalConfig::VCF21 ? "2.1" : "3.0");
+    QString sVersion;
+    switch (formatVersion) {
+    case GlobalConfig::VCF21:
+        sVersion = "2.1";
+        break;
+    case GlobalConfig::VCF30:
+        sVersion = "3.0";
+        break;
+    default:
+        sVersion = "4.0";
+    }
+    lines << QString("VERSION:") + sVersion;
     // Known tags
     if (!item.names.isEmpty()) {
         QString seps = "";
@@ -347,10 +368,14 @@ void VCardData::exportRecord(QStringList &lines, const ContactItem &item, QStrin
     */
     if (!item.birthday.isEmpty())
         lines << QString("BDAY:") + exportDate(item.birthday);
-    foreach (const DateItem& ann, item.anniversaries)
-        lines << QString("X-ANNIVERSARY:") + exportDate(ann);
+    if (!item.anniversary.isEmpty()) {
+        if (formatVersion>=GlobalConfig::VCF40)
+            lines << QString("ANNIVERSARY:") + exportDate(item.anniversary);
+        else
+            lines << QString("X-ANNIVERSARY:") + exportDate(item.anniversary);
+    }
     if (!item.groups.isEmpty()) {
-        if ((formatVersion>=GlobalConfig::VCF40) || forceShortType) // TODO dirty hack - either add yet another force*, or drop all force* and simply set vCard4.0
+        if (formatVersion>=GlobalConfig::VCF40)
             lines << QString("CATEGORIES:") + item.groups.join(";");
         else
             lines << QString("X-CATEGORIES:") + item.groups.join(";");
@@ -384,6 +409,8 @@ void VCardData::exportRecord(QStringList &lines, const ContactItem &item, QStrin
     // Internet 2
     foreach (const Messenger& im, item.ims) {
         // Use IMPP only if vcard4 profile selected
+        // RFC 4770 defines IMPP for vcard3, but some devices with vcard3 don't know it
+        // TODO maybe add additional restrictions for Ancient Android 2, Soneric, iPhone, etc.
         if ((formatVersion>=GlobalConfig::VCF40))
             lines << QString("IMPP") + encodeTypes(im.types, &Messenger::standardTypes, im.syncMLRef)+":"+im.value;
         else {
@@ -457,34 +484,50 @@ void VCardData::importDate(DateItem &item, const QString &src, QStringList& erro
     int tPos = src.indexOf("T", 0, Qt::CaseInsensitive);
     item.hasTime = (tPos!=-1);
     if (item.hasTime) {
-        int sPos = src.mid(tPos+1).indexOf("-");
-        int zPos = src.mid(tPos+1).indexOf("Z", 0, Qt::CaseInsensitive);
-        item.hasTimeZone = (sPos!=-1) || (zPos!=-1);
-        if (sPos!=-1) { // 1987-09-27T08:30:00-06:00
-            item.value = QDateTime::fromString(
-                src.left(tPos+sPos+1), "yyyy-MM-ddTHH:mm:ss");
+        int sdPos = src.left(tPos).indexOf("-"); // - in long date format
+        int stPos = src.mid(tPos+1).indexOf("-"); // - in timezone
+        int zPos = src.mid(tPos+1).indexOf("Z", 0, Qt::CaseInsensitive); // timezone
+        item.hasTimeZone = (stPos!=-1) || (zPos!=-1);
+        if (stPos!=-1) { // 1987-09-27T08:30:00-06:00 or 19870927T083000-0600
+            if (sdPos!=-1)
+                item.value = QDateTime::fromString(
+                    src.left(tPos+stPos+1), "yyyy-MM-ddTHH:mm:ss");
+            else
+                item.value = QDateTime::fromString(
+                    src.left(tPos+stPos+1), "yyyyMMddTHHmmss");
             QString zone = src.mid(tPos+tPos+1);
             bool ok;
-            item.zoneHour = zone.left(zone.indexOf(":")).toShort(&ok);
+            item.zoneHour = zone.left(2).toShort(&ok);
             if (ok)
-                item.zoneMin = zone.right(zone.indexOf(":")).toShort(&ok);
+                item.zoneMin = zone.right(2).toShort(&ok);
             if (!ok)
                 errors << QObject::tr("Invalid timezone: ") + src;
         }
-        else if (zPos!=-1) { // 1953-10-15T23:10:00Z
-            item.value = QDateTime::fromString(
-                src.left(tPos+zPos+1), "yyyy-MM-ddTHH:mm:ss");
+        else if (zPos!=-1) { // 1953-10-15T23:10:00Z or 19531015T231000Z
+            if (sdPos!=-1)
+                item.value = QDateTime::fromString(
+                    src.left(tPos+zPos+1), "yyyy-MM-ddTHH:mm:ss");
+            else
+                item.value = QDateTime::fromString(
+                    src.left(tPos+zPos+1), "yyyyMMddTHHmmss");
             item.zoneHour = 0;
             item.zoneMin = 0;
         }
-        else
-            item.value = QDateTime::fromString(
-                src, "yyyy-MM-ddTHH:mm:ss");
+        else {
+            if (sdPos!=-1)
+                item.value = QDateTime::fromString(
+                    src, "yyyy-MM-ddTHH:mm:ss");
+            else
+                item.value = QDateTime::fromString(
+                    src, "yyyyMMddTHHmmss");
+        }
     }
-    else {
-        item.value = QDateTime::fromString(src, "yyyy-MM-dd");
-        if (!item.value.isValid())
-            // try non-standard format from some old Nokias
+    else { // without time
+        // TODO implement date without year: --0415 according vCard 4.0. Need flag or incorrect year
+        int sdPos = src.indexOf("-"); // - in long date format
+        if (sdPos!=-1)
+            item.value = QDateTime::fromString(src, "yyyy-MM-dd");
+        else
             item.value = QDateTime::fromString(src, "yyyyMMdd");
     }
     if (!item.value.isValid())
@@ -594,7 +637,7 @@ QString VCardData::encodeAll(const QString &tag, const QStringList *aTypes, bool
 
 QString VCardData::encodeTypes(const QStringList &aTypes, StandardTypes* st, int /*syncMLRef*/) const
 {
-    bool shortType = (formatVersion==GlobalConfig::VCF21) || forceShortType;
+    bool shortType = (formatVersion!=GlobalConfig::VCF30);
     QString separator = shortType ? ";" : ";TYPE=";
     QString typeStr = "";
     if (st!=0 && (gd.addXToNonStandardTypes || gd.replaceNLNSNames)) { // very rare case
@@ -633,7 +676,7 @@ QString VCardData::encodeTypes(const QStringList &aTypes, StandardTypes* st, int
 QString VCardData::exportDate(const DateItem &item) const
 {
     return
-        (formatVersion==GlobalConfig::VCF21 || forceShortDate) ?
+        (formatVersion!=GlobalConfig::VCF30) ?
                 item.toString(DateItem::ISOBasic) : item.toString(DateItem::ISOExtended);
 }
 
