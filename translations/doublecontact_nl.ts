@@ -201,7 +201,7 @@
     <message>
         <location filename="../app/contactdialog.ui" line="219"/>
         <source>Anniversary</source>
-        <translation type="unfinished">Jubileum</translation>
+        <translation>Jubileum</translation>
     </message>
     <message>
         <source>anniversary</source>
@@ -1594,22 +1594,22 @@ opgeslagen als mobiele telefoon</translation>
     <message>
         <location filename="../core/globals.h" line="77"/>
         <source>All phones</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle telefoons</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="78"/>
         <source>Home phone</source>
-        <translation type="unfinished"></translation>
+        <translation>Huistelefoon</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="79"/>
         <source>Work phone</source>
-        <translation type="unfinished"></translation>
+        <translation>Werktelefoon</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="80"/>
         <source>Cell phone</source>
-        <translation type="unfinished"></translation>
+        <translation>Mobiele telefoon</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="81"/>
@@ -1973,7 +1973,7 @@ De gegevens zullen verloren gaan</translation>
     <message>
         <location filename="../app/settingsdialog.ui" line="78"/>
         <source>Use alternate row colors in table</source>
-        <translation type="unfinished"></translation>
+        <translation>Afwisselend kleurverloop gebruiken in tabelrijen</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="99"/>
@@ -2013,7 +2013,7 @@ De gegevens zullen verloren gaan</translation>
     <message>
         <location filename="../app/settingsdialog.ui" line="192"/>
         <source>4.0</source>
-        <translation type="unfinished">4.0</translation>
+        <translation>4.0</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="202"/>
