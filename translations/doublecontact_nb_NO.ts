@@ -1291,7 +1291,7 @@ linje %3, kol. %4
     <message>
         <location filename="../core/formats/formatfactory.cpp" line="65"/>
         <source>Empty file name</source>
-        <translation type="unfinished"></translation>
+        <translation>Tomt filnavn</translation>
     </message>
     <message>
         <location filename="../core/formats/formatfactory.cpp" line="101"/>
