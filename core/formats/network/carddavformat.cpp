@@ -29,7 +29,9 @@ bool CardDAVFormat::importRecords(const QString &url, ContactList &list, bool ap
     _url = url;
     // Parse url - maybe move to separated method in AsyncFormat?
     QString user, password, proto, path;
-    QRegExp rUrl("(http|https)://(\\S+):(\\S+)@(\\S+)");
+    // First regexp given from rfc3986, appendix B
+    QRegExp rUrl("^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\?([^#]*))?(#(.*))?");
+    rUrl.setPattern("(http|https)://(\\S+):(\\S+)@(\\S+)");
     if (!rUrl.isValid()) {
         _fatalError = tr("Invalid pattern");
         return false;
@@ -51,7 +53,7 @@ bool CardDAVFormat::importRecords(const QString &url, ContactList &list, bool ap
     }
     proto = rUrl.cap(1);
     user = rUrl.cap(2);
-    qDebug() << user << " : " << password << " @ " << host << " / " << path; //===>
+    // qDebug() << user << " : " << password << " @ " << host << " / " << path; //===>
     int port = (proto=="http" ? 80 : 443); // TODO ^^^
     if (!append)
         list.clear();
@@ -75,27 +77,33 @@ bool CardDAVFormat::importRecords(const QString &url, ContactList &list, bool ap
         } while (state!=StateOff && state!=StateSSLRequest);
         if (state==StateSSLRequest) {
             qApp->processEvents();
-            // TODO === here send certificate request and wait
-            foreach(const QString& msg, sslMessages)
-                qDebug() << "    ==== " << msg;
-            // TODO === end
+            QString q = tr("There are security problems:\n    %1\nAre you want to accept tis certificate anyway?")
+                .arg(sslMessages.join("\n    "));
+            if (!ui->securityConfirm(q)) {
+                readingList = 0;
+                return false;
+            }
         }
     } while (state!=StateOff);
     // TODO writing test begin - still not work
 /*    QUuid id = QUuid::createUuid();
-    QString path = PATH_CARDDAV_OWNCLOUD.arg(_user) + "/" + id.toString() + ".vcf";
+    QString sId = id.toString();
+    sId.remove("{");
+    sId.remove("}");
+    path = PATH_CARDDAV_OWNCLOUD.arg(user) + "/" + sId + ".vcf";
     QString cont = "BEGIN:VCARD\n";
     cont += "FN:Full newbie\n";
-    cont += QString("UID:%1\n").arg(id.toString());
+    cont += QString("UID:%1\n").arg(sId);
     cont += "END:VCARD\n";
-    QNetworkReply* rc = w.mkdir("path");
+    QNetworkReply* rc = w.mkdir(path);
     connect(rc, SIGNAL(finished()), this, SLOT(writeFinished()));
     while (!rc->isFinished())
         qApp->processEvents();
+    qDebug() << path;
     QNetworkReply* rp = w.put(path, cont.toLocal8Bit().data());
     connect(rp, SIGNAL(finished()), this, SLOT(writeFinished()));
     while (!rp->isFinished())
-        qApp->processEvents(); */
+        qApp->processEvents();*/
     // TODO writing test end
     readingList = 0;
     return _fatalError.isEmpty();
