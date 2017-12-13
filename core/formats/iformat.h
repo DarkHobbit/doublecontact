@@ -22,8 +22,8 @@ enum FormatType {
     ftNew,
     ftFile,
     ftDirectory,
+    ftNetwork,
     ftAuto // file or dir - only for open existing source
-    // TODO ftNetwork
 };
 
 class IFormat {

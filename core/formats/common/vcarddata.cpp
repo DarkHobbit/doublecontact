@@ -221,8 +221,7 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                         errors << QObject::tr("Unknown encoding type at line %1: %2%3").arg(line+1).arg(encoding).arg(visName);
                 }
             }
-            else if (tag=="CATEGORIES"  // MyPhoneExplorer YES, embedded android export NO
-            || tag=="X-CATEGORIES") // some Nokia Suite versions
+            else if (tag=="CATEGORIES" || tag=="X-CATEGORIES") // X- - some Nokia Suite versions
                 foreach(const QString& val, vValue)
                     item.groups << decodeValue(val, errors);
             else if (tag=="X-NOKIA-PND-GROUP") { // Nokia NBF
@@ -268,8 +267,10 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
             }
             // TODO nickname and url also can require x-syncmlref
             // Identifier
-            else if (tag=="X-IRMC-LUID")
+            else if (tag=="X-IRMC-LUID" || tag=="UID") {
                 item.id = decodeValue(vValue[0], errors);
+                item.idType = tag;
+            }
             // Known but un-editing tags
             else if (
                 tag=="LABEL"
@@ -375,10 +376,8 @@ void VCardData::exportRecord(QStringList &lines, const ContactItem &item, QStrin
             lines << QString("X-ANNIVERSARY:") + exportDate(item.anniversary);
     }
     if (!item.groups.isEmpty()) {
-        if (formatVersion>=GlobalConfig::VCF40)
-            lines << QString("CATEGORIES:") + item.groups.join(";");
-        else
-            lines << QString("X-CATEGORIES:") + item.groups.join(";");
+        QString tagName = (formatVersion>=GlobalConfig::VCF40) ? "CATEGORIES" : "X-CATEGORIES";
+        lines << encodeAll(tagName, 0, false, item.groups.join(";"));
     }
     // Organization, addresses
     foreach (const PostalAddress& addr, item.addrs)
@@ -421,15 +420,15 @@ void VCardData::exportRecord(QStringList &lines, const ContactItem &item, QStrin
             else if (im.types.contains("skype", Qt::CaseInsensitive))
                 lines << encodeAll("X-SKYPE-USERNAME", 0, false, im.value);
             else if (!im.types.isEmpty())
-                lines << encodeAll("X-" + im.types.join("+"), 0, false, im.value);
+                lines << encodeAll("X-" + im.types.join("+").toUpper(), 0, false, im.value);
             else
                 errors << S_ERR_UNSUPPORTED_TAG.arg(item.visibleName).arg(S_IM);
         }
     }
     // Identifier
     // TODO need support for other identifier types (apple?) and more strong detection
-    if (!item.id.isEmpty() && item.id.length()>=10) // second condition separate from other ID kinds. TODO: need more strong crit.
-        lines << QString("X-IRMC-LUID:") + encodeValue(item.id, QString("X-IRMC-LUID:").length());
+    if (!item.id.isEmpty() && item.id.length()>=10 && item.idType!="Sequence") // second condition separate from other ID kinds. TODO: need more strong crit.
+        lines << item.idType + ":" + encodeValue(item.id, QString(item.idType + ":").length());
     // Known but un-editing tags
     foreach (const TagValue& tv, item.otherTags)
             lines << QString(tv.tag + ":" + tv.value);

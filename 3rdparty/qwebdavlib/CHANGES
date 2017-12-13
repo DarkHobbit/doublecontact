@@ -1,0 +1,36 @@
+QWebDAV library (qwebdavlib) version 1.0 (LGPL v2.1)
+
+Changes* for version 1.0
+    - Simple structure:
+        * QWebdav inherits QNetworkAccessManager and is used to create
+          requests and puts
+        * QWebdavDirParser inherits QObject and is used together with QWebdav
+          to request a directory listing and subsequent parsing of the
+          response. QWebdavDirParser::getList() returns a QList of QWebdavItem.
+        * QWebdavItem is used to handle all data related to a file or
+          a directory
+        * QNaturalSort make the function naturalCompare from
+          http://qt.gitorious.org/qt/qt/blobs/4.7/src/gui/dialogs/qfilesystemmodel.cpp
+          available for QWebdavDirParser to sort directory listings
+    - SSL support added, so that certificates can be accepted explicitly
+      with their MD5 and SHA1 digests. The lib can now also handle self-signed
+      certificates which are not signed by a system-wide accepted certification
+      authority (CA).
+    - Source property has been removed (lack of support according to RFC4918)
+    - Added custom port support
+    - Added support of root path, which is prepended to the path
+      argument of functions from class QWebdav, so that the root path can be used
+      as WebDAV share path. The path arguments are relative to
+      the root path.
+    - FIX: request header destination (copy/move) has to be an absolute URI
+    - username and password are not any longer part of the m_baseURL
+      in qwebdav.cpp. They are only used to set parameters of QAuthenticator.
+    - WebDAV server dependent handling of href of PROPFIND responses
+      (Apache returns path without scheme and authority and
+      MS IIS returns full URL)
+
+* in comparison to the initial libraries
+        QWebdav plugin for MeeDav (LGPL v2.1)
+                http://projects.developer.nokia.com/meedav/
+        QWebdav - WebDAV lib for Qt4 (LGPL v2.1)
+                http://xf.iksaif.net/dev/qwebdav.html
