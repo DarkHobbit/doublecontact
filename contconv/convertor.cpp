@@ -480,8 +480,8 @@ QString Convertor::inputPassword()
 bool Convertor::securityConfirm(const QString &question)
 {
     out << question << " (y|n)";
+    out.flush();
     int answer = getchar();
-    out << QString(answer);
     return (answer=='y');
 }
 

@@ -50,6 +50,7 @@ signals:
 };
 
 class IAsyncUI {
+public:
     virtual QString inputPassword() = 0;
     virtual bool securityConfirm(const QString& question) = 0;
 };
