@@ -29,7 +29,9 @@ bool CardDAVFormat::importRecords(const QString &url, ContactList &list, bool ap
     _url = url;
     // Parse url - maybe move to separated method in AsyncFormat?
     QString user, password, proto, path;
-    QRegExp rUrl("(http|https)://(\\S+):(\\S+)@(\\S+)");
+    // First regexp given from rfc3986, appendix B
+    QRegExp rUrl("^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\?([^#]*))?(#(.*))?");
+    rUrl.setPattern("(http|https)://(\\S+):(\\S+)@(\\S+)");
     if (!rUrl.isValid()) {
         _fatalError = tr("Invalid pattern");
         return false;
