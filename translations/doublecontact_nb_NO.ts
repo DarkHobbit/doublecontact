@@ -1297,25 +1297,29 @@ linje %3, kol. %4
         <location filename="../core/formats/formatfactory.cpp" line="101"/>
         <source>Unknown file format:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukjent filformat:
+%1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/vcfdirectory.cpp" line="35"/>
         <source>Directory not exists:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Mappen finnes:
+%1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/vcfdirectory.cpp" line="40"/>
         <source>Directory not contains VCF files:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Mappen inneholder ikke VCF-filer:
+%1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/vcfdirectory.cpp" line="65"/>
         <source>Can&apos;t create directory
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Kunne ikke opprette mappe
+%1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/mpbfile.cpp" line="90"/>
@@ -1377,12 +1381,12 @@ linje %3, kol. %4
         <location filename="../core/formats/profiles/osmoprofile.cpp" line="19"/>
         <source>None</source>
         <comment>Osmo PIM marker for contacts without groups for YOUR language</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ingen</translation>
     </message>
     <message>
         <location filename="../core/formats/profiles/osmoprofile.cpp" line="68"/>
         <source>Name day loaded as anniversary, contact %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Navnedag innlastet som jubileum, kontakt %1</translation>
     </message>
     <message>
         <location filename="../core/formats/profiles/osmoprofile.cpp" line="88"/>
@@ -1392,7 +1396,7 @@ linje %3, kol. %4
     <message>
         <location filename="../core/formats/profiles/osmoprofile.cpp" line="188"/>
         <source>Anniversary saved as name day, contact %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Jubileum lagret som navnedag, kontakt %1</translation>
     </message>
     <message>
         <location filename="../core/formats/profiles/osmoprofile.cpp" line="207"/>
@@ -1402,12 +1406,12 @@ linje %3, kol. %4
     <message>
         <location filename="../core/formats/files/nbffile.cpp" line="57"/>
         <source>Can&apos;t open %1 directory in archive</source>
-        <translation type="unfinished"></translation>
+        <translation>Kan ikke åpne %1 mappe i arkiv</translation>
     </message>
     <message>
         <location filename="../core/formats/files/nbffile.cpp" line="65"/>
         <source>Can&apos;t set %1 item as current in archive</source>
-        <translation type="unfinished"></translation>
+        <translation>Kan ikke sette %1 element som gjeldende i arkiv</translation>
     </message>
     <message>
         <location filename="../core/formats/files/nbffile.cpp" line="71"/>
@@ -1637,12 +1641,12 @@ linje %3, kol. %4
     <message>
         <location filename="../core/globals.h" line="99"/>
         <source>Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Region</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="100"/>
         <source>Postal code</source>
-        <translation type="unfinished"></translation>
+        <translation>Postkode</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="101"/>
@@ -1897,7 +1901,7 @@ Data will be lost</source>
     <message>
         <location filename="../app/settingsdialog.ui" line="270"/>
         <source>Default type if empty</source>
-        <translation type="unfinished"></translation>
+        <translation>Forvalgt type, hvis tom</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="282"/>
@@ -1920,7 +1924,7 @@ Data will be lost</source>
     <message>
         <location filename="../app/sortdialog.ui" line="14"/>
         <source>Sort addressbook</source>
-        <translation type="unfinished"></translation>
+        <translation>Sorter adressebok</translation>
     </message>
     <message>
         <location filename="../app/sortdialog.ui" line="20"/>
