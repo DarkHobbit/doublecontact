@@ -11,6 +11,7 @@
  *
  */
 #include <QCoreApplication>
+#include <QUrl>
 #include <QUuid>
 #include "carddavformat.h"
 
@@ -27,37 +28,30 @@ bool CardDAVFormat::importRecords(const QString &url, ContactList &list, bool ap
     w.propfind() */
     // TODO End of Google stub
     _url = url;
-    // Parse url - maybe move to separated method in AsyncFormat?
-    QString user, password, proto, path;
-    // First regexp given from rfc3986, appendix B
-    QRegExp rUrl("^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\?([^#]*))?(#(.*))?");
-    rUrl.setPattern("(http|https)://(\\S+):(\\S+)@(\\S+)");
-    if (!rUrl.isValid()) {
-        _fatalError = tr("Invalid pattern");
-        return false;
-    }
-    if (rUrl.exactMatch(url)) {
-        password = rUrl.cap(3);
-        host = rUrl.cap(4);
-        // TODO replace next bullshitcodepiece on more full regexp
-        if (host.contains("/")) {
-            path = host.mid(host.indexOf("/"));
-            host = host.left(host.indexOf("/")); // TODO vvv
-        }
-        // TODO set :port between host and path
-    }
-    // TODO version before password
-    else {
+    QUrl u(_url);
+    if (!u.isValid()) {
         _fatalError = tr("Invalid URL");
         return false;
     }
-    proto = rUrl.cap(1);
-    user = rUrl.cap(2);
-    // qDebug() << user << " : " << password << " @ " << host << " / " << path; //===>
-    int port = (proto=="http" ? 80 : 443); // TODO ^^^
+    int port = u.port();
+    // Optional components
+    if (port==-1) // Standard port, if absent
+        port = (u.scheme()=="http" ? 80 : 443);
+    QString password = u.password();
+    if (password.isEmpty())
+        password = ui->inputPassword();
+    if (password.isEmpty())
+        return false;
+    // TODO username
+    if (u.userName().isEmpty()) { //===>
+        _fatalError = "User is Mandatory!!!";
+        return false;
+    }
+    qDebug() << u.scheme() << " :// " << u.userName() << " : " << password << " @ " << u.host() << " : " << port << " / " << u.path(); //===>
+    // TODO show connecting state
+    // WebDAV settings
     if (!append)
         list.clear();
-    // WebDAV settings
     readingList = &list;
     connect(&p, SIGNAL(finished()), this, SLOT(onFinish()));
     connect(&p, SIGNAL(errorChanged(QString)), this, SLOT(onError(QString)));
@@ -68,8 +62,8 @@ bool CardDAVFormat::importRecords(const QString &url, ContactList &list, bool ap
     do {
         state = StateConnect;
         w.setConnectionSettings(
-            (proto=="http" ? QWebdav::HTTP : QWebdav::HTTPS),
-            host, path, user, password, port, digMd5, digSha1);
+            (u.scheme()=="http" ? QWebdav::HTTP : QWebdav::HTTPS),
+            u.host(), u.path(), u.userName(), password, port, digMd5, digSha1);
         p.listDirectory(&w, "/"); // ==> only for read???
         do {
             qApp->processEvents();
@@ -77,7 +71,7 @@ bool CardDAVFormat::importRecords(const QString &url, ContactList &list, bool ap
         } while (state!=StateOff && state!=StateSSLRequest);
         if (state==StateSSLRequest) {
             qApp->processEvents();
-            QString q = tr("There are security problems:\n    %1\nAre you want to accept tis certificate anyway?")
+            QString q = tr("There are security problems:\n    %1\nAre you want to accept this certificate anyway?")
                 .arg(sslMessages.join("\n    "));
             if (!ui->securityConfirm(q)) {
                 readingList = 0;

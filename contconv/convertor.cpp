@@ -471,6 +471,7 @@ void Convertor::printUsage()
 QString Convertor::inputPassword()
 {
     out << tr("Enter your password:");
+    out.flush();
     QString pass = in.readLine();
     out << "\n";
     out << "you entered: " << pass << "\n"; //===>
