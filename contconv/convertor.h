@@ -17,23 +17,21 @@
 #include <QCoreApplication>
 #include <QString>
 #include <QStringList>
-#include <QTextStream>
+
+#include "consoleasyncui.h"
 #include "formats/iformat.h"
 #include "formats/files/csvfile.h"
-#include "formats/network/asyncformat.h"
 
-class Convertor : public QCoreApplication, IAsyncUI
+class Convertor : public QCoreApplication
 {
     Q_OBJECT
 public:
     Convertor(int &argc, char **argv);
     int start();
     void printUsage();
-    // IAsyncUI implementation
-    virtual QString inputPassword();
-    virtual bool securityConfirm(const QString& question);
 private:
-    QTextStream out, in;
+    QTextStream out;
+    ConsoleAsyncUI aui;
     void logFormat(IFormat* format);
     void setCSVProfile(CSVFile* csvFormat, const QString& code);
 };

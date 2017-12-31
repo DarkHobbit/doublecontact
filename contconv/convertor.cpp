@@ -26,7 +26,7 @@
 
 Convertor::Convertor(int &argc, char **argv)
     : QCoreApplication(argc, argv),
-      out(stdout), in(stdin)
+      out(stdout)
 {
 }
 
@@ -281,7 +281,7 @@ int Convertor::start()
         iFormat = new CardDAVFormat(); // TODO to factory, if more formats
         AsyncFormat* asf = dynamic_cast<AsyncFormat*>(iFormat);
         if (asf)
-            asf->setUI(this);
+            asf->setUI(&aui);
     }
     if (!iFormat) {
         out << factory.error << "\n";
@@ -299,6 +299,7 @@ int Convertor::start()
         else
             setCSVProfile(csvFormat, inProfile);
     }
+    out.flush();
     ContactList items;
     bool res = iFormat->importRecords(inPath, items, false);
     logFormat(iFormat);
@@ -466,24 +467,6 @@ void Convertor::printUsage()
         "  contconv -i https://ivan@192.168.56.101/remote.php/carddav/addressbooks/ivan/contacts -n carddav -o local.vcf -f vcf40 -w\n" \
         "  contconv -i https://ivan:uh67Er1B@192.168.56.101/remote.php/carddav/addressbooks/ivan/contacts -n carddav -o local.vcf -f vcf40 -w\n" \
                "\n");
-}
-
-QString Convertor::inputPassword()
-{
-    out << tr("Enter your password:");
-    out.flush();
-    QString pass = in.readLine();
-    out << "\n";
-    out << "you entered: " << pass << "\n"; //===>
-    return pass;
-}
-
-bool Convertor::securityConfirm(const QString &question)
-{
-    out << question << " (y|n)";
-    out.flush();
-    int answer = getchar();
-    return (answer=='y');
 }
 
 void Convertor::logFormat(IFormat* format)

@@ -37,17 +37,17 @@ bool CardDAVFormat::importRecords(const QString &url, ContactList &list, bool ap
     // Optional components
     if (port==-1) // Standard port, if absent
         port = (u.scheme()=="http" ? 80 : 443);
+    QString userName = u.userName();
+    if (userName.isEmpty())
+        userName = ui->inputLogin();
+    if (userName.isEmpty())
+        return false;
     QString password = u.password();
     if (password.isEmpty())
         password = ui->inputPassword();
     if (password.isEmpty())
         return false;
-    // TODO username
-    if (u.userName().isEmpty()) { //===>
-        _fatalError = "User is Mandatory!!!";
-        return false;
-    }
-    qDebug() << u.scheme() << " :// " << u.userName() << " : " << password << " @ " << u.host() << " : " << port << " / " << u.path(); //===>
+    qDebug() << u.scheme() << " :// " << userName << " : " << password << " @ " << u.host() << " : " << port << " / " << u.path(); //===>
     // TODO show connecting state
     // WebDAV settings
     if (!append)
@@ -63,7 +63,7 @@ bool CardDAVFormat::importRecords(const QString &url, ContactList &list, bool ap
         state = StateConnect;
         w.setConnectionSettings(
             (u.scheme()=="http" ? QWebdav::HTTP : QWebdav::HTTPS),
-            u.host(), u.path(), u.userName(), password, port, digMd5, digSha1);
+            u.host(), u.path(), userName, password, port, digMd5, digSha1);
         p.listDirectory(&w, "/"); // ==> only for read???
         do {
             qApp->processEvents();
