@@ -45,6 +45,8 @@ public slots:
     void onFinish();
     void replyFinished();
     void writeFinished();
+    //void urlReqFinished();
+    //void urlReqError(QNetworkReply::NetworkError code);
 };
 
 #endif // CARDDAVFORMAT_H

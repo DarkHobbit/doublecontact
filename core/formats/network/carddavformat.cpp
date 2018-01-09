@@ -22,11 +22,6 @@ CardDAVFormat::CardDAVFormat() :
 
 bool CardDAVFormat::importRecords(const QString &url, ContactList &list, bool append)
 {
-    // TODO Google stub - move to separete proc, 2-4 weeks
-/*    w.setConnectionSettings(QWebdav::HTTPS,
-        "https://www.googleapis.com", "/.well-known/carddav");
-    w.propfind() */
-    // TODO End of Google stub
     _url = url;
     QUrl u(_url);
     if (!u.isValid()) {
@@ -48,6 +43,19 @@ bool CardDAVFormat::importRecords(const QString &url, ContactList &list, bool ap
     if (password.isEmpty())
         return false;
     qDebug() << u.scheme() << " :// " << userName << " : " << password << " @ " << u.host() << " : " << port << " / " << u.path(); //===>
+    // TODO Google stub - move to separate proc, 2-4 weeks
+/*    w.setConnectionSettings(QWebdav::HTTPS,
+        "https://www.googleapis.com", "/.well-known/carddav", userName, password);
+    QWebdav::PropNames query;
+    QStringList props;
+    props << "current-user-principal";
+    props << "principal-URL";
+    props << "addressbook-home-set";
+    query["DAV:"] = props;
+    QNetworkReply* r = w.propfind("/.well-known/carddav", query);
+    connect(r, SIGNAL(finished()), this, SLOT(urlReqFinished()));
+    connect(r, SIGNAL(error(QNetworkReply::NetworkError)), this, SLOT(urlReqError(QNetworkReply::NetworkError)));*/
+    // TODO End of Google stub
     // TODO show connecting state
     // WebDAV settings
     if (!append)
@@ -187,3 +195,18 @@ void CardDAVFormat::writeFinished()
         qDebug() << "Wr " << ba;
     }
 }
+/*
+void CardDAVFormat::urlReqFinished()
+{
+    QNetworkReply* reply = qobject_cast<QNetworkReply*>(QObject::sender());
+    if (reply) {
+        QByteArray ba = reply->readAll();
+        qDebug() << "UrlRec fin " << ba;
+    }
+}
+
+void CardDAVFormat::urlReqError(QNetworkReply::NetworkError code)
+{
+    qDebug() << "UrlRec err " << code;
+}
+*/
