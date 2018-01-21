@@ -68,6 +68,10 @@ TRANSLATIONS += \
     ../translations/doublecontact_uk_UA.ts
 
 greaterThan(QT_MAJOR_VERSION, 4) {
+win32 {
+tr.commands = lrelease \
+    $$_PRO_FILE_
+}
 unix&&!macx {
 tr.commands = lrelease-qt5 \
     $$_PRO_FILE_

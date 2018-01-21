@@ -6,7 +6,13 @@ include(../3rdparty/quazip/quazip.pri)
 include(../3rdparty/qwebdavlib/qwebdavlib/qwebdavlib.pri)
 
 DEFINES += QUAZIP_STATIC
-win32:INCLUDEPATH += C:/Qt/4.8.6.st/src/3rdparty/zlib
+win32 {
+  greaterThan(QT_MAJOR_VERSION, 4) {
+LIBS += -lz
+} else {
+  INCLUDEPATH += C:/Qt/4.8.6.st/src/3rdparty/zlib
+}
+}
 unix:LIBS += -lz
 
 INCLUDEPATH += $$PWD
