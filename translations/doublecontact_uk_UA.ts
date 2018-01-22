@@ -201,7 +201,7 @@
     <message>
         <location filename="../app/contactdialog.ui" line="219"/>
         <source>Anniversary</source>
-        <translation type="unfinished">Річниця</translation>
+        <translation>Річниця</translation>
     </message>
     <message>
         <source>anniversary</source>
@@ -494,7 +494,7 @@
     <message>
         <location filename="../app/groupdialog.cpp" line="117"/>
         <source>United group</source>
-        <translation type="unfinished"></translation>
+        <translation>Об&apos;єднана група</translation>
     </message>
     <message>
         <location filename="../app/groupdialog.cpp" line="122"/>
@@ -504,7 +504,7 @@
     <message>
         <location filename="../app/groupdialog.cpp" line="147"/>
         <source>Group split</source>
-        <translation type="unfinished"></translation>
+        <translation>Розділення групи</translation>
     </message>
     <message>
         <location filename="../app/groupdialog.cpp" line="150"/>
@@ -1528,22 +1528,22 @@ line %3, col %4
     <message>
         <location filename="../core/globals.h" line="77"/>
         <source>All phones</source>
-        <translation type="unfinished"></translation>
+        <translation>Всі телефони</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="78"/>
         <source>Home phone</source>
-        <translation type="unfinished"></translation>
+        <translation>Домаш. тел.</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="79"/>
         <source>Work phone</source>
-        <translation type="unfinished"></translation>
+        <translation>Роб. тел.</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="80"/>
         <source>Cell phone</source>
-        <translation type="unfinished"></translation>
+        <translation>Мобіл. тел.</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="81"/>
@@ -2008,7 +2008,7 @@ Data will be lost</source>
     <message>
         <location filename="../app/settingsdialog.ui" line="192"/>
         <source>4.0</source>
-        <translation type="unfinished">4.0</translation>
+        <translation>4.0</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="202"/>
