@@ -16,8 +16,10 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp \
-    convertor.cpp
+    convertor.cpp \
+    consoleasyncui.cpp
 
 HEADERS += \
-    convertor.h
+    convertor.h \
+    consoleasyncui.h
 

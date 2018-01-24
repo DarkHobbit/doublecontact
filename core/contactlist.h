@@ -158,7 +158,8 @@ struct ContactItem {
     QString nickName, url;
     QList<Messenger> ims;
     // Format internals
-    QString id; // optional record unique id (udx Sequence, vcf X-IRMC-LUID, etc)
+    QString id; // optional record unique id (udx Sequence, UID, vcf X-IRMC-LUID, etc)
+    QString idType; // tag name
     QString originalFormat;
     QString version, subVersion;
     TagList otherTags;   // Known but un-editing tags

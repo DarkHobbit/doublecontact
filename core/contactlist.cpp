@@ -197,6 +197,8 @@ void Messenger::StandardTypes::fill()
 
 void ContactItem::clear()
 {
+    id.clear();
+    idType = "UID";
     fullName.clear();
     names.clear();
     phones.clear();

@@ -2,6 +2,11 @@ This file contains English and Russian (CP1251) issues. Sorry for this mixing, i
 You can contact me at pub@zvyozdochkin.ru.
 
 0.2:
+* google
+* progress
+* deleteLater for requests
+* qt5
+* support REV tag (from ownCloud-CardDAV)
 * implement date without year: --0415 according vCard 4.0. Need flag or incorrect year!
 * vCard 4.0: new PHOTO format (MEDIATYPE=image/gif or data:image/jpeg;base64)
 * network export/import

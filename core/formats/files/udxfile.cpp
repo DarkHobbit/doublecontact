@@ -104,6 +104,7 @@ bool UDXFile::importRecords(const QString &url, ContactList &list, bool append)
         item.version = udxVer;
         item.subVersion = vcVer;
         item.id = vCardInfo.firstChildElement("Sequence").text();
+        item.idType = "Sequence"; // not UID, simple number
         QDomElement fields = vCardInfo.firstChildElement("vCardField");
         if (fields.isNull())
             _errors << QObject::tr("Can't find 'vCardField' at sequence %1").arg(item.id);
