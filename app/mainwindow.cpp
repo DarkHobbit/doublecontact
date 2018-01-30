@@ -940,3 +940,8 @@ void MainWindow::on_action_Groups_triggered()
     updateViewMode();
     updateHeaders();
 }
+
+void MainWindow::on_action_About_Qt_triggered()
+{
+    qApp->aboutQt();
+}
