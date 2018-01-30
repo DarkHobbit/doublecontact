@@ -40,5 +40,6 @@ Current
 * Added translation for standard Qt dialogs/buttons support (now Russian and Ukrainian files added)
 * Fixed: short datetime format reading (BDAY, ANNIVERSARY)
 * Fixed: categories writing encoding
+* Fixed: crash on Generate full name, if all name components was empty
 * Fixed: saving hard sort type to config
 * Fixed: outdated manuals

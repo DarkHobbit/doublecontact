@@ -358,6 +358,8 @@ void ContactItem::sortTypes(QList<T> &values)
 
 QString ContactItem::formatNames() const
 {
+    if (names.isEmpty())
+        return makeGenericName();
     // We don't use QStringList::join
     // because field order is'nt completely regular
     QString res = names[0]; // Last name
