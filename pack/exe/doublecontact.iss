@@ -32,8 +32,13 @@ Source: ".\contconv.exe"; DestDir: "{app}"; Flags: ignoreversion; Components: Co
 
 Source: ".\iso639-1.utf8"; DestDir: "{app}"; Flags: ignoreversion; Components: Translations
 Source: ".\doublecontact_en_GB.qm"; DestDir: "{app}"; Flags: ignoreversion; Components: Translations
+Source: ".\doublecontact_nb_NO.qm"; DestDir: "{app}"; Flags: ignoreversion; Components: Translations
+Source: ".\doublecontact_nl.qm"; DestDir: "{app}"; Flags: ignoreversion; Components: Translations
 Source: ".\doublecontact_ru_RU.qm"; DestDir: "{app}"; Flags: ignoreversion; Components: Translations
 Source: ".\doublecontact_uk_UA.qm"; DestDir: "{app}"; Flags: ignoreversion; Components: Translations
+Source: ".\qt_ru.qm"; DestDir: "{app}"; Flags: ignoreversion; Components: Translations
+Source: ".\qt_uk.qm"; DestDir: "{app}"; Flags: ignoreversion; Components: Translations
+; Currently, no official qt_*.qm for nl and nb_NO
 
 Source: ".\libgcc_s_dw2-1.dll"; DestDir: "{app}"; Flags: ignoreversion; Components: Libraries
 

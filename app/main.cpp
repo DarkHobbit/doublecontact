@@ -28,7 +28,6 @@ int main(int argc, char *argv[])
     configManager.prepare();
     // Set UI language
     QString language = configManager.readLanguage();
-    QTranslator tr;
     if (!languageManager.load(LanguageManager::transPath()+QDir::separator()+QString("iso639-1.utf8")))
         QMessageBox::warning(0, S_WARNING, "Language list loading error");
     else {
@@ -36,12 +35,13 @@ int main(int argc, char *argv[])
             language = LanguageSelectDialog::selectLanguage();
             configManager.writeLanguage(language);
         }
-        QString langCode = languageManager.nativeNameToCode(language);
-        QString langPath = LanguageManager::transPath()+QDir::separator()+QString("doublecontact_%1.qm").arg(langCode);
-        if (!tr.load(langPath))
+        bool qtOk;
+        if (!languageManager.loadCodecs(language, qtOk))
             QMessageBox::warning(0, S_WARNING, "UI loading error");
         else {
-            a.installTranslator(&tr);
+            // It's not error, because not all supported languages have qt_*.ts files
+            /*if (!qtOk)
+                QMessageBox::warning(0, S_WARNING, "Qt standard UI loading error");*/
             Phone::standardTypes.fill();
             Email::standardTypes.fill();
             PostalAddress::standardTypes.fill();

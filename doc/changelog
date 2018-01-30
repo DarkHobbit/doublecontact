@@ -33,10 +33,11 @@ Current
 * More table columns for phones added: all phones, home phone, work phone, cell phone
 * Table rows by default use alternate colors (can be disabled in settings)
 * SonyEricsson MPB file open tested, warning removed (thanks to bodqhrohro_promo at l.o.r)
-* starting commas not shown in address, if corresponding address components are empty (thanks to bodqhrohro_promo at l.o.r)
+* starting commas not shown in address, if corresponding address components are empty (thanks to bodqhrohro_promo at linux.org.ru)
 * Timezone setting in hh:mm temporarily disabled (too many info in RFC)
 * Refactoring: multiple anniversaries removed from code according vCard 4.0 cardinality
 * Added translations: Norwegian (Bokmål)
+* Added translation for standard Qt dialogs/buttons support (now Russian and Ukrainian files added)
 * Fixed: short datetime format reading (BDAY, ANNIVERSARY)
 * Fixed: categories writing encoding
 * Fixed: saving hard sort type to config

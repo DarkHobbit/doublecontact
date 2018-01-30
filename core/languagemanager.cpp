@@ -43,6 +43,26 @@ bool LanguageManager::load(const QString &fileName)
     return true;
 }
 
+bool LanguageManager::loadCodecs(const QString& language, bool& qtOk)
+{
+    QString langCode = languageManager.nativeNameToCode(language);
+    QString langPath = LanguageManager::transPath()+QDir::separator()+QString("doublecontact_%1.qm").arg(langCode);
+    qtOk = false;
+    bool res = tr.load(langPath);
+    if (res) {
+        qApp->installTranslator(&tr);
+        // Qt standard translation
+        QString stPath = LanguageManager::transPath()+QDir::separator()+QString("qt_%1.qm").arg(langCode);
+        // File can be **.qm or **_**.qm
+        if (!QFile::exists(stPath))
+            stPath = LanguageManager::transPath()+QDir::separator()+QString("qt_%1.qm").arg(langCode.left(2));
+        qtOk = trQt.load(stPath);
+        if (qtOk)
+            qApp->installTranslator(&trQt);
+    }
+    return res;
+}
+
 QStringList LanguageManager::nativeNames()
 {
     QStringList res;
