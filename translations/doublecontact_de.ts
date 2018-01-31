@@ -1270,17 +1270,17 @@ Zeile %3, Spalte %4
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="278"/>
         <source>Warning: contact %1 has time (%2) in birthday, not implemented in UDX reader</source>
-        <translation></translation>
+        <translation>Warnhinweis: Kontakt %1 wurde eine Zeit (%2) im Geburtstag zugeordnet, die nicht im UDX-Betrachter implementiert ist</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="281"/>
         <source>Warning: contact %1 has address(es), not implemented in UDX</source>
-        <translation></translation>
+        <translation>Warnhinweis: Kontakt %1 wurde(n) Adresse(n) zugeordnet, die nicht in UDX implementiert ist</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="284"/>
         <source>Warning: contact %1 has photo, not implemented in UDX</source>
-        <translation></translation>
+        <translation>Warnhinweis: Kontakt %1 wurde eine Foto zugeordnet, die nicht im UDX-Betrachter implementiert ist</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="286"/>
@@ -1932,7 +1932,7 @@ Daten gehen verloren</translation>
     <message>
         <location filename="../app/settingsdialog.ui" line="250"/>
         <source>Replace non-latin type named</source>
-        <translation type="unfinished">Nicht-lateinischen benannte Typ ersetzen</translation>
+        <translation type="unfinished">Nicht-lateinisch benannten Typ ersetzen</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="274"/>
