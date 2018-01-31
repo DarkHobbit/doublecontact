@@ -1,6 +1,8 @@
 #!/bin/bash
 
 DC_VER=$1
+QT_MAJV=$2
+
 if [ -z "$DC_VER" ]
 then
   echo "Version number is missing"
@@ -10,6 +12,6 @@ fi
 PKG_NAME=doublecontact_${DC_VER}_amd64
 
 # cd .
-../make-bin-image ../.. ../../${PKG_NAME}
+../make-bin-image ../.. ../../${PKG_NAME} ${QT_MAJV}
 # TODO change version number and arch in control file
 rpmbuild -bb --buildroot `pwd`/../../${PKG_NAME} ./doublecontact.spec

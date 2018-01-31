@@ -31,11 +31,13 @@ Source: ".\doublecontact.exe"; DestDir: "{app}"; Flags: ignoreversion; Component
 Source: ".\contconv.exe"; DestDir: "{app}"; Flags: ignoreversion; Components: ContConv
 
 Source: ".\iso639-1.utf8"; DestDir: "{app}"; Flags: ignoreversion; Components: Translations
+Source: ".\doublecontact_de.qm"; DestDir: "{app}"; Flags: ignoreversion; Components: Translations
 Source: ".\doublecontact_en_GB.qm"; DestDir: "{app}"; Flags: ignoreversion; Components: Translations
 Source: ".\doublecontact_nb_NO.qm"; DestDir: "{app}"; Flags: ignoreversion; Components: Translations
 Source: ".\doublecontact_nl.qm"; DestDir: "{app}"; Flags: ignoreversion; Components: Translations
 Source: ".\doublecontact_ru_RU.qm"; DestDir: "{app}"; Flags: ignoreversion; Components: Translations
 Source: ".\doublecontact_uk_UA.qm"; DestDir: "{app}"; Flags: ignoreversion; Components: Translations
+Source: ".\qt_de.qm"; DestDir: "{app}"; Flags: ignoreversion; Components: Translations
 Source: ".\qt_ru.qm"; DestDir: "{app}"; Flags: ignoreversion; Components: Translations
 Source: ".\qt_uk.qm"; DestDir: "{app}"; Flags: ignoreversion; Components: Translations
 ; Currently, no official qt_*.qm for nl and nb_NO
