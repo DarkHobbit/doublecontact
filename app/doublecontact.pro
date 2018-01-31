@@ -61,6 +61,7 @@ unix {
 }
 
 TRANSLATIONS += \
+    ../translations/doublecontact_de.ts \
     ../translations/doublecontact_en_GB.ts \
     ../translations/doublecontact_nb_NO.ts \
     ../translations/doublecontact_nl.ts \
