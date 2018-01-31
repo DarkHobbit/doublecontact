@@ -2,6 +2,7 @@
 
 SRC_DIR=$1
 PKG_DIR=$2
+QT_MAJV=$3
 
 BIN_PATH=${PKG_DIR}/usr/bin
 TRANS_PATH=${PKG_DIR}/usr/share/doublecontact/translations
@@ -19,6 +20,8 @@ cp ${SRC_DIR}/app/doublecontact ${BIN_PATH}/
 cp ${SRC_DIR}/contconv/contconv ${BIN_PATH}/
 cp ${SRC_DIR}/translations/*.qm ${TRANS_PATH}/
 cp ${SRC_DIR}/translations/iso639-1.utf8 ${TRANS_PATH}/
+cp /usr/share/qt${QT_MAJV}/translations/qt_??.qm ${TRANS_PATH}/
+cp /usr/share/qt${QT_MAJV}/translations/qt_??_??.qm ${TRANS_PATH}/
 cp ${SRC_DIR}/app/doublecontact.desktop ${DSK_PATH}/
 cp ${SRC_DIR}/img/32x32/doublecontact_32x32.xpm ${IMG_PATH}/
 cp ${SRC_DIR}/doc/* ${DOC_PATH}/
