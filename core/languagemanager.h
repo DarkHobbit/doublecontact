@@ -17,18 +17,21 @@
 #include <QMap>
 #include <QString>
 #include <QStringList>
+#include <QTranslator>
 
 class LanguageManager
 {
 public:
     LanguageManager();
     bool load(const QString& fileName);
+    bool loadCodecs(const QString& language, bool& qtOk);
     QStringList nativeNames();
     QString nativeNameToCode(const QString& name);
     QString systemLanguageNativeName();
     static QString transPath();
     static QStringList availableCodecs();
 private:
+    QTranslator tr, trQt;
     // Ported from Stellarium, but map is reversed
     // Native name is key, code is value
     QMap<QString, QString> iso639codes;

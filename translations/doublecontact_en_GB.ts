@@ -48,6 +48,36 @@
     </message>
 </context>
 <context>
+    <name>CardDAVFormat</name>
+    <message>
+        <location filename="../core/formats/network/carddavformat.cpp" line="28"/>
+        <source>Invalid URL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/formats/network/carddavformat.cpp" line="82"/>
+        <source>There are security problems:
+    %1
+Are you want to accept this certificate anyway?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/formats/network/carddavformat.cpp" line="145"/>
+        <source>SSL handshake failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/formats/network/carddavformat.cpp" line="160"/>
+        <source>No DAV items. It seems that this is not a CardDAV server.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/formats/network/carddavformat.cpp" line="172"/>
+        <source>Strange vCard item: </source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>CompareDialog</name>
     <message>
         <location filename="../app/comparedialog.ui" line="14"/>
@@ -518,8 +548,8 @@
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="204"/>
-        <location filename="../app/mainwindow.ui" line="301"/>
-        <location filename="../app/mainwindow.ui" line="333"/>
+        <location filename="../app/mainwindow.ui" line="302"/>
+        <location filename="../app/mainwindow.ui" line="334"/>
         <source>&amp;File</source>
         <translation type="unfinished"></translation>
     </message>
@@ -549,274 +579,279 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="266"/>
+        <location filename="../app/mainwindow.ui" line="267"/>
         <source>&amp;View</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="274"/>
+        <location filename="../app/mainwindow.ui" line="275"/>
         <source>&amp;List</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="304"/>
+        <location filename="../app/mainwindow.ui" line="305"/>
         <source>Ctrl+O</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="309"/>
-        <location filename="../app/mainwindow.ui" line="341"/>
+        <location filename="../app/mainwindow.ui" line="310"/>
+        <location filename="../app/mainwindow.ui" line="342"/>
         <source>&amp;Directory</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="314"/>
+        <location filename="../app/mainwindow.ui" line="315"/>
         <source>&amp;Close</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="317"/>
+        <location filename="../app/mainwindow.ui" line="318"/>
         <source>Ctrl+W</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="325"/>
+        <location filename="../app/mainwindow.ui" line="326"/>
         <source>&amp;Save</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="328"/>
+        <location filename="../app/mainwindow.ui" line="329"/>
         <source>Ctrl+S</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="336"/>
+        <location filename="../app/mainwindow.ui" line="337"/>
         <source>Ctrl+Shift+S</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="346"/>
+        <location filename="../app/mainwindow.ui" line="347"/>
         <source>E&amp;xit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="357"/>
+        <location filename="../app/mainwindow.ui" line="358"/>
         <source>&amp;Two panels</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="362"/>
+        <location filename="../app/mainwindow.ui" line="363"/>
         <source>&amp;Options...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="367"/>
+        <location filename="../app/mainwindow.ui" line="368"/>
         <source>&amp;Add</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="370"/>
+        <location filename="../app/mainwindow.ui" line="371"/>
         <source>Ins</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="375"/>
+        <location filename="../app/mainwindow.ui" line="376"/>
         <source>&amp;Edit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="378"/>
+        <location filename="../app/mainwindow.ui" line="379"/>
         <source>Return</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="383"/>
+        <location filename="../app/mainwindow.ui" line="384"/>
         <source>&amp;Remove</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="386"/>
+        <location filename="../app/mainwindow.ui" line="387"/>
         <source>Del</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="391"/>
+        <location filename="../app/mainwindow.ui" line="392"/>
         <source>&amp;Copy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="394"/>
+        <location filename="../app/mainwindow.ui" line="395"/>
         <source>F5</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="399"/>
+        <location filename="../app/mainwindow.ui" line="400"/>
         <source>&amp;Move</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="402"/>
+        <location filename="../app/mainwindow.ui" line="403"/>
         <source>F6</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="407"/>
+        <location filename="../app/mainwindow.ui" line="408"/>
         <source>&amp;Swap names</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="410"/>
+        <location filename="../app/mainwindow.ui" line="411"/>
         <source>F2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="415"/>
+        <location filename="../app/mainwindow.ui" line="416"/>
         <source>&amp;Compare/Uncompare</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="418"/>
+        <location filename="../app/mainwindow.ui" line="419"/>
         <source>F3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="426"/>
+        <location filename="../app/mainwindow.ui" line="427"/>
         <source>&amp;Sort</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="429"/>
+        <location filename="../app/mainwindow.ui" line="430"/>
         <source>F4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="434"/>
+        <location filename="../app/mainwindow.ui" line="435"/>
         <source>&amp;Other panel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="437"/>
+        <location filename="../app/mainwindow.ui" line="438"/>
         <source>Tab</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="442"/>
+        <location filename="../app/mainwindow.ui" line="443"/>
         <source>Settings...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="445"/>
+        <location filename="../app/mainwindow.ui" line="446"/>
         <source>Ctrl+P</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="450"/>
+        <location filename="../app/mainwindow.ui" line="451"/>
         <source>&amp;Filter</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="453"/>
+        <location filename="../app/mainwindow.ui" line="454"/>
         <source>Ctrl+F</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="458"/>
+        <location filename="../app/mainwindow.ui" line="459"/>
         <source>Compare &amp;Result</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="461"/>
+        <location filename="../app/mainwindow.ui" line="462"/>
         <source>Shift+F3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="466"/>
+        <location filename="../app/mainwindow.ui" line="467"/>
         <source>S&amp;plit names</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="469"/>
+        <location filename="../app/mainwindow.ui" line="470"/>
         <source>Shift+F2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="474"/>
+        <location filename="../app/mainwindow.ui" line="475"/>
         <source>&amp;Drop slashes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="479"/>
+        <location filename="../app/mainwindow.ui" line="480"/>
         <source>&amp;Generate full name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="484"/>
+        <location filename="../app/mainwindow.ui" line="485"/>
         <source>&amp;Join</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="489"/>
+        <location filename="../app/mainwindow.ui" line="490"/>
         <source>Drop &amp;full name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="494"/>
+        <location filename="../app/mainwindow.ui" line="495"/>
         <source>Sp&amp;lit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="499"/>
+        <location filename="../app/mainwindow.ui" line="500"/>
         <source>Internationalize phone prefix</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="504"/>
+        <location filename="../app/mainwindow.ui" line="505"/>
         <source>S&amp;wap Panels</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="507"/>
+        <location filename="../app/mainwindow.ui" line="508"/>
         <source>Ctrl+U</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="512"/>
+        <location filename="../app/mainwindow.ui" line="513"/>
         <source>&amp;About</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="517"/>
+        <location filename="../app/mainwindow.ui" line="518"/>
         <source>Reverse full name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="522"/>
+        <location filename="../app/mainwindow.ui" line="523"/>
         <source>S&amp;tatistics</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="527"/>
+        <location filename="../app/mainwindow.ui" line="528"/>
         <source>Re&amp;port</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="530"/>
+        <location filename="../app/mainwindow.ui" line="531"/>
         <source>Ctrl+R</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="535"/>
+        <location filename="../app/mainwindow.ui" line="536"/>
         <source>&amp;Hard sort</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="540"/>
+        <location filename="../app/mainwindow.ui" line="541"/>
         <source>&amp;Groups...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="543"/>
+        <location filename="../app/mainwindow.ui" line="544"/>
         <source>Ctrl+G</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/mainwindow.ui" line="549"/>
+        <source>About Qt</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -998,7 +1033,7 @@ Are you want switch column sorting off?</source>
     <name>QObject</name>
     <message>
         <location filename="../core/contactlist.cpp" line="106"/>
-        <location filename="../core/contactlist.cpp" line="924"/>
+        <location filename="../core/contactlist.cpp" line="930"/>
         <source>Home</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1009,7 +1044,7 @@ Are you want switch column sorting off?</source>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="108"/>
-        <location filename="../core/contactlist.cpp" line="925"/>
+        <location filename="../core/contactlist.cpp" line="931"/>
         <source>Work</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1017,7 +1052,7 @@ Are you want switch column sorting off?</source>
         <location filename="../core/contactlist.cpp" line="109"/>
         <location filename="../core/contactlist.cpp" line="158"/>
         <location filename="../core/contactlist.cpp" line="193"/>
-        <location filename="../core/contactlist.cpp" line="926"/>
+        <location filename="../core/contactlist.cpp" line="932"/>
         <source>Preferable</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1082,12 +1117,12 @@ Are you want switch column sorting off?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="400"/>
+        <location filename="../core/contactlist.cpp" line="402"/>
         <source>Strange empty contact</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="779"/>
+        <location filename="../core/contactlist.cpp" line="781"/>
         <source>%1 records
 %2 phones
 %3 emails
@@ -1100,22 +1135,22 @@ Are you want switch column sorting off?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="927"/>
+        <location filename="../core/contactlist.cpp" line="933"/>
         <source>Domestic</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="928"/>
+        <location filename="../core/contactlist.cpp" line="934"/>
         <source>International</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="929"/>
+        <location filename="../core/contactlist.cpp" line="935"/>
         <source>Postal</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="930"/>
+        <location filename="../core/contactlist.cpp" line="936"/>
         <source>Parcel</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1150,33 +1185,33 @@ Are you want switch column sorting off?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="293"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="294"/>
         <source>Last section not closed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="300"/>
-        <location filename="../core/formats/files/udxfile.cpp" line="164"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="301"/>
+        <location filename="../core/formats/files/udxfile.cpp" line="165"/>
         <source>%1 unknown tags found</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="453"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="452"/>
         <source>Unknown charset: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="476"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="475"/>
         <source>Unknown encoding: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="504"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="503"/>
         <source>Invalid timezone: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="534"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="533"/>
         <source>Invalid datetime: </source>
         <translation type="unfinished"></translation>
     </message>
@@ -1217,64 +1252,64 @@ line %3, col %4
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/files/udxfile.cpp" line="109"/>
+        <location filename="../core/formats/files/udxfile.cpp" line="110"/>
         <source>Can&apos;t find &apos;vCardField&apos; at sequence %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/files/udxfile.cpp" line="134"/>
+        <location filename="../core/formats/files/udxfile.cpp" line="135"/>
         <source>Unknown phone type: %1 (%2)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/files/udxfile.cpp" line="150"/>
+        <location filename="../core/formats/files/udxfile.cpp" line="151"/>
         <source>Unknown &apos;vCardfield&apos; type: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/files/udxfile.cpp" line="158"/>
+        <location filename="../core/formats/files/udxfile.cpp" line="159"/>
         <source>%1 records read, %2 expected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/files/udxfile.cpp" line="222"/>
+        <location filename="../core/formats/files/udxfile.cpp" line="223"/>
         <source>Warning: contact %1, duplicate id %2 changed to %3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/files/udxfile.cpp" line="257"/>
+        <location filename="../core/formats/files/udxfile.cpp" line="258"/>
         <source>Warning: contact %1, unknown tel type:
 %2
  saved as cellular</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/files/udxfile.cpp" line="278"/>
+        <location filename="../core/formats/files/udxfile.cpp" line="279"/>
         <source>Warning: contact %1 has time (%2) in birthday, not implemented in UDX reader</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/files/udxfile.cpp" line="281"/>
+        <location filename="../core/formats/files/udxfile.cpp" line="282"/>
         <source>Warning: contact %1 has address(es), not implemented in UDX</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/files/udxfile.cpp" line="284"/>
+        <location filename="../core/formats/files/udxfile.cpp" line="285"/>
         <source>Warning: contact %1 has photo, not implemented in UDX</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/files/udxfile.cpp" line="286"/>
+        <location filename="../core/formats/files/udxfile.cpp" line="287"/>
         <source>Warning: contact %1 has description, not implemented in UDX</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/files/udxfile.cpp" line="288"/>
+        <location filename="../core/formats/files/udxfile.cpp" line="289"/>
         <source>Warning: contact %1 has job title, not implemented in UDX</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/files/udxfile.cpp" line="290"/>
+        <location filename="../core/formats/files/udxfile.cpp" line="291"/>
         <source>Warning: contact %1 has anniversaries, not implemented in UDX</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1323,27 +1358,27 @@ line %3, col %4
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="143"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="140"/>
         <source>No contact records in this file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="154"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="151"/>
         <source>MPB record allowed only for MPB source</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="206"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="203"/>
         <source>Name for number %1 changed from %2 to %3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="218"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="215"/>
         <source>Number %1 without original name not found in addressbook</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="220"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="217"/>
         <source>Number %1 not found in addressbook. Original name (%2) saved</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1735,6 +1770,22 @@ Data will be lost</source>
     <message>
         <location filename="../app/groupdialog.cpp" line="30"/>
         <source>Group already exists</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/formats/network/asyncformat.h" line="20"/>
+        <source>Server %1 not found</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/formats/network/asyncformat.h" line="21"/>
+        <source>Network error. Server %1 replied: %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/formats/network/asyncformat.h" line="22"/>
+        <source>
+Check username, password, protocol and port</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

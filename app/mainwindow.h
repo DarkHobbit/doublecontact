@@ -95,6 +95,8 @@ private slots:
 
     void on_action_Groups_triggered();
 
+    void on_action_About_Qt_triggered();
+
 private:
     Ui::MainWindow *ui;
     ContactModel *modLeft, *modRight;

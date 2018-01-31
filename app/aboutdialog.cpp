@@ -21,7 +21,7 @@ AboutDialog::AboutDialog(QWidget *parent) :
     ui->setupUi(this);
     ui->lwContributors->addItem("Icons made by Freepik from www.flaticon.com");
     ui->lwContributors->addItem("Dutch UI: Heimen Stoffels aka Vistaus");
-    ui->lwContributors->addItem("Norwegian (Bokmål) UI: Allan Nordhøy aka comradekingu");
+    ui->lwContributors->addItem(QString::fromUtf8("Norwegian (Bokmål) UI: Allan Nordhøy aka comradekingu"));
     ui->lwContributors->addItem("Ukrainian UI: Olexandr Nesterenko aka burunduk");
 }
 
