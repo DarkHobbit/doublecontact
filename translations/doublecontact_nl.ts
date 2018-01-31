@@ -56,29 +56,31 @@
     <message>
         <location filename="../core/formats/network/carddavformat.cpp" line="28"/>
         <source>Invalid URL</source>
-        <translation type="unfinished"></translation>
+        <translation>Ongeldige URL</translation>
     </message>
     <message>
         <location filename="../core/formats/network/carddavformat.cpp" line="82"/>
         <source>There are security problems:
     %1
 Are you want to accept this certificate anyway?</source>
-        <translation type="unfinished"></translation>
+        <translation>Er zijn beveiligingsproblemen:
+    %1
+Wilt u dit certificaat tóch accepteren?</translation>
     </message>
     <message>
         <location filename="../core/formats/network/carddavformat.cpp" line="145"/>
         <source>SSL handshake failed</source>
-        <translation type="unfinished"></translation>
+        <translation>SSL-koppeling mislukt</translation>
     </message>
     <message>
         <location filename="../core/formats/network/carddavformat.cpp" line="160"/>
         <source>No DAV items. It seems that this is not a CardDAV server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Geen DAV-items. Het lijkt erop dat dit geen CardDAV-server is.</translation>
     </message>
     <message>
         <location filename="../core/formats/network/carddavformat.cpp" line="172"/>
         <source>Strange vCard item: </source>
-        <translation type="unfinished"></translation>
+        <translation>Vreemd vCard-item: </translation>
     </message>
 </context>
 <context>
@@ -944,7 +946,7 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/mainwindow.ui" line="549"/>
         <source>About Qt</source>
-        <translation type="unfinished"></translation>
+        <translation>Over Qt</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.cpp" line="161"/>
@@ -1918,18 +1920,19 @@ De gegevens zullen verloren gaan</translation>
     <message>
         <location filename="../core/formats/network/asyncformat.h" line="20"/>
         <source>Server %1 not found</source>
-        <translation type="unfinished"></translation>
+        <translation>Server %1 niet gevonden</translation>
     </message>
     <message>
         <location filename="../core/formats/network/asyncformat.h" line="21"/>
         <source>Network error. Server %1 replied: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Netwerkfout. Server %1 antwoordde: %2</translation>
     </message>
     <message>
         <location filename="../core/formats/network/asyncformat.h" line="22"/>
         <source>
 Check username, password, protocol and port</source>
-        <translation type="unfinished"></translation>
+        <translation>
+Controleer gebruikersnaam, wachtwoord, protocol en poort</translation>
     </message>
 </context>
 <context>
