@@ -154,6 +154,8 @@ extern
 struct GlobalConfig {
     // Misc
     bool openLastFilesAtStartup;
+    // View
+    bool showTableGrid;
     bool useTableAlternateColors;
     // Locale
     QString dateFormat, timeFormat;

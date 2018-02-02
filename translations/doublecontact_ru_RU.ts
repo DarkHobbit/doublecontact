@@ -1049,57 +1049,57 @@ Save changes?</source>
         <translation>%1 изменился. Сохранить?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="694"/>
+        <location filename="../app/mainwindow.cpp" line="700"/>
         <source>Restart program to apply language change</source>
         <translation>Язык сменится после перезапуска программы</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="737"/>
+        <location filename="../app/mainwindow.cpp" line="743"/>
         <source>Two panels and compare mode needed for this operation</source>
         <translation>Сначала нужно включить 2 панели и режим сравнения</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="752"/>
+        <location filename="../app/mainwindow.cpp" line="758"/>
         <source>Left item</source>
         <translation>Левый контакт</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="752"/>
+        <location filename="../app/mainwindow.cpp" line="758"/>
         <source>Right item</source>
         <translation>Правый контакт</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="778"/>
+        <location filename="../app/mainwindow.cpp" line="784"/>
         <source>Strongly two records on current panel must be selected for this operation</source>
         <translation>Сначала надо выбрать ровно2 записи на текущей панели</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="784"/>
+        <location filename="../app/mainwindow.cpp" line="790"/>
         <source>Item 1</source>
         <translation>Контакт 1</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="784"/>
+        <location filename="../app/mainwindow.cpp" line="790"/>
         <source>Item 2</source>
         <translation>Контакт 2</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="851"/>
+        <location filename="../app/mainwindow.cpp" line="857"/>
         <source>Operation requires show two panels</source>
         <translation>Необходимо включить 2 панели</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="884"/>
+        <location filename="../app/mainwindow.cpp" line="890"/>
         <source>Statitics</source>
         <translation>Статистика</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="891"/>
+        <location filename="../app/mainwindow.cpp" line="897"/>
         <source>Report file</source>
         <translation>Файл отчёта</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="925"/>
+        <location filename="../app/mainwindow.cpp" line="931"/>
         <source>Column sorting is switched. Hard sort results are not visible.
 Are you want switch column sorting off?</source>
         <translation>Включена сортировка по столбцам, результаты жёсткой сортировки не видны.
@@ -1141,7 +1141,7 @@ Are you want switch column sorting off?</source>
     <name>QObject</name>
     <message>
         <location filename="../core/contactlist.cpp" line="106"/>
-        <location filename="../core/contactlist.cpp" line="930"/>
+        <location filename="../core/contactlist.cpp" line="932"/>
         <source>Home</source>
         <translation>Домашний</translation>
     </message>
@@ -1152,7 +1152,7 @@ Are you want switch column sorting off?</source>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="108"/>
-        <location filename="../core/contactlist.cpp" line="931"/>
+        <location filename="../core/contactlist.cpp" line="933"/>
         <source>Work</source>
         <translation>Служебный</translation>
     </message>
@@ -1160,7 +1160,7 @@ Are you want switch column sorting off?</source>
         <location filename="../core/contactlist.cpp" line="109"/>
         <location filename="../core/contactlist.cpp" line="158"/>
         <location filename="../core/contactlist.cpp" line="193"/>
-        <location filename="../core/contactlist.cpp" line="932"/>
+        <location filename="../core/contactlist.cpp" line="934"/>
         <source>Preferable</source>
         <translation>Предпочтительный</translation>
     </message>
@@ -1225,12 +1225,12 @@ Are you want switch column sorting off?</source>
         <translation>X.400</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="402"/>
+        <location filename="../core/contactlist.cpp" line="404"/>
         <source>Strange empty contact</source>
         <translation>Странный пустой контакт</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="781"/>
+        <location filename="../core/contactlist.cpp" line="783"/>
         <source>%1 records
 %2 phones
 %3 emails
@@ -1251,22 +1251,22 @@ SMS: %7
 %9 %10</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="933"/>
+        <location filename="../core/contactlist.cpp" line="935"/>
         <source>Domestic</source>
         <translation>Внутренний</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="934"/>
+        <location filename="../core/contactlist.cpp" line="936"/>
         <source>International</source>
         <translation>Международный</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="935"/>
+        <location filename="../core/contactlist.cpp" line="937"/>
         <source>Postal</source>
         <translation>Почтовый</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="936"/>
+        <location filename="../core/contactlist.cpp" line="938"/>
         <source>Parcel</source>
         <translation>Для посылок</translation>
     </message>
@@ -2014,7 +2014,7 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../app/settingsdialog.ui" line="64"/>
         <source>Use system date/time format</source>
-        <translation>Использовать системный формат</translation>
+        <translation>Использовать системный формат даты и времени</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="71"/>
@@ -2023,101 +2023,106 @@ Check username, password, protocol and port</source>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="78"/>
+        <source>Show grid in tables</source>
+        <translation>Показывать сетку в таблицах</translation>
+    </message>
+    <message>
+        <location filename="../app/settingsdialog.ui" line="85"/>
         <source>Use alternate row colors in table</source>
         <translation>Чередовать цвета строк в таблице</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="99"/>
+        <location filename="../app/settingsdialog.ui" line="106"/>
         <source>Columns</source>
         <translation>Столбцы</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="105"/>
+        <location filename="../app/settingsdialog.ui" line="112"/>
         <source>Visible</source>
         <translation>Видимые</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="112"/>
+        <location filename="../app/settingsdialog.ui" line="119"/>
         <source>Available</source>
         <translation>Доступные</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="166"/>
+        <location filename="../app/settingsdialog.ui" line="173"/>
         <source>Saving</source>
         <translation>Сохранение</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="174"/>
+        <location filename="../app/settingsdialog.ui" line="181"/>
         <source>Preferred vCard version</source>
         <translation>Предпочтительная версия vCard</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="182"/>
+        <location filename="../app/settingsdialog.ui" line="189"/>
         <source>2.1</source>
         <translation>2.1</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="187"/>
+        <location filename="../app/settingsdialog.ui" line="194"/>
         <source>3.0</source>
         <translation>3.0</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="192"/>
+        <location filename="../app/settingsdialog.ui" line="199"/>
         <source>4.0</source>
         <translation>4.0</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="202"/>
+        <location filename="../app/settingsdialog.ui" line="209"/>
         <source>Use original file version (if present)</source>
         <translation>Брать версию из исходного файла (если есть)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="211"/>
+        <location filename="../app/settingsdialog.ui" line="218"/>
         <source>Default country</source>
         <translation>Страна по умолчанию</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="223"/>
+        <location filename="../app/settingsdialog.ui" line="230"/>
         <source>(for phone number internationalization)</source>
         <translation>(для интернационализации телефонных номеров)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="230"/>
+        <location filename="../app/settingsdialog.ui" line="237"/>
         <source>Skip time from birthday and anniversaries</source>
         <translation>Удалять время из дней рождения и годовщин</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="237"/>
+        <location filename="../app/settingsdialog.ui" line="244"/>
         <source>Non-standard phone/email types</source>
         <translation>Нестандартные типы телефонов/почты</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="243"/>
+        <location filename="../app/settingsdialog.ui" line="250"/>
         <source>Add X- to type names</source>
         <translation>Добавлять X- к именам типов</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="250"/>
+        <location filename="../app/settingsdialog.ui" line="257"/>
         <source>Replace non-latin type named</source>
         <translation>Заменять нелатинские имена типов</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="274"/>
+        <location filename="../app/settingsdialog.ui" line="281"/>
         <source>Loading</source>
         <translation>Загрузка</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="282"/>
+        <location filename="../app/settingsdialog.ui" line="289"/>
         <source>Default type if empty</source>
         <translation>Тип телефона, если пустой</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="294"/>
+        <location filename="../app/settingsdialog.ui" line="301"/>
         <source>(many phones treats &apos;Voice&apos; as &apos;Other&apos;)</source>
         <translation>(многие телефоны трактуют &apos;Голосовой&apos; как &apos;Прочий&apos;)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="301"/>
+        <location filename="../app/settingsdialog.ui" line="308"/>
         <source>Warning on non-standard phone types</source>
         <translation>Предупреждать о нестандартных типах телефонов</translation>
     </message>
@@ -2126,7 +2131,7 @@ Check username, password, protocol and port</source>
         <translation type="obsolete">Предупреждать о нестандартных типах телефонов/почты</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.cpp" line="113"/>
+        <location filename="../app/settingsdialog.cpp" line="117"/>
         <source>List must contain at least one visible column</source>
         <translation>В списке должен быть хотя бы один видимый столбец</translation>
     </message>

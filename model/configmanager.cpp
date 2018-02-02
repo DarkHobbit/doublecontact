@@ -58,6 +58,8 @@ void ConfigManager::readConfig()
     updateFormats();
     // Misc
     gd.openLastFilesAtStartup = settings->value("General/OpenLastFilesAtStartup", true).toBool();
+    // View
+    gd.showTableGrid = settings->value("View/ShowTableGrid", false).toBool();
     gd.useTableAlternateColors = settings->value("View/UseTableAlternateColors", true).toBool();
     // For column view
     validColumnNames.clear();
@@ -106,6 +108,8 @@ void ConfigManager::writeConfig()
     settings->setValue("Locale/UseSystemDateTimeFormat", gd.useSystemDateTimeFormat);
     // Misc
     settings->setValue("General/OpenLastFilesAtStartup", gd.openLastFilesAtStartup);
+    // View
+    settings->setValue("View/ShowTableGrid", gd.showTableGrid);
     settings->setValue("View/UseTableAlternateColors", gd.useTableAlternateColors);
     // Column view
     settings->setValue("VisibleColumns/Count", gd.columnNames.count());

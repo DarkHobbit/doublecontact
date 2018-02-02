@@ -73,6 +73,13 @@
         </widget>
        </item>
        <item>
+        <widget class="QCheckBox" name="cbShowTableGrid">
+         <property name="text">
+          <string>Show grid in tables</string>
+         </property>
+        </widget>
+       </item>
+       <item>
         <widget class="QCheckBox" name="cbUseTableAlternateColors">
          <property name="text">
           <string>Use alternate row colors in table</string>
