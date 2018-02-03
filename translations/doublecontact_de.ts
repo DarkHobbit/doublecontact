@@ -672,7 +672,7 @@
     <message>
         <location filename="../app/mainwindow.ui" line="415"/>
         <source>&amp;Compare/Uncompare</source>
-        <translation type="unfinished">&amp;Vergleichen/Nicht vergleichen</translation>
+        <translation>&amp;Vergleichen/Vergleich aufheben</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="418"/>
@@ -1189,7 +1189,7 @@ Möchten Sie die Spaltensortierung ausschalten?</translation>
     <message>
         <location filename="../core/formats/common/vcarddata.cpp" line="534"/>
         <source>Invalid datetime: </source>
-        <translation type="unfinished">Ungültiges Datum: </translation>
+        <translation>Ungültige Datumzeit: </translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="59"/>
