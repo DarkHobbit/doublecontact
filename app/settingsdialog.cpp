@@ -32,6 +32,8 @@ bool SettingsDialog::setData()
     on_cbUseSystemDateTimeFormat_clicked(ui->cbUseSystemDateTimeFormat->isChecked());
     // Misc
     ui->cbOpenLastFilesAtStartup->setChecked(gd.openLastFilesAtStartup);
+    // View
+    ui->cbShowTableGrid->setChecked(gd.showTableGrid);
     ui->cbUseTableAlternateColors->setChecked(gd.useTableAlternateColors);
     // Column view
     for (int i=0; i<gd.columnNames.count(); i++) // Fill visible columns list
@@ -75,7 +77,9 @@ bool SettingsDialog::getData()
     gd.useSystemDateTimeFormat = ui->cbUseSystemDateTimeFormat->isChecked();
     // Misc
     gd.openLastFilesAtStartup = ui->cbOpenLastFilesAtStartup->isChecked();
+    // View
     gd.useTableAlternateColors = ui->cbUseTableAlternateColors->isChecked();
+    gd.showTableGrid = ui->cbShowTableGrid->isChecked();
     // Column view
     gd.columnNames.clear();
     for (int i=0; i<ui->lwVisibleColumns->count(); i++)

@@ -653,14 +653,20 @@ void MainWindow::showIOErrors(const QString &path, int count, const QStringList 
 // Manage immediately applied but settings window managed options
 void MainWindow::updateConfig()
 {
-    // Table(s) alternating row colors
-    ui->tvLeft->setAlternatingRowColors(gd.useTableAlternateColors);
-    ui->tvRight->setAlternatingRowColors(gd.useTableAlternateColors);
+    // Table(s) general config
+    updateTableConfig(ui->tvLeft);
+    updateTableConfig(ui->tvRight);
     // Table(s) visible columns
     modLeft->updateVisibleColumns();
     if (modRight)
         modRight->updateVisibleColumns();
     // TODO add here font changes, etc.
+}
+
+void MainWindow::updateTableConfig(QTableView *table)
+{
+    table->setShowGrid(gd.showTableGrid);
+    table->setAlternatingRowColors(gd.useTableAlternateColors);
 }
 
 void MainWindow::updateRecent()

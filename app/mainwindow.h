@@ -125,6 +125,7 @@ private:
     void showIOErrors(const QString &path, int count, const QStringList& errors, const QString& fatalError);
     // Update visual configuration changes at startup and after settings dialog call
     void updateConfig();
+    void updateTableConfig(QTableView* table);
     void updateRecent();
 };
 
