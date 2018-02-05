@@ -2027,7 +2027,7 @@ Controleer gebruikersnaam, wachtwoord, protocol en poort</translation>
     <message>
         <location filename="../app/settingsdialog.ui" line="78"/>
         <source>Show grid in tables</source>
-        <translation type="unfinished"></translation>
+        <translation>Rooster weergeven in tabellen</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="85"/>
