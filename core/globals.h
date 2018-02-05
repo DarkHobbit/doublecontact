@@ -157,6 +157,8 @@ struct GlobalConfig {
     // View
     bool showTableGrid;
     bool useTableAlternateColors;
+    bool useSystemFontsAndColors;
+    QString tableFont, gridColor1, gridColor2;
     // Locale
     QString dateFormat, timeFormat;
     bool useSystemDateTimeFormat;

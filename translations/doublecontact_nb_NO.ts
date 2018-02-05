@@ -863,146 +863,146 @@ Are you want to accept this certificate anyway?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="161"/>
+        <location filename="../app/mainwindow.cpp" line="167"/>
         <source>Open contact file</source>
         <translation>Åpne kontaktfil</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="178"/>
+        <location filename="../app/mainwindow.cpp" line="184"/>
         <source>Open VCF Directory</source>
         <translation>Åpne VCF-mappe</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="202"/>
+        <location filename="../app/mainwindow.cpp" line="208"/>
         <source>Save contact file</source>
         <translation>Lagre kontaktfil</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="217"/>
+        <location filename="../app/mainwindow.cpp" line="223"/>
         <source>Save VCF Directory</source>
         <translation>Lagre VCF-mappe</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="226"/>
+        <location filename="../app/mainwindow.cpp" line="232"/>
         <source>Directory exists. Are You really want rewrite it?</source>
         <translation>Mappen finnes. Ønsker du virkelig å skrive den på nytt?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="275"/>
+        <location filename="../app/mainwindow.cpp" line="281"/>
         <source>Are You really want to edit more than one record?
 Only some fields can this edited in this mode</source>
         <translation>Er du sikker på at du ønsker å redigere mer enn én oppføring?
 Kun noen felter kan redigeres i dette moduset</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="387"/>
+        <location filename="../app/mainwindow.cpp" line="393"/>
         <source>Compare mode requires show two panels and load contact lists in both panels</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="433"/>
+        <location filename="../app/mainwindow.cpp" line="439"/>
         <source>Group operation not impemented, select one record</source>
         <translation>Gruppeoperasjon ikke implementert, velg én oppflring</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="460"/>
+        <location filename="../app/mainwindow.cpp" line="466"/>
         <source> (directory)</source>
         <translation> (mappe)</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="554"/>
+        <location filename="../app/mainwindow.cpp" line="560"/>
         <source>Mode: </source>
         <translation>Modus: </translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="555"/>
+        <location filename="../app/mainwindow.cpp" line="561"/>
         <source>two panels</source>
         <translation>to paneler</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="555"/>
+        <location filename="../app/mainwindow.cpp" line="561"/>
         <source>one panel</source>
         <translation>ett panel</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="556"/>
+        <location filename="../app/mainwindow.cpp" line="562"/>
         <source>sorted</source>
         <translation>sorter</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="556"/>
+        <location filename="../app/mainwindow.cpp" line="562"/>
         <source>not sorted</source>
         <translation>usortert</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="559"/>
+        <location filename="../app/mainwindow.cpp" line="565"/>
         <source>simple editing</source>
         <translation>enkel redigering</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="563"/>
+        <location filename="../app/mainwindow.cpp" line="569"/>
         <source>compare</source>
         <translation>sammenlign</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="602"/>
+        <location filename="../app/mainwindow.cpp" line="608"/>
         <source>&apos;%1&apos; was changed.
 Save changes?</source>
         <translation>&quot;%1&quot; ble endret.
 Lagre endringer?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="700"/>
+        <location filename="../app/mainwindow.cpp" line="715"/>
         <source>Restart program to apply language change</source>
         <translation>Start programmet på nytt for å legge til programspråk</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="743"/>
+        <location filename="../app/mainwindow.cpp" line="758"/>
         <source>Two panels and compare mode needed for this operation</source>
         <translation>To paneler og sammenligningsmodus trengs for denne handlingen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="758"/>
+        <location filename="../app/mainwindow.cpp" line="773"/>
         <source>Left item</source>
         <translation>Venstre element</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="758"/>
+        <location filename="../app/mainwindow.cpp" line="773"/>
         <source>Right item</source>
         <translation>Høyre element</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="784"/>
+        <location filename="../app/mainwindow.cpp" line="799"/>
         <source>Strongly two records on current panel must be selected for this operation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="790"/>
+        <location filename="../app/mainwindow.cpp" line="805"/>
         <source>Item 1</source>
         <translation>Element 1</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="790"/>
+        <location filename="../app/mainwindow.cpp" line="805"/>
         <source>Item 2</source>
         <translation>Element 2</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="857"/>
+        <location filename="../app/mainwindow.cpp" line="872"/>
         <source>Operation requires show two panels</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="890"/>
+        <location filename="../app/mainwindow.cpp" line="905"/>
         <source>Statitics</source>
         <translation>Statistikk</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="897"/>
+        <location filename="../app/mainwindow.cpp" line="912"/>
         <source>Report file</source>
         <translation>Rapportfil</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="931"/>
+        <location filename="../app/mainwindow.cpp" line="946"/>
         <source>Column sorting is switched. Hard sort results are not visible.
 Are you want switch column sorting off?</source>
         <translation type="unfinished"></translation>
@@ -1908,102 +1908,127 @@ Check username, password, protocol and port</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../app/settingsdialog.ui" line="92"/>
+        <source>Use system fonts and colors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/settingsdialog.ui" line="99"/>
+        <source>Table font</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../app/settingsdialog.ui" line="106"/>
+        <source>Colors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/settingsdialog.ui" line="112"/>
+        <source>Grid base</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/settingsdialog.ui" line="119"/>
+        <source>Grid alternate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/settingsdialog.ui" line="130"/>
         <source>Columns</source>
         <translation>Kolonner</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="112"/>
+        <location filename="../app/settingsdialog.ui" line="136"/>
         <source>Visible</source>
         <translation>Synlig</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="119"/>
+        <location filename="../app/settingsdialog.ui" line="143"/>
         <source>Available</source>
         <translation>Tilgjengelig</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="173"/>
+        <location filename="../app/settingsdialog.ui" line="197"/>
         <source>Saving</source>
         <translation>Lagrer</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="181"/>
+        <location filename="../app/settingsdialog.ui" line="205"/>
         <source>Preferred vCard version</source>
         <translation>Foretrukket vCard-versjon</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="189"/>
+        <location filename="../app/settingsdialog.ui" line="213"/>
         <source>2.1</source>
         <translation>2.1</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="194"/>
+        <location filename="../app/settingsdialog.ui" line="218"/>
         <source>3.0</source>
         <translation>3.0</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="199"/>
+        <location filename="../app/settingsdialog.ui" line="223"/>
         <source>4.0</source>
         <translation type="unfinished">4.0</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="209"/>
+        <location filename="../app/settingsdialog.ui" line="233"/>
         <source>Use original file version (if present)</source>
         <translation>Bruk opprinnelig filversjon (hvis tilgjengelig)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="218"/>
+        <location filename="../app/settingsdialog.ui" line="242"/>
         <source>Default country</source>
         <translation>Forvalgt land</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="230"/>
+        <location filename="../app/settingsdialog.ui" line="254"/>
         <source>(for phone number internationalization)</source>
         <translation>(for telefonnummerinternasjonalisering)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="237"/>
+        <location filename="../app/settingsdialog.ui" line="261"/>
         <source>Skip time from birthday and anniversaries</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="244"/>
+        <location filename="../app/settingsdialog.ui" line="268"/>
         <source>Non-standard phone/email types</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="250"/>
+        <location filename="../app/settingsdialog.ui" line="274"/>
         <source>Add X- to type names</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="257"/>
+        <location filename="../app/settingsdialog.ui" line="281"/>
         <source>Replace non-latin type named</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="281"/>
+        <location filename="../app/settingsdialog.ui" line="305"/>
         <source>Loading</source>
         <translation>Laster</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="289"/>
+        <location filename="../app/settingsdialog.ui" line="313"/>
         <source>Default type if empty</source>
         <translation>Forvalgt type, hvis tom</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="301"/>
+        <location filename="../app/settingsdialog.ui" line="325"/>
         <source>(many phones treats &apos;Voice&apos; as &apos;Other&apos;)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="308"/>
+        <location filename="../app/settingsdialog.ui" line="332"/>
         <source>Warning on non-standard phone types</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.cpp" line="117"/>
+        <location filename="../app/settingsdialog.cpp" line="123"/>
         <source>List must contain at least one visible column</source>
         <translation>Listen må inneholde minst én synlig kolonne</translation>
     </message>

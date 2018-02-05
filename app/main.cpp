@@ -49,7 +49,6 @@ int main(int argc, char *argv[])
             contactColumnHeaders.fill();
         }
     }
-    configManager.readConfig(); // After contactColumnHeaders.fill()! Else national UI not works
     // Arguments parse TODO m.b. move this code to separate file for QML support
     gd.debugDataMode = false;
     gd.fullScreenMode = false;

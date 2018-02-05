@@ -28,6 +28,14 @@ private slots:
     void on_btnDownCol_clicked();
     void on_cbUseSystemDateTimeFormat_clicked(bool checked);
 
+    void on_cbUseSystemFontsAndColors_clicked(bool checked);
+
+    void on_btnTableFont_clicked();
+
+    void on_btnGridColor1_clicked();
+
+    void on_btnGridColor2_clicked();
+
 private:
     QString _lang;
     bool _langChanged;

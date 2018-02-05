@@ -17,6 +17,7 @@
 #include <QFileDialog>
 #include <QGridLayout>
 #include <QItemSelectionModel>
+#include <QPalette>
 #include <QMessageBox>
 
 #include "mainwindow.h"
@@ -39,6 +40,11 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    // Configuration
+    configManager.setDefaults(ui->tvLeft->font().toString(),
+        ui->tvLeft->palette().color(QPalette::Base).name(),
+        ui->tvLeft->palette().color(QPalette::AlternateBase).name());
+    configManager.readConfig(); // After contactColumnHeaders.fill()! Else national UI not works
     // Models
     modLeft = new ContactModel(this, S_NEW_LIST, recent);
     modRight = new ContactModel(this, S_NEW_LIST + " 2", recent);
@@ -663,10 +669,21 @@ void MainWindow::updateConfig()
     // TODO add here font changes, etc.
 }
 
+// Set color/font for each table view
 void MainWindow::updateTableConfig(QTableView *table)
 {
     table->setShowGrid(gd.showTableGrid);
     table->setAlternatingRowColors(gd.useTableAlternateColors);
+    if (!gd.useSystemFontsAndColors) {
+        QFont f;
+        bool fontSuccess = f.fromString(gd.tableFont);
+        if (fontSuccess)
+            table->setFont(f);
+        QMessageBox::information(0, "d", QString("QTableWidget { alternate-background-color: %1; background: %2 }")
+               .arg(gd.gridColor2).arg(gd.gridColor1));
+        table->setStyleSheet(QString("QTableView { alternate-background-color: %1; background: %2 }")
+               .arg(gd.gridColor2).arg(gd.gridColor1));
+    }
 }
 
 void MainWindow::updateRecent()
