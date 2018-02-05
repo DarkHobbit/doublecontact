@@ -26,3 +26,9 @@ cd doublecontact
 qmake
 
 make
+
+## Help ##
+
+### Translations ###
+
+Please, use [Weblate](https://hosted.weblate.org/projects/doublecontact/).
