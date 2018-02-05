@@ -59,6 +59,7 @@ enum ContactColumn {
 #define S_NEW_LIST QObject::tr("New contact list")
 #define S_GROUP_NAME QObject::tr("Group name")
 #define S_COUNTRY_RULE_SELECT QObject::tr("Select country rule")
+#define S_COUNTRY_PHONE_TEMPLATE QObject::tr("Select phone template")
 #define S_CSV_PROFILE_SELECT QObject::tr("Select CSV profile")
 #define S_GENERIC_CSV_PROFILE QObject::tr("Generic profile")
 // Spec.value for combined phone/mail/addr. types

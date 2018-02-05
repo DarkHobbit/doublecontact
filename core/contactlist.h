@@ -191,6 +191,7 @@ struct ContactItem {
     QString makeGenericName() const;
     void reverseFullName();
     void dropFinalEmptyNames(); // If empty parts not in-middle, remove it
+    void formatPhones(const QString& templ);
     bool similarTo(const ContactItem& pair, int priorityLevel);
     bool identicalTo(const ContactItem& pair);
     static QString nameComponent(int compNum);

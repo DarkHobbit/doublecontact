@@ -421,6 +421,45 @@ void ContactItem::dropFinalEmptyNames()
     }
 }
 
+void ContactItem::formatPhones(const QString &templ)
+{
+    for(int i=0; i<phones.count(); i++) {
+        QString src = phones[i].value;
+        QString res = "";
+        int srcPos = 0;
+        int templPos = 0;
+        // "+" is significant char, it ALWAYS transferred from source, if present
+        if (src.startsWith("+")) {
+            res += "+";
+            srcPos++;
+        }
+        if (templ.startsWith("+"))
+            templPos++;
+        while (templPos<templ.length() && srcPos<src.length())
+        {
+            if (templ[templPos].toUpper()=='N') {
+                while (srcPos<src.length() && !src[srcPos].isDigit())
+                    srcPos++;
+                if (srcPos<src.length()) {
+                    res += src[srcPos];
+                    srcPos++;
+                }
+                else break;
+            }
+            else
+                res += templ[templPos];
+            templPos++;
+        }
+        // If source longer than template...
+        while (srcPos<src.length()) {
+            if (src[srcPos].isDigit())
+                res += src[srcPos];
+            srcPos++;
+        }
+        phones[i].value = res;
+    }
+}
+
 bool ContactItem::similarTo(const ContactItem &pair, int priorityLevel)
 {
     // TODO set options for various criter.

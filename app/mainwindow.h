@@ -84,17 +84,15 @@ private slots:
     void on_actionDrop_full_name_triggered();
     void on_actionSp_lit_triggered();
     void on_actionIntl_phone_prefix_triggered();
+    void on_actionFormat_phone_numbers_triggered();
     void on_actionS_wap_Panels_triggered();
     void on_action_SaveAsDir_triggered();
-    void on_action_About_triggered();
     void on_actionReverse_full_name_triggered();
     void on_actionS_tatistics_triggered();
     void on_actionRe_port_triggered();
-
     void on_action_Hard_sort_triggered();
-
     void on_action_Groups_triggered();
-
+    void on_action_About_triggered();
     void on_action_About_Qt_triggered();
 
 private:
