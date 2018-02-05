@@ -56,29 +56,31 @@
     <message>
         <location filename="../core/formats/network/carddavformat.cpp" line="28"/>
         <source>Invalid URL</source>
-        <translation type="unfinished"></translation>
+        <translation>Помилковий URL</translation>
     </message>
     <message>
         <location filename="../core/formats/network/carddavformat.cpp" line="82"/>
         <source>There are security problems:
     %1
 Are you want to accept this certificate anyway?</source>
-        <translation type="unfinished"></translation>
+        <translation>Виявлено проблеми безпеки:
+    %1
+Все одно прийняти даний сертифікат?</translation>
     </message>
     <message>
         <location filename="../core/formats/network/carddavformat.cpp" line="145"/>
         <source>SSL handshake failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Помилка SSL квитування</translation>
     </message>
     <message>
         <location filename="../core/formats/network/carddavformat.cpp" line="160"/>
         <source>No DAV items. It seems that this is not a CardDAV server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не виявлено записів DAV. Можливо сервер не підтримує CardDAV.</translation>
     </message>
     <message>
         <location filename="../core/formats/network/carddavformat.cpp" line="172"/>
         <source>Strange vCard item: </source>
-        <translation type="unfinished"></translation>
+        <translation>Дивний елемент vCard: </translation>
     </message>
 </context>
 <context>
@@ -529,7 +531,7 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/groupdialog.cpp" line="122"/>
         <source>Merged group</source>
-        <translation type="unfinished"></translation>
+        <translation>Група для злиття</translation>
     </message>
     <message>
         <location filename="../app/groupdialog.cpp" line="147"/>
@@ -929,7 +931,7 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/mainwindow.ui" line="536"/>
         <source>&amp;Hard sort</source>
-        <translation type="unfinished"></translation>
+        <translation>Жорстке впорядкування</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="541"/>
@@ -944,7 +946,7 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/mainwindow.ui" line="549"/>
         <source>About Qt</source>
-        <translation type="unfinished"></translation>
+        <translation>Про Qt</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.cpp" line="161"/>
@@ -1513,7 +1515,7 @@ line %3, col %4
     <message>
         <location filename="../core/globals.h" line="65"/>
         <source>mixed...</source>
-        <translation type="unfinished">Складений...</translation>
+        <translation>змішаний…</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="67"/>
@@ -1568,17 +1570,17 @@ line %3, col %4
     <message>
         <location filename="../core/globals.h" line="78"/>
         <source>Home phone</source>
-        <translation>Домаш. тел.</translation>
+        <translation>Домашній тел</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="79"/>
         <source>Work phone</source>
-        <translation>Роб. тел.</translation>
+        <translation>Робочий тел</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="80"/>
         <source>Cell phone</source>
-        <translation>Мобіл. тел.</translation>
+        <translation>Мобільний тел</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="81"/>
@@ -1913,18 +1915,19 @@ Data will be lost</source>
     <message>
         <location filename="../core/formats/network/asyncformat.h" line="20"/>
         <source>Server %1 not found</source>
-        <translation type="unfinished"></translation>
+        <translation>Сервер %1 не знайдено</translation>
     </message>
     <message>
         <location filename="../core/formats/network/asyncformat.h" line="21"/>
         <source>Network error. Server %1 replied: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Помилка мережі. Сервер %1 відповів: %2</translation>
     </message>
     <message>
         <location filename="../core/formats/network/asyncformat.h" line="22"/>
         <source>
 Check username, password, protocol and port</source>
-        <translation type="unfinished"></translation>
+        <translation>
+Перевірте ім&apos;я користувача, пароль, протокол та порт</translation>
     </message>
 </context>
 <context>
@@ -2019,12 +2022,12 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../app/settingsdialog.ui" line="78"/>
         <source>Show grid in tables</source>
-        <translation type="unfinished"></translation>
+        <translation>Показувати сітку в таблицях</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="85"/>
         <source>Use alternate row colors in table</source>
-        <translation type="unfinished"></translation>
+        <translation>Чергування кольорів в таблиці</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="106"/>
