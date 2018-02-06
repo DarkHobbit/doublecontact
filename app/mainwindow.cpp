@@ -17,6 +17,7 @@
 #include <QFileDialog>
 #include <QGridLayout>
 #include <QItemSelectionModel>
+#include <QPalette>
 #include <QMessageBox>
 
 #include "mainwindow.h"
@@ -39,6 +40,11 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    // Configuration
+    configManager.setDefaults(ui->tvLeft->font().toString(),
+        ui->tvLeft->palette().color(QPalette::Base).name(),
+        ui->tvLeft->palette().color(QPalette::AlternateBase).name());
+    configManager.readConfig(); // After contactColumnHeaders.fill()! Else national UI not works
     // Models
     modLeft = new ContactModel(this, S_NEW_LIST, recent);
     modRight = new ContactModel(this, S_NEW_LIST + " 2", recent);
@@ -663,10 +669,19 @@ void MainWindow::updateConfig()
     // TODO add here font changes, etc.
 }
 
+// Set color/font for each table view
 void MainWindow::updateTableConfig(QTableView *table)
 {
     table->setShowGrid(gd.showTableGrid);
     table->setAlternatingRowColors(gd.useTableAlternateColors);
+    if (!gd.useSystemFontsAndColors) {
+        QFont f;
+        bool fontSuccess = f.fromString(gd.tableFont);
+        if (fontSuccess)
+            table->setFont(f);
+        table->setStyleSheet(QString("QTableView { alternate-background-color: %1; background: %2 }")
+               .arg(gd.gridColor2).arg(gd.gridColor1));
+    }
 }
 
 void MainWindow::updateRecent()
@@ -841,6 +856,7 @@ void MainWindow::on_actionIntl_phone_prefix_triggered()
     connect(bb, SIGNAL(accepted()), d, SLOT(accept()));
     connect(bb, SIGNAL(rejected()), d, SLOT(reject()));
     l->addWidget(bb);
+    d->setMinimumWidth(400); // Window title is too long
     d->exec();
     if (d->result()==QDialog::Accepted) {
         selectedModel->intlPhonePrefix(selection, cbCountryRule->currentIndex());
@@ -950,4 +966,33 @@ void MainWindow::on_action_Groups_triggered()
 void MainWindow::on_action_About_Qt_triggered()
 {
     qApp->aboutQt();
+}
+
+void MainWindow::on_actionFormat_phone_numbers_triggered()
+{
+    if (!checkSelection()) return;
+    QDialog* d = new QDialog(0);
+    d->setWindowTitle(S_COUNTRY_PHONE_TEMPLATE);
+    QVBoxLayout* l = new QVBoxLayout();
+    d->setLayout(l);
+    QComboBox* cbPhoneTemplate = new QComboBox();
+    cbPhoneTemplate->addItem("+N (NNN) NNN-NN-NN");
+    cbPhoneTemplate->addItem("+N NNN NNN-NN-NN");
+    cbPhoneTemplate->addItem("+N-NNN-NNN-NN-NN");
+    cbPhoneTemplate->addItem("+NNNNNNNNNNN");
+    cbPhoneTemplate->setEditable(true);
+    // TODO set combobox editable
+    l->addWidget(cbPhoneTemplate);
+    QDialogButtonBox* bb = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
+    connect(bb, SIGNAL(accepted()), d, SLOT(accept()));
+    connect(bb, SIGNAL(rejected()), d, SLOT(reject()));
+    l->addWidget(bb);
+    d->setMinimumWidth(400); // Window title is too long
+    d->exec();
+    if (d->result()==QDialog::Accepted) {
+        selectedModel->formatPhones(selection, cbPhoneTemplate->currentText());
+        updateViewMode();
+        updateHeaders();
+    }
+    delete d;
 }

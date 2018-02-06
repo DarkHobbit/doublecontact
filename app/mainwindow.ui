@@ -250,6 +250,7 @@
     <addaction name="actionS_plit_names"/>
     <addaction name="action_Drop_slashes"/>
     <addaction name="actionIntl_phone_prefix"/>
+    <addaction name="actionFormat_phone_numbers"/>
     <addaction name="separator"/>
     <addaction name="action_Generate_full_name"/>
     <addaction name="actionDrop_full_name"/>
@@ -547,6 +548,11 @@
   <action name="action_About_Qt">
    <property name="text">
     <string>About Qt</string>
+   </property>
+  </action>
+  <action name="actionFormat_phone_numbers">
+   <property name="text">
+    <string>Format phone numbers</string>
    </property>
   </action>
  </widget>

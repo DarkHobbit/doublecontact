@@ -36,6 +36,8 @@ Current
 * Timezone setting in hh:mm temporarily disabled (too many info in RFC)
 * Table grid disabled by default (can be enabled in settings)
 * Table rows by default use alternate colors (can be disabled in settings)
+* Table font and colors can be changed by user
+* Added phone numbers formatting by user-defined template, such as +N-NNN-NNN-NN-NN
 * Refactoring: multiple anniversaries removed from code according vCard 4.0 cardinality
 * Added translations: German, Norwegian (Bokmål)
 * Added translation for standard Qt dialogs/buttons support (now Russian and Ukrainian files added)

@@ -62,6 +62,7 @@ public:
     void generateFullNames(const QModelIndexList& indices);
     void dropFullNames(const QModelIndexList& indices);
     void reverseFullNames(const QModelIndexList& indices);
+    void formatPhones(const QModelIndexList& indices, const QString& templ);
     void splitNumbers(const QModelIndexList& indices);
     void intlPhonePrefix(const QModelIndexList& indices, int countryRule);
     // Group operation methods

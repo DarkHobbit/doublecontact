@@ -1,4 +1,7 @@
 #include <QApplication>
+#include <QColorDialog>
+#include <QFont>
+#include <QFontDialog>
 #include <QMessageBox>
 
 #include "configmanager.h"
@@ -35,6 +38,8 @@ bool SettingsDialog::setData()
     // View
     ui->cbShowTableGrid->setChecked(gd.showTableGrid);
     ui->cbUseTableAlternateColors->setChecked(gd.useTableAlternateColors);
+    ui->cbUseSystemFontsAndColors->setChecked(gd.useSystemFontsAndColors);
+    on_cbUseSystemFontsAndColors_clicked(ui->cbUseSystemFontsAndColors->isChecked());
     // Column view
     for (int i=0; i<gd.columnNames.count(); i++) // Fill visible columns list
             ui->lwVisibleColumns->addItem(contactColumnHeaders[gd.columnNames[i]]);
@@ -80,6 +85,7 @@ bool SettingsDialog::getData()
     // View
     gd.useTableAlternateColors = ui->cbUseTableAlternateColors->isChecked();
     gd.showTableGrid = ui->cbShowTableGrid->isChecked();
+    gd.useSystemFontsAndColors = ui->cbUseSystemFontsAndColors->isChecked();
     // Column view
     gd.columnNames.clear();
     for (int i=0; i<ui->lwVisibleColumns->count(); i++)
@@ -153,4 +159,40 @@ void SettingsDialog::on_cbUseSystemDateTimeFormat_clicked(bool checked)
 {
     ui->leDateFormat->setEnabled(!checked);
     ui->leTimeFormat->setEnabled(!checked);
+}
+
+void SettingsDialog::on_cbUseSystemFontsAndColors_clicked(bool checked)
+{
+    ui->btnTableFont->setEnabled(!checked);
+    ui->btnGridColor1->setEnabled(!checked);
+    ui->btnGridColor2->setEnabled(!checked);
+}
+
+void SettingsDialog::on_btnTableFont_clicked()
+{
+    QFontDialog* d = new QFontDialog;
+    QFont f;
+    f.fromString(gd.tableFont);
+    d->setCurrentFont(f);
+    if (d->exec()==QDialog::Accepted)
+        gd.tableFont = d->currentFont().toString();
+    delete d;
+}
+
+void SettingsDialog::on_btnGridColor1_clicked()
+{
+    QColorDialog* d = new QColorDialog;
+    d->setCurrentColor(QColor(gd.gridColor1));
+    if (d->exec()==QDialog::Accepted)
+        gd.gridColor1 = d->currentColor().name();
+    delete d;
+}
+
+void SettingsDialog::on_btnGridColor2_clicked()
+{
+    QColorDialog* d = new QColorDialog;
+    d->setCurrentColor(QColor(gd.gridColor2));
+    if (d->exec()==QDialog::Accepted)
+        gd.gridColor2 = d->currentColor().name();
+    delete d;
 }

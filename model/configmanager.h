@@ -25,6 +25,7 @@ public:
     ~ConfigManager();
     void prepare();
     // Common configuration, managed by config dialog
+    void setDefaults(const QString& tableFont, const QString& gridColor1, const QString& gridColor2);
     void readConfig();
     void writeConfig();
     // Separate settings, managed by main window and other dialogs

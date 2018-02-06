@@ -338,6 +338,17 @@ void ContactModel::reverseFullNames(const QModelIndexList &indices)
     _changed = true;
 }
 
+void ContactModel::formatPhones(const QModelIndexList &indices, const QString &templ)
+{
+    foreach(QModelIndex index, indices) {
+        beginEditRow(index);
+        items[index.row()].formatPhones(templ);
+        items[index.row()].calculateFields();
+        endEditRow(index);
+    }
+    _changed = true;
+}
+
 void ContactModel::splitNumbers(const QModelIndexList &indices)
 {
     foreach(QModelIndex index, indices) {
