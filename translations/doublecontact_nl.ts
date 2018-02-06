@@ -951,7 +951,7 @@ Wilt u dit certificaat tóch accepteren?</translation>
     <message>
         <location filename="../app/mainwindow.ui" line="555"/>
         <source>Format phone numbers</source>
-        <translation type="unfinished"></translation>
+        <translation>Telefoonnummer opmaken</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.cpp" line="167"/>
@@ -1576,7 +1576,7 @@ opgeslagen als mobiele telefoon</translation>
     <message>
         <location filename="../core/globals.h" line="62"/>
         <source>Select phone template</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecteer telefoonsjabloon</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="63"/>
@@ -2047,27 +2047,27 @@ Controleer gebruikersnaam, wachtwoord, protocol en poort</translation>
     <message>
         <location filename="../app/settingsdialog.ui" line="92"/>
         <source>Use system fonts and colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Systeemlettertypen en -kleuren gebruiken</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="99"/>
         <source>Table font</source>
-        <translation type="unfinished"></translation>
+        <translation>Tabellettertype</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="106"/>
         <source>Colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Kleuren</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="112"/>
         <source>Grid base</source>
-        <translation type="unfinished"></translation>
+        <translation>Raster - basiskleur</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="119"/>
         <source>Grid alternate</source>
-        <translation type="unfinished"></translation>
+        <translation>Raster - afwisselende kleur</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="130"/>
