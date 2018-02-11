@@ -27,8 +27,8 @@ Bugfix release:
 * Fixed: file paths with file:// protocol prefix now opened correctly
 * Fixed: missing installed size in deb package
 
-Current
-* CardDAV alpha reading support (in contconv only)
+0.1.4 [2018-02-11]
+* CardDAV pre-alpha reading support (in contconv only)
 * Initial vCard 4.0 support (not all tags are recognized)
 * More table columns for phones added: all phones, home phone, work phone, cell phone
 * SonyEricsson MPB file open tested, warning removed (thanks to bodqhrohro_promo at l.o.r)
