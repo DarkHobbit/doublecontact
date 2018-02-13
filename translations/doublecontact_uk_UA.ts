@@ -2042,7 +2042,7 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../app/settingsdialog.ui" line="92"/>
         <source>Use system fonts and colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Використовувати системні шрифти і кольори</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="99"/>
@@ -2052,7 +2052,7 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../app/settingsdialog.ui" line="106"/>
         <source>Colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Кольори</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="112"/>
