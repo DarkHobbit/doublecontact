@@ -29,6 +29,10 @@ make
 
 ## Help ##
 
+### User manual ###
+
+DoubleContact user manual [is available](https://github.com/DarkHobbit/doublecontact/blob/master/doc/manual.en.md) on Github.
+
 ### Translations ###
 
-Please, use [Weblate](https://hosted.weblate.org/projects/doublecontact/).
+Please, use [Weblate](https://hosted.weblate.org/projects/doublecontact/) if you want to translate program on a new language.

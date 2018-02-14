@@ -20,7 +20,8 @@ Features:
   - first/last name swap;
   - first/last name splitting;
   - phone number internationalization for some countries (in general, for ex-USSR);
-  - contact splitting for SIM card export (one phone per contact)
+  - phone numbers formatting by user-defined template, such as +N-NNN-NNN-NN-NN;
+  - contact splitting for SIM card export (one phone per contact);
   - contact merge;
   - drop slashes and other specials;
   - formatted name generation;
@@ -100,6 +101,9 @@ To copy one or some records from one loaded address book to other, select this r
 
 Choosing **View -> Two panels** again  will turn off two panel mode.
 
+You can change visual presentation of tables (**View -> Settings**, "General"
+tab). Program allows to switch on/off table grid, using of alternate grid colors and using of system or user-defined font and colors.
+
 On top of each address book, DoubleContact show source file (directory) name of this address book. If it has unsaved changes, name is accompanied by a  (\*) character.
 
 Choose **List -> Statistics** to view general address book info: total number of contacts, phone numbers, emails, etc. If address book was loaded from MPB file, you will see also number off SMS, calls, device model name and backup date.
@@ -129,7 +133,7 @@ If contact contains photo or photo URL, it's shown in "Photo" field. Under it, y
 * "Set URL" - enter or edit photo URL in separate window. If contact already contains photo, it will be removed;
 * "Remove photo" - remove current photo or photo URL from contact.
 
-On "Addresses" tab, you can enter one or two addresses (home or/and work). If home and work addresses are confused, you can fix it pressing "<>" button. On same tab, you can set job title and organization name.
+On "Addresses" tab, you can enter one of more addresses (home, work, etc.). On same tab, you can set job title and organization name.
 
 "Internet" is the simplest tab. Here you can enter nickname, site URL and accounts in various IMs.
 
@@ -160,6 +164,10 @@ Reverse operation, contact splitting by phones, is needed, if address book would
 Next group operation is autogeneration of full (formatted) name by entered names (**Contact -> Generate full name**). Full name generation, in particular, facilitates comparison of two address book, only one of which contains full names. DoubleContact also allows delete previously entered full names (**Contact -> Drop full name**) and swap name parts in it (**Contact-> Reverse full name**).
 
 In some cases, if VCF file was imported from SIM card, it may contain special characters: contact names contains backslash, often accompanied with a digit. **Contact -> Drop slashes** command allows you remove this trash.
+
+To improve addressbook view, you may want to unify phone numbers style (for example, +N-NNN-NNN-NN-NN or +NNNNNNNNNNN). Choose **Contact -> Format phone numbers** and select appropriate template of phone number. You can also input your own template. Each "N" letter in template correspond to one digit of number. If number contains "+" prefix, it will be saved regardless of its presence in template. If number contains more digits, than "N" letters in template, extra digits will be saved in the tail of number, digit by digit.
+
+Note that some areal codes сan be of different lengths. If area code length shorter than appropriate template section, phone formatting can worsen the appearance of number. To solve it, format numbers at some passes. Program allows it, because only selected contacts are formatted. In most hard case, when one contact contains some numbers with differ area code length, you must convert it by hand.
 
 Last group operation is a phone numbers internationalization (only for some countries). For Belarus, this operation replaces prefix 8 to country code +375, for Russia - 8 to +7, for Ukraine - 0 to +380.
 
