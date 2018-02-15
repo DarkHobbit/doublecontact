@@ -52,29 +52,31 @@
     <message>
         <location filename="../core/formats/network/carddavformat.cpp" line="28"/>
         <source>Invalid URL</source>
-        <translation type="unfinished"></translation>
+        <translation>Ungültige URL</translation>
     </message>
     <message>
         <location filename="../core/formats/network/carddavformat.cpp" line="82"/>
         <source>There are security problems:
     %1
 Are you want to accept this certificate anyway?</source>
-        <translation type="unfinished"></translation>
+        <translation>Es wurden Sicherheitsprobleme erkannt:
+    %1
+Möchten Sie dieses Zertifikat trotzdem akzeptieren?</translation>
     </message>
     <message>
         <location filename="../core/formats/network/carddavformat.cpp" line="145"/>
         <source>SSL handshake failed</source>
-        <translation type="unfinished"></translation>
+        <translation>SSL-Handshake fehlgeschlagen</translation>
     </message>
     <message>
         <location filename="../core/formats/network/carddavformat.cpp" line="160"/>
         <source>No DAV items. It seems that this is not a CardDAV server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Keine DAV-Elemente. Es scheint, dass es sich hier nicht um einen CardDAV-Server handelt.</translation>
     </message>
     <message>
         <location filename="../core/formats/network/carddavformat.cpp" line="172"/>
         <source>Strange vCard item: </source>
-        <translation type="unfinished"></translation>
+        <translation>Ungewöhnliches vCard-Element: </translation>
     </message>
 </context>
 <context>
@@ -852,12 +854,12 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/mainwindow.ui" line="550"/>
         <source>About Qt</source>
-        <translation type="unfinished"></translation>
+        <translation>Über Qt</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="555"/>
         <source>Format phone numbers</source>
-        <translation type="unfinished"></translation>
+        <translation>Rufnummern formatieren</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.cpp" line="167"/>
@@ -1516,7 +1518,7 @@ Zeile %3, Spalte %4
     <message>
         <location filename="../core/globals.h" line="62"/>
         <source>Select phone template</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Telefonvorlage auswählen</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="63"/>
@@ -1812,18 +1814,19 @@ Daten gehen verloren</translation>
     <message>
         <location filename="../core/formats/network/asyncformat.h" line="20"/>
         <source>Server %1 not found</source>
-        <translation type="unfinished"></translation>
+        <translation>Server „%1” nicht gefunden</translation>
     </message>
     <message>
         <location filename="../core/formats/network/asyncformat.h" line="21"/>
         <source>Network error. Server %1 replied: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Netzwerkfehler. Server „%1” antwortete: %2</translation>
     </message>
     <message>
         <location filename="../core/formats/network/asyncformat.h" line="22"/>
         <source>
 Check username, password, protocol and port</source>
-        <translation type="unfinished"></translation>
+        <translation>
+Benutzername, Passwort, Protokoll und Port überprüfen</translation>
     </message>
 </context>
 <context>
@@ -1918,7 +1921,7 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../app/settingsdialog.ui" line="78"/>
         <source>Show grid in tables</source>
-        <translation type="unfinished"></translation>
+        <translation>Gitternetzlinien in Tabellen anzeigen</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="85"/>
@@ -1928,27 +1931,27 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../app/settingsdialog.ui" line="92"/>
         <source>Use system fonts and colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Systemschriftarten und -farben verwenden</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="99"/>
         <source>Table font</source>
-        <translation type="unfinished"></translation>
+        <translation>Tabellenschriftart</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="106"/>
         <source>Colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Farben</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="112"/>
         <source>Grid base</source>
-        <translation type="unfinished"></translation>
+        <translation>Grundraster</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="119"/>
         <source>Grid alternate</source>
-        <translation type="unfinished"></translation>
+        <translation>Alternatives Raster</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="130"/>
