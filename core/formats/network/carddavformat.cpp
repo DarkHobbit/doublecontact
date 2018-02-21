@@ -42,7 +42,7 @@ bool CardDAVFormat::importRecords(const QString &url, ContactList &list, bool ap
         password = ui->inputPassword();
     if (password.isEmpty())
         return false;
-    qDebug() << u.scheme() << " :// " << userName << " : " << password << " @ " << u.host() << " : " << port << " / " << u.path(); //===>
+    // qDebug() << u.scheme() << " :// " << userName << " : " << password << " @ " << u.host() << " : " << port << " / " << u.path(); //===>
     // TODO Google stub - move to separate proc, 2-4 weeks
 /*    w.setConnectionSettings(QWebdav::HTTPS,
         "https://www.googleapis.com", "/.well-known/carddav", userName, password);

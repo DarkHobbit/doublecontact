@@ -1,0 +1,3 @@
+#!/bin/bash
+
+./contconv -i https://DarkHobbit@212.109.193.178/nextcloud/remote.php/dav/addressbooks/users/DarkHobbit/contacts -n carddav -o test.vcf -f vcf40 -w
