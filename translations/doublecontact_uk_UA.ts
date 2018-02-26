@@ -951,7 +951,7 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/mainwindow.ui" line="555"/>
         <source>Format phone numbers</source>
-        <translation type="unfinished"></translation>
+        <translation>Форматувати телефони</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.cpp" line="167"/>
@@ -1108,7 +1108,8 @@ Save changes?</source>
         <location filename="../app/mainwindow.cpp" line="946"/>
         <source>Column sorting is switched. Hard sort results are not visible.
 Are you want switch column sorting off?</source>
-        <translation type="unfinished"></translation>
+        <translation>Увімкнуто впорядкування по стовпцям, результати жорсткого впорядкування не видно.
+Вимкнути впорядкування по стовпцям?</translation>
     </message>
 </context>
 <context>
@@ -1510,7 +1511,7 @@ line %3, col %4
     <message>
         <location filename="../core/globals.h" line="62"/>
         <source>Select phone template</source>
-        <translation type="unfinished"></translation>
+        <translation>Оберіть шаблон номеру</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="63"/>
@@ -1950,7 +1951,7 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../3rdparty/quazip/quazip/quagzipfile.cpp" line="66"/>
         <source>Opening gzip for both reading and writing is not supported</source>
-        <translation type="unfinished"></translation>
+        <translation>Відкриття gzip на одночасне читання та запис не підтримується</translation>
     </message>
     <message>
         <location filename="../3rdparty/quazip/quazip/quagzipfile.cpp" line="74"/>
@@ -2047,7 +2048,7 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../app/settingsdialog.ui" line="99"/>
         <source>Table font</source>
-        <translation type="unfinished"></translation>
+        <translation>Шрифт таблиць</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="106"/>
@@ -2057,12 +2058,12 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../app/settingsdialog.ui" line="112"/>
         <source>Grid base</source>
-        <translation type="unfinished"></translation>
+        <translation>Таблиці (основний)</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="119"/>
         <source>Grid alternate</source>
-        <translation type="unfinished"></translation>
+        <translation>Таблиці (дод.)</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="130"/>
