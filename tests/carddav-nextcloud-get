@@ -1,0 +1,3 @@
+#!/bin/bash
+
+./contconv -i https://OldUser@cloud.zaurus.ru/nextcloud/remote.php/dav/addressbooks/users/OldUser/contacts -n carddav -o test.vcf -f vcf40 -w

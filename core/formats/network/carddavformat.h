@@ -22,6 +22,7 @@
 #define CARDDAVFORMAT_H
 
 # define PATH_CARDDAV_OWNCLOUD QString("/remote.php/carddav/addressbooks/%1/contacts")
+# define PATH_CARDDAV_NEXTCLOUD QString("/nextcloud/remote.php/dav/addressbooks/users/%1/contacts")
 
 class CardDAVFormat : public AsyncFormat, VCardData
 {
