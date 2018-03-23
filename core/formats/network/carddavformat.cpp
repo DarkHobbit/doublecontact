@@ -117,6 +117,11 @@ bool CardDAVFormat::exportRecords(const QString &url, ContactList &list)
     return false;
 }
 
+QNetworkAccessManager *CardDAVFormat::netManager()
+{
+    return &w;
+}
+
 void CardDAVFormat::processSslCertifcate(const QList<QSslError> &errors)
 {
     if (!errors.isEmpty()) {

@@ -31,6 +31,7 @@ public:
     explicit CardDAVFormat();
     virtual bool importRecords(const QString& url, ContactList& list, bool append);
     virtual bool exportRecords(const QString& url, ContactList& list);
+    QNetworkAccessManager* netManager();
 private:
     QWebdav w;
     QWebdavDirParser p;
