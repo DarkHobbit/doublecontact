@@ -53,6 +53,14 @@ bool VCFDirectory::importRecords(const QString &url, ContactList &list, bool app
         closeFile();
         // Append one contact to list!
         data.importRecords(content, list, true, _errors);
+        if (gd.readNamesFromFileName) {
+            QString contName = fileName;
+            contName.remove(".vcf");
+            contName.remove(".VCF");
+            list.last().names.clear();
+            list.last().names << contName;
+            list.last().fullName = contName;
+        }
     }
     return true;
 }

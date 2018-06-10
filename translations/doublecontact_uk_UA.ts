@@ -68,17 +68,17 @@ Are you want to accept this certificate anyway?</source>
 Все одно прийняти даний сертифікат?</translation>
     </message>
     <message>
-        <location filename="../core/formats/network/carddavformat.cpp" line="145"/>
+        <location filename="../core/formats/network/carddavformat.cpp" line="150"/>
         <source>SSL handshake failed</source>
         <translation>Помилка SSL квитування</translation>
     </message>
     <message>
-        <location filename="../core/formats/network/carddavformat.cpp" line="160"/>
+        <location filename="../core/formats/network/carddavformat.cpp" line="165"/>
         <source>No DAV items. It seems that this is not a CardDAV server.</source>
         <translation>Не виявлено записів DAV. Можливо сервер не підтримує CardDAV.</translation>
     </message>
     <message>
-        <location filename="../core/formats/network/carddavformat.cpp" line="172"/>
+        <location filename="../core/formats/network/carddavformat.cpp" line="177"/>
         <source>Strange vCard item: </source>
         <translation>Дивний елемент vCard: </translation>
     </message>
@@ -1090,22 +1090,22 @@ Save changes?</source>
         <translation>Контакт 2</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="872"/>
+        <location filename="../app/mainwindow.cpp" line="873"/>
         <source>Operation requires show two panels</source>
         <translation>Необхідно увімкнути дві панелі</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="905"/>
+        <location filename="../app/mainwindow.cpp" line="906"/>
         <source>Statitics</source>
         <translation>Статистика</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="912"/>
+        <location filename="../app/mainwindow.cpp" line="913"/>
         <source>Report file</source>
         <translation>Файл звіту</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="946"/>
+        <location filename="../app/mainwindow.cpp" line="947"/>
         <source>Column sorting is switched. Hard sort results are not visible.
 Are you want switch column sorting off?</source>
         <translation>Увімкнуто впорядкування по стовпцям, результати жорсткого впорядкування не видно.
@@ -1809,7 +1809,7 @@ Data will be lost</source>
 %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/vcfdirectory.cpp" line="65"/>
+        <location filename="../core/formats/files/vcfdirectory.cpp" line="73"/>
         <source>Can&apos;t create directory
 %1</source>
         <translation>Не можу створити теку
@@ -2161,11 +2161,21 @@ Check username, password, protocol and port</source>
         <translation>Попереджувати про нестандартні типи телефонів</translation>
     </message>
     <message>
+        <location filename="../app/settingsdialog.ui" line="339"/>
+        <source>While VCF directory reading</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/settingsdialog.ui" line="345"/>
+        <source>Read contact names from file name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Warning on non-standard phone/email types</source>
         <translation type="obsolete">Попереджувати про нестандартні типи телефонів/пошти</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.cpp" line="123"/>
+        <location filename="../app/settingsdialog.cpp" line="125"/>
         <source>List must contain at least one visible column</source>
         <translation>В переліку має бути хоча б один стовпчик</translation>
     </message>

@@ -64,17 +64,17 @@ Are you want to accept this certificate anyway?</source>
 Möchten Sie dieses Zertifikat trotzdem akzeptieren?</translation>
     </message>
     <message>
-        <location filename="../core/formats/network/carddavformat.cpp" line="145"/>
+        <location filename="../core/formats/network/carddavformat.cpp" line="150"/>
         <source>SSL handshake failed</source>
         <translation>SSL-Handshake fehlgeschlagen</translation>
     </message>
     <message>
-        <location filename="../core/formats/network/carddavformat.cpp" line="160"/>
+        <location filename="../core/formats/network/carddavformat.cpp" line="165"/>
         <source>No DAV items. It seems that this is not a CardDAV server.</source>
         <translation>Keine DAV-Elemente. Es scheint, dass es sich hier nicht um einen CardDAV-Server handelt.</translation>
     </message>
     <message>
-        <location filename="../core/formats/network/carddavformat.cpp" line="172"/>
+        <location filename="../core/formats/network/carddavformat.cpp" line="177"/>
         <source>Strange vCard item: </source>
         <translation>Ungewöhnliches vCard-Element: </translation>
     </message>
@@ -986,22 +986,22 @@ Save changes?</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="872"/>
+        <location filename="../app/mainwindow.cpp" line="873"/>
         <source>Operation requires show two panels</source>
         <translation>Für die Aufgabe sind zwei Fenster erforderlich</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="905"/>
+        <location filename="../app/mainwindow.cpp" line="906"/>
         <source>Statitics</source>
         <translation>Statistiken</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="912"/>
+        <location filename="../app/mainwindow.cpp" line="913"/>
         <source>Report file</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="946"/>
+        <location filename="../app/mainwindow.cpp" line="947"/>
         <source>Column sorting is switched. Hard sort results are not visible.
 Are you want switch column sorting off?</source>
         <translation>Die Spaltensortierung wurde gewechselt. Harte Sortierergebnisse sind nicht sichtbar.
@@ -1366,7 +1366,7 @@ Zeile %3, Spalte %4
 %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/vcfdirectory.cpp" line="65"/>
+        <location filename="../core/formats/files/vcfdirectory.cpp" line="73"/>
         <source>Can&apos;t create directory
 %1</source>
         <translation>Ordner konnte nicht erstellt werden
@@ -2049,7 +2049,17 @@ Benutzername, Passwort, Protokoll und Port überprüfen</translation>
         <translation>Warnhinweis bei nicht standardgemäßen Telefontypen</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.cpp" line="123"/>
+        <location filename="../app/settingsdialog.ui" line="339"/>
+        <source>While VCF directory reading</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/settingsdialog.ui" line="345"/>
+        <source>Read contact names from file name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/settingsdialog.cpp" line="125"/>
         <source>List must contain at least one visible column</source>
         <translation>Liste muss mindestens eine sichtbare Spalte enthalten</translation>
     </message>

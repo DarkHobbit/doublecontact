@@ -46,3 +46,6 @@ Bugfix release:
 * Fixed: crash on Generate full name, if all name components was empty
 * Fixed: saving hard sort type to config
 * Fixed: outdated manuals
+
+Current
+* Added option: While reading VCF directory, read contact names from file name

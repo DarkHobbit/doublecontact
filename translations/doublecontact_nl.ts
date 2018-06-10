@@ -68,17 +68,17 @@ Are you want to accept this certificate anyway?</source>
 Wilt u dit certificaat tóch accepteren?</translation>
     </message>
     <message>
-        <location filename="../core/formats/network/carddavformat.cpp" line="145"/>
+        <location filename="../core/formats/network/carddavformat.cpp" line="150"/>
         <source>SSL handshake failed</source>
         <translation>SSL-koppeling mislukt</translation>
     </message>
     <message>
-        <location filename="../core/formats/network/carddavformat.cpp" line="160"/>
+        <location filename="../core/formats/network/carddavformat.cpp" line="165"/>
         <source>No DAV items. It seems that this is not a CardDAV server.</source>
         <translation>Geen DAV-items. Het lijkt erop dat dit geen CardDAV-server is.</translation>
     </message>
     <message>
-        <location filename="../core/formats/network/carddavformat.cpp" line="172"/>
+        <location filename="../core/formats/network/carddavformat.cpp" line="177"/>
         <source>Strange vCard item: </source>
         <translation>Vreemd vCard-item: </translation>
     </message>
@@ -1090,22 +1090,22 @@ Wilt u de wijzigingen opslaan?</translation>
         <translation>Item 2</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="872"/>
+        <location filename="../app/mainwindow.cpp" line="873"/>
         <source>Operation requires show two panels</source>
         <translation>Deze bewerking vereist twee panelen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="905"/>
+        <location filename="../app/mainwindow.cpp" line="906"/>
         <source>Statitics</source>
         <translation>Statistieken</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="912"/>
+        <location filename="../app/mainwindow.cpp" line="913"/>
         <source>Report file</source>
         <translation>Rapportbestand</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="946"/>
+        <location filename="../app/mainwindow.cpp" line="947"/>
         <source>Column sorting is switched. Hard sort results are not visible.
 Are you want switch column sorting off?</source>
         <translation>Kolomsortering is gewijzigd. Harde sorteringsresultaten zijn niet zichtbaar.
@@ -1482,7 +1482,7 @@ opgeslagen als mobiele telefoon</translation>
 %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/vcfdirectory.cpp" line="65"/>
+        <location filename="../core/formats/files/vcfdirectory.cpp" line="73"/>
         <source>Can&apos;t create directory
 %1</source>
         <translation>Het creëren van de map is mislukt
@@ -2165,11 +2165,21 @@ Controleer gebruikersnaam, wachtwoord, protocol en poort</translation>
         <translation>Waarschuwing bij niet-standaard telefoontypes</translation>
     </message>
     <message>
+        <location filename="../app/settingsdialog.ui" line="339"/>
+        <source>While VCF directory reading</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/settingsdialog.ui" line="345"/>
+        <source>Read contact names from file name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Warning on non-standard phone/email types</source>
         <translation type="obsolete">Waarschuwen bij niet-standaard telefoonummers/e-mailadressen</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.cpp" line="123"/>
+        <location filename="../app/settingsdialog.cpp" line="125"/>
         <source>List must contain at least one visible column</source>
         <translation>De lijst moet minimaal één zichtbare kolom bevatten</translation>
     </message>
