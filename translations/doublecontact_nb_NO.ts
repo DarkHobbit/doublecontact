@@ -52,29 +52,31 @@
     <message>
         <location filename="../core/formats/network/carddavformat.cpp" line="28"/>
         <source>Invalid URL</source>
-        <translation type="unfinished"></translation>
+        <translation>Ugyldig nettadresse</translation>
     </message>
     <message>
         <location filename="../core/formats/network/carddavformat.cpp" line="82"/>
         <source>There are security problems:
     %1
 Are you want to accept this certificate anyway?</source>
-        <translation type="unfinished"></translation>
+        <translation>Problemer med sikkerheten:
+    %1
+Er du sikker på at du vil godta dette sertifikatet uansett?</translation>
     </message>
     <message>
         <location filename="../core/formats/network/carddavformat.cpp" line="150"/>
         <source>SSL handshake failed</source>
-        <translation type="unfinished"></translation>
+        <translation>SSL-håndtrykk mislyktes</translation>
     </message>
     <message>
         <location filename="../core/formats/network/carddavformat.cpp" line="165"/>
         <source>No DAV items. It seems that this is not a CardDAV server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingen DAV-elementer. Det later til at dette ikke er en CardDav-tjener.</translation>
     </message>
     <message>
         <location filename="../core/formats/network/carddavformat.cpp" line="177"/>
         <source>Strange vCard item: </source>
-        <translation type="unfinished"></translation>
+        <translation>Rart vCard-element: </translation>
     </message>
 </context>
 <context>
@@ -860,7 +862,7 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/mainwindow.ui" line="550"/>
         <source>About Qt</source>
-        <translation type="unfinished"></translation>
+        <translation>Om Qt</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="555"/>
@@ -1129,7 +1131,7 @@ Are you want switch column sorting off?</source>
     <message>
         <location filename="../core/contactlist.cpp" line="157"/>
         <source>X.400</source>
-        <translation type="unfinished"></translation>
+        <translation>X.400</translation>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="404"/>
@@ -1367,12 +1369,12 @@ linje %3, kol. %4
     <message>
         <location filename="../core/formats/files/mpbfile.cpp" line="90"/>
         <source>Unsupported MPB section: </source>
-        <translation type="unfinished"></translation>
+        <translation>Ustøttet MPB-del: </translation>
     </message>
     <message>
         <location filename="../core/formats/files/mpbfile.cpp" line="100"/>
         <source>File isn&apos;t MPB file or corrupted</source>
-        <translation type="unfinished"></translation>
+        <translation>Filen er ikke MPB, eller skadet</translation>
     </message>
     <message>
         <location filename="../core/formats/files/mpbfile.cpp" line="110"/>
@@ -1509,7 +1511,7 @@ linje %3, kol. %4
     <message>
         <location filename="../core/globals.h" line="62"/>
         <source>Select phone template</source>
-        <translation type="unfinished"></translation>
+        <translation>Velg telefonmal</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="63"/>
@@ -1559,7 +1561,7 @@ linje %3, kol. %4
     <message>
         <location filename="../core/globals.h" line="75"/>
         <source>Generic name</source>
-        <translation type="unfinished"></translation>
+        <translation>Generisk navn</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="76"/>
@@ -1574,22 +1576,22 @@ linje %3, kol. %4
     <message>
         <location filename="../core/globals.h" line="78"/>
         <source>All phones</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle telefoner</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="79"/>
         <source>Home phone</source>
-        <translation type="unfinished"></translation>
+        <translation>Hjemmetelefon</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="80"/>
         <source>Work phone</source>
-        <translation type="unfinished"></translation>
+        <translation>Arbeidstelefon</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="81"/>
         <source>Cell phone</source>
-        <translation type="unfinished"></translation>
+        <translation>Mobiltelefon</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="82"/>
@@ -1699,12 +1701,12 @@ linje %3, kol. %4
     <message>
         <location filename="../core/globals.h" line="106"/>
         <source>Street</source>
-        <translation type="unfinished"></translation>
+        <translation>Gate</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="107"/>
         <source>City/Locality</source>
-        <translation type="unfinished"></translation>
+        <translation>By/plass</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="108"/>
@@ -1804,18 +1806,19 @@ Data will be lost</source>
     <message>
         <location filename="../core/formats/network/asyncformat.h" line="20"/>
         <source>Server %1 not found</source>
-        <translation type="unfinished"></translation>
+        <translation>Tjeneren %1 ble ikke funnet</translation>
     </message>
     <message>
         <location filename="../core/formats/network/asyncformat.h" line="21"/>
         <source>Network error. Server %1 replied: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Nettverksfeil. Tjeneren %1 svarte: %2</translation>
     </message>
     <message>
         <location filename="../core/formats/network/asyncformat.h" line="22"/>
         <source>
 Check username, password, protocol and port</source>
-        <translation type="unfinished"></translation>
+        <translation>
+Sjekk brukernavn, passord, protokoll og port</translation>
     </message>
 </context>
 <context>
@@ -1910,37 +1913,37 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../app/settingsdialog.ui" line="78"/>
         <source>Show grid in tables</source>
-        <translation type="unfinished"></translation>
+        <translation>Vis rutenett i tabeller</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="85"/>
         <source>Use alternate row colors in table</source>
-        <translation type="unfinished"></translation>
+        <translation>Bruk vekslende radfarger i tabell</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="92"/>
         <source>Use system fonts and colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Bruk systemskrift og farger</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="99"/>
         <source>Table font</source>
-        <translation type="unfinished"></translation>
+        <translation>Tabellskrift</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="106"/>
         <source>Colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Farger</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="112"/>
         <source>Grid base</source>
-        <translation type="unfinished"></translation>
+        <translation>Rutenettgrunnstørrelse</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="119"/>
         <source>Grid alternate</source>
-        <translation type="unfinished"></translation>
+        <translation>Alternativ rutenettstørrelse</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="130"/>
@@ -2035,7 +2038,7 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../app/settingsdialog.ui" line="332"/>
         <source>Warning on non-standard phone types</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Advarsel på ikke-standariserte telefontyper</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="339"/>
