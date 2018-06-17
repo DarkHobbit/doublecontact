@@ -31,10 +31,11 @@ QStringList FormatFactory::supportedFilters(QIODevice::OpenMode mode, bool isRep
 #else
 #warning MPB save and load will not work under Qt earlier than 4.8
 #endif
+        allSupported += " *." + NBFFile::supportedExtensions().join(" *.");
         allSupported += " *." + CSVFile::supportedExtensions().join(" *.");
         if (mode==QIODevice::ReadOnly) {
             // ...here add read-only formats
-            allSupported += " *." + NBFFile::supportedExtensions().join(" *.");
+//            allSupported += " *." + NBFFile::supportedExtensions().join(" *.");
         }
         else { // Write-only formats
         }
@@ -46,10 +47,11 @@ QStringList FormatFactory::supportedFilters(QIODevice::OpenMode mode, bool isRep
 #if QT_VERSION >= 0x040800
         allTypes << MPBFile::supportedFilters();
 #endif
+        allTypes << NBFFile::supportedFilters();
         allTypes << CSVFile::supportedFilters();
         if (mode==QIODevice::ReadOnly) {
             // ...here add filters for read-only formats
-            allTypes << NBFFile::supportedFilters();
+//            allTypes << NBFFile::supportedFilters();
         }
         else { // Write-only formats
         }
@@ -67,6 +69,9 @@ IFormat *FormatFactory::createObject(const QString &url)
     }
     QFileInfo info(url);
     QString ext = info.completeSuffix();
+    // Drop extra dots (completeSuffix may not works correctly with multidot-filenames)
+    while (ext.contains("."))
+        ext = ext.mid(ext.indexOf(".")+1);
     // Known formats by extension
     if (VCFFile::supportedExtensions().contains(ext, Qt::CaseInsensitive))
         return new VCFFile();

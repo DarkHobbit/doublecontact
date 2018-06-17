@@ -639,6 +639,10 @@ bool MainWindow::saveAs(ContactModel *model, const QString &path, FormatType fTy
 {
     QStringList errors;
     QString fatalError;
+    //===>
+    if (path.endsWith(".nbf", Qt::CaseInsensitive))
+        QMessageBox::warning(0, "WARNING", "NBF save not tested. Your phone may be corrupted.");
+    //===>
     bool res = model->saveAs(path, fType, errors, fatalError);
     showIOErrors(path, model->rowCount(), errors, fatalError);
     return res;

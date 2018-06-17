@@ -28,7 +28,7 @@ public:
     static QStringList supportedExtensions();
     static QStringList supportedFilters();
     bool importRecords(const QString &url, ContactList &list, bool append);
-    bool exportRecords(const QString&, ContactList&);
+    bool exportRecords(const QString &url, ContactList &list);
 };
 
 #endif // NBFFILE_H

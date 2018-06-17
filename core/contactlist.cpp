@@ -583,6 +583,7 @@ void ContactList::clear()
     QList<ContactItem>::clear();
     emptyGroups.clear();
     extra.clear();
+    originalPath.clear();
     originalProfile.clear();
 }
 

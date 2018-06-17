@@ -244,6 +244,7 @@ public:
     QString statistics() const;
     MPBExtra extra;
     QStringList emptyGroups;
+    QString originalPath; // for append-only formats, such as NBF
     QString originalProfile; // for CSV; see also ContactItem::originalFormat
 };
 

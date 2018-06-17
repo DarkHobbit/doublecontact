@@ -48,4 +48,5 @@ Bugfix release:
 * Fixed: outdated manuals
 
 Current
+* NBF save implemented (only if original file also had NBF type) NOT TESTED
 * Added option: While reading VCF directory, read contact names from file name
