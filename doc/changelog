@@ -50,3 +50,4 @@ Bugfix release:
 Current
 * NBF save implemented (only if original file also had NBF type) NOT TESTED
 * Added option: While reading VCF directory, read contact names from file name
+* After addressbook opening, its first contact is highlited

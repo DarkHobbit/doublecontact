@@ -117,6 +117,10 @@ void MainWindow::closeEvent(QCloseEvent *event)
 void MainWindow::showEvent(QShowEvent*)
 {
     updateConfig();
+    if (modLeft->rowCount()>0)
+        ui->tvLeft->selectRow(0);
+    if (modRight->rowCount()>0)
+        ui->tvRight->selectRow(0);
 }
 
 void MainWindow::anyFocusChanged(QWidget *, QWidget *now)
@@ -632,6 +636,8 @@ bool MainWindow::open(ContactModel *model, const QString &path, FormatType fType
     QString fatalError;
     bool res = model->open(path, fType, errors, fatalError);
     showIOErrors(path, model->rowCount(), errors, fatalError);
+    if (model->rowCount()>0)
+        selectedView->selectRow(0);
     return res;
 }
 
