@@ -116,6 +116,7 @@ private:
     void updateViewMode();
     void setSelectionModelEvents();
     inline ContactModel* oppositeModel();
+    inline QLabel* oppositeHeader();
     bool askSaveChanges(ContactModel *model);
     // Save and open methods
     bool open(ContactModel* model, const QString& path, FormatType fType);

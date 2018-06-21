@@ -469,6 +469,13 @@ void MainWindow::updateListHeader(ContactModel *model, QLabel *header)
     if (model->sourceType()==ftDirectory)
         src += tr(" (directory)");
     header->setText(sChanged+src);
+    // Highlight selected panel header
+    QPalette pal = header->palette();
+    pal.setColor(QPalette::WindowText, pal.color(QPalette::HighlightedText));
+    pal.setColor(QPalette::Window, pal.color(QPalette::Highlight));
+    header->setAutoFillBackground(true);
+    header->setPalette(pal);
+    oppositeHeader()->setPalette(QPalette());
 }
 
 void MainWindow::setButtonsAccess()
@@ -599,6 +606,11 @@ void MainWindow::setSelectionModelEvents()
 ContactModel* MainWindow::oppositeModel()
 {
     return (selectedView==ui->tvLeft) ? modRight : modLeft;
+}
+
+QLabel *MainWindow::oppositeHeader()
+{
+    return (selectedHeader==ui->lbLeft) ? ui->lbRight : ui->lbLeft;
 }
 
 bool MainWindow::askSaveChanges(ContactModel *model)
