@@ -870,146 +870,151 @@ Er du sikker på at du vil godta dette sertifikatet uansett?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="167"/>
+        <location filename="../app/mainwindow.cpp" line="149"/>
+        <source>Only one of two files can be dropped to program window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/mainwindow.cpp" line="216"/>
         <source>Open contact file</source>
         <translation>Åpne kontaktfil</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="184"/>
+        <location filename="../app/mainwindow.cpp" line="233"/>
         <source>Open VCF Directory</source>
         <translation>Åpne VCF-mappe</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="208"/>
+        <location filename="../app/mainwindow.cpp" line="257"/>
         <source>Save contact file</source>
         <translation>Lagre kontaktfil</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="223"/>
+        <location filename="../app/mainwindow.cpp" line="272"/>
         <source>Save VCF Directory</source>
         <translation>Lagre VCF-mappe</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="232"/>
+        <location filename="../app/mainwindow.cpp" line="281"/>
         <source>Directory exists. Are You really want rewrite it?</source>
         <translation>Mappen finnes. Ønsker du virkelig å skrive den på nytt?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="281"/>
+        <location filename="../app/mainwindow.cpp" line="330"/>
         <source>Are You really want to edit more than one record?
 Only some fields can this edited in this mode</source>
         <translation>Er du sikker på at du ønsker å redigere mer enn én oppføring?
 Kun noen felter kan redigeres i dette moduset</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="393"/>
+        <location filename="../app/mainwindow.cpp" line="442"/>
         <source>Compare mode requires show two panels and load contact lists in both panels</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="439"/>
+        <location filename="../app/mainwindow.cpp" line="488"/>
         <source>Group operation not impemented, select one record</source>
         <translation>Gruppeoperasjon ikke implementert, velg én oppflring</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="466"/>
+        <location filename="../app/mainwindow.cpp" line="515"/>
         <source> (directory)</source>
         <translation> (mappe)</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="560"/>
+        <location filename="../app/mainwindow.cpp" line="616"/>
         <source>Mode: </source>
         <translation>Modus: </translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="561"/>
+        <location filename="../app/mainwindow.cpp" line="617"/>
         <source>two panels</source>
         <translation>to paneler</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="561"/>
+        <location filename="../app/mainwindow.cpp" line="617"/>
         <source>one panel</source>
         <translation>ett panel</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="562"/>
+        <location filename="../app/mainwindow.cpp" line="618"/>
         <source>sorted</source>
         <translation>sorter</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="562"/>
+        <location filename="../app/mainwindow.cpp" line="618"/>
         <source>not sorted</source>
         <translation>usortert</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="565"/>
+        <location filename="../app/mainwindow.cpp" line="621"/>
         <source>simple editing</source>
         <translation>enkel redigering</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="569"/>
+        <location filename="../app/mainwindow.cpp" line="625"/>
         <source>compare</source>
         <translation>sammenlign</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="608"/>
+        <location filename="../app/mainwindow.cpp" line="669"/>
         <source>&apos;%1&apos; was changed.
 Save changes?</source>
         <translation>&quot;%1&quot; ble endret.
 Lagre endringer?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="715"/>
+        <location filename="../app/mainwindow.cpp" line="782"/>
         <source>Restart program to apply language change</source>
         <translation>Start programmet på nytt for å legge til programspråk</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="758"/>
+        <location filename="../app/mainwindow.cpp" line="825"/>
         <source>Two panels and compare mode needed for this operation</source>
         <translation>To paneler og sammenligningsmodus trengs for denne handlingen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="773"/>
+        <location filename="../app/mainwindow.cpp" line="840"/>
         <source>Left item</source>
         <translation>Venstre element</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="773"/>
+        <location filename="../app/mainwindow.cpp" line="840"/>
         <source>Right item</source>
         <translation>Høyre element</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="799"/>
+        <location filename="../app/mainwindow.cpp" line="866"/>
         <source>Strongly two records on current panel must be selected for this operation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="805"/>
+        <location filename="../app/mainwindow.cpp" line="872"/>
         <source>Item 1</source>
         <translation>Element 1</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="805"/>
+        <location filename="../app/mainwindow.cpp" line="872"/>
         <source>Item 2</source>
         <translation>Element 2</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="873"/>
+        <location filename="../app/mainwindow.cpp" line="940"/>
         <source>Operation requires show two panels</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="906"/>
+        <location filename="../app/mainwindow.cpp" line="973"/>
         <source>Statitics</source>
         <translation>Statistikk</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="913"/>
+        <location filename="../app/mainwindow.cpp" line="980"/>
         <source>Report file</source>
         <translation>Rapportfil</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="947"/>
+        <location filename="../app/mainwindow.cpp" line="1014"/>
         <source>Column sorting is switched. Hard sort results are not visible.
 Are you want switch column sorting off?</source>
         <translation type="unfinished"></translation>
@@ -1050,7 +1055,7 @@ Are you want switch column sorting off?</source>
     <name>QObject</name>
     <message>
         <location filename="../core/contactlist.cpp" line="106"/>
-        <location filename="../core/contactlist.cpp" line="971"/>
+        <location filename="../core/contactlist.cpp" line="972"/>
         <source>Home</source>
         <translation>Hjem</translation>
     </message>
@@ -1061,7 +1066,7 @@ Are you want switch column sorting off?</source>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="108"/>
-        <location filename="../core/contactlist.cpp" line="972"/>
+        <location filename="../core/contactlist.cpp" line="973"/>
         <source>Work</source>
         <translation>Arbeid</translation>
     </message>
@@ -1069,7 +1074,7 @@ Are you want switch column sorting off?</source>
         <location filename="../core/contactlist.cpp" line="109"/>
         <location filename="../core/contactlist.cpp" line="158"/>
         <location filename="../core/contactlist.cpp" line="193"/>
-        <location filename="../core/contactlist.cpp" line="973"/>
+        <location filename="../core/contactlist.cpp" line="974"/>
         <source>Preferable</source>
         <translation type="unfinished">Foretrukket</translation>
     </message>
@@ -1139,7 +1144,7 @@ Are you want switch column sorting off?</source>
         <translation>Rar tom kontakt</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="822"/>
+        <location filename="../core/contactlist.cpp" line="823"/>
         <source>%1 records
 %2 phones
 %3 emails
@@ -1152,22 +1157,22 @@ Are you want switch column sorting off?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="974"/>
+        <location filename="../core/contactlist.cpp" line="975"/>
         <source>Domestic</source>
         <translation>Innenlands</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="975"/>
+        <location filename="../core/contactlist.cpp" line="976"/>
         <source>International</source>
         <translation>Internasjonal</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="976"/>
+        <location filename="../core/contactlist.cpp" line="977"/>
         <source>Postal</source>
         <translation>Postadresse</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="977"/>
+        <location filename="../core/contactlist.cpp" line="978"/>
         <source>Parcel</source>
         <translation>Pakkeadresse</translation>
     </message>
@@ -1334,12 +1339,12 @@ linje %3, kol. %4
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/formatfactory.cpp" line="65"/>
+        <location filename="../core/formats/formatfactory.cpp" line="67"/>
         <source>Empty file name</source>
         <translation>Tomt filnavn</translation>
     </message>
     <message>
-        <location filename="../core/formats/formatfactory.cpp" line="101"/>
+        <location filename="../core/formats/formatfactory.cpp" line="106"/>
         <source>Unknown file format:
 %1</source>
         <translation>Ukjent filformat:
@@ -1449,17 +1454,27 @@ linje %3, kol. %4
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/files/nbffile.cpp" line="57"/>
+        <location filename="../core/formats/files/nbffile.cpp" line="62"/>
         <source>Can&apos;t open %1 directory in archive</source>
         <translation>Kan ikke åpne %1 mappe i arkiv</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/nbffile.cpp" line="65"/>
+        <location filename="../core/formats/files/nbffile.cpp" line="72"/>
         <source>Can&apos;t set %1 item as current in archive</source>
         <translation>Kan ikke sette %1 element som gjeldende i arkiv</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/nbffile.cpp" line="71"/>
+        <location filename="../core/formats/files/nbffile.cpp" line="100"/>
+        <source>NBF file can be saved only if original addressbook also was in NBF format</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/formats/files/nbffile.cpp" line="105"/>
+        <source>Original NBF file was moved or deleted</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/formats/files/nbffile.cpp" line="26"/>
         <source>Can&apos;t open %1 item in archive</source>
         <translation type="unfinished"></translation>
     </message>

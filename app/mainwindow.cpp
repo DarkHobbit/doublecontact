@@ -14,11 +14,13 @@
 #include <QCloseEvent>
 #include <QComboBox>
 #include <QDialogButtonBox>
+#include <QFile>
 #include <QFileDialog>
 #include <QGridLayout>
 #include <QItemSelectionModel>
-#include <QPalette>
 #include <QMessageBox>
+#include <QPalette>
+#include <QUrl>
 
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
@@ -40,6 +42,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    setAcceptDrops(true);
     // Configuration
     configManager.setDefaults(ui->tvLeft->font().toString(),
         ui->tvLeft->palette().color(QPalette::Base).name(),
@@ -121,6 +124,48 @@ void MainWindow::showEvent(QShowEvent*)
         ui->tvLeft->selectRow(0);
     if (modRight->rowCount()>0)
         ui->tvRight->selectRow(0);
+}
+
+// Drag'n'drop support
+void MainWindow::dragEnterEvent(QDragEnterEvent *e)
+{
+    e->acceptProposedAction();
+}
+
+void MainWindow::dropEvent(QDropEvent *e)
+{
+    // Determine which panel got filename(s)
+    // More accurate way is treat each table view as separate drop area,
+    // but it required create subclasses from QTableView instead simple use.
+    bool isLeft = e->pos().x()<ui->tvRight->x() || !ui->tvRight->isVisible();
+    // How many URLs got?
+    if (!e->mimeData()->hasUrls()) {
+        e->ignore();
+        return;
+    }
+    int urlCount = e->mimeData()->urls().count();
+    if (urlCount>2) {
+        QMessageBox::critical(0, S_ERROR,
+            tr("Only one of two files can be dropped to program window"));
+        e->ignore();
+        return;
+    }
+    // Open file(s)
+    ContactModel* primaryModel = isLeft ? modLeft : modRight;
+    QString filePath = e->mimeData()->urls()[0].toLocalFile();
+    if (askSaveChanges(primaryModel)) {
+        open(primaryModel, filePath, QFileInfo(filePath).isDir() ? ftDirectory : ftFile);
+        if (urlCount==2) {
+            // Add second panel if missing
+            if (!ui->tvRight->isVisible())
+                ui->action_Two_panels->setChecked(true); // ???
+            filePath = e->mimeData()->urls()[1].toLocalFile();
+            ContactModel* secondaryModel = isLeft ? modRight : modLeft;
+            if (askSaveChanges(secondaryModel))
+                open(secondaryModel, filePath, QFileInfo(filePath).isDir() ? ftDirectory : ftFile);
+        }
+    }
+    e->accept();
 }
 
 void MainWindow::anyFocusChanged(QWidget *, QWidget *now)
