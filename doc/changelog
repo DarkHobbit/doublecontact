@@ -47,7 +47,8 @@ Bugfix release:
 * Fixed: saving hard sort type to config
 * Fixed: outdated manuals
 
-Current
+
+0.1.5 [2018-07-01]
 * Added file/dir opening via icons drag'n'drop from file manager to program window
 * Added option: While reading VCF directory, read contact names from file name
 * Selected panel header is highlited
