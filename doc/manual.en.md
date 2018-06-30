@@ -41,6 +41,8 @@ Some phones and devices (for example, some Nokia PC Suite versions) save each co
 
 If address book was saved in single file, choose **File -> Open -> File** in DoubleContact menu and open received file with VCF, UDX, CSV, NBF or MPB extension. If address book is a directory, choose **File -> Open -> Directory**.
 
+Sometimes there are VCF directories, where content is broken (bad quoted-printable on non-latin strings), but filenames are valid contact names. To read such directories, preliminary check option "while VCF directory reading" ( **View -> Settings** menu item, "Loading" tab). In other cases, this option must be unchecked.
+
 In both cases, DoubleContact load address book and show it as a table.
 
 The same way, you can load from MyPhoneExplorer backup file (MPB extension). In this case, DoubleContact load not only contacts, but also call history, organizer, notes and SMS. DoubleContact not support this extra data, but allow to save it in other MPB file after contacts edit.
@@ -228,6 +230,8 @@ The second thing you can help in development is translation to national language
 ## Tips and tricks ##
 
 You can pass addressbook filename as a program argument. DoubleContact support simple file paths and URLs like file:///home/imp/Downloads/addressbook.vcf. Second form allow to associate addressbook files with DoubleContact in some file managers, such as PCManFM.
+
+Yet another way to open files - drag'n'drop file/directory icon from file manager to program window. If drag one file, it will be opened in drop panel. If two files - first file will be opened in drop panel, second file in opposite panel. If three of more files, program will reports an error message.
 
 DoubleContact have some command-line options:
 
