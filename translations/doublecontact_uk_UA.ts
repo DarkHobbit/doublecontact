@@ -1961,7 +1961,7 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../3rdparty/quazip/quazip/quagzipfile.cpp" line="80"/>
         <source>Could not gzopen() file</source>
-        <translation type="unfinished"></translation>
+        <translation>gzopen() не вдалося відкрити файл</translation>
     </message>
 </context>
 <context>
