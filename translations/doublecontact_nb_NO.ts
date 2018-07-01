@@ -867,12 +867,12 @@ Er du sikker på at du vil godta dette sertifikatet uansett?</translation>
     <message>
         <location filename="../app/mainwindow.ui" line="555"/>
         <source>Format phone numbers</source>
-        <translation type="unfinished"></translation>
+        <translation>Formater telefonnummer</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.cpp" line="149"/>
         <source>Only one of two files can be dropped to program window</source>
-        <translation type="unfinished"></translation>
+        <translation>Kun én av to filer kan slippes i programvinduet</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.cpp" line="216"/>
