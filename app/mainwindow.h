@@ -110,6 +110,7 @@ private:
     // End of potentially unsafe pointers
     QModelIndexList selection;
     QLabel* lbMode;
+    void buildContextMenu(QTableView* view);
     void selectView(QTableView* view);
     bool checkSelection(bool errorIfNoSelected = true, bool onlyOneRowAllowed = false);
     void setSorting(bool needSort);

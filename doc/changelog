@@ -54,3 +54,6 @@ Bugfix release:
 * Selected panel header is highlited
 * After addressbook opening, its first contact is highlited
 * Experimental NBF save implemented (only if original file also had NBF type) NOT TESTED
+
+Current
+* Context menu for contacts in tables

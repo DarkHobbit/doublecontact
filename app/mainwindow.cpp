@@ -75,6 +75,13 @@ MainWindow::MainWindow(QWidget *parent) :
     selectView(ui->tvLeft);
     selection = selectedView->selectionModel()->selectedRows();
     recent.read();
+    // Context menus
+    ui->actionSeparator1->setSeparator(true);
+    ui->actionSeparator2->setSeparator(true);
+    ui->actionSeparator3->setSeparator(true);
+    ui->actionSeparator4->setSeparator(true);
+    buildContextMenu(ui->tvLeft);
+    buildContextMenu(ui->tvRight);
     // Test data
     if (gd.debugDataMode)
         modLeft->testList();
@@ -1033,6 +1040,35 @@ void MainWindow::on_action_Groups_triggered()
 void MainWindow::on_action_About_Qt_triggered()
 {
     qApp->aboutQt();
+}
+
+void MainWindow::buildContextMenu(QTableView *view)
+{
+    view->setContextMenuPolicy(Qt::ActionsContextMenu);
+    view->addAction(ui->action_Add);
+    view->addAction(ui->action_Edit);
+    view->addAction(ui->action_Remove);
+
+    view->addAction(ui->actionSeparator1);
+    view->addAction(ui->action_Copy);
+    view->addAction(ui->action_Move);
+
+    view->addAction(ui->actionSeparator2);
+    view->addAction(ui->action_Join);
+    view->addAction(ui->actionSp_lit);
+
+    view->addAction(ui->actionSeparator3);
+    view->addAction(ui->action_Swap_names);
+    view->addAction(ui->actionCompare_Result);
+    view->addAction(ui->actionS_plit_names);
+    view->addAction(ui->action_Drop_slashes);
+    view->addAction(ui->actionIntl_phone_prefix);
+    view->addAction(ui->actionFormat_phone_numbers);
+
+    view->addAction(ui->actionSeparator4);
+    view->addAction(ui->action_Generate_full_name);
+    view->addAction(ui->actionDrop_full_name);
+    view->addAction(ui->actionReverse_full_name);
 }
 
 void MainWindow::on_actionFormat_phone_numbers_triggered()

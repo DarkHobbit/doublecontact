@@ -555,6 +555,26 @@
     <string>Format phone numbers</string>
    </property>
   </action>
+  <action name="actionSeparator1">
+   <property name="text">
+    <string>Separator</string>
+   </property>
+  </action>
+  <action name="actionSeparator2">
+   <property name="text">
+    <string>Separator</string>
+   </property>
+  </action>
+  <action name="actionSeparator3">
+   <property name="text">
+    <string>Separator</string>
+   </property>
+  </action>
+  <action name="actionSeparator4">
+   <property name="text">
+    <string>Separator</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
