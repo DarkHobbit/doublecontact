@@ -1015,7 +1015,7 @@ In deze modus kan slechts een beperkt aantal velden worden gewijzigd</translatio
     <message>
         <location filename="../app/mainwindow.cpp" line="149"/>
         <source>Only one of two files can be dropped to program window</source>
-        <translation type="unfinished"></translation>
+        <translation>Slechts één van de twee bestanden kan worden versleept naar het applicatievenster</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.cpp" line="616"/>
@@ -1920,12 +1920,12 @@ De gegevens zullen verloren gaan</translation>
     <message>
         <location filename="../core/formats/files/nbffile.cpp" line="100"/>
         <source>NBF file can be saved only if original addressbook also was in NBF format</source>
-        <translation type="unfinished"></translation>
+        <translation>NBF-bestanden kunnen alleen worden opgeslagen als het originele adresboek ook NBF-formaat is</translation>
     </message>
     <message>
         <location filename="../core/formats/files/nbffile.cpp" line="105"/>
         <source>Original NBF file was moved or deleted</source>
-        <translation type="unfinished"></translation>
+        <translation>Originele NBF-bestand is verplaatst of verwijderd</translation>
     </message>
     <message>
         <location filename="../core/formats/files/nbffile.cpp" line="26"/>
@@ -2182,12 +2182,12 @@ Controleer gebruikersnaam, wachtwoord, protocol en poort</translation>
     <message>
         <location filename="../app/settingsdialog.ui" line="339"/>
         <source>While VCF directory reading</source>
-        <translation type="unfinished"></translation>
+        <translation>Tijdens het uitlezen van mappen door VCF</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="345"/>
         <source>Read contact names from file name</source>
-        <translation type="unfinished"></translation>
+        <translation>Contactpersoonnamen uitlezen uit bestandsnaam</translation>
     </message>
     <message>
         <source>Warning on non-standard phone/email types</source>
