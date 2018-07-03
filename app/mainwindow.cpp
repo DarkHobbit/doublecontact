@@ -19,6 +19,7 @@
 #include <QGridLayout>
 #include <QItemSelectionModel>
 #include <QMessageBox>
+#include <QMimeData>
 #include <QPalette>
 #include <QUrl>
 
