@@ -607,7 +607,7 @@ void ContactList::sort(ContactList::SortType sortType)
             c.actualSortString = c.fullName;
             break;
         case SortByNick:
-            c.actualSortString = c.nickName;
+            c.actualSortString = c.nickName; // fall through
         case SortByGroup:
             c.actualSortString = c.groups.join(", ");
         }
