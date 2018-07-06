@@ -46,7 +46,6 @@ private slots:
     void selectionChanged();
     void recentItemClicked();
     void onRequestCSVProfile(CSVFile* format);
-
     void on_actionCo_mpare_triggered();
     void on_btnCompare_clicked();
     void anyFocusChanged (QWidget*, QWidget* now);
@@ -97,6 +96,7 @@ private slots:
     void on_action_Groups_triggered();
     void on_action_About_triggered();
     void on_action_About_Qt_triggered();
+    void on_actionCopy_text_triggered();
 
 private:
     Ui::MainWindow *ui;

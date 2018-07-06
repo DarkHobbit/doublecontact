@@ -870,151 +870,169 @@ Er du sikker på at du vil godta dette sertifikatet uansett?</translation>
         <translation>Formater telefonnummer</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="149"/>
+        <location filename="../app/mainwindow.ui" line="560"/>
+        <location filename="../app/mainwindow.ui" line="565"/>
+        <location filename="../app/mainwindow.ui" line="570"/>
+        <location filename="../app/mainwindow.ui" line="575"/>
+        <source>Separator</source>
+        <translation type="unfinished">Inndeler</translation>
+    </message>
+    <message>
+        <location filename="../app/mainwindow.ui" line="580"/>
+        <source>Copy text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/mainwindow.ui" line="583"/>
+        <source>Ctrl+C</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/mainwindow.cpp" line="158"/>
         <source>Only one of two files can be dropped to program window</source>
         <translation>Kun én av to filer kan slippes i programvinduet</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="216"/>
+        <location filename="../app/mainwindow.cpp" line="225"/>
         <source>Open contact file</source>
         <translation>Åpne kontaktfil</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="233"/>
+        <location filename="../app/mainwindow.cpp" line="242"/>
         <source>Open VCF Directory</source>
         <translation>Åpne VCF-mappe</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="257"/>
+        <location filename="../app/mainwindow.cpp" line="266"/>
         <source>Save contact file</source>
         <translation>Lagre kontaktfil</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="272"/>
+        <location filename="../app/mainwindow.cpp" line="281"/>
         <source>Save VCF Directory</source>
         <translation>Lagre VCF-mappe</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="281"/>
+        <location filename="../app/mainwindow.cpp" line="290"/>
         <source>Directory exists. Are You really want rewrite it?</source>
         <translation>Mappen finnes. Ønsker du virkelig å skrive den på nytt?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="330"/>
+        <location filename="../app/mainwindow.cpp" line="339"/>
         <source>Are You really want to edit more than one record?
 Only some fields can this edited in this mode</source>
         <translation>Er du sikker på at du ønsker å redigere mer enn én oppføring?
 Kun noen felter kan redigeres i dette moduset</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="442"/>
+        <location filename="../app/mainwindow.cpp" line="451"/>
         <source>Compare mode requires show two panels and load contact lists in both panels</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="488"/>
+        <location filename="../app/mainwindow.cpp" line="497"/>
         <source>Group operation not impemented, select one record</source>
         <translation>Gruppeoperasjon ikke implementert, velg én oppflring</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="515"/>
+        <location filename="../app/mainwindow.cpp" line="524"/>
         <source> (directory)</source>
         <translation> (mappe)</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="616"/>
+        <location filename="../app/mainwindow.cpp" line="625"/>
         <source>Mode: </source>
         <translation>Modus: </translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="617"/>
+        <location filename="../app/mainwindow.cpp" line="626"/>
         <source>two panels</source>
         <translation>to paneler</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="617"/>
+        <location filename="../app/mainwindow.cpp" line="626"/>
         <source>one panel</source>
         <translation>ett panel</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="618"/>
+        <location filename="../app/mainwindow.cpp" line="627"/>
         <source>sorted</source>
         <translation>sorter</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="618"/>
+        <location filename="../app/mainwindow.cpp" line="627"/>
         <source>not sorted</source>
         <translation>usortert</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="621"/>
+        <location filename="../app/mainwindow.cpp" line="630"/>
         <source>simple editing</source>
         <translation>enkel redigering</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="625"/>
+        <location filename="../app/mainwindow.cpp" line="634"/>
         <source>compare</source>
         <translation>sammenlign</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="669"/>
+        <location filename="../app/mainwindow.cpp" line="678"/>
         <source>&apos;%1&apos; was changed.
 Save changes?</source>
         <translation>&quot;%1&quot; ble endret.
 Lagre endringer?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="782"/>
+        <location filename="../app/mainwindow.cpp" line="791"/>
         <source>Restart program to apply language change</source>
         <translation>Start programmet på nytt for å legge til programspråk</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="825"/>
+        <location filename="../app/mainwindow.cpp" line="834"/>
         <source>Two panels and compare mode needed for this operation</source>
         <translation>To paneler og sammenligningsmodus trengs for denne handlingen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="840"/>
+        <location filename="../app/mainwindow.cpp" line="849"/>
         <source>Left item</source>
         <translation>Venstre element</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="840"/>
+        <location filename="../app/mainwindow.cpp" line="849"/>
         <source>Right item</source>
         <translation>Høyre element</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="866"/>
+        <location filename="../app/mainwindow.cpp" line="875"/>
         <source>Strongly two records on current panel must be selected for this operation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="872"/>
+        <location filename="../app/mainwindow.cpp" line="881"/>
         <source>Item 1</source>
         <translation>Element 1</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="872"/>
+        <location filename="../app/mainwindow.cpp" line="881"/>
         <source>Item 2</source>
         <translation>Element 2</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="940"/>
+        <location filename="../app/mainwindow.cpp" line="949"/>
         <source>Operation requires show two panels</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="973"/>
+        <location filename="../app/mainwindow.cpp" line="982"/>
         <source>Statitics</source>
         <translation>Statistikk</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="980"/>
+        <location filename="../app/mainwindow.cpp" line="989"/>
         <source>Report file</source>
         <translation>Rapportfil</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1014"/>
+        <location filename="../app/mainwindow.cpp" line="1023"/>
         <source>Column sorting is switched. Hard sort results are not visible.
 Are you want switch column sorting off?</source>
         <translation type="unfinished"></translation>

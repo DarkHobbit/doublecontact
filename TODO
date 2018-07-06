@@ -5,9 +5,9 @@ You can contact me at pub@zvyozdochkin.ru.
 * NBU???
 * Nextcloud
 * port ContactItem::formatPhones to contconv
-* google
-* progress
-* ya.d
+* google exchange
+* progress indication for network
+* ya.money
 * OS X - static build
 * deleteLater for requests
 * support REV tag (from ownCloud-CardDAV)

@@ -11,6 +11,7 @@
  *
  */
 
+#include <QClipboard>
 #include <QCloseEvent>
 #include <QComboBox>
 #include <QDialogButtonBox>
@@ -1053,6 +1054,7 @@ void MainWindow::buildContextMenu(QTableView *view)
     view->addAction(ui->actionSeparator1);
     view->addAction(ui->action_Copy);
     view->addAction(ui->action_Move);
+    view->addAction(ui->actionCopy_text);
 
     view->addAction(ui->actionSeparator2);
     view->addAction(ui->action_Join);
@@ -1099,4 +1101,13 @@ void MainWindow::on_actionFormat_phone_numbers_triggered()
         updateHeaders();
     }
     delete d;
+}
+
+void MainWindow::on_actionCopy_text_triggered()
+{
+    QModelIndex ind = selectedView->selectionModel()->currentIndex();
+    ContactSorterFilter* selectedProxy = (selectedView==ui->tvLeft) ? proxyLeft : proxyRight;
+    ind = selectedProxy->mapToSource(ind);
+    QString text = selectedModel->data(ind, Qt::DisplayRole).toString();
+    qApp->clipboard()->setText(text);
 }

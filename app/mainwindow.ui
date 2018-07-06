@@ -575,6 +575,14 @@
     <string>Separator</string>
    </property>
   </action>
+  <action name="actionCopy_text">
+   <property name="text">
+    <string>Copy text</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+C</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
