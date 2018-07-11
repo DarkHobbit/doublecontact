@@ -882,7 +882,7 @@ Möchten Sie dieses Zertifikat trotzdem akzeptieren?</translation>
     <message>
         <location filename="../app/mainwindow.cpp" line="158"/>
         <source>Only one of two files can be dropped to program window</source>
-        <translation type="unfinished"></translation>
+        <translation>Es kann nur eine von zwei Dateien im Programmfenster abgelegt werden</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.cpp" line="225"/>
@@ -1491,12 +1491,12 @@ Zeile %3, Spalte %4
     <message>
         <location filename="../core/formats/files/nbffile.cpp" line="100"/>
         <source>NBF file can be saved only if original addressbook also was in NBF format</source>
-        <translation type="unfinished"></translation>
+        <translation>NBF-Dateien können nur gespeichert werden, wenn auch das Original-Adressbuch im NBF-Format vorliegt.</translation>
     </message>
     <message>
         <location filename="../core/formats/files/nbffile.cpp" line="105"/>
         <source>Original NBF file was moved or deleted</source>
-        <translation type="unfinished"></translation>
+        <translation>Die original NBF-Datei wurde verschoben oder gelöscht</translation>
     </message>
     <message>
         <location filename="../core/formats/files/nbffile.cpp" line="26"/>
@@ -2084,12 +2084,12 @@ Benutzername, Passwort, Protokoll und Port überprüfen</translation>
     <message>
         <location filename="../app/settingsdialog.ui" line="339"/>
         <source>While VCF directory reading</source>
-        <translation type="unfinished"></translation>
+        <translation>Während das VCF-Verzeichnis gelesen wird</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="345"/>
         <source>Read contact names from file name</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontaktnamen aus Dateinamen auslesen</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.cpp" line="125"/>
