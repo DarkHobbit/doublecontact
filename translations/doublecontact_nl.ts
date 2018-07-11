@@ -959,17 +959,17 @@ Wilt u dit certificaat tóch accepteren?</translation>
         <location filename="../app/mainwindow.ui" line="570"/>
         <location filename="../app/mainwindow.ui" line="575"/>
         <source>Separator</source>
-        <translation type="unfinished">Scheidingsteken</translation>
+        <translation>Scheidingsteken</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="580"/>
         <source>Copy text</source>
-        <translation type="unfinished"></translation>
+        <translation>Tekst kopiëren</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="583"/>
         <source>Ctrl+C</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+C</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.cpp" line="225"/>
