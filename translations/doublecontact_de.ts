@@ -872,12 +872,12 @@ Möchten Sie dieses Zertifikat trotzdem akzeptieren?</translation>
     <message>
         <location filename="../app/mainwindow.ui" line="580"/>
         <source>Copy text</source>
-        <translation type="unfinished"></translation>
+        <translation>Text kopieren</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="583"/>
         <source>Ctrl+C</source>
-        <translation type="unfinished"></translation>
+        <translation>Strg + C</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.cpp" line="158"/>
