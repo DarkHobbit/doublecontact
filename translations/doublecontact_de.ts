@@ -867,7 +867,7 @@ Möchten Sie dieses Zertifikat trotzdem akzeptieren?</translation>
         <location filename="../app/mainwindow.ui" line="570"/>
         <location filename="../app/mainwindow.ui" line="575"/>
         <source>Separator</source>
-        <translation type="unfinished">Trennzeichen</translation>
+        <translation>Trennzeichen</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="580"/>
