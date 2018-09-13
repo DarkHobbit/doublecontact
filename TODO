@@ -1,14 +1,21 @@
 This file contains English and Russian (CP1251) issues. Sorry for this mixing, it's beta.
 You can contact me at pub@zvyozdochkin.ru.
 
+0.1.6
+* internal drag'n'drop
+* remove 'separator' text from context menu under linux
+* add second year to about window
+* remove network support from binary builds by default (conditional build)
+
 0.2:
-* NBU???
 * Nextcloud
-* port ContactItem::formatPhones to contconv
 * google exchange
 * progress indication for network
+* NBU???
 * ya.money
 * OS X - static build
+* linux - appimage???
+* port ContactItem::formatPhones to contconv
 * deleteLater for requests
 * support REV tag (from ownCloud-CardDAV)
 * implement date without year: --0415 according vCard 4.0. Need flag or incorrect year!
