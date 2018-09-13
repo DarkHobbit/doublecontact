@@ -14,8 +14,11 @@
 #include <QtAlgorithms>
 #include <QBrush>
 #include <QFileInfo>
+#include <QMimeData>
+#include <QTextStream>
 
 #include "contactmodel.h"
+#include "formats/common/vcarddata.h"
 #include "formats/files/vcfdirectory.h"
 
 ContactModel::ContactModel(QObject *parent, const QString& source, RecentList& recent) :
@@ -57,9 +60,12 @@ void ContactModel::updateVisibleColumns()
     endResetModel();
 }
 
-Qt::ItemFlags ContactModel::flags(const QModelIndex &) const
+Qt::ItemFlags ContactModel::flags(const QModelIndex &index) const
 {
-    return Qt::ItemIsSelectable | Qt::ItemIsEnabled;
+    Qt::ItemFlags f = Qt::ItemIsSelectable | Qt::ItemIsEnabled | Qt::ItemIsDropEnabled;
+    if (index.isValid())
+        f = f | Qt::ItemIsDragEnabled;
+    return f;
 }
 
 int ContactModel::rowCount(const QModelIndex &) const
@@ -148,9 +154,77 @@ QVariant ContactModel::data(const QModelIndex &index, int role) const
             break;
         }
     }
-    return QVariant();
+        return QVariant();
 }
 
+Qt::DropActions ContactModel::supportedDropActions() const
+{
+    return Qt::CopyAction | Qt::MoveAction;
+}
+
+QStringList ContactModel::mimeTypes() const
+{
+    return QStringList() << "text/vcard";
+}
+
+QMimeData *ContactModel::mimeData(const QModelIndexList &indexes) const
+{
+    VCardData d;
+    d.setSkipCoding(true, true);
+    QStringList lines, errors;
+    QMimeData *mimeData = new QMimeData();
+    QByteArray encodedData;
+    QTextStream stream(&encodedData, QIODevice::WriteOnly);
+    foreach (const QModelIndex &index, indexes)
+    if (index.isValid() && index.column()==0)
+    {
+        const ContactItem& c = items[index.row()];
+        lines.clear();
+        d.exportRecord(lines, c, errors);
+        foreach(const QString& s, lines)
+            stream << s << "\n";
+        stream.flush();
+    }
+    mimeData->setData(mimeTypes()[0], encodedData);
+    return mimeData;
+}
+
+bool ContactModel::dropMimeData(const QMimeData *data, Qt::DropAction action, int, int column, const QModelIndex&)
+{
+    if (action == Qt::IgnoreAction)
+         return true;
+    if (!data->hasFormat("text/vcard"))
+         return false;
+    if (column > 0)
+         return false;
+    QByteArray encodedData = data->data("text/vcard");
+    QTextStream stream(&encodedData, QIODevice::ReadOnly);
+    QStringList lines, errors;
+    VCardData d;
+    d.setSkipCoding(true, true);
+    beginResetModel();
+    while (!stream.atEnd()) {
+        QString s = stream.readLine();
+        lines << s;
+    }
+    d.importRecords(lines, items, true, errors);
+
+    endResetModel();
+    if (action == Qt::CopyAction)
+        return true;
+    else if (action == Qt::MoveAction) {
+        ; // TODO
+
+        return true;
+    }
+    else
+        return false;
+}
+/*
+bool ContactModel::removeRows(int row, int count, const QModelIndex &parent)
+{
+}
+*/
 bool ContactModel::open(const QString& path, FormatType fType, QStringList &errors, QString &fatalError)
 {
     if (path.isEmpty()) return false;

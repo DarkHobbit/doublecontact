@@ -41,11 +41,18 @@ public:
         DupSearch
     };
     // Base model implementation methods
-    Qt::ItemFlags flags(const QModelIndex &) const;
+    Qt::ItemFlags flags(const QModelIndex &index) const;
     int rowCount(const QModelIndex &parent = QModelIndex()) const;
     int columnCount(const QModelIndex &parent = QModelIndex()) const;
     QVariant headerData(int section, Qt::Orientation orientation, int role) const;
     QVariant data(const QModelIndex &index, int role) const;
+    // Drag'n'drop implementation methods
+    Qt::DropActions supportedDropActions() const;
+    QStringList mimeTypes() const;
+    QMimeData* mimeData(const QModelIndexList &indexes) const;
+    virtual bool dropMimeData (const QMimeData * data, Qt::DropAction action,
+          int, int column, const QModelIndex&);
+//    bool removeRows(int row, int count, const QModelIndex &parent = QModelIndex());
     // Save and open methods
     bool open(const QString& path, FormatType fType, QStringList &errors, QString &fatalError);
     bool saveAs(const QString& path, FormatType fType, QStringList &errors, QString &fatalError);

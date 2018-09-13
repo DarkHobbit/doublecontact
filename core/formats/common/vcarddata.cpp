@@ -41,6 +41,12 @@ void VCardData::unforceVersion()
     _forceVersion = false;
 }
 
+void VCardData::setSkipCoding(bool _skipEncoding, bool _skipDecoding)
+{
+    skipEncoding = _skipEncoding;
+    skipDecoding = _skipDecoding;
+}
+
 bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append, QStringList& errors)
 {
     bool recordOpened = false;

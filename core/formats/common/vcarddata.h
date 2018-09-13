@@ -22,6 +22,7 @@ public:
     VCardData();
     void forceVersion(GlobalConfig::VCFVersion version);
     void unforceVersion();
+    void setSkipCoding(bool _skipEncoding, bool _skipDecoding);
     bool importRecords(QStringList& lines, ContactList& list, bool append, QStringList& errors);
     bool exportRecords(QStringList& lines, const ContactList& list, QStringList& errors);
     void exportRecord(QStringList& lines, const ContactItem& item, QStringList& errors);

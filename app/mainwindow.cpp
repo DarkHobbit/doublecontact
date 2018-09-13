@@ -44,7 +44,14 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    setAcceptDrops(true);
+    // Drag'n'drop support
+    ui->tvLeft->setDragEnabled(true);
+    ui->tvRight->setDragEnabled(true);
+    setAcceptDrops(true); // - for URLs
+    ui->tvLeft->setDropIndicatorShown(true);
+    ui->tvRight->setDropIndicatorShown(true);
+    ui->tvLeft->setAcceptDrops(true); // - for separate vCard items
+    ui->tvRight->setAcceptDrops(true);
     // Configuration
     configManager.setDefaults(ui->tvLeft->font().toString(),
         ui->tvLeft->palette().color(QPalette::Base).name(),
