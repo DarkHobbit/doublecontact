@@ -3,7 +3,6 @@ You can contact me at pub@zvyozdochkin.ru.
 
 0.1.6
 * internal drag'n'drop
-* remove 'separator' text from context menu under linux
 * add second year to about window
 * remove network support from binary builds by default (conditional build)
 

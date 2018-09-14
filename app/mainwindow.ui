@@ -196,7 +196,7 @@
      <x>0</x>
      <y>0</y>
      <width>763</width>
-     <height>26</height>
+     <height>30</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_File">
@@ -441,7 +441,7 @@
   </action>
   <action name="actionSettings">
    <property name="text">
-    <string>Settings...</string>
+    <string>&amp;Settings...</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+P</string>
@@ -457,7 +457,7 @@
   </action>
   <action name="actionCompare_Result">
    <property name="text">
-    <string>Compare &amp;Result</string>
+    <string>C&amp;ompare Result</string>
    </property>
    <property name="shortcut">
     <string>Shift+F3</string>
@@ -498,7 +498,7 @@
   </action>
   <action name="actionIntl_phone_prefix">
    <property name="text">
-    <string>Internationalize phone prefix</string>
+    <string>&amp;Internationalize phone prefix</string>
    </property>
   </action>
   <action name="actionS_wap_Panels">
@@ -516,7 +516,7 @@
   </action>
   <action name="actionReverse_full_name">
    <property name="text">
-    <string>Reverse full name</string>
+    <string>Re&amp;verse full name</string>
    </property>
   </action>
   <action name="actionS_tatistics">
@@ -547,32 +547,32 @@
   </action>
   <action name="action_About_Qt">
    <property name="text">
-    <string>About Qt</string>
+    <string>About &amp;Qt</string>
    </property>
   </action>
   <action name="actionFormat_phone_numbers">
    <property name="text">
-    <string>Format phone numbers</string>
+    <string>Format phone &amp;numbers</string>
    </property>
   </action>
   <action name="actionSeparator1">
    <property name="text">
-    <string>Separator</string>
+    <string/>
    </property>
   </action>
   <action name="actionSeparator2">
    <property name="text">
-    <string>Separator</string>
+    <string/>
    </property>
   </action>
   <action name="actionSeparator3">
    <property name="text">
-    <string>Separator</string>
+    <string/>
    </property>
   </action>
   <action name="actionSeparator4">
    <property name="text">
-    <string>Separator</string>
+    <string/>
    </property>
   </action>
   <action name="actionCopy_text">
