@@ -121,7 +121,7 @@ bool CSVFile::importRecords(const QString &url, ContactList &list, bool append)
                     row << val;
                     val.clear();
                     break;
-                }
+                } // fall through
             case 0:
             default:
                 val += c;
