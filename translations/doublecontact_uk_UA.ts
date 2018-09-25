@@ -959,17 +959,17 @@ Are you want to accept this certificate anyway?</source>
         <location filename="../app/mainwindow.ui" line="570"/>
         <location filename="../app/mainwindow.ui" line="575"/>
         <source>Separator</source>
-        <translation type="unfinished">Розділювач</translation>
+        <translation>Розділювач</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="580"/>
         <source>Copy text</source>
-        <translation type="unfinished"></translation>
+        <translation>Копіювати текст</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="583"/>
         <source>Ctrl+C</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+C</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.cpp" line="225"/>
@@ -1033,7 +1033,7 @@ Only some fields can this edited in this mode</source>
     <message>
         <location filename="../app/mainwindow.cpp" line="158"/>
         <source>Only one of two files can be dropped to program window</source>
-        <translation type="unfinished"></translation>
+        <translation>Лише два файли можна перетягнути у вікно програми</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.cpp" line="625"/>
@@ -2201,7 +2201,7 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../app/settingsdialog.ui" line="345"/>
         <source>Read contact names from file name</source>
-        <translation type="unfinished"></translation>
+        <translation>Брати ім&apos;я контакту з імені файлу</translation>
     </message>
     <message>
         <source>Warning on non-standard phone/email types</source>
