@@ -880,12 +880,12 @@ Er du sikker på at du vil godta dette sertifikatet uansett?</translation>
     <message>
         <location filename="../app/mainwindow.ui" line="580"/>
         <source>Copy text</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopier tekst</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="583"/>
         <source>Ctrl+C</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+C</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.cpp" line="158"/>
@@ -927,7 +927,7 @@ Kun noen felter kan redigeres i dette moduset</translation>
     <message>
         <location filename="../app/mainwindow.cpp" line="451"/>
         <source>Compare mode requires show two panels and load contact lists in both panels</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sammenligningsmodus krever visning av to paneler og innlasting av kontaktlister i begge paneler</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.cpp" line="497"/>
@@ -1004,7 +1004,7 @@ Lagre endringer?</translation>
     <message>
         <location filename="../app/mainwindow.cpp" line="875"/>
         <source>Strongly two records on current panel must be selected for this operation</source>
-        <translation type="unfinished"></translation>
+        <translation>To dataoppføringer på gjeldende panel må være valgt sterkt for denne operasjonen</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.cpp" line="881"/>
@@ -1019,7 +1019,7 @@ Lagre endringer?</translation>
     <message>
         <location filename="../app/mainwindow.cpp" line="949"/>
         <source>Operation requires show two panels</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Operasjonen krever visning av to paneler</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.cpp" line="982"/>
@@ -1035,7 +1035,8 @@ Lagre endringer?</translation>
         <location filename="../app/mainwindow.cpp" line="1023"/>
         <source>Column sorting is switched. Hard sort results are not visible.
 Are you want switch column sorting off?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kolonnesortering er byttet. Harde sorteringsresultater er ikke synlige.
+Er du sikker på at du ønsker skru av kolonnesortering?</translation>
     </message>
 </context>
 <context>
@@ -1144,7 +1145,7 @@ Are you want switch column sorting off?</source>
     <message>
         <location filename="../core/contactlist.cpp" line="119"/>
         <source>PCS</source>
-        <translation type="unfinished"></translation>
+        <translation>PCS</translation>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="156"/>
@@ -1172,7 +1173,15 @@ Are you want switch column sorting off?</source>
 %7 SMS
 %8 archived SMS
 %9 %10</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 datasett
+%2 telefoner
+%3 e-poster
+%4 adresser
+%5 geburtsdager
+%6 samtaler
+%7 SMS
+%8 arkivert SMS
+%9 %10</translation>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="975"/>
@@ -1270,34 +1279,37 @@ linje %3, kol. %4
         <location filename="../core/formats/files/udxfile.cpp" line="68"/>
         <source>Root node is not &apos;DataExchangeInfo&apos; at file
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Rot-node er ikke &quot;DataExchangeInfo&quot; i filen
+%s</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="74"/>
         <source>Can&apos;t find &apos;RecordInfo&apos; tag at file
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kan ikke finne &apos;RecordInfo&apos;-etikett i filen
+%1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="79"/>
         <source>Warning: codepage not found, trying use UTF-8...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Advarsel: Fant ikke kodeside, prøver å bruke UTF-8…</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="84"/>
         <source>Warning: udx version not found, treat as 1.0...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Advarsel: Fant ikke UDX-versjon, behandler som 1.0…</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="93"/>
         <source>Can&apos;t find &apos;vCard&apos; records at file
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kan ikke finne &quot;vCard&quot;-datafelter i filen
+%1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="110"/>
         <source>Can&apos;t find &apos;vCardField&apos; at sequence %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Finner ikke &quot;vCardField&quot; i sekvensen %1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="135"/>
@@ -1307,7 +1319,7 @@ linje %3, kol. %4
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="151"/>
         <source>Unknown &apos;vCardfield&apos; type: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukjent &quot;vCardField&quot;-type: %1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="159"/>
@@ -1317,44 +1329,46 @@ linje %3, kol. %4
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="223"/>
         <source>Warning: contact %1, duplicate id %2 changed to %3</source>
-        <translation type="unfinished"></translation>
+        <translation>Advarsel: Kontakt %1, duplikat-ID %2 endret til %3</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="258"/>
         <source>Warning: contact %1, unknown tel type:
 %2
  saved as cellular</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Advarsel: Kontakt %1, ukjent tel.-type:
+%2
+lagret som mobil</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="279"/>
         <source>Warning: contact %1 has time (%2) in birthday, not implemented in UDX reader</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Advarsel: Kontakten %1 har tiden (%2) i geburtsdag, ikke implementert i UDX-leser</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="282"/>
         <source>Warning: contact %1 has address(es), not implemented in UDX</source>
-        <translation type="unfinished"></translation>
+        <translation>Advarsel: Kontakten %1 har adresse(ne), ikke implementert i UDX</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="285"/>
         <source>Warning: contact %1 has photo, not implemented in UDX</source>
-        <translation type="unfinished"></translation>
+        <translation>Advarsel: Kontakten %1 har bilde, ikke implementert i UDX</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="287"/>
         <source>Warning: contact %1 has description, not implemented in UDX</source>
-        <translation type="unfinished"></translation>
+        <translation>Advarsel: Kontakten %1 har beskrivelse, ikke implementert i UDX</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="289"/>
         <source>Warning: contact %1 has job title, not implemented in UDX</source>
-        <translation type="unfinished"></translation>
+        <translation>Advarsel: Kontakten %1 har jobbtittel, ikke implementert i UDX</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="291"/>
         <source>Warning: contact %1 has anniversaries, not implemented in UDX</source>
-        <translation type="unfinished"></translation>
+        <translation>Advarsel: Kontakten %1 har jubileum, ikke implementert i UDX</translation>
     </message>
     <message>
         <location filename="../core/formats/formatfactory.cpp" line="67"/>
@@ -1402,48 +1416,49 @@ linje %3, kol. %4
     <message>
         <location filename="../core/formats/files/mpbfile.cpp" line="110"/>
         <source>Strange call item: %1, size %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Merkelig samtaleelement: %1, størrelse %2</translation>
     </message>
     <message>
         <location filename="../core/formats/files/mpbfile.cpp" line="140"/>
         <source>No contact records in this file</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingen kontaktlisteoppføringer i denne filen</translation>
     </message>
     <message>
         <location filename="../core/formats/files/mpbfile.cpp" line="151"/>
         <source>MPB record allowed only for MPB source</source>
-        <translation type="unfinished"></translation>
+        <translation>MPB-dataoppføring tillatt kun for MPB-kilde</translation>
     </message>
     <message>
         <location filename="../core/formats/files/mpbfile.cpp" line="203"/>
         <source>Name for number %1 changed from %2 to %3</source>
-        <translation type="unfinished"></translation>
+        <translation>Navn for nummer %1 endret fra %2 til %3</translation>
     </message>
     <message>
         <location filename="../core/formats/files/mpbfile.cpp" line="215"/>
         <source>Number %1 without original name not found in addressbook</source>
-        <translation type="unfinished"></translation>
+        <translation>Nummer %1 uten opprinnelig navn ikke funnet i adressebok</translation>
     </message>
     <message>
         <location filename="../core/formats/files/mpbfile.cpp" line="217"/>
         <source>Number %1 not found in addressbook. Original name (%2) saved</source>
-        <translation type="unfinished"></translation>
+        <translation>Nummer %1 ikke funnet i adressebok. Opprinnelig navn (%2) lagret</translation>
     </message>
     <message>
         <location filename="../core/formats/profiles/csvprofilebase.h" line="21"/>
         <source>CSV row too short for this profile at line %1</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV-rad for kort for denne profilen på linje %1</translation>
     </message>
     <message>
         <location filename="../core/formats/profiles/explaybm50profile.cpp" line="91"/>
         <source>Name prefixes merged with last name (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Navne-prefikser flettet med etternavn (%1)</translation>
     </message>
     <message>
         <location filename="../core/formats/profiles/genericcsvprofile.cpp" line="61"/>
         <source>Row length (%1) is not equal header length (%2). Possibly, incorrect CSV. 
 %3</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Radlengden (%1) stemmer ikke med hodelengen (%2). Mulig uriktig CSV.
+%3</translation>
     </message>
     <message>
         <location filename="../core/formats/profiles/osmoprofile.cpp" line="19"/>
@@ -1459,7 +1474,7 @@ linje %3, kol. %4
     <message>
         <location filename="../core/formats/profiles/osmoprofile.cpp" line="89"/>
         <source>Department loaded as Job title, contact %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Avdeling innlastet som jobbtittel, kontakt %1</translation>
     </message>
     <message>
         <location filename="../core/formats/profiles/osmoprofile.cpp" line="189"/>
@@ -1469,7 +1484,7 @@ linje %3, kol. %4
     <message>
         <location filename="../core/formats/profiles/osmoprofile.cpp" line="208"/>
         <source>Job title saved as Department, contact %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Jobbtittel lagret som avdeling, kontakt %1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/nbffile.cpp" line="62"/>
@@ -1484,17 +1499,17 @@ linje %3, kol. %4
     <message>
         <location filename="../core/formats/files/nbffile.cpp" line="100"/>
         <source>NBF file can be saved only if original addressbook also was in NBF format</source>
-        <translation type="unfinished"></translation>
+        <translation>NBF-fil kan kun lagres hvis opprinnelig adressebok også var i NBF-format</translation>
     </message>
     <message>
         <location filename="../core/formats/files/nbffile.cpp" line="105"/>
         <source>Original NBF file was moved or deleted</source>
-        <translation type="unfinished"></translation>
+        <translation>Opprinnelig NBF-fil flyttet eller slettet</translation>
     </message>
     <message>
         <location filename="../core/formats/files/nbffile.cpp" line="26"/>
         <source>Can&apos;t open %1 item in archive</source>
-        <translation type="unfinished"></translation>
+        <translation>Kan ikke åpne %1 element i arkiv</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="53"/>
@@ -1729,7 +1744,7 @@ linje %3, kol. %4
     <message>
         <location filename="../core/globals.h" line="105"/>
         <source>Ext.addr.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ekst.adr.</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="106"/>
@@ -1814,12 +1829,13 @@ linje %3, kol. %4
         <location filename="../core/globals.h" line="126"/>
         <source>Warning: contact %1 has %2, not supported in this format.
 Data will be lost</source>
-        <translation type="unfinished"></translation>
+        <translation>Advarsel: Kontakt %1 har %2, ikke støttet i dette formatet.
+Data vil gå tapt</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="128"/>
         <source>%1 %2 will be lost at contact %3</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 %2 vil gå tapt i kontakt %3</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="129"/>
@@ -1859,22 +1875,22 @@ Sjekk brukernavn, passord, protokoll og port</translation>
     <message>
         <location filename="../3rdparty/quazip/quazip/quagzipfile.cpp" line="60"/>
         <source>QIODevice::Append is not supported for GZIP</source>
-        <translation type="unfinished"></translation>
+        <translation>QIODevice::Tillegging støttes ikke for GZIP</translation>
     </message>
     <message>
         <location filename="../3rdparty/quazip/quazip/quagzipfile.cpp" line="66"/>
         <source>Opening gzip for both reading and writing is not supported</source>
-        <translation type="unfinished"></translation>
+        <translation>Åpning av GZIP for både lesing og skriving støttes ikke</translation>
     </message>
     <message>
         <location filename="../3rdparty/quazip/quazip/quagzipfile.cpp" line="74"/>
         <source>You can open a gzip either for reading or for writing. Which is it?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Du kan åpne en GZIP-fil for enten lesing eller skriving. Hva blir det til?</translation>
     </message>
     <message>
         <location filename="../3rdparty/quazip/quazip/quagzipfile.cpp" line="80"/>
         <source>Could not gzopen() file</source>
-        <translation type="unfinished"></translation>
+        <translation>Kunne ikke gzopen() fil</translation>
     </message>
 </context>
 <context>
@@ -1882,12 +1898,12 @@ Sjekk brukernavn, passord, protokoll og port</translation>
     <message>
         <location filename="../3rdparty/quazip/quazip/quaziodevice.cpp" line="147"/>
         <source>QIODevice::Append is not supported for QuaZIODevice</source>
-        <translation type="unfinished"></translation>
+        <translation>QIODevice::Tillegging er ikke støttet for QuaZIODevice</translation>
     </message>
     <message>
         <location filename="../3rdparty/quazip/quazip/quaziodevice.cpp" line="152"/>
         <source>QIODevice::ReadWrite is not supported for QuaZIODevice</source>
-        <translation type="unfinished"></translation>
+        <translation>QIODevice::ReadWrite er ikke støttet for QuaZIODevice</translation>
     </message>
 </context>
 <context>
@@ -1895,7 +1911,7 @@ Sjekk brukernavn, passord, protokoll og port</translation>
     <message>
         <location filename="../3rdparty/quazip/quazip/quazipfile.cpp" line="247"/>
         <source>ZIP/UNZIP API error %1</source>
-        <translation type="unfinished"></translation>
+        <translation>ZIP/UNZIP API-feil %1</translation>
     </message>
 </context>
 <context>
@@ -1903,7 +1919,7 @@ Sjekk brukernavn, passord, protokoll og port</translation>
     <message>
         <location filename="../app/helpers.cpp" line="28"/>
         <source>This table is read only</source>
-        <translation type="unfinished"></translation>
+        <translation>Denne tabellen er skrivebeskyttet</translation>
     </message>
 </context>
 <context>
@@ -2036,22 +2052,22 @@ Sjekk brukernavn, passord, protokoll og port</translation>
     <message>
         <location filename="../app/settingsdialog.ui" line="261"/>
         <source>Skip time from birthday and anniversaries</source>
-        <translation type="unfinished"></translation>
+        <translation>Hopp over tid fra geburtsdag og jubileum</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="268"/>
         <source>Non-standard phone/email types</source>
-        <translation type="unfinished"></translation>
+        <translation>Ikke-standard telefon/e-posttyper</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="274"/>
         <source>Add X- to type names</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Legg X- til typenavn</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="281"/>
         <source>Replace non-latin type named</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Erstatt ikke-latinsk skrift ved navn</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="305"/>
@@ -2066,7 +2082,7 @@ Sjekk brukernavn, passord, protokoll og port</translation>
     <message>
         <location filename="../app/settingsdialog.ui" line="325"/>
         <source>(many phones treats &apos;Voice&apos; as &apos;Other&apos;)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">(mange telefoner behandler &quot;Stemme&quot; so &quot;Annet&quot;)</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="332"/>
@@ -2076,12 +2092,12 @@ Sjekk brukernavn, passord, protokoll og port</translation>
     <message>
         <location filename="../app/settingsdialog.ui" line="339"/>
         <source>While VCF directory reading</source>
-        <translation type="unfinished"></translation>
+        <translation>Under lesing av VCF-mappe</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="345"/>
         <source>Read contact names from file name</source>
-        <translation type="unfinished"></translation>
+        <translation>Les kontaktnavn fra filnavn</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.cpp" line="125"/>
