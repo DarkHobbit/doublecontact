@@ -52,7 +52,7 @@ public:
     QMimeData* mimeData(const QModelIndexList &indexes) const;
     virtual bool dropMimeData (const QMimeData * data, Qt::DropAction action,
           int, int column, const QModelIndex&);
-//    bool removeRows(int row, int count, const QModelIndex &parent = QModelIndex());
+    bool removeRows(int row, int count, const QModelIndex &parent = QModelIndex());
     // Save and open methods
     bool open(const QString& path, FormatType fType, QStringList &errors, QString &fatalError);
     bool saveAs(const QString& path, FormatType fType, QStringList &errors, QString &fatalError);

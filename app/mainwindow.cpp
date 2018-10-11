@@ -52,6 +52,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->tvRight->setDropIndicatorShown(true);
     ui->tvLeft->setAcceptDrops(true); // - for separate vCard items
     ui->tvRight->setAcceptDrops(true);
+    ui->tvLeft->setDragDropOverwriteMode(false);
+    ui->tvRight->setDragDropOverwriteMode(false);
     // Configuration
     configManager.setDefaults(ui->tvLeft->font().toString(),
         ui->tvLeft->palette().color(QPalette::Base).name(),

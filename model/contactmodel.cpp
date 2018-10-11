@@ -210,21 +210,24 @@ bool ContactModel::dropMimeData(const QMimeData *data, Qt::DropAction action, in
     d.importRecords(lines, items, true, errors);
 
     endResetModel();
-    if (action == Qt::CopyAction)
+    _changed = true;
+    // TODO insert to pointed line
+    if (action == Qt::CopyAction || action == Qt::MoveAction)
         return true;
-    else if (action == Qt::MoveAction) {
-        ; // TODO
-
-        return true;
-    }
     else
         return false;
 }
-/*
+
 bool ContactModel::removeRows(int row, int count, const QModelIndex &parent)
 {
+    beginRemoveRows (QModelIndex(), row, row+count-1);
+    for (int i=row+count-1; i>=row; i--)
+        items.removeAt(i);
+    endRemoveRows();
+    _changed = true;
+    return false;
 }
-*/
+
 bool ContactModel::open(const QString& path, FormatType fType, QStringList &errors, QString &fatalError)
 {
     if (path.isEmpty()) return false;
