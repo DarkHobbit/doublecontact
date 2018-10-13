@@ -57,3 +57,5 @@ Bugfix release:
 
 Current
 * Context menu for contacts in tables
+* Internal drag'n'drop items copy and move between tables
+* Fixed: error phone type reading, if 'type=' prefix was in lowercase

@@ -111,7 +111,7 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                          || vType[i].startsWith("LABEL=", Qt::CaseInsensitive)) {// TODO see vCard 4.0, m.b. LABEL= points to non-standard?
                     // non-standart types may be non-latin
                     QString typeCand = vType[i];
-                    typeCand.remove("TYPE=").remove("LABEL=");
+                    typeCand.remove("TYPE=", Qt::CaseInsensitive).remove("LABEL=", Qt::CaseInsensitive);
                     if (!skipDecoding)
                         typeCand = codec->toUnicode(typeCand.toLocal8Bit());
                     // Detect and split types, composed as value list (RFC)
@@ -130,7 +130,7 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                     syncMLRef = vType[i].mid(QString("X-SYNCMLREF").length()).toInt();
                 else {
                     // "TYPE=" can be omitted in some addressbooks
-                    // But it also may be encoding (~~)
+                    // But it also may be encoded (~~)
                     if (vType[i].startsWith("QUOTED-PRINTABLE", Qt::CaseInsensitive)
                             || vType[i].startsWith("BASE64", Qt::CaseInsensitive))
                         encoding = vType[i];
