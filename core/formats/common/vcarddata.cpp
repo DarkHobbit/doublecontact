@@ -279,7 +279,7 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
             }
             // Known but un-editing tags
             else if (
-                tag=="LABEL"
+                tag=="LABEL" || tag=="PRODID"
                 || tag=="X-ACCOUNT" // MyPhoneExplorer YES, embedded android export NO
             )
             { // TODO other from rfc 2426
