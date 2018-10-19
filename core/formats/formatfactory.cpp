@@ -8,6 +8,7 @@
 #include "files/nbffile.h"
 #include "files/udxfile.h"
 #include "files/vcffile.h"
+#include "files/xmlcontactfile.h"
 
 FormatFactory::FormatFactory()
     :error("")
@@ -35,7 +36,7 @@ QStringList FormatFactory::supportedFilters(QIODevice::OpenMode mode, bool isRep
         allSupported += " *." + CSVFile::supportedExtensions().join(" *.");
         if (mode==QIODevice::ReadOnly) {
             // ...here add read-only formats
-//            allSupported += " *." + NBFFile::supportedExtensions().join(" *.");
+            allSupported += " *." + XmlContactFile::supportedExtensions().join(" *.");
         }
         else { // Write-only formats
         }
@@ -51,7 +52,7 @@ QStringList FormatFactory::supportedFilters(QIODevice::OpenMode mode, bool isRep
         allTypes << CSVFile::supportedFilters();
         if (mode==QIODevice::ReadOnly) {
             // ...here add filters for read-only formats
-//            allTypes << NBFFile::supportedFilters();
+            allTypes << XmlContactFile::supportedFilters();
         }
         else { // Write-only formats
         }
@@ -81,6 +82,8 @@ IFormat *FormatFactory::createObject(const QString &url)
         return new CSVFile();
     if (NBFFile::supportedExtensions().contains(ext, Qt::CaseInsensitive))
         return new NBFFile();
+    if (XmlContactFile::supportedExtensions().contains(ext, Qt::CaseInsensitive))
+        return new XmlContactFile();
 #if QT_VERSION >= 0x040800
     if (MPBFile::supportedExtensions().contains(ext, Qt::CaseInsensitive))
         return new MPBFile();
@@ -99,6 +102,8 @@ IFormat *FormatFactory::createObject(const QString &url)
 #endif
     if (NBFFile::detect(url))
         return new NBFFile();
+    if (XmlContactFile::detect(url))
+        return new XmlContactFile();
     if (CSVFile::detect(url))
         return new CSVFile();
     // ...here add detect() for new format

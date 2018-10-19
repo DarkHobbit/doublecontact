@@ -38,7 +38,8 @@ HEADERS	+= \
     $$PWD/formats/profiles/explaybm50profile.h \
     $$PWD/formats/profiles/explaytv240profile.h \
     $$PWD/formats/profiles/genericcsvprofile.h \
-    $$PWD/formats/profiles/osmoprofile.h
+    $$PWD/formats/profiles/osmoprofile.h \
+    $$PWD/formats/files/xmlcontactfile.h
 
 SOURCES	+= \
     $$PWD/contactlist.cpp \
@@ -60,5 +61,6 @@ SOURCES	+= \
     $$PWD/formats/profiles/explaybm50profile.cpp \
     $$PWD/formats/profiles/explaytv240profile.cpp \
     $$PWD/formats/profiles/genericcsvprofile.cpp \
-    $$PWD/formats/profiles/osmoprofile.cpp
+    $$PWD/formats/profiles/osmoprofile.cpp \
+    $$PWD/formats/files/xmlcontactfile.cpp
 

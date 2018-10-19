@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root><contact>BEGIN:VCARD&#13;
+VERSION:3.0&#13;
+PRODID:-//Apple Inc.//iOS 9.2//EN&#13;
+ORG:Мегаполис Сервис;&#13;
+TEL;type=HOME;type=VOICE;type=pref:+74958887766&#13;
+END:VCARD&#13;
+</contact><contact>BEGIN:VCARD&#13;
+VERSION:3.0&#13;
+PRODID:-//Apple Inc.//iOS 9.2//EN&#13;
+N:Алек;Костя;;;&#13;
+FN:Александров Константин&#13;
+TEL;type=HOME;type=VOICE;type=pref:+79051234567&#13;
+END:VCARD&#13;
+</contact></root>
