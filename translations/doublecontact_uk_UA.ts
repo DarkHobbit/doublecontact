@@ -1934,12 +1934,12 @@ Data will be lost</source>
     <message>
         <location filename="../core/formats/files/nbffile.cpp" line="100"/>
         <source>NBF file can be saved only if original addressbook also was in NBF format</source>
-        <translation type="unfinished"></translation>
+        <translation>NBF файл буде збережено, тільки якщо адресна книга також була у форматі NBF</translation>
     </message>
     <message>
         <location filename="../core/formats/files/nbffile.cpp" line="105"/>
         <source>Original NBF file was moved or deleted</source>
-        <translation type="unfinished"></translation>
+        <translation>Оригінальний файл NBF було видалено чи переміщено</translation>
     </message>
     <message>
         <location filename="../core/formats/files/nbffile.cpp" line="26"/>
@@ -2196,7 +2196,7 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../app/settingsdialog.ui" line="339"/>
         <source>While VCF directory reading</source>
-        <translation type="unfinished"></translation>
+        <translation>Під час читання каталогу VCF</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="345"/>
