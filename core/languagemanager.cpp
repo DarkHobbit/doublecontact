@@ -111,6 +111,13 @@ QStringList LanguageManager::availableCodecs()
     foreach (const QByteArray& c, QTextCodec::availableCodecs()) {
         codecs << c;
     }
+    codecs.sort();
+    int uInd = codecs.indexOf("UTF-8"); // move UTF-8 to begin
+    if (uInd!=-1)
+        codecs.move(uInd, 0);
+    uInd = codecs.indexOf("UTF-16");
+    if (uInd!=-1)
+        codecs.move(uInd, 1);
     return codecs;
 }
 

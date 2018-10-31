@@ -39,12 +39,8 @@ void CSVProfileDialog::selectProfile(CSVFile *format)
     // Profile
     if (!profile.isEmpty())
         ui->cbProfile->setCurrentIndex(ui->cbProfile->findText(profile));
-    // Encoding list (TODO: move sorting to LanguageManager)
+    // Encoding list
 	QStringList codecs = LanguageManager::availableCodecs();
-	codecs.sort();
-    int uInd = codecs.indexOf("UTF-8"); // move UTF-8 to begin
-    if (uInd!=-1)
-        codecs.move(uInd, 0);
 	ui->cbEncoding->addItems(codecs);
     // Encoding/separator (only for generic profile)
     if (profile==S_GENERIC_CSV_PROFILE) {

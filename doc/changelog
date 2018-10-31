@@ -59,4 +59,5 @@ Current
 * Context menu for contacts in tables
 * Internal drag'n'drop items copy and move between tables
 * Contact XML (prodid iOS 9.2) reading support
+* Encodings list in CVS profile dialog is now sorted
 * Fixed: error phone type reading, if 'type=' prefix was in lowercase
