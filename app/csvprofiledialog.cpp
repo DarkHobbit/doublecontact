@@ -40,7 +40,9 @@ void CSVProfileDialog::selectProfile(CSVFile *format)
     if (!profile.isEmpty())
         ui->cbProfile->setCurrentIndex(ui->cbProfile->findText(profile));
     // Encoding list
-    ui->cbEncoding->addItems(LanguageManager::availableCodecs());
+	QStringList codecs = LanguageManager::availableCodecs();
+	codecs.sort();
+	ui->cbEncoding->addItems(codecs);
     // Encoding/separator (only for generic profile)
     if (profile==S_GENERIC_CSV_PROFILE) {
         if (!genEncoding.isEmpty())
