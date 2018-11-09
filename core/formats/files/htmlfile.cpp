@@ -45,8 +45,8 @@ bool HTMLFile::exportRecords(const QString &url, ContactList &list)
     stream << QString("<b>%1</b>: %2<br/>\n").arg(S_ADDRESS_BOOK).arg(url);
     if (!list.extra.model.isEmpty())
         stream << QString("%1<br/>\n").arg(list.extra.model);
-    if (!list.extra.timeStamp.isEmpty())
-        stream << QString("%1<br/>\n").arg(list.extra.timeStamp);
+    if (list.extra.timeStamp.isValid())
+        stream << QString("%1<br/>\n").arg(list.extra.timeStamp.toString());
     stream << endl;
     foreach (const ContactItem& item, list) {
         stream << QString("<p>\n");

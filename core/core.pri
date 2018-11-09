@@ -29,6 +29,7 @@ HEADERS	+= \
     $$PWD/formats/files/htmlfile.h \
     $$PWD/formats/files/mpbfile.h \
     $$PWD/formats/files/nbffile.h \
+    $$PWD/formats/files/nbufile.h \
     $$PWD/formats/files/udxfile.h \
     $$PWD/formats/files/vcfdirectory.h \
     $$PWD/formats/files/vcffile.h \
@@ -52,6 +53,7 @@ SOURCES	+= \
     $$PWD/formats/files/htmlfile.cpp \
     $$PWD/formats/files/mpbfile.cpp \
     $$PWD/formats/files/nbffile.cpp \
+    $$PWD/formats/files/nbufile.cpp \
     $$PWD/formats/files/udxfile.cpp \
     $$PWD/formats/files/vcfdirectory.cpp \
     $$PWD/formats/files/vcffile.cpp \

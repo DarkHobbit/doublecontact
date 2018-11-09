@@ -1,7 +1,7 @@
 # DoubleContact [![Travis CI](https://travis-ci.org/DarkHobbit/doublecontact.svg?branch=master)](https://travis-ci.org/DarkHobbit/doublecontact) [![Coverity Scan Build Status](https://scan.coverity.com/projects/10139/badge.svg)](https://scan.coverity.com/projects/darkhobbit-doublecontact)
 Offline DE-independent contact manager primarily for phonebooks editing/merging.
 
-License: GPLv2 or above.
+License: GPLv3 or above. (Some parts of code, except NBU support can be distributed under GPLv2.)
 
 Language: C++.
 

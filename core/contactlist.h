@@ -205,9 +205,14 @@ struct CallInfo {
 };
 
 struct MPBExtra {
-    QString model, timeStamp;
+    // Common fields
+    QString model;
+    QDateTime timeStamp;
+    // MPB specific
     QStringList organizer, notes, SMS, SMSArchive;
     QList<CallInfo> calls;
+    // NBU specific
+    QString imei, firmware, phoneLang;
     void clear();
 };
 

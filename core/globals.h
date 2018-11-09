@@ -120,6 +120,7 @@ enum ContactColumn {
 // Common errors, warnings and questions
 #define S_READ_ERR QObject::tr("Can't read file\n%1")
 #define S_WRITE_ERR QObject::tr("Can't write file\n%1")
+#define S_SEEK_ERR QObject::tr("Can't seek to %1 in file\n%2")
 #define S_REC_NOT_SEL QObject::tr("Record not selected")
 #define S_READ_ONLY_FORMAT QObject::tr("This format is read only")
 #define S_ERR_UNSUPPORTED_TAG \

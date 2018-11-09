@@ -75,10 +75,10 @@ QString Phone::expandNumber(const QString &number, int countryRule)
             res = res.replace(0, 1, countryRules[countryRule].iPrefix);
     return res;
 }
-#include <iostream>
+
 bool Phone::operator ==(const Phone &p) const
 {
-    std::cout << types.join(";").toLocal8Bit().data() << " " << p.types.join(";").toLocal8Bit().data() << std::endl;
+    //std::cout << types.join(";").toLocal8Bit().data() << " " << p.types.join(";").toLocal8Bit().data() << std::endl;
     return (value==p.value && types==p.types);
 }
 
@@ -820,11 +820,14 @@ QString ContactList::statistics() const
         if (!item.birthday.isEmpty())
             bdayCount++;
     }
-    return QObject::
-        tr("%1 records\n%2 phones\n%3 emails\n%4 addresses\n%5 birthdays\n%6 calls\n%7 SMS\n%8 archived SMS\n%9 %10")
+    QString res= QObject::tr("%1 records\n%2 phones\n%3 emails\n%4 addresses\n%5 birthdays\n%6 calls\n%7 SMS\n%8 archived SMS")
         .arg(count()).arg(phoneCount).arg(emailCount).arg(addrCount).arg(bdayCount)
-        .arg(extra.calls.count()).arg(extra.SMS.count()).arg(extra.SMSArchive.count())
-        .arg(extra.model).arg(extra.timeStamp);
+        .arg(extra.calls.count()).arg(extra.SMS.count()).arg(extra.SMSArchive.count());
+    if (!extra.model.isEmpty())
+        res += QObject::tr("\n\nmodel %1\nwritten %2\nIMEI %3\nfirmware %4\nphone language %5")
+            .arg(extra.model).arg(extra.timeStamp.toString())
+            .arg(extra.imei).arg(extra.firmware).arg(extra.phoneLang);
+    return res;
 }
 
 TagValue::TagValue(const QString& _tag, const QString& _value)
@@ -986,12 +989,15 @@ void PostalAddress::StandardTypes::fill()
 void MPBExtra::clear()
 {
     model.clear();
-    timeStamp.clear();
+    timeStamp = QDateTime();
     organizer.clear();
     notes.clear();
     SMS.clear();
     SMSArchive.clear();
     calls.clear();
+    imei.clear();
+    firmware.clear();
+    phoneLang.clear();
 }
 
 bool Photo::operator ==(const Photo &p) const
