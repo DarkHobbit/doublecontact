@@ -6,7 +6,9 @@
 #include "files/htmlfile.h"
 #include "files/mpbfile.h"
 #include "files/nbffile.h"
+#ifndef USE_GPL2
 #include "files/nbufile.h"
+#endif
 #include "files/udxfile.h"
 #include "files/vcffile.h"
 #include "files/xmlcontactfile.h"
@@ -33,11 +35,13 @@ QStringList FormatFactory::supportedFilters(QIODevice::OpenMode mode, bool isRep
 #else
 #warning MPB save and load will not work under Qt earlier than 4.8
 #endif
-        allSupported += " *." + NBFFile::supportedExtensions().join(" *.");
         allSupported += " *." + CSVFile::supportedExtensions().join(" *.");
         if (mode==QIODevice::ReadOnly) {
             // ...here add read-only formats
+            allSupported += " *." + NBFFile::supportedExtensions().join(" *.");
+#ifndef USE_GPL2
             allSupported += " *." + NBUFile::supportedExtensions().join(" *.");
+#endif
             allSupported += " *." + XmlContactFile::supportedExtensions().join(" *.");
         }
         else { // Write-only formats
@@ -50,11 +54,13 @@ QStringList FormatFactory::supportedFilters(QIODevice::OpenMode mode, bool isRep
 #if QT_VERSION >= 0x040800
         allTypes << MPBFile::supportedFilters();
 #endif
-        allTypes << NBFFile::supportedFilters();
         allTypes << CSVFile::supportedFilters();
         if (mode==QIODevice::ReadOnly) {
             // ...here add filters for read-only formats
+            allTypes << NBFFile::supportedFilters();
+#ifndef USE_GPL2
             allTypes << NBUFile::supportedFilters();
+#endif
             allTypes << XmlContactFile::supportedFilters();
         }
         else { // Write-only formats
@@ -85,8 +91,10 @@ IFormat *FormatFactory::createObject(const QString &url)
         return new CSVFile();
     if (NBFFile::supportedExtensions().contains(ext, Qt::CaseInsensitive))
         return new NBFFile();
+#ifndef USE_GPL2
     if (NBUFile::supportedExtensions().contains(ext, Qt::CaseInsensitive))
         return new NBUFile();
+#endif
     if (XmlContactFile::supportedExtensions().contains(ext, Qt::CaseInsensitive))
         return new XmlContactFile();
 #if QT_VERSION >= 0x040800
@@ -107,8 +115,10 @@ IFormat *FormatFactory::createObject(const QString &url)
 #endif
     if (NBFFile::detect(url))
         return new NBFFile();
+#ifndef USE_GPL2
     if (NBUFile::detect(url))
         return new NBUFile();
+#endif
     if (XmlContactFile::detect(url))
         return new XmlContactFile();
     if (CSVFile::detect(url))

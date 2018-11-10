@@ -101,7 +101,7 @@
            <item>
             <widget class="QLabel" name="lbLicense">
              <property name="text">
-              <string>Distributed under GPL v2 or above</string>
+              <string>Distributed under GPL v3 or above</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignCenter</set>

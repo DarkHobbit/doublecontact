@@ -1,5 +1,9 @@
 # Core (GUI-independent) part of DoubleContact
 
+# To use code under GPLv2, switch on this define.
+# NBU support will be disabled
+DEFINES -= USE_GPL2
+
 QT += core xml
 
 include(../3rdparty/quazip/quazip.pri)
@@ -29,7 +33,6 @@ HEADERS	+= \
     $$PWD/formats/files/htmlfile.h \
     $$PWD/formats/files/mpbfile.h \
     $$PWD/formats/files/nbffile.h \
-    $$PWD/formats/files/nbufile.h \
     $$PWD/formats/files/udxfile.h \
     $$PWD/formats/files/vcfdirectory.h \
     $$PWD/formats/files/vcffile.h \
@@ -53,7 +56,6 @@ SOURCES	+= \
     $$PWD/formats/files/htmlfile.cpp \
     $$PWD/formats/files/mpbfile.cpp \
     $$PWD/formats/files/nbffile.cpp \
-    $$PWD/formats/files/nbufile.cpp \
     $$PWD/formats/files/udxfile.cpp \
     $$PWD/formats/files/vcfdirectory.cpp \
     $$PWD/formats/files/vcffile.cpp \
@@ -66,3 +68,7 @@ SOURCES	+= \
     $$PWD/formats/profiles/osmoprofile.cpp \
     $$PWD/formats/files/xmlcontactfile.cpp
 
+!contains(DEFINES, USE_GPL2) {
+    HEADERS	+= $$PWD/formats/files/nbufile.h
+    SOURCES	+= $$PWD/formats/files/nbufile.cpp
+}

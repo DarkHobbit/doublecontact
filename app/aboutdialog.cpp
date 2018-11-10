@@ -24,6 +24,8 @@ AboutDialog::AboutDialog(QWidget *parent) :
     ui->lwContributors->addItem("German UI: Andreas Kleinert aka andyk");
     ui->lwContributors->addItem(QString::fromUtf8("Norwegian (Bokmål) UI: Allan Nordhøy aka comradekingu"));
     ui->lwContributors->addItem("Ukrainian UI: Olexandr Nesterenko aka burunduk");
+    ui->lwContributors->addItem("NBU files support ported from NbuExplorer project");
+    ui->lwContributors->addItem("(Author: Petr Vilem, petrusek@seznam.cz)");
 }
 
 AboutDialog::~AboutDialog()

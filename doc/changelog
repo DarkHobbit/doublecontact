@@ -56,8 +56,10 @@ Bugfix release:
 * Experimental NBF save implemented (only if original file also had NBF type) NOT TESTED
 
 Current
+* NBU (older Nokia backup file) reading support.
 * Context menu for contacts in tables
 * Internal drag'n'drop items copy and move between tables
 * Contact XML (prodid iOS 9.2) reading support
 * Encodings list in CVS profile dialog is now sorted
 * Fixed: error phone type reading, if 'type=' prefix was in lowercase
+* License changed to GPLv3 or above (most parts of code except NBU support can be used on GPLv2)
