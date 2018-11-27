@@ -1178,7 +1178,7 @@ Möchten Sie die Spaltensortierung ausschalten?</translation>
     <message>
         <location filename="../core/contactlist.cpp" line="975"/>
         <source>Domestic</source>
-        <translation type="unfinished">Inland</translation>
+        <translation>Inländisch</translation>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="976"/>
@@ -1188,12 +1188,12 @@ Möchten Sie die Spaltensortierung ausschalten?</translation>
     <message>
         <location filename="../core/contactlist.cpp" line="977"/>
         <source>Postal</source>
-        <translation type="unfinished">Anschrift</translation>
+        <translation>Postalisch</translation>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="978"/>
         <source>Parcel</source>
-        <translation type="unfinished">Paket</translation>
+        <translation>Paket</translation>
     </message>
     <message>
         <location filename="../core/formats/common/vcarddata.cpp" line="72"/>
@@ -1203,7 +1203,7 @@ Möchten Sie die Spaltensortierung ausschalten?</translation>
     <message>
         <location filename="../core/formats/common/vcarddata.cpp" line="141"/>
         <source>Unexpected TYPE appearance at line %1: tag %2</source>
-        <translation type="unfinished">Unerwartetes TYPE-Auftreten in der Zeile %1: tag %2</translation>
+        <translation>Unerwartetes Auftreten von TYPE in Zeile %1: Tag %2</translation>
     </message>
     <message>
         <location filename="../core/formats/common/vcarddata.cpp" line="169"/>
@@ -1516,7 +1516,7 @@ Zeile %3, Spalte %4
     <message>
         <location filename="../core/globals.h" line="55"/>
         <source>Confirmation</source>
-        <translation type="unfinished">Bestätigung</translation>
+        <translation>Bestätigung</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="56"/>
@@ -1551,7 +1551,7 @@ Zeile %3, Spalte %4
     <message>
         <location filename="../core/globals.h" line="62"/>
         <source>Select phone template</source>
-        <translation type="unfinished">Telefonvorlage auswählen</translation>
+        <translation>Telefonvorlage auswählen</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="63"/>
@@ -1586,12 +1586,12 @@ Zeile %3, Spalte %4
     <message>
         <location filename="../core/globals.h" line="71"/>
         <source>Prefixes</source>
-        <translation type="unfinished">Vorsilben</translation>
+        <translation>Vorwahlen</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="72"/>
         <source>Suffixes</source>
-        <translation type="unfinished">Durchwahlnummern</translation>
+        <translation>Durchwahlnummern</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="74"/>
@@ -1611,12 +1611,12 @@ Zeile %3, Spalte %4
     <message>
         <location filename="../core/globals.h" line="77"/>
         <source>Phone</source>
-        <translation type="unfinished">Telefon</translation>
+        <translation>Telefon</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="78"/>
         <source>All phones</source>
-        <translation type="unfinished">Alle Telefone</translation>
+        <translation>Alle Telefone</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="79"/>
@@ -2059,7 +2059,7 @@ Benutzername, Passwort, Protokoll und Port überprüfen</translation>
     <message>
         <location filename="../app/settingsdialog.ui" line="281"/>
         <source>Replace non-latin type named</source>
-        <translation type="unfinished">Nicht-lateinisch benannten Typ ersetzen</translation>
+        <translation>Nicht-lateinisch benannten Typ ersetzen</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="305"/>
@@ -2074,7 +2074,7 @@ Benutzername, Passwort, Protokoll und Port überprüfen</translation>
     <message>
         <location filename="../app/settingsdialog.ui" line="325"/>
         <source>(many phones treats &apos;Voice&apos; as &apos;Other&apos;)</source>
-        <translation type="unfinished">(Viele Telefone behandeln „Stimme” als „Weitere”)</translation>
+        <translation>(Viele Telefone behandeln „Stimme” als „Weitere”)</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="332"/>
