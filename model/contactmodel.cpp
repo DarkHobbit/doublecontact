@@ -188,8 +188,9 @@ QMimeData *ContactModel::mimeData(const QModelIndexList &indexes) const
     mimeData->setData(mimeTypes()[0], encodedData);
     return mimeData;
 }
-
-bool ContactModel::dropMimeData(const QMimeData *data, Qt::DropAction action, int, int column, const QModelIndex&)
+#include <iostream>
+bool ContactModel::dropMimeData(const QMimeData *data, Qt::DropAction action,
+      int, int column, const QModelIndex& index)
 {
     if (action == Qt::IgnoreAction)
          return true;
@@ -207,15 +208,18 @@ bool ContactModel::dropMimeData(const QMimeData *data, Qt::DropAction action, in
         QString s = stream.readLine();
         lines << s;
     }
-    d.importRecords(lines, items, true, errors);
-
+    if (index.row()==-1)
+        d.importRecords(lines, items, true, errors);
+    else {
+        ContactList addition;
+        d.importRecords(lines, addition, false, errors);
+        for(int i=0; i<addition.count(); i++)
+            items.insert(index.row()+i, addition[i]);
+    }
     endResetModel();
     _changed = true;
     // TODO insert to pointed line
-    if (action == Qt::CopyAction || action == Qt::MoveAction)
-        return true;
-    else
-        return false;
+    return (action == Qt::CopyAction || action == Qt::MoveAction);
 }
 
 bool ContactModel::removeRows(int row, int count, const QModelIndex &parent)
