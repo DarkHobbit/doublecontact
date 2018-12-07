@@ -571,6 +571,8 @@ void VCardData::checkQPSoftBreak(QString& buf, QString& lBuf, int prefixLen, int
 
 QString VCardData::encodeValue(const QString &src, int prefixLen) const
 {
+    if (skipEncoding)
+        return src;
     QTextCodec *codec;
     // Charset
     if (charSet.isEmpty())
