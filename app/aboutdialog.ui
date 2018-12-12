@@ -91,7 +91,7 @@
            <item>
             <widget class="QLabel" name="lbYear_2">
              <property name="text">
-              <string notr="true">2017</string>
+              <string notr="true">2017 - 2018</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignCenter</set>

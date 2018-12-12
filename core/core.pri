@@ -1,13 +1,13 @@
 # Core (GUI-independent) part of DoubleContact
 
-# To use code under GPLv2, switch on this define.
+# To add network support, including CardDAV, define WITH_NETWORK name
+# To use code under GPLv2, switch on USE_GPL2 define.
 # NBU support will be disabled
 DEFINES -= USE_GPL2
 
 QT += core xml
 
 include(../3rdparty/quazip/quazip.pri)
-include(../3rdparty/qwebdavlib/qwebdavlib/qwebdavlib.pri)
 
 DEFINES += QUAZIP_STATIC
 win32 {
@@ -37,7 +37,6 @@ HEADERS	+= \
     $$PWD/formats/files/vcfdirectory.h \
     $$PWD/formats/files/vcffile.h \
     $$PWD/formats/network/asyncformat.h \
-    $$PWD/formats/network/carddavformat.h \
     $$PWD/formats/profiles/csvprofilebase.h \
     $$PWD/formats/profiles/explaybm50profile.h \
     $$PWD/formats/profiles/explaytv240profile.h \
@@ -60,13 +59,18 @@ SOURCES	+= \
     $$PWD/formats/files/vcfdirectory.cpp \
     $$PWD/formats/files/vcffile.cpp \
     $$PWD/formats/network/asyncformat.cpp \
-    $$PWD/formats/network/carddavformat.cpp \
     $$PWD/formats/profiles/csvprofilebase.cpp \
     $$PWD/formats/profiles/explaybm50profile.cpp \
     $$PWD/formats/profiles/explaytv240profile.cpp \
     $$PWD/formats/profiles/genericcsvprofile.cpp \
     $$PWD/formats/profiles/osmoprofile.cpp \
     $$PWD/formats/files/xmlcontactfile.cpp
+
+contains(DEFINES, WITH_NETWORK) {
+    include(../3rdparty/qwebdavlib/qwebdavlib/qwebdavlib.pri)
+    HEADERS	+= $$PWD/formats/network/carddavformat.h
+    SOURCES	+= $$PWD/formats/network/carddavformat.cpp
+}
 
 !contains(DEFINES, USE_GPL2) {
     HEADERS	+= $$PWD/formats/files/nbufile.h

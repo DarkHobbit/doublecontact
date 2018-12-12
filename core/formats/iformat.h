@@ -22,7 +22,9 @@ enum FormatType {
     ftNew,
     ftFile,
     ftDirectory,
+#ifdef WITH_NETWORK
     ftNetwork,
+#endif
     ftAuto // file or dir - only for open existing source
 };
 

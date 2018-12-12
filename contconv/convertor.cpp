@@ -22,7 +22,9 @@
 #include "formats/files/udxfile.h"
 #include "formats/files/vcfdirectory.h"
 #include "formats/files/vcffile.h"
+#ifdef WITH_NETWORK
 #include "formats/network/carddavformat.h"
+#endif
 
 Convertor::Convertor(int &argc, char **argv)
     : QCoreApplication(argc, argv),
@@ -260,8 +262,14 @@ int Convertor::start()
     // Define, create file or directory at output
     // (default: as input)
     FormatType ift;
-    if (inFormat.toLower()=="carddav")
+    if (inFormat.toLower()=="carddav") {
+#ifdef WITH_NETWORK
         ift = ftNetwork;
+#else
+        out << tr("Error: Program built without network support. Use WITH_NETWORK define, if you build program from sources.\n");
+        return 25;
+#endif
+    }
     else
         ift = QFileInfo(inPath).isDir() ? ftDirectory : ftFile;
     FormatType oft = ift;
@@ -276,6 +284,7 @@ int Convertor::start()
         iFormat = factory.createObject(inPath);
     else if (ift==ftDirectory)
         iFormat = new VCFDirectory();
+#ifdef WITH_NETWORK
     else { // Network
         out << tr("Trying connect to server/device...\n");
         iFormat = new CardDAVFormat(); // TODO to factory, if more formats
@@ -283,6 +292,7 @@ int Convertor::start()
         if (asf)
             asf->setUI(&aui);
     }
+#endif
     if (!iFormat) {
         out << factory.error << "\n";
         return 26;

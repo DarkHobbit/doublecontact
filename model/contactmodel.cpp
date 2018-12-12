@@ -222,7 +222,7 @@ bool ContactModel::dropMimeData(const QMimeData *data, Qt::DropAction action,
     return (action == Qt::CopyAction || action == Qt::MoveAction);
 }
 
-bool ContactModel::removeRows(int row, int count, const QModelIndex &parent)
+bool ContactModel::removeRows(int row, int count, const QModelIndex&)
 {
     beginRemoveRows (QModelIndex(), row, row+count-1);
     for (int i=row+count-1; i>=row; i--)
