@@ -54,6 +54,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->tvRight->setAcceptDrops(true);
     ui->tvLeft->setDragDropOverwriteMode(false);
     ui->tvRight->setDragDropOverwriteMode(false);
+    ui->tvLeft->installEventFilter(this);
+    ui->tvRight->installEventFilter(this);
     // Configuration
     configManager.setDefaults(ui->tvLeft->font().toString(),
         ui->tvLeft->palette().color(QPalette::Base).name(),
@@ -145,45 +147,46 @@ void MainWindow::showEvent(QShowEvent*)
 }
 
 // Drag'n'drop support
-void MainWindow::dragEnterEvent(QDragEnterEvent *e)
+bool MainWindow::eventFilter(QObject *obj, QEvent *event)
 {
-    e->acceptProposedAction();
-}
-
-void MainWindow::dropEvent(QDropEvent *e)
-{
-    // Determine which panel got filename(s)
-    // More accurate way is treat each table view as separate drop area,
-    // but it required create subclasses from QTableView instead simple use.
-    bool isLeft = e->pos().x()<ui->tvRight->x() || !ui->tvRight->isVisible();
-    // How many URLs got?
-    if (!e->mimeData()->hasUrls()) {
-        e->ignore();
-        return;
+    if (event->type() == QEvent::DragEnter) {
+        QDragEnterEvent* e = static_cast<QDragEnterEvent*>(event);
+        e->acceptProposedAction();
+        return true;
     }
-    int urlCount = e->mimeData()->urls().count();
-    if (urlCount>2) {
-        QMessageBox::critical(0, S_ERROR,
-            tr("Only one of two files can be dropped to program window"));
-        e->ignore();
-        return;
-    }
-    // Open file(s)
-    ContactModel* primaryModel = isLeft ? modLeft : modRight;
-    QString filePath = e->mimeData()->urls()[0].toLocalFile();
-    if (askSaveChanges(primaryModel)) {
-        open(primaryModel, filePath, QFileInfo(filePath).isDir() ? ftDirectory : ftFile);
-        if (urlCount==2) {
-            // Add second panel if missing
-            if (!ui->tvRight->isVisible())
-                ui->action_Two_panels->setChecked(true); // ???
-            filePath = e->mimeData()->urls()[1].toLocalFile();
-            ContactModel* secondaryModel = isLeft ? modRight : modLeft;
-            if (askSaveChanges(secondaryModel))
-                open(secondaryModel, filePath, QFileInfo(filePath).isDir() ? ftDirectory : ftFile);
+    else if (event->type() == QEvent::Drop) {
+        bool isLeft = (obj == ui->tvLeft);
+        QDropEvent* e = static_cast<QDropEvent*>(event);
+        // How many URLs got?
+        if (!e->mimeData()->hasUrls()) {
+            return false;
         }
+        int urlCount = e->mimeData()->urls().count();
+        if (urlCount>2) {
+            QMessageBox::critical(0, S_ERROR,
+                tr("Only one of two files can be dropped to program window"));
+            return false;
+        }
+        // Open file(s)
+        ContactModel* primaryModel = isLeft ? modLeft : modRight;
+        QString filePath = e->mimeData()->urls()[0].toLocalFile();
+        if (askSaveChanges(primaryModel)) {
+            open(primaryModel, filePath, QFileInfo(filePath).isDir() ? ftDirectory : ftFile);
+            if (urlCount==2) {
+                // Add second panel if missing
+                if (!ui->tvRight->isVisible())
+                    ui->action_Two_panels->setChecked(true); // ???
+                filePath = e->mimeData()->urls()[1].toLocalFile();
+                ContactModel* secondaryModel = isLeft ? modRight : modLeft;
+                if (askSaveChanges(secondaryModel))
+                    open(secondaryModel, filePath, QFileInfo(filePath).isDir() ? ftDirectory : ftFile);
+            }
+        }
+        return true;
+    } else {
+        // standard event processing
+        return QObject::eventFilter(obj, event);
     }
-    e->accept();
 }
 
 void MainWindow::anyFocusChanged(QWidget *, QWidget *now)

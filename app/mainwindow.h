@@ -38,8 +38,7 @@ protected:
     virtual void closeEvent(QCloseEvent* event);
     virtual void showEvent(QShowEvent*);
     // Drag'n'drop support
-    void dragEnterEvent(QDragEnterEvent *e);
-    void dropEvent(QDropEvent *e);
+    bool eventFilter(QObject *obj, QEvent *event);
 private slots:
     void on_action_Other_panel_triggered();
     void setButtonsAccess();

@@ -1,19 +1,20 @@
 This file contains English and Russian (CP1251) issues. Sorry for this mixing, it's beta.
 You can contact me at pub@zvyozdochkin.ru.
 
-0.1.6
+0.2.0
+* NBU???
+* Siemens CSV?
 * internal drag'n'drop
 * add second year to about window
 * remove network support from binary builds by default (conditional build)
+* linux - appimage???
+* OS X - static build
 
-0.2:
+0.3.0:
 * Nextcloud
 * google exchange
 * progress indication for network
-* NBU???
 * ya.money
-* OS X - static build
-* linux - appimage???
 * port ContactItem::formatPhones to contconv
 * deleteLater for requests
 * support REV tag (from ownCloud-CardDAV)
@@ -42,7 +43,7 @@ You can contact me at pub@zvyozdochkin.ru.
 See also ownCloud and iCloud.
 vCard 4.0 CATEGORIES requires , separator, but lg leon saves with ;
 
-0.3:
+0.4.0:
 * adb support
 * ldif support
 * duplicate search (and merging, probably make unified merging dialog with panels compare merging)

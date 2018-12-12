@@ -20,8 +20,12 @@
     </message>
     <message>
         <location filename="../app/aboutdialog.ui" line="104"/>
+        <source>Distributed under GPL v3 or above</source>
+        <translation type="unfinished">Verteilt unter der GPL v2 oder höher {3 ?}</translation>
+    </message>
+    <message>
         <source>Distributed under GPL v2 or above</source>
-        <translation>Verteilt unter der GPL v2 oder höher</translation>
+        <translation type="obsolete">Verteilt unter der GPL v2 oder höher</translation>
     </message>
     <message>
         <location filename="../app/aboutdialog.ui" line="132"/>
@@ -498,533 +502,553 @@ Möchten Sie dieses Zertifikat trotzdem akzeptieren?</translation>
         <translation></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="69"/>
-        <location filename="../app/mainwindow.ui" line="83"/>
+        <location filename="../app/mainwindow.ui" line="75"/>
+        <location filename="../app/mainwindow.ui" line="89"/>
         <source>Filter</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="99"/>
+        <location filename="../app/mainwindow.ui" line="105"/>
         <source>Add (Ins)</source>
         <translation>Hinzufügen (Einf)</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="106"/>
+        <location filename="../app/mainwindow.ui" line="112"/>
         <source>Edit (Enter)</source>
         <translation>Bearbeiten (Eingabe)</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="113"/>
+        <location filename="../app/mainwindow.ui" line="119"/>
         <source>Remove (Del)</source>
         <translation>Entfernen (Entf)</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="133"/>
+        <location filename="../app/mainwindow.ui" line="139"/>
         <source>F2 Swap Names</source>
         <translation>F2 Namen tauschen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="140"/>
+        <location filename="../app/mainwindow.ui" line="146"/>
         <source>F3 Compare</source>
         <translation>F3 Vergleichen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="147"/>
+        <location filename="../app/mainwindow.ui" line="153"/>
         <source>F4 Sort</source>
         <translation>F4 Sortieren</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="158"/>
+        <location filename="../app/mainwindow.ui" line="164"/>
         <source>F5 Copy</source>
         <translation>F5 Kopieren</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="165"/>
+        <location filename="../app/mainwindow.ui" line="171"/>
         <source>F6 Move</source>
         <translation>F6 Verschieben</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="185"/>
+        <location filename="../app/mainwindow.ui" line="191"/>
         <source>Exit</source>
         <translation>Beenden</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="204"/>
-        <location filename="../app/mainwindow.ui" line="303"/>
-        <location filename="../app/mainwindow.ui" line="335"/>
+        <location filename="../app/mainwindow.ui" line="210"/>
+        <location filename="../app/mainwindow.ui" line="309"/>
+        <location filename="../app/mainwindow.ui" line="341"/>
         <source>&amp;File</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="208"/>
+        <location filename="../app/mainwindow.ui" line="214"/>
         <source>&amp;Open</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="215"/>
+        <location filename="../app/mainwindow.ui" line="221"/>
         <source>S&amp;ave as</source>
         <translation>S&amp;peichern unter</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="222"/>
+        <location filename="../app/mainwindow.ui" line="228"/>
         <source>&amp;Recent</source>
         <translation>&amp;Kürzlich</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="236"/>
+        <location filename="../app/mainwindow.ui" line="242"/>
         <source>&amp;Contact</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="261"/>
+        <location filename="../app/mainwindow.ui" line="267"/>
         <source>&amp;Help</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="268"/>
+        <location filename="../app/mainwindow.ui" line="274"/>
         <source>&amp;View</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="276"/>
+        <location filename="../app/mainwindow.ui" line="282"/>
         <source>&amp;List</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="306"/>
+        <location filename="../app/mainwindow.ui" line="312"/>
         <source>Ctrl+O</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="311"/>
-        <location filename="../app/mainwindow.ui" line="343"/>
+        <location filename="../app/mainwindow.ui" line="317"/>
+        <location filename="../app/mainwindow.ui" line="349"/>
         <source>&amp;Directory</source>
         <translation>&amp;Ordner</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="316"/>
+        <location filename="../app/mainwindow.ui" line="322"/>
         <source>&amp;Close</source>
         <translation>&amp;Schließen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="319"/>
+        <location filename="../app/mainwindow.ui" line="325"/>
         <source>Ctrl+W</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="327"/>
+        <location filename="../app/mainwindow.ui" line="333"/>
         <source>&amp;Save</source>
         <translation>&amp;Speichern</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="330"/>
+        <location filename="../app/mainwindow.ui" line="336"/>
         <source>Ctrl+S</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="338"/>
+        <location filename="../app/mainwindow.ui" line="344"/>
         <source>Ctrl+Shift+S</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="348"/>
+        <location filename="../app/mainwindow.ui" line="354"/>
         <source>E&amp;xit</source>
         <translation>B&amp;eenden</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="359"/>
+        <location filename="../app/mainwindow.ui" line="365"/>
         <source>&amp;Two panels</source>
         <translation>&amp;Zwei Fenster</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="364"/>
+        <location filename="../app/mainwindow.ui" line="370"/>
         <source>&amp;Options...</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="369"/>
+        <location filename="../app/mainwindow.ui" line="375"/>
         <source>&amp;Add</source>
         <translation>&amp;Hinzufügen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="372"/>
+        <location filename="../app/mainwindow.ui" line="378"/>
         <source>Ins</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="377"/>
+        <location filename="../app/mainwindow.ui" line="383"/>
         <source>&amp;Edit</source>
         <translation>&amp;Bearbeiten</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="380"/>
+        <location filename="../app/mainwindow.ui" line="386"/>
         <source>Return</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="385"/>
+        <location filename="../app/mainwindow.ui" line="391"/>
         <source>&amp;Remove</source>
         <translation>&amp;Entfernen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="388"/>
+        <location filename="../app/mainwindow.ui" line="394"/>
         <source>Del</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="393"/>
+        <location filename="../app/mainwindow.ui" line="399"/>
         <source>&amp;Copy</source>
         <translation>&amp;Kopieren</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="396"/>
+        <location filename="../app/mainwindow.ui" line="402"/>
         <source>F5</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="401"/>
+        <location filename="../app/mainwindow.ui" line="407"/>
         <source>&amp;Move</source>
         <translation>&amp;Verschieben</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="404"/>
+        <location filename="../app/mainwindow.ui" line="410"/>
         <source>F6</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="409"/>
+        <location filename="../app/mainwindow.ui" line="415"/>
         <source>&amp;Swap names</source>
         <translation>&amp;Namen tauschen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="412"/>
+        <location filename="../app/mainwindow.ui" line="418"/>
         <source>F2</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="417"/>
+        <location filename="../app/mainwindow.ui" line="423"/>
         <source>&amp;Compare/Uncompare</source>
         <translation>&amp;Vergleichen/Vergleich aufheben</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="420"/>
+        <location filename="../app/mainwindow.ui" line="426"/>
         <source>F3</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="428"/>
+        <location filename="../app/mainwindow.ui" line="434"/>
         <source>&amp;Sort</source>
         <translation>&amp;Sortieren</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="431"/>
+        <location filename="../app/mainwindow.ui" line="437"/>
         <source>F4</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="436"/>
+        <location filename="../app/mainwindow.ui" line="442"/>
         <source>&amp;Other panel</source>
         <translation>&amp;Anderes Fenster</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="439"/>
+        <location filename="../app/mainwindow.ui" line="445"/>
         <source>Tab</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="444"/>
-        <source>Settings...</source>
-        <translation>Einstellungen …</translation>
+        <location filename="../app/mainwindow.ui" line="450"/>
+        <source>&amp;Settings...</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="447"/>
+        <location filename="../app/mainwindow.ui" line="466"/>
+        <source>C&amp;ompare Result</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/mainwindow.ui" line="507"/>
+        <source>&amp;Internationalize phone prefix</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/mainwindow.ui" line="525"/>
+        <source>Re&amp;verse full name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/mainwindow.ui" line="556"/>
+        <source>About &amp;Qt</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/mainwindow.ui" line="561"/>
+        <source>Format phone &amp;numbers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Settings...</source>
+        <translation type="obsolete">Einstellungen …</translation>
+    </message>
+    <message>
+        <location filename="../app/mainwindow.ui" line="453"/>
         <source>Ctrl+P</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="452"/>
+        <location filename="../app/mainwindow.ui" line="458"/>
         <source>&amp;Filter</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="455"/>
+        <location filename="../app/mainwindow.ui" line="461"/>
         <source>Ctrl+F</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="460"/>
         <source>Compare &amp;Result</source>
-        <translation>Ergebnis &amp;vergleichen</translation>
+        <translation type="obsolete">Ergebnis &amp;vergleichen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="463"/>
+        <location filename="../app/mainwindow.ui" line="469"/>
         <source>Shift+F3</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="468"/>
+        <location filename="../app/mainwindow.ui" line="474"/>
         <source>S&amp;plit names</source>
         <translation>&amp;Namen aufteilen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="471"/>
+        <location filename="../app/mainwindow.ui" line="477"/>
         <source>Shift+F2</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="476"/>
+        <location filename="../app/mainwindow.ui" line="482"/>
         <source>&amp;Drop slashes</source>
         <translation>&amp;Schrägstriche ablegen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="481"/>
+        <location filename="../app/mainwindow.ui" line="487"/>
         <source>&amp;Generate full name</source>
         <translation>&amp;Vollständigen Namen erzeugen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="486"/>
+        <location filename="../app/mainwindow.ui" line="492"/>
         <source>&amp;Join</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="491"/>
+        <location filename="../app/mainwindow.ui" line="497"/>
         <source>Drop &amp;full name</source>
         <translation>&amp;Vollständigen Name einfügen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="496"/>
+        <location filename="../app/mainwindow.ui" line="502"/>
         <source>Sp&amp;lit</source>
         <translation>Auf&amp;teilen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="501"/>
         <source>Internationalize phone prefix</source>
-        <translation>Internationale Telefonvorwahl voranstellen</translation>
+        <translation type="obsolete">Internationale Telefonvorwahl voranstellen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="506"/>
+        <location filename="../app/mainwindow.ui" line="512"/>
         <source>S&amp;wap Panels</source>
         <translation>&amp;Fenster tauschen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="509"/>
+        <location filename="../app/mainwindow.ui" line="515"/>
         <source>Ctrl+U</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="514"/>
+        <location filename="../app/mainwindow.ui" line="520"/>
         <source>&amp;About</source>
         <translation>&amp;Über</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="519"/>
         <source>Reverse full name</source>
-        <translation>Vollständigen Namen umkehren</translation>
+        <translation type="obsolete">Vollständigen Namen umkehren</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="524"/>
+        <location filename="../app/mainwindow.ui" line="530"/>
         <source>S&amp;tatistics</source>
         <translation>S&amp;tatistiken</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="529"/>
+        <location filename="../app/mainwindow.ui" line="535"/>
         <source>Re&amp;port</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="532"/>
+        <location filename="../app/mainwindow.ui" line="538"/>
         <source>Ctrl+R</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="537"/>
+        <location filename="../app/mainwindow.ui" line="543"/>
         <source>&amp;Hard sort</source>
         <translation>&amp;Harte Sortierung</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="542"/>
+        <location filename="../app/mainwindow.ui" line="548"/>
         <source>&amp;Groups...</source>
         <translation>&amp;Gruppen …</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="545"/>
+        <location filename="../app/mainwindow.ui" line="551"/>
         <source>Ctrl+G</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="550"/>
         <source>About Qt</source>
-        <translation>Über Qt</translation>
+        <translation type="obsolete">Über Qt</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="555"/>
         <source>Format phone numbers</source>
-        <translation>Rufnummern formatieren</translation>
+        <translation type="obsolete">Rufnummern formatieren</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="560"/>
-        <location filename="../app/mainwindow.ui" line="565"/>
-        <location filename="../app/mainwindow.ui" line="570"/>
-        <location filename="../app/mainwindow.ui" line="575"/>
         <source>Separator</source>
-        <translation>Trennzeichen</translation>
+        <translation type="obsolete">Trennzeichen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="580"/>
+        <location filename="../app/mainwindow.ui" line="586"/>
         <source>Copy text</source>
         <translation>Text kopieren</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="583"/>
+        <location filename="../app/mainwindow.ui" line="589"/>
         <source>Ctrl+C</source>
         <translation>Strg + C</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="158"/>
+        <location filename="../app/mainwindow.cpp" line="167"/>
         <source>Only one of two files can be dropped to program window</source>
         <translation>Es kann nur eine von zwei Dateien im Programmfenster abgelegt werden</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="225"/>
+        <location filename="../app/mainwindow.cpp" line="237"/>
         <source>Open contact file</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="242"/>
+        <location filename="../app/mainwindow.cpp" line="254"/>
         <source>Open VCF Directory</source>
         <translation>VCF-Verzeichnis öffnen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="266"/>
+        <location filename="../app/mainwindow.cpp" line="278"/>
         <source>Save contact file</source>
         <translation>Kontaktdatei speichern</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="281"/>
+        <location filename="../app/mainwindow.cpp" line="293"/>
         <source>Save VCF Directory</source>
         <translation>VCF-Verzeichnis speichern</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="290"/>
+        <location filename="../app/mainwindow.cpp" line="302"/>
         <source>Directory exists. Are You really want rewrite it?</source>
         <translation>Verzeichnis existiert bereits Möchten Sie es wirklich überschreiben?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="339"/>
+        <location filename="../app/mainwindow.cpp" line="351"/>
         <source>Are You really want to edit more than one record?
 Only some fields can this edited in this mode</source>
         <translation>Möchten Sie wirklich mehr als einen Datensatz bearbeiten?
 Nur einige Felder können in diesem Modus bearbeitet werden.</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="451"/>
+        <location filename="../app/mainwindow.cpp" line="463"/>
         <source>Compare mode requires show two panels and load contact lists in both panels</source>
         <translation>Der Vergleichsmodus erfordert die Anzeige von zwei Fenstern und das Laden von Kontaktlisten in beiden Fenstern.</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="497"/>
+        <location filename="../app/mainwindow.cpp" line="509"/>
         <source>Group operation not impemented, select one record</source>
         <translation>Gruppenoperationen nicht implementiert, wählen Sie einen Datensatz aus.</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="524"/>
+        <location filename="../app/mainwindow.cpp" line="536"/>
         <source> (directory)</source>
         <translation> (Ordner)</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="625"/>
+        <location filename="../app/mainwindow.cpp" line="637"/>
         <source>Mode: </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="626"/>
+        <location filename="../app/mainwindow.cpp" line="638"/>
         <source>two panels</source>
         <translation>Zwei Fenster</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="626"/>
+        <location filename="../app/mainwindow.cpp" line="638"/>
         <source>one panel</source>
         <translation>Ein Fenster</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="627"/>
+        <location filename="../app/mainwindow.cpp" line="639"/>
         <source>sorted</source>
         <translation>Sortiert</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="627"/>
+        <location filename="../app/mainwindow.cpp" line="639"/>
         <source>not sorted</source>
         <translation>Nicht sortiert</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="630"/>
+        <location filename="../app/mainwindow.cpp" line="642"/>
         <source>simple editing</source>
         <translation>Einfache Bearbeitung</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="634"/>
+        <location filename="../app/mainwindow.cpp" line="646"/>
         <source>compare</source>
         <translation>Vergleichen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="678"/>
+        <location filename="../app/mainwindow.cpp" line="690"/>
         <source>&apos;%1&apos; was changed.
 Save changes?</source>
         <translation>„%1” wurde geändert.
 Änderungen speichern?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="791"/>
+        <location filename="../app/mainwindow.cpp" line="803"/>
         <source>Restart program to apply language change</source>
         <translation>Anwendung neu starten, um die Sprachumschaltung zu übernehmen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="834"/>
+        <location filename="../app/mainwindow.cpp" line="846"/>
         <source>Two panels and compare mode needed for this operation</source>
         <translation>Zwei Fenster und Vergleichsmodus sind für diese Aufgabe erforderlich</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="849"/>
+        <location filename="../app/mainwindow.cpp" line="861"/>
         <source>Left item</source>
         <translation>Linkes Element</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="849"/>
+        <location filename="../app/mainwindow.cpp" line="861"/>
         <source>Right item</source>
         <translation>Rechtes Element</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="875"/>
+        <location filename="../app/mainwindow.cpp" line="887"/>
         <source>Strongly two records on current panel must be selected for this operation</source>
         <translation>Zwei Datensätze im aktuellen Fenster sind zwingend für diesen Vorgang auszuwählen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="881"/>
+        <location filename="../app/mainwindow.cpp" line="893"/>
         <source>Item 1</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="881"/>
+        <location filename="../app/mainwindow.cpp" line="893"/>
         <source>Item 2</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="949"/>
+        <location filename="../app/mainwindow.cpp" line="961"/>
         <source>Operation requires show two panels</source>
         <translation>Für die Aufgabe sind zwei Fenster erforderlich</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="982"/>
+        <location filename="../app/mainwindow.cpp" line="994"/>
         <source>Statitics</source>
         <translation>Statistiken</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="989"/>
+        <location filename="../app/mainwindow.cpp" line="1001"/>
         <source>Report file</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1023"/>
+        <location filename="../app/mainwindow.cpp" line="1035"/>
         <source>Column sorting is switched. Hard sort results are not visible.
 Are you want switch column sorting off?</source>
         <translation>Die Spaltensortierung wurde gewechselt. Harte Sortierergebnisse sind nicht sichtbar.
@@ -1066,7 +1090,7 @@ Möchten Sie die Spaltensortierung ausschalten?</translation>
     <name>QObject</name>
     <message>
         <location filename="../core/contactlist.cpp" line="106"/>
-        <location filename="../core/contactlist.cpp" line="972"/>
+        <location filename="../core/contactlist.cpp" line="976"/>
         <source>Home</source>
         <translation></translation>
     </message>
@@ -1077,7 +1101,7 @@ Möchten Sie die Spaltensortierung ausschalten?</translation>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="108"/>
-        <location filename="../core/contactlist.cpp" line="973"/>
+        <location filename="../core/contactlist.cpp" line="977"/>
         <source>Work</source>
         <translation>Geschäftlich</translation>
     </message>
@@ -1085,7 +1109,7 @@ Möchten Sie die Spaltensortierung ausschalten?</translation>
         <location filename="../core/contactlist.cpp" line="109"/>
         <location filename="../core/contactlist.cpp" line="158"/>
         <location filename="../core/contactlist.cpp" line="193"/>
-        <location filename="../core/contactlist.cpp" line="974"/>
+        <location filename="../core/contactlist.cpp" line="978"/>
         <source>Preferable</source>
         <translation>Bevorzugt</translation>
     </message>
@@ -1163,9 +1187,31 @@ Möchten Sie die Spaltensortierung ausschalten?</translation>
 %5 birthdays
 %6 calls
 %7 SMS
+%8 archived SMS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/contactlist.cpp" line="827"/>
+        <source>
+
+model %1
+written %2
+IMEI %3
+firmware %4
+phone language %5</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 records
+%2 phones
+%3 emails
+%4 addresses
+%5 birthdays
+%6 calls
+%7 SMS
 %8 archived SMS
 %9 %10</source>
-        <translation>%1 Datensätze
+        <translation type="obsolete">%1 Datensätze
 %2 Rufnummern
 %3 E-Mail-Adressen
 %4 Adressen
@@ -1176,88 +1222,89 @@ Möchten Sie die Spaltensortierung ausschalten?</translation>
 %9 %10</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="975"/>
+        <location filename="../core/contactlist.cpp" line="979"/>
         <source>Domestic</source>
         <translation>Inländisch</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="976"/>
+        <location filename="../core/contactlist.cpp" line="980"/>
         <source>International</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="977"/>
+        <location filename="../core/contactlist.cpp" line="981"/>
         <source>Postal</source>
         <translation>Postalisch</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="978"/>
+        <location filename="../core/contactlist.cpp" line="982"/>
         <source>Parcel</source>
         <translation>Paket</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="72"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="78"/>
         <source>Unclosed record before line %1</source>
         <translation>Nicht abgeschlossener Datensatz vor Zeile %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="141"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="147"/>
         <source>Unexpected TYPE appearance at line %1: tag %2</source>
         <translation>Unerwartetes Auftreten von TYPE in Zeile %1: Tag %2</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="169"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="175"/>
         <source>Missing phone type at line %1: %2%3</source>
         <translation>Fehlender Telefontyp in Zeile %1: %2%3</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="180"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="186"/>
         <source>Non-standard phone type at line %1: %2%3</source>
         <translation>Nicht-Standard-Telefontyp in Zeile %1: %2%3</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="210"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="216"/>
         <source>Unsupported photo type at line %1: %2%3</source>
         <translation>Nicht unterstützter Fototyp in Zeile %1: %2%3</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="221"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="227"/>
         <source>Unknown encoding type at line %1: %2%3</source>
         <translation>Unbekannter Kodierungstyp in Zeile %1: %2%3</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="294"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="300"/>
         <source>Last section not closed</source>
         <translation>Letzter Abschnitt nicht geschlossen</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="301"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="307"/>
         <location filename="../core/formats/files/udxfile.cpp" line="165"/>
         <source>%1 unknown tags found</source>
         <translation>%1 unbekannte Schlagwörter gefunden</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="452"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="458"/>
         <source>Unknown charset: </source>
         <translation>Unbekannter Zeichensatz: </translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="475"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="481"/>
         <source>Unknown encoding: </source>
         <translation>Unbekannte Codierung: </translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="503"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="509"/>
         <source>Invalid timezone: </source>
         <translation>Ungültige Zeitzone: </translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="533"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="539"/>
         <source>Invalid datetime: </source>
         <translation>Ungültige Datumzeit: </translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="59"/>
+        <location filename="../core/formats/files/xmlcontactfile.cpp" line="58"/>
         <source>Can&apos;t read content from file %1
 %2
 line %3, col %4
@@ -1363,12 +1410,12 @@ Zeile %3, Spalte %4
         <translation>Warnhinweis. Kontakt %1 enthält Jahrestage, die nicht in UDX implementiert sind</translation>
     </message>
     <message>
-        <location filename="../core/formats/formatfactory.cpp" line="67"/>
+        <location filename="../core/formats/formatfactory.cpp" line="77"/>
         <source>Empty file name</source>
         <translation>Leerer Dateiname</translation>
     </message>
     <message>
-        <location filename="../core/formats/formatfactory.cpp" line="106"/>
+        <location filename="../core/formats/formatfactory.cpp" line="128"/>
         <source>Unknown file format:
 %1</source>
         <translation>Unbekanntes Dateiformat:
@@ -1396,42 +1443,42 @@ Zeile %3, Spalte %4
 %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="90"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="91"/>
         <source>Unsupported MPB section: </source>
         <translation>Nicht unterstützter MPB-Abschnitt: </translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="100"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="101"/>
         <source>File isn&apos;t MPB file or corrupted</source>
         <translation>Datei ist nicht MPB-Datei oder beschädigt</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="110"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="111"/>
         <source>Strange call item: %1, size %2</source>
         <translation>Ungewöhnliches Anrufelement: %1, Größe %2</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="140"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="141"/>
         <source>No contact records in this file</source>
         <translation>Keine Kontakteinträge in dieser Datei</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="151"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="152"/>
         <source>MPB record allowed only for MPB source</source>
         <translation>MPB-Datensatz nur für MPB-Quelle erlaubt</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="203"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="204"/>
         <source>Name for number %1 changed from %2 to %3</source>
         <translation>Name für die Nummer %1 geändert von %2 auf %3</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="215"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="216"/>
         <source>Number %1 without original name not found in addressbook</source>
         <translation>Rufnummer %1 ohne Originalnamen nicht im Adressbuch gefunden</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="217"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="218"/>
         <source>Number %1 not found in addressbook. Original name (%2) saved</source>
         <translation>Rufnummer %1 nicht im Adressbuch gefunden. Ursprünglicher Name (%2) gespeichert</translation>
     </message>
@@ -1534,7 +1581,7 @@ Zeile %3, Spalte %4
         <translation>Neue Kontaktliste</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="124"/>
+        <location filename="../core/globals.h" line="125"/>
         <source>This format is read only</source>
         <translation>Dieses Format ist schreibgeschützt</translation>
     </message>
@@ -1814,23 +1861,29 @@ Zeile %3, Spalte %4
     </message>
     <message>
         <location filename="../core/globals.h" line="123"/>
+        <source>Can&apos;t seek to %1 in file
+%2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/globals.h" line="124"/>
         <source>Record not selected</source>
         <translation>Datensatz nicht ausgewählt</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="126"/>
+        <location filename="../core/globals.h" line="127"/>
         <source>Warning: contact %1 has %2, not supported in this format.
 Data will be lost</source>
         <translation>Warnhinweis. Kontakt %1 enthält %2, wird nicht in diesem Format unterstützt.
 Daten gehen verloren</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="128"/>
+        <location filename="../core/globals.h" line="129"/>
         <source>%1 %2 will be lost at contact %3</source>
         <translation>%1 %2 geht bei Kontakt %3 verloren</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="129"/>
+        <location filename="../core/globals.h" line="130"/>
         <source>Are You really want to delete selected items?</source>
         <translation>Möchten Sie wirklich die ausgewählten Elemente löschen?</translation>
     </message>
@@ -1860,6 +1913,42 @@ Daten gehen verloren</translation>
 Check username, password, protocol and port</source>
         <translation>
 Benutzername, Passwort, Protokoll und Port überprüfen</translation>
+    </message>
+    <message>
+        <location filename="../core/formats/files/nbufile.cpp" line="24"/>
+        <source>Unsupported NBU file section type: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/formats/files/nbufile.cpp" line="154"/>
+        <source>Signature not recognized, trying anyway...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/formats/files/nbufile.cpp" line="206"/>
+        <source>Unknown NBU file section type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/formats/files/nbufile.cpp" line="228"/>
+        <location filename="../core/formats/files/nbufile.cpp" line="239"/>
+        <source>Unknown vcard folder structure at section %1, subsection %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/formats/files/nbufile.cpp" line="270"/>
+        <source>Invalid index: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/formats/files/nbufile.cpp" line="401"/>
+        <source>Test 2 greater than 0x01: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/formats/files/nbufile.cpp" line="404"/>
+        <source>Test 1 different than 0x10: %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
