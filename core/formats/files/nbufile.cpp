@@ -22,6 +22,7 @@
 #define SUMMARY_OFFSET_OFFSET 0x00000014
 #define SUMMARY_OFFSET 0x00000014
 #define S_UNSUPPORTED_SECTION QObject::tr("Unsupported NBU file section type: %1")
+#define S_UNSUPPORTED_FOLDER QObject::tr("Unsupported NBU file folder type: %1")
 
 const QString ptContacts = "Contacts";
 const QString ptGroups = "Groups";
@@ -177,6 +178,7 @@ bool NBUFile::importRecords(const QString &url, ContactList &list, bool append)
     list.extra.model = getString16c(ss) + " " + list.extra.model;
     list.extra.firmware = getString16c(ss);
     list.extra.phoneLang = getString16c(ss);
+    list.extra.smsFormat = VMSG;
     // NBU sections
     if (!file.seek(file.pos()+  0x14  )) {
         _fatalError = S_SEEK_ERR.arg(file.pos()+  0x14  );
@@ -186,7 +188,7 @@ bool NBUFile::importRecords(const QString &url, ContactList &list, bool append)
     // Read sections
     quint32 sectCount;
     ss >> sectCount;
-std::cout << "sec cnt = " << sectCount << std::endl; //===>
+std::cout << "sections: " << sectCount << std::endl; //===>
     for (quint32 i=0; i<sectCount; i++) {
         char sectID[NBU_SECT_ID_SIZE];
         ss.readRawData(sectID, sizeof(sectID));
@@ -209,7 +211,7 @@ std::cout << "sec cnt = " << sectCount << std::endl; //===>
         quint32 count, count2;
         quint64 partPos;
         QString folderName;
-std::cout << section->type << "::" << section->name.toLocal8Bit().data() << "::" << section->name2.toLocal8Bit().data() << std::endl;
+std::cout << "Section: " << section->type << "::" << section->name.toLocal8Bit().data() << "::" << section->name2.toLocal8Bit().data() << std::endl;
         switch (section->type) {
         /*case ProcessType.FileSystem: TODO*/
         case NBUSectionType::Vcards:
@@ -232,7 +234,7 @@ std::cout << folderAddr << " >> " << folderName.toLocal8Bit().data() << std::end
                 }
             }
             else {
-std::cout << "No folders" << std::endl;
+std::cout << "No vcard folders" << std::endl;
                 quint64 partPos = file.pos();
                 file.seek(sectStart + 0x2C);
                 if (!parseFolderVcard(ss, list, section->name)) {
@@ -319,7 +321,7 @@ std::cout << "No folders" << std::endl;
                     quint64 start;
                     ss >> start;
                     partPos = file.pos();
-                    parseFolder(ss, start, section->name);
+                    parseFolder(ss, start, section->name, list);
                     file.seek(partPos);
                 }
             }
@@ -389,7 +391,6 @@ bool NBUFile::parseFolderVcard(QDataStream &stream, ContactList &list, const QSt
         _errors << S_UNSUPPORTED_SECTION.arg(sectName);
         return false;
     }
-std::cout << "count=" << count << std::endl;
     for (quint32 i = 0; i < count; i++)
     {
         quint32 test;
@@ -404,18 +405,45 @@ std::cout << "count=" << count << std::endl;
             _errors << QObject::tr("Test 1 different than 0x10: %1").arg(test, 0, 16);
         int vcLen;
         stream >> vcLen;
-//std::cout << "i=" << i << " vcLen " << vcLen << std::endl;
         char* raw = new char[vcLen];
         stream.readRawData((char*)raw, vcLen);
         QString vCard = QString::fromUtf8(raw, vcLen);
-//std::cout << "vCard =" << vCard.toLocal8Bit().data() << std::endl;
         QStringList content = vCard.split("\x0d\n");
         VCardData::importRecords(content, list, true, _errors);
     }
     return true;
 }
 
-bool NBUFile::parseFolder(QDataStream &stream, long start, const QString &sectName)
+bool NBUFile::parseFolder(QDataStream &stream, long start, const QString &sectName, ContactList &list)
 {
-    return false; // TODO
+    std::cout << "folder: " << sectName.toLocal8Bit().data() << std::endl;
+    if(sectName==ptMessages || sectName==ptMms) {
+        file.seek(start+4);
+        QString folderName = this->getString16c(stream);
+        quint32 count;
+        stream >> count;
+std::cout << "Messages " << count << "!"<< folderName.toLocal8Bit().data() << std::endl;
+        for (quint32 i=0; i<count; i++) {
+            file.seek(file.pos()+8);
+            if (sectName==ptMms) {
+                _errors << S_UNSUPPORTED_FOLDER.arg(sectName);
+                // TODO
+            }
+            else {
+                quint32 len;
+                stream >> len;
+                char* raw = new char[len+1];
+                stream.readRawData((char*)raw, len);
+                raw[len] = 0;
+                list.extra.SMS << QString::fromUtf16((ushort*)raw);
+                // TODO
+            }
+        }
+        return true;
+    }
+    // TODO other folder types
+    else {
+        _errors << S_UNSUPPORTED_FOLDER.arg(sectName);
+        return false;
+    }
 }

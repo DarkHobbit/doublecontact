@@ -204,12 +204,19 @@ struct CallInfo {
     QString cType, timeStamp, duration, number, name;
 };
 
+enum SMSFormat {
+    PDU,
+    VMSG
+};
+
 struct MPBExtra {
     // Common fields
     QString model;
     QDateTime timeStamp;
+    SMSFormat smsFormat;
+    QStringList SMS;
     // MPB specific
-    QStringList organizer, notes, SMS, SMSArchive;
+    QStringList organizer, notes, SMSArchive;
     QList<CallInfo> calls;
     // NBU specific
     QString imei, firmware, phoneLang;

@@ -48,6 +48,7 @@ bool MPBFile::importRecords(const QString &url, ContactList &list, bool append)
     _errors.clear();
     if (!append) // not in VCardData::importRecords; else extra data will be lost
         list.clear();
+    list.extra.smsFormat = PDU;
     // Read file
     QStringList content;
     QTextStream stream(&file);

@@ -48,7 +48,7 @@ private:
     QString getString16c(QDataStream& stream);
     NBUSectionType* findSectionType(char* sectID);
     bool parseFolderVcard(QDataStream& stream, ContactList &list, const QString& sectName);
-    bool parseFolder(QDataStream& stream, long start, const QString& sectName);
+    bool parseFolder(QDataStream& stream, long start, const QString& sectName, ContactList &list);
 };
 
 #endif // NBUFILE_H

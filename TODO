@@ -29,6 +29,7 @@ You can contact me at pub@zvyozdochkin.ru.
 * coverity scan: drop moc_* errors
 * check quoted-printable koi8 data read/write, add this example in testdata
 * MPB: extra data view (SMS, calls...) need write core/formats/common/pdudata.*
+* NBU: extra data view (SMS)
 * MPB: maybe, names in call list must be swapped (Name 2, Name 1)
 * probably, write LABEL= on nonstandard types (at least, in mpb); now simply= (label removed)
 * probably, add more countries for phone i18n (if users will ask)
