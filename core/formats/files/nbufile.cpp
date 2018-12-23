@@ -331,6 +331,7 @@ std::cout << "No vcard folders" << std::endl;
             _errors << S_UNSUPPORTED_SECTION.arg(section->name);
         } // switch section type
     }
+    std::cout << "sections completed " << std::endl; //===>
     closeFile();
     return true;
 }
@@ -410,6 +411,7 @@ bool NBUFile::parseFolderVcard(QDataStream &stream, ContactList &list, const QSt
         QString vCard = QString::fromUtf8(raw, vcLen);
         QStringList content = vCard.split("\x0d\n");
         VCardData::importRecords(content, list, true, _errors);
+        delete raw;
     }
     return true;
 }
@@ -435,7 +437,9 @@ std::cout << "Messages " << count << "!"<< folderName.toLocal8Bit().data() << st
                 char* raw = new char[len+1];
                 stream.readRawData((char*)raw, len);
                 raw[len] = 0;
-                list.extra.SMS << QString::fromUtf16((ushort*)raw);
+                QString msg = QString::fromUtf16((ushort*)raw);
+                list.extra.SMS << msg;
+                delete raw;
                 // TODO
             }
         }
