@@ -44,11 +44,15 @@ public:
     bool importRecords(const QString &url, ContactList &list, bool append);
     bool exportRecords(const QString &, ContactList &);
 private:
-    QDateTime getDateTime(QDataStream& stream);
-    QString getString16c(QDataStream& stream);
+    static QDateTime getDateTime(QDataStream& stream);
+    static QString getString16c(QDataStream& stream);
+    static quint64 getU64(QDataStream& stream);
+    static quint32 getU32(QDataStream& stream);
+    static quint8 getU8(QDataStream& stream);
     NBUSectionType* findSectionType(char* sectID);
     bool parseFolderVcard(QDataStream& stream, ContactList &list, const QString& sectName);
     bool parseFolder(QDataStream& stream, long start, const QString& sectName, ContactList &list);
+    void parseContacts (QDataStream &stream);
 };
 
 #endif // NBUFILE_H

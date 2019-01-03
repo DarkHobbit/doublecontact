@@ -132,8 +132,7 @@ bool NBUFile::detect(const QString &url)
     if (!f.open(QIODevice::ReadOnly)) return false;
     QDataStream ss(&f);
     ss.setByteOrder(QDataStream::LittleEndian);
-    quint32 sig;
-    ss >> sig;
+    quint32 sig = getU32(ss);
     f.close();
     return (sig==0xFC3352cc);
 }
@@ -164,8 +163,7 @@ bool NBUFile::importRecords(const QString &url, ContactList &list, bool append)
         closeFile();
         return false;
     }
-    quint64 sumOffset;
-    ss >> sumOffset;
+    quint64 sumOffset = getU64(ss);
     if (!file.seek(sumOffset+SUMMARY_OFFSET)) {
         _fatalError = S_SEEK_ERR.arg(sumOffset+SUMMARY_OFFSET);
         closeFile();
@@ -186,14 +184,12 @@ bool NBUFile::importRecords(const QString &url, ContactList &list, bool append)
         return false;
     }
     // Read sections
-    quint32 sectCount;
-    ss >> sectCount;
+    quint32 sectCount = getU32(ss);
 std::cout << "sections: " << sectCount << std::endl; //===>
     for (quint32 i=0; i<sectCount; i++) {
         char sectID[NBU_SECT_ID_SIZE];
         ss.readRawData(sectID, sizeof(sectID));
-        quint64 sectStart;
-        ss >> sectStart;
+        quint64 sectStart = getU64(ss);
         if (!file.seek(file.pos()+8)) {
             _errors << S_SEEK_ERR.arg(file.pos()+8);
             closeFile();
@@ -220,8 +216,7 @@ std::cout << "VCards " << count << "!"<< count2 << std::endl;
             if (count2>0) {
                 for (quint32 j = 0; j < count2; j++) {
                     file.seek(file.pos()+4); //folder id
-                    quint64 folderAddr;
-                    ss >> folderAddr;
+                    quint64 folderAddr = getU64(ss);
                     partPos = file.pos();
                     file.seek(folderAddr + 4);
                     folderName = getString16c(ss);
@@ -251,8 +246,7 @@ std::cout << "No vcard folders" << std::endl;
             for (quint32 j = 0; j < count; j++)
             {
                 file.seek(file.pos() + 4);
-                quint64 start;
-                ss >> start;
+                quint64 start = getU64(ss);
                 partPos = file.pos();
                 file.seek(start + 4);
                 folderName = getString16c(ss);
@@ -262,8 +256,7 @@ std::cout << "No vcard folders" << std::endl;
                 {
                     for (quint32 k = 0; k < count2; k++)
                     {
-                        quint32 ix; // contact index, from 1
-                        ss >> ix;
+                        quint32 ix = getU32(ss); // contact index, from 1
                         if ((quint32)list.count() >= ix) {
                             ContactItem& item = list[ix - 1];
                             item.groups << folderName;
@@ -318,8 +311,7 @@ std::cout << "No vcard folders" << std::endl;
                 for (quint32 j = 0; j < count; j++)
                 {
                     file.seek(file.pos() + 4);
-                    quint64 start;
-                    ss >> start;
+                    quint64 start = getU64(ss);
                     partPos = file.pos();
                     parseFolder(ss, start, section->name, list);
                     file.seek(partPos);
@@ -367,6 +359,27 @@ QString NBUFile::getString16c(QDataStream& stream)
     return res;
 }
 
+quint64 NBUFile::getU64(QDataStream &stream)
+{
+    quint64 res;
+    stream >> res;
+    return res;
+}
+
+quint32 NBUFile::getU32(QDataStream &stream)
+{
+    quint32 res;
+    stream >> res;
+    return res;
+}
+
+quint8 NBUFile::getU8(QDataStream &stream)
+{
+    quint8 res;
+    stream >> res;
+    return res;
+}
+
 NBUSectionType *NBUFile::findSectionType(char *sectID)
 {
     for(unsigned int i=0; i<sizeof(nbuSectionTypes)/sizeof(NBUSectionType); i++) {
@@ -385,8 +398,7 @@ NBUSectionType *NBUFile::findSectionType(char *sectID)
 
 bool NBUFile::parseFolderVcard(QDataStream &stream, ContactList &list, const QString &sectName)
 {
-    quint32 count;
-    stream >> count;
+    quint32 count = getU32(stream);
     // Valid sect names for vCard: Contacts, Bookmarks, Calendar
     if (sectName!=ptContacts && sectName!=ptBookmarks && sectName!="Calendar") {
         _errors << S_UNSUPPORTED_SECTION.arg(sectName);
@@ -394,8 +406,7 @@ bool NBUFile::parseFolderVcard(QDataStream &stream, ContactList &list, const QSt
     }
     for (quint32 i = 0; i < count; i++)
     {
-        quint32 test;
-        stream >> test;
+        quint32 test = getU32(stream);
         if (test == 0x10)
         {
             stream >> test;
@@ -404,8 +415,7 @@ bool NBUFile::parseFolderVcard(QDataStream &stream, ContactList &list, const QSt
         }
         else
             _errors << QObject::tr("Test 1 different than 0x10: %1").arg(test, 0, 16);
-        int vcLen;
-        stream >> vcLen;
+        int vcLen = getU32(stream);
         char* raw = new char[vcLen];
         stream.readRawData((char*)raw, vcLen);
         QString vCard = QString::fromUtf8(raw, vcLen);
@@ -422,8 +432,7 @@ bool NBUFile::parseFolder(QDataStream &stream, long start, const QString &sectNa
     if(sectName==ptMessages || sectName==ptMms) {
         file.seek(start+4);
         QString folderName = this->getString16c(stream);
-        quint32 count;
-        stream >> count;
+        quint32 count = getU32(stream);
 std::cout << "Messages " << count << "!"<< folderName.toLocal8Bit().data() << std::endl;
         for (quint32 i=0; i<count; i++) {
             file.seek(file.pos()+8);
@@ -432,22 +441,178 @@ std::cout << "Messages " << count << "!"<< folderName.toLocal8Bit().data() << st
                 // TODO
             }
             else {
-                quint32 len;
-                stream >> len;
+                quint32 len = getU32(stream);
                 char* raw = new char[len+1];
                 stream.readRawData((char*)raw, len);
                 raw[len] = 0;
                 QString msg = QString::fromUtf16((ushort*)raw);
                 list.extra.SMS << msg;
                 delete raw;
-                // TODO
             }
         }
         return true;
     }
-    // TODO other folder types
     else {
-        _errors << S_UNSUPPORTED_FOLDER.arg(sectName);
-        return false;
+        file.seek(start);
+        quint32 tst = getU32(stream);
+std::cout << "tst=0x" << std::hex << tst << std::endl;
+        bool procAsDefault = false;
+        switch (tst)
+        {
+        case 0x0301: // contacts
+            parseContacts(stream);
+            break;
+        case 0x0303: // messages
+            // TODO
+            _errors << S_UNSUPPORTED_FOLDER.arg(sectName);
+            break;
+        case 0x0304: // messages
+            // TODO
+            _errors << S_UNSUPPORTED_FOLDER.arg(sectName);
+            break;
+            // TODO other folder types
+        default:
+            _errors << S_UNSUPPORTED_FOLDER.arg(sectName);
+            return false;
+        }
+        if (procAsDefault)
+        {
+            // TODO
+            _errors << S_UNSUPPORTED_FOLDER.arg(sectName);
+        }
+        return true;
     }
 }
+
+void NBUFile::parseContacts(QDataStream &stream)
+{
+    // Currently this is a duplicate of vCard record
+    quint32 count = getU32(stream);
+    std::cout << "Folder contacts: " << count << std::endl;
+    for (quint32 j = 0; j < count; j++)
+    {
+        quint8 c3 = getU8(stream); // element count
+        QString s;
+        std::cout << "Contact elems: " << (int)c3 << std::endl;
+        for (quint8 k = 0; k < c3; k++)
+        {
+            quint8 x = getU8(stream); // field
+            std::cout << "x: 0x" << std::hex << (int)x << std::endl;
+            switch (x)
+            {
+            case 0x0B: // number
+                    stream >> x; // number type
+                    s = this->getString16c(stream);
+                    std::cout << "s: " << s.toLocal8Bit().data() << std::endl;
+                    break;
+            case 0x1E: // group ???
+            case 0x43: { // group
+                quint32 xx = getU32(stream); // group number
+                std::cout << "G: " << xx << std::endl;
+                break;
+            }
+            case 0x57: // ???
+                file.seek(file.pos()+6);
+                break;
+            case 0x33: // image
+            case 0x37: {// ringtone
+                QString folderName = getString16c(stream);
+                QString fileName = getString16c(stream);
+                file.seek(file.pos()+12);
+                quint32 size = getU32(stream);
+                std::cout << "Folder " << folderName.toLocal8Bit().data()
+                    << " file " << fileName.toLocal8Bit().data()
+                    << " size " << QString::number(size).toLocal8Bit().data() << std::endl;
+                file.seek(file.pos()+2);
+                // Here we can read image/ringtone
+                // But currently this is a simply duplicate of PHOTO tag
+                file.seek(file.pos()+size);
+                break;
+            }
+            case 0xFE: { // image link
+                x = getU8(stream); // ??
+                QString link = getString16c(stream); // filename
+                std::cout << "Link " << link.toLocal8Bit().data() << " x " << x << std::endl;
+                break;
+            }
+            case 0x07: s = "name: ";
+                s += this->getString16c(stream);
+                std::cout << s.toLocal8Bit().data() << std::endl;
+                break;
+            case 0x46: s = "first name: ";
+                s += this->getString16c(stream);
+                std::cout << s.toLocal8Bit().data() << std::endl;
+                break;
+            case 0x47: s = "surnames = ";
+                s += this->getString16c(stream);
+                std::cout << s.toLocal8Bit().data() << std::endl;
+                break;
+            case 0x56: s = "nick = ";
+                s += this->getString16c(stream);
+                std::cout << s.toLocal8Bit().data() << std::endl;
+                break;
+            case 0x52: s = "nick = ";
+                s += this->getString16c(stream);
+                std::cout << s.toLocal8Bit().data() << std::endl;
+                break;
+            case 0x08: s = "email = ";
+                s += this->getString16c(stream);
+                std::cout << s.toLocal8Bit().data() << std::endl;
+                break;
+            case 0x0A: s = "note = ";
+                s += this->getString16c(stream);
+                std::cout << s.toLocal8Bit().data() << std::endl;
+                break;
+            case 0x54: s = "position / job = ";
+                s += this->getString16c(stream);
+                std::cout << s.toLocal8Bit().data() << std::endl;
+                break;
+            case 0x55: s = "company = ";
+                s += this->getString16c(stream);
+                std::cout << s.toLocal8Bit().data() << std::endl;
+                break;
+            case 0x4B: s = "address = ";
+                s += this->getString16c(stream);
+                std::cout << s.toLocal8Bit().data() << std::endl;
+                break;
+            case 0x4F: s = "address 2 = ";
+                s += this->getString16c(stream);
+                std::cout << s.toLocal8Bit().data() << std::endl;
+                break;
+            case 0x50: s = "state = ";
+                s += this->getString16c(stream);
+                std::cout << s.toLocal8Bit().data() << std::endl;
+                break;
+            case 0x2C: s = "url = ";
+                s += this->getString16c(stream);
+                std::cout << s.toLocal8Bit().data() << std::endl;
+                break;
+            case 0x09: s = "address 3 = ";
+                s += this->getString16c(stream);
+                std::cout << s.toLocal8Bit().data() << std::endl;
+                break;
+            case 0x4C: s = "address 4 = ";
+                s += this->getString16c(stream);
+                std::cout << s.toLocal8Bit().data() << std::endl;
+                break;
+            case 0x4D: s = "address 5 = ";
+                s += this->getString16c(stream);
+                std::cout << s.toLocal8Bit().data() << std::endl;
+                break;
+            case 0x4E: s = "address 6 = ";
+                s += this->getString16c(stream);
+                std::cout << s.toLocal8Bit().data() << std::endl;
+                break;
+            case 0x3F: s = "X-SIP = ";
+                s += this->getString16c(stream);
+                std::cout << s.toLocal8Bit().data() << std::endl;
+                break;
+            default:
+                s = this->getString16c(stream);
+                std::cout << "UNKNOWN: " << s.toLocal8Bit().data() << std::endl;
+                break;
+            }
+        }
+    }
+}
+
