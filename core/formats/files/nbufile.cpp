@@ -466,9 +466,71 @@ std::cout << "tst=0x" << std::hex << tst << std::dec << std::endl;
         case 0x0304: // messages
             procAsDefault = true;
             break;
+        case 0x1001: // S60 compressed files
+            std::cout << "S60 compressed files" << std::endl;
+            std::cout << "Pos: 0x" << std::hex << file.pos() << std::dec << std::endl;
+            break;
+        case 0x1002: // S60 compressed fragments
+        case 0x1004: // S60 compressed fragments
+        case 0x1006: {// S60 compressed fragments
+            std::cout << "Pos: 0x" << std::hex << file.pos() << std::dec << std::endl;
+            _errors << S_UNSUPPORTED_FOLDER.arg("S60 compressed fragments");
+            while (file.pos()<file.size()) {
+                quint16 x;
+                stream >> x;
+                if (x == 0xFFFF)
+                {
+                    break; // correct end of folder structure
+                }
+                else if (x != 0)
+                {
+                    _errors << "Unexpected folder structure";
+                    break;
+                }
+                QString fileName = getString16c(stream);
+                std::cout << "fileName: " << fileName.toLocal8Bit().data() << std::endl;
+                if (!fileName.isEmpty()) {
+                    file.seek(file.pos()+12);
+                    stream >> x;
+                    if (x == 0)
+                    {
+                        // empty fragment
+                        file.seek(file.pos()+6);
+                        continue;
+                    }
+                    file.seek(file.pos()+18);
+                }
+                else
+                {
+                    //fileName = "unnamed";
+                    file.seek(file.pos()+8);
+                }
+                while (true) {
+                    long lenComp = getU32(stream);
+                    long lenUncomp = getU32(stream);
+                    if (file.pos() + lenComp > file.size())
+                    {
+                        _errors << "Invalid fragment length - out of stream";
+                        break;
+                    }
+                    // TODO parseCompressedFragment(...
+                    file.seek(file.pos()+lenComp);
+                    if (lenUncomp < 65536) break;
+                    else if (lenUncomp == 65536)
+                    {
+                        fileName = "cont";
+                    }
+                    else
+                    {
+                        _errors << "Unexpected folder structure";
+                        break;
+                    }
+                }
+            }
+            break;
+        }
             // TODO other folder types
         default:
-            std::cout << S_UNSUPPORTED_FOLDER.arg(sectName).toLocal8Bit().data() << std::endl;
             _errors << S_UNSUPPORTED_FOLDER.arg(sectName);
             return false;
         }
