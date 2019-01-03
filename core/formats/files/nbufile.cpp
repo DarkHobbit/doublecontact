@@ -455,7 +455,7 @@ std::cout << "Messages " << count << "!"<< folderName.toLocal8Bit().data() << st
     else {
         file.seek(start);
         quint32 tst = getU32(stream);
-std::cout << "tst=0x" << std::hex << tst << std::endl;
+std::cout << "tst=0x" << std::hex << tst << std::dec << std::endl;
         bool procAsDefault = false;
         switch (tst)
         {
@@ -463,25 +463,57 @@ std::cout << "tst=0x" << std::hex << tst << std::endl;
             parseContacts(stream);
             break;
         case 0x0303: // messages
-            // TODO
-            _errors << S_UNSUPPORTED_FOLDER.arg(sectName);
-            break;
         case 0x0304: // messages
-            // TODO
-            _errors << S_UNSUPPORTED_FOLDER.arg(sectName);
+            procAsDefault = true;
             break;
             // TODO other folder types
         default:
+            std::cout << S_UNSUPPORTED_FOLDER.arg(sectName).toLocal8Bit().data() << std::endl;
             _errors << S_UNSUPPORTED_FOLDER.arg(sectName);
             return false;
         }
         if (procAsDefault)
         {
+            int count = getU32(stream);
+            std::cout << "Count=" << count << std::endl;
+            for (int j = 0; j < count; j++)
+            {
+                if (tst == 0x1008)
+                {
+                    quint32 x = getU32(stream);
+                    std::cout << "x=" << x << std::endl;
+                    if (x != 0)
+                    {
+                        if ((x & 0x80000000) == 0x80000000)
+                        {
+                            // just empty item to skip
+                            continue;
+                        }
+                        else
+                        {
+                            _errors << S_UNSUPPORTED_FOLDER.arg("bad X");
+                            break;
+                        }
+                    }
+                }
+                QString folderName = getString16c(stream);
+                QString fileName = getString16c(stream);
+                file.seek(file.pos()+12);
+                quint32 size = getU32(stream);
+                std::cout << "Folder " << folderName.toLocal8Bit().data()
+                          << " file " << fileName.toLocal8Bit().data()
+                          << " size " << size << std::endl;
+                file.seek(file.pos()+2);
+                // TODO read file here
+                file.seek(file.pos()+size); //===>
+            }
+
+
+
             // TODO
-            _errors << S_UNSUPPORTED_FOLDER.arg(sectName);
         }
-        return true;
     }
+    return true;
 }
 
 void NBUFile::parseContacts(QDataStream &stream)
@@ -497,7 +529,7 @@ void NBUFile::parseContacts(QDataStream &stream)
         for (quint8 k = 0; k < c3; k++)
         {
             quint8 x = getU8(stream); // field
-            std::cout << "x: 0x" << std::hex << (int)x << std::endl;
+            std::cout << "x: 0x" << std::hex << (int)x << std::dec << std::endl;
             switch (x)
             {
             case 0x0B: // number
@@ -522,7 +554,7 @@ void NBUFile::parseContacts(QDataStream &stream)
                 quint32 size = getU32(stream);
                 std::cout << "Folder " << folderName.toLocal8Bit().data()
                     << " file " << fileName.toLocal8Bit().data()
-                    << " size " << QString::number(size).toLocal8Bit().data() << std::endl;
+                    << " size " << size << std::endl;
                 file.seek(file.pos()+2);
                 // Here we can read image/ringtone
                 // But currently this is a simply duplicate of PHOTO tag
