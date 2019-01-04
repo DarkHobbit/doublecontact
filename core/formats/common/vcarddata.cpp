@@ -142,8 +142,8 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                     }
                 }
             }
-            if ((!types.isEmpty()) && (tag!="TEL")
-                    && (tag!="EMAIL") && (tag!="ADR") && (tag!="PHOTO") && (tag!="IMPP"))
+            if ((!types.isEmpty()) && (tag!="TEL") && (tag!="EMAIL") && (tag!="ADR")
+                    && (tag!="PHOTO") && (tag!="IMPP") && (tag!="X-SIP"))
                 errors << QObject::tr("Unexpected TYPE appearance at line %1: tag %2").arg(line+1).arg(tag);
             // Known tags
             if (tag=="VERSION")
@@ -256,6 +256,11 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                 item.url = decodeValue(vValue[0], errors);
             else if (tag=="X-JABBER") // Pre-vCard 4.0 non-standard IM tags
                 item.ims << Messenger(vValue[0], "xmpp");
+            else if (tag=="X-SIP") {
+                item.ims << Messenger(vValue[0], "sip");
+                if (!types.isEmpty())
+                    item.ims.last().types << types; // POC
+            }
             else if (tag=="X-ICQ")
                 item.ims << Messenger(vValue[0], "icq");
             else if (tag=="X-SKYPE-USERNAME")
@@ -421,6 +426,11 @@ void VCardData::exportRecord(QStringList &lines, const ContactItem &item, QStrin
         else {
             if (im.types.contains("xmpp", Qt::CaseInsensitive))
                 lines << encodeAll("X-JABBER", 0, false, im.value);
+            else if (im.types.contains("sip", Qt::CaseInsensitive)) {
+                QStringList extraTypes = im.types;
+                extraTypes.removeOne("sip");
+                lines << encodeAll("X-SIP", &extraTypes, false, im.value);
+            }
             else if (im.types.contains("icq", Qt::CaseInsensitive))
                 lines << encodeAll("X-ICQ", 0, false, im.value);
             else if (im.types.contains("skype", Qt::CaseInsensitive))
@@ -637,8 +647,12 @@ QString VCardData::encodeAll(const QString &tag, const QStringList *aTypes, bool
     encStr += ":";
     QString valStr = encodeValue(value, encStr.length());
     // Optimize ecoding :)
-    if (!valStr.contains("=") && charSet=="UTF-8" && encoding=="QUOTED-PRINTABLE")
-        encStr = tag + ":";
+    if (!valStr.contains("=") && charSet=="UTF-8" && encoding=="QUOTED-PRINTABLE") {
+        encStr = tag;
+        if (aTypes)
+            encStr += encodeTypes(*aTypes);
+        encStr += ":";
+    }
     return encStr + valStr;
 }
 

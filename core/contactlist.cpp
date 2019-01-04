@@ -186,13 +186,16 @@ void Messenger::StandardTypes::fill()
 {
     clear();
     displayValues.clear();
-    // Types according RFC ???
+    // Types according RFC 6350 and more
     (*this)["xmpp"] = "Jabber";
+    (*this)["sip"] = "SIP";
     (*this)["icq"] = "ICQ";
     (*this)["skype"] = "Skype";
     (*this)["pref"] = QObject::tr("Preferable");
     displayValues
-            << (*this)["xmpp"]  << (*this)["icq"]  << (*this)["skype"] << (*this)["pref"];
+            << (*this)["xmpp"] << (*this)["sip"]
+            << (*this)["icq"] << (*this)["skype"]
+            << (*this)["pref"];
 }
 
 void ContactItem::clear()
