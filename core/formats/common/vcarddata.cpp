@@ -250,7 +250,7 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                 item.addrs << addr;
             }
             // Internet
-            else if (tag=="NICKNAME")
+            else if ((tag=="NICKNAME") || (tag=="X-NICKNAME"))
                 item.nickName = decodeValue(vValue[0], errors);
             else if (tag=="URL")
                 item.url = decodeValue(vValue[0], errors);
@@ -363,8 +363,12 @@ void VCardData::exportRecord(QStringList &lines, const ContactItem &item, QStrin
         lines << encodeAll("FN", 0, false, item.fullName);
     if (!item.sortString.isEmpty())
         lines << encodeAll("SORT-STRING", 0, false, item.sortString);
-    if (!item.nickName.isEmpty())
-        lines << encodeAll("NICKNAME", 0, false, item.nickName);
+    if (!item.nickName.isEmpty()) {
+        if (formatVersion>=GlobalConfig::VCF40)
+            lines << encodeAll("NICKNAME", 0, false, item.nickName);
+        else
+            lines << encodeAll("X-NICKNAME", 0, false, item.nickName);
+    }
     foreach (const Phone& ph, item.phones)
         lines << (QString("TEL") + encodeTypes(ph.types, &Phone::standardTypes, ph.syncMLRef)+":"+ph.value);
     foreach (const Email& em, item.emails)
