@@ -746,32 +746,32 @@ Er du sikker på at du vil godta dette sertifikatet uansett?</translation>
     <message>
         <location filename="../app/mainwindow.ui" line="450"/>
         <source>&amp;Settings...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;Innstillinger…</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="466"/>
         <source>C&amp;ompare Result</source>
-        <translation type="unfinished"></translation>
+        <translation>S&amp;ammenlign resultat</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="507"/>
         <source>&amp;Internationalize phone prefix</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Internasjonaliser retningskode</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="525"/>
         <source>Re&amp;verse full name</source>
-        <translation type="unfinished"></translation>
+        <translation>Ve&amp;nd fullt navn</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="556"/>
         <source>About &amp;Qt</source>
-        <translation type="unfinished"></translation>
+        <translation>Om &amp;Qt</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="561"/>
         <source>Format phone &amp;numbers</source>
-        <translation type="unfinished"></translation>
+        <translation>Formater telefon-&amp;nummer</translation>
     </message>
     <message>
         <source>Settings...</source>
@@ -1196,7 +1196,14 @@ Er du sikker på at du ønsker skru av kolonnesortering?</translation>
 %6 calls
 %7 SMS
 %8 archived SMS</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 oppføringer
+%2 telefoner
+%3 e-postadresser
+%4 adresser
+%5 geburtsdager
+%6 samtaler
+%7 SMS
+%8 arkiverte SMS</translation>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="827"/>
@@ -1207,7 +1214,13 @@ written %2
 IMEI %3
 firmware %4
 phone language %5</source>
-        <translation type="unfinished"></translation>
+        <translation>
+
+modell %1
+skrevet %2
+IMEI %3
+fastvare %4
+telefonspråk %5</translation>
     </message>
     <message>
         <source>%1 records
@@ -1871,7 +1884,8 @@ lagret som mobil</translation>
         <location filename="../core/globals.h" line="123"/>
         <source>Can&apos;t seek to %1 in file
 %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Kan ikke blafre til %1 i filen
+%2</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="124"/>
@@ -1925,38 +1939,38 @@ Sjekk brukernavn, passord, protokoll og port</translation>
     <message>
         <location filename="../core/formats/files/nbufile.cpp" line="24"/>
         <source>Unsupported NBU file section type: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ustøttet NBU-fildeltype: %1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/nbufile.cpp" line="154"/>
         <source>Signature not recognized, trying anyway...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Signaturen gjenkjennes ikke, prøver uansett…</translation>
     </message>
     <message>
         <location filename="../core/formats/files/nbufile.cpp" line="206"/>
         <source>Unknown NBU file section type</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukjent NBU-fildeltype</translation>
     </message>
     <message>
         <location filename="../core/formats/files/nbufile.cpp" line="228"/>
         <location filename="../core/formats/files/nbufile.cpp" line="239"/>
         <source>Unknown vcard folder structure at section %1, subsection %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ukjent vKortmappestruktur i del %1, underdel %2</translation>
     </message>
     <message>
         <location filename="../core/formats/files/nbufile.cpp" line="270"/>
         <source>Invalid index: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ugyldig indeks: %1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/nbufile.cpp" line="401"/>
         <source>Test 2 greater than 0x01: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Test 2 større enn 0x01: %1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/nbufile.cpp" line="404"/>
         <source>Test 1 different than 0x10: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Test 1 forskjellig fra 0x01: %1</translation>
     </message>
 </context>
 <context>
