@@ -21,7 +21,7 @@
     <message>
         <location filename="../app/aboutdialog.ui" line="104"/>
         <source>Distributed under GPL v3 or above</source>
-        <translation type="unfinished">Verteilt unter der GPL v2 oder höher {3 ?}</translation>
+        <translation>Veröffentlicht unter der GPL v3 oder höher</translation>
     </message>
     <message>
         <source>Distributed under GPL v2 or above</source>
@@ -738,32 +738,32 @@ Möchten Sie dieses Zertifikat trotzdem akzeptieren?</translation>
     <message>
         <location filename="../app/mainwindow.ui" line="450"/>
         <source>&amp;Settings...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Einstellungen …</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="466"/>
         <source>C&amp;ompare Result</source>
-        <translation type="unfinished"></translation>
+        <translation>E&amp;rgebnis vergleichen</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="507"/>
         <source>&amp;Internationalize phone prefix</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Internationale Telefonvorwahlen</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="525"/>
         <source>Re&amp;verse full name</source>
-        <translation type="unfinished"></translation>
+        <translation>V&amp;ollständigen Namen umkehren</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="556"/>
         <source>About &amp;Qt</source>
-        <translation type="unfinished"></translation>
+        <translation>Über &amp;Qt</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="561"/>
         <source>Format phone &amp;numbers</source>
-        <translation type="unfinished"></translation>
+        <translation>Ruf&amp;nummernformat</translation>
     </message>
     <message>
         <source>Settings...</source>
@@ -1188,7 +1188,14 @@ Möchten Sie die Spaltensortierung ausschalten?</translation>
 %6 calls
 %7 SMS
 %8 archived SMS</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Datensätze
+%2 Rufnummern
+%3 E-Mail-Adressen
+%4 Adressen
+%5 Geburtstage
+%6 Aufrufe
+%7 SMS
+%8 archivierte SMS</translation>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="827"/>
@@ -1199,7 +1206,13 @@ written %2
 IMEI %3
 firmware %4
 phone language %5</source>
-        <translation type="unfinished"></translation>
+        <translation>
+
+Modell %1
+Geschrieben %2
+IMEI %3
+Firmware %4
+Sprache des Telefons %5</translation>
     </message>
     <message>
         <source>%1 records
@@ -1863,7 +1876,8 @@ Zeile %3, Spalte %4
         <location filename="../core/globals.h" line="123"/>
         <source>Can&apos;t seek to %1 in file
 %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Nach %1 konnte nicht in der Datei gesucht werden
+%2</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="124"/>
@@ -1917,38 +1931,38 @@ Benutzername, Passwort, Protokoll und Port überprüfen</translation>
     <message>
         <location filename="../core/formats/files/nbufile.cpp" line="24"/>
         <source>Unsupported NBU file section type: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Nicht unterstützter NBU-Dateiabschnittstyp: %1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/nbufile.cpp" line="154"/>
         <source>Signature not recognized, trying anyway...</source>
-        <translation type="unfinished"></translation>
+        <translation>Signatur nicht erkannt, es wird dennoch versucht …</translation>
     </message>
     <message>
         <location filename="../core/formats/files/nbufile.cpp" line="206"/>
         <source>Unknown NBU file section type</source>
-        <translation type="unfinished"></translation>
+        <translation>Unbekannter NBU-Dateiabschnittstyp</translation>
     </message>
     <message>
         <location filename="../core/formats/files/nbufile.cpp" line="228"/>
         <location filename="../core/formats/files/nbufile.cpp" line="239"/>
         <source>Unknown vcard folder structure at section %1, subsection %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Unbekannte vCard-Ordnerstruktur in Abschnitt %1, Unterabschnitt %2</translation>
     </message>
     <message>
         <location filename="../core/formats/files/nbufile.cpp" line="270"/>
         <source>Invalid index: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ungültiger Index: %1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/nbufile.cpp" line="401"/>
         <source>Test 2 greater than 0x01: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Test 2 größer als 0x01: %1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/nbufile.cpp" line="404"/>
         <source>Test 1 different than 0x10: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Test 1 verschieden von 0x10: %1</translation>
     </message>
 </context>
 <context>
