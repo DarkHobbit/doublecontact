@@ -37,6 +37,8 @@ bool LanguageManager::load(const QString &fileName)
         QString record = QString::fromUtf8(inf.readLine());
         record.remove(QRegExp("[\\n\\r]*$")); // chomp new lines
         const QStringList& fields = record.split("\t", QString::SkipEmptyParts);
+        if (fields.count()<3)
+            break;
         iso639codes.insert(fields.at(2), fields.at(0));
         nativeNamesByEnglish.insert(fields.at(1), fields.at(2));
     }
