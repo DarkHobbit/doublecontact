@@ -142,8 +142,9 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                     }
                 }
             }
-            if ((!types.isEmpty()) && (tag!="TEL") && (tag!="EMAIL") && (tag!="ADR")
-                    && (tag!="PHOTO") && (tag!="IMPP") && (tag!="X-SIP"))
+            if ((!types.isEmpty())
+                    && (tag!="TEL") && (tag!="EMAIL") && (tag!="ADR") && (tag!="PHOTO")
+                    && (tag!="IMPP") && (tag!="X-SIP") && (tag!="X-CUSTOM-IM"))
                 errors << QObject::tr("Unexpected TYPE appearance at line %1: tag %2").arg(line+1).arg(tag);
             // Known tags
             if (tag=="VERSION")
@@ -265,7 +266,7 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                 item.ims << Messenger(vValue[0], "icq");
             else if (tag=="X-SKYPE-USERNAME")
                 item.ims << Messenger(vValue[0], "skype");
-            else if (tag=="IMPP") { // vCard 4.0
+            else if ((tag=="IMPP") || (tag=="X-CUSTOM-IM")) {
                 Messenger im;
                 im.value = decodeValue(vValue[0], errors);
                 if (types.isEmpty())
@@ -440,7 +441,7 @@ void VCardData::exportRecord(QStringList &lines, const ContactItem &item, QStrin
             else if (im.types.contains("skype", Qt::CaseInsensitive))
                 lines << encodeAll("X-SKYPE-USERNAME", 0, false, im.value);
             else if (!im.types.isEmpty())
-                lines << encodeAll("X-" + im.types.join("+").toUpper(), 0, false, im.value);
+                lines << QString("X-CUSTOM-IM") + encodeTypes(im.types, &Messenger::standardTypes, im.syncMLRef)+":"+im.value;
             else
                 errors << S_ERR_UNSUPPORTED_TAG.arg(item.visibleName).arg(S_IM);
         }
