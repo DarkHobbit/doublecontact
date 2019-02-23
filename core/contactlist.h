@@ -199,17 +199,18 @@ struct ContactItem {
     bool operator <(const ContactItem& pair) const;
 };
 
-// MPB-specific storage
+// Specific data for backup files (MPB, NBF, NBU)
 struct CallInfo {
     QString cType, timeStamp, duration, number, name;
 };
 
 enum SMSFormat {
     PDU,
-    VMSG
+    VMSG,
+    NokiaBinary
 };
 
-struct MPBExtra {
+struct ExtraData {
     // Common fields
     QString model;
     QDateTime timeStamp;
@@ -220,6 +221,8 @@ struct MPBExtra {
     QList<CallInfo> calls;
     // NBU specific
     QString imei, firmware, phoneLang;
+    // NBU + NBF
+    QStringList SMSBinary;
     void clear();
 };
 
@@ -254,7 +257,7 @@ public:
     // Info
     int findById(const QString& idValue) const;
     QString statistics() const;
-    MPBExtra extra;
+    ExtraData extra;
     QStringList emptyGroups;
     QString originalPath; // for append-only formats, such as NBF
     QString originalProfile; // for CSV; see also ContactItem::originalFormat

@@ -989,7 +989,7 @@ void PostalAddress::StandardTypes::fill()
         << (*this)["intl"] << (*this)["postal"] << (*this)["parcel"];
 }
 
-void MPBExtra::clear()
+void ExtraData::clear()
 {
     model.clear();
     timeStamp = QDateTime();
@@ -1035,4 +1035,3 @@ Phone::StandardTypes Phone::standardTypes;
 Email::StandardTypes Email::standardTypes;
 PostalAddress::StandardTypes PostalAddress::standardTypes;
 Messenger::StandardTypes Messenger::standardTypes;
-

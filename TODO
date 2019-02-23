@@ -3,6 +3,8 @@ You can contact me at pub@zvyozdochkin.ru.
 
 0.2.0
 * NBU - other sections???
+* switch off warning empty types on load (optional). For inner vcard in vmessage do it always.
+* after quickview and numberless lines add screenshot (m.b. to 0.3.0)
 * Siemens CSV?
 * linux - appimage???
 * OS X - static build
@@ -16,13 +18,11 @@ You can contact me at pub@zvyozdochkin.ru.
 * deleteLater for requests
 * support REV tag (from ownCloud-CardDAV)
 * implement date without year: --0415 according vCard 4.0. Need flag or incorrect year!
-* after quickview and numberless lines add screenshot
 * vCard 4.0: new PHOTO format (MEDIATYPE=image/gif or data:image/jpeg;base64)
 * network export/sync
 * verify OSMO csv save under windows & linux (commas)
 * make .desktop file for deb/rpm
 * только по желанию пользователя (не по умолчанию) подсвечивать жёлтым не только неизвестные, но и нередактируемые?
-* m.b. switch off warning empty types on load (after user feedback about it)
 * more universal base64 support (see RFC example), m.b. in decodeValue
 * remove backslashes before comma or semicolon on read (RFC, sec. 5) and restore it on write (NOT EVERYWHERE! in N, middlename, comma not slashed)
 * add vCard 2.1 and vCard 4.0 example in testdata

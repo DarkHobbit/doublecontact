@@ -442,9 +442,10 @@ std::cout << "Messages " << count << "!"<< folderName.toLocal8Bit().data() << st
             }
             else {
                 quint32 len = getU32(stream);
-                char* raw = new char[len+1];
+                char* raw = new char[len+2];
                 stream.readRawData((char*)raw, len);
                 raw[len] = 0;
+                raw[len+1] = 0;
                 QString msg = QString::fromUtf16((ushort*)raw);
                 list.extra.SMS << msg;
                 delete raw;

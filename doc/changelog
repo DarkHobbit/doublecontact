@@ -60,6 +60,7 @@ Current
 * NBU (older Nokia backup file) reading support.
 * Context menu for contacts in tables
 * Internal drag'n'drop items copy and move between tables
+* SMS from NBU (progress)
 * Contact XML (prodid iOS 9.2) reading support
 * X-SIP and X-NICKNAME tags and SIP IMPP type added
 * Encodings list in CVS profile dialog is now sorted

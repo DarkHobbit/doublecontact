@@ -14,8 +14,11 @@
 #include "QFile"
 #include "QFileInfo"
 #include <QStringList>
+
 #include "convertor.h"
+#include "decodedmessagelist.h"
 #include "formats/formatfactory.h"
+#include "formats/common/vmessagedata.h"
 #include "formats/files/htmlfile.h"
 #include "formats/files/mpbfile.h"
 #include "formats/files/nbffile.h"
@@ -104,7 +107,8 @@ int Convertor::start()
             outFormat = arguments()[i];
             if (outFormat!="vcf21" && outFormat!="vcf30" && outFormat!="vcf40"
                     && outFormat!="vcfauto"
-            && outFormat!="udx" && outFormat!="mpb" && outFormat!="csv" && outFormat!="html"
+            && outFormat!="udx" && outFormat!="mpb" && outFormat!="csv"
+                    && outFormat!="html" && outFormat!="sms"
             && outFormat!="copy") {
                 out << tr("Error: Unknown output format: %1\n").arg(outFormat);
                 printUsage();
@@ -397,7 +401,7 @@ int Convertor::start()
         oFormat = new CSVFile();
     else if (outFormat.contains("html"))
         oFormat = new HTMLFile();
-    else { // copy input format
+    else if (outFormat.contains("copy")) { // copy input format
         if (VCFFile::detect(inPath)) {
             gd.useOriginalFileVersion = true;
             oFormat = new VCFFile();
@@ -418,10 +422,25 @@ int Convertor::start()
     if (csvFormat)
         setCSVProfile(csvFormat, outProfile);
     // Write
-    res = oFormat->exportRecords(outPath, items);
-    logFormat(oFormat);
-    delete oFormat;
-    out << tr("%1 records written\n").arg(items.count());
+    if (outFormat!="sms") {
+        res = oFormat->exportRecords(outPath, items);
+        logFormat(oFormat);
+        delete oFormat;
+        out << tr("%1 records written\n").arg(items.count());
+    }
+    else {
+        QStringList msgErrors;
+        DecodedMessageList messages = DecodedMessageList::fromContactList(items, msgErrors);
+        if (!messages.isEmpty()) {
+            res = messages.toCSV(outPath);
+            if (res)
+                out << tr("%1 messages written\n").arg(messages.count());
+            else
+                out << S_WRITE_ERR.arg(outPath) + "\n";
+        }
+        foreach (const QString& s, msgErrors)
+            out << s << "\n";
+    }
     return res ? 0 : 30;
 }
 
@@ -442,7 +461,8 @@ void Convertor::printUsage()
         "vcfauto - vCard version as in input file\n" \
         "udx - Philips Xenium UDX\n" \
         "mpb - MyPhoneExplorer backup\n" \
-         "html - HTML report (write only)\n" \
+        "html - HTML report (write only)\n" \
+        "sms - messages in csv file (for MPB, NFB or NBU input files only)"
         "\n" \
         "Possible values for csvprofile:\n" \
         "explaybm50, explaytv240, generic, osmo\n" \

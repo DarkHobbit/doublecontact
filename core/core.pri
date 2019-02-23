@@ -28,6 +28,7 @@ HEADERS	+= \
     $$PWD/formats/iformat.h \
     $$PWD/formats/formatfactory.h \
     $$PWD/formats/common/vcarddata.h \
+    $$PWD/formats/common/vmessagedata.h \
     $$PWD/formats/files/csvfile.h \
     $$PWD/formats/files/fileformat.h \
     $$PWD/formats/files/htmlfile.h \
@@ -36,13 +37,14 @@ HEADERS	+= \
     $$PWD/formats/files/udxfile.h \
     $$PWD/formats/files/vcfdirectory.h \
     $$PWD/formats/files/vcffile.h \
+    $$PWD/formats/files/xmlcontactfile.h \
     $$PWD/formats/network/asyncformat.h \
     $$PWD/formats/profiles/csvprofilebase.h \
     $$PWD/formats/profiles/explaybm50profile.h \
     $$PWD/formats/profiles/explaytv240profile.h \
     $$PWD/formats/profiles/genericcsvprofile.h \
     $$PWD/formats/profiles/osmoprofile.h \
-    $$PWD/formats/files/xmlcontactfile.h
+    ../core/decodedmessagelist.h
 
 SOURCES	+= \
     $$PWD/contactlist.cpp \
@@ -50,6 +52,7 @@ SOURCES	+= \
     $$PWD/languagemanager.cpp \
     $$PWD/formats/formatfactory.cpp \
     $$PWD/formats/common/vcarddata.cpp \
+    $$PWD/formats/common/vmessagedata.cpp \
     $$PWD/formats/files/csvfile.cpp \
     $$PWD/formats/files/fileformat.cpp \
     $$PWD/formats/files/htmlfile.cpp \
@@ -58,13 +61,14 @@ SOURCES	+= \
     $$PWD/formats/files/udxfile.cpp \
     $$PWD/formats/files/vcfdirectory.cpp \
     $$PWD/formats/files/vcffile.cpp \
+    $$PWD/formats/files/xmlcontactfile.cpp \
     $$PWD/formats/network/asyncformat.cpp \
     $$PWD/formats/profiles/csvprofilebase.cpp \
     $$PWD/formats/profiles/explaybm50profile.cpp \
     $$PWD/formats/profiles/explaytv240profile.cpp \
     $$PWD/formats/profiles/genericcsvprofile.cpp \
     $$PWD/formats/profiles/osmoprofile.cpp \
-    $$PWD/formats/files/xmlcontactfile.cpp
+    ../core/decodedmessagelist.cpp
 
 contains(DEFINES, WITH_NETWORK) {
     include(../3rdparty/qwebdavlib/qwebdavlib/qwebdavlib.pri)
