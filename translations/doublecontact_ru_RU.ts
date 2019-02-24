@@ -1426,7 +1426,8 @@ line %3, col %4
 </source>
         <translation>Не могу прочесть содержимое файла %1
 %2
-строка %3, столбец %4</translation>
+строка %3, столбец %4
+</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="68"/>
