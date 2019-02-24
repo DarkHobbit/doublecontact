@@ -26,7 +26,7 @@
 struct NBUSectionType
 {
     enum ProcessType { None, FileSystem, Vcards, Memos, GeneralFolders, Groups, Sbackup };
-    char id[NBU_SECT_ID_SIZE];
+    qint8 id[NBU_SECT_ID_SIZE];
     ProcessType type;
     QString name, name2;
 };

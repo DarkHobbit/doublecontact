@@ -67,11 +67,11 @@ bool DecodedMessageList::toCSV(const QString &path)
         msgText.replace("\n", " ");
         // Write current message
         ss << "\""    << msg.when.toString("dd.MM.yyyy hh:mm:ss")
-           << "\";\"" << sMsgBox[msg.box]
-           << "\";\"" << peer
-           << "\";\"" << sMsgStatus[msg.status]
-           << "\";\"" << msgText
-           << "\";\"" << auxPeers << "\"\n";
+           << "\",\"" << sMsgBox[msg.box]
+           << "\",\"" << peer
+           << "\",\"" << sMsgStatus[msg.status]
+           << "\",\"" << msgText
+           << "\",\"" << auxPeers << "\"\n";
     }
     f.close();
     return true;
