@@ -17,6 +17,7 @@
 #ifndef NBUFILE_H
 #define NBUFILE_H
 
+#include <QtGlobal>
 #include <QDataStream>
 #include <QDateTime>
 #include "fileformat.h"
@@ -26,7 +27,7 @@
 struct NBUSectionType
 {
     enum ProcessType { None, FileSystem, Vcards, Memos, GeneralFolders, Groups, Sbackup };
-    qint8 id[NBU_SECT_ID_SIZE];
+    quint8 id[NBU_SECT_ID_SIZE];
     ProcessType type;
     QString name, name2;
 };
@@ -49,7 +50,7 @@ private:
     static quint64 getU64(QDataStream& stream);
     static quint32 getU32(QDataStream& stream);
     static quint8 getU8(QDataStream& stream);
-    NBUSectionType* findSectionType(char* sectID);
+    NBUSectionType* findSectionType(quint8* sectID);
     bool parseFolderVcard(QDataStream& stream, ContactList &list, const QString& sectName);
     bool parseFolder(QDataStream& stream, long start, const QString& sectName, ContactList &list);
     void parseContacts (QDataStream &stream);

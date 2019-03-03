@@ -187,8 +187,8 @@ bool NBUFile::importRecords(const QString &url, ContactList &list, bool append)
     quint32 sectCount = getU32(ss);
 std::cout << "sections: " << sectCount << std::endl; //===>
     for (quint32 i=0; i<sectCount; i++) {
-        char sectID[NBU_SECT_ID_SIZE];
-        ss.readRawData(sectID, sizeof(sectID));
+        quint8 sectID[NBU_SECT_ID_SIZE];
+        ss.readRawData((char*)sectID, sizeof(sectID));
         quint64 sectStart = getU64(ss);
         if (!file.seek(file.pos()+8)) {
             _errors << S_SEEK_ERR.arg(file.pos()+8);
@@ -380,7 +380,7 @@ quint8 NBUFile::getU8(QDataStream &stream)
     return res;
 }
 
-NBUSectionType *NBUFile::findSectionType(char *sectID)
+NBUSectionType *NBUFile::findSectionType(quint8 *sectID)
 {
     for(unsigned int i=0; i<sizeof(nbuSectionTypes)/sizeof(NBUSectionType); i++) {
         NBUSectionType* cand = &nbuSectionTypes[i];
