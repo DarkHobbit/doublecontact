@@ -66,3 +66,4 @@ Current
 * Encodings list in CVS profile dialog is now sorted
 * Fixed: error phone type reading, if 'type=' prefix was in lowercase
 * Network support removed from binary builds by default (use conditional name WITH_NETWORK to force it). Must be restored in 0.3.0
+* Fixed: incorrect parsing of fields with semicolons: "ORG:Company\;Subsidiary" was read as "Company\" with backslash in the end.

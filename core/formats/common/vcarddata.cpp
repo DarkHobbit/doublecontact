@@ -14,6 +14,7 @@
 #include <QByteArray>
 #include <QObject>
 #include <QTextCodec>
+#include <QRegularExpression>
 
 #include "globals.h"
 #include "vcarddata.h"
@@ -93,8 +94,8 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                 item.unknownTags.push_back(TagValue(s, ""));
                 continue;
             }
-            QStringList vType = s.left(scPos).split(";");
-            QStringList vValue = s.mid(scPos+1).split(";");
+            QStringList vType = s.left(scPos).split(QRegularExpression("(?<!\\\\);")).replaceInStrings("\\;", ";");
+            QStringList vValue = s.mid(scPos+1).split(QRegularExpression("(?<!\\\\);")).replaceInStrings("\\;", ";");
             const QString tag = vType[0].toUpper();
             // Encoding, charset, types
             encoding = "";
@@ -289,13 +290,13 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                 || tag=="X-ACCOUNT" // MyPhoneExplorer YES, embedded android export NO
             )
             { // TODO other from rfc 2426
-                item.otherTags.push_back(TagValue(vType.join(";"),
-                    decodeValue(vValue.join(";"), errors)));
+                item.otherTags.push_back(TagValue(vType.replaceInStrings(";", "\\;").join(";"),
+                    decodeValue(vValue.replaceInStrings(";", "\\;").join(";"), errors)));
             }            
             // Unknown tags
             else {
-                item.unknownTags.push_back(TagValue(vType.join(";"),
-                    decodeValue(vValue.join(";"), errors)));
+                item.unknownTags.push_back(TagValue(vType.replaceInStrings(";", "\\;").join(";"),
+                    decodeValue(vValue.replaceInStrings(";", "\\;").join(";"), errors)));
             }
         }
 
@@ -358,7 +359,7 @@ void VCardData::exportRecord(QStringList &lines, const ContactItem &item, QStrin
         QString seps = "";
         if (item.names.count()<MAX_NAMES && formatVersion!=GlobalConfig::VCF21)
             seps.fill(';', MAX_NAMES-item.names.count());
-        lines << encodeAll("N", 0, false, item.names.join(";")) + seps;
+        lines << encodeAll("N", 0, false, QStringList(item.names).replaceInStrings(";", "\\;").join(";")) + seps;
     }
     if (!item.fullName.isEmpty())
         lines << encodeAll("FN", 0, false, item.fullName);
@@ -393,7 +394,7 @@ void VCardData::exportRecord(QStringList &lines, const ContactItem &item, QStrin
     }
     if (!item.groups.isEmpty()) {
         QString tagName = (formatVersion>=GlobalConfig::VCF40) ? "CATEGORIES" : "X-CATEGORIES";
-        lines << encodeAll(tagName, 0, false, item.groups.join(";"));
+        lines << encodeAll(tagName, 0, false, QStringList(item.groups).replaceInStrings(";", "\\;").join(";"));
     }
     // Organization, addresses
     foreach (const PostalAddress& addr, item.addrs)
@@ -708,9 +709,11 @@ QString VCardData::exportDate(const DateItem &item) const
 
 QString VCardData::exportAddress(const PostalAddress &item) const
 {
-    return encodeAll("ADR", &item.types, true,
-                item.offBox + ";" + item.extended
-        + ";" + item.street + ";" + item.city + ";" + item.region
-        + ";" + item.postalCode + ";" + item.country);
+    PostalAddress itemCopy(item);
+
+    return encodeAll("ADR", &itemCopy.types, true,
+                itemCopy.offBox.replace(QString(";"), QString("\\;")) + ";" + itemCopy.extended.replace(QString(";"), QString("\\;"))
+        + ";" + itemCopy.street.replace(QString(";"), QString("\\;")) + ";" + itemCopy.city.replace(QString(";"), QString("\\;")) + ";" + itemCopy.region.replace(QString(";"), QString("\\;"))
+        + ";" + itemCopy.postalCode.replace(QString(";"), QString("\\;")) + ";" + itemCopy.country.replace(QString(";"), QString("\\;")));
 }
 
