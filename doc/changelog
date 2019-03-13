@@ -65,4 +65,5 @@ Current
 * X-SIP and X-NICKNAME tags and SIP IMPP type added
 * Encodings list in CVS profile dialog is now sorted
 * Fixed: error phone type reading, if 'type=' prefix was in lowercase
+* Fixed: incorrect parsing of fields with semicolons: "ORG:Company\;Subsidiary" was read as "Company\" with backslash in the end
 * Network support removed from binary builds by default (use conditional name WITH_NETWORK to force it). Must be restored in 0.3.0

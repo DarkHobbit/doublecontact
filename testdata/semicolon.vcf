@@ -1,0 +1,8 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Cucykoff;Michael
+TEL;TYPE=CELL:+79131133268
+NOTE;CHARSET=UTF-8:ООО Глобус\; собирает исходные данные
+LABEL;TYPE=dom,home,postal,parcel:Mr.John Q. Public\, Esq.\nMail Drop: TNE QB\n123 Main Street\nAny Town\, CA  91921-1234\nU.S.A.
+X-UNKNOWN:String \; one; String two
+END:VCARD
