@@ -41,7 +41,6 @@ private:
     QString encodeTypes(const QStringList& aTypes, StandardTypes* st = 0, int syncMLRef = -1) const;
     QString exportDate(const DateItem& item) const;
     QString exportAddress(const PostalAddress& item) const;
-    void checkQPSoftBreak(QString& buf, QString& lBuf, int prefixLen, int addSize, bool lastChar) const;
     QStringList splitBySC(const QString& src);
     QString joinBySC(const QStringList& src) const;
     QString sc(const QString& src) const;

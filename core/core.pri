@@ -44,7 +44,8 @@ HEADERS	+= \
     $$PWD/formats/profiles/explaytv240profile.h \
     $$PWD/formats/profiles/genericcsvprofile.h \
     $$PWD/formats/profiles/osmoprofile.h \
-    ../core/decodedmessagelist.h
+    ../core/decodedmessagelist.h \
+    ../core/formats/common/quotedprintable.h
 
 SOURCES	+= \
     $$PWD/contactlist.cpp \
@@ -68,7 +69,8 @@ SOURCES	+= \
     $$PWD/formats/profiles/explaytv240profile.cpp \
     $$PWD/formats/profiles/genericcsvprofile.cpp \
     $$PWD/formats/profiles/osmoprofile.cpp \
-    ../core/decodedmessagelist.cpp
+    ../core/decodedmessagelist.cpp \
+    ../core/formats/common/quotedprintable.cpp
 
 contains(DEFINES, WITH_NETWORK) {
     include(../3rdparty/qwebdavlib/qwebdavlib/qwebdavlib.pri)
