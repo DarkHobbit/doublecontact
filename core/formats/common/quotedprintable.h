@@ -28,6 +28,7 @@ public:
     static QString encode(const QString &src, QTextCodec* codec, int prefixLen);
     // Merge quoted-printable linesets
     static void mergeLinesets(QStringList& lines);
+    static void mergeLines(QString& line);
 private:
     // Check for soft line breaks (RFC 2045)
     static void checkSoftBreak(QString& buf, QString& lBuf, int prefixLen, int addSize, bool lastChar);

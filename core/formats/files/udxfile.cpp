@@ -14,6 +14,7 @@
 #include <QTextCodec>
 #include <QTextStream>
 #include <QSet>
+#include "../common/quotedprintable.h"
 #include "udxfile.h"
 
 UDXFile::UDXFile()
@@ -93,7 +94,7 @@ bool UDXFile::importRecords(const QString &url, ContactList &list, bool append)
         _errors << QObject::tr("Can't find 'vCard' records at file\n%1").arg(url);
         return false;
     }
-    // QTextCodec* codec = QTextCodec::codecForName(charSet.toLocal8Bit()); TODO not works on windows
+    QTextCodec* codec = QTextCodec::codecForName(charSet.toLocal8Bit());
     ContactItem item;
     if (!append)
         list.clear();
@@ -112,6 +113,10 @@ bool UDXFile::importRecords(const QString &url, ContactList &list, bool append)
         while (!field.isNull()) {
             QString fldName = field.nodeName().toUpper();
             QString fldValue = field.text(); // codec->toUnicode(field.text().toLocal8Bit()); TODO not works on windows
+            if (fldValue.contains("=")) { // quoted-printable
+                QuotedPrintable::mergeLines(fldValue);
+                fldValue = QuotedPrintable::decode(fldValue, codec);
+            }
             if (fldName=="N") {
                 fldValue.replace("\\;", " ");
                 // In ALL known me udx files part before first ; was EMPTY

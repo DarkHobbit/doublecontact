@@ -87,6 +87,11 @@ void QuotedPrintable::mergeLinesets(QStringList &lines)
     }
 }
 
+void QuotedPrintable::mergeLines(QString &line)
+{
+    line.replace("=\r\n", ""); // TODO check on linux
+}
+
 void QuotedPrintable::checkSoftBreak(QString& buf, QString& lBuf, int prefixLen, int addSize, bool lastChar)
 {
     // If port to C++11, it must be lambda...
