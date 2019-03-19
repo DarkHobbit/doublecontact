@@ -76,7 +76,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->tvRight->setModel(proxyRight);
     connect(modLeft, SIGNAL(requestCSVProfile(CSVFile*)), this, SLOT(onRequestCSVProfile(CSVFile*)), Qt::DirectConnection);
     // Status bar
+    lbCount = new QLabel(0);
     lbMode = new QLabel(0);
+    statusBar()->addWidget(lbCount);
     statusBar()->addWidget(lbMode);
     // Settings
     ui->retranslateUi(this);
@@ -624,12 +626,16 @@ void MainWindow::on_tvRight_clicked(const QModelIndex&)
 }
 
 void MainWindow::updateHeaders()
-{    
+{
+    // List headers
     updateListHeader(modLeft, ui->lbLeft);
     updateListHeader(modRight, ui->lbRight);
+    // Window
     setWindowTitle(selectedModel->source().isEmpty() ?
         QString("Double Contact") :
                        QString("DoubleContact - %1").arg(selectedHeader->text()));
+    // Status bar
+    lbCount->setText(tr("Records: %1").arg(selectedModel->rowCount()));
 }
 
 void MainWindow::updateModeStatus()

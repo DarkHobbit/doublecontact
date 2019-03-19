@@ -108,7 +108,7 @@ private:
     ContactSorterFilter *proxyLeft, *proxyRight;
     // End of potentially unsafe pointers
     QModelIndexList selection;
-    QLabel* lbMode;
+    QLabel *lbCount, *lbMode;
     void buildContextMenu(QTableView* view);
     void selectView(QTableView* view);
     bool checkSelection(bool errorIfNoSelected = true, bool onlyOneRowAllowed = false);
