@@ -16,7 +16,7 @@
     <message>
         <location filename="../app/aboutdialog.ui" line="104"/>
         <source>Distributed under GPL v3 or above</source>
-        <translation type="unfinished">Поширюється під ліценцією GPL v2 чи більш новою {3 ?}</translation>
+        <translation>Поширюється під ліценцією GPL v3 чи більш новою</translation>
     </message>
     <message>
         <source>DoubleContact</source>
@@ -830,12 +830,12 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/mainwindow.ui" line="450"/>
         <source>&amp;Settings...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Налаштування...</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="466"/>
         <source>C&amp;ompare Result</source>
-        <translation type="unfinished"></translation>
+        <translation>П&amp;орівняти результат</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="507"/>
@@ -850,7 +850,7 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/mainwindow.ui" line="556"/>
         <source>About &amp;Qt</source>
-        <translation type="unfinished"></translation>
+        <translation>Про &amp;Qt</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="561"/>
@@ -1292,7 +1292,14 @@ Are you want switch column sorting off?</source>
 %6 calls
 %7 SMS
 %8 archived SMS</source>
-        <translation type="unfinished"></translation>
+        <translation>записів: %1
+телефонів: %2
+e-mail: %3
+адрес: %4
+днів народжень: %5
+дзвінків: %6
+SMS: %7
+архівних SMS: %8</translation>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="827"/>
@@ -1303,7 +1310,13 @@ written %2
 IMEI %3
 firmware %4
 phone language %5</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">
+
+модель %1
+written %2
+IMEI %3
+прошивка %4
+мова телефону %5</translation>
     </message>
     <message>
         <source>%1 records
