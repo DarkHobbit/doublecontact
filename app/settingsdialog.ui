@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>468</width>
-    <height>437</height>
+    <height>470</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -76,6 +76,13 @@
         <widget class="QCheckBox" name="cbShowTableGrid">
          <property name="text">
           <string>Show grid in tables</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="cbShowLineNumbers">
+         <property name="text">
+          <string>Show line numbers</string>
          </property>
         </widget>
        </item>

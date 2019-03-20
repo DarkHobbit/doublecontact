@@ -65,6 +65,9 @@
         <property name="selectionBehavior">
          <enum>QAbstractItemView::SelectRows</enum>
         </property>
+        <attribute name="verticalHeaderVisible">
+         <bool>true</bool>
+        </attribute>
        </widget>
       </item>
       <item row="2" column="0">
@@ -202,7 +205,7 @@
      <x>0</x>
      <y>0</y>
      <width>763</width>
-     <height>30</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_File">

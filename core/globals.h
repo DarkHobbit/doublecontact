@@ -158,6 +158,7 @@ struct GlobalConfig {
     bool openLastFilesAtStartup;
     // View
     bool showTableGrid;
+    bool showLineNumbers;
     bool useTableAlternateColors;
     bool useSystemFontsAndColors;
     QString tableFont, gridColor1, gridColor2;

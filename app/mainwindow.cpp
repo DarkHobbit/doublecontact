@@ -767,6 +767,7 @@ void MainWindow::updateConfig()
 void MainWindow::updateTableConfig(QTableView *table)
 {
     table->setShowGrid(gd.showTableGrid);
+    table->verticalHeader()->setVisible(gd.showLineNumbers);
     table->setAlternatingRowColors(gd.useTableAlternateColors);
     if (!gd.useSystemFontsAndColors) {
         QFont f;

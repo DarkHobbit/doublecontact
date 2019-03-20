@@ -37,6 +37,7 @@ bool SettingsDialog::setData()
     ui->cbOpenLastFilesAtStartup->setChecked(gd.openLastFilesAtStartup);
     // View
     ui->cbShowTableGrid->setChecked(gd.showTableGrid);
+    ui->cbShowLineNumbers->setChecked(gd.showLineNumbers);
     ui->cbUseTableAlternateColors->setChecked(gd.useTableAlternateColors);
     ui->cbUseSystemFontsAndColors->setChecked(gd.useSystemFontsAndColors);
     on_cbUseSystemFontsAndColors_clicked(ui->cbUseSystemFontsAndColors->isChecked());
@@ -86,6 +87,7 @@ bool SettingsDialog::getData()
     // View
     gd.useTableAlternateColors = ui->cbUseTableAlternateColors->isChecked();
     gd.showTableGrid = ui->cbShowTableGrid->isChecked();
+    gd.showLineNumbers = ui->cbShowLineNumbers->isChecked();
     gd.useSystemFontsAndColors = ui->cbUseSystemFontsAndColors->isChecked();
     // Column view
     gd.columnNames.clear();
