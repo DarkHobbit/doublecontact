@@ -12,6 +12,7 @@ Features:
   - CSV (profiles for some Explay models, OSMO PIM and generic profile for full contact information save);
   - MPB (MyPhoneExplorer backup);
   - NBF (modern Nokia backup file, **read only**);
+  - NBU (older Nokia backup file, **read only**);
   - UDX (Philips Xenium file);
 * contact view in table, sorting and filtering supported;
 * two panel view of two address books, with copy/move features;
@@ -49,7 +50,7 @@ The same way, you can load from MyPhoneExplorer backup file (MPB extension). In 
 
 Known MyPhoneExplorer bug: if NOTE field (contact description) contains line feed, it saved in MPB with false ENCODING=QUOTED-PRINTABLE attribute, and this cause note corruption.
 
-NBF (modern Nokia backup file) support is read-only.
+NBF and NBF files (Nokia backups) support is read-only.
 
 If you got load problems (in most cases, unknown tags), DoubleContact show log windows with problem list. Don't panic! Unknown tags are accurately preserved during view/editing, and program will save it in output file. Furthermore, you can view its content at "Problems" tab of contact edit dialog. Despite this, you are very help to the author, if send him such tas samples.
 
@@ -99,7 +100,7 @@ By default, all contacts are visible. To activate fitering, press Ctrl+F. Focus 
 
 Choose **View -> Two panels** to switch on two panel mode. Separated address books can be loaded in ech panel. Press Tab or click on opposite panel to change current panel. Press Ctrl+U to swap panel content.
 
-To copy one or some records from one loaded address book to other, select this records and press F5. To move - select and press F6 (in last case, selected records will be deleted from source).
+To copy one or some records from one loaded address book to other, select this records and press F5. To move - select and press F6 (in last case, selected records will be deleted from source). You can also use drag'n'drop for this operations.
 
 Choosing **View -> Two panels** again  will turn off two panel mode.
 
@@ -215,7 +216,7 @@ print resulting file or upload it to your website.
 
 ## How to help ##
 
-DoubleContact is a free software, distributed under the terms of the GNU General Public License, either version 2 of the License, or (at your option) any later version.
+DoubleContact is a free software, distributed under the terms of the GNU General Public License, either version 3 of the License, or (at your option) any later version.
 
 The first things you can help are bug reports and feature requests. DoubleContact bug tracker is placed at [GitHub](https://github.com/DarkHobbit/doublecontact/issues). If you can not work with the bug tracker, but found a critical error, send me at pub@zvyozdochkin.ru. Please, write on English or Russian.
 
