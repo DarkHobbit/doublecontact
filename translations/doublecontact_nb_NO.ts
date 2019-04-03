@@ -21,7 +21,7 @@
     <message>
         <location filename="../app/aboutdialog.ui" line="104"/>
         <source>Distributed under GPL v3 or above</source>
-        <translation type="unfinished">Distribuert som GPL v2 og senere {3 ?}</translation>
+        <translation type="unfinished">Distribuert som GPL v3 og senere</translation>
     </message>
     <message>
         <source>Distributed under GPL v2 or above</source>
