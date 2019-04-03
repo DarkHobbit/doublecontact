@@ -964,7 +964,7 @@ Kun noen felter kan redigeres i dette moduset</translation>
     <message>
         <location filename="../app/mainwindow.cpp" line="638"/>
         <source>Records: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Oppføringer: %1</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.cpp" line="643"/>
@@ -1948,7 +1948,7 @@ Sjekk brukernavn, passord, protokoll og port</translation>
     <message>
         <location filename="../core/formats/files/nbufile.cpp" line="25"/>
         <source>Unsupported NBU file folder type: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ustøttet NBU-filmappetype: %1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/nbufile.cpp" line="154"/>
@@ -1984,68 +1984,69 @@ Sjekk brukernavn, passord, protokoll og port</translation>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="32"/>
         <source>Read</source>
-        <translation type="unfinished"></translation>
+        <translation>Les</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="33"/>
         <source>UnRd</source>
-        <translation type="unfinished"></translation>
+        <translation>Ulest</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="34"/>
         <source>Unk.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ukjent</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="36"/>
         <source>Inbox</source>
-        <translation type="unfinished"></translation>
+        <translation>Innboks</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="37"/>
         <source>Outbox</source>
-        <translation type="unfinished"></translation>
+        <translation>Utboks</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="38"/>
         <source>Sentbox</source>
-        <translation type="unfinished"></translation>
+        <translation>Sendt</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="39"/>
         <source>Draft</source>
-        <translation type="unfinished"></translation>
+        <translation>Kladd</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="40"/>
         <source>Trash</source>
-        <translation type="unfinished"></translation>
+        <translation>Søppel</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="49"/>
         <source>&quot;Date&quot;,&quot;Box&quot;,&quot;From/To&quot;,&quot;Status&quot;,&quot;Text&quot;,&quot;Aux&quot;
 </source>
-        <translation type="unfinished"></translation>
+        <translation>&quot;Dato&quot;,&quot;Boks&quot;,&quot;Fra/til&quot;,&quot;Status&quot;,Tekst&quot;,Fjern&quot;
+</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="54"/>
         <source>Empty</source>
-        <translation type="unfinished"></translation>
+        <translation>Tom</translation>
     </message>
     <message>
         <location filename="../core/formats/common/vmessagedata.cpp" line="16"/>
         <source>Unknown vMessage tag: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ukjent vMessage-tagg: %1</translation>
     </message>
     <message>
         <location filename="../core/formats/common/vmessagedata.cpp" line="17"/>
         <source>Unknown vMessage value: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukjent vMessage-verdi: %1</translation>
     </message>
     <message>
         <location filename="../core/formats/common/vmessagedata.cpp" line="114"/>
         <source>Last vMessage section not closed</source>
-        <translation type="unfinished"></translation>
+        <translation>Siste vMessage-seksjon ble ikke sluttført</translation>
     </message>
 </context>
 <context>
@@ -2145,7 +2146,7 @@ Sjekk brukernavn, passord, protokoll og port</translation>
     <message>
         <location filename="../app/settingsdialog.ui" line="85"/>
         <source>Show line numbers</source>
-        <translation type="unfinished"></translation>
+        <translation>Vis linjenummer</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="92"/>
