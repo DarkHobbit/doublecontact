@@ -1060,7 +1060,7 @@ In deze modus kan slechts een beperkt aantal velden worden gewijzigd</translatio
     <message>
         <location filename="../app/mainwindow.cpp" line="638"/>
         <source>Records: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Items: %1</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.cpp" line="643"/>
@@ -2056,7 +2056,7 @@ Controleer gebruikersnaam, wachtwoord, protocol en poort</translation>
     <message>
         <location filename="../core/formats/files/nbufile.cpp" line="25"/>
         <source>Unsupported NBU file folder type: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Niet-ondersteund NBU-bestandsmaptype: %1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/nbufile.cpp" line="154"/>
@@ -2092,42 +2092,42 @@ Controleer gebruikersnaam, wachtwoord, protocol en poort</translation>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="32"/>
         <source>Read</source>
-        <translation type="unfinished"></translation>
+        <translation>Gelezen</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="33"/>
         <source>UnRd</source>
-        <translation type="unfinished"></translation>
+        <translation>Ongelezen</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="34"/>
         <source>Unk.</source>
-        <translation type="unfinished"></translation>
+        <translation>Onbekend</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="36"/>
         <source>Inbox</source>
-        <translation type="unfinished"></translation>
+        <translation>Postvak IN</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="37"/>
         <source>Outbox</source>
-        <translation type="unfinished"></translation>
+        <translation>Postvak UIT</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="38"/>
         <source>Sentbox</source>
-        <translation type="unfinished"></translation>
+        <translation>Verzonden items</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="39"/>
         <source>Draft</source>
-        <translation type="unfinished"></translation>
+        <translation>Concept</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="40"/>
         <source>Trash</source>
-        <translation type="unfinished"></translation>
+        <translation>Prullenbak</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="49"/>
@@ -2138,22 +2138,22 @@ Controleer gebruikersnaam, wachtwoord, protocol en poort</translation>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="54"/>
         <source>Empty</source>
-        <translation type="unfinished"></translation>
+        <translation>Leeg</translation>
     </message>
     <message>
         <location filename="../core/formats/common/vmessagedata.cpp" line="16"/>
         <source>Unknown vMessage tag: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Onbekend vMessage-label: %1</translation>
     </message>
     <message>
         <location filename="../core/formats/common/vmessagedata.cpp" line="17"/>
         <source>Unknown vMessage value: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Onbekende vMessage-waarde: %1</translation>
     </message>
     <message>
         <location filename="../core/formats/common/vmessagedata.cpp" line="114"/>
         <source>Last vMessage section not closed</source>
-        <translation type="unfinished"></translation>
+        <translation>Vorige vMessage-sectie niet gesloten</translation>
     </message>
 </context>
 <context>
@@ -2253,7 +2253,7 @@ Controleer gebruikersnaam, wachtwoord, protocol en poort</translation>
     <message>
         <location filename="../app/settingsdialog.ui" line="85"/>
         <source>Show line numbers</source>
-        <translation type="unfinished"></translation>
+        <translation>Regelnummers tonen</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="92"/>
