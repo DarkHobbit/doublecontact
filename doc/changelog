@@ -55,7 +55,7 @@ Bugfix release:
 * After addressbook opening, its first contact is highlited
 * Experimental NBF save implemented (only if original file also had NBF type) NOT TESTED
 
-Current
+0.2.0 [2019-05-01]
 * License changed to GPLv3 or above (most parts of code except NBU support can be used on GPLv2)
 * NBU (older Nokia backup file) reading support.
 * Context menu for contacts in tables

@@ -3,6 +3,7 @@
 set -o nounset
 set -o errexit
 # Example: make-deb-pkg 0.1.5 jessie amd64 4
+# Example: make-deb-pkg 0.2.0 stretch amd64 4
 DC_VER=$1
 PKG_DIST=$2
 PKG_ARCH=$3

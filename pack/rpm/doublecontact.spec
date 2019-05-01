@@ -1,9 +1,9 @@
 Summary: The Contact manager
 Name: doublecontact
-Version: 0.1.5
-Release: 20170903.f23
+Version: 0.2.0
+Release: 20190501.f29
 Group: Applications/PIM
-License: GPL v2 or above
+License: GPL v3 or above (some parts under GPL v2)
 Packager: Mikhail Y. Zvyozdochkin
 
 %define ubin /usr/bin

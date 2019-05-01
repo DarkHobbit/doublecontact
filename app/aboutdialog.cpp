@@ -27,6 +27,7 @@ AboutDialog::AboutDialog(QWidget *parent) :
     ui->lwContributors->addItem("Ukrainian UI: Olexandr Nesterenko aka burunduk");
     ui->lwContributors->addItem("NBU files support ported from NbuExplorer project");
     ui->lwContributors->addItem("(Author: Petr Vilem, petrusek@seznam.cz)");
+    ui->lwContributors->addItem("Bugfixes: antongus, GitKroz, SauronfromMordor");
 }
 
 AboutDialog::~AboutDialog()
