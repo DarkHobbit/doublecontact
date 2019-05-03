@@ -74,13 +74,14 @@ win32 {
 tr.commands = lrelease \
     $$_PRO_FILE_
 }
-unix&&!macx {
-tr.commands = lrelease-qt5 \
-    $$_PRO_FILE_
-} else {
+unix {
+macx {
 tr.commands = lrelease \
     $$_PRO_FILE_
-
+} else {
+tr.commands = lrelease-qt5 \
+    $$_PRO_FILE_
+}
 }
 } else {
 tr.commands = lrelease \
