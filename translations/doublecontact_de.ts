@@ -1973,12 +1973,12 @@ Benutzername, Passwort, Protokoll und Port überprüfen</translation>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="33"/>
         <source>UnRd</source>
-        <translation type="unfinished"></translation>
+        <translation>Ungel.</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="34"/>
         <source>Unk.</source>
-        <translation type="unfinished"></translation>
+        <translation>Unbek.</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="36"/>
@@ -2009,7 +2009,7 @@ Benutzername, Passwort, Protokoll und Port überprüfen</translation>
         <location filename="../core/decodedmessagelist.cpp" line="49"/>
         <source>&quot;Date&quot;,&quot;Box&quot;,&quot;From/To&quot;,&quot;Status&quot;,&quot;Text&quot;,&quot;Aux&quot;
 </source>
-        <translation type="unfinished">&quot;Datum&quot;, &quot;Box&quot;, &quot;Von/An&quot;, &quot;Status&quot;, &quot;Text&quot;, &quot;Aux&quot;
+        <translation>&quot;Datum&quot;, &quot;Box&quot;, &quot;Von/An&quot;, &quot;Status&quot;, &quot;Text&quot;, &quot;Aux&quot;
 </translation>
     </message>
     <message>
