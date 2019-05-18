@@ -1,5 +1,4 @@
-Rem This script requires Inno Setup
-Rem Change paths to build, MinGW and Inno Setup!
+Rem Change paths to build and MinGW!
 
 set PKG_NAME=doublecontact_0.2.0_win32_portable
 set PKG_DIR=..\..\%PKG_NAME%
