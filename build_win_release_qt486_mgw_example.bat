@@ -1,7 +1,8 @@
 rem Sample of build_win_release.bat using`
 
 set DIR_SRC=..\doublecontact
-set DIR_BUILD=..\build-manual-Release
+rem set DIR_BUILD=..\build-manual-Release
+set DIR_BUILD=..\build-all-Qt_4_8_6_st-Release
 set DIR_QT=c:\qt\4.8.6.st
 set DIR_MINGW=c:\Qt\2009.05\MinGW
 set DIR_DIST=..\bin-Release

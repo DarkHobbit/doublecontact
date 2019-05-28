@@ -948,7 +948,7 @@ Nur einige Felder können in diesem Modus bearbeitet werden.</translation>
     <message>
         <location filename="../app/mainwindow.cpp" line="638"/>
         <source>Records: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Datensätze: %1</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.cpp" line="643"/>
@@ -1932,7 +1932,7 @@ Benutzername, Passwort, Protokoll und Port überprüfen</translation>
     <message>
         <location filename="../core/formats/files/nbufile.cpp" line="25"/>
         <source>Unsupported NBU file folder type: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Nicht unterstützter NBU-Dateiordnertyp: %1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/nbufile.cpp" line="154"/>
@@ -1968,68 +1968,69 @@ Benutzername, Passwort, Protokoll und Port überprüfen</translation>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="32"/>
         <source>Read</source>
-        <translation type="unfinished"></translation>
+        <translation>Lesen</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="33"/>
         <source>UnRd</source>
-        <translation type="unfinished"></translation>
+        <translation>Ungel.</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="34"/>
         <source>Unk.</source>
-        <translation type="unfinished"></translation>
+        <translation>Unbek.</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="36"/>
         <source>Inbox</source>
-        <translation type="unfinished"></translation>
+        <translation>Posteingang</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="37"/>
         <source>Outbox</source>
-        <translation type="unfinished"></translation>
+        <translation>Postausgang</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="38"/>
         <source>Sentbox</source>
-        <translation type="unfinished"></translation>
+        <translation>Gesendet</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="39"/>
         <source>Draft</source>
-        <translation type="unfinished"></translation>
+        <translation>Entwürfe</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="40"/>
         <source>Trash</source>
-        <translation type="unfinished"></translation>
+        <translation>Papierkorb</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="49"/>
         <source>&quot;Date&quot;,&quot;Box&quot;,&quot;From/To&quot;,&quot;Status&quot;,&quot;Text&quot;,&quot;Aux&quot;
 </source>
-        <translation type="unfinished"></translation>
+        <translation>&quot;Datum&quot;, &quot;Box&quot;, &quot;Von/An&quot;, &quot;Status&quot;, &quot;Text&quot;, &quot;Aux&quot;
+</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="54"/>
         <source>Empty</source>
-        <translation type="unfinished"></translation>
+        <translation>Leer</translation>
     </message>
     <message>
         <location filename="../core/formats/common/vmessagedata.cpp" line="16"/>
         <source>Unknown vMessage tag: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Unbekanntes vMessage-Schlagwort: %1</translation>
     </message>
     <message>
         <location filename="../core/formats/common/vmessagedata.cpp" line="17"/>
         <source>Unknown vMessage value: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Unbekannter vMessage-Wert: %1</translation>
     </message>
     <message>
         <location filename="../core/formats/common/vmessagedata.cpp" line="114"/>
         <source>Last vMessage section not closed</source>
-        <translation type="unfinished"></translation>
+        <translation>Letzter vMessage-Abschnitt nicht geschlossen</translation>
     </message>
 </context>
 <context>
@@ -2129,7 +2130,7 @@ Benutzername, Passwort, Protokoll und Port überprüfen</translation>
     <message>
         <location filename="../app/settingsdialog.ui" line="85"/>
         <source>Show line numbers</source>
-        <translation type="unfinished"></translation>
+        <translation>Zeilennummern anzeigen</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="92"/>

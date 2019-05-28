@@ -543,7 +543,7 @@ void VCardData::importAddress(PostalAddress &item, const QStringList& aTypes, co
 QStringList VCardData::splitBySC(const QString &src)
 {
 #if QT_VERSION >= 0x050000
-    return QRegularExpression("(?<!\\\\);")).replaceInStrings("\\;", ";");
+    return src.split(QRegularExpression("(?<!\\\\);")).replaceInStrings("\\;", ";");
 #else
     QStringList res = src.split(";");
     // TODO m.b. after DC 1.0 port this to C++11

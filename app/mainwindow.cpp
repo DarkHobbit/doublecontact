@@ -60,7 +60,7 @@ MainWindow::MainWindow(QWidget *parent) :
     configManager.setDefaults(ui->tvLeft->font().toString(),
         ui->tvLeft->palette().color(QPalette::Base).name(),
         ui->tvLeft->palette().color(QPalette::AlternateBase).name());
-    configManager.readConfig(); // After contactColumnHeaders.fill()! Else national UI not works
+    configManager.readConfig(); // After contactColumnHeaders.fill()! Else national UI not works    
     // Models
     modLeft = new ContactModel(this, S_NEW_LIST, recent);
     modRight = new ContactModel(this, S_NEW_LIST + " 2", recent);
@@ -75,6 +75,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->tvLeft->setModel(proxyLeft);
     ui->tvRight->setModel(proxyRight);
     connect(modLeft, SIGNAL(requestCSVProfile(CSVFile*)), this, SLOT(onRequestCSVProfile(CSVFile*)), Qt::DirectConnection);
+    ui->tvLeft->horizontalHeader()->setStretchLastSection(true);
+    ui->tvRight->horizontalHeader()->setStretchLastSection(true);
     // Status bar
     lbCount = new QLabel(0);
     lbMode = new QLabel(0);
