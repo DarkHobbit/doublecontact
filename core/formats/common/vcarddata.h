@@ -34,7 +34,7 @@ private:
     GlobalConfig::VCFVersion formatVersion;
     bool _forceVersion;
     QString decodeValue(const QString& src, QStringList& errors) const;
-    void importDate(DateItem& item, const QString& src, QStringList& errors) const;
+    void importDate(DateItem& item, const QString& src, QStringList& errors, const QString& location) const;
     void importAddress(PostalAddress& item, const QStringList& aTypes, const QStringList& values, QStringList& errors) const;
     QString encodeValue(const QString& src, int prefixLen) const;
     QString encodeAll(const QString& tag, const QStringList *aTypes, bool forceCharSet, const QString& value) const;

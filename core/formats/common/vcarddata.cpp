@@ -195,9 +195,9 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                 item.emails << email;
             }
             else if (tag=="BDAY")
-                importDate(item.birthday, decodeValue(vValue[0], errors), errors);
+                importDate(item.birthday, decodeValue(vValue[0], errors), errors, item.makeGenericName());
             else if ((tag=="ANNIVERSARY") || (tag=="X-ANNIVERSARY"))
-                importDate(item.anniversary, decodeValue(vValue[0], errors), errors);
+                importDate(item.anniversary, decodeValue(vValue[0], errors), errors, item.makeGenericName());
             else if (tag=="PHOTO") {
                 if (typeVal.startsWith("URI", Qt::CaseInsensitive)) {
                     item.photo.pType = "URL";
@@ -472,7 +472,7 @@ QString VCardData::decodeValue(const QString &src, QStringList& errors) const
 }
 
 // TODO Maybe, move it into DateItem::fromString
-void VCardData::importDate(DateItem &item, const QString &src, QStringList& errors) const
+void VCardData::importDate(DateItem &item, const QString &src, QStringList& errors, const QString& location) const
 {
     int tPos = src.indexOf("T", 0, Qt::CaseInsensitive);
     item.hasTime = (tPos!=-1);
@@ -524,7 +524,7 @@ void VCardData::importDate(DateItem &item, const QString &src, QStringList& erro
             item.value = QDateTime::fromString(src, "yyyyMMdd");
     }
     if (!item.value.isValid())
-        errors << QObject::tr("Invalid datetime: ") + src;
+        errors << QObject::tr("Invalid datetime: ") + src + " (" + location + ")";
 }
 
 void VCardData::importAddress(PostalAddress &item, const QStringList& aTypes, const QStringList& values, QStringList &errors) const
