@@ -12,11 +12,14 @@
  */
 
 #include <QByteArray>
+#include <QCoreApplication>
+#include <QDir>
 #include <QObject>
 #if QT_VERSION >= 0x050000
 #include <QRegularExpression>
 #endif
 #include <QTextCodec>
+#include <QTextStream>
 
 #include "globals.h"
 #include "quotedprintable.h"
@@ -60,9 +63,13 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
         list.clear();
     QString visName = "";
     QuotedPrintable::mergeLinesets(lines);
+    // Logging
+    QFile logFile(qApp->applicationDirPath()+QDir::separator()+"loadlog.txt");
+    debugSave(logFile, "Start reading...", true);
     // Collect records
     for (int line=0; line<lines.count(); line++) {
         const QString& s = lines[line];
+        debugSave(logFile, QString("Line: ")+s, false);
         if (s.isEmpty()) // vcf can contain empty lines
             continue;
         if (s.startsWith("BEGIN:VCARD", Qt::CaseInsensitive)) {
@@ -285,7 +292,7 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
             else
                 item.unknownTags.push_back(TagValue(joinBySC(vType), decodeValue(joinBySC(vValue), errors)));
         }
-
+        debugSave(logFile, "Done.", false);
     }
     if (recordOpened) {
         item.calculateFields();
@@ -565,6 +572,16 @@ QString VCardData::joinBySC(const QStringList &src) const
 QString VCardData::sc(const QString &src) const
 {
     return QString(src).replace(QString(";"), QString("\\;"));
+}
+
+void VCardData::debugSave(QFile &logFile, const QString& s, bool firstRec)
+{
+    if (gd.debugSave) {
+        logFile.open(firstRec ? QIODevice::WriteOnly : QIODevice::Append);
+        QTextStream ss(&logFile);
+        ss << s << "\n";
+        logFile.close();
+    }
 }
 
 QString VCardData::encodeValue(const QString &src, int prefixLen) const

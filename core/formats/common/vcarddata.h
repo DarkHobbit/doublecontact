@@ -13,7 +13,9 @@
 #ifndef VCARDDATA_H
 #define VCARDDATA_H
 
+#include <QFile>
 #include <QStringList>
+
 #include "../../contactlist.h"
 
 class VCardData
@@ -44,6 +46,7 @@ private:
     QStringList splitBySC(const QString& src);
     QString joinBySC(const QStringList& src) const;
     QString sc(const QString& src) const;
+    void debugSave(QFile& logFile, const QString& s, bool firstRec);
 };
 
 #endif // VCARDDATA_H

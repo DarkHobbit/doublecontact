@@ -65,6 +65,7 @@ bool SettingsDialog::setData()
         ui->cbDefaultEmptyPhoneType->setCurrentIndex(index);
     ui->cbWarnOnNonStandardTypes->setChecked(gd.warnOnNonStandardTypes);
     ui->cbReadNamesFromFileName->setChecked(gd.readNamesFromFileName);
+    ui->cbDebugSave->setChecked(gd.debugSave);
     // Done
     return true;
 }
@@ -104,6 +105,7 @@ bool SettingsDialog::getData()
     gd.defaultEmptyPhoneType = ui->cbDefaultEmptyPhoneType->currentText();
     gd.warnOnNonStandardTypes = ui->cbWarnOnNonStandardTypes->isChecked();
     gd.readNamesFromFileName = ui->cbReadNamesFromFileName->isChecked();
+    gd.debugSave = ui->cbDebugSave->isChecked();
     // Done
     return true;
 }

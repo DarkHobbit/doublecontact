@@ -184,6 +184,7 @@ struct GlobalConfig {
     QString defaultEmptyPhoneType; // if phone w/o type was in loaded file
     bool warnOnNonStandardTypes;
     bool readNamesFromFileName;
+    bool debugSave;
     // Session-specific data from command line
     bool fullScreenMode; // Maximize main window at startup
     bool debugDataMode; // Show debug data at startup

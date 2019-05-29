@@ -73,3 +73,4 @@ Bugfix release:
 
 CURRENT
 * Last colunm now stretched
+* Added debug save mode while VCF reading

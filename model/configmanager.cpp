@@ -108,6 +108,7 @@ void ConfigManager::readConfig()
         Phone::standardTypes.translate("voice")).toString(); // many phones treat type 'voice' as 'other'
     gd.warnOnNonStandardTypes = settings->value("Loading/WarnOnNonStandardTypes", true).toBool();
     gd.readNamesFromFileName = settings->value("Loading/ReadNamesFromFileName", false).toBool();
+    gd.debugSave = settings->value("Loading/DebugSave", false).toBool();
 }
 
 void ConfigManager::writeConfig()
@@ -156,6 +157,7 @@ void ConfigManager::writeConfig()
     settings->setValue("Loading/DefaultEmptyPhoneType", gd.defaultEmptyPhoneType);
     settings->setValue("Loading/WarnOnNonStandardTypes", gd.warnOnNonStandardTypes);
     settings->setValue("Loading/ReadNamesFromFileName", gd.readNamesFromFileName);
+    settings->setValue("Loading/DebugSave", gd.debugSave);
 }
 
 QString ConfigManager::readLanguage()

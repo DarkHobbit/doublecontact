@@ -17,7 +17,7 @@
    <item>
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>0</number>
+      <number>3</number>
      </property>
      <widget class="QWidget" name="tabGeneral">
       <attribute name="title">
@@ -337,6 +337,13 @@
         <widget class="QCheckBox" name="cbWarnOnNonStandardTypes">
          <property name="text">
           <string>Warning on non-standard phone types</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="cbDebugSave">
+         <property name="text">
+          <string>Debug save</string>
          </property>
         </widget>
        </item>
