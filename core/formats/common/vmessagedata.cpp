@@ -42,6 +42,7 @@ bool VMessageData::importRecords(QStringList &lines, DecodedMessageList &list, b
             recordOpened = false;
             //msg.calculateFields();
             list.push_back(msg);
+            msg.clear();
         }
         else {
             // Split type:value
