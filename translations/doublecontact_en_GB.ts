@@ -6,12 +6,12 @@
     <message>
         <location filename="../app/aboutdialog.ui" line="14"/>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>Sobre</translation>
     </message>
     <message>
         <location filename="../app/aboutdialog.ui" line="24"/>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation>Geral</translation>
     </message>
     <message>
         <location filename="../app/aboutdialog.ui" line="61"/>
@@ -26,7 +26,7 @@
     <message>
         <location filename="../app/aboutdialog.ui" line="132"/>
         <source>Contributors</source>
-        <translation type="unfinished"></translation>
+        <translation>Colaboradores</translation>
     </message>
 </context>
 <context>
@@ -34,17 +34,17 @@
     <message>
         <location filename="../app/csvprofiledialog.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Janela</translation>
     </message>
     <message>
         <location filename="../app/csvprofiledialog.ui" line="25"/>
         <source>Encoding</source>
-        <translation type="unfinished"></translation>
+        <translation>Codificação</translation>
     </message>
     <message>
         <location filename="../app/csvprofiledialog.ui" line="39"/>
         <source>Separator</source>
-        <translation type="unfinished"></translation>
+        <translation>Separador</translation>
     </message>
 </context>
 <context>
@@ -52,7 +52,7 @@
     <message>
         <location filename="../core/formats/network/carddavformat.cpp" line="28"/>
         <source>Invalid URL</source>
-        <translation type="unfinished"></translation>
+        <translation>URL Inválido</translation>
     </message>
     <message>
         <location filename="../core/formats/network/carddavformat.cpp" line="82"/>
@@ -87,22 +87,22 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/comparedialog.cpp" line="67"/>
         <source>Names</source>
-        <translation type="unfinished"></translation>
+        <translation>Nomes</translation>
     </message>
     <message>
         <location filename="../app/comparedialog.cpp" line="68"/>
         <source>Phones</source>
-        <translation type="unfinished"></translation>
+        <translation>Telefones</translation>
     </message>
     <message>
         <location filename="../app/comparedialog.cpp" line="69"/>
         <source>Emails</source>
-        <translation type="unfinished"></translation>
+        <translation>E-mails</translation>
     </message>
     <message>
         <location filename="../app/comparedialog.cpp" line="71"/>
         <source>Anniversaries</source>
-        <translation type="unfinished"></translation>
+        <translation>Aniversários</translation>
     </message>
     <message>
         <location filename="../app/comparedialog.cpp" line="73"/>
@@ -112,7 +112,7 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/comparedialog.cpp" line="77"/>
         <source>Addresses</source>
-        <translation type="unfinished"></translation>
+        <translation>Moradas</translation>
     </message>
 </context>
 <context>
@@ -120,104 +120,104 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/contactdialog.ui" line="14"/>
         <source>Edit Contact</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar Contacto</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="24"/>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation>Geral</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="34"/>
         <source>Full name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nome completo</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="46"/>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nome</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="65"/>
         <source>Phone</source>
-        <translation type="unfinished"></translation>
+        <translation>Telefone</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="104"/>
         <source>Email</source>
-        <translation type="unfinished"></translation>
+        <translation>E-mail</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="145"/>
         <location filename="../app/contactdialog.ui" line="368"/>
         <location filename="../app/contactdialog.ui" line="466"/>
         <source>Add...</source>
-        <translation type="unfinished"></translation>
+        <translation>Adicionar...</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="153"/>
         <location filename="../app/contactdialog.cpp" line="596"/>
         <source>name</source>
-        <translation type="unfinished"></translation>
+        <translation>nome</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="158"/>
         <location filename="../app/contactdialog.cpp" line="598"/>
         <source>phone</source>
-        <translation type="unfinished"></translation>
+        <translation>telefone</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="163"/>
         <location filename="../app/contactdialog.cpp" line="600"/>
         <source>email</source>
-        <translation type="unfinished"></translation>
+        <translation>e-mail</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="183"/>
         <source>Birthday</source>
-        <translation type="unfinished"></translation>
+        <translation>Aniversário</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="197"/>
         <location filename="../app/contactdialog.ui" line="233"/>
         <source>Details</source>
-        <translation type="unfinished"></translation>
+        <translation>Detalhes</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="251"/>
         <location filename="../app/contactdialog.ui" line="309"/>
         <source>Photo</source>
-        <translation type="unfinished"></translation>
+        <translation>Foto</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="274"/>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation>Descrição</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="321"/>
         <source>Addresses</source>
-        <translation type="unfinished"></translation>
+        <translation>Moradas</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="329"/>
         <source>Organization</source>
-        <translation type="unfinished"></translation>
+        <translation>Organização</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="339"/>
         <source>Job Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Título do Trabalho</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="376"/>
         <source>Internet</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Internet</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="384"/>
         <source>NickName</source>
-        <translation type="unfinished"></translation>
+        <translation>Apelido</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="427"/>
@@ -227,32 +227,32 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/contactdialog.ui" line="394"/>
         <source>URL</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">URL</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="219"/>
         <source>Anniversary</source>
-        <translation type="unfinished"></translation>
+        <translation>Aniversário</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="476"/>
         <source>Groups</source>
-        <translation type="unfinished"></translation>
+        <translation>Grupos</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="482"/>
         <source>Contact in groups</source>
-        <translation type="unfinished"></translation>
+        <translation>Contacto nos grupos</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="489"/>
         <source>Available groups</source>
-        <translation type="unfinished"></translation>
+        <translation>Grupos disponíveis</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="529"/>
         <source>Other</source>
-        <translation type="unfinished"></translation>
+        <translation>Outros</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="537"/>
@@ -262,7 +262,7 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/contactdialog.ui" line="544"/>
         <source>ID</source>
-        <translation type="unfinished"></translation>
+        <translation>Id.</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="565"/>
@@ -289,12 +289,12 @@ Are you want to accept this certificate anyway?</source>
         <location filename="../app/contactdialog.ui" line="610"/>
         <location filename="../app/contactdialog.ui" line="641"/>
         <source>Value</source>
-        <translation type="unfinished"></translation>
+        <translation>Valor</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="619"/>
         <source>Problems</source>
-        <translation type="unfinished"></translation>
+        <translation>Problemas</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="625"/>
@@ -304,42 +304,42 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/contactdialog.cpp" line="91"/>
         <source>Add contact</source>
-        <translation type="unfinished"></translation>
+        <translation>Adicionar contacto</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.cpp" line="99"/>
         <source>Edit contact</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar contacto</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.cpp" line="610"/>
         <source>Phone type</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipo de telefone</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.cpp" line="612"/>
         <source>Email type</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipo de e-mail</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.cpp" line="614"/>
         <source>Address type</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipo de morada</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.cpp" line="616"/>
         <source>IM type</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipo de IM</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.cpp" line="689"/>
         <source>Open image file</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir ficheiro de imagem</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.cpp" line="721"/>
         <source>Save image file</source>
-        <translation type="unfinished"></translation>
+        <translation>Guardar ficheiro de imagem</translation>
     </message>
 </context>
 <context>
@@ -347,12 +347,12 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/datedetailsdialog.ui" line="14"/>
         <source>Date details</source>
-        <translation type="unfinished"></translation>
+        <translation>Detalhes da data</translation>
     </message>
     <message>
         <location filename="../app/datedetailsdialog.ui" line="22"/>
         <source>Date</source>
-        <translation type="unfinished"></translation>
+        <translation>Data</translation>
     </message>
     <message>
         <location filename="../app/datedetailsdialog.ui" line="34"/>
@@ -367,12 +367,12 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/datedetailsdialog.ui" line="60"/>
         <source>h</source>
-        <translation type="unfinished"></translation>
+        <translation>h</translation>
     </message>
     <message>
         <location filename="../app/datedetailsdialog.ui" line="74"/>
         <source>m</source>
-        <translation type="unfinished"></translation>
+        <translation>m</translation>
     </message>
 </context>
 <context>
@@ -380,32 +380,32 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/groupdialog.ui" line="14"/>
         <source>Groups</source>
-        <translation type="unfinished"></translation>
+        <translation>Grupos</translation>
     </message>
     <message>
         <location filename="../app/groupdialog.ui" line="45"/>
         <source>Add (Ins)</source>
-        <translation type="unfinished"></translation>
+        <translation>Adicionar (Ins)</translation>
     </message>
     <message>
         <location filename="../app/groupdialog.ui" line="52"/>
         <source>Edit (Enter)</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar (Enter)</translation>
     </message>
     <message>
         <location filename="../app/groupdialog.ui" line="59"/>
         <source>Remove (Del)</source>
-        <translation type="unfinished"></translation>
+        <translation>Remover (Del)</translation>
     </message>
     <message>
         <location filename="../app/groupdialog.ui" line="70"/>
         <source>&amp;Merge groups...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Unir grupos...</translation>
     </message>
     <message>
         <location filename="../app/groupdialog.ui" line="77"/>
         <source>&amp;Split group...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Dividir grupo...</translation>
     </message>
     <message>
         <location filename="../app/groupdialog.ui" line="86"/>
@@ -416,7 +416,7 @@ Are you want to accept this certificate anyway?</source>
         <location filename="../app/groupdialog.cpp" line="58"/>
         <source>Contacts</source>
         <comment>In group</comment>
-        <translation type="unfinished"></translation>
+        <translation>Contactos</translation>
     </message>
     <message>
         <location filename="../app/groupdialog.cpp" line="114"/>
@@ -441,12 +441,12 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/groupdialog.cpp" line="150"/>
         <source>New group</source>
-        <translation type="unfinished"></translation>
+        <translation>Novo grupo</translation>
     </message>
     <message>
         <location filename="../app/groupdialog.cpp" line="153"/>
         <source>Contacts for move</source>
-        <translation type="unfinished"></translation>
+        <translation>Contactos para mover</translation>
     </message>
 </context>
 <context>
@@ -454,22 +454,22 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/logwindow.ui" line="14"/>
         <source>Log Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Janela de Registos</translation>
     </message>
     <message>
         <location filename="../app/logwindow.ui" line="20"/>
         <source>Summary</source>
-        <translation type="unfinished"></translation>
+        <translation>Resumo</translation>
     </message>
     <message>
         <location filename="../app/logwindow.ui" line="32"/>
         <source>Copy to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Copiar para a área de transferência</translation>
     </message>
     <message>
         <location filename="../app/logwindow.cpp" line="42"/>
         <source>File %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ficheiro %1</translation>
     </message>
     <message>
         <location filename="../app/logwindow.cpp" line="43"/>
@@ -494,17 +494,17 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/mainwindow.ui" line="108"/>
         <source>Add (Ins)</source>
-        <translation type="unfinished"></translation>
+        <translation>Adicionar (Ins)</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="115"/>
         <source>Edit (Enter)</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar (Enter)</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="122"/>
         <source>Remove (Del)</source>
-        <translation type="unfinished"></translation>
+        <translation>Remover (Del)</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="142"/>
@@ -514,125 +514,125 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/mainwindow.ui" line="149"/>
         <source>F3 Compare</source>
-        <translation type="unfinished"></translation>
+        <translation>F3 Comparar</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="156"/>
         <source>F4 Sort</source>
-        <translation type="unfinished"></translation>
+        <translation>F4 Ordenar</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="167"/>
         <source>F5 Copy</source>
-        <translation type="unfinished"></translation>
+        <translation>F5 Copiar</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="174"/>
         <source>F6 Move</source>
-        <translation type="unfinished"></translation>
+        <translation>F6 Mover</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="194"/>
         <source>Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Sair</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="213"/>
         <location filename="../app/mainwindow.ui" line="312"/>
         <location filename="../app/mainwindow.ui" line="344"/>
         <source>&amp;File</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Ficheiro</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="217"/>
         <source>&amp;Open</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Abrir</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="224"/>
         <source>S&amp;ave as</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Guardar como</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="231"/>
         <source>&amp;Recent</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Recentes</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="245"/>
         <source>&amp;Contact</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Contacto</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="270"/>
         <source>&amp;Help</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Ajuda</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="277"/>
         <source>&amp;View</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Ver</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="285"/>
         <source>&amp;List</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Lista</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="315"/>
         <source>Ctrl+O</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+O</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="320"/>
         <location filename="../app/mainwindow.ui" line="352"/>
         <source>&amp;Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Diretoria</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="325"/>
         <source>&amp;Close</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Fechar</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="328"/>
         <source>Ctrl+W</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+W</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="336"/>
         <source>&amp;Save</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Guardar</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="339"/>
         <source>Ctrl+S</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+S</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="347"/>
         <source>Ctrl+Shift+S</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Shift+S</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="357"/>
         <source>E&amp;xit</source>
-        <translation type="unfinished"></translation>
+        <translation>S&amp;air</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="368"/>
         <source>&amp;Two panels</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Dois painéis</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="373"/>
         <source>&amp;Options...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Opções...</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="378"/>
         <source>&amp;Add</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Adicionar</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="381"/>
@@ -642,42 +642,42 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/mainwindow.ui" line="386"/>
         <source>&amp;Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Editar</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="389"/>
         <source>Return</source>
-        <translation type="unfinished"></translation>
+        <translation>Return</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="394"/>
         <source>&amp;Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Remover</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="397"/>
         <source>Del</source>
-        <translation type="unfinished"></translation>
+        <translation>Del</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="402"/>
         <source>&amp;Copy</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Copiar</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="405"/>
         <source>F5</source>
-        <translation type="unfinished"></translation>
+        <translation>F5</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="410"/>
         <source>&amp;Move</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Mover</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="413"/>
         <source>F6</source>
-        <translation type="unfinished"></translation>
+        <translation>F6</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="418"/>
@@ -687,7 +687,7 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/mainwindow.ui" line="421"/>
         <source>F2</source>
-        <translation type="unfinished"></translation>
+        <translation>F2</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="426"/>
@@ -697,32 +697,32 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/mainwindow.ui" line="429"/>
         <source>F3</source>
-        <translation type="unfinished"></translation>
+        <translation>F3</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="437"/>
         <source>&amp;Sort</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Ordenar</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="440"/>
         <source>F4</source>
-        <translation type="unfinished"></translation>
+        <translation>F4</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="445"/>
         <source>&amp;Other panel</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Outro painel</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="448"/>
         <source>Tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Tab</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="453"/>
         <source>&amp;Settings...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Definições...</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="469"/>
@@ -742,7 +742,7 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/mainwindow.ui" line="559"/>
         <source>About &amp;Qt</source>
-        <translation type="unfinished"></translation>
+        <translation>Sobre &amp;Qt</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="564"/>
@@ -752,7 +752,7 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/mainwindow.ui" line="456"/>
         <source>Ctrl+P</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+P</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="461"/>
@@ -762,12 +762,12 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/mainwindow.ui" line="464"/>
         <source>Ctrl+F</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+F</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="472"/>
         <source>Shift+F3</source>
-        <translation type="unfinished"></translation>
+        <translation>Shift+F3</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="477"/>
@@ -792,7 +792,7 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/mainwindow.ui" line="495"/>
         <source>&amp;Join</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Aderir</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="500"/>
@@ -812,27 +812,27 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/mainwindow.ui" line="518"/>
         <source>Ctrl+U</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+U</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="523"/>
         <source>&amp;About</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Sobre</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="533"/>
         <source>S&amp;tatistics</source>
-        <translation type="unfinished"></translation>
+        <translation>Es&amp;tatísticas</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="538"/>
         <source>Re&amp;port</source>
-        <translation type="unfinished"></translation>
+        <translation>Re&amp;portar</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="541"/>
         <source>Ctrl+R</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+R</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="546"/>
@@ -842,22 +842,22 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/mainwindow.ui" line="551"/>
         <source>&amp;Groups...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Grupos...</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="554"/>
         <source>Ctrl+G</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+G</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="589"/>
         <source>Copy text</source>
-        <translation type="unfinished"></translation>
+        <translation>Copiar texto</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="592"/>
         <source>Ctrl+C</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+C</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.cpp" line="169"/>
@@ -908,27 +908,27 @@ Only some fields can this edited in this mode</source>
     <message>
         <location filename="../app/mainwindow.cpp" line="538"/>
         <source> (directory)</source>
-        <translation type="unfinished"></translation>
+        <translation> (diretoria)</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.cpp" line="638"/>
         <source>Records: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Registos: %1</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.cpp" line="643"/>
         <source>Mode: </source>
-        <translation type="unfinished"></translation>
+        <translation>Modo: </translation>
     </message>
     <message>
         <location filename="../app/mainwindow.cpp" line="644"/>
         <source>two panels</source>
-        <translation type="unfinished"></translation>
+        <translation>dois painéis</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.cpp" line="644"/>
         <source>one panel</source>
-        <translation type="unfinished"></translation>
+        <translation>um painel</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.cpp" line="645"/>
@@ -948,7 +948,7 @@ Only some fields can this edited in this mode</source>
     <message>
         <location filename="../app/mainwindow.cpp" line="652"/>
         <source>compare</source>
-        <translation type="unfinished"></translation>
+        <translation>comparar</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.cpp" line="696"/>
@@ -969,12 +969,12 @@ Save changes?</source>
     <message>
         <location filename="../app/mainwindow.cpp" line="868"/>
         <source>Left item</source>
-        <translation type="unfinished"></translation>
+        <translation>Item esquerdo</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.cpp" line="868"/>
         <source>Right item</source>
-        <translation type="unfinished"></translation>
+        <translation>Item direito</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.cpp" line="894"/>
@@ -984,12 +984,12 @@ Save changes?</source>
     <message>
         <location filename="../app/mainwindow.cpp" line="900"/>
         <source>Item 1</source>
-        <translation type="unfinished"></translation>
+        <translation>Item 1</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.cpp" line="900"/>
         <source>Item 2</source>
-        <translation type="unfinished"></translation>
+        <translation>Item 2</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.cpp" line="968"/>
@@ -999,7 +999,7 @@ Save changes?</source>
     <message>
         <location filename="../app/mainwindow.cpp" line="1001"/>
         <source>Statitics</source>
-        <translation type="unfinished"></translation>
+        <translation>Estatísticas</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.cpp" line="1008"/>
@@ -1023,17 +1023,17 @@ Are you want switch column sorting off?</source>
     <message>
         <location filename="../app/multicontactdialog.ui" line="22"/>
         <source>Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Título</translation>
     </message>
     <message>
         <location filename="../app/multicontactdialog.ui" line="32"/>
         <source>Organization</source>
-        <translation type="unfinished"></translation>
+        <translation>Organização</translation>
     </message>
     <message>
         <location filename="../app/multicontactdialog.ui" line="42"/>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation>Descrição</translation>
     </message>
 </context>
 <context>
@@ -1041,7 +1041,7 @@ Are you want switch column sorting off?</source>
     <message>
         <location filename="../app/phonetypedialog.ui" line="14"/>
         <source>Phone type</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipo de telefone</translation>
     </message>
 </context>
 <context>
@@ -1050,18 +1050,18 @@ Are you want switch column sorting off?</source>
         <location filename="../core/contactlist.cpp" line="106"/>
         <location filename="../core/contactlist.cpp" line="979"/>
         <source>Home</source>
-        <translation type="unfinished"></translation>
+        <translation>Casa</translation>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="107"/>
         <source>Message</source>
-        <translation type="unfinished"></translation>
+        <translation>Mensagem</translation>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="108"/>
         <location filename="../core/contactlist.cpp" line="980"/>
         <source>Work</source>
-        <translation type="unfinished"></translation>
+        <translation>Trabalho</translation>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="109"/>
@@ -1074,27 +1074,27 @@ Are you want switch column sorting off?</source>
     <message>
         <location filename="../core/contactlist.cpp" line="110"/>
         <source>Voice</source>
-        <translation type="unfinished"></translation>
+        <translation>Voz</translation>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="111"/>
         <source>Fax</source>
-        <translation type="unfinished"></translation>
+        <translation>Fax</translation>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="112"/>
         <source>Cell</source>
-        <translation type="unfinished"></translation>
+        <translation>Telemóvel</translation>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="113"/>
         <source>Video</source>
-        <translation type="unfinished"></translation>
+        <translation>Vídeo</translation>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="114"/>
         <source>Pager</source>
-        <translation type="unfinished"></translation>
+        <translation>Pager</translation>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="115"/>
@@ -1104,32 +1104,32 @@ Are you want switch column sorting off?</source>
     <message>
         <location filename="../core/contactlist.cpp" line="116"/>
         <source>Modem</source>
-        <translation type="unfinished"></translation>
+        <translation>Modem</translation>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="117"/>
         <source>Car</source>
-        <translation type="unfinished"></translation>
+        <translation>Carro</translation>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="118"/>
         <source>ISDN</source>
-        <translation type="unfinished"></translation>
+        <translation>ISDN</translation>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="119"/>
         <source>PCS</source>
-        <translation type="unfinished"></translation>
+        <translation>PCS</translation>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="156"/>
         <source>Internet</source>
-        <translation type="unfinished"></translation>
+        <translation>Internet</translation>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="157"/>
         <source>X.400</source>
-        <translation type="unfinished"></translation>
+        <translation>X.400</translation>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="407"/>
@@ -1162,22 +1162,22 @@ phone language %5</source>
     <message>
         <location filename="../core/contactlist.cpp" line="982"/>
         <source>Domestic</source>
-        <translation type="unfinished"></translation>
+        <translation>Doméstico</translation>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="983"/>
         <source>International</source>
-        <translation type="unfinished"></translation>
+        <translation>Internacional</translation>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="984"/>
         <source>Postal</source>
-        <translation type="unfinished"></translation>
+        <translation>Postal</translation>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="985"/>
         <source>Parcel</source>
-        <translation type="unfinished"></translation>
+        <translation>Parcela</translation>
     </message>
     <message>
         <location filename="../core/formats/common/vcarddata.cpp" line="70"/>
