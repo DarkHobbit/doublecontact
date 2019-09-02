@@ -142,7 +142,7 @@
            <item>
             <widget class="QPushButton" name="btnAdd">
              <property name="text">
-              <string>Add...</string>
+              <string>Add…</string>
              </property>
             </widget>
            </item>
@@ -365,7 +365,7 @@
        <item>
         <widget class="QPushButton" name="btnAddAddress">
          <property name="text">
-          <string>Add...</string>
+          <string>Add…</string>
          </property>
         </widget>
        </item>
@@ -463,7 +463,7 @@
          <item>
           <widget class="QPushButton" name="btnAddIM">
            <property name="text">
-            <string>Add...</string>
+            <string>Add…</string>
            </property>
           </widget>
          </item>
