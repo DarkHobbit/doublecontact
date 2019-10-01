@@ -23,6 +23,8 @@
 #include "../common/vcarddata.h"
 
 #define NBF_VCARD_PATH QString("predefhiddenfolder/backup/WIP/32/contacts")
+#define NBF_SMS_PATH QString("predefmessages")
+#define S_ERR_SET_ARCH_ITEM QObject::tr("Can't set %1 item as current in archive")
 #define S_ERR_OPEN_ARCH_ITEM QObject::tr("Can't open %1 item in archive")
 
 NBFFile::NBFFile()
@@ -69,7 +71,7 @@ bool NBFFile::importRecords(const QString &url, ContactList &list, bool append)
     foreach (const QString& itemID, nbd.entryList()) {
         // DON'T replace / to QDir::separator(), it may not work on Windows!
         if (!nbf.setCurrentFile(NBF_VCARD_PATH + "/" + itemID)) {
-            _errors << QObject::tr("Can't set %1 item as current in archive").arg(itemID);
+            _errors << S_ERR_SET_ARCH_ITEM.arg(itemID);
             continue;
         }
         // Open contact pseudo-file
@@ -85,8 +87,36 @@ bool NBFFile::importRecords(const QString &url, ContactList &list, bool append)
         vcf.close();
         // Append one contact to list!
         VCardData::importRecords(content, list, true, _errors);
+        list.last().originalFormat = "NBF";
     }
-    // TODO SMS, calls
+    // SMS
+    QuaZipDir nbds(&nbf);
+    if (nbds.cd(NBF_SMS_PATH)) {
+        QStringList subDirs = nbds.entryList();
+        foreach (const QString& dirID, subDirs) {
+            if (dirID.endsWith("/")) // entryList() contains both "5" and "5/" dirnames
+                continue; // TODO check on Linux
+            // DON'T replace / to QDir::separator(), it may not work on Windows!
+            QuaZipDir nbdss(&nbf);
+            nbdss.cd(NBF_SMS_PATH + "/" + dirID);
+            foreach (const QString& itemID, nbdss.entryList()) {
+                if (!nbf.setCurrentFile(NBF_SMS_PATH + "/" + dirID+ "/" + itemID)) {
+                    _errors << S_ERR_SET_ARCH_ITEM.arg(dirID+ "/" + itemID);
+                    continue;
+                }
+                QuaZipFile smsf(&nbf);
+                if (!smsf.open(QIODevice::ReadOnly)) {
+                    _errors << S_ERR_OPEN_ARCH_ITEM.arg(dirID+ "/" + itemID);
+                    continue;
+                }
+                BinarySMS sms;
+                sms.name = itemID;
+                sms.content = smsf.read(smsf.size());
+                list.extra.binarySMS << sms;
+            }
+        }
+    }
+    // TODO calls
     nbf.close();
     return true;
 }

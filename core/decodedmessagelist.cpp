@@ -14,6 +14,8 @@
 #include <QFile>
 #include <QTextStream>
 #include "decodedmessagelist.h"
+#include "formats/common/nokiadata.h"
+#include "formats/common/pdu.h"
 #include "formats/common/vmessagedata.h"
 
 void DecodedMessage::clear()
@@ -77,19 +79,53 @@ bool DecodedMessageList::toCSV(const QString &path)
     return true;
 }
 
+#include <iostream>
 DecodedMessageList DecodedMessageList::fromContactList(const ContactList &list, QStringList &errors)
 {
     DecodedMessageList messages;
+    // If will be more formats with SMS support,
+    // add SMS decoding method in IFormat interface class
+    // instead this ugly select.
+    // But currently only NBU, NBF and MPB are actual.
     if (!list.extra.SMS.isEmpty()) {
-        VMessageData vmg;
-        foreach(const QString& s, list.extra.SMS) {
-            QStringList ss = s.split("\n");
-            vmg.importRecords(ss, messages, true, errors);
+        if (list.extra.smsFormat==VMSG) {
+            VMessageData vmg;
+            foreach(const QString& s, list.extra.SMS) {
+                QStringList ss = s.split("\n");
+                vmg.importRecords(ss, messages, true, errors);
+            }
         }
+        else if (list.extra.smsFormat==PDU) {
+            foreach(const QString& s, list.extra.SMS) {
+                QStringList ss = s.split(",");
+                if (ss.length()>1) {
+                    QByteArray body = QByteArray::fromHex(ss[1].toAscii());
+                    int MsgType;
+                    DecodedMessage msg;
+                    msg.clear();
+                    QDataStream ds(body);
+                    PDU::parseMessage(ds, msg, 1, MsgType);
+                    messages << msg;
+                    // Todo field 0
+                    if (ss.length()>2 && !messages.last().when.isValid())
+                        messages.last().when = QDateTime::fromString(ss[2], "ddMMyyyyhhmmssv");
+                }
+                else
+                    errors << QObject::tr("MPB message body missing");
+            }
+            // "MMS were never supported in the MPE and there will be no support in the future because the needed API for that are missing in the Android system".
+            // https://www.fjsoft.at/forum/viewtopic.php?t=29865
+        }
+        else
+            errors << QObject::tr("Unknown messages format");
     }
-    else if (!list.extra.SMSBinary.isEmpty()) {
-        // TODO
+    if (messages.isEmpty() && !list.extra.binarySMS.isEmpty()) {
+        foreach(const BinarySMS& sms, list.extra.binarySMS)
+            NokiaData::ReadPredefBinMessage(sms.name, sms.content, messages, true, errors);
     }
+    std::cout << "Found text SMS " << list.extra.SMS.count()
+                 << ", binary " << list.extra.binarySMS.count() << std::endl;
+    std::cout << "Recognized " << messages.count() << " messages" << std::endl;
     return messages;
 }
 

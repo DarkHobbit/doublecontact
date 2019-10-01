@@ -159,7 +159,7 @@ struct ContactItem {
     QList<Messenger> ims;
     // Format internals
     QString id; // optional record unique id (udx Sequence, UID, vcf X-IRMC-LUID, etc)
-    QString idType; // tag name
+    QString idType; // tag name    
     QString originalFormat;
     QString version, subVersion;
     TagList otherTags;   // Known but un-editing tags
@@ -206,8 +206,12 @@ struct CallInfo {
 
 enum SMSFormat {
     PDU,
-    VMSG,
-    NokiaBinary
+    VMSG
+};
+
+struct BinarySMS { //primarilly for Nokia Prefdef messages
+    QString name;
+    QByteArray content;
 };
 
 struct ExtraData {
@@ -222,7 +226,7 @@ struct ExtraData {
     // NBU specific
     QString imei, firmware, phoneLang;
     // NBU + NBF
-    QStringList SMSBinary;
+    QList<BinarySMS> binarySMS;
     void clear();
 };
 

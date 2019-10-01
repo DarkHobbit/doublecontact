@@ -422,6 +422,7 @@ bool NBUFile::parseFolderVcard(QDataStream &stream, ContactList &list, const QSt
         QStringList content = vCard.split("\x0d\n");
         VCardData::importRecords(content, list, true, _errors);
         delete raw;
+        list.last().originalFormat = "NBU";
     }
     return true;
 }
@@ -567,8 +568,16 @@ std::cout << "tst=0x" << std::hex << tst << std::dec << std::endl;
                           << " file " << fileName.toLocal8Bit().data()
                           << " size " << size << std::endl;
                 file.seek(file.pos()+2);
-                // TODO read file here
-                file.seek(file.pos()+size); //===>
+                if (folderName.contains("predefmessages")) {
+                    BinarySMS sms;
+                    sms.name = fileName;
+                    sms.content = file.read(size);
+                    list.extra.binarySMS << sms;
+                }
+                else {
+                    // TODO read file here
+                    file.seek(file.pos()+size); //===>
+                }
             }
 
 
@@ -704,7 +713,7 @@ void NBUFile::parseContacts(QDataStream &stream)
                 break;
             default:
                 s = this->getString16c(stream);
-                std::cout << "UNKNOWN: " << s.toLocal8Bit().data() << std::endl;
+                std::cout << "UNKNOWN: " << x << "/" << s.toLocal8Bit().data() << std::endl;
                 break;
             }
         }
