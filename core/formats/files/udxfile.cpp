@@ -77,7 +77,7 @@ bool UDXFile::importRecords(const QString &url, ContactList &list, bool append)
     }
     QString charSet = recInfo.firstChildElement("Encoding").text();
     if (charSet.isEmpty()) {
-        _errors << QObject::tr("Warning: codepage not found, trying use UTF-8...");
+        _errors << QObject::tr("Warning: codepage not found, trying use UTF-8…");
         charSet = "UTF-8";
     }
     QString udxVer = recInfo.firstChildElement("UdxVersion").text();
