@@ -301,6 +301,9 @@
              <property name="alignment">
               <set>Qt::AlignCenter</set>
              </property>
+             <property name="wordWrap">
+              <bool>true</bool>
+             </property>
             </widget>
            </item>
            <item row="3" column="0">
@@ -355,8 +358,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>748</width>
-            <height>404</height>
+            <width>764</width>
+            <height>397</height>
            </rect>
           </property>
          </widget>
