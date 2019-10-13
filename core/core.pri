@@ -78,10 +78,16 @@ SOURCES	+= \
 
 contains(DEFINES, WITH_NETWORK) {
     include(../3rdparty/qwebdavlib/qwebdavlib/qwebdavlib.pri)
-    HEADERS	+= $$PWD/formats/network/carddavformat.h
-    SOURCES	+= $$PWD/formats/network/carddavformat.cpp
+    INCLUDEPATH += ../3rdparty/qwebdavlib/qwebdavlib
+    HEADERS += \
+        $$PWD/formats/network/carddavformat.h \
+        $$PWD/formats/network/imageloader.h
+    SOURCES += \
+        $$PWD/formats/network/carddavformat.cpp \
+        $$PWD/formats/network/imageloader.cpp
 }
 
+# TODO move here pdu and nokiadata
 !contains(DEFINES, USE_GPL2) {
     HEADERS	+= $$PWD/formats/files/nbufile.h
     SOURCES	+= $$PWD/formats/files/nbufile.cpp

@@ -61,6 +61,7 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
     ContactItem item;
     if (!append)
         list.clear();
+    list.photoURLCount = 0;
     QString visName = "";
     QuotedPrintable::mergeLinesets(lines);
     // Logging
@@ -209,6 +210,7 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                 if (typeVal.startsWith("URI", Qt::CaseInsensitive)) { // URL according vCard 3.0
                     item.photo.pType = "URL";
                     item.photo.url = decodeValue(vValue[0], errors);
+                    list.photoURLCount++;
                 }
                 else if (!types.isEmpty()) { // Binary image file
                     item.photo.pType = types[0];
@@ -233,6 +235,7 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                         item.photo.url += lines[line+1].mid(1);
                         line++;
                     }
+                    list.photoURLCount++;
                 }
                 else
                     errors << QObject::tr("Unknown photo kind at line %1: %2").arg(line+1).arg(visName);

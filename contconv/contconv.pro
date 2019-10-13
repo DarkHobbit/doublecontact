@@ -1,25 +1,27 @@
-#-------------------------------------------------
-#
-# Project created by QtCreator 2016-10-30T20:09:54
-#
-#-------------------------------------------------
+            #-------------------------------------------------
+    #
+    # Project created by QtCreator 2016-10-30T20:09:54
+    #
+    #-------------------------------------------------
 
-QT       += core
-QT       -= gui
-include(../core/core.pri)
+    QT       += core
+    QT       -= gui
+    DEFINES -= WITH_NETWORK
+    include(../core/core.pri)
 
-TARGET = contconv
-CONFIG   += console
-CONFIG   -= app_bundle
-
-TEMPLATE = app
+    TARGET = contconv
+    CONFIG   += console
+    CONFIG   -= app_bundle
 
 
-SOURCES += main.cpp \
-    convertor.cpp \
-    consoleasyncui.cpp
+    TEMPLATE = app
 
-HEADERS += \
-    convertor.h \
-    consoleasyncui.h
+
+    SOURCES += main.cpp \
+        convertor.cpp \
+        consoleasyncui.cpp
+
+    HEADERS += \
+        convertor.h \
+        consoleasyncui.h
 

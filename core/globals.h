@@ -127,6 +127,8 @@ enum ContactColumn {
     QObject::tr("Warning: contact %1 has %2, not supported in this format.\nData will be lost")
 #define S_ERR_EXTRA_TAG \
     QObject::tr("%1 %2 will be lost at contact %3")
+#define S_ERR_NETWORK_SUPPORT \
+    QObject::tr("Error: Program built without network support. Use WITH_NETWORK define, if you build program from sources.\n")
 #define S_REMOVE_CONFIRM QObject::tr("Are You really want to delete selected items?")
 
 // Visible columns headers
