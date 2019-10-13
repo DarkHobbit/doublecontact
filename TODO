@@ -1,15 +1,12 @@
 This file contains English and Russian (CP1251) issues. Sorry for this mixing, it's beta.
 You can contact me at pub@zvyozdochkin.ru.
 
-0.2.0
-* NBU - other sections???
+0.3.0:
 * switch off warning empty types on load (optional). For inner vcard in vmessage do it always.
 * after quickview and numberless lines add screenshot (m.b. to 0.3.0)
 * Siemens CSV?
 * linux - appimage???
 * OS X - static build
-
-0.3.0:
 * ya.money
 * Nextcloud
 * google exchange
@@ -28,8 +25,7 @@ You can contact me at pub@zvyozdochkin.ru.
 * add vCard 2.1 and vCard 4.0 example in testdata
 * coverity scan: drop moc_* errors
 * check quoted-printable koi8 data read/write, add this example in testdata
-* MPB: extra data view (SMS, calls...) need write core/formats/common/pdudata.*
-* NBU: extra data view (SMS)
+* MPB/NBU: extra data view (SMS, calls...)
 * MPB: maybe, names in call list must be swapped (Name 2, Name 1)
 * probably, write LABEL= on nonstandard types (at least, in mpb); now simply= (label removed)
 * probably, add more countries for phone i18n (if users will ask)
