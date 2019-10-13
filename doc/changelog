@@ -71,8 +71,11 @@ Bugfix release:
 * Fixed: incorrect parsing of fields with semicolons: "ORG:Company\;Subsidiary" was read as "Company\" with backslash in the end
 * Network support removed from binary builds by default (use conditional name WITH_NETWORK to force it). Must be restored in 0.3.0
 
-CURRENT
+0.2.1 [2019-10-13]
 * SMS from NBF, NBU and MPB files converts to CSV in contconv
 * Last colunm now stretched
 * Added debug save mode while VCF reading
-* Added translations: Portuguese
+* Fixed: crash on loading of Google Contacts VCFs with PHOTO URLs
+* Added translations: Portuguese (incomplete)
+
+CURRENT

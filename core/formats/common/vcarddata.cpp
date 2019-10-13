@@ -61,6 +61,7 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
     ContactItem item;
     if (!append)
         list.clear();
+    list.photoURLCount = 0;
     QString visName = "";
     QuotedPrintable::mergeLinesets(lines);
     // Logging
@@ -206,11 +207,12 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
             else if ((tag=="ANNIVERSARY") || (tag=="X-ANNIVERSARY"))
                 importDate(item.anniversary, decodeValue(vValue[0], errors), errors, item.makeGenericName());
             else if (tag=="PHOTO") {
-                if (typeVal.startsWith("URI", Qt::CaseInsensitive)) {
+                if (typeVal.startsWith("URI", Qt::CaseInsensitive)) { // URL according vCard 3.0
                     item.photo.pType = "URL";
                     item.photo.url = decodeValue(vValue[0], errors);
+                    list.photoURLCount++;
                 }
-                else {
+                else if (!types.isEmpty()) { // Binary image file
                     item.photo.pType = types[0];
                     if (item.photo.pType.toUpper()!="JPEG" && item.photo.pType.toUpper()!="PNG")
                         errors << QObject::tr("Unsupported photo type at line %1: %2%3").arg(line+1).arg(typeVal).arg(visName);
@@ -226,6 +228,17 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                     else
                         errors << QObject::tr("Unknown encoding type at line %1: %2%3").arg(line+1).arg(encoding).arg(visName);
                 }
+                else if (!vValue.isEmpty() && vValue[0].contains("http", Qt::CaseInsensitive)) { // Google short URL
+                    item.photo.pType = "URL";
+                    item.photo.url = vValue[0];
+                    while (line<lines.count()-1 && !lines[line+1].trimmed().isEmpty() && lines[line+1].left(1)==" ") {
+                        item.photo.url += lines[line+1].mid(1);
+                        line++;
+                    }
+                    list.photoURLCount++;
+                }
+                else
+                    errors << QObject::tr("Unknown photo kind at line %1: %2").arg(line+1).arg(visName);
             }
             else if (tag=="CATEGORIES" || tag=="X-CATEGORIES") // X- - some Nokia Suite versions
                 foreach(const QString& val, vValue)

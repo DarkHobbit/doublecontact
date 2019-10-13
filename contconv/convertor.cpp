@@ -27,6 +27,7 @@
 #include "formats/files/vcffile.h"
 #ifdef WITH_NETWORK
 #include "formats/network/carddavformat.h"
+#include "formats/network/imageloader.h"
 #endif
 
 Convertor::Convertor(int &argc, char **argv)
@@ -270,7 +271,7 @@ int Convertor::start()
 #ifdef WITH_NETWORK
         ift = ftNetwork;
 #else
-        out << tr("Error: Program built without network support. Use WITH_NETWORK define, if you build program from sources.\n");
+        out << S_ERR_NETWORK_SUPPORT;
         return 25;
 #endif
     }
@@ -325,6 +326,15 @@ int Convertor::start()
     if (infoMode) {
         out << "\n" << items.statistics() << "\n";
         return 0;
+    }
+    // Load images, if possible
+    if (false) { // TODO add option
+#ifdef WITH_NETWORK
+        ImageLoader imgLdr;
+#else
+        out << S_ERR_NETWORK_SUPPORT;
+        return 25;
+#endif
     }
     // Conversions
     for (int i=0; i<items.count(); i++) {

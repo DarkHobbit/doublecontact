@@ -1,7 +1,7 @@
 Rem This script requires Inno Setup
 Rem Change paths to build, MinGW and Inno Setup!
 
-set PKG_DIR=..\..\doublecontact_0.2.0_win32
+set PKG_DIR=..\..\doublecontact_0.2.1_win32
 
 call ..\make-bin-image.bat ..\.. ..\..\..\build-all-Qt_4_8_6_st-Release C:\Qt\2009.05\mingw C:\Qt\4.8.6.st %PKG_DIR%
 copy doublecontact.iss %PKG_DIR%\doublecontact.iss
