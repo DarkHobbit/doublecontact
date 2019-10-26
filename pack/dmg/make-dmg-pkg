@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Example: make-dmg-pkg 0.2.1
+DC_VER=$1
+
 BUILD_PATH=../../../build-all-desktop_Qt_5_5_1_clang_64bit-Release
 QT_PATH=/Users/mac/Qt5.5.1/5.5/clang_64
 
@@ -9,3 +12,4 @@ cp ../../translations/*.qm ${BUNDLE_MAC_PATH}/
 cp ../../translations/iso639-1.utf8 ${BUNDLE_MAC_PATH}/
 cp ${BUILD_PATH}/contconv/contconv ${BUNDLE_MAC_PATH}/
 ${QT_PATH}/bin/macdeployqt ${BUILD_PATH}/app/doublecontact.app -dmg
+mv ${BUILD_PATH}/app/doublecontact.dmg ${BUILD_PATH}/app/doublecontact-${DC_VER}.dmg
