@@ -2017,7 +2017,7 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="32"/>
         <source>Read</source>
-        <translation type="unfinished">Читать</translation>
+        <translation>Читать</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="33"/>
