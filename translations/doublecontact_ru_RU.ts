@@ -943,7 +943,7 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/mainwindow.ui" line="592"/>
         <source>Ctrl+C</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+C</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.cpp" line="239"/>
@@ -1484,37 +1484,37 @@ line %3, col %4
     <message>
         <location filename="../core/globals.h" line="53"/>
         <source>Error</source>
-        <translation type="unfinished">Ошибка</translation>
+        <translation>Ошибка</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="54"/>
         <source>Warning</source>
-        <translation type="unfinished">Предупреждение</translation>
+        <translation>Предупреждение</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="55"/>
         <source>Confirmation</source>
-        <translation type="unfinished">Подтверждение</translation>
+        <translation>Подтверждение</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="56"/>
         <source>Information</source>
-        <translation type="unfinished">Информация</translation>
+        <translation>Информация</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="58"/>
         <source>Address book</source>
-        <translation type="unfinished">Адресная книга</translation>
+        <translation>Адресная книга</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="59"/>
         <source>New contact list</source>
-        <translation type="unfinished">Новая адресная книга</translation>
+        <translation>Новая адресная книга</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="125"/>
         <source>This format is read only</source>
-        <translation type="unfinished">Этот формат поддерживается только при чтении</translation>
+        <translation type="unfinished">Этот формат поддерживается только для чтения</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="61"/>
@@ -1534,7 +1534,7 @@ line %3, col %4
     <message>
         <location filename="../core/globals.h" line="63"/>
         <source>Select CSV profile</source>
-        <translation type="unfinished">Выберите профиль CSV</translation>
+        <translation>Выберите профиль CSV</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="64"/>
@@ -1976,12 +1976,12 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../core/formats/files/nbufile.cpp" line="24"/>
         <source>Unsupported NBU file section type: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Неподдерживаемый тип секции файла NBU: %1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/nbufile.cpp" line="25"/>
         <source>Unsupported NBU file folder type: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Неподдерживаемый тип папки файла NBU: %1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/nbufile.cpp" line="154"/>
@@ -2002,7 +2002,7 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../core/formats/files/nbufile.cpp" line="265"/>
         <source>Invalid index: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Недопустимый индекс: %1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/nbufile.cpp" line="414"/>
@@ -2017,7 +2017,7 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="32"/>
         <source>Read</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Читать</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="33"/>
@@ -2027,32 +2027,32 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="34"/>
         <source>Unk.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Неиз.</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="36"/>
         <source>Inbox</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Входящие</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="37"/>
         <source>Outbox</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Исходящие</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="38"/>
         <source>Sentbox</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Отправленные</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="39"/>
         <source>Draft</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Черновики</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="40"/>
         <source>Trash</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Корзина</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="49"/>
@@ -2063,17 +2063,17 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="54"/>
         <source>Empty</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Пусто</translation>
     </message>
     <message>
         <location filename="../core/formats/common/vmessagedata.cpp" line="16"/>
         <source>Unknown vMessage tag: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Неизвестный тег vMessage: %1</translation>
     </message>
     <message>
         <location filename="../core/formats/common/vmessagedata.cpp" line="17"/>
         <source>Unknown vMessage value: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Неизвестное значение vMessage: %1</translation>
     </message>
     <message>
         <location filename="../core/formats/common/vmessagedata.cpp" line="114"/>
