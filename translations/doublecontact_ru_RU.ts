@@ -76,7 +76,7 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../core/formats/network/carddavformat.cpp" line="177"/>
         <source>Strange vCard item: </source>
-        <translation>Странная запись CardDAV:</translation>
+        <translation>Странная запись CardDAV: </translation>
     </message>
 </context>
 <context>
@@ -339,7 +339,7 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/contactdialog.ui" line="537"/>
         <source>Format version:</source>
-        <translation>Версия формата</translation>
+        <translation>Версия формата:</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="544"/>
@@ -349,7 +349,7 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/contactdialog.ui" line="565"/>
         <source>Original format:</source>
-        <translation>Исходный формат</translation>
+        <translation>Исходный формат:</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="582"/>
