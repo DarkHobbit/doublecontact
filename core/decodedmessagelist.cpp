@@ -99,7 +99,7 @@ DecodedMessageList DecodedMessageList::fromContactList(const ContactList &list, 
             foreach(const QString& s, list.extra.SMS) {
                 QStringList ss = s.split(",");
                 if (ss.length()>1) {
-                    QByteArray body = QByteArray::fromHex(ss[1].toAscii());
+                    QByteArray body = QByteArray::fromHex(ss[1].toLatin1());
                     int MsgType;
                     DecodedMessage msg;
                     msg.clear();

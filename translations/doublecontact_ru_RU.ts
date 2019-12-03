@@ -76,7 +76,7 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../core/formats/network/carddavformat.cpp" line="177"/>
         <source>Strange vCard item: </source>
-        <translation>Странная запись CardDAV:</translation>
+        <translation>Странная запись CardDAV: </translation>
     </message>
 </context>
 <context>
@@ -339,7 +339,7 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/contactdialog.ui" line="537"/>
         <source>Format version:</source>
-        <translation>Версия формата</translation>
+        <translation>Версия формата:</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="544"/>
@@ -349,7 +349,7 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/contactdialog.ui" line="565"/>
         <source>Original format:</source>
-        <translation>Исходный формат</translation>
+        <translation>Исходный формат:</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="582"/>
@@ -943,7 +943,7 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/mainwindow.ui" line="592"/>
         <source>Ctrl+C</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+C</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.cpp" line="239"/>
@@ -1032,12 +1032,12 @@ Only some fields can this edited in this mode</source>
     <message>
         <location filename="../app/mainwindow.cpp" line="645"/>
         <source>sorted</source>
-        <translation>сорт.</translation>
+        <translation>отсортировано</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.cpp" line="645"/>
         <source>not sorted</source>
-        <translation>не сорт.</translation>
+        <translation>не сортировано</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.cpp" line="648"/>
@@ -1360,7 +1360,7 @@ IMEI %3
     <message>
         <location filename="../core/formats/common/vcarddata.cpp" line="527"/>
         <source>Invalid datetime: </source>
-        <translation>Неправильная дата/время</translation>
+        <translation>Неправильная дата/время: </translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="60"/>
@@ -1484,42 +1484,42 @@ line %3, col %4
     <message>
         <location filename="../core/globals.h" line="53"/>
         <source>Error</source>
-        <translation type="unfinished">Ошибка</translation>
+        <translation>Ошибка</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="54"/>
         <source>Warning</source>
-        <translation type="unfinished">Предупреждение</translation>
+        <translation>Предупреждение</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="55"/>
         <source>Confirmation</source>
-        <translation type="unfinished">Подтверждение</translation>
+        <translation>Подтверждение</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="56"/>
         <source>Information</source>
-        <translation type="unfinished">Информация</translation>
+        <translation>Информация</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="58"/>
         <source>Address book</source>
-        <translation type="unfinished">Адресная книга</translation>
+        <translation>Адресная книга</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="59"/>
         <source>New contact list</source>
-        <translation type="unfinished">Новая адресная книга</translation>
+        <translation>Новая адресная книга</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="125"/>
         <source>This format is read only</source>
-        <translation type="unfinished">Этот формат поддерживается только при чтении</translation>
+        <translation>Этот формат поддерживается только для чтения</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="61"/>
         <source>Select country rule</source>
-        <translation type="unfinished">Выберите правило для страны</translation>
+        <translation>Выберите правило для страны</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="60"/>
@@ -1534,62 +1534,62 @@ line %3, col %4
     <message>
         <location filename="../core/globals.h" line="63"/>
         <source>Select CSV profile</source>
-        <translation type="unfinished">Выберите профиль CSV</translation>
+        <translation>Выберите профиль CSV</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="64"/>
         <source>Generic profile</source>
-        <translation type="unfinished">Универсальный профиль</translation>
+        <translation>Общий профиль</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="66"/>
         <source>mixed...</source>
-        <translation type="unfinished">составной...</translation>
+        <translation>составной...</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="68"/>
         <source>Firstname</source>
-        <translation type="unfinished">Имя</translation>
+        <translation>Имя</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="69"/>
         <source>Lastname</source>
-        <translation type="unfinished">Фамилия</translation>
+        <translation>Фамилия</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="70"/>
         <source>Middlename</source>
-        <translation type="unfinished">Отчество</translation>
+        <translation>Отчество</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="71"/>
         <source>Prefixes</source>
-        <translation type="unfinished">Приставки</translation>
+        <translation>Приставки</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="72"/>
         <source>Suffixes</source>
-        <translation type="unfinished">Суффиксы</translation>
+        <translation>Суффиксы</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="74"/>
         <source>Full name</source>
-        <translation type="unfinished">Полное имя</translation>
+        <translation>Полное имя</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="75"/>
         <source>Generic name</source>
-        <translation type="unfinished">Универсальное имя</translation>
+        <translation>Родовое имя</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="76"/>
         <source>Description</source>
-        <translation type="unfinished">Описание</translation>
+        <translation>Описание</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="77"/>
         <source>Phone</source>
-        <translation type="unfinished">Телефон</translation>
+        <translation>Телефон</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="78"/>
@@ -1599,77 +1599,77 @@ line %3, col %4
     <message>
         <location filename="../core/globals.h" line="79"/>
         <source>Home phone</source>
-        <translation>Дом. тел.</translation>
+        <translation>Домашний телефон</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="80"/>
         <source>Work phone</source>
-        <translation>Раб. тел.</translation>
+        <translation>Рабочий телефон</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="81"/>
         <source>Cell phone</source>
-        <translation>Моб. тел.</translation>
+        <translation>Мобильный телефон</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="82"/>
         <source>Email</source>
-        <translation type="unfinished">Электропочта</translation>
+        <translation>Электронная почта</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="83"/>
         <source>Birthday</source>
-        <translation type="unfinished">День рождения</translation>
+        <translation>День рождения</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="84"/>
         <source>Anniversary</source>
-        <translation type="unfinished">Годовщина</translation>
+        <translation>Юбилей</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="85"/>
         <source>Photo</source>
-        <translation type="unfinished">Фото</translation>
+        <translation>Фото</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="86"/>
         <source>Job title</source>
-        <translation type="unfinished">Должность</translation>
+        <translation>Должность</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="87"/>
         <source>Organization</source>
-        <translation type="unfinished">Организация</translation>
+        <translation>Организация</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="88"/>
         <source>Address</source>
-        <translation type="unfinished">Адрес</translation>
+        <translation>Адрес</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="89"/>
         <source>NickName</source>
-        <translation type="unfinished">Псевдоним</translation>
+        <translation>Псевдоним</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="90"/>
         <source>URL</source>
-        <translation type="unfinished">Сайт</translation>
+        <translation>Сайт</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="92"/>
         <source>Jabber</source>
-        <translation type="unfinished">Jabber</translation>
+        <translation>Jabber</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="93"/>
         <source>ICQ</source>
-        <translation type="unfinished">ICQ</translation>
+        <translation>ICQ</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="94"/>
         <source>Skype</source>
-        <translation type="unfinished">Skype</translation>
+        <translation>Skype</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="95"/>
@@ -1679,115 +1679,115 @@ line %3, col %4
     <message>
         <location filename="../core/globals.h" line="97"/>
         <source>Has phone</source>
-        <translation type="unfinished">Есть телефон</translation>
+        <translation>Есть телефон</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="98"/>
         <source>Has email</source>
-        <translation type="unfinished">Есть почта</translation>
+        <translation>Есть электронная почта</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="99"/>
         <source>Has birthday</source>
-        <translation type="unfinished">Есть день рождения</translation>
+        <translation>Есть день рождения</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="100"/>
         <source>Has photo</source>
-        <translation type="unfinished">Есть фото</translation>
+        <translation>Есть фото</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="101"/>
         <source>Some phones</source>
-        <translation type="unfinished">Много телефонов</translation>
+        <translation>Много телефонов</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="102"/>
         <source>Some emails</source>
-        <translation type="unfinished">Много ящиков</translation>
+        <translation>Много электронной почты</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="104"/>
         <source>P.o. box</source>
-        <translation type="unfinished">П/я</translation>
+        <translation>Почтовый ящик</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="105"/>
         <source>Ext.addr.</source>
-        <translation type="unfinished">Расш.адрес</translation>
+        <translation>Рас.адрес</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="106"/>
         <source>Street</source>
-        <translation type="unfinished">Улица</translation>
+        <translation>Улица</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="107"/>
         <source>City/Locality</source>
-        <translation type="unfinished">Населённый пункт</translation>
+        <translation>Населённый пункт</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="108"/>
         <source>Region</source>
-        <translation type="unfinished">Регион</translation>
+        <translation>Регион</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="109"/>
         <source>Postal code</source>
-        <translation type="unfinished">Индекс</translation>
+        <translation>Почтовый индекс</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="110"/>
         <source>Country</source>
-        <translation type="unfinished">Страна</translation>
+        <translation>Страна</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="112"/>
         <source>[Unknown photo format]</source>
-        <translation type="unfinished">[Неизвестный формат фото]</translation>
+        <translation>[Неизвестный формат фото]</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="113"/>
         <source>Load image</source>
-        <translation type="unfinished">Загрузить картинку</translation>
+        <translation>Загрузить картинку</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="114"/>
         <source>Save image</source>
-        <translation type="unfinished">Сохранить картинку</translation>
+        <translation>Сохранить картинку</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="115"/>
         <source>Set URL</source>
-        <translation type="unfinished">Задать адрес</translation>
+        <translation>Задать адрес</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="116"/>
         <source>Remove photo</source>
-        <translation type="unfinished">Удалить фото</translation>
+        <translation>Удалить фото</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="118"/>
         <source>All supported files (%1)</source>
-        <translation type="unfinished">Все поддерживаемые (%1)</translation>
+        <translation>Все поддерживаемые файлы (%1)</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="119"/>
         <source>All files (*.*)</source>
-        <translation type="unfinished">Все файлы (*.*)</translation>
+        <translation>Все файлы (*.*)</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="121"/>
         <source>Can&apos;t read file
 %1</source>
-        <translation type="unfinished">Не могу прочесть файл
+        <translation>Не могу прочесть файл
 %1</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="122"/>
         <source>Can&apos;t write file
 %1</source>
-        <translation type="unfinished">Не могу записать файл
+        <translation>Не могу записать файл
 %1</translation>
     </message>
     <message>
@@ -1799,13 +1799,13 @@ line %3, col %4
     <message>
         <location filename="../core/globals.h" line="124"/>
         <source>Record not selected</source>
-        <translation type="unfinished">Сперва выберите запись</translation>
+        <translation>Запись не выбрана</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="127"/>
         <source>Warning: contact %1 has %2, not supported in this format.
 Data will be lost</source>
-        <translation type="unfinished">Предупреждение: у контакта %1 есть %2, не поддерживается в этом формате.
+        <translation>Предупреждение: у контакта %1 есть %2, не поддерживаемая в этом формате.
 Данные будут потеряны</translation>
     </message>
     <message>
@@ -1816,7 +1816,7 @@ Data will be lost</source>
     <message>
         <location filename="../core/globals.h" line="130"/>
         <source>Are You really want to delete selected items?</source>
-        <translation type="unfinished">Вы действительно хотите удалить выбранные записи?</translation>
+        <translation>Вы действительно хотите удалить выбранные элементы?</translation>
     </message>
     <message>
         <location filename="../core/formats/files/vcfdirectory.cpp" line="35"/>
@@ -1842,7 +1842,7 @@ Data will be lost</source>
     <message>
         <location filename="../core/formats/files/mpbfile.cpp" line="92"/>
         <source>Unsupported MPB section: </source>
-        <translation>Неподдерживаемая секция MPB</translation>
+        <translation>Неподдерживаемая секция MPB: </translation>
     </message>
     <message>
         <location filename="../core/formats/files/mpbfile.cpp" line="102"/>
@@ -1893,7 +1893,8 @@ Data will be lost</source>
         <location filename="../core/formats/profiles/genericcsvprofile.cpp" line="61"/>
         <source>Row length (%1) is not equal header length (%2). Possibly, incorrect CSV. 
 %3</source>
-        <translation>Количество столбцов ячейки (%1) и заголовка (%2) не совпадают. Возможно, CSV некорректен.</translation>
+        <translation>Количество столбцов ячейки (%1) и заголовка (%2) не совпадают. Возможно, CSV некорректен.
+%3</translation>
     </message>
     <message>
         <location filename="../core/formats/profiles/osmoprofile.cpp" line="19"/>
@@ -1976,12 +1977,12 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../core/formats/files/nbufile.cpp" line="24"/>
         <source>Unsupported NBU file section type: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Неподдерживаемый тип секции файла NBU: %1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/nbufile.cpp" line="25"/>
         <source>Unsupported NBU file folder type: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Неподдерживаемый тип папки файла NBU: %1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/nbufile.cpp" line="154"/>
@@ -2002,83 +2003,84 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../core/formats/files/nbufile.cpp" line="265"/>
         <source>Invalid index: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Недопустимый индекс: %1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/nbufile.cpp" line="414"/>
         <source>Test 2 greater than 0x01: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Тест 2 больше, чем 0x01: %1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/nbufile.cpp" line="417"/>
         <source>Test 1 different than 0x10: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Тест 1 отличается от 0x10: %1</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="32"/>
         <source>Read</source>
-        <translation type="unfinished"></translation>
+        <translation>Читать</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="33"/>
         <source>UnRd</source>
-        <translation type="unfinished"></translation>
+        <translation>Непрочитано</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="34"/>
         <source>Unk.</source>
-        <translation type="unfinished"></translation>
+        <translation>Неизв.</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="36"/>
         <source>Inbox</source>
-        <translation type="unfinished"></translation>
+        <translation>Входящие</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="37"/>
         <source>Outbox</source>
-        <translation type="unfinished"></translation>
+        <translation>Исходящие</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="38"/>
         <source>Sentbox</source>
-        <translation type="unfinished"></translation>
+        <translation>Отправленные</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="39"/>
         <source>Draft</source>
-        <translation type="unfinished"></translation>
+        <translation>Черновики</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="40"/>
         <source>Trash</source>
-        <translation type="unfinished"></translation>
+        <translation>Корзина</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="49"/>
         <source>&quot;Date&quot;,&quot;Box&quot;,&quot;From/To&quot;,&quot;Status&quot;,&quot;Text&quot;,&quot;Aux&quot;
 </source>
-        <translation type="unfinished"></translation>
+        <translation>&quot;Дата&quot;, &quot;Почта&quot;, &quot;От/Кому&quot;, &quot;Состояние&quot;, &quot;Текст&quot;, &quot;Вспомогательные&quot;
+</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="54"/>
         <source>Empty</source>
-        <translation type="unfinished"></translation>
+        <translation>Пусто</translation>
     </message>
     <message>
         <location filename="../core/formats/common/vmessagedata.cpp" line="16"/>
         <source>Unknown vMessage tag: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Неизвестный тег vMessage: %1</translation>
     </message>
     <message>
         <location filename="../core/formats/common/vmessagedata.cpp" line="17"/>
         <source>Unknown vMessage value: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Неизвестное значение vMessage: %1</translation>
     </message>
     <message>
         <location filename="../core/formats/common/vmessagedata.cpp" line="114"/>
         <source>Last vMessage section not closed</source>
-        <translation type="unfinished"></translation>
+        <translation>Последняя секция vMessage не закрыта</translation>
     </message>
 </context>
 <context>
@@ -2086,22 +2088,22 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../3rdparty/quazip/quazip/quagzipfile.cpp" line="60"/>
         <source>QIODevice::Append is not supported for GZIP</source>
-        <translation type="unfinished"></translation>
+        <translation>QIODevice::Append не поддерживается для GZIP</translation>
     </message>
     <message>
         <location filename="../3rdparty/quazip/quazip/quagzipfile.cpp" line="66"/>
         <source>Opening gzip for both reading and writing is not supported</source>
-        <translation type="unfinished"></translation>
+        <translation>Открытие gzip для чтения и редактирования не поддерживается</translation>
     </message>
     <message>
         <location filename="../3rdparty/quazip/quazip/quagzipfile.cpp" line="74"/>
         <source>You can open a gzip either for reading or for writing. Which is it?</source>
-        <translation type="unfinished"></translation>
+        <translation>Вы можете открыть gzip для чтения или редактирования. Как?</translation>
     </message>
     <message>
         <location filename="../3rdparty/quazip/quazip/quagzipfile.cpp" line="80"/>
         <source>Could not gzopen() file</source>
-        <translation type="unfinished"></translation>
+        <translation>Не удалось gzopen() открыть файл</translation>
     </message>
 </context>
 <context>
@@ -2109,12 +2111,12 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../3rdparty/quazip/quazip/quaziodevice.cpp" line="147"/>
         <source>QIODevice::Append is not supported for QuaZIODevice</source>
-        <translation type="unfinished"></translation>
+        <translation>QIODevice::Append не поддерживается QuaZIODevice</translation>
     </message>
     <message>
         <location filename="../3rdparty/quazip/quazip/quaziodevice.cpp" line="152"/>
         <source>QIODevice::ReadWrite is not supported for QuaZIODevice</source>
-        <translation type="unfinished"></translation>
+        <translation>QIODevice::ReadWrite не поддерживается QuaZIODevice</translation>
     </message>
 </context>
 <context>
@@ -2122,7 +2124,7 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../3rdparty/quazip/quazip/quazipfile.cpp" line="247"/>
         <source>ZIP/UNZIP API error %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ошибка ZIP/UNZIP API %1</translation>
     </message>
 </context>
 <context>
@@ -2340,7 +2342,7 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../app/sortdialog.ui" line="61"/>
         <source>6</source>
-        <translation type="unfinished">6</translation>
+        <translation>6</translation>
     </message>
     <message>
         <location filename="../app/sortdialog.cpp" line="22"/>
