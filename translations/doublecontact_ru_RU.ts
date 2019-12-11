@@ -1032,12 +1032,12 @@ Only some fields can this edited in this mode</source>
     <message>
         <location filename="../app/mainwindow.cpp" line="645"/>
         <source>sorted</source>
-        <translation>отсортировано</translation>
+        <translation>сорт.</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.cpp" line="645"/>
         <source>not sorted</source>
-        <translation>не сортировано</translation>
+        <translation>не сорт.</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.cpp" line="648"/>
@@ -1539,7 +1539,7 @@ line %3, col %4
     <message>
         <location filename="../core/globals.h" line="64"/>
         <source>Generic profile</source>
-        <translation>Общий профиль</translation>
+        <translation>Универсальный профиль</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="66"/>
@@ -1579,7 +1579,7 @@ line %3, col %4
     <message>
         <location filename="../core/globals.h" line="75"/>
         <source>Generic name</source>
-        <translation>Родовое имя</translation>
+        <translation>Универсальное имя</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="76"/>
@@ -1599,22 +1599,22 @@ line %3, col %4
     <message>
         <location filename="../core/globals.h" line="79"/>
         <source>Home phone</source>
-        <translation>Домашний телефон</translation>
+        <translation>Дом. тел.</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="80"/>
         <source>Work phone</source>
-        <translation>Рабочий телефон</translation>
+        <translation>Раб. тел.</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="81"/>
         <source>Cell phone</source>
-        <translation>Мобильный телефон</translation>
+        <translation>Моб. тел.</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="82"/>
         <source>Email</source>
-        <translation>Электронная почта</translation>
+        <translation>Электропочта</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="83"/>
@@ -1624,7 +1624,7 @@ line %3, col %4
     <message>
         <location filename="../core/globals.h" line="84"/>
         <source>Anniversary</source>
-        <translation>Юбилей</translation>
+        <translation>Годовщина</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="85"/>
@@ -1684,7 +1684,7 @@ line %3, col %4
     <message>
         <location filename="../core/globals.h" line="98"/>
         <source>Has email</source>
-        <translation>Есть электронная почта</translation>
+        <translation>Есть почта</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="99"/>
@@ -1704,12 +1704,12 @@ line %3, col %4
     <message>
         <location filename="../core/globals.h" line="102"/>
         <source>Some emails</source>
-        <translation>Много электронной почты</translation>
+        <translation>Много ящиков</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="104"/>
         <source>P.o. box</source>
-        <translation>Почтовый ящик</translation>
+        <translation>П/я</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="105"/>
@@ -1734,7 +1734,7 @@ line %3, col %4
     <message>
         <location filename="../core/globals.h" line="109"/>
         <source>Postal code</source>
-        <translation>Почтовый индекс</translation>
+        <translation>Индекс</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="110"/>
@@ -1799,7 +1799,7 @@ line %3, col %4
     <message>
         <location filename="../core/globals.h" line="124"/>
         <source>Record not selected</source>
-        <translation>Запись не выбрана</translation>
+        <translation>Сперва выберите запись</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="127"/>
