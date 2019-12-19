@@ -273,6 +273,12 @@ void ContactDialog::addName(const QString& name)
         // Delete button
         QToolButton* btnD = addDelButton(nameCount, "Name", SLOT(slotDelName()));
         ui->layNames->addWidget(btnD, nameCount, 2);
+        // Tab Order
+        if (nameCount==MIN_VISIBLE_NAMES) // is there previous del button?
+            setTabOrder(nameEditorByNum(nameCount), le);
+        else
+            setTabOrder(delNameButtonByNum(nameCount), le);
+        setTabOrder(le, btnD);
     }
     nameEditorByNum(nameCount+1)->setText(name);
     nameCount++;
@@ -288,7 +294,7 @@ void ContactDialog::slotDelName()
     delete nameEditorByNum(nameCount);
     QLabel* lb = findChild<QLabel*>(QString("lbName%1").arg(nameCount));
     delete lb;
-    QToolButton* btnD = findChild<QToolButton*>(QString("btnDelName%1").arg(nameCount));
+    QToolButton* btnD = delNameButtonByNum(nameCount);
     delete btnD;
     nameCount--;
 }
@@ -549,6 +555,11 @@ QLineEdit* ContactDialog::nameEditorByNum(int num)
 QLineEdit* ContactDialog::editorByNum(const QString& nameTemplate, int num)
 {
     return findChild<QLineEdit*>(QString("le%1%2").arg(nameTemplate).arg(num));
+}
+
+QToolButton *ContactDialog::delNameButtonByNum(int num)
+{
+    return findChild<QToolButton*>(QString("btnDelName%1").arg(num));
 }
 
 void ContactDialog::editDateDetails(QDateTimeEdit *editor, DateItem &details)

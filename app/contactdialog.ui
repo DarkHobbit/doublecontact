@@ -662,6 +662,44 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>leFullName</tabstop>
+  <tabstop>leName1</tabstop>
+  <tabstop>lePhone1</tabstop>
+  <tabstop>cbPhoneType1</tabstop>
+  <tabstop>btnDelPhone1</tabstop>
+  <tabstop>leEmail1</tabstop>
+  <tabstop>cbEmailType1</tabstop>
+  <tabstop>btnDelEmail1</tabstop>
+  <tabstop>btnAdd</tabstop>
+  <tabstop>cbAdd</tabstop>
+  <tabstop>cbBirthday</tabstop>
+  <tabstop>dteBirthday</tabstop>
+  <tabstop>btnBDayDetails</tabstop>
+  <tabstop>cbAnniversary</tabstop>
+  <tabstop>dteAnniversary</tabstop>
+  <tabstop>btnAnnDetails</tabstop>
+  <tabstop>edDescription</tabstop>
+  <tabstop>btnPhotoEdit</tabstop>
+  <tabstop>twContact</tabstop>
+  <tabstop>leOrganization</tabstop>
+  <tabstop>leTitle</tabstop>
+  <tabstop>saAddresses</tabstop>
+  <tabstop>btnAddAddress</tabstop>
+  <tabstop>leNickName</tabstop>
+  <tabstop>leURL</tabstop>
+  <tabstop>leIM1</tabstop>
+  <tabstop>cbIMType1</tabstop>
+  <tabstop>btnDelIM1</tabstop>
+  <tabstop>btnAddIM</tabstop>
+  <tabstop>lwContactInGroups</tabstop>
+  <tabstop>btnIncludeToGroup</tabstop>
+  <tabstop>btnExcludeFromGroup</tabstop>
+  <tabstop>lwAvailableGroups</tabstop>
+  <tabstop>leSortString</tabstop>
+  <tabstop>twOtherTags</tabstop>
+  <tabstop>twUnknownTags</tabstop>
+ </tabstops>
  <resources>
   <include location="doublecontact.qrc"/>
  </resources>

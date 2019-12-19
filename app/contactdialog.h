@@ -77,6 +77,7 @@ private:
     void readTypelist(const QString& nameTemplate, int num, QStringList& types, const  ::StandardTypes& sTypes);
     inline QLineEdit* nameEditorByNum(int num);
     inline QLineEdit* editorByNum(const QString& nameTemplate, int num);
+    inline QToolButton* delNameButtonByNum(int num);
     void editDateDetails(QDateTimeEdit* editor, DateItem& details);
     void fixCount(int& count, const QString& nameTemplate, int minVisibleEditors);
     // Photo helpers
