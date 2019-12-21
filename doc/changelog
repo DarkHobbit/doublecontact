@@ -79,3 +79,4 @@ Bugfix release:
 * Added translations: Portuguese (incomplete)
 
 CURRENT
+* At contact edit dialog, tab order now tuned according to number of names, phones, emails

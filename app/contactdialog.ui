@@ -681,7 +681,6 @@
   <tabstop>btnAnnDetails</tabstop>
   <tabstop>edDescription</tabstop>
   <tabstop>btnPhotoEdit</tabstop>
-  <tabstop>twContact</tabstop>
   <tabstop>leOrganization</tabstop>
   <tabstop>leTitle</tabstop>
   <tabstop>saAddresses</tabstop>
@@ -699,6 +698,7 @@
   <tabstop>leSortString</tabstop>
   <tabstop>twOtherTags</tabstop>
   <tabstop>twUnknownTags</tabstop>
+  <tabstop>twContact</tabstop>
  </tabstops>
  <resources>
   <include location="doublecontact.qrc"/>

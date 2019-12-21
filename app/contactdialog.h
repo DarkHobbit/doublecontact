@@ -76,8 +76,10 @@ private:
     void addTypeList(int count, const QString& nameTemplate, const QStringList& types, const ::StandardTypes& sTypes);
     void readTypelist(const QString& nameTemplate, int num, QStringList& types, const  ::StandardTypes& sTypes);
     inline QLineEdit* nameEditorByNum(int num);
-    inline QLineEdit* editorByNum(const QString& nameTemplate, int num);
+    inline QLineEdit* tripletEditorByNum(const QString& nameTemplate, int num);
     inline QToolButton* delNameButtonByNum(int num);
+    inline QToolButton* delTripletButtonByNum(const QString& nameTemplate, int num);
+    inline QComboBox* tripletTypeListByNum(const QString& nameTemplate, int num);
     void editDateDetails(QDateTimeEdit* editor, DateItem& details);
     void fixCount(int& count, const QString& nameTemplate, int minVisibleEditors);
     // Photo helpers
