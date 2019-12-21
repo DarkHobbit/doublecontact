@@ -92,6 +92,8 @@ void ContactDialog::clearData()
     nameCount = phoneCount = emailCount = addrCount = imCount = 0;
     ui->cbBirthday->setChecked(false);
     ui->dteBirthday->setEnabled(false);
+    DateDetailsDialog::setDateFormat(ui->dteBirthday, false);
+    DateDetailsDialog::setDateFormat(ui->dteAnniversary, false);
 }
 
 void ContactDialog::setData(const ContactItem& c, const ContactList& l)
