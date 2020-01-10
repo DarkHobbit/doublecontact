@@ -75,6 +75,7 @@ private:
         (int count, const QString& nameTemplate, const char* method/*, QGridLayout* l, int pos*/);
     void addTypeList(int count, const QString& nameTemplate, const QStringList& types, const ::StandardTypes& sTypes);
     void readTypelist(const QString& nameTemplate, int num, QStringList& types, const  ::StandardTypes& sTypes);
+    void setDefaultTypeList(const QString& nameTemplate, int num, const QStringList& types);
     inline QLineEdit* nameEditorByNum(int num);
     inline QLineEdit* tripletEditorByNum(const QString& nameTemplate, int num);
     inline QToolButton* delNameButtonByNum(int num);
@@ -104,6 +105,7 @@ private slots:
     void on_btnExcludeFromGroup_clicked();
     void on_btnAnnDetails_clicked();
     void on_cbAnniversary_toggled(bool checked);
+    void on_btnSaveView_clicked();
 };
 
 #endif // CONTACTDIALOG_H

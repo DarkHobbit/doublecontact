@@ -94,6 +94,35 @@ void ContactDialog::clearData()
     ui->dteBirthday->setEnabled(false);
     DateDetailsDialog::setDateFormat(ui->dteBirthday, false);
     DateDetailsDialog::setDateFormat(ui->dteAnniversary, false);
+    // Restore default edit settings
+    int _nameCount, _phoneCount, _emailCount, _imCount, _addrCount, _width, _height;
+    QStringList nameTypes, phoneTypes, emailTypes, imTypes, addrTypes;
+    configManager.readEditConfig(_nameCount,
+        _phoneCount, phoneTypes,
+        _emailCount, emailTypes,
+        _imCount, imTypes,
+        _addrCount, addrTypes,
+        _width, _height);
+    for (int i=0; i<_nameCount; i++)
+        addName("");
+    for (int i=0; i<_phoneCount; i++) {
+        addPhone(Phone());
+        setDefaultTypeList("Phone", i+1, phoneTypes);
+    }
+    for (int i=0; i<_emailCount; i++) {
+        addEmail(Email());
+        setDefaultTypeList("Email", i+1, emailTypes);
+    }
+    for (int i=0; i<_imCount; i++) {
+        addIM(Messenger());
+        setDefaultTypeList("IM", i+1, imTypes);
+    }
+    for (int i=0; i<_addrCount; i++) {
+        addAddress(PostalAddress());
+        setDefaultTypeList("Addr", i+1, addrTypes);
+    }
+    if (_width>0 && _height>0)
+        resize(_width, _height);
 }
 
 void ContactDialog::setData(const ContactItem& c, const ContactList& l)
@@ -166,6 +195,11 @@ void ContactDialog::setData(const ContactItem& c, const ContactList& l)
         ui->twUnknownTags->setItem(index, 1, new QTableWidgetItem(tag.value));
         index++;
     }
+    // Restore default resolution
+    int _width, _height;
+    configManager.readEditResolution(_width, _height);
+    if (_width>0 && _height>0)
+        resize(_width, _height);
 }
 
 void ContactDialog::getData(ContactItem& c, ContactList& l)
@@ -553,6 +587,21 @@ void ContactDialog::readTypelist(const QString &nameTemplate, int num, QStringLi
         types.push_back(sTypes.unTranslate(te));
 }
 
+void ContactDialog::setDefaultTypeList(const QString &nameTemplate, int num, const QStringList &types)
+{
+    if (num<=types.count()) {
+        const QString& itemType = types[num-1];
+        QComboBox* cbT = tripletTypeListByNum(nameTemplate, num);
+        int typeIndex = cbT->findText(itemType);
+        if (typeIndex!=-1) // Single standard type
+            cbT->setCurrentIndex(typeIndex);
+        else { // Multi types or non-standard type
+            cbT->addItem(itemType);
+            cbT->setCurrentIndex(cbT->count()-1);
+        }
+    }
+}
+
 QLineEdit* ContactDialog::nameEditorByNum(int num)
 {
     return findChild<QLineEdit*>(QString("leName%1").arg(num));
@@ -819,4 +868,27 @@ void ContactDialog::on_cbAnniversary_toggled(bool checked)
 {
     ui->dteAnniversary->setEnabled(checked);
     ui->btnAnnDetails->setEnabled(checked);
+}
+
+void ContactDialog::on_btnSaveView_clicked()
+{
+    QStringList phoneTypes;
+    for (int i=0; i<phoneCount; i++)
+        phoneTypes << tripletTypeListByNum("Phone", i+1)->currentText();
+    QStringList emailTypes;
+    for (int i=0; i<emailCount; i++)
+        emailTypes << tripletTypeListByNum("Email", i+1)->currentText();
+    QStringList imTypes;
+    for (int i=0; i<imCount; i++)
+        imTypes << tripletTypeListByNum("IM", i+1)->currentText();
+    QStringList addrTypes;
+    for (int i=0; i<addrCount; i++)
+        addrTypes << tripletTypeListByNum("Addr", i+1)->currentText();
+
+    configManager.writeEditConfig(nameCount,
+        phoneCount, phoneTypes,
+        emailCount, emailTypes,
+        imCount, imTypes,
+        addrCount, addrTypes,
+        width(), height());
 }

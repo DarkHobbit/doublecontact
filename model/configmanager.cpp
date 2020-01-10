@@ -19,6 +19,7 @@
 #else
 #include <QDesktopServices>
 #endif
+#include <QTextCodec>
 
 #include "configmanager.h"
 #include "globals.h"
@@ -44,6 +45,7 @@ void ConfigManager::prepare()
     if (!isPortable) {
         delete settings;
         settings = new QSettings("DarkHobbit", "doublecontact");
+        settings->setIniCodec(QTextCodec::codecForName("UTF-8"));
     }
 }
 
@@ -214,6 +216,57 @@ void ConfigManager::setShowTwoPanels(bool value)
     if (!settings)
         return;
     settings->setValue("General/ShowTwoPanels", value);
+}
+
+void ConfigManager::writeEditConfig(int nameCount,
+    int phoneCount, const QStringList& phoneTypes,
+    int emailCount, const QStringList& emailTypes,
+    int imCount, const QStringList& imTypes,
+    int addrCount, const QStringList& addrTypes,
+    int width, int height)
+{
+    if (!settings)
+        return;
+    settings->setValue("Edit/NameCount", nameCount);
+
+    settings->setValue("Edit/PhoneCount", phoneCount);
+    settings->setValue("Edit/PhoneTypes", phoneTypes);
+    settings->setValue("Edit/EmailCount", emailCount);
+    settings->setValue("Edit/EmailTypes", emailTypes);
+    settings->setValue("Edit/ImCount", imCount);
+    settings->setValue("Edit/ImTypes", imTypes);
+    settings->setValue("Edit/AddrCount", addrCount);
+    settings->setValue("Edit/AddrTypes", addrTypes);
+
+    settings->setValue("Edit/Width", width);
+    settings->setValue("Edit/Height", height);
+}
+
+void ConfigManager::readEditConfig(int &nameCount,
+    int &phoneCount, QStringList &phoneTypes,
+    int &emailCount, QStringList &emailTypes,
+    int &imCount, QStringList &imTypes,
+    int &addrCount, QStringList &addrTypes,
+    int &width, int &height)
+{
+    nameCount = settings->value("Edit/NameCount", 1).toInt();
+
+    phoneCount = settings->value("Edit/PhoneCount", 1).toInt();
+    phoneTypes = settings->value("Edit/PhoneTypes").toStringList();
+    emailCount = settings->value("Edit/EmailCount", 1).toInt();
+    emailTypes = settings->value("Edit/EmailTypes").toStringList();
+    imCount = settings->value("Edit/ImCount", 1).toInt();
+    imTypes = settings->value("Edit/ImTypes").toStringList();
+    addrCount = settings->value("Edit/AddrCount", 1).toInt();
+    addrTypes = settings->value("Edit/AddrTypes").toStringList();
+
+    readEditResolution(width, height);
+}
+
+void ConfigManager::readEditResolution(int &width, int &height)
+{
+    width = settings->value("Edit/Width", 0).toInt();
+    height = settings->value("Edit/Height", 0).toInt();
 }
 
 bool ConfigManager::sortingEnabled()
