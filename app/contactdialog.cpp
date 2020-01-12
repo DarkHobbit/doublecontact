@@ -92,6 +92,37 @@ void ContactDialog::clearData()
     nameCount = phoneCount = emailCount = addrCount = imCount = 0;
     ui->cbBirthday->setChecked(false);
     ui->dteBirthday->setEnabled(false);
+    DateDetailsDialog::setDateFormat(ui->dteBirthday, false);
+    DateDetailsDialog::setDateFormat(ui->dteAnniversary, false);
+    // Restore default edit settings
+    int _nameCount, _phoneCount, _emailCount, _imCount, _addrCount, _width, _height;
+    QStringList nameTypes, phoneTypes, emailTypes, imTypes, addrTypes;
+    configManager.readEditConfig(_nameCount,
+        _phoneCount, phoneTypes,
+        _emailCount, emailTypes,
+        _imCount, imTypes,
+        _addrCount, addrTypes,
+        _width, _height);
+    for (int i=0; i<_nameCount; i++)
+        addName("");
+    for (int i=0; i<_phoneCount; i++) {
+        addPhone(Phone());
+        setDefaultTypeList("Phone", i+1, phoneTypes);
+    }
+    for (int i=0; i<_emailCount; i++) {
+        addEmail(Email());
+        setDefaultTypeList("Email", i+1, emailTypes);
+    }
+    for (int i=0; i<_imCount; i++) {
+        addIM(Messenger());
+        setDefaultTypeList("IM", i+1, imTypes);
+    }
+    for (int i=0; i<_addrCount; i++) {
+        addAddress(PostalAddress());
+        setDefaultTypeList("Addr", i+1, addrTypes);
+    }
+    if (_width>0 && _height>0)
+        resize(_width, _height);
 }
 
 void ContactDialog::setData(const ContactItem& c, const ContactList& l)
@@ -164,6 +195,11 @@ void ContactDialog::setData(const ContactItem& c, const ContactList& l)
         ui->twUnknownTags->setItem(index, 1, new QTableWidgetItem(tag.value));
         index++;
     }
+    // Restore default resolution
+    int _width, _height;
+    configManager.readEditResolution(_width, _height);
+    if (_width>0 && _height>0)
+        resize(_width, _height);
 }
 
 void ContactDialog::getData(ContactItem& c, ContactList& l)
@@ -273,6 +309,12 @@ void ContactDialog::addName(const QString& name)
         // Delete button
         QToolButton* btnD = addDelButton(nameCount, "Name", SLOT(slotDelName()));
         ui->layNames->addWidget(btnD, nameCount, 2);
+        // Tab Order
+        if (nameCount==MIN_VISIBLE_NAMES) // is there previous del button?
+            setTabOrder(nameEditorByNum(nameCount), le);
+        else
+            setTabOrder(delNameButtonByNum(nameCount), le);
+        setTabOrder(le, btnD);
     }
     nameEditorByNum(nameCount+1)->setText(name);
     nameCount++;
@@ -288,7 +330,7 @@ void ContactDialog::slotDelName()
     delete nameEditorByNum(nameCount);
     QLabel* lb = findChild<QLabel*>(QString("lbName%1").arg(nameCount));
     delete lb;
-    QToolButton* btnD = findChild<QToolButton*>(QString("btnDelName%1").arg(nameCount));
+    QToolButton* btnD = delNameButtonByNum(nameCount);
     delete btnD;
     nameCount--;
 }
@@ -436,15 +478,19 @@ void ContactDialog::addTriplet(int& count, QGridLayout* l, const QString& nameTe
         // Delete button
         QToolButton* btnD = addDelButton(count, nameTemplate, SLOT(slotDelTriplet()));
         l->addWidget(btnD, count, 2);
+        // Tab Order
+        setTabOrder(delTripletButtonByNum(nameTemplate, count), le);
+        setTabOrder(le, cbT);
+        setTabOrder(cbT, btnD);
     }
     if (!itemValue.isEmpty()) // Don't delete first text in interactive mode
-        editorByNum(nameTemplate, count+1)->setText(itemValue);
+        tripletEditorByNum(nameTemplate, count+1)->setText(itemValue);
     count++;
 }
 
 void ContactDialog::readTriplet(const QString &nameTemplate, int num, TypedStringItem& item, const ::StandardTypes& sTypes)
 {
-    QLineEdit* editor = findChild<QLineEdit*>(QString("le%1%2").arg(nameTemplate).arg(num));
+    QLineEdit* editor = tripletEditorByNum(nameTemplate, num);
     if (!editor) return;
     item.value = editor->text();
     readTypelist(nameTemplate, num, item.types, sTypes);
@@ -467,9 +513,9 @@ void ContactDialog::slotDelTriplet()
 
 void ContactDialog::delTriplet(int& count, const QString& nameTemplate, int num)
 {
-    QLineEdit* editor = findChild<QLineEdit*>(QString("le%1%2").arg(nameTemplate).arg(num));
-    QComboBox* typeBox = findChild<QComboBox*>(QString("cb%1Type%2").arg(nameTemplate).arg(num));
-    QToolButton* delBtn = findChild<QToolButton*>(QString("btnDel%1%2").arg(nameTemplate).arg(num));
+    QLineEdit* editor = tripletEditorByNum(nameTemplate, num);
+    QComboBox* typeBox = tripletTypeListByNum(nameTemplate, num);
+    QToolButton* delBtn = delTripletButtonByNum(nameTemplate, num);
     if (!editor || !typeBox || !delBtn) return;
     if (count<=MIN_VISIBLE_TRIPLETS) { // only clear if first
         editor->clear();
@@ -485,9 +531,9 @@ void ContactDialog::delTriplet(int& count, const QString& nameTemplate, int num)
         count--;
         // Rename next dynamically created controls for crash preventing
         for (int i=num; i<=count; i++) {
-            QLineEdit* editor = findChild<QLineEdit*>(QString("le%1%2").arg(nameTemplate).arg(i+1));
-            QComboBox* typeBox = findChild<QComboBox*>(QString("cb%1Type%2").arg(nameTemplate).arg(i+1));
-            QToolButton* delBtn = findChild<QToolButton*>(QString("btnDel%1%2").arg(nameTemplate).arg(i+1));
+            QLineEdit* editor = tripletEditorByNum(nameTemplate, i+1);
+            QComboBox* typeBox = tripletTypeListByNum(nameTemplate, i+1);
+            QToolButton* delBtn = delTripletButtonByNum(nameTemplate, i+1);
             editor->setObjectName(QString("le%1%2").arg(nameTemplate).arg(i));
             typeBox->setObjectName(QString("cb%1Type%2").arg(nameTemplate).arg(i));
             delBtn->setObjectName(QString("btnDel%1%2").arg(nameTemplate).arg(i));
@@ -509,7 +555,7 @@ QToolButton* ContactDialog::addDelButton
 void ContactDialog::addTypeList(int count, const QString &nameTemplate,
           const QStringList &types, const ::StandardTypes &sTypes)
 {
-    QComboBox* cbT = findChild<QComboBox*>(QString("cb%1Type%2").arg(nameTemplate).arg(count));
+    QComboBox* cbT = tripletTypeListByNum(nameTemplate, count);
     if (types.isEmpty())
         return;
     // Select item or add mixed
@@ -532,7 +578,7 @@ void ContactDialog::addTypeList(int count, const QString &nameTemplate,
 
 void ContactDialog::readTypelist(const QString &nameTemplate, int num, QStringList &types, const StandardTypes &sTypes)
 {
-    QComboBox* typeBox = findChild<QComboBox*>(QString("cb%1Type%2").arg(nameTemplate).arg(num));
+    QComboBox* typeBox = tripletTypeListByNum(nameTemplate, num);
     if (!typeBox) return;
     QString t = typeBox->currentText();
     QStringList tl = t.split("+");
@@ -541,14 +587,44 @@ void ContactDialog::readTypelist(const QString &nameTemplate, int num, QStringLi
         types.push_back(sTypes.unTranslate(te));
 }
 
+void ContactDialog::setDefaultTypeList(const QString &nameTemplate, int num, const QStringList &types)
+{
+    if (num<=types.count()) {
+        const QString& itemType = types[num-1];
+        QComboBox* cbT = tripletTypeListByNum(nameTemplate, num);
+        int typeIndex = cbT->findText(itemType);
+        if (typeIndex!=-1) // Single standard type
+            cbT->setCurrentIndex(typeIndex);
+        else { // Multi types or non-standard type
+            cbT->addItem(itemType);
+            cbT->setCurrentIndex(cbT->count()-1);
+        }
+    }
+}
+
 QLineEdit* ContactDialog::nameEditorByNum(int num)
 {
     return findChild<QLineEdit*>(QString("leName%1").arg(num));
 }
 
-QLineEdit* ContactDialog::editorByNum(const QString& nameTemplate, int num)
+QLineEdit* ContactDialog::tripletEditorByNum(const QString& nameTemplate, int num)
 {
     return findChild<QLineEdit*>(QString("le%1%2").arg(nameTemplate).arg(num));
+}
+
+QToolButton *ContactDialog::delNameButtonByNum(int num)
+{
+    return findChild<QToolButton*>(QString("btnDelName%1").arg(num));
+}
+
+QToolButton *ContactDialog::delTripletButtonByNum(const QString &nameTemplate, int num)
+{
+    return findChild<QToolButton*>(QString("btnDel%1%2").arg(nameTemplate).arg(num));
+}
+
+QComboBox *ContactDialog::tripletTypeListByNum(const QString &nameTemplate, int num)
+{
+    return findChild<QComboBox*>(QString("cb%1Type%2").arg(nameTemplate).arg(num));
 }
 
 void ContactDialog::editDateDetails(QDateTimeEdit *editor, DateItem &details)
@@ -568,7 +644,7 @@ void ContactDialog::editDateDetails(QDateTimeEdit *editor, DateItem &details)
 void ContactDialog::fixCount(int &count, const QString &nameTemplate, int minVisibleEditors)
 {
     for (int i=count+1; i<=minVisibleEditors; i++) {
-        QLineEdit* editor = findChild<QLineEdit*>(QString("le%1%2").arg(nameTemplate).arg(i));
+        QLineEdit* editor = tripletEditorByNum(nameTemplate, i);
         if (!editor)
             break;
         if (!editor->text().isEmpty())
@@ -792,4 +868,27 @@ void ContactDialog::on_cbAnniversary_toggled(bool checked)
 {
     ui->dteAnniversary->setEnabled(checked);
     ui->btnAnnDetails->setEnabled(checked);
+}
+
+void ContactDialog::on_btnSaveView_clicked()
+{
+    QStringList phoneTypes;
+    for (int i=0; i<phoneCount; i++)
+        phoneTypes << tripletTypeListByNum("Phone", i+1)->currentText();
+    QStringList emailTypes;
+    for (int i=0; i<emailCount; i++)
+        emailTypes << tripletTypeListByNum("Email", i+1)->currentText();
+    QStringList imTypes;
+    for (int i=0; i<imCount; i++)
+        imTypes << tripletTypeListByNum("IM", i+1)->currentText();
+    QStringList addrTypes;
+    for (int i=0; i<addrCount; i++)
+        addrTypes << tripletTypeListByNum("Addr", i+1)->currentText();
+
+    configManager.writeEditConfig(nameCount,
+        phoneCount, phoneTypes,
+        emailCount, emailTypes,
+        imCount, imTypes,
+        addrCount, addrTypes,
+        width(), height());
 }

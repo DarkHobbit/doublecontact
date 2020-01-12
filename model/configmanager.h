@@ -37,6 +37,19 @@ public:
     void setLastImageFile(const QString& path);
     bool showTwoPanels();
     void setShowTwoPanels(bool value);
+    void writeEditConfig(int nameCount,
+        int phoneCount, const QStringList& phoneTypes,
+        int emailCount, const QStringList& emailTypes,
+        int imCount, const QStringList& imTypes,
+        int addrCount, const QStringList& addrTypes,
+        int width, int height);
+    void readEditConfig(int& nameCount,
+        int& phoneCount, QStringList& phoneTypes,
+        int& emailCount, QStringList& emailTypes,
+        int& imCount, QStringList& imTypes,
+        int& addrCount, QStringList& addrTypes,
+        int& width, int& height);
+    void readEditResolution(int& width, int& height);
     bool sortingEnabled();
     void setSortingEnabled(bool value);
     ContactList::SortType hardSortType();
