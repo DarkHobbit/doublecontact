@@ -2149,7 +2149,8 @@ Controleer gebruikersnaam, wachtwoord, protocol en poort</translation>
         <location filename="../core/decodedmessagelist.cpp" line="51"/>
         <source>&quot;Date&quot;,&quot;Box&quot;,&quot;From/To&quot;,&quot;Status&quot;,&quot;Text&quot;,&quot;Aux&quot;
 </source>
-        <translation type="unfinished"></translation>
+        <translation>&quot;Date&quot;,&quot;Box&quot;,&quot;From/To&quot;,&quot;Status&quot;,&quot;Text&quot;,&quot;Aux&quot;
+</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="56"/>
