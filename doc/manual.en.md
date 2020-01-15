@@ -152,6 +152,9 @@ You also can select some contact items and call contact editing. But in this mod
 
 To add new contact in current address book, press "Insert" in main window or Ins key. DoubleContact will open same window as for single editing.
 
+If you want to change default quantity of names, phones and emails in edit window, simply add this fields during editing or adding and press "Save view" button. At next add operations, this fields will be added automatically, for phones and emails field types will be filled according saved station. Postal addresses fields, IM fields and window size also will be restored.
+
+
 ## Group operations ##
 
 Often first and last names in differ contacts of one address book are written in differ order (especially if address book is many year old). To fix it, select all items, where first and last names are confused (for example, last name is John, first name is Doe), and choose **Contact -> Swap names**. DoubleContact will exchange first and last name for all selected items.
