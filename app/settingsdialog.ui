@@ -329,7 +329,7 @@
        <item>
         <widget class="QLabel" name="lbDefaultPhoneHint">
          <property name="text">
-          <string>(many phones treats 'Voice' as 'Other')</string>
+          <string>(many phones treat 'Voice' as 'Other')</string>
          </property>
         </widget>
        </item>
@@ -343,7 +343,7 @@
        <item>
         <widget class="QCheckBox" name="cbDebugSave">
          <property name="text">
-          <string>Debug save</string>
+          <string>Save debugging info</string>
          </property>
         </widget>
        </item>
@@ -356,7 +356,7 @@
           <item>
            <widget class="QCheckBox" name="cbReadNamesFromFileName">
             <property name="text">
-             <string>Read contact names from file name</string>
+             <string>Read contact names from filename</string>
             </property>
            </widget>
           </item>
@@ -386,7 +386,7 @@
       <enum>Qt::Horizontal</enum>
      </property>
      <property name="standardButtons">
-      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::OK</set>
      </property>
     </widget>
    </item>
