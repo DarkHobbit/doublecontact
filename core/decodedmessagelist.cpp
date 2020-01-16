@@ -117,7 +117,7 @@ DecodedMessageList DecodedMessageList::fromContactList(const ContactList &list, 
             // https://www.fjsoft.at/forum/viewtopic.php?t=29865
         }
         else
-            errors << QObject::tr("Unknown messages format");
+            errors << QObject::tr("Unknown message format");
     }
     if (messages.isEmpty() && !list.extra.binarySMS.isEmpty()) {
         foreach(const BinarySMS& sms, list.extra.binarySMS)
