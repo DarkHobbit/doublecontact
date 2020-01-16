@@ -238,7 +238,7 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                     list.photoURLCount++;
                 }
                 else
-                    errors << QObject::tr("Unknown photo kind at line %1: %2").arg(line+1).arg(visName);
+                    errors << QObject::tr("Unknown image type at line %1: %2").arg(line+1).arg(visName);
             }
             else if (tag=="CATEGORIES" || tag=="X-CATEGORIES") // X- - some Nokia Suite versions
                 foreach(const QString& val, vValue)
@@ -298,7 +298,7 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
             // Known but un-editing tags
             else if (
                 tag=="LABEL" || tag=="PRODID"
-                || tag=="X-ACCOUNT" // MyPhoneExplorer YES, embedded android export NO
+                || tag=="X-ACCOUNT" // MyPhoneExplorer YES, embedded Android export NO
             ) // TODO other from rfc 2426
                 item.otherTags.push_back(TagValue(joinBySC(vType), decodeValue(joinBySC(vValue), errors)));
             // Unknown tags
@@ -382,7 +382,7 @@ void VCardData::exportRecord(QStringList &lines, const ContactItem &item, QStrin
     foreach (const Email& em, item.emails)
         lines << QString("EMAIL") + encodeTypes(em.types, &Email::standardTypes, em.syncMLRef)+":"+em.value;
     /*
-    // for Sony Ericsson devices TODO to settings (emulate, fake...)
+    // for Sony Ericsson devices TODO to settings (emulate, fake…)
     if (item.emails.isEmpty())
         lines << QString("EMAIL;INTERNET;PREF:");
     if (item.emails.count()<2)
@@ -454,7 +454,7 @@ void VCardData::exportRecord(QStringList &lines, const ContactItem &item, QStrin
         }
     }
     // Identifier
-    // TODO need support for other identifier types (apple?) and more strong detection
+    // TODO need support for other identifier types (Apple?) and more strong detection
     if (!item.id.isEmpty() && item.id.length()>=10 && item.idType!="Sequence") // second condition separate from other ID kinds. TODO: need more strong crit.
         lines << item.idType + ":" + encodeValue(item.id, QString(item.idType + ":").length());
     // Known but un-editing tags
