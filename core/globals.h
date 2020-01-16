@@ -65,9 +65,9 @@ enum ContactColumn {
 // Spec.value for combined phone/mail/addr. types
 #define S_MIXED_TYPE QObject::tr("mixed...")
 // Name components
-#define S_FIRST_NAME QObject::tr("Firstname")
-#define S_LAST_NAME QObject::tr("Lastname")
-#define S_MIDDLE_NAME QObject::tr("Middlename")
+#define S_FIRST_NAME QObject::tr("Forename")
+#define S_LAST_NAME QObject::tr("Surname")
+#define S_MIDDLE_NAME QObject::tr("Middle name")
 #define S_NAME_PREFIXES QObject::tr("Prefixes") // Honorific prefixes
 #define S_NAME_SUFFIXES QObject::tr("Suffixes") // Honorific suffixes
 // Other column names
@@ -97,11 +97,11 @@ enum ContactColumn {
 #define S_HAS_PHONE QObject::tr("Has phone")
 #define S_HAS_EMAIL QObject::tr("Has email")
 #define S_HAS_BDAY QObject::tr("Has birthday")
-#define S_HAS_PHOTO QObject::tr("Has photo")
+#define S_HAS_PHOTO QObject::tr("Has image")
 #define S_SOME_PHONES QObject::tr("Some phones")
 #define S_SOME_EMAILS QObject::tr("Some emails")
 // Address components
-#define S_ADR_OFFICE_BOX QObject::tr("P.o. box")
+#define S_ADR_OFFICE_BOX QObject::tr("P.O. box")
 #define S_ADR_EXTENDED QObject::tr("Ext.addr.")
 #define S_ADR_STREET QObject::tr("Street")
 #define S_ADR_CITY QObject::tr("City/Locality")
@@ -109,7 +109,7 @@ enum ContactColumn {
 #define S_ADR_POST_CODE QObject::tr("Postal code")
 #define S_ADR_COUNTRY QObject::tr("Country")
 // Photo editing
-#define S_PH_UNKNOWN_FORMAT QObject::tr("[Unknown photo format]")
+#define S_PH_UNKNOWN_FORMAT QObject::tr("[Unknown image format]")
 #define S_PH_LOAD_IMAGE QObject::tr("Load image")
 #define S_PH_SAVE_IMAGE QObject::tr("Save image")
 #define S_PH_SET_URL QObject::tr("Set URL")
@@ -122,14 +122,14 @@ enum ContactColumn {
 #define S_WRITE_ERR QObject::tr("Can't write file\n%1")
 #define S_SEEK_ERR QObject::tr("Can't seek to %1 in file\n%2")
 #define S_REC_NOT_SEL QObject::tr("Record not selected")
-#define S_READ_ONLY_FORMAT QObject::tr("This format is read only")
+#define S_READ_ONLY_FORMAT QObject::tr("This format is write-protected")
 #define S_ERR_UNSUPPORTED_TAG \
     QObject::tr("Warning: contact %1 has %2, not supported in this format.\nData will be lost")
 #define S_ERR_EXTRA_TAG \
     QObject::tr("%1 %2 will be lost at contact %3")
 #define S_ERR_NETWORK_SUPPORT \
-    QObject::tr("Error: Program built without network support. Use WITH_NETWORK define, if you build program from sources.\n")
-#define S_REMOVE_CONFIRM QObject::tr("Are You really want to delete selected items?")
+    QObject::tr("Program built without network support. Use \"WITH_NETWORK\" if building from source code.\n")
+#define S_REMOVE_CONFIRM QObject::tr("Do you really want to delete the selected items?")
 
 // Visible columns headers
 // (It was a simple string array, but its translation not worked)
