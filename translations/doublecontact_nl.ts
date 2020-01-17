@@ -242,7 +242,7 @@ Wilt u dit certificaat tóch accepteren?</translation>
     <message>
         <location filename="../app/contactdialog.ui" line="658"/>
         <source>Save View</source>
-        <translation type="unfinished"></translation>
+        <translation>Weergave opslaan</translation>
     </message>
     <message>
         <source>anniversary</source>
@@ -1412,7 +1412,7 @@ telefoontaal %5</translation>
     <message>
         <location filename="../core/formats/common/vcarddata.cpp" line="241"/>
         <source>Unknown photo kind at line %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Onbekend soort foto op regel %1: %2</translation>
     </message>
     <message>
         <location filename="../core/formats/common/vcarddata.cpp" line="313"/>
@@ -1962,7 +1962,8 @@ De gegevens zullen verloren gaan</translation>
         <location filename="../core/globals.h" line="131"/>
         <source>Error: Program built without network support. Use WITH_NETWORK define, if you build program from sources.
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Fout: het programma is gebouwd zonder internetondersteuning. Gebruik WITH_NETWORK tijdens het compileren.
+</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="132"/>
@@ -2160,12 +2161,12 @@ Controleer gebruikersnaam, wachtwoord, protocol en poort</translation>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="114"/>
         <source>MPB message body missing</source>
-        <translation type="unfinished"></translation>
+        <translation>MPB-berichtinhoud ontbreekt</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="120"/>
         <source>Unknown messages format</source>
-        <translation type="unfinished"></translation>
+        <translation>Onbekend berichtformaat</translation>
     </message>
     <message>
         <location filename="../core/formats/common/vmessagedata.cpp" line="16"/>
@@ -2410,7 +2411,7 @@ Controleer gebruikersnaam, wachtwoord, protocol en poort</translation>
     <message>
         <location filename="../app/settingsdialog.ui" line="346"/>
         <source>Debug save</source>
-        <translation type="unfinished"></translation>
+        <translation>Foutopsporing opslaan</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="353"/>

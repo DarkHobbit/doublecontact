@@ -318,7 +318,7 @@ Er du sikker på at du vil godta dette sertifikatet uansett?</translation>
     <message>
         <location filename="../app/contactdialog.ui" line="658"/>
         <source>Save View</source>
-        <translation type="unfinished"></translation>
+        <translation>Lagre visning</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.cpp" line="91"/>
@@ -1304,7 +1304,7 @@ telefonspråk %5</translation>
     <message>
         <location filename="../core/formats/common/vcarddata.cpp" line="241"/>
         <source>Unknown photo kind at line %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukjent bildetype på slutten av linje %1: %2</translation>
     </message>
     <message>
         <location filename="../core/formats/common/vcarddata.cpp" line="313"/>
@@ -1922,7 +1922,8 @@ Data vil gå tapt</translation>
         <location filename="../core/globals.h" line="131"/>
         <source>Error: Program built without network support. Use WITH_NETWORK define, if you build program from sources.
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Program bygd uten nettverksstøtte. Bruk WITH_NETWORK hvis du bygger fra kildekode.
+</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="132"/>
@@ -2052,12 +2053,12 @@ Sjekk brukernavn, passord, protokoll og port</translation>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="114"/>
         <source>MPB message body missing</source>
-        <translation type="unfinished"></translation>
+        <translation>MPB-meldingskropp mangler</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="120"/>
         <source>Unknown messages format</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukjent meldingsformat</translation>
     </message>
     <message>
         <location filename="../core/formats/common/vmessagedata.cpp" line="16"/>
@@ -2302,7 +2303,7 @@ Sjekk brukernavn, passord, protokoll og port</translation>
     <message>
         <location filename="../app/settingsdialog.ui" line="346"/>
         <source>Debug save</source>
-        <translation type="unfinished"></translation>
+        <translation>Lagre feilrettingsinfo</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="353"/>
