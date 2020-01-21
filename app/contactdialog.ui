@@ -25,6 +25,9 @@
       </attribute>
       <layout class="QHBoxLayout" name="horizontalLayout_4">
        <item>
+        <layout class="QFormLayout" name="formLayout"/>
+       </item>
+       <item>
         <layout class="QVBoxLayout" name="verticalLayout_2">
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout">
@@ -358,8 +361,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>764</width>
-            <height>395</height>
+            <width>748</width>
+            <height>402</height>
            </rect>
           </property>
          </widget>
@@ -685,6 +688,22 @@
     </layout>
    </item>
   </layout>
+  <action name="action_Remove">
+   <property name="text">
+    <string>&amp;Remove</string>
+   </property>
+   <property name="shortcut">
+    <string>Del</string>
+   </property>
+  </action>
+  <action name="actionCopy_text">
+   <property name="text">
+    <string>Copy text</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+C</string>
+   </property>
+  </action>
  </widget>
  <tabstops>
   <tabstop>leFullName</tabstop>

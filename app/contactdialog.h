@@ -22,6 +22,7 @@
 #include <QMenu>
 #include <QResizeEvent>
 #include <QShowEvent>
+#include <QTableWidget>
 #include <QToolButton>
 #include <QVBoxLayout>
 #include "contactlist.h"
@@ -85,6 +86,12 @@ private:
     void fixCount(int& count, const QString& nameTemplate, int minVisibleEditors);
     // Photo helpers
     void updatePhotoMenu();
+    // Tag list helpers
+    void buildContextMenu(QTableView* view);
+    void setTagTable(const TagList& tags, QTableWidget * table);
+    void getTagTable(TagList& tags, QTableWidget * table);
+    void removeTag(QTableWidget* table);
+    void copyTagText(QTableWidget* table);
 private slots:
     void slotDelName();
     void slotDelTriplet();
@@ -106,6 +113,8 @@ private slots:
     void on_btnAnnDetails_clicked();
     void on_cbAnniversary_toggled(bool checked);
     void on_btnSaveView_clicked();
+    void on_action_Remove_triggered();
+    void on_actionCopy_text_triggered();
 };
 
 #endif // CONTACTDIALOG_H

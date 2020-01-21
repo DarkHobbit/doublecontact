@@ -11,6 +11,7 @@
  *
  */
 
+#include <QClipboard>
 #include <QDialogButtonBox>
 #include <QFileDialog>
 #include <QLineEdit>
@@ -52,7 +53,9 @@ ContactDialog::ContactDialog(QWidget *parent) :
     layAddrs = new QVBoxLayout(ui->scrollAreaWidgetContents);
     // Other known and unknown tags tables
     ui->twOtherTags->setItemDelegate(new ReadOnlyTableDelegate(false));
+    buildContextMenu(ui->twOtherTags);
     ui->twUnknownTags->setItemDelegate(new ReadOnlyTableDelegate(false));
+    buildContextMenu(ui->twUnknownTags);
 }
 
 ContactDialog::~ContactDialog()
@@ -180,21 +183,9 @@ void ContactDialog::setData(const ContactItem& c, const ContactList& l)
     ui->lbOriginalFormatValue->setText(c.originalFormat);
     ui->lbFormatVersionValue->setText(c.version);
     ui->lbIDValue->setText(c.id);
-    ui->twOtherTags->setRowCount(c.otherTags.count());
-    int index = 0;
-    foreach (const TagValue& tag, c.otherTags) {
-        ui->twOtherTags->setItem(index, 0, new QTableWidgetItem(tag.tag));
-        ui->twOtherTags->setItem(index, 1, new QTableWidgetItem(tag.value));
-        index++;
-    }
+    setTagTable(c.otherTags, ui->twOtherTags);
     // Unknown tags
-    ui->twUnknownTags->setRowCount(c.unknownTags.count());
-    index = 0;
-    foreach (const TagValue& tag, c.unknownTags) {
-        ui->twUnknownTags->setItem(index, 0, new QTableWidgetItem(tag.tag));
-        ui->twUnknownTags->setItem(index, 1, new QTableWidgetItem(tag.value));
-        index++;
-    }
+    setTagTable(c.unknownTags, ui->twUnknownTags);
     // Restore default resolution
     int _width, _height;
     configManager.readEditResolution(_width, _height);
@@ -260,6 +251,9 @@ void ContactDialog::getData(ContactItem& c, ContactList& l)
     // Other
     c.sortString = ui->leSortString->text();
     c.description = ui->edDescription->toPlainText();
+    getTagTable(c.otherTags, ui->twOtherTags);
+    // Unknown tags
+    getTagTable(c.unknownTags, ui->twUnknownTags);
     c.calculateFields();
 }
 
@@ -666,6 +660,51 @@ void ContactDialog::updatePhotoMenu()
     menuPhotoEdit->addAction(S_PH_REMOVE, this, SLOT(onRemovePhoto()));
 }
 
+void ContactDialog::buildContextMenu(QTableView *view)
+{
+    view->setContextMenuPolicy(Qt::ActionsContextMenu);
+    view->addAction(ui->actionCopy_text);
+    view->addAction(ui->action_Remove);
+}
+
+void ContactDialog::setTagTable(const TagList &tags, QTableWidget *table)
+{
+    table->setRowCount(tags.count());
+    int index = 0;
+    foreach (const TagValue& tag, tags) {
+        table->setItem(index, 0, new QTableWidgetItem(tag.tag));
+        table->setItem(index, 1, new QTableWidgetItem(tag.value));
+        index++;
+    }
+}
+
+void ContactDialog::getTagTable(TagList &tags, QTableWidget *table)
+{
+    tags.clear();
+    for (int i=0; i<table->rowCount(); i++)
+        tags << TagValue(
+            table->item(i, 0)->text(),
+                    table->item(i, 1)->text());
+}
+
+void ContactDialog::removeTag(QTableWidget *table)
+{
+    if (table->selectedItems().isEmpty())
+        QMessageBox::critical(0, S_ERROR, S_REC_NOT_SEL);
+    else
+        // TODO if multi-selection will be implemented,
+        // check rows uniqie (two cells in one row selected - no data loss)
+        table->removeRow(table->selectedItems().first()->row());
+}
+
+void ContactDialog::copyTagText(QTableWidget *table)
+{
+    if (table->selectedItems().isEmpty())
+        QMessageBox::critical(0, S_ERROR, S_REC_NOT_SEL);
+    else
+        qApp->clipboard()->setText(table->selectedItems().first()->text());
+}
+
 void ContactDialog::on_btnAdd_clicked()
 {
     QString subj = ui->cbAdd->currentText();
@@ -891,4 +930,20 @@ void ContactDialog::on_btnSaveView_clicked()
         imCount, imTypes,
         addrCount, addrTypes,
         width(), height());
+}
+
+void ContactDialog::on_action_Remove_triggered()
+{
+    if (ui->twContact->currentWidget()==ui->tabOther)
+        removeTag(ui->twOtherTags);
+    else if (ui->twContact->currentWidget()==ui->tabProblems)
+        removeTag(ui->twUnknownTags);
+}
+
+void ContactDialog::on_actionCopy_text_triggered()
+{
+    if (ui->twContact->currentWidget()==ui->tabOther)
+        copyTagText(ui->twOtherTags);
+    else if (ui->twContact->currentWidget()==ui->tabProblems)
+        copyTagText(ui->twUnknownTags);
 }
