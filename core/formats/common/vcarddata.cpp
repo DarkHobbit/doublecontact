@@ -298,7 +298,7 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
             // Known but un-editing tags
             else if (
                 tag=="LABEL" || tag=="PRODID"
-                || tag=="X-ACCOUNT" // MyPhoneExplorer YES, embedded android export NO
+                || tag=="X-ACCOUNT" // MyPhoneExplorer YES, embedded Android export NO
             ) // TODO other from rfc 2426
                 item.otherTags.push_back(TagValue(joinBySC(vType), decodeValue(joinBySC(vValue), errors)));
             // Unknown tags

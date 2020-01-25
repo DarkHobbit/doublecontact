@@ -101,7 +101,7 @@ enum ContactColumn {
 #define S_SOME_PHONES QObject::tr("Some phones")
 #define S_SOME_EMAILS QObject::tr("Some emails")
 // Address components
-#define S_ADR_OFFICE_BOX QObject::tr("P.o. box")
+#define S_ADR_OFFICE_BOX QObject::tr("P.O. box")
 #define S_ADR_EXTENDED QObject::tr("Ext.addr.")
 #define S_ADR_STREET QObject::tr("Street")
 #define S_ADR_CITY QObject::tr("City/Locality")
@@ -128,8 +128,8 @@ enum ContactColumn {
 #define S_ERR_EXTRA_TAG \
     QObject::tr("%1 %2 will be lost at contact %3")
 #define S_ERR_NETWORK_SUPPORT \
-    QObject::tr("Error: Program built without network support. Use WITH_NETWORK define, if you build program from sources.\n")
-#define S_REMOVE_CONFIRM QObject::tr("Are You really want to delete selected items?")
+    QObject::tr("Program built without network support. Use WITH_NETWORK define, if building from source code.\n")
+#define S_REMOVE_CONFIRM QObject::tr("Do you really want to delete the selected items?")
 
 // Visible columns headers
 // (It was a simple string array, but its translation not worked)

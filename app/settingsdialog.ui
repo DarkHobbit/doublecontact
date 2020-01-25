@@ -329,7 +329,7 @@
        <item>
         <widget class="QLabel" name="lbDefaultPhoneHint">
          <property name="text">
-          <string>(many phones treats 'Voice' as 'Other')</string>
+          <string>(many phones treat 'Voice' as 'Other')</string>
          </property>
         </widget>
        </item>
