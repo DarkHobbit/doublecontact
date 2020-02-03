@@ -43,6 +43,7 @@ enum ContactColumn {
   ccHasEmail,   // contact has at least one phone
   ccHasBDay,    // contact has birthday
   ccHasPhoto,   // contact has at least one photo
+  ccHasProblems,// contact has at least one unknown tag
   ccSomePhones, // contact has more than one phone
   ccSomeEmails, // contact has more than one email
   ccLast
@@ -98,6 +99,7 @@ enum ContactColumn {
 #define S_HAS_EMAIL QObject::tr("Has email")
 #define S_HAS_BDAY QObject::tr("Has birthday")
 #define S_HAS_PHOTO QObject::tr("Has photo")
+#define S_HAS_PROBLEMS QObject::tr("Has problems")
 #define S_SOME_PHONES QObject::tr("Some phones")
 #define S_SOME_EMAILS QObject::tr("Some emails")
 // Address components

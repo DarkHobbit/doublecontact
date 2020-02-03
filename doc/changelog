@@ -84,3 +84,4 @@ CURRENT
 * At contact edit dialog, "Save view" button added
 * At contact edit dialog, tab order now tuned according to number of names, phones, emails
 * At contact edit dialog, birhday and anniversary editors don't contains time by default for new contact
+* New visible column: Has problems

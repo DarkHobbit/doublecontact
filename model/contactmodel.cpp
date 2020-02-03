@@ -134,6 +134,7 @@ QVariant ContactModel::data(const QModelIndex &index, int role) const
             case ccHasEmail:    return !c.emails.isEmpty() ? "*" : QVariant();
             case ccHasBDay:     return !c.birthday.isEmpty() ? "*" : QVariant();
             case ccHasPhoto:    return !c.photo.isEmpty() ? "*" : QVariant();
+            case ccHasProblems: return !c.unknownTags.isEmpty() ? "*" : QVariant();
             case ccSomePhones:  return c.phones.count()>1  ? "*" : QVariant();
             case ccSomeEmails:  return c.emails.count()>1  ? "*" : QVariant();
             case ccLast: { return QVariant(); } // Boundary case

@@ -53,6 +53,7 @@ void ContactColumnHeaders::fill()
     << S_HAS_EMAIL
     << S_HAS_BDAY
     << S_HAS_PHOTO
+    << S_HAS_PROBLEMS
     << S_SOME_PHONES
     << S_SOME_EMAILS;
 }
