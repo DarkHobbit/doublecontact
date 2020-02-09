@@ -300,10 +300,17 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                 tag=="LABEL" || tag=="PRODID"
                 || tag=="X-ACCOUNT" // MyPhoneExplorer YES, embedded Android export NO
             ) // TODO other from rfc 2426
-                item.otherTags.push_back(TagValue(joinBySC(vType), decodeValue(joinBySC(vValue), errors)));
+                item.otherTags.push_back(
+                    TagValue(joinBySC(vType)
+                             .remove(";ENCODING=QUOTED-PRINTABLE", Qt::CaseInsensitive)
+                             .remove(";CHARSET=UTF-8", Qt::CaseInsensitive),
+                        decodeValue(joinBySC(vValue), errors)));
             // Unknown tags
             else
-                item.unknownTags.push_back(TagValue(joinBySC(vType), decodeValue(joinBySC(vValue), errors)));
+                item.unknownTags.push_back(TagValue(joinBySC(vType)
+                    .remove(";ENCODING=QUOTED-PRINTABLE", Qt::CaseInsensitive)
+                    .remove(";CHARSET=UTF-8", Qt::CaseInsensitive),
+                    decodeValue(joinBySC(vValue), errors)));
         }
         debugSave(logFile, "Done.", false);
     }
@@ -459,10 +466,10 @@ void VCardData::exportRecord(QStringList &lines, const ContactItem &item, QStrin
         lines << item.idType + ":" + encodeValue(item.id, QString(item.idType + ":").length());
     // Known but un-editing tags
     foreach (const TagValue& tv, item.otherTags)
-            lines << QString(tv.tag + ":" + tv.value);
+            lines << encodeAll(tv.tag, 0, false, tv.value);
     // Unknown tags
     foreach (const TagValue& tv, item.unknownTags)
-            lines << QString(tv.tag + ":" + tv.value);
+            lines << encodeAll(tv.tag, 0, false, tv.value);
     lines << "END:VCARD";
 }
 
