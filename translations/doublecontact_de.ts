@@ -233,7 +233,7 @@ Möchten Sie dieses Zertifikat trotzdem akzeptieren?</translation>
     <message>
         <location filename="../app/contactdialog.ui" line="658"/>
         <source>Save View</source>
-        <translation type="unfinished"></translation>
+        <translation>Ansicht speichern</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="397"/>
@@ -1288,7 +1288,7 @@ Sprache des Telefons %5</translation>
     <message>
         <location filename="../core/formats/common/vcarddata.cpp" line="241"/>
         <source>Unknown photo kind at line %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Unbekannte Fotoart in Zeile %1: %2</translation>
     </message>
     <message>
         <location filename="../core/formats/common/vcarddata.cpp" line="313"/>
@@ -2036,12 +2036,12 @@ Benutzername, Passwort, Protokoll und Port überprüfen</translation>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="114"/>
         <source>MPB message body missing</source>
-        <translation type="unfinished"></translation>
+        <translation>MPB-Nachrichtentext fehlt</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="120"/>
         <source>Unknown messages format</source>
-        <translation type="unfinished"></translation>
+        <translation>Unbekanntes Nachrichtenformat</translation>
     </message>
     <message>
         <location filename="../core/formats/common/vmessagedata.cpp" line="16"/>
@@ -2286,7 +2286,7 @@ Benutzername, Passwort, Protokoll und Port überprüfen</translation>
     <message>
         <location filename="../app/settingsdialog.ui" line="346"/>
         <source>Debug save</source>
-        <translation type="unfinished"></translation>
+        <translation>Debug speichern</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="353"/>
