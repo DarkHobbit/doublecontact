@@ -67,14 +67,14 @@
      <item>
       <widget class="QPushButton" name="btnMerge">
        <property name="text">
-        <string>&amp;Merge groups…</string>
+        <string>&amp;Merge groups...</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QPushButton" name="btnSplit">
        <property name="text">
-        <string>&amp;Split group…</string>
+        <string>&amp;Split group...</string>
        </property>
       </widget>
      </item>

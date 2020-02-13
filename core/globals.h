@@ -64,7 +64,7 @@ enum ContactColumn {
 #define S_CSV_PROFILE_SELECT QObject::tr("Select CSV profile")
 #define S_GENERIC_CSV_PROFILE QObject::tr("Generic profile")
 // Spec.value for combined phone/mail/addr. types
-#define S_MIXED_TYPE QObject::tr("mixed…")
+#define S_MIXED_TYPE QObject::tr("mixed...")
 // Name components
 #define S_FIRST_NAME QObject::tr("Firstname")
 #define S_LAST_NAME QObject::tr("Lastname")

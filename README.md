@@ -36,3 +36,6 @@ DoubleContact user manual [is available](https://github.com/DarkHobbit/doublecon
 ### Translations ###
 
 Please, use [Weblate](https://hosted.weblate.org/projects/doublecontact/) if you want to translate program on a new language.
+
+Please, don't place ellipsis and other non-latin character in source files directly. Place this into translation files (including
+English).
