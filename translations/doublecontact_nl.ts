@@ -247,22 +247,22 @@ Wilt u dit certificaat tóch accepteren?</translation>
     <message>
         <location filename="../app/contactdialog.ui" line="693"/>
         <source>&amp;Remove</source>
-        <translation type="unfinished">Ve&amp;rwijderen</translation>
+        <translation>Ve&amp;rwijderen</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="696"/>
         <source>Del</source>
-        <translation type="unfinished">Del</translation>
+        <translation>Del</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="701"/>
         <source>Copy text</source>
-        <translation type="unfinished">Tekst kopiëren</translation>
+        <translation>Tekst kopiëren</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="704"/>
         <source>Ctrl+C</source>
-        <translation type="unfinished">Ctrl+C</translation>
+        <translation>Ctrl+C</translation>
     </message>
     <message>
         <source>anniversary</source>
@@ -1678,7 +1678,7 @@ opgeslagen als mobiele telefoon</translation>
     <message>
         <location filename="../core/globals.h" line="106"/>
         <source>P.O. box</source>
-        <translation type="unfinished"></translation>
+        <translation>Postbus</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="127"/>
@@ -1868,7 +1868,7 @@ opgeslagen als mobiele telefoon</translation>
     <message>
         <location filename="../core/globals.h" line="102"/>
         <source>Has problems</source>
-        <translation type="unfinished"></translation>
+        <translation>Heeft problemen</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="103"/>
@@ -1884,12 +1884,13 @@ opgeslagen als mobiele telefoon</translation>
         <location filename="../core/globals.h" line="133"/>
         <source>Program built without network support. Use WITH_NETWORK define, if building from source code.
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Het programma is gebouwd zonder netwerkondersteuning. Gebruik WITH_NETWORK tijdens het compileren.
+</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="134"/>
         <source>Do you really want to delete the selected items?</source>
-        <translation type="unfinished"></translation>
+        <translation>Weet je zeker dat je de geselecteerde items wilt verwijderen?</translation>
     </message>
     <message>
         <source>P.o. box</source>
@@ -2439,7 +2440,7 @@ Controleer gebruikersnaam, wachtwoord, protocol en poort</translation>
     <message>
         <location filename="../app/settingsdialog.ui" line="332"/>
         <source>(many phones treat &apos;Voice&apos; as &apos;Other&apos;)</source>
-        <translation type="unfinished"></translation>
+        <translation>(veel telefoons vatten &apos;Spraakoproep&apos; op als &apos;Overig&apos;)</translation>
     </message>
     <message>
         <source>(many phones treats &apos;Voice&apos; as &apos;Other&apos;)</source>
