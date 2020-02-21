@@ -1132,3 +1132,11 @@ void MainWindow::on_actionCopy_text_triggered()
     QString text = selectedModel->data(ind, Qt::DisplayRole).toString();
     qApp->clipboard()->setText(text);
 }
+
+void MainWindow::on_actionJoin_names_triggered()
+{
+    if (!checkSelection()) return;
+    selectedModel->joinNames(selection);
+    updateViewMode();
+    updateHeaders();
+}

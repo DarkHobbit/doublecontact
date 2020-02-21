@@ -97,6 +97,8 @@ private slots:
     void on_action_About_Qt_triggered();
     void on_actionCopy_text_triggered();
 
+    void on_actionJoin_names_triggered();
+
 private:
     Ui::MainWindow *ui;
     ContactModel *modLeft, *modRight;

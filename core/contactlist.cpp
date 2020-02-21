@@ -260,6 +260,16 @@ bool ContactItem::splitNames()
     return res;
 }
 
+bool ContactItem::joinNames()
+{
+    bool res = false;
+    dropFinalEmptyNames();
+    QString unitedName = names.join(" ");
+    names.clear();
+    names << unitedName;
+    return res;
+}
+
 bool ContactItem::dropSlashes()
 {
     for (int i=0; i<names.count(); i++) {

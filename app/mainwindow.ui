@@ -30,7 +30,7 @@
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
       </property>
-      <widget class="QWidget" name="">
+      <widget class="QWidget" name="layoutWidget">
        <layout class="QVBoxLayout" name="verticalLayout">
         <item>
          <widget class="QLabel" name="lbLeft">
@@ -74,7 +74,7 @@
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="">
+      <widget class="QWidget" name="layoutWidget">
        <layout class="QVBoxLayout" name="verticalLayout_2">
         <item>
          <widget class="QLabel" name="lbRight">
@@ -222,7 +222,7 @@
      <x>0</x>
      <y>0</y>
      <width>817</width>
-     <height>24</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_File">
@@ -274,6 +274,7 @@
     <addaction name="action_Swap_names"/>
     <addaction name="actionCompare_Result"/>
     <addaction name="actionS_plit_names"/>
+    <addaction name="actionJoin_names"/>
     <addaction name="action_Drop_slashes"/>
     <addaction name="actionIntl_phone_prefix"/>
     <addaction name="actionFormat_phone_numbers"/>
@@ -607,6 +608,11 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+C</string>
+   </property>
+  </action>
+  <action name="actionJoin_names">
+   <property name="text">
+    <string>Join names</string>
    </property>
   </action>
  </widget>

@@ -79,6 +79,7 @@ Bugfix release:
 * Added translations: Portuguese (incomplete)
 
 CURRENT
+* Added names joining (primarily for SIM prepare)
 * At main window, splitter between left and right panels added
 * At contact edit dialog, unknown and unediting (other) tags can be removed or copied to clipboard via popup menu
 * At contact edit dialog, "Save view" button added

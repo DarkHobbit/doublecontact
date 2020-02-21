@@ -380,6 +380,16 @@ void ContactModel::splitNames(const QModelIndexList &indices)
     _changed = true;
 }
 
+void ContactModel::joinNames(const QModelIndexList &indices)
+{
+    foreach(QModelIndex index, indices) {
+        beginEditRow(index);
+        items[index.row()].joinNames();
+        endEditRow(index);
+    }
+    _changed = true;
+}
+
 void ContactModel::dropSlashes(const QModelIndexList &indices)
 {
     foreach(QModelIndex index, indices) {

@@ -181,6 +181,7 @@ struct ContactItem {
     void clear();
     bool swapNames();
     bool splitNames(); // TODO int index
+    bool joinNames();
     bool dropSlashes();
     bool intlPhonePrefix(int countryRule);
     // Aux methods
