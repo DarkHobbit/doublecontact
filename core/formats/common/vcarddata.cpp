@@ -67,6 +67,8 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
     // Logging
     QFile logFile(qApp->applicationDirPath()+QDir::separator()+"loadlog.txt");
     debugSave(logFile, "Start reading...", true);
+    // Quoted-printable flag for non-standard phone/email types
+    bool quotedPrintableDefault = false;
     // Collect records
     for (int line=0; line<lines.count(); line++) {
         const QString& s = lines[line];
@@ -80,6 +82,7 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
             item.clear();
             visName.clear();
             item.originalFormat = "VCARD";
+            quotedPrintableDefault = false;
         }
         else if (s.startsWith("END:VCARD", Qt::CaseInsensitive)) {
             recordOpened = false;
@@ -112,8 +115,13 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                     // non-standart types may be non-latin
                     QString typeCand = vType[i];
                     typeCand.remove("TYPE=", Qt::CaseInsensitive).remove("LABEL=", Qt::CaseInsensitive);
-                    if (!skipDecoding)
-                        typeCand = codec->toUnicode(typeCand.toLocal8Bit());
+                    if (!skipDecoding) {
+                        // Hack for non-standard types
+                        if (quotedPrintableDefault)
+                            typeCand = QuotedPrintable::decode(typeCand, codec);
+                        else
+                            typeCand = codec->toUnicode(typeCand.toLocal8Bit());
+                    }
                     // Detect and split types, composed as value list (RFC)
                     if (typeCand.contains(",")) {
                         QStringList typesAsValueList = typeCand.split(",");
@@ -137,11 +145,19 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                     else {// type, type...
                         if (skipDecoding)
                             types << vType[i];
-                        else
-                            types << codec->toUnicode(vType[i].toLocal8Bit());
+                        else {
+                            // Hack for non-standard types
+                            if (quotedPrintableDefault)
+                                types << QuotedPrintable::decode(vType[i], codec);
+                            else
+                                types << codec->toUnicode(vType[i].toLocal8Bit());
+                        }
                     }
                 }
             }
+            // Helper for non-standard types
+            if (encoding.startsWith("QUOTED-PRINTABLE", Qt::CaseInsensitive))
+                    quotedPrintableDefault = true;
             if ((!types.isEmpty())
                     && (tag!="TEL") && (tag!="EMAIL") && (tag!="ADR") && (tag!="PHOTO")
                     && (tag!="IMPP") && (tag!="X-SIP") && (tag!="X-CUSTOM-IM"))
