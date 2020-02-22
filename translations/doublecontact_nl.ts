@@ -883,7 +883,7 @@ Wilt u dit certificaat tóch accepteren?</translation>
     <message>
         <location filename="../app/mainwindow.ui" line="615"/>
         <source>Join names</source>
-        <translation type="unfinished"></translation>
+        <translation>Namen samenvoegen</translation>
     </message>
     <message>
         <source>Settings...</source>
