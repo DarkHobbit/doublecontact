@@ -21,12 +21,12 @@
     <message>
         <location filename="../app/aboutdialog.ui" line="104"/>
         <source>Distributed under GPL v3 or above</source>
-        <translation type="unfinished"></translation>
+        <translation>Rozpowszechniane na licencji GPL v3 lub nowszej</translation>
     </message>
     <message>
         <location filename="../app/aboutdialog.ui" line="132"/>
         <source>Contributors</source>
-        <translation type="unfinished"></translation>
+        <translation>Współtwórcy</translation>
     </message>
 </context>
 <context>
@@ -52,7 +52,7 @@
     <message>
         <location filename="../core/formats/network/carddavformat.cpp" line="28"/>
         <source>Invalid URL</source>
-        <translation type="unfinished"></translation>
+        <translation>Niepoprawny URL</translation>
     </message>
     <message>
         <location filename="../core/formats/network/carddavformat.cpp" line="82"/>
