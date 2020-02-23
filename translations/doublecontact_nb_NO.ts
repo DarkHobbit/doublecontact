@@ -799,7 +799,7 @@ Er du sikker på at du vil godta dette sertifikatet uansett?</translation>
     <message>
         <location filename="../app/mainwindow.ui" line="615"/>
         <source>Join names</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Navn uten mellomrom</translation>
     </message>
     <message>
         <source>Settings...</source>
@@ -1643,7 +1643,7 @@ lagret som mobil</translation>
     <message>
         <location filename="../core/globals.h" line="106"/>
         <source>P.O. box</source>
-        <translation type="unfinished"></translation>
+        <translation>Postboks</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="127"/>
@@ -1833,7 +1833,7 @@ lagret som mobil</translation>
     <message>
         <location filename="../core/globals.h" line="102"/>
         <source>Has problems</source>
-        <translation type="unfinished"></translation>
+        <translation>Har problemer</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="103"/>
@@ -1849,12 +1849,13 @@ lagret som mobil</translation>
         <location filename="../core/globals.h" line="133"/>
         <source>Program built without network support. Use WITH_NETWORK define, if building from source code.
 </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Programmet er bygd uten nettverksstøtte. Bruk WITH_NETWORK define, hvis du bygger fra kildekode.
+</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="134"/>
         <source>Do you really want to delete the selected items?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ønsker du virkelig å slette valgte elementer?</translation>
     </message>
     <message>
         <source>P.o. box</source>
@@ -2336,7 +2337,7 @@ Sjekk brukernavn, passord, protokoll og port</translation>
     <message>
         <location filename="../app/settingsdialog.ui" line="332"/>
         <source>(many phones treat &apos;Voice&apos; as &apos;Other&apos;)</source>
-        <translation type="unfinished"></translation>
+        <translation>(mange telefoner håndterer &quot;Tale&quot; som &quot;Annet&quot;)</translation>
     </message>
     <message>
         <source>(many phones treats &apos;Voice&apos; as &apos;Other&apos;)</source>
