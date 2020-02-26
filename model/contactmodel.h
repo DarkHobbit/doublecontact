@@ -68,6 +68,7 @@ public:
     void joinNames(const QModelIndexList& indices);
     void dropSlashes(const QModelIndexList& indices);
     void generateFullNames(const QModelIndexList& indices);
+    void parseFullName(const QModelIndexList& indices);
     void dropFullNames(const QModelIndexList& indices);
     void reverseFullNames(const QModelIndexList& indices);
     void formatPhones(const QModelIndexList& indices, const QString& templ);

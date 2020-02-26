@@ -190,6 +190,7 @@ struct ContactItem {
     void sortTypes(QList<T> &values); // Type sorting and lowercasing for correct compare
     QString formatNames() const;
     QString makeGenericName() const;
+    void parseFullName();
     void reverseFullName();
     void dropFinalEmptyNames(); // If empty parts not in-middle, remove it
     void formatPhones(const QString& templ);

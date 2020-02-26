@@ -1140,3 +1140,11 @@ void MainWindow::on_actionJoin_names_triggered()
     updateViewMode();
     updateHeaders();
 }
+
+void MainWindow::on_actionParse_full_name_triggered()
+{
+    if (!checkSelection()) return;
+    selectedModel->parseFullName(selection);
+    updateViewMode();
+    updateHeaders();
+}

@@ -418,6 +418,16 @@ QString ContactItem::makeGenericName() const
     return res;
 }
 
+void ContactItem::parseFullName()
+{
+    names = fullName.split(" ");
+    while (names.count()>MAX_NAMES)
+        names.removeLast();
+    for (int i=0; i<names.count(); i++)
+        if (names[i].right(1)==",")
+            names[i].remove(names[i].count()-1);
+}
+
 void ContactItem::reverseFullName()
 {
     int sPos = fullName.indexOf(" ");

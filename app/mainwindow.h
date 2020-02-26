@@ -96,8 +96,8 @@ private slots:
     void on_action_About_triggered();
     void on_action_About_Qt_triggered();
     void on_actionCopy_text_triggered();
-
     void on_actionJoin_names_triggered();
+    void on_actionParse_full_name_triggered();
 
 private:
     Ui::MainWindow *ui;

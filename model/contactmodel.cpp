@@ -410,6 +410,16 @@ void ContactModel::generateFullNames(const QModelIndexList &indices)
     _changed = true;
 }
 
+void ContactModel::parseFullName(const QModelIndexList& indices)
+{
+    foreach(QModelIndex index, indices) {
+        beginEditRow(index);
+        items[index.row()].parseFullName();
+        endEditRow(index);
+    }
+    _changed = true;
+}
+
 void ContactModel::dropFullNames(const QModelIndexList &indices)
 {
     foreach(QModelIndex index, indices) {
