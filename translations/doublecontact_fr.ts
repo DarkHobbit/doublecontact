@@ -234,22 +234,22 @@ Voulez-vous accepter ce certificat quand même ?</translation>
     <message>
         <location filename="../app/contactdialog.ui" line="693"/>
         <source>&amp;Remove</source>
-        <translation type="unfinished">&amp;Supprimer</translation>
+        <translation>&amp;Supprimer</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="696"/>
         <source>Del</source>
-        <translation type="unfinished">Suppr</translation>
+        <translation>Suppr</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="701"/>
         <source>Copy text</source>
-        <translation type="unfinished">Copier le texte</translation>
+        <translation>Copier le texte</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="704"/>
         <source>Ctrl+C</source>
-        <translation type="unfinished">Ctrl + C</translation>
+        <translation>Ctrl + C</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="400"/>
