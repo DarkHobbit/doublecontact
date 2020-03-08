@@ -888,7 +888,7 @@ Wilt u dit certificaat tóch accepteren?</translation>
     <message>
         <location filename="../app/mainwindow.ui" line="621"/>
         <source>Parse full name</source>
-        <translation type="unfinished"></translation>
+        <translation>Volledige naam verwerken</translation>
     </message>
     <message>
         <source>Settings...</source>
