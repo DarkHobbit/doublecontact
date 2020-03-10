@@ -242,27 +242,27 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/contactdialog.ui" line="661"/>
         <source>Save View</source>
-        <translation type="unfinished"></translation>
+        <translation>Запамʼятати вигляд</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="693"/>
         <source>&amp;Remove</source>
-        <translation type="unfinished">&amp;Видалити</translation>
+        <translation>&amp;Видалити</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="696"/>
         <source>Del</source>
-        <translation type="unfinished">Del</translation>
+        <translation>Del</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="701"/>
         <source>Copy text</source>
-        <translation type="unfinished">Копіювати текст</translation>
+        <translation>Копіювати текст</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="704"/>
         <source>Ctrl+C</source>
-        <translation type="unfinished">Ctrl+C</translation>
+        <translation>Ctrl+C</translation>
     </message>
     <message>
         <source>anniversary</source>
@@ -883,12 +883,12 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/mainwindow.ui" line="616"/>
         <source>Join names</source>
-        <translation type="unfinished"></translation>
+        <translation>Обʼєднати імена</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="621"/>
         <source>Parse full name</source>
-        <translation type="unfinished"></translation>
+        <translation>Розібрати повне імʼя</translation>
     </message>
     <message>
         <source>Settings...</source>
@@ -1438,7 +1438,7 @@ SMS: %7
     <message>
         <location filename="../core/formats/common/vcarddata.cpp" line="257"/>
         <source>Unknown photo kind at line %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Невідомий вигляд фото в рядку %1: %2</translation>
     </message>
     <message>
         <location filename="../core/formats/common/vcarddata.cpp" line="336"/>
@@ -1623,7 +1623,7 @@ line %3, col %4
     <message>
         <location filename="../core/globals.h" line="106"/>
         <source>P.O. box</source>
-        <translation type="unfinished"></translation>
+        <translation>Поштова скринька</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="127"/>
@@ -1813,7 +1813,7 @@ line %3, col %4
     <message>
         <location filename="../core/globals.h" line="102"/>
         <source>Has problems</source>
-        <translation type="unfinished"></translation>
+        <translation>Є проблеми</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="103"/>
@@ -1834,7 +1834,7 @@ line %3, col %4
     <message>
         <location filename="../core/globals.h" line="134"/>
         <source>Do you really want to delete the selected items?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ви дійсно бажаєте видалити обрані записи?</translation>
     </message>
     <message>
         <source>P.o. box</source>
@@ -2203,7 +2203,7 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="120"/>
         <source>Unknown messages format</source>
-        <translation type="unfinished"></translation>
+        <translation>Невідомий формат повідомлень</translation>
     </message>
     <message>
         <location filename="../core/formats/common/vmessagedata.cpp" line="16"/>
@@ -2438,7 +2438,7 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../app/settingsdialog.ui" line="332"/>
         <source>(many phones treat &apos;Voice&apos; as &apos;Other&apos;)</source>
-        <translation type="unfinished"></translation>
+        <translation>(багато телефонів трактують «Голосовий» як «Інше»)</translation>
     </message>
     <message>
         <source>(many phones treats &apos;Voice&apos; as &apos;Other&apos;)</source>
