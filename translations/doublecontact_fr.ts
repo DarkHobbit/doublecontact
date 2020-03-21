@@ -481,7 +481,7 @@ Voulez-vous accepter ce certificat quand même ?</translation>
     <message>
         <location filename="../app/logwindow.ui" line="14"/>
         <source>Log Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Fenêtre d&apos;historique</translation>
     </message>
     <message>
         <location filename="../app/logwindow.ui" line="20"/>
@@ -779,7 +779,7 @@ Voulez-vous accepter ce certificat quand même ?</translation>
     <message>
         <location filename="../app/mainwindow.ui" line="616"/>
         <source>Join names</source>
-        <translation type="unfinished"></translation>
+        <translation>Joindre les noms</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="621"/>
