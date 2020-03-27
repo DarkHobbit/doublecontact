@@ -238,22 +238,22 @@ Möchten Sie dieses Zertifikat trotzdem akzeptieren?</translation>
     <message>
         <location filename="../app/contactdialog.ui" line="693"/>
         <source>&amp;Remove</source>
-        <translation type="unfinished">&amp;Entfernen</translation>
+        <translation>&amp;Entfernen</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="696"/>
         <source>Del</source>
-        <translation type="unfinished"></translation>
+        <translation>Del</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="701"/>
         <source>Copy text</source>
-        <translation type="unfinished">Text kopieren</translation>
+        <translation>Text kopieren</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="704"/>
         <source>Ctrl+C</source>
-        <translation type="unfinished">Strg + C</translation>
+        <translation>Strg + C</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="400"/>
@@ -783,12 +783,12 @@ Möchten Sie dieses Zertifikat trotzdem akzeptieren?</translation>
     <message>
         <location filename="../app/mainwindow.ui" line="616"/>
         <source>Join names</source>
-        <translation type="unfinished"></translation>
+        <translation>Namen zusammenführen</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="621"/>
         <source>Parse full name</source>
-        <translation type="unfinished"></translation>
+        <translation>Vollständigen Namen parsen</translation>
     </message>
     <message>
         <source>Settings...</source>
@@ -1632,7 +1632,7 @@ Zeile %3, Spalte %4
     <message>
         <location filename="../core/globals.h" line="106"/>
         <source>P.O. box</source>
-        <translation type="unfinished"></translation>
+        <translation>Postfach</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="127"/>
@@ -1822,7 +1822,7 @@ Zeile %3, Spalte %4
     <message>
         <location filename="../core/globals.h" line="102"/>
         <source>Has problems</source>
-        <translation type="unfinished"></translation>
+        <translation>Hat Probleme</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="103"/>
@@ -1838,12 +1838,13 @@ Zeile %3, Spalte %4
         <location filename="../core/globals.h" line="133"/>
         <source>Program built without network support. Use WITH_NETWORK define, if building from source code.
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Das Programm wurde ohne Netzwerkunterstützung erstellt. Verwenden Sie WITH_NETWORK definieren, wenn aus dem Quellcode gebaut wird.
+</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="134"/>
         <source>Do you really want to delete the selected items?</source>
-        <translation type="unfinished"></translation>
+        <translation>Wollen Sie die ausgewählten Elemente wirklich löschen?</translation>
     </message>
     <message>
         <source>P.o. box</source>
