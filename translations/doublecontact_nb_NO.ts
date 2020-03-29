@@ -804,7 +804,7 @@ Er du sikker på at du vil godta dette sertifikatet uansett?</translation>
     <message>
         <location filename="../app/mainwindow.ui" line="621"/>
         <source>Parse full name</source>
-        <translation type="unfinished"></translation>
+        <translation>Fortolk fullt navn</translation>
     </message>
     <message>
         <source>Settings...</source>
