@@ -2286,7 +2286,7 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../app/settingsdialog.ui" line="126"/>
         <source>Grid alternate</source>
-        <translation>Таблицы (дополнит.)</translation>
+        <translation>Таблицы (дополнительный)</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="137"/>
