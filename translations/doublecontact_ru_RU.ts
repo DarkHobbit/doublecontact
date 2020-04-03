@@ -1282,13 +1282,13 @@ Are you want switch column sorting off?</source>
 %7 SMS
 %8 archived SMS</source>
         <translation>Контактов: %1
-        Телефонов: %2
-        Адресов эл. почты: %3
-        Почтовых адресов: %4
-        Дней рождения: %5
-        Вызовов: %6
-        SMS: %7
-        Архивированных SMS: %8</translation>
+Телефонов: %2
+Адресов эл. почты: %3
+Почтовых адресов: %4
+Дней рождения: %5
+Вызовов: %6
+SMS: %7
+Архивированных SMS: %8</translation>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="850"/>
@@ -1409,7 +1409,7 @@ IMEI %3
 %2
 line %3, col %4
 </source>
-        <translation>Не могу прочесть содержимое файла %1
+        <translation>Не прочитать содержимое файла %1
 %2
 строка %3, столбец %4
 </translation>
@@ -1902,7 +1902,7 @@ Data will be lost</source>
         <location filename="../core/formats/files/vcfdirectory.cpp" line="73"/>
         <source>Can&apos;t create directory
 %1</source>
-        <translation>Не могу создать каталог
+        <translation>Не создать каталог
 %1</translation>
     </message>
     <message>
