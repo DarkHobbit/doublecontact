@@ -99,7 +99,7 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/comparedialog.cpp" line="69"/>
         <source>Emails</source>
-        <translation>Электропочта</translation>
+        <translation>Эл. почта</translation>
     </message>
     <message>
         <location filename="../app/comparedialog.cpp" line="77"/>
@@ -195,7 +195,7 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/contactdialog.ui" line="107"/>
         <source>Email</source>
-        <translation>Электропочта</translation>
+        <translation>Эл. почта</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="148"/>
@@ -220,7 +220,7 @@ Are you want to accept this certificate anyway?</source>
         <location filename="../app/contactdialog.ui" line="166"/>
         <location filename="../app/contactdialog.cpp" line="715"/>
         <source>email</source>
-        <translation>электропочту</translation>
+        <translation>эл. почту</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="222"/>
@@ -426,7 +426,7 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/contactdialog.cpp" line="727"/>
         <source>Email type</source>
-        <translation>Тип электропочты</translation>
+        <translation>Тип эл. почты</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.cpp" line="729"/>
@@ -441,12 +441,12 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/contactdialog.cpp" line="804"/>
         <source>Open image file</source>
-        <translation>Открыть картинку</translation>
+        <translation>Открыть изображение</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.cpp" line="836"/>
         <source>Save image file</source>
-        <translation>Сохранить картинку</translation>
+        <translation>Сохранить изображение</translation>
     </message>
 </context>
 <context>
@@ -1010,7 +1010,7 @@ Are you want to accept this certificate anyway?</source>
         <source>Are You really want to edit more than one record?
 Only some fields can this edited in this mode</source>
         <translation>Вы действительно хотите отредактировать более одной записи?
-Так можно изменить лишь некоторые поля</translation>
+Так можно изменить лишь некоторые поля.</translation>
     </message>
     <message>
         <source>Are You really want to delete selected items?</source>
@@ -1113,7 +1113,7 @@ Save changes?</source>
     <message>
         <location filename="../app/mainwindow.cpp" line="896"/>
         <source>Strongly two records on current panel must be selected for this operation</source>
-        <translation>Сначала надо выбрать ровно2 записи на текущей панели</translation>
+        <translation>Сначала надо выбрать ровно 2 записи на текущей панели</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.cpp" line="902"/>
@@ -1283,7 +1283,7 @@ Are you want switch column sorting off?</source>
 %8 archived SMS</source>
         <translation>Контактов: %1
         Телефонов: %2
-        Адресов электропочты: %3
+        Адресов эл. почты: %3
         Почтовых адресов: %4
         Дней рождения: %5
         Вызовов: %6
@@ -1425,7 +1425,7 @@ line %3, col %4
         <location filename="../core/formats/files/udxfile.cpp" line="75"/>
         <source>Can&apos;t find &apos;RecordInfo&apos; tag at file
 %1</source>
-        <translation>Не могу найти тег &apos;RecordInfo&apos; в файле
+        <translation>Не найден тег &apos;RecordInfo&apos; в файле
 %1</translation>
     </message>
     <message>
@@ -1436,19 +1436,19 @@ line %3, col %4
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="85"/>
         <source>Warning: udx version not found, treat as 1.0...</source>
-        <translation>Предупреждение: версия udx не найдена, пытаюсь интерпретировать как 1.0…</translation>
+        <translation>Предупреждение: версия udx не найдена, попытка интерпретировать как 1.0…</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="94"/>
         <source>Can&apos;t find &apos;vCard&apos; records at file
 %1</source>
-        <translation>Не могу найти записи &apos;vCard&apos; в файле
+        <translation>Не найдены записи &apos;vCard&apos; в файле
 %1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="111"/>
         <source>Can&apos;t find &apos;vCardField&apos; at sequence %1</source>
-        <translation>Не могу найти запись &apos;vCardField&apos; для контакта %1</translation>
+        <translation>Не найдена запись &apos;vCardField&apos; для контакта %1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="140"/>
@@ -1644,22 +1644,22 @@ line %3, col %4
     <message>
         <location filename="../core/globals.h" line="80"/>
         <source>Home phone</source>
-        <translation>Дом. тел.</translation>
+        <translation>Дом. телефон</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="81"/>
         <source>Work phone</source>
-        <translation>Раб. тел.</translation>
+        <translation>Раб. телефон</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="82"/>
         <source>Cell phone</source>
-        <translation>Моб. тел.</translation>
+        <translation>Моб. телефон</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="83"/>
         <source>Email</source>
-        <translation>Электропочта</translation>
+        <translation>Эл. почта</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="84"/>
@@ -1760,7 +1760,8 @@ line %3, col %4
         <location filename="../core/globals.h" line="133"/>
         <source>Program built without network support. Use WITH_NETWORK define, if building from source code.
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Программа скомпилирована без поддержки сети. Используйте переменную WITH_NETWORK, если компилируете из исходного кода.
+</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="134"/>
@@ -1809,12 +1810,12 @@ line %3, col %4
     <message>
         <location filename="../core/globals.h" line="115"/>
         <source>Load image</source>
-        <translation>Загрузить картинку</translation>
+        <translation>Загрузить изображение</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="116"/>
         <source>Save image</source>
-        <translation>Сохранить картинку</translation>
+        <translation>Сохранить изображение</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="117"/>
@@ -1840,21 +1841,22 @@ line %3, col %4
         <location filename="../core/globals.h" line="123"/>
         <source>Can&apos;t read file
 %1</source>
-        <translation>Не могу прочесть файл
+        <translation>Не прочитать файл
 %1</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="124"/>
         <source>Can&apos;t write file
 %1</source>
-        <translation>Не могу записать файл
+        <translation>Не записать файл
 %1</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="125"/>
         <source>Can&apos;t seek to %1 in file
 %2</source>
-        <translation>Не могу перейти на позицию %1 в файле</translation>
+        <translation>Не перейти на позицию %1 в файле
+%2</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="126"/>
@@ -1866,7 +1868,7 @@ line %3, col %4
         <source>Warning: contact %1 has %2, not supported in this format.
 Data will be lost</source>
         <translation>Предупреждение: у контакта %1 есть %2, не поддерживаемая в этом формате.
-Данные будут потеряны</translation>
+Данные будут потеряны.</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="131"/>
@@ -1941,7 +1943,7 @@ Data will be lost</source>
     <message>
         <location filename="../core/formats/files/mpbfile.cpp" line="219"/>
         <source>Number %1 not found in addressbook. Original name (%2) saved</source>
-        <translation>Номер %1 не найден в адресной книге. Сохранено исходное имя (%2)</translation>
+        <translation>Номер %1 не найден в адресной книге. Сохранено исходное имя (%2).</translation>
     </message>
     <message>
         <location filename="../core/formats/profiles/csvprofilebase.h" line="21"/>
@@ -1989,12 +1991,12 @@ Data will be lost</source>
     <message>
         <location filename="../core/formats/files/nbffile.cpp" line="64"/>
         <source>Can&apos;t open %1 directory in archive</source>
-        <translation>Не могу открыть каталог %1 в архиве</translation>
+        <translation>Не открыть каталог %1 в архиве</translation>
     </message>
     <message>
         <location filename="../core/formats/files/nbffile.cpp" line="27"/>
         <source>Can&apos;t set %1 item as current in archive</source>
-        <translation>Не могу выбрать файл %1 в архиве</translation>
+        <translation>Не выбрать файл %1 в архиве</translation>
     </message>
     <message>
         <location filename="../core/formats/files/nbffile.cpp" line="130"/>
@@ -2009,7 +2011,7 @@ Data will be lost</source>
     <message>
         <location filename="../core/formats/files/nbffile.cpp" line="28"/>
         <source>Can&apos;t open %1 item in archive</source>
-        <translation>Не могу открыть файл %1 в архиве</translation>
+        <translation>Не открыть файл %1 в архиве</translation>
     </message>
     <message>
         <location filename="../app/groupdialog.cpp" line="29"/>
@@ -2134,7 +2136,7 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="114"/>
         <source>MPB message body missing</source>
-        <translation type="unfinished">Отсутствует тело MPB-сообщения</translation>
+        <translation>Отсутствует тело MPB-сообщения</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="120"/>
