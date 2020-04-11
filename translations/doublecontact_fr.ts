@@ -284,7 +284,7 @@ Voulez-vous accepter ce certificat quand même ?</translation>
     <message>
         <location filename="../app/contactdialog.ui" line="543"/>
         <source>Format version:</source>
-        <translation>Version de format  :</translation>
+        <translation>Version du format  :</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="550"/>
