@@ -1127,7 +1127,7 @@ Möchten Sie die Spaltensortierung ausschalten?</translation>
     <message>
         <location filename="../core/contactlist.cpp" line="107"/>
         <source>Message</source>
-        <translation></translation>
+        <translation>Nachricht</translation>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="108"/>
@@ -1367,14 +1367,14 @@ Zeile %3, Spalte %4
         <location filename="../core/formats/files/udxfile.cpp" line="69"/>
         <source>Root node is not &apos;DataExchangeInfo&apos; at file
 %1</source>
-        <translation>Stammknoten entspricht nicht „DataExchangeInfo” in der Datei
+        <translation>Stammknoten entspricht nicht „DataExchangeInfo“ in der Datei
 %1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="75"/>
         <source>Can&apos;t find &apos;RecordInfo&apos; tag at file
 %1</source>
-        <translation>Schlagwort „RecordInfo” konnte in der Datei nicht gefunden werden.
+        <translation>Schlagwort „RecordInfo“ konnte in der Datei nicht gefunden werden.
 %1</translation>
     </message>
     <message>
@@ -1407,7 +1407,7 @@ Zeile %3, Spalte %4
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="156"/>
         <source>Unknown &apos;vCardfield&apos; type: %1</source>
-        <translation>Unbekannter Typ „vCardfield”: %1</translation>
+        <translation>Unbekannter Typ „vCardfield“: %1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="164"/>
@@ -1697,7 +1697,7 @@ Zeile %3, Spalte %4
     <message>
         <location filename="../core/globals.h" line="75"/>
         <source>Full name</source>
-        <translation></translation>
+        <translation>Vollständiger Name</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="76"/>
@@ -1737,7 +1737,7 @@ Zeile %3, Spalte %4
     <message>
         <location filename="../core/globals.h" line="83"/>
         <source>Email</source>
-        <translation></translation>
+        <translation>E-Mail</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="84"/>
