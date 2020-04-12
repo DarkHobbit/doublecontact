@@ -90,7 +90,13 @@ bool NokiaData::ReadPredefBinMessage(const QString& fileName, const QByteArray &
         quint64 sec = tmp.toULongLong(&ok, 16);
         if (ok) {
             const quint64 sec_1970_1980 = 315532800;
+#if QT_VERSION >= 0x040700
             msg.when = QDateTime::fromMSecsSinceEpoch((sec+sec_1970_1980)*1000);
+#else
+#warning Nokia message date cannot be read under Qt earlier than 4.7
+            msg.when = QDateTime();
+            errors << "Nokia message date cannot be read under Qt earlier than 4.7: " << QString::number(sec+sec_1970_1980);
+#endif
         }
     }
     list.push_back(msg);

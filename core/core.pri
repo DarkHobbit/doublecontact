@@ -14,7 +14,7 @@ win32 {
   greaterThan(QT_MAJOR_VERSION, 4) {
 LIBS += -lz
 } else {
-  INCLUDEPATH += C:/Qt/4.8.6.st/src/3rdparty/zlib
+  INCLUDEPATH += $(QTDIR)/src/3rdparty/zlib
 }
 }
 unix:LIBS += -lz
