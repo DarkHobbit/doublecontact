@@ -99,7 +99,7 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/comparedialog.cpp" line="69"/>
         <source>Emails</source>
-        <translation>Эл. почта</translation>
+        <translation>Электропочта</translation>
     </message>
     <message>
         <location filename="../app/comparedialog.cpp" line="77"/>
@@ -195,7 +195,7 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/contactdialog.ui" line="107"/>
         <source>Email</source>
-        <translation>Эл. почта</translation>
+        <translation>Электропочта</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="148"/>
@@ -220,7 +220,7 @@ Are you want to accept this certificate anyway?</source>
         <location filename="../app/contactdialog.ui" line="166"/>
         <location filename="../app/contactdialog.cpp" line="715"/>
         <source>email</source>
-        <translation>эл. почту</translation>
+        <translation>электропочту</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="222"/>
@@ -426,7 +426,7 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/contactdialog.cpp" line="727"/>
         <source>Email type</source>
-        <translation>Тип эл. почты</translation>
+        <translation>Тип электропочты</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.cpp" line="729"/>
@@ -441,12 +441,12 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/contactdialog.cpp" line="804"/>
         <source>Open image file</source>
-        <translation>Открыть изображение</translation>
+        <translation>Открыть картинку</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.cpp" line="836"/>
         <source>Save image file</source>
-        <translation>Сохранить изображение</translation>
+        <translation>Сохранить картинку</translation>
     </message>
 </context>
 <context>
@@ -1282,13 +1282,13 @@ Are you want switch column sorting off?</source>
 %7 SMS
 %8 archived SMS</source>
         <translation>Контактов: %1
-Телефонов: %2
-Адресов эл. почты: %3
-Почтовых адресов: %4
-Дней рождения: %5
-Вызовов: %6
-SMS: %7
-Архивированных SMS: %8</translation>
+        Телефонов: %2
+        Адресов эл. почты: %3
+        Почтовых адресов: %4
+        Дней рождения: %5
+        Вызовов: %6
+        SMS: %7
+        Архивированных SMS: %8</translation>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="850"/>
@@ -1409,7 +1409,7 @@ IMEI %3
 %2
 line %3, col %4
 </source>
-        <translation>Не прочитать содержимое файла %1
+        <translation>Не могу прочесть содержимое файла %1
 %2
 строка %3, столбец %4
 </translation>
@@ -1425,7 +1425,7 @@ line %3, col %4
         <location filename="../core/formats/files/udxfile.cpp" line="75"/>
         <source>Can&apos;t find &apos;RecordInfo&apos; tag at file
 %1</source>
-        <translation>Не найден тег &apos;RecordInfo&apos; в файле
+        <translation>Не могу найти тег &apos;RecordInfo&apos; в файле
 %1</translation>
     </message>
     <message>
@@ -1436,19 +1436,19 @@ line %3, col %4
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="85"/>
         <source>Warning: udx version not found, treat as 1.0...</source>
-        <translation>Предупреждение: версия udx не найдена, попытка интерпретировать как 1.0…</translation>
+        <translation>Предупреждение: версия udx не найдена, пытаюсь интерпретировать как 1.0…</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="94"/>
         <source>Can&apos;t find &apos;vCard&apos; records at file
 %1</source>
-        <translation>Не найдены записи &apos;vCard&apos; в файле
+        <translation>Не могу найти записи &apos;vCard&apos; в файле
 %1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="111"/>
         <source>Can&apos;t find &apos;vCardField&apos; at sequence %1</source>
-        <translation>Не найдена запись &apos;vCardField&apos; для контакта %1</translation>
+        <translation>Не могу найти запись &apos;vCardField&apos; для контакта %1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="140"/>
@@ -1644,22 +1644,22 @@ line %3, col %4
     <message>
         <location filename="../core/globals.h" line="80"/>
         <source>Home phone</source>
-        <translation>Дом. телефон</translation>
+        <translation>Дом. тел.</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="81"/>
         <source>Work phone</source>
-        <translation>Раб. телефон</translation>
+        <translation>Раб. тел.</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="82"/>
         <source>Cell phone</source>
-        <translation>Моб. телефон</translation>
+        <translation>Моб. тел.</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="83"/>
         <source>Email</source>
-        <translation>Эл. почта</translation>
+        <translation>Электропочта</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="84"/>
@@ -1775,7 +1775,7 @@ line %3, col %4
     <message>
         <location filename="../core/globals.h" line="107"/>
         <source>Ext.addr.</source>
-        <translation>Рас.адрес</translation>
+        <translation>Расш.адрес</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="108"/>
@@ -1810,12 +1810,12 @@ line %3, col %4
     <message>
         <location filename="../core/globals.h" line="115"/>
         <source>Load image</source>
-        <translation>Загрузить изображение</translation>
+        <translation>Загрузить картинку</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="116"/>
         <source>Save image</source>
-        <translation>Сохранить изображение</translation>
+        <translation>Сохранить картинку</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="117"/>
@@ -1841,14 +1841,14 @@ line %3, col %4
         <location filename="../core/globals.h" line="123"/>
         <source>Can&apos;t read file
 %1</source>
-        <translation>Не прочитать файл
+        <translation>Не могу прочесть файл
 %1</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="124"/>
         <source>Can&apos;t write file
 %1</source>
-        <translation>Не записать файл
+        <translation>Не могу записать файл
 %1</translation>
     </message>
     <message>
@@ -1867,8 +1867,8 @@ line %3, col %4
         <location filename="../core/globals.h" line="129"/>
         <source>Warning: contact %1 has %2, not supported in this format.
 Data will be lost</source>
-        <translation>Предупреждение: у контакта %1 есть %2, не поддерживаемая в этом формате.
-Данные будут потеряны.</translation>
+        <translation>Предупреждение: у контакта %1 есть %2, не поддерживается в этом формате.
+Данные будут потеряны</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="131"/>
@@ -1902,7 +1902,7 @@ Data will be lost</source>
         <location filename="../core/formats/files/vcfdirectory.cpp" line="73"/>
         <source>Can&apos;t create directory
 %1</source>
-        <translation>Не создать каталог
+        <translation>Не могу создать каталог
 %1</translation>
     </message>
     <message>
@@ -1991,12 +1991,12 @@ Data will be lost</source>
     <message>
         <location filename="../core/formats/files/nbffile.cpp" line="64"/>
         <source>Can&apos;t open %1 directory in archive</source>
-        <translation>Не открыть каталог %1 в архиве</translation>
+        <translation>Не могу открыть каталог %1 в архиве</translation>
     </message>
     <message>
         <location filename="../core/formats/files/nbffile.cpp" line="27"/>
         <source>Can&apos;t set %1 item as current in archive</source>
-        <translation>Не выбрать файл %1 в архиве</translation>
+        <translation>Не могу выбрать файл %1 в архиве</translation>
     </message>
     <message>
         <location filename="../core/formats/files/nbffile.cpp" line="130"/>
@@ -2011,7 +2011,7 @@ Data will be lost</source>
     <message>
         <location filename="../core/formats/files/nbffile.cpp" line="28"/>
         <source>Can&apos;t open %1 item in archive</source>
-        <translation>Не открыть файл %1 в архиве</translation>
+        <translation>Не могу открыть файл %1 в архиве</translation>
     </message>
     <message>
         <location filename="../app/groupdialog.cpp" line="29"/>
@@ -2069,7 +2069,7 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../core/formats/files/nbufile.cpp" line="265"/>
         <source>Invalid index: %1</source>
-        <translation>Недопустимый индекс: %1</translation>
+        <translation>Неверный индекс: %1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/nbufile.cpp" line="414"/>
@@ -2174,12 +2174,12 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../3rdparty/quazip/quazip/quagzipfile.cpp" line="74"/>
         <source>You can open a gzip either for reading or for writing. Which is it?</source>
-        <translation>Вы можете открыть gzip для чтения или редактирования. Как?</translation>
+        <translation>Вы можете открыть gzip либо для чтения, либо для редактирования. Как надо?</translation>
     </message>
     <message>
         <location filename="../3rdparty/quazip/quazip/quagzipfile.cpp" line="80"/>
         <source>Could not gzopen() file</source>
-        <translation>Не удалось gzopen() открыть файл</translation>
+        <translation>Не удалось открыть файл через gzopen()</translation>
     </message>
 </context>
 <context>
@@ -2187,12 +2187,12 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../3rdparty/quazip/quazip/quaziodevice.cpp" line="147"/>
         <source>QIODevice::Append is not supported for QuaZIODevice</source>
-        <translation>QIODevice::Append не поддерживается QuaZIODevice</translation>
+        <translation>QIODevice::Append не поддерживается для QuaZIODevice</translation>
     </message>
     <message>
         <location filename="../3rdparty/quazip/quazip/quaziodevice.cpp" line="152"/>
         <source>QIODevice::ReadWrite is not supported for QuaZIODevice</source>
-        <translation>QIODevice::ReadWrite не поддерживается QuaZIODevice</translation>
+        <translation>QIODevice::ReadWrite не поддерживается для QuaZIODevice</translation>
     </message>
 </context>
 <context>
@@ -2286,7 +2286,7 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../app/settingsdialog.ui" line="126"/>
         <source>Grid alternate</source>
-        <translation>Таблицы (дополнительный)</translation>
+        <translation>Таблицы (дополнит.)</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="137"/>
