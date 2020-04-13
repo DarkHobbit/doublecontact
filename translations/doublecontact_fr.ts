@@ -99,7 +99,7 @@ Voulez-vous accepter ce certificat quand même ?</translation>
     <message>
         <location filename="../app/comparedialog.cpp" line="69"/>
         <source>Emails</source>
-        <translation>E-mails</translation>
+        <translation>Courriels</translation>
     </message>
     <message>
         <location filename="../app/comparedialog.cpp" line="71"/>
@@ -147,7 +147,7 @@ Voulez-vous accepter ce certificat quand même ?</translation>
     <message>
         <location filename="../app/contactdialog.ui" line="107"/>
         <source>Email</source>
-        <translation>E-mail</translation>
+        <translation>Courriel</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="148"/>
@@ -172,7 +172,7 @@ Voulez-vous accepter ce certificat quand même ?</translation>
         <location filename="../app/contactdialog.ui" line="166"/>
         <location filename="../app/contactdialog.cpp" line="715"/>
         <source>email</source>
-        <translation>e-mail</translation>
+        <translation>courriel</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="186"/>
@@ -284,7 +284,7 @@ Voulez-vous accepter ce certificat quand même ?</translation>
     <message>
         <location filename="../app/contactdialog.ui" line="543"/>
         <source>Format version:</source>
-        <translation>Version de format  :</translation>
+        <translation>Version du format  :</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="550"/>
@@ -346,7 +346,7 @@ Voulez-vous accepter ce certificat quand même ?</translation>
     <message>
         <location filename="../app/contactdialog.cpp" line="727"/>
         <source>Email type</source>
-        <translation>Type d&apos;e-mail</translation>
+        <translation>Type de courriel</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.cpp" line="729"/>
@@ -784,7 +784,7 @@ Voulez-vous accepter ce certificat quand même ?</translation>
     <message>
         <location filename="../app/mainwindow.ui" line="621"/>
         <source>Parse full name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Analyser le nom complet</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="475"/>
@@ -1057,7 +1057,7 @@ Are you want switch column sorting off?</source>
     <message>
         <location filename="../app/multicontactdialog.ui" line="14"/>
         <source>Edit some contacts</source>
-        <translation>Modifiez quelques contacts</translation>
+        <translation>Modifier quelques contacts</translation>
     </message>
     <message>
         <location filename="../app/multicontactdialog.ui" line="22"/>
@@ -1123,7 +1123,7 @@ Are you want switch column sorting off?</source>
     <message>
         <location filename="../core/contactlist.cpp" line="112"/>
         <source>Cell</source>
-        <translation>Téléphone portable</translation>
+        <translation>Mobile</translation>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="113"/>
@@ -1133,7 +1133,7 @@ Are you want switch column sorting off?</source>
     <message>
         <location filename="../core/contactlist.cpp" line="114"/>
         <source>Pager</source>
-        <translation type="unfinished"></translation>
+        <translation>Bipeur</translation>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="115"/>
@@ -1187,7 +1187,7 @@ Are you want switch column sorting off?</source>
 %8 archived SMS</source>
         <translation>%1 enregistrements
 %2 téléphones
-%3 e-mails
+%3 courriels
 %4 adresses
 %5 anniversaires
 %6 appels
@@ -1229,13 +1229,13 @@ langue du téléphone %5</translation>
     <message>
         <location filename="../core/contactlist.cpp" line="1005"/>
         <source>Parcel</source>
-        <translation type="unfinished"></translation>
+        <translation>Colis</translation>
     </message>
     <message>
         <location filename="../core/formats/common/vcarddata.cpp" line="80"/>
         <location filename="../core/formats/common/vmessagedata.cpp" line="37"/>
         <source>Unclosed record before line %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Enregistrement non fermé avant la ligne %1</translation>
     </message>
     <message>
         <location filename="../core/formats/common/vcarddata.cpp" line="164"/>
@@ -1314,13 +1314,15 @@ ligne %3, colonne %4
         <location filename="../core/formats/files/udxfile.cpp" line="69"/>
         <source>Root node is not &apos;DataExchangeInfo&apos; at file
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Le nœud racine n&apos;est pas « DataExchangeInfo » dans le fichier
+%1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="75"/>
         <source>Can&apos;t find &apos;RecordInfo&apos; tag at file
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossible de trouver « RecordInfo » dans le fichier
+%1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="80"/>
@@ -1403,7 +1405,7 @@ ligne %3, colonne %4
     <message>
         <location filename="../core/formats/formatfactory.cpp" line="77"/>
         <source>Empty file name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nom de fichier vide</translation>
     </message>
     <message>
         <location filename="../core/formats/formatfactory.cpp" line="128"/>
@@ -1559,137 +1561,137 @@ ligne %3, colonne %4
     <message>
         <location filename="../core/globals.h" line="59"/>
         <source>Address book</source>
-        <translation type="unfinished"></translation>
+        <translation>Carnet d&apos;adresses</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="60"/>
         <source>New contact list</source>
-        <translation type="unfinished"></translation>
+        <translation>Nouvelle liste de contacts</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="106"/>
         <source>P.O. box</source>
-        <translation type="unfinished"></translation>
+        <translation>Boîte postale</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="127"/>
         <source>This format is read only</source>
-        <translation type="unfinished"></translation>
+        <translation>Ce format est en lecture seule</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="62"/>
         <source>Select country rule</source>
-        <translation type="unfinished"></translation>
+        <translation>Choisir une règle nationale</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="61"/>
         <source>Group name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nom du groupe</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="63"/>
         <source>Select phone template</source>
-        <translation type="unfinished"></translation>
+        <translation>Choisir un modèle de téléphone</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="64"/>
         <source>Select CSV profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Choisir un profil CSV</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="65"/>
         <source>Generic profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Profil générique</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="67"/>
         <source>mixed...</source>
-        <translation type="unfinished"></translation>
+        <translation>mélangé…</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="69"/>
         <source>Firstname</source>
-        <translation type="unfinished"></translation>
+        <translation>Prénom</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="70"/>
         <source>Lastname</source>
-        <translation type="unfinished"></translation>
+        <translation>Nom</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="71"/>
         <source>Middlename</source>
-        <translation type="unfinished"></translation>
+        <translation>Deuxième prénom</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="72"/>
         <source>Prefixes</source>
-        <translation type="unfinished"></translation>
+        <translation>Préfixes</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="73"/>
         <source>Suffixes</source>
-        <translation type="unfinished"></translation>
+        <translation>Suffixes</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="75"/>
         <source>Full name</source>
-        <translation type="unfinished">Nom complet</translation>
+        <translation>Nom complet</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="76"/>
         <source>Generic name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nom générique</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="77"/>
         <source>Description</source>
-        <translation type="unfinished">Description</translation>
+        <translation>Description</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="78"/>
         <source>Phone</source>
-        <translation type="unfinished">Téléphone</translation>
+        <translation>Téléphone</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="79"/>
         <source>All phones</source>
-        <translation type="unfinished"></translation>
+        <translation>Tous les téléphones</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="80"/>
         <source>Home phone</source>
-        <translation type="unfinished"></translation>
+        <translation>Téléphone domicile</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="81"/>
         <source>Work phone</source>
-        <translation type="unfinished"></translation>
+        <translation>Téléphone professionnel</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="82"/>
         <source>Cell phone</source>
-        <translation type="unfinished"></translation>
+        <translation>Téléphone mobile</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="83"/>
         <source>Email</source>
-        <translation type="unfinished">E-mail</translation>
+        <translation>Courriel</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="84"/>
         <source>Birthday</source>
-        <translation type="unfinished">Anniversaire</translation>
+        <translation>Anniversaire</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="85"/>
         <source>Anniversary</source>
-        <translation type="unfinished">Anniversaire</translation>
+        <translation>Anniversaire de mariage</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="86"/>
         <source>Photo</source>
-        <translation type="unfinished">Photo</translation>
+        <translation>Photo</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="87"/>
@@ -1699,7 +1701,7 @@ ligne %3, colonne %4
     <message>
         <location filename="../core/globals.h" line="88"/>
         <source>Organization</source>
-        <translation type="unfinished">Organisation</translation>
+        <translation>Organisation</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="89"/>
@@ -1709,12 +1711,12 @@ ligne %3, colonne %4
     <message>
         <location filename="../core/globals.h" line="90"/>
         <source>NickName</source>
-        <translation type="unfinished">Surnom</translation>
+        <translation>Surnom</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="91"/>
         <source>URL</source>
-        <translation type="unfinished">URL</translation>
+        <translation>URL</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="93"/>
@@ -1744,7 +1746,7 @@ ligne %3, colonne %4
     <message>
         <location filename="../core/globals.h" line="99"/>
         <source>Has email</source>
-        <translation type="unfinished"></translation>
+        <translation>Ayant une adresse courriel</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="100"/>
@@ -1769,7 +1771,7 @@ ligne %3, colonne %4
     <message>
         <location filename="../core/globals.h" line="104"/>
         <source>Some emails</source>
-        <translation type="unfinished"></translation>
+        <translation>Quelques courriels</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="133"/>
@@ -1951,42 +1953,42 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="34"/>
         <source>Read</source>
-        <translation type="unfinished"></translation>
+        <translation>Lu</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="35"/>
         <source>UnRd</source>
-        <translation type="unfinished"></translation>
+        <translation>Non lu</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="36"/>
         <source>Unk.</source>
-        <translation type="unfinished"></translation>
+        <translation>Inc.</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="38"/>
         <source>Inbox</source>
-        <translation type="unfinished"></translation>
+        <translation>Boîte de réception</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="39"/>
         <source>Outbox</source>
-        <translation type="unfinished"></translation>
+        <translation>Boîte d&apos;envoi</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="40"/>
         <source>Sentbox</source>
-        <translation type="unfinished"></translation>
+        <translation>Envoyés</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="41"/>
         <source>Draft</source>
-        <translation type="unfinished"></translation>
+        <translation>Brouillon</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="42"/>
         <source>Trash</source>
-        <translation type="unfinished"></translation>
+        <translation>Corbeille</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="51"/>
@@ -1997,7 +1999,7 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="56"/>
         <source>Empty</source>
-        <translation type="unfinished"></translation>
+        <translation>Vide</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="114"/>
@@ -2087,7 +2089,7 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../app/settingsdialog.ui" line="24"/>
         <source>General</source>
-        <translation type="unfinished">Général</translation>
+        <translation>Général</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="32"/>
@@ -2132,17 +2134,17 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../app/settingsdialog.ui" line="99"/>
         <source>Use system fonts and colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Utiliser les polices et les couleurs du systèmes</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="106"/>
         <source>Table font</source>
-        <translation type="unfinished"></translation>
+        <translation>Police des tableaux</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="113"/>
         <source>Colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Couleurs</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="119"/>
@@ -2157,22 +2159,22 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../app/settingsdialog.ui" line="137"/>
         <source>Columns</source>
-        <translation type="unfinished"></translation>
+        <translation>Colonnes</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="143"/>
         <source>Visible</source>
-        <translation type="unfinished"></translation>
+        <translation>Visible</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="150"/>
         <source>Available</source>
-        <translation type="unfinished"></translation>
+        <translation>Disponible</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="204"/>
         <source>Saving</source>
-        <translation type="unfinished"></translation>
+        <translation>Sauvegarde en cours</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="212"/>
@@ -2202,7 +2204,7 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../app/settingsdialog.ui" line="249"/>
         <source>Default country</source>
-        <translation type="unfinished"></translation>
+        <translation>Pays par défaut</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="261"/>
@@ -2217,7 +2219,7 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../app/settingsdialog.ui" line="275"/>
         <source>Non-standard phone/email types</source>
-        <translation type="unfinished"></translation>
+        <translation>Types de téléphone/courriel non standard</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="281"/>
@@ -2232,7 +2234,7 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../app/settingsdialog.ui" line="312"/>
         <source>Loading</source>
-        <translation type="unfinished"></translation>
+        <translation>Chargement</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="320"/>
@@ -2275,22 +2277,22 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../app/sortdialog.ui" line="14"/>
         <source>Sort addressbook</source>
-        <translation type="unfinished"></translation>
+        <translation>Trier le carnet d&apos;adresses</translation>
     </message>
     <message>
         <location filename="../app/sortdialog.ui" line="20"/>
         <source>Sort criterion</source>
-        <translation type="unfinished"></translation>
+        <translation>Trier le critère</translation>
     </message>
     <message>
         <location filename="../app/sortdialog.ui" line="61"/>
         <source>6</source>
-        <translation type="unfinished"></translation>
+        <translation>6</translation>
     </message>
     <message>
         <location filename="../app/sortdialog.cpp" line="22"/>
         <source>Sort string</source>
-        <translation type="unfinished">Chaîne de tri</translation>
+        <translation>Chaîne de tri</translation>
     </message>
 </context>
 </TS>

@@ -6,12 +6,12 @@
     <message>
         <location filename="../app/aboutdialog.ui" line="14"/>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>About</translation>
     </message>
     <message>
         <location filename="../app/aboutdialog.ui" line="24"/>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation>General</translation>
     </message>
     <message>
         <location filename="../app/aboutdialog.ui" line="61"/>
@@ -202,7 +202,7 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/contactdialog.ui" line="335"/>
         <source>Organization</source>
-        <translation type="unfinished"></translation>
+        <translation>Organisation</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="345"/>
@@ -1063,7 +1063,7 @@ Are you want switch column sorting off?</source>
     <message>
         <location filename="../app/multicontactdialog.ui" line="32"/>
         <source>Organization</source>
-        <translation type="unfinished"></translation>
+        <translation>Organisation</translation>
     </message>
     <message>
         <location filename="../app/multicontactdialog.ui" line="42"/>
@@ -1679,7 +1679,7 @@ line %3, col %4
     <message>
         <location filename="../core/globals.h" line="88"/>
         <source>Organization</source>
-        <translation type="unfinished"></translation>
+        <translation>Organisation</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="89"/>
@@ -2107,12 +2107,12 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../app/settingsdialog.ui" line="92"/>
         <source>Use alternate row colors in table</source>
-        <translation type="unfinished"></translation>
+        <translation>Use alternate row colours in table</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="99"/>
         <source>Use system fonts and colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Use system fonts and colours</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="106"/>
@@ -2122,7 +2122,7 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../app/settingsdialog.ui" line="113"/>
         <source>Colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Colours</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="119"/>
@@ -2187,7 +2187,7 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../app/settingsdialog.ui" line="261"/>
         <source>(for phone number internationalization)</source>
-        <translation type="unfinished"></translation>
+        <translation>(for phone number internationalisation)</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="268"/>
