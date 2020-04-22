@@ -90,3 +90,4 @@ CURRENT
 * Added translation: French (incomplete)
 * Fixed: quoted-printable encoding/decoding in unknown and unediting (other) tags
 * Fixed: reading of quoted-printable non-standard phone/email types
+* Fixed: reading of PHOTO tag with lines, starting with TAB character

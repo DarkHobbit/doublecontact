@@ -234,7 +234,7 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                         errors << QObject::tr("Unsupported photo type at line %1: %2%3").arg(line+1).arg(typeVal).arg(visName);
                     if (encoding=="B" || encoding=="BASE64") {
                         QString binaryData = vValue[0];
-                        while (line<lines.count()-1 && !lines[line+1].trimmed().isEmpty() && lines[line+1].left(1)==" ") {
+                        while (line<lines.count()-1 && !lines[line+1].trimmed().isEmpty() && lines[line+1][0].isSpace()) {
                             binaryData += lines[line+1];
                             line++;
                         }
@@ -247,7 +247,7 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                 else if (!vValue.isEmpty() && vValue[0].contains("http", Qt::CaseInsensitive)) { // Google short URL
                     item.photo.pType = "URL";
                     item.photo.url = vValue[0];
-                    while (line<lines.count()-1 && !lines[line+1].trimmed().isEmpty() && lines[line+1].left(1)==" ") {
+                    while (line<lines.count()-1 && !lines[line+1].trimmed().isEmpty() && lines[line+1][0].isSpace()) {
                         item.photo.url += lines[line+1].mid(1);
                         line++;
                     }
