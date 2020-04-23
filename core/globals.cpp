@@ -51,6 +51,7 @@ void ContactColumnHeaders::fill()
     << S_IM_SKYPE
     << S_HAS_PHONE
     << S_HAS_EMAIL
+    << S_HAS_ADDRESS
     << S_HAS_BDAY
     << S_HAS_PHOTO
     << S_HAS_PROBLEMS

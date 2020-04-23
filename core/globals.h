@@ -41,6 +41,7 @@ enum ContactColumn {
   ccIMSkype,
   ccHasPhone,   // contact has at least one phone
   ccHasEmail,   // contact has at least one phone
+  ccHasAddress, // contact has at least one postal address
   ccHasBDay,    // contact has birthday
   ccHasPhoto,   // contact has at least one photo
   ccHasProblems,// contact has at least one unknown tag
@@ -97,6 +98,7 @@ enum ContactColumn {
 // Columns-flags
 #define S_HAS_PHONE QObject::tr("Has phone")
 #define S_HAS_EMAIL QObject::tr("Has email")
+#define S_HAS_ADDRESS QObject::tr("Has address")
 #define S_HAS_BDAY QObject::tr("Has birthday")
 #define S_HAS_PHOTO QObject::tr("Has photo")
 #define S_HAS_PROBLEMS QObject::tr("Has problems")

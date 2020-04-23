@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="nb_NO">
+<TS version="2.0" language="nb_NO">
 <context>
     <name>AboutDialog</name>
     <message>
@@ -1616,249 +1616,254 @@ lagret som mobil</translation>
         <translation>Kan ikke åpne %1 element i arkiv</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="54"/>
+        <location filename="../core/globals.h" line="55"/>
         <source>Error</source>
         <translation>Feil</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="55"/>
+        <location filename="../core/globals.h" line="56"/>
         <source>Warning</source>
         <translation>Advarsel</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="56"/>
+        <location filename="../core/globals.h" line="57"/>
         <source>Confirmation</source>
         <translation>Bekreftelse</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="57"/>
+        <location filename="../core/globals.h" line="58"/>
         <source>Information</source>
         <translation>Informasjon</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="59"/>
+        <location filename="../core/globals.h" line="60"/>
         <source>Address book</source>
         <translation>Adressebok</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="60"/>
+        <location filename="../core/globals.h" line="61"/>
         <source>New contact list</source>
         <translation>Ny kontaktliste</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="106"/>
+        <location filename="../core/globals.h" line="108"/>
         <source>P.O. box</source>
         <translation>Postboks</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="127"/>
+        <location filename="../core/globals.h" line="129"/>
         <source>This format is read only</source>
         <translation>Dette formatet kan kun leses</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="62"/>
+        <location filename="../core/globals.h" line="63"/>
         <source>Select country rule</source>
         <translation>Velg landsregel</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="61"/>
+        <location filename="../core/globals.h" line="62"/>
         <source>Group name</source>
         <translation>Gruppenavn</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="63"/>
+        <location filename="../core/globals.h" line="64"/>
         <source>Select phone template</source>
         <translation>Velg telefonmal</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="64"/>
+        <location filename="../core/globals.h" line="65"/>
         <source>Select CSV profile</source>
         <translation>Velg CSV-profil</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="65"/>
+        <location filename="../core/globals.h" line="66"/>
         <source>Generic profile</source>
         <translation>Generisk profil</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="67"/>
+        <location filename="../core/globals.h" line="68"/>
         <source>mixed...</source>
         <translation>blandet…</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="69"/>
+        <location filename="../core/globals.h" line="70"/>
         <source>Firstname</source>
         <translation type="unfinished">Fornavn</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="70"/>
+        <location filename="../core/globals.h" line="71"/>
         <source>Lastname</source>
         <translation type="unfinished">Etternavn</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="71"/>
+        <location filename="../core/globals.h" line="72"/>
         <source>Middlename</source>
         <translation>Mellomnavn</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="72"/>
+        <location filename="../core/globals.h" line="73"/>
         <source>Prefixes</source>
         <translation type="unfinished">Grad/profesjon</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="73"/>
+        <location filename="../core/globals.h" line="74"/>
         <source>Suffixes</source>
         <translation type="unfinished">Tittel</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="75"/>
+        <location filename="../core/globals.h" line="76"/>
         <source>Full name</source>
         <translation>Fullt navn</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="76"/>
+        <location filename="../core/globals.h" line="77"/>
         <source>Generic name</source>
         <translation>Generisk navn</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="77"/>
+        <location filename="../core/globals.h" line="78"/>
         <source>Description</source>
         <translation>Beskrivelse</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="78"/>
+        <location filename="../core/globals.h" line="79"/>
         <source>Phone</source>
         <translation>Telefon</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="79"/>
+        <location filename="../core/globals.h" line="80"/>
         <source>All phones</source>
         <translation>Alle telefoner</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="80"/>
+        <location filename="../core/globals.h" line="81"/>
         <source>Home phone</source>
         <translation>Hjemmetelefon</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="81"/>
+        <location filename="../core/globals.h" line="82"/>
         <source>Work phone</source>
         <translation>Arbeidstelefon</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="82"/>
+        <location filename="../core/globals.h" line="83"/>
         <source>Cell phone</source>
         <translation>Mobiltelefon</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="83"/>
+        <location filename="../core/globals.h" line="84"/>
         <source>Email</source>
         <translation type="unfinished">E-postadresse</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="84"/>
+        <location filename="../core/globals.h" line="85"/>
         <source>Birthday</source>
         <translation>Geburtsdag</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="85"/>
+        <location filename="../core/globals.h" line="86"/>
         <source>Anniversary</source>
         <translation>Jubileum</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="86"/>
+        <location filename="../core/globals.h" line="87"/>
         <source>Photo</source>
         <translation>Bilde</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="87"/>
+        <location filename="../core/globals.h" line="88"/>
         <source>Job title</source>
         <translation>Jobbtittel</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="88"/>
+        <location filename="../core/globals.h" line="89"/>
         <source>Organization</source>
         <translation>Organisasjon</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="89"/>
+        <location filename="../core/globals.h" line="90"/>
         <source>Address</source>
         <translation>Adresse</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="90"/>
+        <location filename="../core/globals.h" line="91"/>
         <source>NickName</source>
         <translation type="unfinished">Kallenavn</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="91"/>
+        <location filename="../core/globals.h" line="92"/>
         <source>URL</source>
         <translation>Nettadresse</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="93"/>
+        <location filename="../core/globals.h" line="94"/>
         <source>Jabber</source>
         <translation type="unfinished">XMPP</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="94"/>
+        <location filename="../core/globals.h" line="95"/>
         <source>ICQ</source>
         <translation>ICQ</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="95"/>
+        <location filename="../core/globals.h" line="96"/>
         <source>Skype</source>
         <translation>Skype</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="96"/>
+        <location filename="../core/globals.h" line="97"/>
         <source>Group</source>
         <translation>Gruppe</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="98"/>
+        <location filename="../core/globals.h" line="99"/>
         <source>Has phone</source>
         <translation>Har telefon</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="99"/>
+        <location filename="../core/globals.h" line="100"/>
         <source>Has email</source>
         <translation>Har e-postadresse</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="100"/>
+        <location filename="../core/globals.h" line="101"/>
+        <source>Has address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/globals.h" line="102"/>
         <source>Has birthday</source>
         <translation>Har geburtsdag</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="101"/>
+        <location filename="../core/globals.h" line="103"/>
         <source>Has photo</source>
         <translation>Har bilde</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="102"/>
+        <location filename="../core/globals.h" line="104"/>
         <source>Has problems</source>
         <translation>Har problemer</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="103"/>
+        <location filename="../core/globals.h" line="105"/>
         <source>Some phones</source>
         <translation>Noen telefoner</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="104"/>
+        <location filename="../core/globals.h" line="106"/>
         <source>Some emails</source>
         <translation>Noen e-postadresser</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="133"/>
+        <location filename="../core/globals.h" line="135"/>
         <source>Program built without network support. Use WITH_NETWORK define, if building from source code.
 </source>
         <translation type="unfinished">Programmet er bygd uten nettverksstøtte. Bruk WITH_NETWORK define, hvis du bygger fra kildekode.
 </translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="134"/>
+        <location filename="../core/globals.h" line="136"/>
         <source>Do you really want to delete the selected items?</source>
         <translation>Ønsker du virkelig å slette valgte elementer?</translation>
     </message>
@@ -1867,105 +1872,105 @@ lagret som mobil</translation>
         <translation type="obsolete">Postboks</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="107"/>
+        <location filename="../core/globals.h" line="109"/>
         <source>Ext.addr.</source>
         <translation type="unfinished">Ekst.adr.</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="108"/>
+        <location filename="../core/globals.h" line="110"/>
         <source>Street</source>
         <translation>Gate</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="109"/>
+        <location filename="../core/globals.h" line="111"/>
         <source>City/Locality</source>
         <translation>By/plass</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="110"/>
+        <location filename="../core/globals.h" line="112"/>
         <source>Region</source>
         <translation>Region</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="111"/>
+        <location filename="../core/globals.h" line="113"/>
         <source>Postal code</source>
         <translation>Postkode</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="112"/>
+        <location filename="../core/globals.h" line="114"/>
         <source>Country</source>
         <translation>Land</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="114"/>
+        <location filename="../core/globals.h" line="116"/>
         <source>[Unknown photo format]</source>
         <translation>[Ukjent bildeformat]</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="115"/>
+        <location filename="../core/globals.h" line="117"/>
         <source>Load image</source>
         <translation>Last bilde</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="116"/>
+        <location filename="../core/globals.h" line="118"/>
         <source>Save image</source>
         <translation>Lagre bilde</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="117"/>
+        <location filename="../core/globals.h" line="119"/>
         <source>Set URL</source>
         <translation>Sett nettadresse</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="118"/>
+        <location filename="../core/globals.h" line="120"/>
         <source>Remove photo</source>
         <translation>Fjern bilde</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="120"/>
+        <location filename="../core/globals.h" line="122"/>
         <source>All supported files (%1)</source>
         <translation>Alle støttede filer (%1)</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="121"/>
+        <location filename="../core/globals.h" line="123"/>
         <source>All files (*.*)</source>
         <translation>Alle filer (*.*)</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="123"/>
+        <location filename="../core/globals.h" line="125"/>
         <source>Can&apos;t read file
 %1</source>
         <translation>Kan ikke lese fil
 %1</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="124"/>
+        <location filename="../core/globals.h" line="126"/>
         <source>Can&apos;t write file
 %1</source>
         <translation>Kan ikke skrive til fil
 %1</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="125"/>
+        <location filename="../core/globals.h" line="127"/>
         <source>Can&apos;t seek to %1 in file
 %2</source>
         <translation>Kan ikke blafre til %1 i filen
 %2</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="126"/>
+        <location filename="../core/globals.h" line="128"/>
         <source>Record not selected</source>
         <translation>Oppføring ikke valg</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="129"/>
+        <location filename="../core/globals.h" line="131"/>
         <source>Warning: contact %1 has %2, not supported in this format.
 Data will be lost</source>
         <translation>Advarsel: Kontakt %1 har %2, ikke støttet i dette formatet.
 Data vil gå tapt</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="131"/>
+        <location filename="../core/globals.h" line="133"/>
         <source>%1 %2 will be lost at contact %3</source>
         <translation>%1 %2 vil gå tapt i kontakt %3</translation>
     </message>

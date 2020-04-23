@@ -132,6 +132,7 @@ QVariant ContactModel::data(const QModelIndex &index, int role) const
             case ccIMSkype:     return c.findIMByType("skype");
             case ccHasPhone:    return !c.phones.isEmpty() ? "*" : QVariant();
             case ccHasEmail:    return !c.emails.isEmpty() ? "*" : QVariant();
+            case ccHasAddress:  return !c.addrs.isEmpty() ? "*" : QVariant();
             case ccHasBDay:     return !c.birthday.isEmpty() ? "*" : QVariant();
             case ccHasPhoto:    return !c.photo.isEmpty() ? "*" : QVariant();
             case ccHasProblems: return !c.unknownTags.isEmpty() ? "*" : QVariant();
