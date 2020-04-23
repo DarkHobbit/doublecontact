@@ -87,6 +87,7 @@ CURRENT
 * At contact edit dialog, tab order now tuned according to number of names, phones, emails
 * At contact edit dialog, birhday and anniversary editors don't contains time by default for new contact
 * New visible columns: Has address, Has problems
+* Contact filter (Ctrl+F) is now case insensitive (Driver==driver)
 * Added translation: French (incomplete)
 * Fixed: quoted-printable encoding/decoding in unknown and unediting (other) tags
 * Fixed: reading of quoted-printable non-standard phone/email types

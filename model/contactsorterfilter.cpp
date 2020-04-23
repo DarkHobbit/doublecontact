@@ -16,6 +16,7 @@
 ContactSorterFilter::ContactSorterFilter(QObject* parent):
     QSortFilterProxyModel(parent)
 {
+    this->setFilterCaseSensitivity(Qt::CaseInsensitive); // Driver == driver
 }
 
 bool ContactSorterFilter::lessThan(const QModelIndex &left, const QModelIndex &right) const
