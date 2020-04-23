@@ -78,7 +78,7 @@ Bugfix release:
 * Fixed: crash on loading of Google Contacts VCFs with PHOTO URLs
 * Added translations: Portuguese (incomplete)
 
-CURRENT
+0.2.2 [2020-04-23]
 * Added names joining (primarily for SIM prepare)
 * Added full name parsing (from FN to N)
 * At main window, splitter between left and right panels added
