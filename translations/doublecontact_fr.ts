@@ -1043,7 +1043,7 @@ Enregistrer les modifications ?</translation>
     <message>
         <location filename="../app/mainwindow.cpp" line="1010"/>
         <source>Report file</source>
-        <translation type="unfinished"></translation>
+        <translation>Fichier de rapport</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.cpp" line="1044"/>
