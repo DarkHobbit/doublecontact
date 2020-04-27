@@ -1828,7 +1828,7 @@ lagret som mobil</translation>
     <message>
         <location filename="../core/globals.h" line="101"/>
         <source>Has address</source>
-        <translation type="unfinished"></translation>
+        <translation>Har adresse</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="102"/>
