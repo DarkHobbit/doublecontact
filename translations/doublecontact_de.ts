@@ -350,7 +350,7 @@ Möchten Sie dieses Zertifikat trotzdem akzeptieren?</translation>
     <message>
         <location filename="../app/contactdialog.cpp" line="727"/>
         <source>Email type</source>
-        <translation></translation>
+        <translation>E-Mail-Typ</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.cpp" line="729"/>
@@ -1812,7 +1812,7 @@ Zeile %3, Spalte %4
     <message>
         <location filename="../core/globals.h" line="101"/>
         <source>Has address</source>
-        <translation type="unfinished"></translation>
+        <translation>Adresse vorhanden</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="102"/>
@@ -2325,7 +2325,7 @@ Benutzername, Passwort, Protokoll und Port überprüfen</translation>
     <message>
         <location filename="../app/settingsdialog.ui" line="332"/>
         <source>(many phones treat &apos;Voice&apos; as &apos;Other&apos;)</source>
-        <translation type="unfinished"></translation>
+        <translation>(viele Telefone behandeln „Stimme“ als „Andere“)</translation>
     </message>
     <message>
         <source>(many phones treats &apos;Voice&apos; as &apos;Other&apos;)</source>
