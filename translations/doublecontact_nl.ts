@@ -1868,7 +1868,7 @@ opgeslagen als mobiele telefoon</translation>
     <message>
         <location filename="../core/globals.h" line="101"/>
         <source>Has address</source>
-        <translation type="unfinished"></translation>
+        <translation>Heeft een adres</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="102"/>
