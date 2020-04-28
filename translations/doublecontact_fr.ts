@@ -784,7 +784,7 @@ Voulez-vous accepter ce certificat quand même ?</translation>
     <message>
         <location filename="../app/mainwindow.ui" line="621"/>
         <source>Parse full name</source>
-        <translation type="unfinished">Analyser le nom complet</translation>
+        <translation>Analyser le nom complet</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="475"/>
