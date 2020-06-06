@@ -6,27 +6,27 @@
     <message>
         <location filename="../app/aboutdialog.ui" line="14"/>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>Sobre</translation>
     </message>
     <message>
         <location filename="../app/aboutdialog.ui" line="24"/>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation>Geral</translation>
     </message>
     <message>
         <location filename="../app/aboutdialog.ui" line="61"/>
         <source>The Contact Manager</source>
-        <translation type="unfinished"></translation>
+        <translation>Gerenciador de Contatos</translation>
     </message>
     <message>
         <location filename="../app/aboutdialog.ui" line="104"/>
         <source>Distributed under GPL v3 or above</source>
-        <translation type="unfinished"></translation>
+        <translation>Distribuído sob GPL v3 ou superior</translation>
     </message>
     <message>
         <location filename="../app/aboutdialog.ui" line="132"/>
         <source>Contributors</source>
-        <translation type="unfinished"></translation>
+        <translation>Colaboradores</translation>
     </message>
 </context>
 <context>
@@ -34,17 +34,17 @@
     <message>
         <location filename="../app/csvprofiledialog.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Diálogo</translation>
     </message>
     <message>
         <location filename="../app/csvprofiledialog.ui" line="25"/>
         <source>Encoding</source>
-        <translation type="unfinished"></translation>
+        <translation>Codificação</translation>
     </message>
     <message>
         <location filename="../app/csvprofiledialog.ui" line="39"/>
         <source>Separator</source>
-        <translation type="unfinished"></translation>
+        <translation>Separador</translation>
     </message>
 </context>
 <context>
@@ -52,29 +52,31 @@
     <message>
         <location filename="../core/formats/network/carddavformat.cpp" line="28"/>
         <source>Invalid URL</source>
-        <translation type="unfinished"></translation>
+        <translation>URL inválida</translation>
     </message>
     <message>
         <location filename="../core/formats/network/carddavformat.cpp" line="82"/>
         <source>There are security problems:
     %1
 Are you want to accept this certificate anyway?</source>
-        <translation type="unfinished"></translation>
+        <translation>Existem problemas de segurança:
+...%1
+Deseja aceitar o certificado ?</translation>
     </message>
     <message>
         <location filename="../core/formats/network/carddavformat.cpp" line="150"/>
         <source>SSL handshake failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Falha de handshake SSL</translation>
     </message>
     <message>
         <location filename="../core/formats/network/carddavformat.cpp" line="165"/>
         <source>No DAV items. It seems that this is not a CardDAV server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Não há itens DAV. Aparentemente isso não é um CardDAV server.</translation>
     </message>
     <message>
         <location filename="../core/formats/network/carddavformat.cpp" line="177"/>
         <source>Strange vCard item: </source>
-        <translation type="unfinished"></translation>
+        <translation>Item vCard estranho: </translation>
     </message>
 </context>
 <context>
@@ -82,37 +84,37 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/comparedialog.ui" line="14"/>
         <source>Item Merge</source>
-        <translation type="unfinished"></translation>
+        <translation>Junção de Itens</translation>
     </message>
     <message>
         <location filename="../app/comparedialog.cpp" line="67"/>
         <source>Names</source>
-        <translation type="unfinished"></translation>
+        <translation>Nomes</translation>
     </message>
     <message>
         <location filename="../app/comparedialog.cpp" line="68"/>
         <source>Phones</source>
-        <translation type="unfinished"></translation>
+        <translation>Telefones</translation>
     </message>
     <message>
         <location filename="../app/comparedialog.cpp" line="69"/>
         <source>Emails</source>
-        <translation type="unfinished"></translation>
+        <translation>E-mails</translation>
     </message>
     <message>
         <location filename="../app/comparedialog.cpp" line="71"/>
         <source>Anniversaries</source>
-        <translation type="unfinished"></translation>
+        <translation>Aniversários</translation>
     </message>
     <message>
         <location filename="../app/comparedialog.cpp" line="73"/>
         <source>Sort string</source>
-        <translation type="unfinished"></translation>
+        <translation>Ordenar texto</translation>
     </message>
     <message>
         <location filename="../app/comparedialog.cpp" line="77"/>
         <source>Addresses</source>
-        <translation type="unfinished"></translation>
+        <translation>Endereços</translation>
     </message>
 </context>
 <context>
@@ -120,211 +122,211 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/contactdialog.ui" line="14"/>
         <source>Edit Contact</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar Contato</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="24"/>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation>Geral</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="37"/>
         <source>Full name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nome Completo</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="49"/>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nome</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="68"/>
         <source>Phone</source>
-        <translation type="unfinished"></translation>
+        <translation>Telefone</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="107"/>
         <source>Email</source>
-        <translation type="unfinished"></translation>
+        <translation>E-mail</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="148"/>
         <location filename="../app/contactdialog.ui" line="374"/>
         <location filename="../app/contactdialog.ui" line="472"/>
         <source>Add...</source>
-        <translation type="unfinished"></translation>
+        <translation>Adicionar...</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="156"/>
         <location filename="../app/contactdialog.cpp" line="711"/>
         <source>name</source>
-        <translation type="unfinished"></translation>
+        <translation>nome</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="161"/>
         <location filename="../app/contactdialog.cpp" line="713"/>
         <source>phone</source>
-        <translation type="unfinished"></translation>
+        <translation>telefone</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="166"/>
         <location filename="../app/contactdialog.cpp" line="715"/>
         <source>email</source>
-        <translation type="unfinished"></translation>
+        <translation>e-mail</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="186"/>
         <source>Birthday</source>
-        <translation type="unfinished"></translation>
+        <translation>Aniversário</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="200"/>
         <location filename="../app/contactdialog.ui" line="236"/>
         <source>Details</source>
-        <translation type="unfinished"></translation>
+        <translation>Detalhes</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="254"/>
         <location filename="../app/contactdialog.ui" line="315"/>
         <source>Photo</source>
-        <translation type="unfinished"></translation>
+        <translation>Foto</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="277"/>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation>Descrição</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="327"/>
         <source>Addresses</source>
-        <translation type="unfinished"></translation>
+        <translation>Endereços</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="335"/>
         <source>Organization</source>
-        <translation type="unfinished"></translation>
+        <translation>Organização</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="345"/>
         <source>Job Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Trabalho</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="382"/>
         <source>Internet</source>
-        <translation type="unfinished"></translation>
+        <translation>Internet</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="390"/>
         <source>NickName</source>
-        <translation type="unfinished"></translation>
+        <translation>Apelido</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="433"/>
         <source>Instant messaging</source>
-        <translation type="unfinished"></translation>
+        <translation>Mensagem Instantânea</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="661"/>
         <source>Save View</source>
-        <translation type="unfinished"></translation>
+        <translation>Salvar visualização</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="693"/>
         <source>&amp;Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Remover</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="696"/>
         <source>Del</source>
-        <translation type="unfinished"></translation>
+        <translation>Deletar</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="701"/>
         <source>Copy text</source>
-        <translation type="unfinished"></translation>
+        <translation>Copiar Texto</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="704"/>
         <source>Ctrl+C</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+C</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="400"/>
         <source>URL</source>
-        <translation type="unfinished"></translation>
+        <translation>Endereço URL</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="222"/>
         <source>Anniversary</source>
-        <translation type="unfinished"></translation>
+        <translation>Aniversário</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="482"/>
         <source>Groups</source>
-        <translation type="unfinished"></translation>
+        <translation>Grupos</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="488"/>
         <source>Contact in groups</source>
-        <translation type="unfinished"></translation>
+        <translation>Contato nos grupos</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="495"/>
         <source>Available groups</source>
-        <translation type="unfinished"></translation>
+        <translation>Grupos Disponíveis</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="535"/>
         <source>Other</source>
-        <translation type="unfinished"></translation>
+        <translation>Outros</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="543"/>
         <source>Format version:</source>
-        <translation type="unfinished"></translation>
+        <translation>Versão Formatada:</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="550"/>
         <source>ID</source>
-        <translation type="unfinished"></translation>
+        <translation>Identificação</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="571"/>
         <source>Original format:</source>
-        <translation type="unfinished"></translation>
+        <translation>Formato Original:</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="588"/>
         <source>Sort string</source>
-        <translation type="unfinished"></translation>
+        <translation>Ordenar Texto</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="597"/>
         <source>Other contact attributes</source>
-        <translation type="unfinished"></translation>
+        <translation>Atributos de outros contatos</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="611"/>
         <location filename="../app/contactdialog.ui" line="642"/>
         <source>Tag</source>
-        <translation type="unfinished"></translation>
+        <translation>Etiqueta</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="616"/>
         <location filename="../app/contactdialog.ui" line="647"/>
         <source>Value</source>
-        <translation type="unfinished"></translation>
+        <translation>Valor</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="625"/>
         <source>Problems</source>
-        <translation type="unfinished"></translation>
+        <translation>Problemas</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="631"/>
         <source>Unknown contact attributes</source>
-        <translation type="unfinished"></translation>
+        <translation>Atributos de contatos desconhecidos</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.cpp" line="94"/>
@@ -334,17 +336,17 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/contactdialog.cpp" line="133"/>
         <source>Edit contact</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar contato</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.cpp" line="725"/>
         <source>Phone type</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipo de Telefone</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.cpp" line="727"/>
         <source>Email type</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipo de E-mail</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.cpp" line="729"/>
@@ -354,17 +356,17 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/contactdialog.cpp" line="731"/>
         <source>IM type</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipo IM</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.cpp" line="804"/>
         <source>Open image file</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir arquivo de imagem</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.cpp" line="836"/>
         <source>Save image file</source>
-        <translation type="unfinished"></translation>
+        <translation>Salvar arquivo de imagem</translation>
     </message>
 </context>
 <context>
@@ -377,17 +379,17 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/datedetailsdialog.ui" line="22"/>
         <source>Date</source>
-        <translation type="unfinished"></translation>
+        <translation>Data</translation>
     </message>
     <message>
         <location filename="../app/datedetailsdialog.ui" line="34"/>
         <source>Set time for date</source>
-        <translation type="unfinished"></translation>
+        <translation>Atribuir horário para a data</translation>
     </message>
     <message>
         <location filename="../app/datedetailsdialog.ui" line="41"/>
         <source>Set time zone</source>
-        <translation type="unfinished"></translation>
+        <translation>Definir Fuso Horário</translation>
     </message>
     <message>
         <location filename="../app/datedetailsdialog.ui" line="60"/>
@@ -397,7 +399,7 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/datedetailsdialog.ui" line="74"/>
         <source>m</source>
-        <translation type="unfinished"></translation>
+        <translation>m</translation>
     </message>
 </context>
 <context>
@@ -410,7 +412,7 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/groupdialog.ui" line="45"/>
         <source>Add (Ins)</source>
-        <translation type="unfinished"></translation>
+        <translation>Adicionar (Ins)</translation>
     </message>
     <message>
         <location filename="../app/groupdialog.ui" line="52"/>
@@ -420,7 +422,7 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/groupdialog.ui" line="59"/>
         <source>Remove (Del)</source>
-        <translation type="unfinished"></translation>
+        <translation>Remover (Del)</translation>
     </message>
     <message>
         <location filename="../app/groupdialog.ui" line="70"/>
@@ -430,7 +432,7 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/groupdialog.ui" line="77"/>
         <source>&amp;Split group...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Separar grupo...</translation>
     </message>
     <message>
         <location filename="../app/groupdialog.ui" line="86"/>
@@ -441,7 +443,7 @@ Are you want to accept this certificate anyway?</source>
         <location filename="../app/groupdialog.cpp" line="58"/>
         <source>Contacts</source>
         <comment>In group</comment>
-        <translation type="unfinished"></translation>
+        <translation>Contatos</translation>
     </message>
     <message>
         <location filename="../app/groupdialog.cpp" line="114"/>
