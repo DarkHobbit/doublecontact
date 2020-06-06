@@ -16,12 +16,12 @@
     <message>
         <location filename="../app/aboutdialog.ui" line="61"/>
         <source>The Contact Manager</source>
-        <translation type="unfinished"></translation>
+        <translation>Gerenciador de Contatos</translation>
     </message>
     <message>
         <location filename="../app/aboutdialog.ui" line="104"/>
         <source>Distributed under GPL v3 or above</source>
-        <translation type="unfinished"></translation>
+        <translation>Distribuído sobre GPLv3 ou superior</translation>
     </message>
     <message>
         <location filename="../app/aboutdialog.ui" line="132"/>
@@ -52,29 +52,31 @@
     <message>
         <location filename="../core/formats/network/carddavformat.cpp" line="28"/>
         <source>Invalid URL</source>
-        <translation>URL Inválido</translation>
+        <translation>URL Inválida</translation>
     </message>
     <message>
         <location filename="../core/formats/network/carddavformat.cpp" line="82"/>
         <source>There are security problems:
     %1
 Are you want to accept this certificate anyway?</source>
-        <translation type="unfinished"></translation>
+        <translation>Existem problemas de segurança:
+…%1
+Deseja aceitar este certificado ?</translation>
     </message>
     <message>
         <location filename="../core/formats/network/carddavformat.cpp" line="150"/>
         <source>SSL handshake failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Falha no handshake SSL</translation>
     </message>
     <message>
         <location filename="../core/formats/network/carddavformat.cpp" line="165"/>
         <source>No DAV items. It seems that this is not a CardDAV server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Não há itens DAV. Isso não aparenta ser um servidor CadDAV.</translation>
     </message>
     <message>
         <location filename="../core/formats/network/carddavformat.cpp" line="177"/>
         <source>Strange vCard item: </source>
-        <translation type="unfinished"></translation>
+        <translation>O item vCard é estranho: </translation>
     </message>
 </context>
 <context>
@@ -82,7 +84,7 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/comparedialog.ui" line="14"/>
         <source>Item Merge</source>
-        <translation type="unfinished"></translation>
+        <translation>Junção de Item</translation>
     </message>
     <message>
         <location filename="../app/comparedialog.cpp" line="67"/>
@@ -107,12 +109,12 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/comparedialog.cpp" line="73"/>
         <source>Sort string</source>
-        <translation type="unfinished"></translation>
+        <translation>Ordenar String</translation>
     </message>
     <message>
         <location filename="../app/comparedialog.cpp" line="77"/>
         <source>Addresses</source>
-        <translation>Moradas</translation>
+        <translation>Endereços</translation>
     </message>
 </context>
 <context>
