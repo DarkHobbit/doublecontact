@@ -331,7 +331,7 @@ Deseja aceitar o certificado ?</translation>
     <message>
         <location filename="../app/contactdialog.cpp" line="94"/>
         <source>Add contact</source>
-        <translation type="unfinished"></translation>
+        <translation>Adicionar contato</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.cpp" line="133"/>
@@ -351,7 +351,7 @@ Deseja aceitar o certificado ?</translation>
     <message>
         <location filename="../app/contactdialog.cpp" line="729"/>
         <source>Address type</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipo de endereço</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.cpp" line="731"/>
@@ -374,7 +374,7 @@ Deseja aceitar o certificado ?</translation>
     <message>
         <location filename="../app/datedetailsdialog.ui" line="14"/>
         <source>Date details</source>
-        <translation type="unfinished"></translation>
+        <translation>Detalhes da data</translation>
     </message>
     <message>
         <location filename="../app/datedetailsdialog.ui" line="22"/>
