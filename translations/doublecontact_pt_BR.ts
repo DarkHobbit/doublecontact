@@ -417,7 +417,7 @@ Deseja aceitar o certificado ?</translation>
     <message>
         <location filename="../app/groupdialog.ui" line="52"/>
         <source>Edit (Enter)</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar (Enter)</translation>
     </message>
     <message>
         <location filename="../app/groupdialog.ui" line="59"/>
@@ -437,7 +437,7 @@ Deseja aceitar o certificado ?</translation>
     <message>
         <location filename="../app/groupdialog.ui" line="86"/>
         <source>NOTE: empty groups (without any contact) will exists only per session and will be removed at program exit, because vCard files cant&apos;t store empty groups. To save a group, add at least one contact to it.</source>
-        <translation type="unfinished"></translation>
+        <translation>NOTA: grupos vazios (sem nenhum contato) vão existir apenas em cada sessão e serão removidos ao fechar o programa, pois os arquivos vCard não conseguem armazenar grupos vazios. Para salvar um grupo, adicione ao menos um contato a ele.</translation>
     </message>
     <message>
         <location filename="../app/groupdialog.cpp" line="58"/>
@@ -463,12 +463,12 @@ Deseja aceitar o certificado ?</translation>
     <message>
         <location filename="../app/groupdialog.cpp" line="147"/>
         <source>Group split</source>
-        <translation type="unfinished"></translation>
+        <translation>Separar grupo</translation>
     </message>
     <message>
         <location filename="../app/groupdialog.cpp" line="150"/>
         <source>New group</source>
-        <translation type="unfinished"></translation>
+        <translation>Novo grupo</translation>
     </message>
     <message>
         <location filename="../app/groupdialog.cpp" line="153"/>
@@ -486,7 +486,7 @@ Deseja aceitar o certificado ?</translation>
     <message>
         <location filename="../app/logwindow.ui" line="20"/>
         <source>Summary</source>
-        <translation type="unfinished"></translation>
+        <translation>Resumo</translation>
     </message>
     <message>
         <location filename="../app/logwindow.ui" line="32"/>
@@ -516,64 +516,64 @@ Deseja aceitar o certificado ?</translation>
         <location filename="../app/mainwindow.ui" line="66"/>
         <location filename="../app/mainwindow.ui" line="107"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation>Filtro</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="125"/>
         <source>Add (Ins)</source>
-        <translation type="unfinished"></translation>
+        <translation>Adicionar (Ins)</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="132"/>
         <source>Edit (Enter)</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar (Enter)</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="139"/>
         <source>Remove (Del)</source>
-        <translation type="unfinished"></translation>
+        <translation>Remover (Del)</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="159"/>
         <source>F2 Swap Names</source>
-        <translation type="unfinished"></translation>
+        <translation>F2 Trocar Nome</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="166"/>
         <source>F3 Compare</source>
-        <translation type="unfinished"></translation>
+        <translation>F3 Comparar</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="173"/>
         <source>F4 Sort</source>
-        <translation type="unfinished"></translation>
+        <translation>F4 Sortear</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="184"/>
         <source>F5 Copy</source>
-        <translation type="unfinished"></translation>
+        <translation>F5 Copiar</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="191"/>
         <source>F6 Move</source>
-        <translation type="unfinished"></translation>
+        <translation>F6 Mover</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="211"/>
         <source>Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Sair</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="230"/>
         <location filename="../app/mainwindow.ui" line="331"/>
         <location filename="../app/mainwindow.ui" line="363"/>
         <source>&amp;File</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Arquivo</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="234"/>
         <source>&amp;Open</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Abrir</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="241"/>
