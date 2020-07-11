@@ -251,6 +251,7 @@ public:
     void compareWith(ContactList& pairList);
     // Group operations
     QMap<QString, int> groupStat() const;
+    bool hasGroups() const;
     bool hasGroup(const QString& group) const; // Call this before add/rename group!
     bool addGroup(const QString& group);
     bool renameGroup(const QString& oldName, const QString& newName);

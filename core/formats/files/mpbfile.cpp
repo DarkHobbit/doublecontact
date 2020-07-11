@@ -163,6 +163,7 @@ bool MPBFile::exportRecords(const QString &url, ContactList &list)
             list[i].version = "4.0";
     useOriginalFileVersion = false;
     skipEncoding = true; // disable pre-encoding via VCardData::encodeValue
+    groupFormat = GlobalConfig::gfMPB;
     forceVersion(GlobalConfig::VCF40); // MPB vCard section is vCard 4.0 without VERSION tag
     if (!VCardData::exportRecords(content, list, _errors))
         return false;

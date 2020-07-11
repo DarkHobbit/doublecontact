@@ -123,6 +123,7 @@ bool NBFFile::importRecords(const QString &url, ContactList &list, bool append)
 
 bool NBFFile::exportRecords(const QString &url, ContactList &list)
 {
+    groupFormat = GlobalConfig::gfNBF;
     // Check old name and existing
     if (list.originalPath.isEmpty()
             || !list.originalPath.contains("NBF", Qt::CaseInsensitive))

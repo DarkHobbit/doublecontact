@@ -30,6 +30,7 @@ public:
     void exportRecord(QStringList& lines, const ContactItem& item, QStringList& errors);
 protected:
     bool useOriginalFileVersion, skipEncoding, skipDecoding;
+    GlobalConfig::GroupFormat groupFormat;
 private:
     QString encoding;
     QString charSet;
@@ -46,6 +47,9 @@ private:
     QStringList splitBySC(const QString& src);
     QString joinBySC(const QStringList& src) const;
     QString sc(const QString& src) const;
+    QStringList splitByComma(const QString& src);
+    QString joinByComma(const QStringList& src) const;
+    QString cm(const QString& src) const;
     void debugSave(QFile& logFile, const QString& s, bool firstRec);
 };
 

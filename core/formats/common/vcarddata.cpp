@@ -32,6 +32,7 @@ VCardData::VCardData()
     useOriginalFileVersion = gd.useOriginalFileVersion;
     skipEncoding = false;
     skipDecoding = false;
+    groupFormat = gd.groupFormat;
     formatVersion = GlobalConfig::VCF30;
     _forceVersion = false;
 }
@@ -256,14 +257,29 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                 else
                     errors << QObject::tr("Unknown photo kind at line %1: %2").arg(line+1).arg(visName);
             }
-            else if (tag=="CATEGORIES" || tag=="X-CATEGORIES") // X- - some Nokia Suite versions
-                foreach(const QString& val, vValue)
-                    item.groups << decodeValue(val, errors);
+            // Groups
+            else if (tag=="CATEGORIES" || tag=="X-CATEGORIES" || tag=="X-GROUP-MEMBERSHIP")
+                // X-CATEGORIES - some Nokia Suite versions
+                foreach(const QString& val, vValue) {
+                    // CATEGORIES can use "," (RFC) or ";" (MPB)
+                    if (item.groups.contains(",")) {                        
+                        QStringList grList = splitByComma(decodeValue(val, errors));
+                        foreach(const QString& subVal, grList)
+                            item.groups << subVal;
+                    }
+                    else
+                        item.groups << decodeValue(val, errors);
+                }
             else if (tag=="X-NOKIA-PND-GROUP") { // Nokia NBF
                 // For some groups per contact, each group wrote in separate X-NOKIA-PND-GROUP tag
+                // Same for X-GROUP-MEMBERSHIP, but its encoding is standard
                 QTextCodec* utf16 = QTextCodec::codecForName("UTF-16");
-                item.groups << utf16->toUnicode(vValue[0].toLocal8Bit());
+                QString g = utf16->toUnicode(vValue[0].toLocal8Bit());
+                if (g.right(1)[0]==0) // two null bytes
+                    g.remove(g.length()-1, 1);
+                item.groups << g;
             }
+            // Work, addresses
             else if (tag=="ORG")
                 item.organization = decodeValue(vValue[0], errors);
             else if (tag=="TITLE")
@@ -422,8 +438,27 @@ void VCardData::exportRecord(QStringList &lines, const ContactItem &item, QStrin
             lines << QString("X-ANNIVERSARY:") + exportDate(item.anniversary);
     }
     if (!item.groups.isEmpty()) {
-        QString tagName = (formatVersion>=GlobalConfig::VCF40) ? "CATEGORIES" : "X-CATEGORIES";
-        lines << encodeAll(tagName, 0, false, joinBySC(item.groups));
+        switch(groupFormat) {
+        case GlobalConfig::gfCategories:
+            lines << encodeAll("CATEGORIES", 0, false, joinByComma(item.groups));
+            break;
+        case GlobalConfig::gfXGroupMembership:
+            foreach (const QString& gr, item.groups)
+                lines << encodeAll("X-GROUP-MEMBERSHIP", 0, false, cm(gr));
+            break;
+            /*
+        case GlobalConfig::gfXCategories:
+            // no more info
+            break;
+            */
+        case GlobalConfig::gfNBF:
+            foreach (const QString& gr, item.groups)
+                lines << QString("X-NOKIA-PND-GROUP:") + QString((char*)(cm(gr).utf16()));
+            break;
+        case GlobalConfig::gfMPB:
+            lines << encodeAll("CATEGORIES", 0, false, joinBySC(item.groups));
+            break;
+        }
     }
     // Organization, addresses
     foreach (const PostalAddress& addr, item.addrs)
@@ -608,6 +643,23 @@ QString VCardData::joinBySC(const QStringList &src) const
 QString VCardData::sc(const QString &src) const
 {
     return QString(src).replace(QString(";"), QString("\\;"));
+}
+
+QStringList VCardData::splitByComma(const QString &src)
+{
+    // TODO see RFC and m.b. proceed \\ as in splitBySC
+    QStringList res = src.split(",");
+    return res;
+}
+
+QString VCardData::joinByComma(const QStringList &src) const
+{
+    return QStringList(src).replaceInStrings(",", "\\,").join(",");
+}
+
+QString VCardData::cm(const QString &src) const
+{
+    return QString(src).replace(QString(","), QString("\\,"));
 }
 
 void VCardData::debugSave(QFile &logFile, const QString& s, bool firstRec)

@@ -186,6 +186,14 @@ struct GlobalConfig {
     // addressbooks (LG Leon)
     bool addXToNonStandardTypes;
     bool replaceNLNSNames;
+    enum GroupFormat {
+        gfCategories,
+        gfXGroupMembership,
+        // gfXCategories, // x-categories used by Nokia suite according Anisimov's article
+        // Auto
+        gfNBF,
+        gfMPB
+    } groupFormat;
     // Load
     QString defaultEmptyPhoneType; // if phone w/o type was in loaded file
     bool warnOnNonStandardTypes;

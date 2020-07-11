@@ -47,6 +47,7 @@ int Convertor::start()
     }
     QString inPath, outPath, inFormat, outFormat, inProfile, outProfile, filterString;
     ContactList::SortType sortType = ContactList::SortBySortString;
+    gd.groupFormat = GlobalConfig::gfCategories;
     bool infoMode = false;
     bool forceOverwrite = false;
     bool forceSingleFile = false;
@@ -142,6 +143,24 @@ int Convertor::start()
             outProfile = arguments()[i];
             if (outProfile!="explaybm50" && outProfile!="explaytv240" && outProfile!="generic") {
                 out << tr("Error: Unknown output profile: %1\n").arg(outProfile);
+                printUsage();
+                return 11;
+            }
+            continue;
+        }
+        else if (arguments()[i]=="-g") {
+            i++;
+            if (i==arguments().count()) {
+                out << tr("Error: -g option present, but group format name is missing\n");
+                printUsage();
+                return 10;
+            }
+            if (arguments()[i]=="categories")
+                gd.groupFormat = GlobalConfig::gfCategories;
+            else if (arguments()[i]=="xgroupmembership")
+                gd.groupFormat = GlobalConfig::gfXGroupMembership;
+            else {
+                out << tr("Error: Unknown group format: %1\n").arg(outProfile);
                 printUsage();
                 return 11;
             }
@@ -459,7 +478,7 @@ void Convertor::printUsage()
 {
     out << tr(
         "Usage:\n" \
-        "contconv -i inputfile -o outfile -f outformat [-n informat] [-ip csvprofile] [-op csvprofile] [-w] [-d|-s] [commands]\n" \
+        "contconv -i inputfile -o outfile -f outformat [-n informat] [-ip csvprofile] [-op csvprofile] [-g groupformat] [-w] [-d|-s] [commands]\n" \
         "contconv --info inputfile\n" \
         "\n" \
         "Possible values for outformat:\n" \
@@ -476,6 +495,9 @@ void Convertor::printUsage()
         "\n" \
         "Possible values for csvprofile:\n" \
         "explaybm50, explaytv240, generic, osmo\n" \
+        "\n" \
+        "Possible values for groupformat:\n" \
+        "categories, xgroupmembership\n" \
         "\n" \
         "Options:\n" \
         "-w - force overwrite output single file, if exists (directories overwrites already)\n" \

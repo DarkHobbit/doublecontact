@@ -693,6 +693,16 @@ QMap<QString, int> ContactList::groupStat() const
     return res;
 }
 
+bool ContactList::hasGroups() const
+{
+    if (!emptyGroups.isEmpty())
+        return true;
+    foreach (const ContactItem& item, *this)
+        if (!item.groups.isEmpty())
+            return true;
+    return false;
+}
+
 bool ContactList::hasGroup(const QString &group) const
 {
     if (emptyGroups.contains(group))

@@ -92,3 +92,6 @@ Bugfix release:
 * Fixed: quoted-printable encoding/decoding in unknown and unediting (other) tags
 * Fixed: reading of quoted-printable non-standard phone/email types
 * Fixed: reading of PHOTO tag with lines, starting with TAB character
+
+CURRENT
+* Group saving fully redesigned: CATEGORIES tag with commas is using always, except MPB and NBF formats
