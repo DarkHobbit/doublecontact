@@ -321,6 +321,7 @@ void ContactModel::close()
     _changed = false;
     beginResetModel();
     _source.clear();
+    _sourceType = ftNew;
     items.clear();
     endResetModel();
 }
