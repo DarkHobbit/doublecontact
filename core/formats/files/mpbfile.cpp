@@ -92,7 +92,7 @@ bool MPBFile::importRecords(const QString &url, ContactList &list, bool append)
                 _errors << QObject::tr("Unsupported MPB section: ") + secName;
             if (section==secSMSArchive)
                 stream.setCodec("CP1251");
-            else if (section==secCalls)
+            else // if (section==secCalls)
                 stream.setCodec("UTF-8");
         }
         // MPB section content

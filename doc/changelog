@@ -96,3 +96,4 @@ Bugfix release:
 CURRENT
 * Group saving fully redesigned: CATEGORIES tag with commas is using always, except MPB and NBF formats
 * Fixed: saving new adressbook after closing previous one - worked only Save As, not Save
+* Fixed: Bad recognize of non-unicode section of MPB files on some system
