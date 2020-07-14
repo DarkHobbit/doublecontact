@@ -38,6 +38,10 @@ void showPhoto(const Photo &photo, QLabel *label)
     else if (pt=="JPEG" || pt=="PNG") {
         QPixmap pixPhoto;
         pixPhoto.loadFromData(photo.data);
+        // QLabel::scaledContents works ugly. More nice decision - scale only big images
+        // and keep photo aspect ratio.
+        if ((pixPhoto.width()>label->width()) || (pixPhoto.height()>label->height()))
+            pixPhoto = pixPhoto.scaled(label->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation);
         label->setPixmap(pixPhoto);
     }
     else if (!photo.isEmpty())
