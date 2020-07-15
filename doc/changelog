@@ -95,6 +95,7 @@ Bugfix release:
 
 CURRENT
 * Group saving fully redesigned: CATEGORIES tag with commas is using always, except MPB and NBF formats
+* At contact edit dialog, command for show contact photo in separate window added
 * Fixed: at contact edit dialog, big photos are now scaled to show area
 * Fixed: saving new adressbook after closing previous one - worked only Save As, not Save
 * Fixed: Bad recognize of non-unicode section of MPB files on some system

@@ -162,19 +162,19 @@ Er du sikker på at du vil godta dette sertifikatet uansett?</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="156"/>
-        <location filename="../app/contactdialog.cpp" line="711"/>
+        <location filename="../app/contactdialog.cpp" line="717"/>
         <source>name</source>
         <translation>navn</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="161"/>
-        <location filename="../app/contactdialog.cpp" line="713"/>
+        <location filename="../app/contactdialog.cpp" line="719"/>
         <source>phone</source>
         <translation>telefon</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="166"/>
-        <location filename="../app/contactdialog.cpp" line="715"/>
+        <location filename="../app/contactdialog.cpp" line="721"/>
         <source>email</source>
         <translation>e-postadresse</translation>
     </message>
@@ -351,34 +351,39 @@ Er du sikker på at du vil godta dette sertifikatet uansett?</translation>
         <translation>Rediger kontakt</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="725"/>
+        <location filename="../app/contactdialog.cpp" line="731"/>
         <source>Phone type</source>
         <translation>Telefontype</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="727"/>
+        <location filename="../app/contactdialog.cpp" line="733"/>
         <source>Email type</source>
         <translation>E-posttype</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="729"/>
+        <location filename="../app/contactdialog.cpp" line="735"/>
         <source>Address type</source>
         <translation>Adressetype</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="731"/>
+        <location filename="../app/contactdialog.cpp" line="737"/>
         <source>IM type</source>
         <translation>Lynmeldingstype</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="804"/>
+        <location filename="../app/contactdialog.cpp" line="810"/>
         <source>Open image file</source>
         <translation>Åpne bildefil</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="836"/>
+        <location filename="../app/contactdialog.cpp" line="842"/>
         <source>Save image file</source>
         <translation>Lagre bildefil</translation>
+    </message>
+    <message>
+        <location filename="../app/contactdialog.cpp" line="860"/>
+        <source>Contact photo</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -945,156 +950,156 @@ Er du sikker på at du vil godta dette sertifikatet uansett?</translation>
         <translation>Ctrl+C</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="171"/>
+        <location filename="../app/mainwindow.cpp" line="172"/>
         <source>Only one of two files can be dropped to program window</source>
         <translation>Kun én av to filer kan slippes i programvinduet</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="241"/>
+        <location filename="../app/mainwindow.cpp" line="242"/>
         <source>Open contact file</source>
         <translation>Åpne kontaktfil</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="258"/>
+        <location filename="../app/mainwindow.cpp" line="259"/>
         <source>Open VCF Directory</source>
         <translation>Åpne VCF-mappe</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="282"/>
+        <location filename="../app/mainwindow.cpp" line="283"/>
         <source>Save contact file</source>
         <translation>Lagre kontaktfil</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="297"/>
+        <location filename="../app/mainwindow.cpp" line="298"/>
         <source>Save VCF Directory</source>
         <translation>Lagre VCF-mappe</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="306"/>
+        <location filename="../app/mainwindow.cpp" line="307"/>
         <source>Directory exists. Are You really want rewrite it?</source>
         <translation>Mappen finnes. Ønsker du virkelig å skrive den på nytt?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="355"/>
+        <location filename="../app/mainwindow.cpp" line="356"/>
         <source>Are You really want to edit more than one record?
 Only some fields can this edited in this mode</source>
         <translation>Er du sikker på at du ønsker å redigere mer enn én oppføring?
 Kun noen felter kan redigeres i dette moduset</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="467"/>
+        <location filename="../app/mainwindow.cpp" line="468"/>
         <source>Compare mode requires show two panels and load contact lists in both panels</source>
         <translation type="unfinished">Sammenligningsmodus krever visning av to paneler og innlasting av kontaktlister i begge paneler</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="513"/>
+        <location filename="../app/mainwindow.cpp" line="514"/>
         <source>Group operation not impemented, select one record</source>
         <translation>Gruppeoperasjon ikke implementert, velg én oppflring</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="540"/>
+        <location filename="../app/mainwindow.cpp" line="541"/>
         <source> (directory)</source>
         <translation> (mappe)</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="640"/>
+        <location filename="../app/mainwindow.cpp" line="641"/>
         <source>Records: %1</source>
         <translation>Oppføringer: %1</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="645"/>
+        <location filename="../app/mainwindow.cpp" line="646"/>
         <source>Mode: </source>
         <translation>Modus: </translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="646"/>
+        <location filename="../app/mainwindow.cpp" line="647"/>
         <source>two panels</source>
         <translation>to paneler</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="646"/>
+        <location filename="../app/mainwindow.cpp" line="647"/>
         <source>one panel</source>
         <translation>ett panel</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="647"/>
+        <location filename="../app/mainwindow.cpp" line="648"/>
         <source>sorted</source>
         <translation>sorter</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="647"/>
+        <location filename="../app/mainwindow.cpp" line="648"/>
         <source>not sorted</source>
         <translation>usortert</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="650"/>
+        <location filename="../app/mainwindow.cpp" line="651"/>
         <source>simple editing</source>
         <translation>enkel redigering</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="654"/>
+        <location filename="../app/mainwindow.cpp" line="655"/>
         <source>compare</source>
         <translation>sammenlign</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="698"/>
+        <location filename="../app/mainwindow.cpp" line="699"/>
         <source>&apos;%1&apos; was changed.
 Save changes?</source>
         <translation>&quot;%1&quot; ble endret.
 Lagre endringer?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="812"/>
+        <location filename="../app/mainwindow.cpp" line="816"/>
         <source>Restart program to apply language change</source>
         <translation>Start programmet på nytt for å legge til programspråk</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="855"/>
+        <location filename="../app/mainwindow.cpp" line="859"/>
         <source>Two panels and compare mode needed for this operation</source>
         <translation>To paneler og sammenligningsmodus trengs for denne handlingen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="870"/>
+        <location filename="../app/mainwindow.cpp" line="874"/>
         <source>Left item</source>
         <translation>Venstre element</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="870"/>
+        <location filename="../app/mainwindow.cpp" line="874"/>
         <source>Right item</source>
         <translation>Høyre element</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="896"/>
+        <location filename="../app/mainwindow.cpp" line="900"/>
         <source>Strongly two records on current panel must be selected for this operation</source>
         <translation>To dataoppføringer på gjeldende panel må være valgt sterkt for denne operasjonen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="902"/>
+        <location filename="../app/mainwindow.cpp" line="906"/>
         <source>Item 1</source>
         <translation>Element 1</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="902"/>
+        <location filename="../app/mainwindow.cpp" line="906"/>
         <source>Item 2</source>
         <translation>Element 2</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="970"/>
+        <location filename="../app/mainwindow.cpp" line="974"/>
         <source>Operation requires show two panels</source>
         <translation type="unfinished">Operasjonen krever visning av to paneler</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1003"/>
+        <location filename="../app/mainwindow.cpp" line="1007"/>
         <source>Statitics</source>
         <translation>Statistikk</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1010"/>
+        <location filename="../app/mainwindow.cpp" line="1014"/>
         <source>Report file</source>
         <translation>Rapportfil</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1044"/>
+        <location filename="../app/mainwindow.cpp" line="1048"/>
         <source>Column sorting is switched. Hard sort results are not visible.
 Are you want switch column sorting off?</source>
         <translation type="unfinished">Kolonnesortering er byttet. Harde sorteringsresultater er ikke synlige.
@@ -1136,7 +1141,7 @@ Er du sikker på at du ønsker skru av kolonnesortering?</translation>
     <name>QObject</name>
     <message>
         <location filename="../core/contactlist.cpp" line="106"/>
-        <location filename="../core/contactlist.cpp" line="999"/>
+        <location filename="../core/contactlist.cpp" line="1009"/>
         <source>Home</source>
         <translation>Hjem</translation>
     </message>
@@ -1147,7 +1152,7 @@ Er du sikker på at du ønsker skru av kolonnesortering?</translation>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="108"/>
-        <location filename="../core/contactlist.cpp" line="1000"/>
+        <location filename="../core/contactlist.cpp" line="1010"/>
         <source>Work</source>
         <translation>Arbeid</translation>
     </message>
@@ -1155,7 +1160,7 @@ Er du sikker på at du ønsker skru av kolonnesortering?</translation>
         <location filename="../core/contactlist.cpp" line="109"/>
         <location filename="../core/contactlist.cpp" line="158"/>
         <location filename="../core/contactlist.cpp" line="194"/>
-        <location filename="../core/contactlist.cpp" line="1001"/>
+        <location filename="../core/contactlist.cpp" line="1011"/>
         <source>Preferable</source>
         <translation type="unfinished">Foretrukket</translation>
     </message>
@@ -1225,7 +1230,7 @@ Er du sikker på at du ønsker skru av kolonnesortering?</translation>
         <translation>Rar tom kontakt</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="846"/>
+        <location filename="../core/contactlist.cpp" line="856"/>
         <source>%1 records
 %2 phones
 %3 emails
@@ -1244,7 +1249,7 @@ Er du sikker på at du ønsker skru av kolonnesortering?</translation>
 %8 arkiverte SMS</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="850"/>
+        <location filename="../core/contactlist.cpp" line="860"/>
         <source>
 
 model %1
@@ -1281,89 +1286,89 @@ telefonspråk %5</translation>
 %9 %10</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1002"/>
+        <location filename="../core/contactlist.cpp" line="1012"/>
         <source>Domestic</source>
         <translation>Innenlands</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1003"/>
+        <location filename="../core/contactlist.cpp" line="1013"/>
         <source>International</source>
         <translation>Internasjonal</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1004"/>
+        <location filename="../core/contactlist.cpp" line="1014"/>
         <source>Postal</source>
         <translation>Postadresse</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1005"/>
+        <location filename="../core/contactlist.cpp" line="1015"/>
         <source>Parcel</source>
         <translation>Pakkeadresse</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="80"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="81"/>
         <location filename="../core/formats/common/vmessagedata.cpp" line="37"/>
         <source>Unclosed record before line %1</source>
         <translation>Ulukket oppføring før linje %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="164"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="165"/>
         <source>Unexpected TYPE appearance at line %1: tag %2</source>
         <translation>Uventet TYPE-opptreden, på linje %1: etikett %2</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="192"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="193"/>
         <source>Missing phone type at line %1: %2%3</source>
         <translation>Manglende telefontype på linje %1: %2%3</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="203"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="204"/>
         <source>Non-standard phone type at line %1: %2%3</source>
         <translation>Ikke-standard telefontype på linje %1: %2%3</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="234"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="235"/>
         <source>Unsupported photo type at line %1: %2%3</source>
         <translation>Ustøttet bildetype på linje %1: %2%3</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="245"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="246"/>
         <source>Unknown encoding type at line %1: %2%3</source>
         <translation>Ukjent kodingstype på linje %1: %2%3</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="257"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="258"/>
         <source>Unknown photo kind at line %1: %2</source>
         <translation>Ukjent bildetype på slutten av linje %1: %2</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="336"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="352"/>
         <source>Last section not closed</source>
         <translation>Siste del ulukket</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="343"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="359"/>
         <location filename="../core/formats/files/udxfile.cpp" line="170"/>
         <source>%1 unknown tags found</source>
         <translation>%1 ukjente etiketter funnet</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="503"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="538"/>
         <source>Unknown charset: </source>
         <translation>Ukjent tegnsett: </translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="512"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="547"/>
         <source>Unknown encoding: </source>
         <translation>Ukjent koding: </translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="540"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="575"/>
         <source>Invalid timezone: </source>
         <translation>Ugyldig tidssone: </translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="570"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="605"/>
         <source>Invalid datetime: </source>
         <translation>Ugyldig datotid: </translation>
     </message>
@@ -1533,17 +1538,17 @@ lagret som mobil</translation>
         <translation>MPB-dataoppføring tillatt kun for MPB-kilde</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="205"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="206"/>
         <source>Name for number %1 changed from %2 to %3</source>
         <translation>Navn for nummer %1 endret fra %2 til %3</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="217"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="218"/>
         <source>Number %1 without original name not found in addressbook</source>
         <translation>Nummer %1 uten opprinnelig navn ikke funnet i adressebok</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="219"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="220"/>
         <source>Number %1 not found in addressbook. Original name (%2) saved</source>
         <translation>Nummer %1 ikke funnet i adressebok. Opprinnelig navn (%2) lagret</translation>
     </message>
@@ -1601,12 +1606,12 @@ lagret som mobil</translation>
         <translation>Kan ikke sette %1 element som gjeldende i arkiv</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/nbffile.cpp" line="130"/>
+        <location filename="../core/formats/files/nbffile.cpp" line="131"/>
         <source>NBF file can be saved only if original addressbook also was in NBF format</source>
         <translation>NBF-fil kan kun lagres hvis opprinnelig adressebok også var i NBF-format</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/nbffile.cpp" line="135"/>
+        <location filename="../core/formats/files/nbffile.cpp" line="136"/>
         <source>Original NBF file was moved or deleted</source>
         <translation>Opprinnelig NBF-fil flyttet eller slettet</translation>
     </message>
@@ -1651,7 +1656,7 @@ lagret som mobil</translation>
         <translation>Postboks</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="129"/>
+        <location filename="../core/globals.h" line="130"/>
         <source>This format is read only</source>
         <translation>Dette formatet kan kun leses</translation>
     </message>
@@ -1856,14 +1861,19 @@ lagret som mobil</translation>
         <translation>Noen e-postadresser</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="135"/>
+        <location filename="../core/globals.h" line="119"/>
+        <source>Show in new window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/globals.h" line="136"/>
         <source>Program built without network support. Use WITH_NETWORK define, if building from source code.
 </source>
         <translation type="unfinished">Programmet er bygd uten nettverksstøtte. Bruk WITH_NETWORK define, hvis du bygger fra kildekode.
 </translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="136"/>
+        <location filename="../core/globals.h" line="137"/>
         <source>Do you really want to delete the selected items?</source>
         <translation>Ønsker du virkelig å slette valgte elementer?</translation>
     </message>
@@ -1917,60 +1927,60 @@ lagret som mobil</translation>
         <translation>Lagre bilde</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="119"/>
+        <location filename="../core/globals.h" line="120"/>
         <source>Set URL</source>
         <translation>Sett nettadresse</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="120"/>
+        <location filename="../core/globals.h" line="121"/>
         <source>Remove photo</source>
         <translation>Fjern bilde</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="122"/>
+        <location filename="../core/globals.h" line="123"/>
         <source>All supported files (%1)</source>
         <translation>Alle støttede filer (%1)</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="123"/>
+        <location filename="../core/globals.h" line="124"/>
         <source>All files (*.*)</source>
         <translation>Alle filer (*.*)</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="125"/>
+        <location filename="../core/globals.h" line="126"/>
         <source>Can&apos;t read file
 %1</source>
         <translation>Kan ikke lese fil
 %1</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="126"/>
+        <location filename="../core/globals.h" line="127"/>
         <source>Can&apos;t write file
 %1</source>
         <translation>Kan ikke skrive til fil
 %1</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="127"/>
+        <location filename="../core/globals.h" line="128"/>
         <source>Can&apos;t seek to %1 in file
 %2</source>
         <translation>Kan ikke blafre til %1 i filen
 %2</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="128"/>
+        <location filename="../core/globals.h" line="129"/>
         <source>Record not selected</source>
         <translation>Oppføring ikke valg</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="131"/>
+        <location filename="../core/globals.h" line="132"/>
         <source>Warning: contact %1 has %2, not supported in this format.
 Data will be lost</source>
         <translation>Advarsel: Kontakt %1 har %2, ikke støttet i dette formatet.
 Data vil gå tapt</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="133"/>
+        <location filename="../core/globals.h" line="134"/>
         <source>%1 %2 will be lost at contact %3</source>
         <translation>%1 %2 vil gå tapt i kontakt %3</translation>
     </message>

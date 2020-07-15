@@ -158,19 +158,19 @@ Voulez-vous accepter ce certificat quand même ?</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="156"/>
-        <location filename="../app/contactdialog.cpp" line="711"/>
+        <location filename="../app/contactdialog.cpp" line="717"/>
         <source>name</source>
         <translation>nom</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="161"/>
-        <location filename="../app/contactdialog.cpp" line="713"/>
+        <location filename="../app/contactdialog.cpp" line="719"/>
         <source>phone</source>
         <translation>téléphone</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="166"/>
-        <location filename="../app/contactdialog.cpp" line="715"/>
+        <location filename="../app/contactdialog.cpp" line="721"/>
         <source>email</source>
         <translation>courriel</translation>
     </message>
@@ -339,34 +339,39 @@ Voulez-vous accepter ce certificat quand même ?</translation>
         <translation>Modifier le contact</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="725"/>
+        <location filename="../app/contactdialog.cpp" line="731"/>
         <source>Phone type</source>
         <translation>Type de téléphone</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="727"/>
+        <location filename="../app/contactdialog.cpp" line="733"/>
         <source>Email type</source>
         <translation>Type de courriel</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="729"/>
+        <location filename="../app/contactdialog.cpp" line="735"/>
         <source>Address type</source>
         <translation>Type d&apos;adresse</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="731"/>
+        <location filename="../app/contactdialog.cpp" line="737"/>
         <source>IM type</source>
         <translation>Type de messagerie instantanée</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="804"/>
+        <location filename="../app/contactdialog.cpp" line="810"/>
         <source>Open image file</source>
         <translation>Ouvrir le fichier d&apos;image</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="836"/>
+        <location filename="../app/contactdialog.cpp" line="842"/>
         <source>Save image file</source>
         <translation>Enregistrer le fichier d&apos;image</translation>
+    </message>
+    <message>
+        <location filename="../app/contactdialog.cpp" line="860"/>
+        <source>Contact photo</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -897,156 +902,156 @@ Voulez-vous accepter ce certificat quand même ?</translation>
         <translation>Ctrl + C</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="171"/>
+        <location filename="../app/mainwindow.cpp" line="172"/>
         <source>Only one of two files can be dropped to program window</source>
         <translation>Seulement un ou deux fichiers peuvent être glissés vers la fenêtre du programme</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="241"/>
+        <location filename="../app/mainwindow.cpp" line="242"/>
         <source>Open contact file</source>
         <translation>Ouvrir le fichier de contact</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="258"/>
+        <location filename="../app/mainwindow.cpp" line="259"/>
         <source>Open VCF Directory</source>
         <translation>Ouvrir le répertoire des VCF</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="282"/>
+        <location filename="../app/mainwindow.cpp" line="283"/>
         <source>Save contact file</source>
         <translation>Enregistrer le fichier de contact</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="297"/>
+        <location filename="../app/mainwindow.cpp" line="298"/>
         <source>Save VCF Directory</source>
         <translation>Enregistrer le répertoire des VCF</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="306"/>
+        <location filename="../app/mainwindow.cpp" line="307"/>
         <source>Directory exists. Are You really want rewrite it?</source>
         <translation>Le répertoire existe déjà. Voulez-vous vraiment l&apos;écraser ?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="355"/>
+        <location filename="../app/mainwindow.cpp" line="356"/>
         <source>Are You really want to edit more than one record?
 Only some fields can this edited in this mode</source>
         <translation>Êtes-vous sûr de vouloir modifier plus d&apos;un enregistrement ?
 Seuls certains champs peuvent être modifiés dans ce mode</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="467"/>
+        <location filename="../app/mainwindow.cpp" line="468"/>
         <source>Compare mode requires show two panels and load contact lists in both panels</source>
         <translation>Le mode de comparaison nécessite l&apos;affichage des deux panneaux et le chargement de la liste des contacts dans les deux panneaux</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="513"/>
+        <location filename="../app/mainwindow.cpp" line="514"/>
         <source>Group operation not impemented, select one record</source>
         <translation>Opération de groupage non implémentée, sélectionnez un enregistrement</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="540"/>
+        <location filename="../app/mainwindow.cpp" line="541"/>
         <source> (directory)</source>
         <translation> (répertoire)</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="640"/>
+        <location filename="../app/mainwindow.cpp" line="641"/>
         <source>Records: %1</source>
         <translation>Enregistrements : %1</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="645"/>
+        <location filename="../app/mainwindow.cpp" line="646"/>
         <source>Mode: </source>
         <translation>Mode : </translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="646"/>
+        <location filename="../app/mainwindow.cpp" line="647"/>
         <source>two panels</source>
         <translation>deux panneaux</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="646"/>
+        <location filename="../app/mainwindow.cpp" line="647"/>
         <source>one panel</source>
         <translation>un seul panneau</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="647"/>
+        <location filename="../app/mainwindow.cpp" line="648"/>
         <source>sorted</source>
         <translation>trié</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="647"/>
+        <location filename="../app/mainwindow.cpp" line="648"/>
         <source>not sorted</source>
         <translation>non trié</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="650"/>
+        <location filename="../app/mainwindow.cpp" line="651"/>
         <source>simple editing</source>
         <translation>modification simple</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="654"/>
+        <location filename="../app/mainwindow.cpp" line="655"/>
         <source>compare</source>
         <translation>comparer</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="698"/>
+        <location filename="../app/mainwindow.cpp" line="699"/>
         <source>&apos;%1&apos; was changed.
 Save changes?</source>
         <translation>« %1 » a été modifié.
 Enregistrer les modifications ?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="812"/>
+        <location filename="../app/mainwindow.cpp" line="816"/>
         <source>Restart program to apply language change</source>
         <translation>Redémarrez le programme pour appliquer le changement de langue</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="855"/>
+        <location filename="../app/mainwindow.cpp" line="859"/>
         <source>Two panels and compare mode needed for this operation</source>
         <translation>L&apos;affichage des deux panneaux et le mode de comparaison sont nécessaires pour cette opération</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="870"/>
+        <location filename="../app/mainwindow.cpp" line="874"/>
         <source>Left item</source>
         <translation>Élément à gauche</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="870"/>
+        <location filename="../app/mainwindow.cpp" line="874"/>
         <source>Right item</source>
         <translation>Élément à droite</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="896"/>
+        <location filename="../app/mainwindow.cpp" line="900"/>
         <source>Strongly two records on current panel must be selected for this operation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="902"/>
+        <location filename="../app/mainwindow.cpp" line="906"/>
         <source>Item 1</source>
         <translation>Élément 1</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="902"/>
+        <location filename="../app/mainwindow.cpp" line="906"/>
         <source>Item 2</source>
         <translation>Élément 2</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="970"/>
+        <location filename="../app/mainwindow.cpp" line="974"/>
         <source>Operation requires show two panels</source>
         <translation>Cette opération nécessite l&apos;affichage des deux panneaux</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1003"/>
+        <location filename="../app/mainwindow.cpp" line="1007"/>
         <source>Statitics</source>
         <translation>Statistiques</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1010"/>
+        <location filename="../app/mainwindow.cpp" line="1014"/>
         <source>Report file</source>
         <translation>Fichier de rapport</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1044"/>
+        <location filename="../app/mainwindow.cpp" line="1048"/>
         <source>Column sorting is switched. Hard sort results are not visible.
 Are you want switch column sorting off?</source>
         <translation type="unfinished"></translation>
@@ -1087,7 +1092,7 @@ Are you want switch column sorting off?</source>
     <name>QObject</name>
     <message>
         <location filename="../core/contactlist.cpp" line="106"/>
-        <location filename="../core/contactlist.cpp" line="999"/>
+        <location filename="../core/contactlist.cpp" line="1009"/>
         <source>Home</source>
         <translation>Accueil</translation>
     </message>
@@ -1098,7 +1103,7 @@ Are you want switch column sorting off?</source>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="108"/>
-        <location filename="../core/contactlist.cpp" line="1000"/>
+        <location filename="../core/contactlist.cpp" line="1010"/>
         <source>Work</source>
         <translation>Travail</translation>
     </message>
@@ -1106,7 +1111,7 @@ Are you want switch column sorting off?</source>
         <location filename="../core/contactlist.cpp" line="109"/>
         <location filename="../core/contactlist.cpp" line="158"/>
         <location filename="../core/contactlist.cpp" line="194"/>
-        <location filename="../core/contactlist.cpp" line="1001"/>
+        <location filename="../core/contactlist.cpp" line="1011"/>
         <source>Preferable</source>
         <translation>Préférable</translation>
     </message>
@@ -1176,7 +1181,7 @@ Are you want switch column sorting off?</source>
         <translation>Contact vide étrange</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="846"/>
+        <location filename="../core/contactlist.cpp" line="856"/>
         <source>%1 records
 %2 phones
 %3 emails
@@ -1195,7 +1200,7 @@ Are you want switch column sorting off?</source>
 %8 SMS archivés</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="850"/>
+        <location filename="../core/contactlist.cpp" line="860"/>
         <source>
 
 model %1
@@ -1212,89 +1217,89 @@ firmware %4
 langue du téléphone %5</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1002"/>
+        <location filename="../core/contactlist.cpp" line="1012"/>
         <source>Domestic</source>
         <translation>Domestique</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1003"/>
+        <location filename="../core/contactlist.cpp" line="1013"/>
         <source>International</source>
         <translation>International</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1004"/>
+        <location filename="../core/contactlist.cpp" line="1014"/>
         <source>Postal</source>
         <translation>Postal</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1005"/>
+        <location filename="../core/contactlist.cpp" line="1015"/>
         <source>Parcel</source>
         <translation>Colis</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="80"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="81"/>
         <location filename="../core/formats/common/vmessagedata.cpp" line="37"/>
         <source>Unclosed record before line %1</source>
         <translation>Enregistrement non fermé avant la ligne %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="164"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="165"/>
         <source>Unexpected TYPE appearance at line %1: tag %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="192"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="193"/>
         <source>Missing phone type at line %1: %2%3</source>
         <translation>Type de téléphone manquant à la ligne %1 : %2%3</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="203"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="204"/>
         <source>Non-standard phone type at line %1: %2%3</source>
         <translation>Type de téléphone non standard à la ligne %1 : %2%3</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="234"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="235"/>
         <source>Unsupported photo type at line %1: %2%3</source>
         <translation>Type de photo non supporté à la ligne %1 : %2%3</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="245"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="246"/>
         <source>Unknown encoding type at line %1: %2%3</source>
         <translation>Type d&apos;encodage inconnu à la ligne %1 : %2%3</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="257"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="258"/>
         <source>Unknown photo kind at line %1: %2</source>
         <translation>Type de photo inconnu à la ligne %1 : %2</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="336"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="352"/>
         <source>Last section not closed</source>
         <translation>Dernière section non fermée</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="343"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="359"/>
         <location filename="../core/formats/files/udxfile.cpp" line="170"/>
         <source>%1 unknown tags found</source>
         <translation>%1 étiquettes inconnues trouvées</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="503"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="538"/>
         <source>Unknown charset: </source>
         <translation>Caractère inconnu : </translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="512"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="547"/>
         <source>Unknown encoding: </source>
         <translation>Encodage inconnu : </translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="540"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="575"/>
         <source>Invalid timezone: </source>
         <translation>Fuseau horaire invalide : </translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="570"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="605"/>
         <source>Invalid datetime: </source>
         <translation>Date/heure invalide : </translation>
     </message>
@@ -1457,17 +1462,17 @@ ligne %3, colonne %4
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="205"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="206"/>
         <source>Name for number %1 changed from %2 to %3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="217"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="218"/>
         <source>Number %1 without original name not found in addressbook</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="219"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="220"/>
         <source>Number %1 not found in addressbook. Original name (%2) saved</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1524,12 +1529,12 @@ ligne %3, colonne %4
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/files/nbffile.cpp" line="130"/>
+        <location filename="../core/formats/files/nbffile.cpp" line="131"/>
         <source>NBF file can be saved only if original addressbook also was in NBF format</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/files/nbffile.cpp" line="135"/>
+        <location filename="../core/formats/files/nbffile.cpp" line="136"/>
         <source>Original NBF file was moved or deleted</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1574,7 +1579,7 @@ ligne %3, colonne %4
         <translation>Boîte postale</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="129"/>
+        <location filename="../core/globals.h" line="130"/>
         <source>This format is read only</source>
         <translation>Ce format est en lecture seule</translation>
     </message>
@@ -1779,13 +1784,18 @@ ligne %3, colonne %4
         <translation>Quelques courriels</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="135"/>
+        <location filename="../core/globals.h" line="119"/>
+        <source>Show in new window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/globals.h" line="136"/>
         <source>Program built without network support. Use WITH_NETWORK define, if building from source code.
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="136"/>
+        <location filename="../core/globals.h" line="137"/>
         <source>Do you really want to delete the selected items?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1835,56 +1845,56 @@ ligne %3, colonne %4
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="119"/>
+        <location filename="../core/globals.h" line="120"/>
         <source>Set URL</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="120"/>
+        <location filename="../core/globals.h" line="121"/>
         <source>Remove photo</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="122"/>
+        <location filename="../core/globals.h" line="123"/>
         <source>All supported files (%1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="123"/>
+        <location filename="../core/globals.h" line="124"/>
         <source>All files (*.*)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="125"/>
+        <location filename="../core/globals.h" line="126"/>
         <source>Can&apos;t read file
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="126"/>
+        <location filename="../core/globals.h" line="127"/>
         <source>Can&apos;t write file
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="127"/>
+        <location filename="../core/globals.h" line="128"/>
         <source>Can&apos;t seek to %1 in file
 %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="128"/>
+        <location filename="../core/globals.h" line="129"/>
         <source>Record not selected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="131"/>
+        <location filename="../core/globals.h" line="132"/>
         <source>Warning: contact %1 has %2, not supported in this format.
 Data will be lost</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="133"/>
+        <location filename="../core/globals.h" line="134"/>
         <source>%1 %2 will be lost at contact %3</source>
         <translation type="unfinished"></translation>
     </message>

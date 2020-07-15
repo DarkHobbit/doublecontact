@@ -105,6 +105,7 @@ private slots:
     void slotDelAddress();
     void onLoadImage();
     void onSaveImage();
+    void onShowInNewWin();
     void onSetPhotoUrl();
     void onRemovePhoto();
     void on_btnAddIM_clicked();

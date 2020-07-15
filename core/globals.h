@@ -116,6 +116,7 @@ enum ContactColumn {
 #define S_PH_UNKNOWN_FORMAT QObject::tr("[Unknown photo format]")
 #define S_PH_LOAD_IMAGE QObject::tr("Load image")
 #define S_PH_SAVE_IMAGE QObject::tr("Save image")
+#define S_PH_SHOW_IN_NEW_WIN QObject::tr("Show in new window")
 #define S_PH_SET_URL QObject::tr("Set URL")
 #define S_PH_REMOVE QObject::tr("Remove photo")
 // File ops

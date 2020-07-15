@@ -651,11 +651,17 @@ void ContactDialog::updatePhotoMenu()
     menuPhotoEdit->clear();
     menuPhotoEdit->addAction(S_PH_LOAD_IMAGE, this, SLOT(onLoadImage()));
     QAction* actSave = new QAction(S_PH_SAVE_IMAGE, this);
-    if (!photo.isEmpty())
+    QAction* actShowInNewWin = new QAction(S_PH_SHOW_IN_NEW_WIN, this);
+    if (!photo.isEmpty()) {
         connect(actSave, SIGNAL(triggered()), this, SLOT(onSaveImage()));
-    else
+        connect(actShowInNewWin, SIGNAL(triggered()), this, SLOT(onShowInNewWin()));
+    }
+    else {
         actSave->setEnabled(false);
+        actShowInNewWin->setEnabled(false);
+    }
     menuPhotoEdit->addAction(actSave);
+    menuPhotoEdit->addAction(actShowInNewWin);
     menuPhotoEdit->addAction(S_PH_SET_URL, this, SLOT(onSetPhotoUrl()));
     menuPhotoEdit->addAction(S_PH_REMOVE, this, SLOT(onRemovePhoto()));
 }
@@ -844,6 +850,26 @@ void ContactDialog::onSaveImage()
     }
     f.write(photo.data);
     f.close();
+}
+
+void ContactDialog::onShowInNewWin()
+{
+    QPixmap pixPhoto;
+    pixPhoto.loadFromData(photo.data);
+    QDialog* d = new QDialog(0, Qt::Dialog | Qt::WindowCloseButtonHint);
+    d->setWindowTitle(tr("Contact photo"));
+    QVBoxLayout* l = new QVBoxLayout();
+    d->setLayout(l);
+    QLabel* lbPhoto = new QLabel();
+    l->addWidget(lbPhoto);
+    QDialogButtonBox* bb = new QDialogButtonBox(QDialogButtonBox::Cancel);
+    connect(bb, SIGNAL(rejected()), d, SLOT(reject()));
+    l->addWidget(bb);
+    // Adjust view size to photo
+    d->resize(pixPhoto.width()+20, pixPhoto.height()+40);
+    lbPhoto->setPixmap(pixPhoto);
+    d->exec();
+    delete d;
 }
 
 void ContactDialog::onSetPhotoUrl()
