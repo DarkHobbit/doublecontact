@@ -1054,7 +1054,7 @@ bool Photo::isEmpty() const
 QString Photo::detectFormat() const
 {
     QString format = "UNKNOWN";
-    if (data.mid(6, 4).contains("JFIF"))
+    if (data.mid(0, 2).contains("\xFF\xD8"))
         format = "JPEG";
     else if (data.mid(1, 3).contains("PNG"))
         format = "PNG";
