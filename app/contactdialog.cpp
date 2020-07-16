@@ -116,6 +116,8 @@ void ContactDialog::clearData()
         addEmail(Email());
         setDefaultTypeList("Email", i+1, emailTypes);
     }
+    photo.clear();
+    updatePhotoMenu();
     for (int i=0; i<_imCount; i++) {
         addIM(Messenger());
         setDefaultTypeList("IM", i+1, imTypes);
