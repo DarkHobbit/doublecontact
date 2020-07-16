@@ -68,6 +68,7 @@ TRANSLATIONS += \
     ../translations/doublecontact_nl.ts \
     ../translations/doublecontact_pl.ts \
     ../translations/doublecontact_pt.ts \
+    ../translations/doublecontact_pt_BR.ts \
     ../translations/doublecontact_ru_RU.ts \
     ../translations/doublecontact_uk_UA.ts \
     ../translations/doublecontact_zh_Hant.ts
