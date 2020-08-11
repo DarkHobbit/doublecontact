@@ -218,19 +218,19 @@ Wilt u dit certificaat tóch accepteren?</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="156"/>
-        <location filename="../app/contactdialog.cpp" line="717"/>
+        <location filename="../app/contactdialog.cpp" line="719"/>
         <source>name</source>
         <translation>naam</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="161"/>
-        <location filename="../app/contactdialog.cpp" line="719"/>
+        <location filename="../app/contactdialog.cpp" line="721"/>
         <source>phone</source>
         <translation>telefoonnummer</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="166"/>
-        <location filename="../app/contactdialog.cpp" line="721"/>
+        <location filename="../app/contactdialog.cpp" line="723"/>
         <source>email</source>
         <translation>e-mailadres</translation>
     </message>
@@ -426,42 +426,42 @@ Wilt u dit certificaat tóch accepteren?</translation>
         <translation>Contactpersoon toevoegen</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="133"/>
+        <location filename="../app/contactdialog.cpp" line="135"/>
         <source>Edit contact</source>
         <translation>Contactpersoon bewerken</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="731"/>
+        <location filename="../app/contactdialog.cpp" line="733"/>
         <source>Phone type</source>
         <translation>Telefoontype</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="733"/>
+        <location filename="../app/contactdialog.cpp" line="735"/>
         <source>Email type</source>
         <translation>E-mail-type</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="735"/>
+        <location filename="../app/contactdialog.cpp" line="737"/>
         <source>Address type</source>
         <translation>Soort adres</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="737"/>
+        <location filename="../app/contactdialog.cpp" line="739"/>
         <source>IM type</source>
         <translation>Soort IM</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="810"/>
+        <location filename="../app/contactdialog.cpp" line="812"/>
         <source>Open image file</source>
         <translation>Afbeeldingsbestand openen</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="842"/>
+        <location filename="../app/contactdialog.cpp" line="844"/>
         <source>Save image file</source>
         <translation>Afbeeldingsbestand opslaan</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="860"/>
+        <location filename="../app/contactdialog.cpp" line="862"/>
         <source>Contact photo</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1145,57 +1145,57 @@ Save changes?</source>
 Wilt u de wijzigingen opslaan?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="816"/>
+        <location filename="../app/mainwindow.cpp" line="814"/>
         <source>Restart program to apply language change</source>
         <translation>Herstart de app om de taalwijziging door te voeren</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="859"/>
+        <location filename="../app/mainwindow.cpp" line="857"/>
         <source>Two panels and compare mode needed for this operation</source>
         <translation>De twee panelen- en vergelijkingsmodus zijn vereist voor deze bewerking</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="874"/>
+        <location filename="../app/mainwindow.cpp" line="872"/>
         <source>Left item</source>
         <translation>Linkeritem</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="874"/>
+        <location filename="../app/mainwindow.cpp" line="872"/>
         <source>Right item</source>
         <translation>Rechteritem</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="900"/>
+        <location filename="../app/mainwindow.cpp" line="898"/>
         <source>Strongly two records on current panel must be selected for this operation</source>
         <translation>Twee items in het huidige paneel dienen te worden geselecteerd voor deze bewerking</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="906"/>
+        <location filename="../app/mainwindow.cpp" line="904"/>
         <source>Item 1</source>
         <translation>Item 1</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="906"/>
+        <location filename="../app/mainwindow.cpp" line="904"/>
         <source>Item 2</source>
         <translation>Item 2</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="974"/>
+        <location filename="../app/mainwindow.cpp" line="972"/>
         <source>Operation requires show two panels</source>
         <translation>Deze bewerking vereist twee panelen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1007"/>
+        <location filename="../app/mainwindow.cpp" line="1005"/>
         <source>Statitics</source>
         <translation>Statistieken</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1014"/>
+        <location filename="../app/mainwindow.cpp" line="1012"/>
         <source>Report file</source>
         <translation>Rapportbestand</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1048"/>
+        <location filename="../app/mainwindow.cpp" line="1046"/>
         <source>Column sorting is switched. Hard sort results are not visible.
 Are you want switch column sorting off?</source>
         <translation>Kolomsortering is gewijzigd. Harde sorteringsresultaten zijn niet zichtbaar.
@@ -2453,17 +2453,22 @@ Controleer gebruikersnaam, wachtwoord, protocol en poort</translation>
         <translation>Niet-latijns type vervangen</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="312"/>
+        <location filename="../app/settingsdialog.ui" line="298"/>
+        <source>Use X-GROUP-MEMBERSHIP for groups save</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/settingsdialog.ui" line="319"/>
         <source>Loading</source>
         <translation>Laden</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="320"/>
+        <location filename="../app/settingsdialog.ui" line="327"/>
         <source>Default type if empty</source>
         <translation>Standaard type indien leeg</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="332"/>
+        <location filename="../app/settingsdialog.ui" line="339"/>
         <source>(many phones treat &apos;Voice&apos; as &apos;Other&apos;)</source>
         <translation>(veel telefoons vatten &apos;Spraakoproep&apos; op als &apos;Overig&apos;)</translation>
     </message>
@@ -2472,22 +2477,22 @@ Controleer gebruikersnaam, wachtwoord, protocol en poort</translation>
         <translation type="obsolete">(veel telefoons nemen &apos;Overig&apos; aan i.p.v. &apos;Spraak&apos;)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="339"/>
+        <location filename="../app/settingsdialog.ui" line="346"/>
         <source>Warning on non-standard phone types</source>
         <translation>Waarschuwing bij niet-standaard telefoontypes</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="346"/>
+        <location filename="../app/settingsdialog.ui" line="353"/>
         <source>Debug save</source>
         <translation>Foutopsporing opslaan</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="353"/>
+        <location filename="../app/settingsdialog.ui" line="360"/>
         <source>While VCF directory reading</source>
         <translation>Tijdens het uitlezen van mappen door VCF</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="359"/>
+        <location filename="../app/settingsdialog.ui" line="366"/>
         <source>Read contact names from file name</source>
         <translation>Contactpersoonnamen uitlezen uit bestandsnaam</translation>
     </message>
@@ -2496,7 +2501,7 @@ Controleer gebruikersnaam, wachtwoord, protocol en poort</translation>
         <translation type="obsolete">Waarschuwen bij niet-standaard telefoonummers/e-mailadressen</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.cpp" line="129"/>
+        <location filename="../app/settingsdialog.cpp" line="134"/>
         <source>List must contain at least one visible column</source>
         <translation>De lijst moet minimaal één zichtbare kolom bevatten</translation>
     </message>

@@ -105,6 +105,8 @@ void ConfigManager::readConfig()
     gd.skipTimeFromDate = settings->value("Saving/SkipTimeFromDate", false).toBool();
     gd.addXToNonStandardTypes = settings->value("Saving/AddXToNonStandardTypes", false).toBool();
     gd.replaceNLNSNames = settings->value("Saving/ReplaceNLNSNames", false).toBool();
+    QString sGroupFormat = settings->value("Saving/GroupFormat", "CATEGORIES").toString();
+    gd.groupFormat = (sGroupFormat=="X-GROUP-MEMBERSHIP") ? GlobalConfig::gfXGroupMembership : GlobalConfig::gfCategories;
     // Loading
     gd.defaultEmptyPhoneType = settings->value("Loading/DefaultEmptyPhoneType",
         Phone::standardTypes.translate("voice")).toString(); // many phones treat type 'voice' as 'other'
@@ -155,6 +157,8 @@ void ConfigManager::writeConfig()
     settings->setValue("Saving/SkipTimeFromDate", gd.skipTimeFromDate);
     settings->setValue("Saving/AddXToNonStandardTypes", gd.addXToNonStandardTypes);
     settings->setValue("Saving/ReplaceNLNSNames", gd.replaceNLNSNames);
+    QString sGroupFormat = (gd.groupFormat==GlobalConfig::gfXGroupMembership) ? "X-GROUP-MEMBERSHIP" : "CATEGORIES";
+    settings->setValue("Saving/GroupFormat", sGroupFormat);
     // Loading
     settings->setValue("Loading/DefaultEmptyPhoneType", gd.defaultEmptyPhoneType);
     settings->setValue("Loading/WarnOnNonStandardTypes", gd.warnOnNonStandardTypes);

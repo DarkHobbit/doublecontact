@@ -162,19 +162,19 @@ Möchten Sie dieses Zertifikat trotzdem akzeptieren?</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="156"/>
-        <location filename="../app/contactdialog.cpp" line="717"/>
+        <location filename="../app/contactdialog.cpp" line="719"/>
         <source>name</source>
         <translation>Name</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="161"/>
-        <location filename="../app/contactdialog.cpp" line="719"/>
+        <location filename="../app/contactdialog.cpp" line="721"/>
         <source>phone</source>
         <translation>Telefon</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="166"/>
-        <location filename="../app/contactdialog.cpp" line="721"/>
+        <location filename="../app/contactdialog.cpp" line="723"/>
         <source>email</source>
         <translation>E-Mail-Adresse</translation>
     </message>
@@ -338,42 +338,42 @@ Möchten Sie dieses Zertifikat trotzdem akzeptieren?</translation>
         <translation>Kontakt hinzufügen</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="133"/>
+        <location filename="../app/contactdialog.cpp" line="135"/>
         <source>Edit contact</source>
         <translation>Kontakt bearbeiten</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="731"/>
+        <location filename="../app/contactdialog.cpp" line="733"/>
         <source>Phone type</source>
         <translation>Telefontyp</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="733"/>
+        <location filename="../app/contactdialog.cpp" line="735"/>
         <source>Email type</source>
         <translation>E-Mail-Typ</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="735"/>
+        <location filename="../app/contactdialog.cpp" line="737"/>
         <source>Address type</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="737"/>
+        <location filename="../app/contactdialog.cpp" line="739"/>
         <source>IM type</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="810"/>
+        <location filename="../app/contactdialog.cpp" line="812"/>
         <source>Open image file</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="842"/>
+        <location filename="../app/contactdialog.cpp" line="844"/>
         <source>Save image file</source>
         <translation>Bilddatei speichern</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="860"/>
+        <location filename="../app/contactdialog.cpp" line="862"/>
         <source>Contact photo</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1033,57 +1033,57 @@ Save changes?</source>
 Änderungen speichern?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="816"/>
+        <location filename="../app/mainwindow.cpp" line="814"/>
         <source>Restart program to apply language change</source>
         <translation>Anwendung neu starten, um die Sprachumschaltung zu übernehmen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="859"/>
+        <location filename="../app/mainwindow.cpp" line="857"/>
         <source>Two panels and compare mode needed for this operation</source>
         <translation>Zwei Fenster und Vergleichsmodus sind für diese Aufgabe erforderlich</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="874"/>
+        <location filename="../app/mainwindow.cpp" line="872"/>
         <source>Left item</source>
         <translation>Linkes Element</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="874"/>
+        <location filename="../app/mainwindow.cpp" line="872"/>
         <source>Right item</source>
         <translation>Rechtes Element</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="900"/>
+        <location filename="../app/mainwindow.cpp" line="898"/>
         <source>Strongly two records on current panel must be selected for this operation</source>
         <translation>Zwei Datensätze im aktuellen Fenster sind zwingend für diesen Vorgang auszuwählen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="906"/>
+        <location filename="../app/mainwindow.cpp" line="904"/>
         <source>Item 1</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="906"/>
+        <location filename="../app/mainwindow.cpp" line="904"/>
         <source>Item 2</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="974"/>
+        <location filename="../app/mainwindow.cpp" line="972"/>
         <source>Operation requires show two panels</source>
         <translation>Für die Aufgabe sind zwei Fenster erforderlich</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1007"/>
+        <location filename="../app/mainwindow.cpp" line="1005"/>
         <source>Statitics</source>
         <translation>Statistiken</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1014"/>
+        <location filename="../app/mainwindow.cpp" line="1012"/>
         <source>Report file</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1048"/>
+        <location filename="../app/mainwindow.cpp" line="1046"/>
         <source>Column sorting is switched. Hard sort results are not visible.
 Are you want switch column sorting off?</source>
         <translation>Die Spaltensortierung wurde gewechselt. Harte Sortierergebnisse sind nicht sichtbar.
@@ -2323,17 +2323,22 @@ Benutzername, Passwort, Protokoll und Port überprüfen</translation>
         <translation>Nicht-lateinisch benannten Typ ersetzen</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="312"/>
+        <location filename="../app/settingsdialog.ui" line="298"/>
+        <source>Use X-GROUP-MEMBERSHIP for groups save</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/settingsdialog.ui" line="319"/>
         <source>Loading</source>
         <translation>Wird geladen</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="320"/>
+        <location filename="../app/settingsdialog.ui" line="327"/>
         <source>Default type if empty</source>
         <translation>Standardtyp, wenn leer</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="332"/>
+        <location filename="../app/settingsdialog.ui" line="339"/>
         <source>(many phones treat &apos;Voice&apos; as &apos;Other&apos;)</source>
         <translation>(viele Telefone behandeln „Stimme“ als „Andere“)</translation>
     </message>
@@ -2342,27 +2347,27 @@ Benutzername, Passwort, Protokoll und Port überprüfen</translation>
         <translation type="obsolete">(Viele Telefone behandeln „Stimme” als „Weitere”)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="339"/>
+        <location filename="../app/settingsdialog.ui" line="346"/>
         <source>Warning on non-standard phone types</source>
         <translation>Warnhinweis bei nicht standardgemäßen Telefontypen</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="346"/>
+        <location filename="../app/settingsdialog.ui" line="353"/>
         <source>Debug save</source>
         <translation>Debug speichern</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="353"/>
+        <location filename="../app/settingsdialog.ui" line="360"/>
         <source>While VCF directory reading</source>
         <translation>Während das VCF-Verzeichnis gelesen wird</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="359"/>
+        <location filename="../app/settingsdialog.ui" line="366"/>
         <source>Read contact names from file name</source>
         <translation>Kontaktnamen aus Dateinamen auslesen</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.cpp" line="129"/>
+        <location filename="../app/settingsdialog.cpp" line="134"/>
         <source>List must contain at least one visible column</source>
         <translation>Liste muss mindestens eine sichtbare Spalte enthalten</translation>
     </message>

@@ -293,6 +293,13 @@
         </widget>
        </item>
        <item>
+        <widget class="QCheckBox" name="cbXgr">
+         <property name="text">
+          <string>Use X-GROUP-MEMBERSHIP for groups save</string>
+         </property>
+        </widget>
+       </item>
+       <item>
         <spacer name="verticalSpacer">
          <property name="orientation">
           <enum>Qt::Vertical</enum>

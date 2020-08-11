@@ -57,6 +57,7 @@ bool SettingsDialog::setData()
     ui->cbSkipTimeFromDate->setChecked(gd.skipTimeFromDate);
     ui->cbAddXToNonStandardTypes->setChecked(gd.addXToNonStandardTypes);
     ui->cbReplaceNLNSNames->setChecked(gd.replaceNLNSNames);
+    ui->cbXgr->setChecked(gd.groupFormat==GlobalConfig::gfXGroupMembership);
     // Loading
     ui->cbDefaultEmptyPhoneType->clear();
     ui->cbDefaultEmptyPhoneType->insertItems(0, Phone::standardTypes.displayValues);
@@ -101,6 +102,10 @@ bool SettingsDialog::getData()
     gd.skipTimeFromDate = ui->cbSkipTimeFromDate->isChecked();
     gd.addXToNonStandardTypes = ui->cbAddXToNonStandardTypes->isChecked();
     gd.replaceNLNSNames = ui->cbReplaceNLNSNames->isChecked();
+    if (ui->cbXgr->isChecked())
+        gd.groupFormat = GlobalConfig::gfXGroupMembership;
+    else
+        gd.groupFormat = GlobalConfig::gfCategories;
     // Loading
     gd.defaultEmptyPhoneType = ui->cbDefaultEmptyPhoneType->currentText();
     gd.warnOnNonStandardTypes = ui->cbWarnOnNonStandardTypes->isChecked();
