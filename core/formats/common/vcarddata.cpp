@@ -262,7 +262,7 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                 // X-CATEGORIES - some Nokia Suite versions
                 foreach(const QString& val, vValue) {
                     // CATEGORIES can use "," (RFC) or ";" (MPB)
-                    if (item.groups.contains(",")) {                        
+                    if (val.contains(",")) {
                         QStringList grList = splitByComma(decodeValue(val, errors));
                         foreach(const QString& subVal, grList)
                             item.groups << subVal;
