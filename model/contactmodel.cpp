@@ -237,6 +237,9 @@ bool ContactModel::removeRows(int row, int count, const QModelIndex&)
 bool ContactModel::open(const QString& path, FormatType fType, QStringList &errors, QString &fatalError)
 {
     if (path.isEmpty()) return false;
+    // Add _old_ name to recent
+    if (!_source.isEmpty() && _sourceType!=ftNew)
+        _recent.addItem(_source);
     FormatType realType = fType;
     QString realPath = path;
     if (fType==ftAuto) {
@@ -306,6 +309,10 @@ bool ContactModel::saveAs(const QString& path, FormatType fType, QStringList &er
     }
     bool res = format->exportRecords(path, items);
     if (res) {
+        // Add _old_ name to recent
+        if ((!_source.isEmpty()) && (_sourceType!=ftNew) && (path!=_source))
+            _recent.addItem(_source);
+        // Other updates
         _source = path;
         _sourceType = fType;
         _changed = false;
@@ -320,6 +327,8 @@ void ContactModel::close()
 {
     _changed = false;
     beginResetModel();
+    if (!_source.isEmpty() && _sourceType!=ftNew)
+        _recent.addItem(_source);
     _source.clear();
     _sourceType = ftNew;
     items.clear();

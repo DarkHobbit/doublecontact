@@ -20,7 +20,7 @@ RecentList::RecentList() : QStringList()
 void RecentList::read()
 {
     clear();
-    QSettings settings("DarkHobbit", "doublecontact");
+    QSettings settings("DarkHobbit", "doublecontact"); // TODO unify with main config
     int _count = settings.value("Recent/Count", 0).toInt();
     for (int i=1; i<=_count; i++)
         push_back(settings.value(QString("Recent/Item%1").arg(i)).toString());
@@ -28,12 +28,13 @@ void RecentList::read()
 
 void RecentList::write()
 {
-    QSettings settings;
+    QSettings settings("DarkHobbit", "doublecontact");
     settings.setValue("Recent/Count", count());
     for (int i=1; i<=count(); i++)
         settings.setValue(QString("Recent/Item%1").arg(i), at(i-1));
     for (int i=count()+1; i<=MAX_RECENT_COUNT; i++)
         settings.remove(QString("Recent/Item%1").arg(i));
+    settings.sync();
 }
 
 void RecentList::addItem(const QString &path)

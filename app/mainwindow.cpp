@@ -289,6 +289,7 @@ void MainWindow::on_action_SaveAsFile_triggered()
         saveAs(selectedModel, path, ftFile);
         configManager.setLastContactFile(path);
         updateHeaders();
+        updateRecent();
     }
 }
 
@@ -710,10 +711,8 @@ bool MainWindow::askSaveChanges(ContactModel *model)
             res = false;
         }
     }
-    if (res && (model->sourceType()!=ftNew) && (!model->source().isEmpty())) {
-        recent.addItem(model->source());
+    if (res && (model->sourceType()!=ftNew) && (!model->source().isEmpty()))
         updateRecent();
-    }
     return res;
 }
 
@@ -822,6 +821,7 @@ void MainWindow::on_action_Close_triggered()
         return;
     selectedModel->close();
     updateHeaders();
+    updateRecent();
 }
 
 void MainWindow::on_leFilterLeft_textChanged(const QString &arg1)

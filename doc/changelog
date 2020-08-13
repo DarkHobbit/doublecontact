@@ -101,4 +101,5 @@ CURRENT
 * Fixed: photo adding worked only at contact editing, not at contact adding
 * Fixed: saving new adressbook after closing previous one - worked only Save As, not Save
 * Fixed: Bad recognize of non-unicode section of MPB files on some system
+* Fixed: Recent files didn't added in list in some cases
 * Added translations: Brazilian Portuguese (incomplete)
