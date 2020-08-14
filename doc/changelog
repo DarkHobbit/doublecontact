@@ -96,6 +96,7 @@ Bugfix release:
 CURRENT
 * Group saving fully redesigned: CATEGORIES tag with commas is using always, except MPB and NBF formats. X-GROUP-MEMBERSHIP tag support added
 * At contact edit dialog, command for show contact photo in separate window added
+* NICKNAME tag already used for writing instead X-NICKNAME; both tags supported via reading
 * Fixed: detection of JPEG photos with EXIF headers via contact editing
 * Fixed: at contact edit dialog, big photos are now scaled to show area
 * Fixed: photo adding worked only at contact editing, not at contact adding

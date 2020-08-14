@@ -410,12 +410,9 @@ void VCardData::exportRecord(QStringList &lines, const ContactItem &item, QStrin
         lines << encodeAll("FN", 0, false, sc(item.fullName));
     if (!item.sortString.isEmpty())
         lines << encodeAll("SORT-STRING", 0, false, sc(item.sortString));
-    if (!item.nickName.isEmpty()) {
-        if (formatVersion>=GlobalConfig::VCF40)
-            lines << encodeAll("NICKNAME", 0, false, sc(item.nickName));
-        else
-            lines << encodeAll("X-NICKNAME", 0, false, sc(item.nickName));
-    }
+    if (!item.nickName.isEmpty())
+        lines << encodeAll("NICKNAME", 0, false, sc(item.nickName));
+    // vCard 3.0 at Motorola Defy saves X-NICKNAME instead it
     foreach (const Phone& ph, item.phones)
         lines << (QString("TEL") + encodeTypes(ph.types, &Phone::standardTypes, ph.syncMLRef)+":"+ph.value);
     foreach (const Email& em, item.emails)
