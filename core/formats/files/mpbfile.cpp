@@ -10,8 +10,9 @@
  * (at your option) any later version. See COPYING file for more details.
  *
  */
-#include "mpbfile.h"
+#include <qglobal.h>
 #include <QStringList>
+#include "mpbfile.h"
 
 const QString SECTION_BEGIN = QString("MyPhoneExplorer_ContentID:");
 const QString MPB_TIME_FORMAT = QString("yyyyMMddThhmmssZ");
@@ -92,7 +93,10 @@ bool MPBFile::importRecords(const QString &url, ContactList &list, bool append)
                 _errors << QObject::tr("Unsupported MPB section: ") + secName;
             if (section==secSMSArchive)
                 stream.setCodec("CP1251");
-            else // if (section==secCalls)
+            else
+#ifdef Q_WS_WIN
+            if (section==secCalls)
+#endif
                 stream.setCodec("UTF-8");
         }
         // MPB section content
