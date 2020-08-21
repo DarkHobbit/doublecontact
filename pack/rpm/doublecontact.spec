@@ -1,7 +1,7 @@
 Summary: The Contact manager
 Name: doublecontact
-Version: 0.2.2
-Release: 20200423.f29
+Version: 0.2.3
+Release: 20200821.f29
 Group: Applications/PIM
 License: GPL v3 or above (some parts under GPL v2)
 Packager: Mikhail Y. Zvyozdochkin

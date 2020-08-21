@@ -93,7 +93,7 @@ Bugfix release:
 * Fixed: reading of quoted-printable non-standard phone/email types
 * Fixed: reading of PHOTO tag with lines, starting with TAB character
 
-CURRENT
+0.2.3 [2020-08-21]
 * Group saving fully redesigned: CATEGORIES tag with commas is using always, except MPB and NBF formats. X-GROUP-MEMBERSHIP tag support added
 * At contact edit dialog, command for show contact photo in separate window added
 * NICKNAME tag already used for writing instead X-NICKNAME; both tags supported via reading

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Example: make-rpm-pkg 0.2.2 4
+# Example: make-rpm-pkg 0.2.3 4
 
 DC_VER=$1
 QT_MAJV=$2
