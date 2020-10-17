@@ -104,3 +104,6 @@ Bugfix release:
 * Fixed: Bad recognize of non-unicode section of MPB files on some system
 * Fixed: Recent files didn't added in list in some cases
 * Added translations: Brazilian Portuguese (incomplete)
+
+CURRENT
+* Fixed: reading of PHOTO binary data if TYPE parameter is omitted
