@@ -352,7 +352,7 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
     if (recordOpened) {
         item.calculateFields();
         list.push_back(item);
-        errors << QObject::tr("Last section not closed");
+        errors << S_LAST_SECTION;
     }
     // Unknown tags statistics
     int totalUnknownTags = 0;

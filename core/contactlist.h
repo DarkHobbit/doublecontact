@@ -206,11 +206,6 @@ struct CallInfo {
     QString cType, timeStamp, duration, number, name;
 };
 
-enum SMSFormat {
-    PDU,
-    VMSG
-};
-
 struct BinarySMS { //primarilly for Nokia Prefdef messages
     QString name;
     QByteArray content;
@@ -220,10 +215,9 @@ struct ExtraData {
     // Common fields
     QString model;
     QDateTime timeStamp;
-    SMSFormat smsFormat;
-    QStringList SMS;
+    QStringList vmsgSMS, pduSMS; // some file formats may contains both SMS type sets
     // MPB specific
-    QStringList organizer, notes, SMSArchive;
+    QStringList organizer, notes, vmsgSMSArchive, pduSMSArchive;
     QList<CallInfo> calls;
     // NBU specific
     QString imei, firmware, phoneLang;

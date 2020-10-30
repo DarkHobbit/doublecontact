@@ -954,86 +954,86 @@ Möchten Sie dieses Zertifikat trotzdem akzeptieren?</translation>
         <translation>Kontaktdatei speichern</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="298"/>
+        <location filename="../app/mainwindow.cpp" line="299"/>
         <source>Save VCF Directory</source>
         <translation>VCF-Verzeichnis speichern</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="307"/>
+        <location filename="../app/mainwindow.cpp" line="308"/>
         <source>Directory exists. Are You really want rewrite it?</source>
         <translation>Verzeichnis existiert bereits Möchten Sie es wirklich überschreiben?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="356"/>
+        <location filename="../app/mainwindow.cpp" line="357"/>
         <source>Are You really want to edit more than one record?
 Only some fields can this edited in this mode</source>
         <translation>Möchten Sie wirklich mehr als einen Datensatz bearbeiten?
 Nur einige Felder können in diesem Modus bearbeitet werden.</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="468"/>
+        <location filename="../app/mainwindow.cpp" line="469"/>
         <source>Compare mode requires show two panels and load contact lists in both panels</source>
         <translation>Der Vergleichsmodus erfordert die Anzeige von zwei Fenstern und das Laden von Kontaktlisten in beiden Fenstern.</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="514"/>
+        <location filename="../app/mainwindow.cpp" line="515"/>
         <source>Group operation not impemented, select one record</source>
         <translation>Gruppenoperationen nicht implementiert, wählen Sie einen Datensatz aus.</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="541"/>
+        <location filename="../app/mainwindow.cpp" line="542"/>
         <source> (directory)</source>
         <translation> (Ordner)</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="641"/>
+        <location filename="../app/mainwindow.cpp" line="642"/>
         <source>Records: %1</source>
         <translation>Datensätze: %1</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="646"/>
+        <location filename="../app/mainwindow.cpp" line="647"/>
         <source>Mode: </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="647"/>
+        <location filename="../app/mainwindow.cpp" line="648"/>
         <source>two panels</source>
         <translation>Zwei Fenster</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="647"/>
+        <location filename="../app/mainwindow.cpp" line="648"/>
         <source>one panel</source>
         <translation>Ein Fenster</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="648"/>
+        <location filename="../app/mainwindow.cpp" line="649"/>
         <source>sorted</source>
         <translation>Sortiert</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="648"/>
+        <location filename="../app/mainwindow.cpp" line="649"/>
         <source>not sorted</source>
         <translation>Nicht sortiert</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="651"/>
+        <location filename="../app/mainwindow.cpp" line="652"/>
         <source>simple editing</source>
         <translation>Einfache Bearbeitung</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="655"/>
+        <location filename="../app/mainwindow.cpp" line="656"/>
         <source>compare</source>
         <translation>Vergleichen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="699"/>
+        <location filename="../app/mainwindow.cpp" line="700"/>
         <source>&apos;%1&apos; was changed.
 Save changes?</source>
         <translation>„%1” wurde geändert.
 Änderungen speichern?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="814"/>
+        <location filename="../app/mainwindow.cpp" line="813"/>
         <source>Restart program to apply language change</source>
         <translation>Anwendung neu starten, um die Sprachumschaltung zu übernehmen</translation>
     </message>
@@ -1125,7 +1125,7 @@ Möchten Sie die Spaltensortierung ausschalten?</translation>
     <name>QObject</name>
     <message>
         <location filename="../core/contactlist.cpp" line="106"/>
-        <location filename="../core/contactlist.cpp" line="1009"/>
+        <location filename="../core/contactlist.cpp" line="1010"/>
         <source>Home</source>
         <translation></translation>
     </message>
@@ -1136,7 +1136,7 @@ Möchten Sie die Spaltensortierung ausschalten?</translation>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="108"/>
-        <location filename="../core/contactlist.cpp" line="1010"/>
+        <location filename="../core/contactlist.cpp" line="1011"/>
         <source>Work</source>
         <translation>Geschäftlich</translation>
     </message>
@@ -1144,7 +1144,7 @@ Möchten Sie die Spaltensortierung ausschalten?</translation>
         <location filename="../core/contactlist.cpp" line="109"/>
         <location filename="../core/contactlist.cpp" line="158"/>
         <location filename="../core/contactlist.cpp" line="194"/>
-        <location filename="../core/contactlist.cpp" line="1011"/>
+        <location filename="../core/contactlist.cpp" line="1012"/>
         <source>Preferable</source>
         <translation>Bevorzugt</translation>
     </message>
@@ -1214,7 +1214,7 @@ Möchten Sie die Spaltensortierung ausschalten?</translation>
         <translation>Unbekannter leerer Kontakt</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="856"/>
+        <location filename="../core/contactlist.cpp" line="857"/>
         <source>%1 records
 %2 phones
 %3 emails
@@ -1233,7 +1233,7 @@ Möchten Sie die Spaltensortierung ausschalten?</translation>
 %8 archivierte SMS</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="860"/>
+        <location filename="../core/contactlist.cpp" line="861"/>
         <source>
 
 model %1
@@ -1270,28 +1270,29 @@ Sprache des Telefons %5</translation>
 %9 %10</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1012"/>
+        <location filename="../core/contactlist.cpp" line="1013"/>
         <source>Domestic</source>
         <translation>Inländisch</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1013"/>
+        <location filename="../core/contactlist.cpp" line="1014"/>
         <source>International</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1014"/>
+        <location filename="../core/contactlist.cpp" line="1015"/>
         <source>Postal</source>
         <translation>Postalisch</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1015"/>
+        <location filename="../core/contactlist.cpp" line="1016"/>
         <source>Parcel</source>
         <translation>Paket</translation>
     </message>
     <message>
         <location filename="../core/formats/common/vcarddata.cpp" line="81"/>
         <location filename="../core/formats/common/vmessagedata.cpp" line="37"/>
+        <location filename="../core/formats/common/vmessagedata.cpp" line="138"/>
         <source>Unclosed record before line %1</source>
         <translation>Nicht abgeschlossener Datensatz vor Zeile %1</translation>
     </message>
@@ -1311,27 +1312,27 @@ Sprache des Telefons %5</translation>
         <translation>Nicht-Standard-Telefontyp in Zeile %1: %2%3</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="235"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="249"/>
         <source>Unsupported photo type at line %1: %2%3</source>
         <translation>Nicht unterstützter Fototyp in Zeile %1: %2%3</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="246"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="243"/>
         <source>Unknown encoding type at line %1: %2%3</source>
         <translation>Unbekannter Kodierungstyp in Zeile %1: %2%3</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="258"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="261"/>
         <source>Unknown photo kind at line %1: %2</source>
         <translation>Unbekannte Fotoart in Zeile %1: %2</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="352"/>
+        <location filename="../core/globals.h" line="140"/>
         <source>Last section not closed</source>
         <translation>Letzter Abschnitt nicht geschlossen</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="359"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="362"/>
         <location filename="../core/formats/files/udxfile.cpp" line="170"/>
         <source>%1 unknown tags found</source>
         <translation>%1 unbekannte Schlagwörter gefunden</translation>
@@ -1497,42 +1498,42 @@ Zeile %3, Spalte %4
 %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="92"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="99"/>
         <source>Unsupported MPB section: </source>
         <translation>Nicht unterstützter MPB-Abschnitt: </translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="102"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="117"/>
         <source>File isn&apos;t MPB file or corrupted</source>
         <translation>Datei ist nicht MPB-Datei oder beschädigt</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="112"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="127"/>
         <source>Strange call item: %1, size %2</source>
         <translation>Ungewöhnliches Anrufelement: %1, Größe %2</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="142"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="162"/>
         <source>No contact records in this file</source>
         <translation>Keine Kontakteinträge in dieser Datei</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="153"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="173"/>
         <source>MPB record allowed only for MPB source</source>
         <translation>MPB-Datensatz nur für MPB-Quelle erlaubt</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="206"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="226"/>
         <source>Name for number %1 changed from %2 to %3</source>
         <translation>Name für die Nummer %1 geändert von %2 auf %3</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="218"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="238"/>
         <source>Number %1 without original name not found in addressbook</source>
         <translation>Rufnummer %1 ohne Originalnamen nicht im Adressbuch gefunden</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="220"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="240"/>
         <source>Number %1 not found in addressbook. Original name (%2) saved</source>
         <translation>Rufnummer %1 nicht im Adressbuch gefunden. Ursprünglicher Name (%2) gespeichert</translation>
     </message>
@@ -2015,107 +2016,105 @@ Benutzername, Passwort, Protokoll und Port überprüfen</translation>
         <translation>Signatur nicht erkannt, es wird dennoch versucht …</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/nbufile.cpp" line="204"/>
+        <location filename="../core/formats/files/nbufile.cpp" line="203"/>
         <source>Unknown NBU file section type</source>
         <translation>Unbekannter NBU-Dateiabschnittstyp</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/nbufile.cpp" line="225"/>
-        <location filename="../core/formats/files/nbufile.cpp" line="236"/>
+        <location filename="../core/formats/files/nbufile.cpp" line="224"/>
+        <location filename="../core/formats/files/nbufile.cpp" line="235"/>
         <source>Unknown vcard folder structure at section %1, subsection %2</source>
         <translation>Unbekannte vCard-Ordnerstruktur in Abschnitt %1, Unterabschnitt %2</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/nbufile.cpp" line="265"/>
+        <location filename="../core/formats/files/nbufile.cpp" line="264"/>
         <source>Invalid index: %1</source>
         <translation>Ungültiger Index: %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/nbufile.cpp" line="414"/>
+        <location filename="../core/formats/files/nbufile.cpp" line="413"/>
         <source>Test 2 greater than 0x01: %1</source>
         <translation>Test 2 größer als 0x01: %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/nbufile.cpp" line="417"/>
+        <location filename="../core/formats/files/nbufile.cpp" line="416"/>
         <source>Test 1 different than 0x10: %1</source>
         <translation>Test 1 verschieden von 0x10: %1</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="34"/>
+        <location filename="../core/decodedmessagelist.cpp" line="36"/>
         <source>Read</source>
         <translation>Lesen</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="35"/>
+        <location filename="../core/decodedmessagelist.cpp" line="37"/>
         <source>UnRd</source>
         <translation>Ungel.</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="36"/>
+        <location filename="../core/decodedmessagelist.cpp" line="38"/>
         <source>Unk.</source>
         <translation>Unbek.</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="38"/>
+        <location filename="../core/decodedmessagelist.cpp" line="40"/>
         <source>Inbox</source>
         <translation>Posteingang</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="39"/>
+        <location filename="../core/decodedmessagelist.cpp" line="41"/>
         <source>Outbox</source>
         <translation>Postausgang</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="40"/>
+        <location filename="../core/decodedmessagelist.cpp" line="42"/>
         <source>Sentbox</source>
         <translation>Gesendet</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="41"/>
+        <location filename="../core/decodedmessagelist.cpp" line="43"/>
         <source>Draft</source>
         <translation>Entwürfe</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="42"/>
+        <location filename="../core/decodedmessagelist.cpp" line="44"/>
         <source>Trash</source>
         <translation>Papierkorb</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="51"/>
+        <location filename="../core/decodedmessagelist.cpp" line="54"/>
         <source>&quot;Date&quot;,&quot;Box&quot;,&quot;From/To&quot;,&quot;Status&quot;,&quot;Text&quot;,&quot;Aux&quot;
 </source>
         <translation>&quot;Datum&quot;, &quot;Box&quot;, &quot;Von/An&quot;, &quot;Status&quot;, &quot;Text&quot;, &quot;Aux&quot;
 </translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="56"/>
+        <location filename="../core/decodedmessagelist.cpp" line="59"/>
         <source>Empty</source>
         <translation>Leer</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="114"/>
+        <location filename="../core/decodedmessagelist.cpp" line="146"/>
         <source>MPB message body missing</source>
         <translation>MPB-Nachrichtentext fehlt</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="120"/>
         <source>Unknown messages format</source>
-        <translation>Unbekanntes Nachrichtenformat</translation>
+        <translation type="obsolete">Unbekanntes Nachrichtenformat</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vmessagedata.cpp" line="16"/>
+        <location filename="../core/globals.h" line="138"/>
         <source>Unknown vMessage tag: %1</source>
         <translation>Unbekanntes vMessage-Schlagwort: %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vmessagedata.cpp" line="17"/>
+        <location filename="../core/globals.h" line="139"/>
         <source>Unknown vMessage value: %1</source>
         <translation>Unbekannter vMessage-Wert: %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vmessagedata.cpp" line="115"/>
         <source>Last vMessage section not closed</source>
-        <translation>Letzter vMessage-Abschnitt nicht geschlossen</translation>
+        <translation type="obsolete">Letzter vMessage-Abschnitt nicht geschlossen</translation>
     </message>
 </context>
 <context>

@@ -21,7 +21,8 @@ class VMessageData
 {
 public:
     VMessageData();
-    bool importRecords(QStringList& lines, DecodedMessageList& list, bool append, QStringList& errors);
+    bool importRecords(const QStringList& lines, DecodedMessageList& list, bool append, QStringList& errors);
+    bool importMPBRecords(QStringList& lines, DecodedMessageList& list, bool append, QStringList& errors);
 };
 
 #endif // VMESSAGEDATA_H

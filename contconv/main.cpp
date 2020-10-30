@@ -12,9 +12,15 @@
  */
 
 #include "convertor.h"
+#ifdef Q_WS_WIN
+#include <windows.h>
+#endif
 
 int main(int argc, char *argv[])
 {
+#ifdef Q_WS_WIN
+    Sleep(500); // for Qt Creator for Windows
+#endif
     Convertor a(argc, argv);
     int res = a.start();
     a.exit(res);

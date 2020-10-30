@@ -135,6 +135,9 @@ enum ContactColumn {
 #define S_ERR_NETWORK_SUPPORT \
     QObject::tr("Program built without network support. Use WITH_NETWORK define, if building from source code.\n")
 #define S_REMOVE_CONFIRM QObject::tr("Do you really want to delete the selected items?")
+#define S_UNKNOWN_MSG_TAG QObject::tr("Unknown vMessage tag: %1")
+#define S_UNKNOWN_MSG_VAL QObject::tr("Unknown vMessage value: %1")
+#define S_LAST_SECTION QObject::tr("Last section not closed")
 
 // Visible columns headers
 // (It was a simple string array, but its translation not worked)

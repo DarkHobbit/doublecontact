@@ -176,7 +176,6 @@ bool NBUFile::importRecords(const QString &url, ContactList &list, bool append)
     list.extra.model = getString16c(ss) + " " + list.extra.model;
     list.extra.firmware = getString16c(ss);
     list.extra.phoneLang = getString16c(ss);
-    list.extra.smsFormat = VMSG;
     // NBU sections
     if (!file.seek(file.pos()+  0x14  )) {
         _fatalError = S_SEEK_ERR.arg(file.pos()+  0x14  );
@@ -448,7 +447,7 @@ std::cout << "Messages " << count << "!"<< folderName.toLocal8Bit().data() << st
                 raw[len] = 0;
                 raw[len+1] = 0;
                 QString msg = QString::fromUtf16((ushort*)raw);
-                list.extra.SMS << msg;
+                list.extra.vmsgSMS << msg;
                 delete raw;
             }
         }

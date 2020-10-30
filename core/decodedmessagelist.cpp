@@ -12,6 +12,7 @@
  */
 
 #include <QFile>
+#include <QTextCodec>
 #include <QTextStream>
 #include "decodedmessagelist.h"
 #include "formats/common/nokiadata.h"
@@ -23,6 +24,7 @@ void DecodedMessage::clear()
     version.clear();
     status = DecodedMessage::Unknown;
     box = DecodedMessage::Inbox;
+    subFolder.clear();
     contacts.clear();
     when = QDateTime();
     text.clear();
@@ -48,6 +50,7 @@ bool DecodedMessageList::toCSV(const QString &path)
     if (!f.open(QIODevice::WriteOnly))
         return false;
     QTextStream ss(&f);
+    ss.setCodec("UTF-8");
     ss << QObject::tr("\"Date\",\"Box\",\"From/To\",\"Status\",\"Text\",\"Aux\"\n");
     foreach(const DecodedMessage& msg, *this) {
         // Paranoidal algorithm for from/to correspondent info.
@@ -79,53 +82,35 @@ bool DecodedMessageList::toCSV(const QString &path)
     return true;
 }
 
-#include <iostream>
-DecodedMessageList DecodedMessageList::fromContactList(const ContactList &list, QStringList &errors)
+DecodedMessageList DecodedMessageList::fromContactList(ContactList &list, const MessageSourceFlags& flags, QStringList &errors)
 {
     DecodedMessageList messages;
-    // If will be more formats with SMS support,
-    // add SMS decoding method in IFormat interface class
-    // instead this ugly select.
-    // But currently only NBU, NBF and MPB are actual.
-    if (!list.extra.SMS.isEmpty()) {
-        if (list.extra.smsFormat==VMSG) {
-            VMessageData vmg;
-            foreach(const QString& s, list.extra.SMS) {
+    if (flags.useVMessageSMS) {
+        VMessageData vmg;
+        if (list.extra.vmsgSMS.contains("BEGIN:VMSG")) { // classic/Nokia vmessage
+            foreach(const QString& s, list.extra.vmsgSMS) {
                 QStringList ss = s.split("\n");
-                vmg.importRecords(ss, messages, true, errors);
+                vmg.importRecords(ss, messages, true, errors); // TODO merge duplicates on demand
             }
         }
-        else if (list.extra.smsFormat==PDU) {
-            foreach(const QString& s, list.extra.SMS) {
-                QStringList ss = s.split(",");
-                if (ss.length()>1) {
-                    QByteArray body = QByteArray::fromHex(ss[1].toLatin1());
-                    int MsgType;
-                    DecodedMessage msg;
-                    msg.clear();
-                    QDataStream ds(body);
-                    PDU::parseMessage(ds, msg, 1, MsgType);
-                    messages << msg;
-                    // Todo field 0
-                    if (ss.length()>2 && !messages.last().when.isValid())
-                        messages.last().when = QDateTime::fromString(ss[2], "ddMMyyyyhhmmssv");
-                }
-                else
-                    errors << QObject::tr("MPB message body missing");
-            }
-            // "MMS were never supported in the MPE and there will be no support in the future because the needed API for that are missing in the Android system".
-            // https://www.fjsoft.at/forum/viewtopic.php?t=29865
+        else { // MPB vmessage
+            vmg.importMPBRecords(list.extra.vmsgSMS, messages, true, errors);
+            if (flags.useArchive)
+                vmg.importMPBRecords(list.extra.vmsgSMSArchive, messages, true, errors);
         }
-        else
-            errors << QObject::tr("Unknown messages format");
     }
-    if (messages.isEmpty() && !list.extra.binarySMS.isEmpty()) {
+    if (flags.usePDUSMS) {
+        fromPDUList(messages, list.extra.pduSMS, errors);
+        if (flags.useArchive)
+            fromPDUList(messages, list.extra.pduSMSArchive, errors);
+        // "MMS were never supported in the MPE and there will be no support in the future because the needed API for that are missing in the Android system".
+        // https://www.fjsoft.at/forum/viewtopic.php?t=29865
+    }
+    if (flags.usePDUSMS && !list.extra.binarySMS.isEmpty()) {
         foreach(const BinarySMS& sms, list.extra.binarySMS)
+             // TODO merge duplicates on demand
             NokiaData::ReadPredefBinMessage(sms.name, sms.content, messages, true, errors);
     }
-    std::cout << "Found text SMS " << list.extra.SMS.count()
-                 << ", binary " << list.extra.binarySMS.count() << std::endl;
-    std::cout << "Recognized " << messages.count() << " messages" << std::endl;
     return messages;
 }
 
@@ -139,4 +124,25 @@ QString DecodedMessageList::peerInfo(const ContactItem &c, const QString& defaul
     if (!c.names.isEmpty())
         peer = QString("%1 (%2)").arg(c.formatNames()).arg(peer);
     return peer;
+}
+
+void DecodedMessageList::fromPDUList(DecodedMessageList &messages, const QStringList &src, QStringList &errors)
+{
+    foreach(const QString& s, src) {
+        QStringList ss = s.split(",");
+        if (ss.length()>1) {
+            QByteArray body = QByteArray::fromHex(ss[1].toLatin1());
+            int MsgType;
+            DecodedMessage msg;
+            msg.clear();
+            QDataStream ds(body);
+            PDU::parseMessage(ds, msg, 1, MsgType);
+            messages << msg;  // TODO merge duplicates on demand
+            // Todo field 0
+            if (ss.length()>2 && !messages.last().when.isValid())
+                messages.last().when = QDateTime::fromString(ss[2], "ddMMyyyyhhmmssv");
+        }
+        else
+            errors << QObject::tr("MPB message body missing");
+    }
 }

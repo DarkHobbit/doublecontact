@@ -49,7 +49,6 @@ bool MPBFile::importRecords(const QString &url, ContactList &list, bool append)
     _errors.clear();
     if (!append) // not in VCardData::importRecords; else extra data will be lost
         list.clear();
-    list.extra.smsFormat = PDU;
     // Read file
     QStringList content;
     QTextStream stream(&file);
@@ -60,8 +59,11 @@ bool MPBFile::importRecords(const QString &url, ContactList &list, bool append)
         secCalls,
         secOrganizer,
         secNotes,
-        secSMS,
-        secSMSArchive
+        secSMS, // PDU SMS
+        secSMSArchive,
+        secMessages, // VMessage SMS
+        secMessageArchive
+        //TODO MyPhoneExplorer 1.8.14 also has other interest sections
     };
     Section section = secNotFound;
     do {
@@ -87,17 +89,26 @@ bool MPBFile::importRecords(const QString &url, ContactList &list, bool append)
                 section = secSMS;
             else if (secName=="SMSArchive")
                 section = secSMSArchive;
+            else if (secName=="Messages")
+                section = secMessages;
+            else if (secName=="MessageArchive")
+                section = secMessageArchive;
             else if (secName=="EndofData")
                 break;
             else
                 _errors << QObject::tr("Unsupported MPB section: ") + secName;
+            /*
             if (section==secSMSArchive)
                 stream.setCodec("CP1251");
             else
+                // TODO check on Linux
+                // TODO check on Qt 4.6 && 4.4.2 and probably remove version restriction
 #ifdef Q_WS_WIN
-            if (section==secCalls)
-#endif
+                stream.setCodec("System");
+#else
                 stream.setCodec("UTF-8");
+#endif
+*/
         }
         // MPB section content
         else
@@ -133,10 +144,15 @@ bool MPBFile::importRecords(const QString &url, ContactList &list, bool append)
             list.extra.notes << line;
             break;
         case secSMS:
-            list.extra.SMS << line;
+            list.extra.pduSMS << line;
             break;
         case secSMSArchive:
-            list.extra.SMSArchive << line;
+            list.extra.pduSMSArchive << line;
+            break;
+        case secMessages:
+            list.extra.vmsgSMS << line;
+        case secMessageArchive:
+            list.extra.vmsgSMSArchive << line;
         }
     } while (!stream.atEnd());
     closeFile();
@@ -243,17 +259,33 @@ bool MPBFile::exportRecords(const QString &url, ContactList &list)
         stream << line;
         winEndl(stream);
     }
-    // SMS
+    // PDU SMS
     writeSectionHeader(stream, "SMS");
-    foreach (const QString& line, list.extra.SMS) {
+    foreach (const QString& line, list.extra.pduSMS) {
         stream << line;
         winEndl(stream);
     }
-    // SMS archive
+    // PDU SMS archive
     writeSectionHeader(stream, "SMSArchive","CP1251"); // TODO check with various countries/locales.
-    foreach (const QString& line, list.extra.SMSArchive) {
+    foreach (const QString& line, list.extra.pduSMSArchive) {
         stream << line;
         winEndl(stream);
+    }
+    // VMessage SMS
+    if (!list.extra.vmsgSMS.isEmpty()) { // Old MyPhoneExplorer version may be not compatible with this section
+        writeSectionHeader(stream, "Messages");
+        foreach (const QString& line, list.extra.vmsgSMS) {
+            stream << line;
+            winEndl(stream);
+        }
+    }
+    // VMessage SMS archive
+    if (!list.extra.vmsgSMSArchive.isEmpty()) { // Old MyPhoneExplorer version may be not compatible with this section
+        writeSectionHeader(stream, "MessageArchive");
+        foreach (const QString& line, list.extra.vmsgSMSArchive) {
+            stream << line;
+            winEndl(stream);
+        }
     }
     // Coda
     writeSectionHeader(stream, "EndofData", "ISO 8859-1", false); // without endl!

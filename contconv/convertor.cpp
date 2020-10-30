@@ -459,11 +459,17 @@ int Convertor::start()
     }
     else {
         QStringList msgErrors;
-        DecodedMessageList messages = DecodedMessageList::fromContactList(items, msgErrors);
+        MessageSourceFlags f = {true, false, true}; // TODO to options
+        DecodedMessageList messages = DecodedMessageList::fromContactList(items, f, msgErrors);
         if (!messages.isEmpty()) {
             res = messages.toCSV(outPath);
-            if (res)
+            if (res) {
+                out << tr("Found vmessage SMS %1, PDU %2, , binary %3\n")
+                    .arg(items.extra.vmsgSMS.count())
+                    .arg(items.extra.pduSMS.count())
+                    .arg(items.extra.binarySMS.count());
                 out << tr("%1 messages written\n").arg(messages.count());
+            }
             else
                 out << S_WRITE_ERR.arg(outPath) + "\n";
         }

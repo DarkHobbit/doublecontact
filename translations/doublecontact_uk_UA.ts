@@ -1049,17 +1049,17 @@ Are you want to accept this certificate anyway?</source>
         <translation>Зберегти файл контактів</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="298"/>
+        <location filename="../app/mainwindow.cpp" line="299"/>
         <source>Save VCF Directory</source>
         <translation>Зберегти теку VCF</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="307"/>
+        <location filename="../app/mainwindow.cpp" line="308"/>
         <source>Directory exists. Are You really want rewrite it?</source>
         <translation>Тека існує. Бажаєте перезаписати її вміст?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="356"/>
+        <location filename="../app/mainwindow.cpp" line="357"/>
         <source>Are You really want to edit more than one record?
 Only some fields can this edited in this mode</source>
         <translation>Ви дійсно бажаєте відредагувати більш ніж один запис?
@@ -1070,7 +1070,7 @@ Only some fields can this edited in this mode</source>
         <translation type="obsolete">Ви дійсно бажаєте видалити обрані записи?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="468"/>
+        <location filename="../app/mainwindow.cpp" line="469"/>
         <source>Compare mode requires show two panels and load contact lists in both panels</source>
         <translation>Режим порівняння потребує відображення двох панелей та завантаження списку контактів у кожну з них</translation>
     </message>
@@ -1079,12 +1079,12 @@ Only some fields can this edited in this mode</source>
         <translation type="obsolete">Запис не обрано</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="514"/>
+        <location filename="../app/mainwindow.cpp" line="515"/>
         <source>Group operation not impemented, select one record</source>
         <translation>Групова операція не реалізована, оберіть один запис</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="541"/>
+        <location filename="../app/mainwindow.cpp" line="542"/>
         <source> (directory)</source>
         <translation> (тека)</translation>
     </message>
@@ -1098,54 +1098,54 @@ Only some fields can this edited in this mode</source>
         <translation>Лише один з двох файлів можна перетягнути у вікно програми</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="641"/>
+        <location filename="../app/mainwindow.cpp" line="642"/>
         <source>Records: %1</source>
         <translation>Записів: %1</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="646"/>
+        <location filename="../app/mainwindow.cpp" line="647"/>
         <source>Mode: </source>
         <translation>Режим: </translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="647"/>
+        <location filename="../app/mainwindow.cpp" line="648"/>
         <source>two panels</source>
         <translation>2 панелі</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="647"/>
+        <location filename="../app/mainwindow.cpp" line="648"/>
         <source>one panel</source>
         <translation>1 панель</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="648"/>
+        <location filename="../app/mainwindow.cpp" line="649"/>
         <source>sorted</source>
         <translation>відсортовано</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="648"/>
+        <location filename="../app/mainwindow.cpp" line="649"/>
         <source>not sorted</source>
         <translation>не відсортовано</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="651"/>
+        <location filename="../app/mainwindow.cpp" line="652"/>
         <source>simple editing</source>
         <translation>проста правка</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="655"/>
+        <location filename="../app/mainwindow.cpp" line="656"/>
         <source>compare</source>
         <translation>порівняння</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="699"/>
+        <location filename="../app/mainwindow.cpp" line="700"/>
         <source>&apos;%1&apos; was changed.
 Save changes?</source>
         <translation>%1 було змінено.
 Зберегти зміни?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="814"/>
+        <location filename="../app/mainwindow.cpp" line="813"/>
         <source>Restart program to apply language change</source>
         <translation>Мову буде змінено після перезавантаження додатку</translation>
     </message>
@@ -1237,7 +1237,7 @@ Are you want switch column sorting off?</source>
     <name>QObject</name>
     <message>
         <location filename="../core/contactlist.cpp" line="106"/>
-        <location filename="../core/contactlist.cpp" line="1009"/>
+        <location filename="../core/contactlist.cpp" line="1010"/>
         <source>Home</source>
         <translation>Домашній</translation>
     </message>
@@ -1248,7 +1248,7 @@ Are you want switch column sorting off?</source>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="108"/>
-        <location filename="../core/contactlist.cpp" line="1010"/>
+        <location filename="../core/contactlist.cpp" line="1011"/>
         <source>Work</source>
         <translation>Службовий</translation>
     </message>
@@ -1256,7 +1256,7 @@ Are you want switch column sorting off?</source>
         <location filename="../core/contactlist.cpp" line="109"/>
         <location filename="../core/contactlist.cpp" line="158"/>
         <location filename="../core/contactlist.cpp" line="194"/>
-        <location filename="../core/contactlist.cpp" line="1011"/>
+        <location filename="../core/contactlist.cpp" line="1012"/>
         <source>Preferable</source>
         <translation>Переважний</translation>
     </message>
@@ -1326,7 +1326,7 @@ Are you want switch column sorting off?</source>
         <translation>Дивний порожній контакт</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="856"/>
+        <location filename="../core/contactlist.cpp" line="857"/>
         <source>%1 records
 %2 phones
 %3 emails
@@ -1345,7 +1345,7 @@ SMS: %7
 архівних SMS: %8</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="860"/>
+        <location filename="../core/contactlist.cpp" line="861"/>
         <source>
 
 model %1
@@ -1382,28 +1382,29 @@ SMS: %7
 %9 %10</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1012"/>
+        <location filename="../core/contactlist.cpp" line="1013"/>
         <source>Domestic</source>
         <translation>Внутрішній</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1013"/>
+        <location filename="../core/contactlist.cpp" line="1014"/>
         <source>International</source>
         <translation>Міжнародний</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1014"/>
+        <location filename="../core/contactlist.cpp" line="1015"/>
         <source>Postal</source>
         <translation>Поштовий</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1015"/>
+        <location filename="../core/contactlist.cpp" line="1016"/>
         <source>Parcel</source>
         <translation>Для посилок</translation>
     </message>
     <message>
         <location filename="../core/formats/common/vcarddata.cpp" line="81"/>
         <location filename="../core/formats/common/vmessagedata.cpp" line="37"/>
+        <location filename="../core/formats/common/vmessagedata.cpp" line="138"/>
         <source>Unclosed record before line %1</source>
         <translation>Незавершений запис перед рядком %1</translation>
     </message>
@@ -1427,12 +1428,12 @@ SMS: %7
         <translation type="obsolete">Нестандартний тип електронної пошти в рядку %1: %2%3</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="235"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="249"/>
         <source>Unsupported photo type at line %1: %2%3</source>
         <translation>Непідтримуваний тип фотографії в рядку %1: %2%3</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="246"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="243"/>
         <source>Unknown encoding type at line %1: %2%3</source>
         <translation>Невідомий тип кодування в рядку %1: %2%3</translation>
     </message>
@@ -1441,17 +1442,17 @@ SMS: %7
         <translation type="obsolete">Невідомий тип адреси в рядку %1: %2%3</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="258"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="261"/>
         <source>Unknown photo kind at line %1: %2</source>
         <translation>Невідомий вигляд фото в рядку %1: %2</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="352"/>
+        <location filename="../core/globals.h" line="140"/>
         <source>Last section not closed</source>
         <translation>Остання секція не закрита</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="359"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="362"/>
         <location filename="../core/formats/files/udxfile.cpp" line="170"/>
         <source>%1 unknown tags found</source>
         <translation>Знайдено невідомих ярликів: %1</translation>
@@ -1983,42 +1984,42 @@ Data will be lost</source>
 %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="92"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="99"/>
         <source>Unsupported MPB section: </source>
         <translation>Секція MPB не підтримується: </translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="102"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="117"/>
         <source>File isn&apos;t MPB file or corrupted</source>
         <translation>Файл не є MPB-файлом або його пошкоджено</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="112"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="127"/>
         <source>Strange call item: %1, size %2</source>
         <translation>Дивний елемент виклику: %1, розмір %2</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="142"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="162"/>
         <source>No contact records in this file</source>
         <translation>В файлі не виявлено контактів</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="153"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="173"/>
         <source>MPB record allowed only for MPB source</source>
         <translation>Запис до файлу MPB допускається лише за умови, що оригінал також був у форматі MPB</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="206"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="226"/>
         <source>Name for number %1 changed from %2 to %3</source>
         <translation>Ім&apos;я для телефону %1 змінено з%2 на %3</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="218"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="238"/>
         <source>Number %1 without original name not found in addressbook</source>
         <translation>Номер %1 без імені не знайдено в переліку контактів</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="220"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="240"/>
         <source>Number %1 not found in addressbook. Original name (%2) saved</source>
         <translation>Номер %1 не знайдено в переліку контактів. Збережено джерельне ім&apos;я (%2)</translation>
     </message>
@@ -2133,107 +2134,105 @@ Check username, password, protocol and port</source>
         <translation>Підпис не розпізнано, ігнорую...</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/nbufile.cpp" line="204"/>
+        <location filename="../core/formats/files/nbufile.cpp" line="203"/>
         <source>Unknown NBU file section type</source>
         <translation>Невідомий тип розділу NBU-файлу</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/nbufile.cpp" line="225"/>
-        <location filename="../core/formats/files/nbufile.cpp" line="236"/>
+        <location filename="../core/formats/files/nbufile.cpp" line="224"/>
+        <location filename="../core/formats/files/nbufile.cpp" line="235"/>
         <source>Unknown vcard folder structure at section %1, subsection %2</source>
         <translation>Невідома структура теки vCard в підсекції %2 секції %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/nbufile.cpp" line="265"/>
+        <location filename="../core/formats/files/nbufile.cpp" line="264"/>
         <source>Invalid index: %1</source>
         <translation>Хибний індекс: %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/nbufile.cpp" line="414"/>
+        <location filename="../core/formats/files/nbufile.cpp" line="413"/>
         <source>Test 2 greater than 0x01: %1</source>
         <translation>Тест 2 більший за 0x01: %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/nbufile.cpp" line="417"/>
+        <location filename="../core/formats/files/nbufile.cpp" line="416"/>
         <source>Test 1 different than 0x10: %1</source>
         <translation>Тест 1 відрізняється від 0x10: %1</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="34"/>
+        <location filename="../core/decodedmessagelist.cpp" line="36"/>
         <source>Read</source>
         <translation>Прочитане</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="35"/>
+        <location filename="../core/decodedmessagelist.cpp" line="37"/>
         <source>UnRd</source>
         <translation>Непрочитане</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="36"/>
+        <location filename="../core/decodedmessagelist.cpp" line="38"/>
         <source>Unk.</source>
         <translation>Невідоме</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="38"/>
+        <location filename="../core/decodedmessagelist.cpp" line="40"/>
         <source>Inbox</source>
         <translation>Вхідні</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="39"/>
+        <location filename="../core/decodedmessagelist.cpp" line="41"/>
         <source>Outbox</source>
         <translation>Вихідні</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="40"/>
+        <location filename="../core/decodedmessagelist.cpp" line="42"/>
         <source>Sentbox</source>
         <translation>Надіслані</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="41"/>
+        <location filename="../core/decodedmessagelist.cpp" line="43"/>
         <source>Draft</source>
         <translation>Чернетки</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="42"/>
+        <location filename="../core/decodedmessagelist.cpp" line="44"/>
         <source>Trash</source>
         <translation>Кошик</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="51"/>
+        <location filename="../core/decodedmessagelist.cpp" line="54"/>
         <source>&quot;Date&quot;,&quot;Box&quot;,&quot;From/To&quot;,&quot;Status&quot;,&quot;Text&quot;,&quot;Aux&quot;
 </source>
         <translation>&quot;Дата&quot;,&quot;Скринька&quot;,&quot;Від/Для&quot;,&quot;Статус&quot;,&quot;Текст&quot;,&quot;Додатково&quot;
 </translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="56"/>
+        <location filename="../core/decodedmessagelist.cpp" line="59"/>
         <source>Empty</source>
         <translation>Порожньо</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="114"/>
+        <location filename="../core/decodedmessagelist.cpp" line="146"/>
         <source>MPB message body missing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="120"/>
         <source>Unknown messages format</source>
-        <translation>Невідомий формат повідомлень</translation>
+        <translation type="obsolete">Невідомий формат повідомлень</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vmessagedata.cpp" line="16"/>
+        <location filename="../core/globals.h" line="138"/>
         <source>Unknown vMessage tag: %1</source>
         <translation>Невідомий ярлик vMessage: %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vmessagedata.cpp" line="17"/>
+        <location filename="../core/globals.h" line="139"/>
         <source>Unknown vMessage value: %1</source>
         <translation>Невідомий вміст vMessage: %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vmessagedata.cpp" line="115"/>
         <source>Last vMessage section not closed</source>
-        <translation>Остання секція vMessage не закрита</translation>
+        <translation type="obsolete">Остання секція vMessage не закрита</translation>
     </message>
 </context>
 <context>

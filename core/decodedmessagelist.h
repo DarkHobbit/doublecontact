@@ -16,6 +16,13 @@
 
 #include "contactlist.h"
 
+struct MessageSourceFlags {
+    bool useVMessageSMS;
+    bool usePDUSMS;
+    bool useArchive;
+    // bool mergeDuplicates; // TODO
+};
+
 struct DecodedMessage {
     QString version;
     enum MsgStatus { // X-IRMC-STATUS
@@ -30,6 +37,7 @@ struct DecodedMessage {
         Draft,
         Trash // this value not appear in known to me vmsg files
     } box;
+    QString subFolder;
     // X-MESSAGE-TYPE:DELIVER ignored because I don't know other xmessagetypezz
     ContactList contacts;
     QDateTime when;
@@ -42,10 +50,11 @@ class DecodedMessageList : public QList<DecodedMessage>
 public:
     DecodedMessageList();
     bool toCSV(const QString& path);
-    static DecodedMessageList fromContactList(const ContactList& list, QStringList &errors);
+    static DecodedMessageList fromContactList(ContactList& list, const MessageSourceFlags& flags, QStringList &errors);
 private:
     QStringList sMsgStatus, sMsgBox;
     QString peerInfo(const ContactItem& c, const QString& defaultValue);
+    static void fromPDUList(DecodedMessageList& messages, const QStringList& src, QStringList &errors);
 };
 
 #endif // DECODEDMESSAGELIST_H

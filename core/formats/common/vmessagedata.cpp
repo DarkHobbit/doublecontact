@@ -10,17 +10,17 @@
  * (at your option) any later version. See COPYING file for more details.
  *
  */
+#include <QTextCodec>
+#include "quotedprintable.h"
 #include "vmessagedata.h"
 #include "vcarddata.h"
-
-#define S_UNKNOWN_MSG_TAG QObject::tr("Unknown vMessage tag: %1")
-#define S_UNKNOWN_MSG_VAL QObject::tr("Unknown vMessage value: %1")
+#include "globals.h"
 
 VMessageData::VMessageData()
 {
 }
 
-bool VMessageData::importRecords(QStringList &lines, DecodedMessageList &list, bool append, QStringList &errors)
+bool VMessageData::importRecords(const QStringList &lines, DecodedMessageList &list, bool append, QStringList &errors)
 {
     bool recordOpened = false;
     DecodedMessage msg;
@@ -29,7 +29,7 @@ bool VMessageData::importRecords(QStringList &lines, DecodedMessageList &list, b
         list.clear();
     // Collect records
     for (int line=0; line<lines.count(); line++) {
-        QString& s = lines[line];
+        QString s = lines[line];
         if (s.isEmpty()) // vmg can contain empty lines
             continue;
         if (s.startsWith("BEGIN:VMSG", Qt::CaseInsensitive)) {
@@ -112,7 +112,102 @@ bool VMessageData::importRecords(QStringList &lines, DecodedMessageList &list, b
     }
     if (recordOpened) {
         list.push_back(msg);
-        errors << QObject::tr("Last vMessage section not closed");
+        errors << S_LAST_SECTION;
+    }
+    // Ready
+    return (!list.isEmpty());
+}
+
+// Format used in MPB files. It's very similar to vMessage, but tag names are different
+bool VMessageData::importMPBRecords(QStringList &lines, DecodedMessageList &list, bool append, QStringList &errors)
+{
+    bool recordOpened = false;
+    QTextCodec* codec = QTextCodec::codecForName("UTF-8"); // non-standart types also may be non-latin
+    DecodedMessage msg;
+    msg.clear();
+    if (!append)
+        list.clear();
+    QuotedPrintable::mergeLinesets(lines);
+    // Collect records
+    for (int line=0; line<lines.count(); line++) {
+        QString s = lines[line];
+        if (s.isEmpty()) // vmg can contain empty lines
+            continue;
+        if (s.startsWith("BEGIN:VMESSAGE", Qt::CaseInsensitive)) {
+            if (recordOpened)
+                errors << QObject::tr("Unclosed record before line %1").arg(line+1);
+            recordOpened = true;
+            msg.clear();
+        }
+        else if (s.startsWith("END:VMESSAGE", Qt::CaseInsensitive)) {
+            recordOpened = false;
+            //msg.calculateFields();
+            list.push_back(msg);
+            msg.clear();
+        }
+        else {
+            // Split type:value
+            int scPos = s.indexOf(":");
+            if (scPos==-1) {
+                errors << S_UNKNOWN_MSG_TAG.arg(s);
+                continue;
+            }
+            QString tag = s.left(scPos).toUpper();
+            QString val = s.mid(scPos+1);
+            QString uVal = val.toUpper();
+            QStringList ss;
+            // Known tags
+            if (tag=="TYP") {
+                if (uVal=="SMS;IN")
+                    msg.box = DecodedMessage::Inbox;
+                else if (uVal=="SMS;OUT")
+                    msg.box = DecodedMessage::Outbox;
+                else if (uVal=="MMS;IN")
+                    errors << "MMS not implemented " << s; // TODO SMIL, ATT
+                else if (uVal=="MMS;OUT")
+                    errors << "MMS not implemented " << s; // TODO SMIL, ATT
+                else
+                    errors << S_UNKNOWN_MSG_VAL.arg(s);
+            }
+            else if (tag=="BOX") {
+                if (uVal=="INBOX")
+                    msg.box = DecodedMessage::Inbox;
+                else if (uVal=="SENT")
+                    msg.box = DecodedMessage::Sentbox;
+                else if (uVal=="DRAFT" || uVal=="DRAFTS")
+                    msg.box = DecodedMessage::Draft;
+                // TODO other foldertypes
+                else
+                    errors << S_UNKNOWN_MSG_VAL.arg(s);
+            }
+            else if (tag=="READ") {
+                if (uVal=="1")
+                    msg.status = DecodedMessage::Read;
+                else if (uVal=="0")
+                    msg.status = DecodedMessage::Unread;
+                else
+                    errors << S_UNKNOWN_MSG_VAL.arg(s);
+            }
+            else if (tag=="DATE")
+                msg.when = QDateTime::fromString(val, "yyyyMMddThhmmssZ");
+            else if (tag=="NUMBER") {
+                msg.contacts << ContactItem();
+                msg.contacts.first().phones << Phone(uVal);
+            }
+            else if (tag.startsWith("BODY")) {
+                if (tag.contains("QUOTED-PRINTABLE"))
+                    msg.text = QuotedPrintable::decode(val, codec);
+                else
+                    msg.text = codec->toUnicode(val.toLocal8Bit());
+                // TODO проверить многострочное!!! хор. пример от Тихомирова
+            }
+            else if (tag=="SUBFOLDER")
+                msg.subFolder = val;
+        }
+    }
+    if (recordOpened) {
+        list.push_back(msg);
+        errors << S_LAST_SECTION;
     }
     // Ready
     return (!list.isEmpty());

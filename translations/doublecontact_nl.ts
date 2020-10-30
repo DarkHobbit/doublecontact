@@ -1049,17 +1049,17 @@ Wilt u dit certificaat tóch accepteren?</translation>
         <translation>Contactpersoonbestand opslaan</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="298"/>
+        <location filename="../app/mainwindow.cpp" line="299"/>
         <source>Save VCF Directory</source>
         <translation>VCF-map opslaan</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="307"/>
+        <location filename="../app/mainwindow.cpp" line="308"/>
         <source>Directory exists. Are You really want rewrite it?</source>
         <translation>De map bestaat al. Weet u zeker dat u hem wilt overschrijven?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="356"/>
+        <location filename="../app/mainwindow.cpp" line="357"/>
         <source>Are You really want to edit more than one record?
 Only some fields can this edited in this mode</source>
         <translation>Weet u zeker dat u meer dan één item wilt wijzigen?
@@ -1070,7 +1070,7 @@ In deze modus kan slechts een beperkt aantal velden worden gewijzigd</translatio
         <translation type="obsolete">Weet u zeker u de geselecteerde items wilt verwijderen?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="468"/>
+        <location filename="../app/mainwindow.cpp" line="469"/>
         <source>Compare mode requires show two panels and load contact lists in both panels</source>
         <translation>Om de vergelijkingsmodus te kunnen gebruiken moet u de twee panelen-modus inschakelen en lijsten laden in beide panelen</translation>
     </message>
@@ -1079,12 +1079,12 @@ In deze modus kan slechts een beperkt aantal velden worden gewijzigd</translatio
         <translation type="obsolete">Item niet geselecteerd</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="514"/>
+        <location filename="../app/mainwindow.cpp" line="515"/>
         <source>Group operation not impemented, select one record</source>
         <translation>Groepsbewerkingen zijn nog niet geïmplementeerd; selecteer één item</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="541"/>
+        <location filename="../app/mainwindow.cpp" line="542"/>
         <source> (directory)</source>
         <translation> (map)</translation>
     </message>
@@ -1098,54 +1098,54 @@ In deze modus kan slechts een beperkt aantal velden worden gewijzigd</translatio
         <translation>Slechts één van de twee bestanden kan worden versleept naar het applicatievenster</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="641"/>
+        <location filename="../app/mainwindow.cpp" line="642"/>
         <source>Records: %1</source>
         <translation>Items: %1</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="646"/>
+        <location filename="../app/mainwindow.cpp" line="647"/>
         <source>Mode: </source>
         <translation>Modus: </translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="647"/>
+        <location filename="../app/mainwindow.cpp" line="648"/>
         <source>two panels</source>
         <translation>twee panelen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="647"/>
+        <location filename="../app/mainwindow.cpp" line="648"/>
         <source>one panel</source>
         <translation>één paneel</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="648"/>
+        <location filename="../app/mainwindow.cpp" line="649"/>
         <source>sorted</source>
         <translation>gesorteerd</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="648"/>
+        <location filename="../app/mainwindow.cpp" line="649"/>
         <source>not sorted</source>
         <translation>ongesorteerd</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="651"/>
+        <location filename="../app/mainwindow.cpp" line="652"/>
         <source>simple editing</source>
         <translation>simpele bewerking</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="655"/>
+        <location filename="../app/mainwindow.cpp" line="656"/>
         <source>compare</source>
         <translation>vergelijken</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="699"/>
+        <location filename="../app/mainwindow.cpp" line="700"/>
         <source>&apos;%1&apos; was changed.
 Save changes?</source>
         <translation>&apos;%1&apos; is gewijzigd.
 Wilt u de wijzigingen opslaan?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="814"/>
+        <location filename="../app/mainwindow.cpp" line="813"/>
         <source>Restart program to apply language change</source>
         <translation>Herstart de app om de taalwijziging door te voeren</translation>
     </message>
@@ -1237,7 +1237,7 @@ Weet u zeker dat u kolomsortering wilt uitschakelen?</translation>
     <name>QObject</name>
     <message>
         <location filename="../core/contactlist.cpp" line="106"/>
-        <location filename="../core/contactlist.cpp" line="1009"/>
+        <location filename="../core/contactlist.cpp" line="1010"/>
         <source>Home</source>
         <translation>Thuis</translation>
     </message>
@@ -1248,7 +1248,7 @@ Weet u zeker dat u kolomsortering wilt uitschakelen?</translation>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="108"/>
-        <location filename="../core/contactlist.cpp" line="1010"/>
+        <location filename="../core/contactlist.cpp" line="1011"/>
         <source>Work</source>
         <translation>Werk</translation>
     </message>
@@ -1256,7 +1256,7 @@ Weet u zeker dat u kolomsortering wilt uitschakelen?</translation>
         <location filename="../core/contactlist.cpp" line="109"/>
         <location filename="../core/contactlist.cpp" line="158"/>
         <location filename="../core/contactlist.cpp" line="194"/>
-        <location filename="../core/contactlist.cpp" line="1011"/>
+        <location filename="../core/contactlist.cpp" line="1012"/>
         <source>Preferable</source>
         <translation>Prefereren</translation>
     </message>
@@ -1326,7 +1326,7 @@ Weet u zeker dat u kolomsortering wilt uitschakelen?</translation>
         <translation>Vreemde, lege contactpersoon</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="856"/>
+        <location filename="../core/contactlist.cpp" line="857"/>
         <source>%1 records
 %2 phones
 %3 emails
@@ -1345,7 +1345,7 @@ Weet u zeker dat u kolomsortering wilt uitschakelen?</translation>
 %8 gearchiveerde sms&apos;jes</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="860"/>
+        <location filename="../core/contactlist.cpp" line="861"/>
         <source>
 
 model %1
@@ -1382,28 +1382,29 @@ telefoontaal %5</translation>
 %9 %10</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1012"/>
+        <location filename="../core/contactlist.cpp" line="1013"/>
         <source>Domestic</source>
         <translation>Binnenland</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1013"/>
+        <location filename="../core/contactlist.cpp" line="1014"/>
         <source>International</source>
         <translation>Internationaal</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1014"/>
+        <location filename="../core/contactlist.cpp" line="1015"/>
         <source>Postal</source>
         <translation>Post</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1015"/>
+        <location filename="../core/contactlist.cpp" line="1016"/>
         <source>Parcel</source>
         <translation>Pakket</translation>
     </message>
     <message>
         <location filename="../core/formats/common/vcarddata.cpp" line="81"/>
         <location filename="../core/formats/common/vmessagedata.cpp" line="37"/>
+        <location filename="../core/formats/common/vmessagedata.cpp" line="138"/>
         <source>Unclosed record before line %1</source>
         <translation>Niet-gesloten item vóór regel %1</translation>
     </message>
@@ -1431,7 +1432,7 @@ telefoontaal %5</translation>
         <translation type="obsolete">Niet-ondersteund fototype op regel %1: %2%3</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="246"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="243"/>
         <source>Unknown encoding type at line %1: %2%3</source>
         <translation>Onbekend versleutelingstype op regel %1: %2%3</translation>
     </message>
@@ -1440,22 +1441,22 @@ telefoontaal %5</translation>
         <translation type="obsolete">Onbekend adrestype op regel %1: %2%3</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="235"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="249"/>
         <source>Unsupported photo type at line %1: %2%3</source>
         <translation>Niet-ondersteund fototype op regel %1: %2%3</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="258"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="261"/>
         <source>Unknown photo kind at line %1: %2</source>
         <translation>Onbekend soort foto op regel %1: %2</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="352"/>
+        <location filename="../core/globals.h" line="140"/>
         <source>Last section not closed</source>
         <translation>Laatste sectie is niet gesloten</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="359"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="362"/>
         <location filename="../core/formats/files/udxfile.cpp" line="170"/>
         <source>%1 unknown tags found</source>
         <translation>%1 onbekende labels gevonden</translation>
@@ -1621,42 +1622,42 @@ opgeslagen als mobiele telefoon</translation>
 %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="92"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="99"/>
         <source>Unsupported MPB section: </source>
         <translation>Niet-ondersteunde MPB-sectie: </translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="102"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="117"/>
         <source>File isn&apos;t MPB file or corrupted</source>
         <translation>Het bestand is geen MPB-bestand of is beschadigd</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="112"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="127"/>
         <source>Strange call item: %1, size %2</source>
         <translation>Vreemd oproepitem: %1, grootte %2</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="142"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="162"/>
         <source>No contact records in this file</source>
         <translation>Er zijn geen contactpersoonitems in dit bestand</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="153"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="173"/>
         <source>MPB record allowed only for MPB source</source>
         <translation>MPB-item is alleen toegestaan voor MPB-bron</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="206"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="226"/>
         <source>Name for number %1 changed from %2 to %3</source>
         <translation>De naam van de persoon met nummer %1 is gewijzigd van %2 in %3</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="218"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="238"/>
         <source>Number %1 without original name not found in addressbook</source>
         <translation>Het nummer zonder originele naam, %1, kan niet worden gevonden in het adresboek</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="220"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="240"/>
         <source>Number %1 not found in addressbook. Original name (%2) saved</source>
         <translation>Het nummer, %1, kan niet worden gevonden in het adresboek. De originele naam (%2) is opgeslagen</translation>
     </message>
@@ -2145,107 +2146,105 @@ Controleer gebruikersnaam, wachtwoord, protocol en poort</translation>
         <translation>Ondertekening wordt niet herkend; bezig met opnieuw proberen...</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/nbufile.cpp" line="204"/>
+        <location filename="../core/formats/files/nbufile.cpp" line="203"/>
         <source>Unknown NBU file section type</source>
         <translation>Onbekend soort NBU-bestanddssectie</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/nbufile.cpp" line="225"/>
-        <location filename="../core/formats/files/nbufile.cpp" line="236"/>
+        <location filename="../core/formats/files/nbufile.cpp" line="224"/>
+        <location filename="../core/formats/files/nbufile.cpp" line="235"/>
         <source>Unknown vcard folder structure at section %1, subsection %2</source>
         <translation>Onbekende vcard-mappenstructuur in sectie %1, subsectie %2</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/nbufile.cpp" line="265"/>
+        <location filename="../core/formats/files/nbufile.cpp" line="264"/>
         <source>Invalid index: %1</source>
         <translation>Ongeldige index: %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/nbufile.cpp" line="414"/>
+        <location filename="../core/formats/files/nbufile.cpp" line="413"/>
         <source>Test 2 greater than 0x01: %1</source>
         <translation>Test 2 groter dan 0x01: %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/nbufile.cpp" line="417"/>
+        <location filename="../core/formats/files/nbufile.cpp" line="416"/>
         <source>Test 1 different than 0x10: %1</source>
         <translation>Test 1 is anders dan 0x10: %1</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="34"/>
+        <location filename="../core/decodedmessagelist.cpp" line="36"/>
         <source>Read</source>
         <translation>Gelezen</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="35"/>
+        <location filename="../core/decodedmessagelist.cpp" line="37"/>
         <source>UnRd</source>
         <translation>Ongelezen</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="36"/>
+        <location filename="../core/decodedmessagelist.cpp" line="38"/>
         <source>Unk.</source>
         <translation>Onbekend</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="38"/>
+        <location filename="../core/decodedmessagelist.cpp" line="40"/>
         <source>Inbox</source>
         <translation>Postvak IN</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="39"/>
+        <location filename="../core/decodedmessagelist.cpp" line="41"/>
         <source>Outbox</source>
         <translation>Postvak UIT</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="40"/>
+        <location filename="../core/decodedmessagelist.cpp" line="42"/>
         <source>Sentbox</source>
         <translation>Verzonden items</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="41"/>
+        <location filename="../core/decodedmessagelist.cpp" line="43"/>
         <source>Draft</source>
         <translation>Concept</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="42"/>
+        <location filename="../core/decodedmessagelist.cpp" line="44"/>
         <source>Trash</source>
         <translation>Prullenbak</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="51"/>
+        <location filename="../core/decodedmessagelist.cpp" line="54"/>
         <source>&quot;Date&quot;,&quot;Box&quot;,&quot;From/To&quot;,&quot;Status&quot;,&quot;Text&quot;,&quot;Aux&quot;
 </source>
         <translation>&quot;Date&quot;,&quot;Box&quot;,&quot;From/To&quot;,&quot;Status&quot;,&quot;Text&quot;,&quot;Aux&quot;
 </translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="56"/>
+        <location filename="../core/decodedmessagelist.cpp" line="59"/>
         <source>Empty</source>
         <translation>Leeg</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="114"/>
+        <location filename="../core/decodedmessagelist.cpp" line="146"/>
         <source>MPB message body missing</source>
         <translation>MPB-berichtinhoud ontbreekt</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="120"/>
         <source>Unknown messages format</source>
-        <translation>Onbekend berichtformaat</translation>
+        <translation type="obsolete">Onbekend berichtformaat</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vmessagedata.cpp" line="16"/>
+        <location filename="../core/globals.h" line="138"/>
         <source>Unknown vMessage tag: %1</source>
         <translation>Onbekend vMessage-label: %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vmessagedata.cpp" line="17"/>
+        <location filename="../core/globals.h" line="139"/>
         <source>Unknown vMessage value: %1</source>
         <translation>Onbekende vMessage-waarde: %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vmessagedata.cpp" line="115"/>
         <source>Last vMessage section not closed</source>
-        <translation>Vorige vMessage-sectie niet gesloten</translation>
+        <translation type="obsolete">Vorige vMessage-sectie niet gesloten</translation>
     </message>
 </context>
 <context>

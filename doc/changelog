@@ -106,4 +106,5 @@ Bugfix release:
 * Added translations: Brazilian Portuguese (incomplete)
 
 CURRENT
+* SMS from MPB (Messages and MessageArchive sections) progress
 * Fixed: reading of PHOTO binary data if TYPE parameter is omitted

@@ -26,8 +26,20 @@ QString QuotedPrintable::decode(const QString &src, QTextCodec *codec)
             res.append(code);
             i += 2;
         }
-        else
-            res += src[i];
+        else {
+            if (src[i]>126) {
+                // Dirty hack for incorrect data, where encoding marked as quoted-printable,
+                // but text contains literal representation even for non-ASCII characters
+                // (decimal value >126)
+                // TODO make full parser for this case (all bytes of non-ascii utf8 char are >127)
+                // This is MUST NOT be QStrings
+                QString sRes = src;
+                sRes = sRes.replace("=0A", "\n");
+                return codec->toUnicode(sRes.toLocal8Bit());
+            }
+            else
+                res += src[i];
+        }
     }
     return codec->toUnicode(res);
 }
