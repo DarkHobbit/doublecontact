@@ -458,16 +458,18 @@ int Convertor::start()
         out << tr("%1 records written\n").arg(items.count());
     }
     else {
+        out << tr("Found vmessage SMS %1 (+Archived %2), PDU %3 (+Archived %4), binary %5\n")
+            .arg(items.extra.vmsgSMS.count())
+            .arg(items.extra.vmsgSMSArchive.count())
+            .arg(items.extra.pduSMS.count())
+            .arg(items.extra.pduSMSArchive.count())
+            .arg(items.extra.binarySMS.count());
         QStringList msgErrors;
-        MessageSourceFlags f = {true, false, true}; // TODO to options
+        MessageSourceFlags f = {true, true, true}; // TODO to options
         DecodedMessageList messages = DecodedMessageList::fromContactList(items, f, msgErrors);
         if (!messages.isEmpty()) {
             res = messages.toCSV(outPath);
             if (res) {
-                out << tr("Found vmessage SMS %1, PDU %2, , binary %3\n")
-                    .arg(items.extra.vmsgSMS.count())
-                    .arg(items.extra.pduSMS.count())
-                    .arg(items.extra.binarySMS.count());
                 out << tr("%1 messages written\n").arg(messages.count());
             }
             else
