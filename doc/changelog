@@ -108,3 +108,4 @@ Bugfix release:
 CURRENT
 * SMS from MPB (Messages and MessageArchive sections) progress
 * Fixed: reading of PHOTO binary data if TYPE parameter is omitted
+* Fixed: contact table sorting by birthday
