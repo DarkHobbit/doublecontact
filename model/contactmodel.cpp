@@ -156,7 +156,14 @@ QVariant ContactModel::data(const QModelIndex &index, int role) const
             break;
         }
     }
-        return QVariant();
+    else if (role==SortStringRole) {
+        ContactColumn col = visibleColumns[index.column()];
+        if (col==ccBDay) // Dates must be sort by year, not by day
+            return c.birthday.toString(DateItem::ISOBasic);
+        else
+            return data(index, Qt::DisplayRole);
+    }
+    return QVariant();
 }
 
 Qt::DropActions ContactModel::supportedDropActions() const

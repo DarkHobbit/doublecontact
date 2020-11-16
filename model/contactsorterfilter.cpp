@@ -12,6 +12,7 @@
  */
 
 #include "contactsorterfilter.h"
+#include "globals.h"
 
 ContactSorterFilter::ContactSorterFilter(QObject* parent):
     QSortFilterProxyModel(parent)
@@ -21,7 +22,7 @@ ContactSorterFilter::ContactSorterFilter(QObject* parent):
 
 bool ContactSorterFilter::lessThan(const QModelIndex &left, const QModelIndex &right) const
 {
-    QVariant leftData = sourceModel()->data(left, Qt::DisplayRole);
-    QVariant rightData = sourceModel()->data(right, Qt::DisplayRole);
+    QVariant leftData = sourceModel()->data(left, SortStringRole);
+    QVariant rightData = sourceModel()->data(right, SortStringRole);
     return leftData.toString()<rightData.toString();
 }

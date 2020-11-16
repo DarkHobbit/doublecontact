@@ -17,6 +17,7 @@
 #include <QHash>
 #include <QObject>
 #include <QStringList>
+#include <qnamespace.h>
 
 // Visible columns
 enum ContactColumn {
@@ -138,6 +139,9 @@ enum ContactColumn {
 #define S_UNKNOWN_MSG_TAG QObject::tr("Unknown vMessage tag: %1")
 #define S_UNKNOWN_MSG_VAL QObject::tr("Unknown vMessage value: %1")
 #define S_LAST_SECTION QObject::tr("Last section not closed")
+
+// Model item roles
+#define SortStringRole Qt::UserRole
 
 // Visible columns headers
 // (It was a simple string array, but its translation not worked)
