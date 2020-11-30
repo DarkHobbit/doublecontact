@@ -338,6 +338,33 @@ void ConfigManager::setCSVConfig(const QString &profile, const QString &genEncod
     settings->setValue("CSV/GenericProfileSeparator", genSeparator);
 }
 
+void ConfigManager::readMessageViewConfig(MessageSourceFlags &flags)
+{
+    if (!settings)
+        return;
+    flags = 0;
+    setQFlag(flags, useVMessage, settings->value("MessageView/UseVMessage", true).toBool());
+    setQFlag(flags, useVMessageArchive, settings->value("MessageView/UseVMessageArchive", true).toBool());
+    setQFlag(flags, usePDU, settings->value("MessageView/UsePDU", true).toBool());
+    setQFlag(flags, usePDUArchive, settings->value("MessageView/UsePDUArchive", true).toBool());
+    setQFlag(flags, useBinary, settings->value("MessageView/UseBinary", true).toBool());
+    // bool mergeDuplicates; // TODO
+    // bool mergeMultiParts; // TODO
+}
+
+void ConfigManager::writeMessageViewConfig(const MessageSourceFlags &flags)
+{
+    if (!settings)
+        return;
+    settings->setValue("MessageView/UseVMessage", flags.testFlag(useVMessage));
+    settings->setValue("MessageView/UseVMessageArchive", flags.testFlag(useVMessageArchive));
+    settings->setValue("MessageView/UsePDU", flags.testFlag(usePDU));
+    settings->setValue("MessageView/UsePDUArchive", flags.testFlag(usePDUArchive));
+    settings->setValue("MessageView/UseBinary", flags.testFlag(useBinary));
+    // bool mergeDuplicates; // TODO
+    // bool mergeMultiParts; // TODO
+}
+
 QString ConfigManager::defaultDocDir()
 {
     return

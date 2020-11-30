@@ -14,14 +14,20 @@
 #ifndef DECODEDMESSAGELIST_H
 #define DECODEDMESSAGELIST_H
 
+#include <QFlags>
 #include "contactlist.h"
 
-struct MessageSourceFlags {
-    bool useVMessageSMS;
-    bool usePDUSMS;
-    bool useArchive;
-    // bool mergeDuplicates; // TODO
+enum MessageSourceFlag {
+    useVMessage        = 0x01,
+    useVMessageArchive = 0x02,
+    usePDU             = 0x04,
+    usePDUArchive      = 0x08,
+    useBinary          = 0x10
+    // mergeDuplicates, // TODO
+    // mergeMultiParts // TODO
 };
+
+typedef QFlags<MessageSourceFlag> MessageSourceFlags;
 
 struct DecodedMessage {
     QString version;
@@ -37,12 +43,15 @@ struct DecodedMessage {
         Draft,
         Trash // this value not appear in known to me vmsg files
     } box;
+    QString id; // X-IRMC-LUID
     QString subFolder;
-    // X-MESSAGE-TYPE:DELIVER ignored because I don't know other xmessagetypezz
+    bool delivered; // TODO maybe other X-MESSAGE-TYPE exists
     ContactList contacts;
     QDateTime when;
     QString text;
     void clear();
+    QString contactsToString() const;
+    MessageSourceFlags sources;
 };
 
 class DecodedMessageList : public QList<DecodedMessage>
@@ -50,11 +59,14 @@ class DecodedMessageList : public QList<DecodedMessage>
 public:
     DecodedMessageList();
     bool toCSV(const QString& path);
-    static DecodedMessageList fromContactList(ContactList& list, const MessageSourceFlags& flags, QStringList &errors);
+    static DecodedMessageList fromContactList(const ContactList& list, const MessageSourceFlags& flags, QStringList &errors);
+    QString messageBoxes(int index) const;
+    QString messageStates(int index, bool delivered) const;
+    //QString peersToString()
 private:
     QStringList sMsgStatus, sMsgBox;
-    QString peerInfo(const ContactItem& c, const QString& defaultValue);
-    static void fromPDUList(DecodedMessageList& messages, const QStringList& src, QStringList &errors);
+    static void fromVMessageList(DecodedMessageList& messages, const QStringList& src, QStringList &errors, bool fromArchive);
+    static void fromPDUList(DecodedMessageList& messages, const QStringList& src, QStringList &errors, bool fromArchive);
 };
 
 #endif // DECODEDMESSAGELIST_H

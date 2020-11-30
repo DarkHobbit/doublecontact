@@ -465,7 +465,7 @@ int Convertor::start()
             .arg(items.extra.pduSMSArchive.count())
             .arg(items.extra.binarySMS.count());
         QStringList msgErrors;
-        MessageSourceFlags f = {true, true, true}; // TODO to options
+        MessageSourceFlags f = QFlags<MessageSourceFlag>(useVMessage | useVMessageArchive); // TODO to options
         DecodedMessageList messages = DecodedMessageList::fromContactList(items, f, msgErrors);
         if (!messages.isEmpty()) {
             res = messages.toCSV(outPath);

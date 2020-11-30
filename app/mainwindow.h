@@ -99,6 +99,8 @@ private slots:
     void on_actionJoin_names_triggered();
     void on_actionParse_full_name_triggered();
 
+    void on_actionMessages_triggered();
+
 private:
     Ui::MainWindow *ui;
     ContactModel *modLeft, *modRight;
@@ -129,7 +131,6 @@ private:
     void showIOErrors(const QString &path, int count, const QStringList& errors, const QString& fatalError);
     // Update visual configuration changes at startup and after settings dialog call
     void updateConfig();
-    void updateTableConfig(QTableView* table);
     void updateRecent();
 };
 

@@ -102,7 +102,7 @@ QString LanguageManager::transPath()
         return "/usr/share/doublecontact/translations";       
     else
         // Developer case
-        return qApp->applicationDirPath();
+        return qApp->applicationDirPath()+"/../translations";
 #endif
     // TODO what for mac?
 }

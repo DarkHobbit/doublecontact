@@ -128,6 +128,7 @@ enum ContactColumn {
 #define S_WRITE_ERR QObject::tr("Can't write file\n%1")
 #define S_SEEK_ERR QObject::tr("Can't seek to %1 in file\n%2")
 #define S_REC_NOT_SEL QObject::tr("Record not selected")
+#define S_ONLY_ONE_REC QObject::tr("Group operation not implemented, select one record")
 #define S_READ_ONLY_FORMAT QObject::tr("This format is read only")
 #define S_ERR_UNSUPPORTED_TAG \
     QObject::tr("Warning: contact %1 has %2, not supported in this format.\nData will be lost")
@@ -139,6 +140,10 @@ enum ContactColumn {
 #define S_UNKNOWN_MSG_TAG QObject::tr("Unknown vMessage tag: %1")
 #define S_UNKNOWN_MSG_VAL QObject::tr("Unknown vMessage value: %1")
 #define S_LAST_SECTION QObject::tr("Last section not closed")
+// Status messages
+#define SS_MODE QObject::tr("Mode: ")
+#define SS_SORT_ON QObject::tr("sorted")
+#define SS_SORT_OFF QObject::tr("not sorted")
 
 // Model item roles
 #define SortStringRole Qt::UserRole
@@ -213,5 +218,15 @@ struct GlobalConfig {
     bool quietMode; // Don't load any files
     QStringList startupFiles;
 } gd;
+
+// QFlag helper
+template<typename T>
+void setQFlag(QFlags<T>& flags, T f, bool value)
+{
+    if (value)
+        flags |= f;
+    else
+        flags &= ~f;
+}
 
 #endif // GLOBALS_H

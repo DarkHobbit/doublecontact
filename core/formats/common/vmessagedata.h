@@ -22,7 +22,7 @@ class VMessageData
 public:
     VMessageData();
     bool importRecords(const QStringList& lines, DecodedMessageList& list, bool append, QStringList& errors);
-    bool importMPBRecords(QStringList& lines, DecodedMessageList& list, bool append, QStringList& errors);
+    bool importMPBRecords(const QStringList& lines, DecodedMessageList& list, bool append, QStringList& errors, bool fromArchive);
 };
 
 #endif // VMESSAGEDATA_H

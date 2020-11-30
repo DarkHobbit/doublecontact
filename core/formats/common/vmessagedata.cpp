@@ -37,6 +37,7 @@ bool VMessageData::importRecords(const QStringList &lines, DecodedMessageList &l
                 errors << QObject::tr("Unclosed record before line %1").arg(line+1);
             recordOpened = true;
             msg.clear();
+            msg.sources = useVMessage;
         }
         else if (s.startsWith("END:VMSG", Qt::CaseInsensitive)) {
             recordOpened = false;
@@ -82,7 +83,9 @@ bool VMessageData::importRecords(const QStringList &lines, DecodedMessageList &l
             else if (tag=="X-NOK-DT")
                 msg.when = QDateTime::fromString(val, "yyyyMMddThhmmssZ");
             else if (tag=="X-MESSAGE-TYPE") {
-                if (uVal!="DELIVER")
+                if (uVal=="DELIVER")
+                    msg.delivered = true;
+                else
                     errors << S_UNKNOWN_MSG_VAL.arg(s);
             }
             else if (s=="BEGIN:VCARD") { // inner contact(s)
@@ -119,7 +122,7 @@ bool VMessageData::importRecords(const QStringList &lines, DecodedMessageList &l
 }
 
 // Format used in MPB files. It's very similar to vMessage, but tag names are different
-bool VMessageData::importMPBRecords(QStringList &lines, DecodedMessageList &list, bool append, QStringList &errors)
+bool VMessageData::importMPBRecords(const QStringList &lines, DecodedMessageList &list, bool append, QStringList &errors, bool fromArchive)
 {
     bool recordOpened = false;
     QTextCodec* codec = QTextCodec::codecForName("UTF-8"); // non-standart types also may be non-latin
@@ -127,10 +130,11 @@ bool VMessageData::importMPBRecords(QStringList &lines, DecodedMessageList &list
     msg.clear();
     if (!append)
         list.clear();
-    QuotedPrintable::mergeLinesets(lines);
+    QStringList mLines = lines;
+    QuotedPrintable::mergeLinesets(mLines);
     // Collect records
-    for (int line=0; line<lines.count(); line++) {
-        QString s = lines[line];
+    for (int line=0; line<mLines.count(); line++) {
+        QString s = mLines[line];
         if (s.isEmpty()) // vmg can contain empty lines
             continue;
         if (s.startsWith("BEGIN:VMESSAGE", Qt::CaseInsensitive)) {
@@ -138,6 +142,7 @@ bool VMessageData::importMPBRecords(QStringList &lines, DecodedMessageList &list
                 errors << QObject::tr("Unclosed record before line %1").arg(line+1);
             recordOpened = true;
             msg.clear();
+            msg.sources = fromArchive ? useVMessageArchive : useVMessage;
         }
         else if (s.startsWith("END:VMESSAGE", Qt::CaseInsensitive)) {
             recordOpened = false;
@@ -203,6 +208,8 @@ bool VMessageData::importMPBRecords(QStringList &lines, DecodedMessageList &list
             }
             else if (tag=="SUBFOLDER")
                 msg.subFolder = val;
+            else if (tag=="X-IRMC-LUID")
+                msg.id = val;
         }
     }
     if (recordOpened) {

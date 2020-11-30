@@ -590,8 +590,8 @@ Er du sikker på at du vil godta dette sertifikatet uansett?</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="230"/>
-        <location filename="../app/mainwindow.ui" line="331"/>
-        <location filename="../app/mainwindow.ui" line="363"/>
+        <location filename="../app/mainwindow.ui" line="332"/>
+        <location filename="../app/mainwindow.ui" line="364"/>
         <source>&amp;File</source>
         <translation>&amp;Fil</translation>
     </message>
@@ -626,207 +626,212 @@ Er du sikker på at du vil godta dette sertifikatet uansett?</translation>
         <translation>&amp;Vis</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="304"/>
+        <location filename="../app/mainwindow.ui" line="305"/>
         <source>&amp;List</source>
         <translation>&amp;Liste</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="334"/>
+        <location filename="../app/mainwindow.ui" line="335"/>
         <source>Ctrl+O</source>
         <translation>Ctrl+O</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="339"/>
-        <location filename="../app/mainwindow.ui" line="371"/>
+        <location filename="../app/mainwindow.ui" line="340"/>
+        <location filename="../app/mainwindow.ui" line="372"/>
         <source>&amp;Directory</source>
         <translation>&amp;Mappe</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="344"/>
+        <location filename="../app/mainwindow.ui" line="345"/>
         <source>&amp;Close</source>
         <translation>&amp;Lukk</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="347"/>
+        <location filename="../app/mainwindow.ui" line="348"/>
         <source>Ctrl+W</source>
         <translation>Ctrl+W</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="355"/>
+        <location filename="../app/mainwindow.ui" line="356"/>
         <source>&amp;Save</source>
         <translation>&amp;Lagre</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="358"/>
+        <location filename="../app/mainwindow.ui" line="359"/>
         <source>Ctrl+S</source>
         <translation>Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="366"/>
+        <location filename="../app/mainwindow.ui" line="367"/>
         <source>Ctrl+Shift+S</source>
         <translation>Ctrl+Shift+S</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="376"/>
+        <location filename="../app/mainwindow.ui" line="377"/>
         <source>E&amp;xit</source>
         <translation>A&amp;vslutt</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="387"/>
+        <location filename="../app/mainwindow.ui" line="388"/>
         <source>&amp;Two panels</source>
         <translation>&amp;To panel</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="392"/>
+        <location filename="../app/mainwindow.ui" line="393"/>
         <source>&amp;Options...</source>
         <translation>&amp;Valg…</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="397"/>
+        <location filename="../app/mainwindow.ui" line="398"/>
         <source>&amp;Add</source>
         <translation>&amp;Legg til</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="400"/>
+        <location filename="../app/mainwindow.ui" line="401"/>
         <source>Ins</source>
         <translation>Insert</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="405"/>
+        <location filename="../app/mainwindow.ui" line="406"/>
         <source>&amp;Edit</source>
         <translation>&amp;Rediger</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="408"/>
+        <location filename="../app/mainwindow.ui" line="409"/>
         <source>Return</source>
         <translation>Tilbake</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="413"/>
+        <location filename="../app/mainwindow.ui" line="414"/>
         <source>&amp;Remove</source>
         <translation>&amp;Fjern</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="416"/>
+        <location filename="../app/mainwindow.ui" line="417"/>
         <source>Del</source>
         <translation>Del</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="421"/>
+        <location filename="../app/mainwindow.ui" line="422"/>
         <source>&amp;Copy</source>
         <translation>&amp;Kopier</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="424"/>
+        <location filename="../app/mainwindow.ui" line="425"/>
         <source>F5</source>
         <translation>F5</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="429"/>
+        <location filename="../app/mainwindow.ui" line="430"/>
         <source>&amp;Move</source>
         <translation>&amp;Flytt</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="432"/>
+        <location filename="../app/mainwindow.ui" line="433"/>
         <source>F6</source>
         <translation>F6</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="437"/>
+        <location filename="../app/mainwindow.ui" line="438"/>
         <source>&amp;Swap names</source>
         <translation>&amp;Veksle navn</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="440"/>
+        <location filename="../app/mainwindow.ui" line="441"/>
         <source>F2</source>
         <translation>F2</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="445"/>
+        <location filename="../app/mainwindow.ui" line="446"/>
         <source>&amp;Compare/Uncompare</source>
         <translation>&amp;Sammenlign/ikke sammenlign</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="448"/>
+        <location filename="../app/mainwindow.ui" line="449"/>
         <source>F3</source>
         <translation>F3</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="456"/>
+        <location filename="../app/mainwindow.ui" line="457"/>
         <source>&amp;Sort</source>
         <translation>&amp;Sorter</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="459"/>
+        <location filename="../app/mainwindow.ui" line="460"/>
         <source>F4</source>
         <translation>F4</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="464"/>
+        <location filename="../app/mainwindow.ui" line="465"/>
         <source>&amp;Other panel</source>
         <translation>&amp;Annet panel</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="467"/>
+        <location filename="../app/mainwindow.ui" line="468"/>
         <source>Tab</source>
         <translation>Tabulator</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="472"/>
+        <location filename="../app/mainwindow.ui" line="473"/>
         <source>&amp;Settings...</source>
         <translation type="unfinished">&amp;Innstillinger…</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="488"/>
+        <location filename="../app/mainwindow.ui" line="489"/>
         <source>C&amp;ompare Result</source>
         <translation>S&amp;ammenlign resultat</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="529"/>
+        <location filename="../app/mainwindow.ui" line="530"/>
         <source>&amp;Internationalize phone prefix</source>
         <translation>&amp;Internasjonaliser retningskode</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="547"/>
+        <location filename="../app/mainwindow.ui" line="548"/>
         <source>Re&amp;verse full name</source>
         <translation>Ve&amp;nd fullt navn</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="578"/>
+        <location filename="../app/mainwindow.ui" line="579"/>
         <source>About &amp;Qt</source>
         <translation>Om &amp;Qt</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="583"/>
+        <location filename="../app/mainwindow.ui" line="584"/>
         <source>Format phone &amp;numbers</source>
         <translation>Formater telefon-&amp;nummer</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="616"/>
+        <location filename="../app/mainwindow.ui" line="617"/>
         <source>Join names</source>
         <translation type="unfinished">Navn uten mellomrom</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="621"/>
+        <location filename="../app/mainwindow.ui" line="622"/>
         <source>Parse full name</source>
         <translation>Fortolk fullt navn</translation>
+    </message>
+    <message>
+        <location filename="../app/mainwindow.ui" line="627"/>
+        <source>&amp;Messages...</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Settings...</source>
         <translation type="obsolete">Innstillinger</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="475"/>
+        <location filename="../app/mainwindow.ui" line="476"/>
         <source>Ctrl+P</source>
         <translation>Ctrl+P</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="480"/>
+        <location filename="../app/mainwindow.ui" line="481"/>
         <source>&amp;Filter</source>
         <translation type="unfinished">&amp;Filter</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="483"/>
+        <location filename="../app/mainwindow.ui" line="484"/>
         <source>Ctrl+F</source>
         <translation>Ctrl+F</translation>
     </message>
@@ -835,42 +840,42 @@ Er du sikker på at du vil godta dette sertifikatet uansett?</translation>
         <translation type="obsolete">Sammenlign &amp;resultat</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="491"/>
+        <location filename="../app/mainwindow.ui" line="492"/>
         <source>Shift+F3</source>
         <translation>Shift+F3</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="496"/>
+        <location filename="../app/mainwindow.ui" line="497"/>
         <source>S&amp;plit names</source>
         <translation>Spl&amp;itt navn</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="499"/>
+        <location filename="../app/mainwindow.ui" line="500"/>
         <source>Shift+F2</source>
         <translation>Shift+F2</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="504"/>
+        <location filename="../app/mainwindow.ui" line="505"/>
         <source>&amp;Drop slashes</source>
         <translation>&amp;Dropp skråstreker</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="509"/>
+        <location filename="../app/mainwindow.ui" line="510"/>
         <source>&amp;Generate full name</source>
         <translation>&amp;Opprett fullt navn</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="514"/>
+        <location filename="../app/mainwindow.ui" line="515"/>
         <source>&amp;Join</source>
         <translation>&amp;Ta del</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="519"/>
+        <location filename="../app/mainwindow.ui" line="520"/>
         <source>Drop &amp;full name</source>
         <translation>Dropp &amp;fullt navn</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="524"/>
+        <location filename="../app/mainwindow.ui" line="525"/>
         <source>Sp&amp;lit</source>
         <translation>Sp&amp;litt</translation>
     </message>
@@ -879,17 +884,17 @@ Er du sikker på at du vil godta dette sertifikatet uansett?</translation>
         <translation type="obsolete">Internasjonalt retningsnummer</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="534"/>
+        <location filename="../app/mainwindow.ui" line="535"/>
         <source>S&amp;wap Panels</source>
         <translation>B&amp;ytt paneler</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="537"/>
+        <location filename="../app/mainwindow.ui" line="538"/>
         <source>Ctrl+U</source>
         <translation>Ctrl+U</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="542"/>
+        <location filename="../app/mainwindow.ui" line="543"/>
         <source>&amp;About</source>
         <translation>&amp;Om</translation>
     </message>
@@ -898,32 +903,32 @@ Er du sikker på at du vil godta dette sertifikatet uansett?</translation>
         <translation type="obsolete">Reverser fullt navn</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="552"/>
+        <location filename="../app/mainwindow.ui" line="553"/>
         <source>S&amp;tatistics</source>
         <translation>S&amp;tatistikk</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="557"/>
+        <location filename="../app/mainwindow.ui" line="558"/>
         <source>Re&amp;port</source>
         <translation>Ra&amp;pport</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="560"/>
+        <location filename="../app/mainwindow.ui" line="561"/>
         <source>Ctrl+R</source>
         <translation>Ctrl+R</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="565"/>
+        <location filename="../app/mainwindow.ui" line="566"/>
         <source>&amp;Hard sort</source>
         <translation>&amp;Hard sortering</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="570"/>
+        <location filename="../app/mainwindow.ui" line="571"/>
         <source>&amp;Groups...</source>
         <translation>&amp;Grupper…</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="573"/>
+        <location filename="../app/mainwindow.ui" line="574"/>
         <source>Ctrl+G</source>
         <translation>Ctrl+G</translation>
     </message>
@@ -940,170 +945,288 @@ Er du sikker på at du vil godta dette sertifikatet uansett?</translation>
         <translation type="obsolete">Inndeler</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="608"/>
+        <location filename="../app/mainwindow.ui" line="609"/>
         <source>Copy text</source>
         <translation>Kopier tekst</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="611"/>
+        <location filename="../app/mainwindow.ui" line="612"/>
         <source>Ctrl+C</source>
         <translation>Ctrl+C</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="172"/>
+        <location filename="../app/mainwindow.cpp" line="174"/>
         <source>Only one of two files can be dropped to program window</source>
         <translation>Kun én av to filer kan slippes i programvinduet</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="242"/>
+        <location filename="../app/mainwindow.cpp" line="244"/>
         <source>Open contact file</source>
         <translation>Åpne kontaktfil</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="259"/>
+        <location filename="../app/mainwindow.cpp" line="261"/>
         <source>Open VCF Directory</source>
         <translation>Åpne VCF-mappe</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="283"/>
+        <location filename="../app/mainwindow.cpp" line="285"/>
         <source>Save contact file</source>
         <translation>Lagre kontaktfil</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="299"/>
+        <location filename="../app/mainwindow.cpp" line="301"/>
         <source>Save VCF Directory</source>
         <translation>Lagre VCF-mappe</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="308"/>
+        <location filename="../app/mainwindow.cpp" line="310"/>
         <source>Directory exists. Are You really want rewrite it?</source>
         <translation>Mappen finnes. Ønsker du virkelig å skrive den på nytt?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="357"/>
+        <location filename="../app/mainwindow.cpp" line="359"/>
         <source>Are You really want to edit more than one record?
 Only some fields can this edited in this mode</source>
         <translation>Er du sikker på at du ønsker å redigere mer enn én oppføring?
 Kun noen felter kan redigeres i dette moduset</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="469"/>
+        <location filename="../app/mainwindow.cpp" line="471"/>
         <source>Compare mode requires show two panels and load contact lists in both panels</source>
         <translation type="unfinished">Sammenligningsmodus krever visning av to paneler og innlasting av kontaktlister i begge paneler</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="515"/>
         <source>Group operation not impemented, select one record</source>
-        <translation>Gruppeoperasjon ikke implementert, velg én oppflring</translation>
+        <translation type="obsolete">Gruppeoperasjon ikke implementert, velg én oppflring</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="542"/>
+        <location filename="../app/mainwindow.cpp" line="544"/>
         <source> (directory)</source>
         <translation> (mappe)</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="642"/>
+        <location filename="../app/mainwindow.cpp" line="644"/>
         <source>Records: %1</source>
         <translation>Oppføringer: %1</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="647"/>
         <source>Mode: </source>
-        <translation>Modus: </translation>
+        <translation type="obsolete">Modus: </translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="648"/>
+        <location filename="../app/mainwindow.cpp" line="650"/>
         <source>two panels</source>
         <translation>to paneler</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="648"/>
+        <location filename="../app/mainwindow.cpp" line="650"/>
         <source>one panel</source>
         <translation>ett panel</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="649"/>
         <source>sorted</source>
-        <translation>sorter</translation>
+        <translation type="obsolete">sorter</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="649"/>
         <source>not sorted</source>
-        <translation>usortert</translation>
+        <translation type="obsolete">usortert</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="652"/>
+        <location filename="../app/mainwindow.cpp" line="654"/>
         <source>simple editing</source>
         <translation>enkel redigering</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="656"/>
+        <location filename="../app/mainwindow.cpp" line="658"/>
         <source>compare</source>
         <translation>sammenlign</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="700"/>
+        <location filename="../app/mainwindow.cpp" line="702"/>
         <source>&apos;%1&apos; was changed.
 Save changes?</source>
         <translation>&quot;%1&quot; ble endret.
 Lagre endringer?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="813"/>
+        <location filename="../app/mainwindow.cpp" line="799"/>
         <source>Restart program to apply language change</source>
         <translation>Start programmet på nytt for å legge til programspråk</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="857"/>
+        <location filename="../app/mainwindow.cpp" line="843"/>
         <source>Two panels and compare mode needed for this operation</source>
         <translation>To paneler og sammenligningsmodus trengs for denne handlingen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="872"/>
+        <location filename="../app/mainwindow.cpp" line="858"/>
         <source>Left item</source>
         <translation>Venstre element</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="872"/>
+        <location filename="../app/mainwindow.cpp" line="858"/>
         <source>Right item</source>
         <translation>Høyre element</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="898"/>
+        <location filename="../app/mainwindow.cpp" line="884"/>
         <source>Strongly two records on current panel must be selected for this operation</source>
         <translation>To dataoppføringer på gjeldende panel må være valgt sterkt for denne operasjonen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="904"/>
+        <location filename="../app/mainwindow.cpp" line="890"/>
         <source>Item 1</source>
         <translation>Element 1</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="904"/>
+        <location filename="../app/mainwindow.cpp" line="890"/>
         <source>Item 2</source>
         <translation>Element 2</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="972"/>
+        <location filename="../app/mainwindow.cpp" line="958"/>
         <source>Operation requires show two panels</source>
         <translation type="unfinished">Operasjonen krever visning av to paneler</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1005"/>
+        <location filename="../app/mainwindow.cpp" line="991"/>
         <source>Statitics</source>
         <translation>Statistikk</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1012"/>
+        <location filename="../app/mainwindow.cpp" line="998"/>
         <source>Report file</source>
         <translation>Rapportfil</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1046"/>
+        <location filename="../app/mainwindow.cpp" line="1032"/>
         <source>Column sorting is switched. Hard sort results are not visible.
 Are you want switch column sorting off?</source>
         <translation type="unfinished">Kolonnesortering er byttet. Harde sorteringsresultater er ikke synlige.
 Er du sikker på at du ønsker skru av kolonnesortering?</translation>
+    </message>
+</context>
+<context>
+    <name>MessageModel</name>
+    <message>
+        <location filename="../model/messagemodel.cpp" line="23"/>
+        <source>Date</source>
+        <translation type="unfinished">Dato</translation>
+    </message>
+    <message>
+        <location filename="../model/messagemodel.cpp" line="24"/>
+        <source>From/To</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../model/messagemodel.cpp" line="25"/>
+        <source>Folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../model/messagemodel.cpp" line="26"/>
+        <source>Flags</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../model/messagemodel.cpp" line="27"/>
+        <source>Text</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>MessageWindow</name>
+    <message>
+        <location filename="../app/messagewindow.ui" line="14"/>
+        <source>Messages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/messagewindow.ui" line="24"/>
+        <source>Message sources</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/messagewindow.ui" line="31"/>
+        <source>PDU</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/messagewindow.ui" line="38"/>
+        <source>vMessage </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/messagewindow.ui" line="45"/>
+        <source>PDU archive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/messagewindow.ui" line="52"/>
+        <source>vMessage archive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/messagewindow.ui" line="59"/>
+        <source>Binary</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/messagewindow.ui" line="86"/>
+        <source>Merge duplicates</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/messagewindow.ui" line="96"/>
+        <source>Merge multipart messages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/messagewindow.ui" line="118"/>
+        <source>Filter</source>
+        <translation type="unfinished">Filter</translation>
+    </message>
+    <message>
+        <location filename="../app/messagewindow.ui" line="143"/>
+        <source>&amp;Save as...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/messagewindow.ui" line="152"/>
+        <source>Copy text</source>
+        <translation type="unfinished">Kopier tekst</translation>
+    </message>
+    <message>
+        <location filename="../app/messagewindow.ui" line="155"/>
+        <source>Ctrl+C</source>
+        <translation type="unfinished">Ctrl+C</translation>
+    </message>
+    <message>
+        <location filename="../app/messagewindow.ui" line="160"/>
+        <source>Properties</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/messagewindow.cpp" line="147"/>
+        <source> with messages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/messagewindow.cpp" line="151"/>
+        <source>Records: %1</source>
+        <translation type="unfinished">Oppføringer: %1</translation>
+    </message>
+    <message>
+        <location filename="../app/messagewindow.cpp" line="206"/>
+        <source>id: %1
+Sources: %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/messagewindow.cpp" line="224"/>
+        <source>Save messages file</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1308,7 +1431,7 @@ telefonspråk %5</translation>
     <message>
         <location filename="../core/formats/common/vcarddata.cpp" line="81"/>
         <location filename="../core/formats/common/vmessagedata.cpp" line="37"/>
-        <location filename="../core/formats/common/vmessagedata.cpp" line="138"/>
+        <location filename="../core/formats/common/vmessagedata.cpp" line="142"/>
         <source>Unclosed record before line %1</source>
         <translation>Ulukket oppføring før linje %1</translation>
     </message>
@@ -1343,7 +1466,7 @@ telefonspråk %5</translation>
         <translation>Ukjent bildetype på slutten av linje %1: %2</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="140"/>
+        <location filename="../core/globals.h" line="142"/>
         <source>Last section not closed</source>
         <translation>Siste del ulukket</translation>
     </message>
@@ -1622,366 +1745,386 @@ lagret som mobil</translation>
         <translation>Kan ikke åpne %1 element i arkiv</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="55"/>
+        <location filename="../core/globals.h" line="56"/>
         <source>Error</source>
         <translation>Feil</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="56"/>
+        <location filename="../core/globals.h" line="57"/>
         <source>Warning</source>
         <translation>Advarsel</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="57"/>
+        <location filename="../core/globals.h" line="58"/>
         <source>Confirmation</source>
         <translation>Bekreftelse</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="58"/>
+        <location filename="../core/globals.h" line="59"/>
         <source>Information</source>
         <translation>Informasjon</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="60"/>
+        <location filename="../core/globals.h" line="61"/>
         <source>Address book</source>
         <translation>Adressebok</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="61"/>
+        <location filename="../core/globals.h" line="62"/>
         <source>New contact list</source>
         <translation>Ny kontaktliste</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="108"/>
+        <location filename="../core/globals.h" line="109"/>
         <source>P.O. box</source>
         <translation>Postboks</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="130"/>
+        <location filename="../core/globals.h" line="132"/>
         <source>This format is read only</source>
         <translation>Dette formatet kan kun leses</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="63"/>
+        <location filename="../core/globals.h" line="64"/>
         <source>Select country rule</source>
         <translation>Velg landsregel</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="62"/>
+        <location filename="../core/globals.h" line="63"/>
         <source>Group name</source>
         <translation>Gruppenavn</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="64"/>
+        <location filename="../core/globals.h" line="65"/>
         <source>Select phone template</source>
         <translation>Velg telefonmal</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="65"/>
+        <location filename="../core/globals.h" line="66"/>
         <source>Select CSV profile</source>
         <translation>Velg CSV-profil</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="66"/>
+        <location filename="../core/globals.h" line="67"/>
         <source>Generic profile</source>
         <translation>Generisk profil</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="68"/>
+        <location filename="../core/globals.h" line="69"/>
         <source>mixed...</source>
         <translation>blandet…</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="70"/>
+        <location filename="../core/globals.h" line="71"/>
         <source>Firstname</source>
         <translation type="unfinished">Fornavn</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="71"/>
+        <location filename="../core/globals.h" line="72"/>
         <source>Lastname</source>
         <translation type="unfinished">Etternavn</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="72"/>
+        <location filename="../core/globals.h" line="73"/>
         <source>Middlename</source>
         <translation>Mellomnavn</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="73"/>
+        <location filename="../core/globals.h" line="74"/>
         <source>Prefixes</source>
         <translation type="unfinished">Grad/profesjon</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="74"/>
+        <location filename="../core/globals.h" line="75"/>
         <source>Suffixes</source>
         <translation type="unfinished">Tittel</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="76"/>
+        <location filename="../core/globals.h" line="77"/>
         <source>Full name</source>
         <translation>Fullt navn</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="77"/>
+        <location filename="../core/globals.h" line="78"/>
         <source>Generic name</source>
         <translation>Generisk navn</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="78"/>
+        <location filename="../core/globals.h" line="79"/>
         <source>Description</source>
         <translation>Beskrivelse</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="79"/>
+        <location filename="../core/globals.h" line="80"/>
         <source>Phone</source>
         <translation>Telefon</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="80"/>
+        <location filename="../core/globals.h" line="81"/>
         <source>All phones</source>
         <translation>Alle telefoner</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="81"/>
+        <location filename="../core/globals.h" line="82"/>
         <source>Home phone</source>
         <translation>Hjemmetelefon</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="82"/>
+        <location filename="../core/globals.h" line="83"/>
         <source>Work phone</source>
         <translation>Arbeidstelefon</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="83"/>
+        <location filename="../core/globals.h" line="84"/>
         <source>Cell phone</source>
         <translation>Mobiltelefon</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="84"/>
+        <location filename="../core/globals.h" line="85"/>
         <source>Email</source>
         <translation type="unfinished">E-postadresse</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="85"/>
+        <location filename="../core/globals.h" line="86"/>
         <source>Birthday</source>
         <translation>Geburtsdag</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="86"/>
+        <location filename="../core/globals.h" line="87"/>
         <source>Anniversary</source>
         <translation>Jubileum</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="87"/>
+        <location filename="../core/globals.h" line="88"/>
         <source>Photo</source>
         <translation>Bilde</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="88"/>
+        <location filename="../core/globals.h" line="89"/>
         <source>Job title</source>
         <translation>Jobbtittel</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="89"/>
+        <location filename="../core/globals.h" line="90"/>
         <source>Organization</source>
         <translation>Organisasjon</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="90"/>
+        <location filename="../core/globals.h" line="91"/>
         <source>Address</source>
         <translation>Adresse</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="91"/>
+        <location filename="../core/globals.h" line="92"/>
         <source>NickName</source>
         <translation type="unfinished">Kallenavn</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="92"/>
+        <location filename="../core/globals.h" line="93"/>
         <source>URL</source>
         <translation>Nettadresse</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="94"/>
+        <location filename="../core/globals.h" line="95"/>
         <source>Jabber</source>
         <translation type="unfinished">XMPP</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="95"/>
+        <location filename="../core/globals.h" line="96"/>
         <source>ICQ</source>
         <translation>ICQ</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="96"/>
+        <location filename="../core/globals.h" line="97"/>
         <source>Skype</source>
         <translation>Skype</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="97"/>
+        <location filename="../core/globals.h" line="98"/>
         <source>Group</source>
         <translation>Gruppe</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="99"/>
+        <location filename="../core/globals.h" line="100"/>
         <source>Has phone</source>
         <translation>Har telefon</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="100"/>
+        <location filename="../core/globals.h" line="101"/>
         <source>Has email</source>
         <translation>Har e-postadresse</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="101"/>
+        <location filename="../core/globals.h" line="102"/>
         <source>Has address</source>
         <translation>Har adresse</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="102"/>
+        <location filename="../core/globals.h" line="103"/>
         <source>Has birthday</source>
         <translation>Har geburtsdag</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="103"/>
+        <location filename="../core/globals.h" line="104"/>
         <source>Has photo</source>
         <translation>Har bilde</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="104"/>
+        <location filename="../core/globals.h" line="105"/>
         <source>Has problems</source>
         <translation>Har problemer</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="105"/>
+        <location filename="../core/globals.h" line="106"/>
         <source>Some phones</source>
         <translation>Noen telefoner</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="106"/>
+        <location filename="../core/globals.h" line="107"/>
         <source>Some emails</source>
         <translation>Noen e-postadresser</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="119"/>
+        <location filename="../core/globals.h" line="120"/>
         <source>Show in new window</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="136"/>
+        <location filename="../core/globals.h" line="131"/>
+        <source>Group operation not implemented, select one record</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/globals.h" line="138"/>
         <source>Program built without network support. Use WITH_NETWORK define, if building from source code.
 </source>
         <translation type="unfinished">Programmet er bygd uten nettverksstøtte. Bruk WITH_NETWORK define, hvis du bygger fra kildekode.
 </translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="137"/>
+        <location filename="../core/globals.h" line="139"/>
         <source>Do you really want to delete the selected items?</source>
         <translation>Ønsker du virkelig å slette valgte elementer?</translation>
+    </message>
+    <message>
+        <location filename="../core/globals.h" line="144"/>
+        <source>Mode: </source>
+        <translation type="unfinished">Modus: </translation>
+    </message>
+    <message>
+        <location filename="../core/globals.h" line="145"/>
+        <source>sorted</source>
+        <translation type="unfinished">sorter</translation>
+    </message>
+    <message>
+        <location filename="../core/globals.h" line="146"/>
+        <source>not sorted</source>
+        <translation type="unfinished">usortert</translation>
     </message>
     <message>
         <source>P.o. box</source>
         <translation type="obsolete">Postboks</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="109"/>
+        <location filename="../core/globals.h" line="110"/>
         <source>Ext.addr.</source>
         <translation type="unfinished">Ekst.adr.</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="110"/>
+        <location filename="../core/globals.h" line="111"/>
         <source>Street</source>
         <translation>Gate</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="111"/>
+        <location filename="../core/globals.h" line="112"/>
         <source>City/Locality</source>
         <translation>By/plass</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="112"/>
+        <location filename="../core/globals.h" line="113"/>
         <source>Region</source>
         <translation>Region</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="113"/>
+        <location filename="../core/globals.h" line="114"/>
         <source>Postal code</source>
         <translation>Postkode</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="114"/>
+        <location filename="../core/globals.h" line="115"/>
         <source>Country</source>
         <translation>Land</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="116"/>
+        <location filename="../core/globals.h" line="117"/>
         <source>[Unknown photo format]</source>
         <translation>[Ukjent bildeformat]</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="117"/>
+        <location filename="../core/globals.h" line="118"/>
         <source>Load image</source>
         <translation>Last bilde</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="118"/>
+        <location filename="../core/globals.h" line="119"/>
         <source>Save image</source>
         <translation>Lagre bilde</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="120"/>
+        <location filename="../core/globals.h" line="121"/>
         <source>Set URL</source>
         <translation>Sett nettadresse</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="121"/>
+        <location filename="../core/globals.h" line="122"/>
         <source>Remove photo</source>
         <translation>Fjern bilde</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="123"/>
+        <location filename="../core/globals.h" line="124"/>
         <source>All supported files (%1)</source>
         <translation>Alle støttede filer (%1)</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="124"/>
+        <location filename="../core/globals.h" line="125"/>
         <source>All files (*.*)</source>
         <translation>Alle filer (*.*)</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="126"/>
+        <location filename="../core/globals.h" line="127"/>
         <source>Can&apos;t read file
 %1</source>
         <translation>Kan ikke lese fil
 %1</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="127"/>
+        <location filename="../core/globals.h" line="128"/>
         <source>Can&apos;t write file
 %1</source>
         <translation>Kan ikke skrive til fil
 %1</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="128"/>
+        <location filename="../core/globals.h" line="129"/>
         <source>Can&apos;t seek to %1 in file
 %2</source>
         <translation>Kan ikke blafre til %1 i filen
 %2</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="129"/>
+        <location filename="../core/globals.h" line="130"/>
         <source>Record not selected</source>
         <translation>Oppføring ikke valg</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="132"/>
+        <location filename="../core/globals.h" line="134"/>
         <source>Warning: contact %1 has %2, not supported in this format.
 Data will be lost</source>
         <translation>Advarsel: Kontakt %1 har %2, ikke støttet i dette formatet.
 Data vil gå tapt</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="134"/>
+        <location filename="../core/globals.h" line="136"/>
         <source>%1 %2 will be lost at contact %3</source>
         <translation>%1 %2 vil gå tapt i kontakt %3</translation>
     </message>
@@ -2064,59 +2207,63 @@ Sjekk brukernavn, passord, protokoll og port</translation>
         <translation>Test 1 forskjellig fra 0x01: %1</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="36"/>
+        <location filename="../core/decodedmessagelist.cpp" line="60"/>
         <source>Read</source>
         <translation>Les</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="37"/>
+        <location filename="../core/decodedmessagelist.cpp" line="61"/>
         <source>UnRd</source>
         <translation>Ulest</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="38"/>
+        <location filename="../core/decodedmessagelist.cpp" line="62"/>
         <source>Unk.</source>
         <translation type="unfinished">Ukjent</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="40"/>
+        <location filename="../core/decodedmessagelist.cpp" line="64"/>
         <source>Inbox</source>
         <translation>Innboks</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="41"/>
+        <location filename="../core/decodedmessagelist.cpp" line="65"/>
         <source>Outbox</source>
         <translation>Utboks</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="42"/>
+        <location filename="../core/decodedmessagelist.cpp" line="66"/>
         <source>Sentbox</source>
         <translation>Sendt</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="43"/>
+        <location filename="../core/decodedmessagelist.cpp" line="67"/>
         <source>Draft</source>
         <translation>Kladd</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="44"/>
+        <location filename="../core/decodedmessagelist.cpp" line="68"/>
         <source>Trash</source>
         <translation>Søppel</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="54"/>
+        <location filename="../core/decodedmessagelist.cpp" line="78"/>
         <source>&quot;Date&quot;,&quot;Box&quot;,&quot;From/To&quot;,&quot;Status&quot;,&quot;Text&quot;,&quot;Aux&quot;
 </source>
         <translation>&quot;Dato&quot;,&quot;Boks&quot;,&quot;Fra/til&quot;,&quot;Status&quot;,Tekst&quot;,Fjern&quot;
 </translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="59"/>
-        <source>Empty</source>
-        <translation>Tom</translation>
+        <location filename="../core/decodedmessagelist.cpp" line="131"/>
+        <source>Dlv</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="146"/>
+        <source>Empty</source>
+        <translation type="obsolete">Tom</translation>
+    </message>
+    <message>
+        <location filename="../core/decodedmessagelist.cpp" line="168"/>
         <source>MPB message body missing</source>
         <translation>MPB-meldingskropp mangler</translation>
     </message>
@@ -2125,12 +2272,12 @@ Sjekk brukernavn, passord, protokoll og port</translation>
         <translation type="obsolete">Ukjent meldingsformat</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="138"/>
+        <location filename="../core/globals.h" line="140"/>
         <source>Unknown vMessage tag: %1</source>
         <translation type="unfinished">Ukjent vMessage-tagg: %1</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="139"/>
+        <location filename="../core/globals.h" line="141"/>
         <source>Unknown vMessage value: %1</source>
         <translation>Ukjent vMessage-verdi: %1</translation>
     </message>
@@ -2186,7 +2333,7 @@ Sjekk brukernavn, passord, protokoll og port</translation>
 <context>
     <name>ReadOnlyTableDelegate</name>
     <message>
-        <location filename="../app/helpers.cpp" line="28"/>
+        <location filename="../app/helpers.cpp" line="30"/>
         <source>This table is read only</source>
         <translation>Denne tabellen er skrivebeskyttet</translation>
     </message>

@@ -11,6 +11,8 @@
  *
  */
 
+#include <QFont>
+#include <QHeaderView>
 #include <QMessageBox>
 #include <QPixmap>
 
@@ -29,6 +31,7 @@ QWidget* ReadOnlyTableDelegate::createEditor(
     return 0;
 }
 
+// Show photo on label
 void showPhoto(const Photo &photo, QLabel *label)
 {
     label->clear();
@@ -47,3 +50,20 @@ void showPhoto(const Photo &photo, QLabel *label)
     else if (!photo.isEmpty())
         label->setText(S_PH_UNKNOWN_FORMAT);
 }
+
+// Set color/font for each table view
+void updateTableConfig(QTableView *table)
+{
+    table->setShowGrid(gd.showTableGrid);
+    table->verticalHeader()->setVisible(gd.showLineNumbers);
+    table->setAlternatingRowColors(gd.useTableAlternateColors);
+    if (!gd.useSystemFontsAndColors) {
+        QFont f;
+        bool fontSuccess = f.fromString(gd.tableFont);
+        if (fontSuccess)
+            table->setFont(f);
+        table->setStyleSheet(QString("QTableView { alternate-background-color: %1; background: %2 }")
+               .arg(gd.gridColor2).arg(gd.gridColor1));
+    }
+}
+

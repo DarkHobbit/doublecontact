@@ -23,7 +23,8 @@ SOURCES += main.cpp \
     languageselectdialog.cpp \
     csvprofiledialog.cpp \
     sortdialog.cpp \
-    groupdialog.cpp
+    groupdialog.cpp \
+    messagewindow.cpp
 
 HEADERS += mainwindow.h \
     contactdialog.h \
@@ -39,7 +40,8 @@ HEADERS += mainwindow.h \
     languageselectdialog.h \
     csvprofiledialog.h \
     sortdialog.h \
-    groupdialog.h
+    groupdialog.h \
+    messagewindow.h
 
 FORMS += mainwindow.ui \
     contactdialog.ui \
@@ -53,7 +55,8 @@ FORMS += mainwindow.ui \
     languageselectdialog.ui \
     csvprofiledialog.ui \
     sortdialog.ui \
-    groupdialog.ui
+    groupdialog.ui \
+    messagewindow.ui
 unix { 
     OBJECTS_DIR = .obj
     UI_DIR = .ui
@@ -88,7 +91,7 @@ tr.commands = lrelease-qt5 \
 }
 }
 } else {
-tr.commands = lrelease \
+tr.commands = lrelease-qt4 \
     $$_PRO_FILE_
 }
     

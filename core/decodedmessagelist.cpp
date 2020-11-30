@@ -25,9 +25,33 @@ void DecodedMessage::clear()
     status = DecodedMessage::Unknown;
     box = DecodedMessage::Inbox;
     subFolder.clear();
+    delivered = false;
     contacts.clear();
     when = QDateTime();
     text.clear();
+}
+
+QString DecodedMessage::contactsToString() const
+{
+    QStringList res;
+    foreach (const ContactItem& c, contacts) {
+        // Paranoidal algorithm for from/to correspondent info.
+        // IrMC 1.1 shows examples with N, TEL and EMAIL vCard tags inside vMessage.
+        // For other formats, such as PDU, contact always contains strongly one phonenumber.
+        QString peer = "";
+        if (!c.phones.isEmpty())
+            peer = c.phones.first().value;
+        else if (!c.emails.isEmpty())
+            peer = c.emails.first().value;
+        if (!c.names.isEmpty() && !peer.isEmpty() && c.formatNames()!=peer)
+            peer = QString("%1 (%2)").arg(c.formatNames()).arg(peer);
+        else if (!c.names.isEmpty())
+            peer = c.formatNames();
+        else if (peer.isEmpty()) // No phone, no email, no name
+            peer = c.makeGenericName();
+        res << peer;
+    }
+    return res.join(";");
 }
 
 DecodedMessageList::DecodedMessageList()
@@ -53,18 +77,6 @@ bool DecodedMessageList::toCSV(const QString &path)
     ss.setCodec("UTF-8");
     ss << QObject::tr("\"Date\",\"Box\",\"From/To\",\"Status\",\"Text\",\"Aux\"\n");
     foreach(const DecodedMessage& msg, *this) {
-        // Paranoidal algorithm for from/to correspondent info.
-        // IrMC 1.1 shows examples with N, TEL and EMAIL vCard tags inside vMessage.
-        // For other formats, such as PDU, contact always contains strongly one phonenumber.
-        QString peer = QObject::tr("Empty");
-        if (!msg.contacts.isEmpty())
-            peer = peerInfo(msg.contacts.first(), peer);
-        // Additional contacts (most paranoidal vMessage case)
-        QString auxPeers = "";
-        for (int i=1; i<msg.contacts.count(); i++)
-            auxPeers += ", " + peerInfo(msg.contacts[i], "");
-        if (!auxPeers.isEmpty())
-            auxPeers.remove(0, 1);
         // Stricted text, without qoutes and line breaks
         // TODO m.b. implement write to vMessage (VMessageData::importRecords), it's not destructive format
         QString msgText = msg.text;
@@ -73,40 +85,28 @@ bool DecodedMessageList::toCSV(const QString &path)
         // Write current message
         ss << "\""    << msg.when.toString("dd.MM.yyyy hh:mm:ss")
            << "\",\"" << sMsgBox[msg.box]
-           << "\",\"" << peer
-           << "\",\"" << sMsgStatus[msg.status]
-           << "\",\"" << msgText
-           << "\",\"" << auxPeers << "\"\n";
+           << "\",\"" << msg.contactsToString()
+           << "\",\"" << messageStates(msg.status, msg.delivered)
+           << "\",\"" << msgText << "\"\n";
     }
     f.close();
     return true;
 }
 
-DecodedMessageList DecodedMessageList::fromContactList(ContactList &list, const MessageSourceFlags& flags, QStringList &errors)
+DecodedMessageList DecodedMessageList::fromContactList(const ContactList &list, const MessageSourceFlags& flags, QStringList &errors)
 {
     DecodedMessageList messages;
-    if (flags.useVMessageSMS) {
-        VMessageData vmg;
-        if (list.extra.vmsgSMS.contains("BEGIN:VMSG")) { // classic/Nokia vmessage
-            foreach(const QString& s, list.extra.vmsgSMS) {
-                QStringList ss = s.split("\n");
-                vmg.importRecords(ss, messages, true, errors); // TODO merge duplicates on demand
-            }
-        }
-        else { // MPB vmessage
-            vmg.importMPBRecords(list.extra.vmsgSMS, messages, true, errors);
-            if (flags.useArchive)
-                vmg.importMPBRecords(list.extra.vmsgSMSArchive, messages, true, errors);
-        }
-    }
-    if (flags.usePDUSMS) {
-        fromPDUList(messages, list.extra.pduSMS, errors);
-        if (flags.useArchive)
-            fromPDUList(messages, list.extra.pduSMSArchive, errors);
-        // "MMS were never supported in the MPE and there will be no support in the future because the needed API for that are missing in the Android system".
-        // https://www.fjsoft.at/forum/viewtopic.php?t=29865
-    }
-    if (flags.usePDUSMS && !list.extra.binarySMS.isEmpty()) {
+    if (flags.testFlag(useVMessage))
+        fromVMessageList(messages, list.extra.vmsgSMS, errors, false);
+    if (flags.testFlag(useVMessageArchive))
+        fromVMessageList(messages, list.extra.vmsgSMSArchive, errors, true);
+    if (flags.testFlag(usePDU))
+        fromPDUList(messages, list.extra.pduSMS, errors, false);
+    if (flags.testFlag(usePDUArchive))
+        fromPDUList(messages, list.extra.pduSMSArchive, errors, true);
+    // "MMS were never supported in the MPE and there will be no support in the future because the needed API for that are missing in the Android system".
+    // https://www.fjsoft.at/forum/viewtopic.php?t=29865
+    if (flags.testFlag(useBinary) && !list.extra.binarySMS.isEmpty()) {
         foreach(const BinarySMS& sms, list.extra.binarySMS)
              // TODO merge duplicates on demand
             NokiaData::ReadPredefBinMessage(sms.name, sms.content, messages, true, errors);
@@ -114,19 +114,40 @@ DecodedMessageList DecodedMessageList::fromContactList(ContactList &list, const 
     return messages;
 }
 
-QString DecodedMessageList::peerInfo(const ContactItem &c, const QString& defaultValue)
+QString DecodedMessageList::messageBoxes(int index) const
 {
-    QString peer = defaultValue;
-    if (!c.phones.isEmpty())
-        peer = c.phones.first().value;
-    else if (!c.emails.isEmpty())
-        peer = c.emails.first().value;
-    if (!c.names.isEmpty())
-        peer = QString("%1 (%2)").arg(c.formatNames()).arg(peer);
-    return peer;
+    if (index<0 || index>=sMsgBox.count())
+        return "";
+    else
+        return sMsgBox[index];
 }
 
-void DecodedMessageList::fromPDUList(DecodedMessageList &messages, const QStringList &src, QStringList &errors)
+QString DecodedMessageList::messageStates(int index, bool delivered) const
+{
+    QString s = "";
+    if (index>=0 && index<sMsgStatus.count() && index!=DecodedMessage::Unknown)
+        s = sMsgStatus[index];
+    if (delivered)
+        s += "," + QObject::tr("Dlv");
+    return s;
+}
+
+void DecodedMessageList::fromVMessageList(DecodedMessageList &messages, const QStringList &src, QStringList &errors, bool fromArchive)
+{
+    VMessageData vmg;
+    if (src.isEmpty()) // Crash protect
+        return;
+    if (src.first().startsWith("BEGIN:VMSG")) { // classic/Nokia vmessage
+        foreach(const QString& s, src) {
+            QStringList ss = s.split("\n");
+            vmg.importRecords(ss, messages, true, errors); // TODO merge duplicates on demand
+        }
+    }
+    else // MPB vmessage
+        vmg.importMPBRecords(src, messages, true, errors, fromArchive);
+}
+
+void DecodedMessageList::fromPDUList(DecodedMessageList &messages, const QStringList &src, QStringList &errors, bool fromArchive)
 {
     foreach(const QString& s, src) {
         QStringList ss = s.split(",");
@@ -135,6 +156,7 @@ void DecodedMessageList::fromPDUList(DecodedMessageList &messages, const QString
             int MsgType;
             DecodedMessage msg;
             msg.clear();
+            msg.sources = fromArchive ? usePDUArchive : usePDU;
             QDataStream ds(body);
             PDU::parseMessage(ds, msg, 1, MsgType);
             messages << msg;  // TODO merge duplicates on demand

@@ -34,7 +34,9 @@
 #include "comparedialog.h"
 #include "csvprofiledialog.h"
 #include "groupdialog.h"
+#include "helpers.h"
 #include "logwindow.h"
+#include "messagewindow.h"
 #include "multicontactdialog.h"
 #include "settingsdialog.h"
 #include "sortdialog.h"
@@ -512,7 +514,7 @@ bool MainWindow::checkSelection(bool errorIfNoSelected, bool onlyOneRowAllowed)
         return false;
     }
     if (onlyOneRowAllowed && (proxySelection.count()>1)) {
-        QMessageBox::critical(0, S_ERROR, tr("Group operation not impemented, select one record"));
+        QMessageBox::critical(0, S_ERROR, S_ONLY_ONE_REC);
         return false;
     }
     // If proxy models works...
@@ -644,9 +646,9 @@ void MainWindow::updateHeaders()
 
 void MainWindow::updateModeStatus()
 {
-    QString sm = tr("Mode: ");
+    QString sm = SS_MODE;
     sm += (configManager.showTwoPanels() ? tr("two panels") : tr("one panel")) + ", ";
-    sm += (ui->action_Sort->isChecked() ? tr("sorted") : tr("not sorted")) + ", ";
+    sm += (ui->action_Sort->isChecked() ? SS_SORT_ON : SS_SORT_OFF) + ", ";
     switch (modLeft->viewMode()) {
     case ContactModel::Standard:
         sm += tr("simple editing");
@@ -764,22 +766,6 @@ void MainWindow::updateConfig()
     if (modRight)
         modRight->updateVisibleColumns();
     // TODO add here font changes, etc.
-}
-
-// Set color/font for each table view
-void MainWindow::updateTableConfig(QTableView *table)
-{
-    table->setShowGrid(gd.showTableGrid);
-    table->verticalHeader()->setVisible(gd.showLineNumbers);
-    table->setAlternatingRowColors(gd.useTableAlternateColors);
-    if (!gd.useSystemFontsAndColors) {
-        QFont f;
-        bool fontSuccess = f.fromString(gd.tableFont);
-        if (fontSuccess)
-            table->setFont(f);
-        table->setStyleSheet(QString("QTableView { alternate-background-color: %1; background: %2 }")
-               .arg(gd.gridColor2).arg(gd.gridColor1));
-    }
 }
 
 void MainWindow::updateRecent()
@@ -1149,4 +1135,11 @@ void MainWindow::on_actionParse_full_name_triggered()
     selectedModel->parseFullName(selection);
     updateViewMode();
     updateHeaders();
+}
+
+void MainWindow::on_actionMessages_triggered()
+{
+    MessageWindow* w = new MessageWindow(&selectedModel->itemList());
+    w->exec();
+    delete w;
 }

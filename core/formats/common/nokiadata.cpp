@@ -99,6 +99,7 @@ bool NokiaData::ReadPredefBinMessage(const QString& fileName, const QByteArray &
 #endif
         }
     }
+    msg.sources = useBinary;
     list.push_back(msg);
     return true;
 }

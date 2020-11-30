@@ -222,7 +222,7 @@
      <x>0</x>
      <y>0</y>
      <width>817</width>
-     <height>22</height>
+     <height>30</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_File">
@@ -297,6 +297,7 @@
     </property>
     <addaction name="action_Two_panels"/>
     <addaction name="action_Groups"/>
+    <addaction name="actionMessages"/>
     <addaction name="actionSettings"/>
    </widget>
    <widget class="QMenu" name="menu_List">
@@ -619,6 +620,11 @@
   <action name="actionParse_full_name">
    <property name="text">
     <string>Parse full name</string>
+   </property>
+  </action>
+  <action name="actionMessages">
+   <property name="text">
+    <string>&amp;Messages...</string>
    </property>
   </action>
  </widget>

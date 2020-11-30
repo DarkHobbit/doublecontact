@@ -16,6 +16,8 @@
 
 #include <QItemDelegate>
 #include <QLabel>
+#include <QTableView>
+
 #include "contactlist.h"
 
 // Delegate for making table widgets read only
@@ -33,5 +35,9 @@ private:
 
 // Show photo on label
 void showPhoto(const Photo& photo, QLabel* label);
+
+// Set color/font for each table view
+void updateTableConfig(QTableView* table);
+
 
 #endif // HELPERS_H
