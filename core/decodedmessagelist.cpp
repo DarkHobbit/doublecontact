@@ -14,6 +14,7 @@
 #include <QFile>
 #include <QTextCodec>
 #include <QTextStream>
+#include <qglobal.h>
 #include "decodedmessagelist.h"
 #include "formats/common/nokiadata.h"
 #include "formats/common/pdu.h"
@@ -54,7 +55,8 @@ QString DecodedMessage::contactsToString() const
     return res.join(";");
 }
 
-DecodedMessageList::DecodedMessageList()
+DecodedMessageList::DecodedMessageList(bool mergeDuplicates)
+    : _mergeDuplicates(mergeDuplicates), mergeDupCount(0)
 {
     sMsgStatus
         << QObject::tr("Read")
@@ -95,7 +97,7 @@ bool DecodedMessageList::toCSV(const QString &path)
 
 DecodedMessageList DecodedMessageList::fromContactList(const ContactList &list, const MessageSourceFlags& flags, QStringList &errors)
 {
-    DecodedMessageList messages;
+    DecodedMessageList messages(flags.testFlag(mergeDuplicates));
     if (flags.testFlag(useVMessage))
         fromVMessageList(messages, list.extra.vmsgSMS, errors, false);
     if (flags.testFlag(useVMessageArchive))
@@ -108,7 +110,6 @@ DecodedMessageList DecodedMessageList::fromContactList(const ContactList &list, 
     // https://www.fjsoft.at/forum/viewtopic.php?t=29865
     if (flags.testFlag(useBinary) && !list.extra.binarySMS.isEmpty()) {
         foreach(const BinarySMS& sms, list.extra.binarySMS)
-             // TODO merge duplicates on demand
             NokiaData::ReadPredefBinMessage(sms.name, sms.content, messages, true, errors);
     }
     return messages;
@@ -131,6 +132,28 @@ QString DecodedMessageList::messageStates(int index, bool delivered) const
         s += "," + QObject::tr("Dlv");
     return s;
 }
+#include <iostream>
+void DecodedMessageList::addOrMerge(const DecodedMessage &msg)
+{
+    if (_mergeDuplicates) {
+        // We assume dplicate if date, text and first correspondent phonenumber are equal
+        for(DecodedMessage& item: *this) {
+            if (item.when==msg.when && item.contacts.count()==1 && msg.contacts.count()==1 && item.text==msg.text) {
+                const ContactItem ic = item.contacts.first();
+                const ContactItem mc = msg.contacts.first();
+                if (ic.phones.count()==1 && mc.phones.count()==1 && ic.phones.first().value==mc.phones.first().value) {
+                    std::cout << msg.when.toString().toLocal8Bit().data() << std::endl;
+                    item.sources |= msg.sources;
+                    mergeDupCount++;
+                    return;
+                }
+            }
+        }
+        *this << msg;
+    }
+    else
+        *this << msg;
+}
 
 void DecodedMessageList::fromVMessageList(DecodedMessageList &messages, const QStringList &src, QStringList &errors, bool fromArchive)
 {
@@ -140,7 +163,7 @@ void DecodedMessageList::fromVMessageList(DecodedMessageList &messages, const QS
     if (src.first().startsWith("BEGIN:VMSG")) { // classic/Nokia vmessage
         foreach(const QString& s, src) {
             QStringList ss = s.split("\n");
-            vmg.importRecords(ss, messages, true, errors); // TODO merge duplicates on demand
+            vmg.importRecords(ss, messages, true, errors);
         }
     }
     else // MPB vmessage
@@ -159,7 +182,7 @@ void DecodedMessageList::fromPDUList(DecodedMessageList &messages, const QString
             msg.sources = fromArchive ? usePDUArchive : usePDU;
             QDataStream ds(body);
             PDU::parseMessage(ds, msg, 1, MsgType);
-            messages << msg;  // TODO merge duplicates on demand
+            messages.addOrMerge(msg);
             // Todo field 0
             if (ss.length()>2 && !messages.last().when.isValid())
                 messages.last().when = QDateTime::fromString(ss[2], "ddMMyyyyhhmmssv");

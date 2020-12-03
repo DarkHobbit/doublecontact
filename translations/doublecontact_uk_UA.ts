@@ -1304,23 +1304,28 @@ Are you want switch column sorting off?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="147"/>
+        <location filename="../app/messagewindow.cpp" line="150"/>
         <source> with messages</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="151"/>
+        <location filename="../app/messagewindow.cpp" line="154"/>
         <source>Records: %1</source>
         <translation type="unfinished">Записів: %1</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="206"/>
+        <location filename="../app/messagewindow.cpp" line="155"/>
+        <source>Merged dups: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/messagewindow.cpp" line="210"/>
         <source>id: %1
 Sources: %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="224"/>
+        <location filename="../app/messagewindow.cpp" line="228"/>
         <source>Save messages file</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1360,7 +1365,7 @@ Sources: %2</source>
     <name>QObject</name>
     <message>
         <location filename="../core/contactlist.cpp" line="106"/>
-        <location filename="../core/contactlist.cpp" line="1010"/>
+        <location filename="../core/contactlist.cpp" line="1011"/>
         <source>Home</source>
         <translation>Домашній</translation>
     </message>
@@ -1371,7 +1376,7 @@ Sources: %2</source>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="108"/>
-        <location filename="../core/contactlist.cpp" line="1011"/>
+        <location filename="../core/contactlist.cpp" line="1012"/>
         <source>Work</source>
         <translation>Службовий</translation>
     </message>
@@ -1379,7 +1384,7 @@ Sources: %2</source>
         <location filename="../core/contactlist.cpp" line="109"/>
         <location filename="../core/contactlist.cpp" line="158"/>
         <location filename="../core/contactlist.cpp" line="194"/>
-        <location filename="../core/contactlist.cpp" line="1012"/>
+        <location filename="../core/contactlist.cpp" line="1013"/>
         <source>Preferable</source>
         <translation>Переважний</translation>
     </message>
@@ -1449,7 +1454,7 @@ Sources: %2</source>
         <translation>Дивний порожній контакт</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="857"/>
+        <location filename="../core/contactlist.cpp" line="858"/>
         <source>%1 records
 %2 phones
 %3 emails
@@ -1468,7 +1473,7 @@ SMS: %7
 архівних SMS: %8</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="861"/>
+        <location filename="../core/contactlist.cpp" line="862"/>
         <source>
 
 model %1
@@ -1505,22 +1510,22 @@ SMS: %7
 %9 %10</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1013"/>
+        <location filename="../core/contactlist.cpp" line="1014"/>
         <source>Domestic</source>
         <translation>Внутрішній</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1014"/>
+        <location filename="../core/contactlist.cpp" line="1015"/>
         <source>International</source>
         <translation>Міжнародний</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1015"/>
+        <location filename="../core/contactlist.cpp" line="1016"/>
         <source>Postal</source>
         <translation>Поштовий</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1016"/>
+        <location filename="../core/contactlist.cpp" line="1017"/>
         <source>Parcel</source>
         <translation>Для посилок</translation>
     </message>
@@ -2303,54 +2308,54 @@ Check username, password, protocol and port</source>
         <translation>Тест 1 відрізняється від 0x10: %1</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="60"/>
+        <location filename="../core/decodedmessagelist.cpp" line="62"/>
         <source>Read</source>
         <translation>Прочитане</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="61"/>
+        <location filename="../core/decodedmessagelist.cpp" line="63"/>
         <source>UnRd</source>
         <translation>Непрочитане</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="62"/>
+        <location filename="../core/decodedmessagelist.cpp" line="64"/>
         <source>Unk.</source>
         <translation>Невідоме</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="64"/>
+        <location filename="../core/decodedmessagelist.cpp" line="66"/>
         <source>Inbox</source>
         <translation>Вхідні</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="65"/>
+        <location filename="../core/decodedmessagelist.cpp" line="67"/>
         <source>Outbox</source>
         <translation>Вихідні</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="66"/>
+        <location filename="../core/decodedmessagelist.cpp" line="68"/>
         <source>Sentbox</source>
         <translation>Надіслані</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="67"/>
+        <location filename="../core/decodedmessagelist.cpp" line="69"/>
         <source>Draft</source>
         <translation>Чернетки</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="68"/>
+        <location filename="../core/decodedmessagelist.cpp" line="70"/>
         <source>Trash</source>
         <translation>Кошик</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="78"/>
+        <location filename="../core/decodedmessagelist.cpp" line="80"/>
         <source>&quot;Date&quot;,&quot;Box&quot;,&quot;From/To&quot;,&quot;Status&quot;,&quot;Text&quot;,&quot;Aux&quot;
 </source>
         <translation>&quot;Дата&quot;,&quot;Скринька&quot;,&quot;Від/Для&quot;,&quot;Статус&quot;,&quot;Текст&quot;,&quot;Додатково&quot;
 </translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="131"/>
+        <location filename="../core/decodedmessagelist.cpp" line="132"/>
         <source>Dlv</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2359,7 +2364,7 @@ Check username, password, protocol and port</source>
         <translation type="obsolete">Порожньо</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="168"/>
+        <location filename="../core/decodedmessagelist.cpp" line="191"/>
         <source>MPB message body missing</source>
         <translation type="unfinished"></translation>
     </message>

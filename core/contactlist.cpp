@@ -854,9 +854,10 @@ QString ContactList::statistics() const
             bdayCount++;
     }
     QString smsStat = QString("%1+%2+%3").arg(extra.vmsgSMS.count()).arg(extra.pduSMS.count()).arg(extra.binarySMS.count());
+    QString archSmsStat = QString("%1+%2").arg(extra.vmsgSMSArchive.count()).arg(extra.pduSMSArchive.count());
     QString res= QObject::tr("%1 records\n%2 phones\n%3 emails\n%4 addresses\n%5 birthdays\n%6 calls\n%7 SMS\n%8 archived SMS")
         .arg(count()).arg(phoneCount).arg(emailCount).arg(addrCount).arg(bdayCount)
-        .arg(extra.calls.count()).arg(smsStat).arg(extra.pduSMSArchive.count());
+        .arg(extra.calls.count()).arg(smsStat).arg(archSmsStat);
     if (!extra.model.isEmpty())
         res += QObject::tr("\n\nmodel %1\nwritten %2\nIMEI %3\nfirmware %4\nphone language %5")
             .arg(extra.model).arg(extra.timeStamp.toString())

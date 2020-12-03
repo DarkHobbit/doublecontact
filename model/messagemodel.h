@@ -42,6 +42,7 @@ public:
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const;
     // Helpers
     DecodedMessage& item(int index);
+    int mergeDupCount();
     bool saveToCSV(const QString& path);
 
 private:

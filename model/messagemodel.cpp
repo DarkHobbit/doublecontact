@@ -17,7 +17,7 @@
 #include "messagemodel.h"
 
 MessageModel::MessageModel(QObject *parent, ContactList* src)
-    : QAbstractTableModel(parent), _src(src)
+    : QAbstractTableModel(parent), _src(src), msgs(0)
 {
     headers
         << tr("Date")
@@ -95,6 +95,11 @@ QVariant MessageModel::data(const QModelIndex &index, int role) const
 DecodedMessage &MessageModel::item(int index)
 {
     return msgs[index];
+}
+
+int MessageModel::mergeDupCount()
+{
+    return msgs.mergeDupCount;
 }
 
 bool MessageModel::saveToCSV(const QString &path)

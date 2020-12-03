@@ -42,7 +42,7 @@ bool VMessageData::importRecords(const QStringList &lines, DecodedMessageList &l
         else if (s.startsWith("END:VMSG", Qt::CaseInsensitive)) {
             recordOpened = false;
             //msg.calculateFields();
-            list.push_back(msg);
+            list.addOrMerge(msg);
             msg.clear();
         }
         else {
@@ -114,7 +114,7 @@ bool VMessageData::importRecords(const QStringList &lines, DecodedMessageList &l
         }
     }
     if (recordOpened) {
-        list.push_back(msg);
+        list.addOrMerge(msg);
         errors << S_LAST_SECTION;
     }
     // Ready
@@ -147,7 +147,7 @@ bool VMessageData::importMPBRecords(const QStringList &lines, DecodedMessageList
         else if (s.startsWith("END:VMESSAGE", Qt::CaseInsensitive)) {
             recordOpened = false;
             //msg.calculateFields();
-            list.push_back(msg);
+            list.addOrMerge(msg);
             msg.clear();
         }
         else {
@@ -213,7 +213,7 @@ bool VMessageData::importMPBRecords(const QStringList &lines, DecodedMessageList
         }
     }
     if (recordOpened) {
-        list.push_back(msg);
+        list.addOrMerge(msg);
         errors << S_LAST_SECTION;
     }
     // Ready

@@ -100,9 +100,13 @@ QString LanguageManager::transPath()
     if (QDir("/usr/share/doublecontact/translations").exists())
         // Standard case
         return "/usr/share/doublecontact/translations";       
-    else
+    else {
         // Developer case
-        return qApp->applicationDirPath()+"/../translations";
+        if (QDir(qApp->applicationDirPath()+"/../translations").exists()) // in-source build
+            return qApp->applicationDirPath()+"/../translations";
+        else
+            return qApp->applicationDirPath()+"/../../doublecontact/translations"; // shadow build
+    }
 #endif
     // TODO what for mac?
 }

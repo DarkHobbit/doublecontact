@@ -22,8 +22,8 @@ enum MessageSourceFlag {
     useVMessageArchive = 0x02,
     usePDU             = 0x04,
     usePDUArchive      = 0x08,
-    useBinary          = 0x10
-    // mergeDuplicates, // TODO
+    useBinary          = 0x10,
+    mergeDuplicates    = 0x20
     // mergeMultiParts // TODO
 };
 
@@ -57,13 +57,15 @@ struct DecodedMessage {
 class DecodedMessageList : public QList<DecodedMessage>
 {
 public:
-    DecodedMessageList();
+    int mergeDupCount;
+    DecodedMessageList(bool mergeDuplicates);
     bool toCSV(const QString& path);
     static DecodedMessageList fromContactList(const ContactList& list, const MessageSourceFlags& flags, QStringList &errors);
     QString messageBoxes(int index) const;
     QString messageStates(int index, bool delivered) const;
-    //QString peersToString()
+    void addOrMerge(const DecodedMessage& msg);
 private:
+    bool _mergeDuplicates;
     QStringList sMsgStatus, sMsgBox;
     static void fromVMessageList(DecodedMessageList& messages, const QStringList& src, QStringList &errors, bool fromArchive);
     static void fromPDUList(DecodedMessageList& messages, const QStringList& src, QStringList &errors, bool fromArchive);

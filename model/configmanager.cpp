@@ -348,7 +348,7 @@ void ConfigManager::readMessageViewConfig(MessageSourceFlags &flags)
     setQFlag(flags, usePDU, settings->value("MessageView/UsePDU", true).toBool());
     setQFlag(flags, usePDUArchive, settings->value("MessageView/UsePDUArchive", true).toBool());
     setQFlag(flags, useBinary, settings->value("MessageView/UseBinary", true).toBool());
-    // bool mergeDuplicates; // TODO
+    setQFlag(flags, mergeDuplicates, settings->value("MessageView/MergeDuplicates", true).toBool());
     // bool mergeMultiParts; // TODO
 }
 
@@ -361,7 +361,7 @@ void ConfigManager::writeMessageViewConfig(const MessageSourceFlags &flags)
     settings->setValue("MessageView/UsePDU", flags.testFlag(usePDU));
     settings->setValue("MessageView/UsePDUArchive", flags.testFlag(usePDUArchive));
     settings->setValue("MessageView/UseBinary", flags.testFlag(useBinary));
-    // bool mergeDuplicates; // TODO
+    settings->setValue("MessageView/MergeDuplicates", flags.testFlag(mergeDuplicates));
     // bool mergeMultiParts; // TODO
 }
 

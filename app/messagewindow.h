@@ -51,13 +51,16 @@ private slots:
 
     void on_btnSaveAs_clicked();
 
+protected:
+    void showEvent(QShowEvent*);
+
 private:
     Ui::MessageWindow *ui;
     MessageSourceFlags srcFlags;
     MessageModel* model;
     ContactSorterFilter *proxy;
     QStatusBar* statusBar;
-    QLabel *lbCount, *lbMode;
+    QLabel *lbCount, *lbMode, *lbDups;
     void updateModel();
     void updateStatus();
     void checkButtons();

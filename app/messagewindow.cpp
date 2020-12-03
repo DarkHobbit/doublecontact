@@ -34,8 +34,10 @@ MessageWindow::MessageWindow(ContactList* contacts) :
     statusBar = new QStatusBar(this);
     lbCount = new QLabel(0);
     lbMode = new QLabel(0);
+    lbDups = new QLabel(0);
     statusBar->addWidget(lbCount);
     statusBar->addWidget(lbMode);
+    statusBar->addWidget(lbDups);
     layout()->addWidget(statusBar);
     // Table
     ui->tvMessages->horizontalHeader()->setStretchLastSection(true);
@@ -53,7 +55,7 @@ MessageWindow::MessageWindow(ContactList* contacts) :
     ui->cbVmessage->setChecked(srcFlags.testFlag(useVMessage) && ui->cbVmessage->isEnabled());
     ui->cbVmessageArchive->setChecked(srcFlags.testFlag(useVMessageArchive) && ui->cbVmessageArchive->isEnabled());
     ui->cbBinary->setChecked(srcFlags.testFlag(useBinary) && ui->cbBinary->isEnabled());
-    //ui->cbMergeDups->setChecked(srcFlags.???);
+    ui->cbMergeDups->setChecked(srcFlags.testFlag(mergeDuplicates));
     // TODO merge multipart
     checkMergeButton();
     // Model
@@ -63,8 +65,6 @@ MessageWindow::MessageWindow(ContactList* contacts) :
     proxy->setFilterKeyColumn(-1);
     ui->tvMessages->setModel(proxy);
     ui->tvMessages->setSortingEnabled(configManager.sortingEnabled());
-    updateModel();
-    ui->tvMessages->resizeColumnsToContents();
     // Shortcuts
     QShortcut* shcSortToggle = new QShortcut(Qt::Key_F4, this);
     connect(shcSortToggle, SIGNAL(activated()), this, SLOT(toggleSort()));
@@ -72,6 +72,9 @@ MessageWindow::MessageWindow(ContactList* contacts) :
     ui->tvMessages->setContextMenuPolicy(Qt::ActionsContextMenu);
     ui->tvMessages->addAction(ui->actionCopy_text);
     ui->tvMessages->addAction(ui->actionProperties);
+    // Calc!
+    updateModel();
+    ui->tvMessages->resizeColumnsToContents();
 }
 
 MessageWindow::~MessageWindow()
@@ -85,6 +88,7 @@ void MessageWindow::checkButtons()
     configManager.writeMessageViewConfig(srcFlags);
     if (model)
         updateModel();
+    ui->tvMessages->resizeRowsToContents();
 }
 
 void MessageWindow::checkMergeButton()
@@ -95,8 +99,8 @@ void MessageWindow::checkMergeButton()
     if (ui->cbVmessage->isChecked()) srcCount++;
     if (ui->cbVmessageArchive->isChecked()) srcCount++;
     if (ui->cbBinary->isChecked()) srcCount++;
-    /* TODO
     ui->cbMergeDups->setEnabled(srcCount>1);
+    /* TODO
     ui->cbMergeMultiparts->setEnabled(srcCount>0);
     */
 }
@@ -133,15 +137,14 @@ void MessageWindow::on_cbVmessageArchive_stateChanged(int)
 
 void MessageWindow::on_cbMergeDups_stateChanged(int)
 {
-    // TODO save to conf
-    // and redraw
+    setQFlag(srcFlags, mergeDuplicates,  ui->cbMergeDups->isChecked());
+    checkButtons();
 }
 
 void MessageWindow::updateModel()
 {
     QStringList errors;
     model->update(srcFlags, errors);
-    ui->tvMessages->resizeRowsToContents(); //TODO move to buttonproc and optionally return to defaults after merging multipart messages
     if (!errors.isEmpty()) {
         LogWindow* w = new LogWindow(0);
         w->setData(tr(" with messages"), model->rowCount(), errors);
@@ -149,6 +152,7 @@ void MessageWindow::updateModel()
         delete w;
     }
     lbCount->setText(tr("Records: %1").arg(model->rowCount()));
+    lbDups->setText(tr("Merged dups: %1").arg(model->mergeDupCount()));
     updateStatus();
 }
 
@@ -227,3 +231,9 @@ void MessageWindow::on_btnSaveAs_clicked()
     if (!path.isEmpty())
         model->saveToCSV(path);
 }
+
+void MessageWindow::showEvent(QShowEvent *)
+{
+    ui->tvMessages->resizeRowsToContents();
+}
+
