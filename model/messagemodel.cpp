@@ -66,7 +66,7 @@ QVariant MessageModel::data(const QModelIndex &index, int role) const
     if (role==Qt::DisplayRole) {
         switch (index.column()) {
             case mcDate:
-                return m.when.toString("dd.MM.yyyy HH:mm:ss");
+                return m.when.toString("dd.MM.yyyy HH:mm:ss t");
             case mcCorrespondent:
                 return m.contactsToString();
             case mcText:

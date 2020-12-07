@@ -81,7 +81,7 @@ bool VMessageData::importRecords(const QStringList &lines, DecodedMessageList &l
                     errors << S_UNKNOWN_MSG_VAL.arg(s);
             }
             else if (tag=="X-NOK-DT")
-                msg.when = QDateTime::fromString(val, "yyyyMMddThhmmssZ");
+                msg.when = QDateTime::fromString(val, "yyyyMMddThhmmsst");
             else if (tag=="X-MESSAGE-TYPE") {
                 if (uVal=="DELIVER")
                     msg.delivered = true;
@@ -194,7 +194,7 @@ bool VMessageData::importMPBRecords(const QStringList &lines, DecodedMessageList
                     errors << S_UNKNOWN_MSG_VAL.arg(s);
             }
             else if (tag=="DATE")
-                msg.when = QDateTime::fromString(val, "yyyyMMddThhmmssZ");
+                msg.when = QDateTime::fromString(val, "yyyyMMddThhmmsst");
             else if (tag=="NUMBER") {
                 msg.contacts << ContactItem();
                 msg.contacts.first().phones << Phone(uVal);
