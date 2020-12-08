@@ -1102,7 +1102,7 @@ Only some fields can this edited in this mode</source>
         <translation>Лише один з двох файлів можна перетягнути у вікно програми</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="644"/>
+        <location filename="../app/mainwindow.cpp" line="651"/>
         <source>Records: %1</source>
         <translation>Записів: %1</translation>
     </message>
@@ -1111,12 +1111,12 @@ Only some fields can this edited in this mode</source>
         <translation type="obsolete">Режим: </translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="650"/>
+        <location filename="../app/mainwindow.cpp" line="657"/>
         <source>two panels</source>
         <translation>2 панелі</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="650"/>
+        <location filename="../app/mainwindow.cpp" line="657"/>
         <source>one panel</source>
         <translation>1 панель</translation>
     </message>
@@ -1129,74 +1129,74 @@ Only some fields can this edited in this mode</source>
         <translation type="obsolete">не відсортовано</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="654"/>
+        <location filename="../app/mainwindow.cpp" line="661"/>
         <source>simple editing</source>
         <translation>проста правка</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="658"/>
+        <location filename="../app/mainwindow.cpp" line="665"/>
         <source>compare</source>
         <translation>порівняння</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="702"/>
+        <location filename="../app/mainwindow.cpp" line="709"/>
         <source>&apos;%1&apos; was changed.
 Save changes?</source>
         <translation>%1 було змінено.
 Зберегти зміни?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="799"/>
+        <location filename="../app/mainwindow.cpp" line="810"/>
         <source>Restart program to apply language change</source>
         <translation>Мову буде змінено після перезавантаження додатку</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="843"/>
+        <location filename="../app/mainwindow.cpp" line="854"/>
         <source>Two panels and compare mode needed for this operation</source>
         <translation>Спершу увімкніть дві панелі та режим порівняння</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="858"/>
+        <location filename="../app/mainwindow.cpp" line="869"/>
         <source>Left item</source>
         <translation>Лівий елемент</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="858"/>
+        <location filename="../app/mainwindow.cpp" line="869"/>
         <source>Right item</source>
         <translation>Правий елемент</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="884"/>
+        <location filename="../app/mainwindow.cpp" line="895"/>
         <source>Strongly two records on current panel must be selected for this operation</source>
         <translation>Для цієї операції необхідно обрати рівно два записи на поточній панелі</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="890"/>
+        <location filename="../app/mainwindow.cpp" line="901"/>
         <source>Item 1</source>
         <translation>Елемент 1</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="890"/>
+        <location filename="../app/mainwindow.cpp" line="901"/>
         <source>Item 2</source>
         <translation>Елемент 2</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="958"/>
+        <location filename="../app/mainwindow.cpp" line="969"/>
         <source>Operation requires show two panels</source>
         <translation>Операція потребує відображення двох панелей</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="991"/>
+        <location filename="../app/mainwindow.cpp" line="1002"/>
         <source>Statitics</source>
         <translation>Статистика</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="998"/>
+        <location filename="../app/mainwindow.cpp" line="1009"/>
         <source>Report file</source>
         <translation>Файл звіту</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1032"/>
+        <location filename="../app/mainwindow.cpp" line="1043"/>
         <source>Column sorting is switched. Hard sort results are not visible.
 Are you want switch column sorting off?</source>
         <translation>Увімкнено сортування по стовпцям. Результати жорсткого сортування не відображаються.
@@ -2385,6 +2385,11 @@ Check username, password, protocol and port</source>
     <message>
         <source>Last vMessage section not closed</source>
         <translation type="obsolete">Остання секція vMessage не закрита</translation>
+    </message>
+    <message>
+        <location filename="../model/recentlist.h" line="21"/>
+        <source>Clear recent list</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

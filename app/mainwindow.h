@@ -44,6 +44,7 @@ private slots:
     void setButtonsAccess();
     void selectionChanged();
     void recentItemClicked();
+    void clearRecentClicked();
     void onRequestCSVProfile(CSVFile* format);
     void on_actionCo_mpare_triggered();
     void on_btnCompare_clicked();

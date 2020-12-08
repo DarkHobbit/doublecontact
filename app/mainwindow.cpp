@@ -614,6 +614,13 @@ void MainWindow::recentItemClicked()
     }
 }
 
+void MainWindow::clearRecentClicked()
+{
+    recent.clear();
+    recent.write();
+    updateRecent();
+}
+
 void MainWindow::onRequestCSVProfile(CSVFile *format)
 {
     CSVProfileDialog* d = new CSVProfileDialog(0);
@@ -773,6 +780,10 @@ void MainWindow::updateRecent()
     ui->menuRecent->clear();
     foreach (const QString& s, recent)
         ui->menuRecent->addAction(s, this, SLOT(recentItemClicked()));
+    if (!recent.isEmpty()) {
+        ui->menuRecent->addSeparator();
+        ui->menuRecent->addAction(S_CLEAR_RECENT, this, SLOT(clearRecentClicked()));
+    }
     ui->menuRecent->setEnabled(recent.count()>0);
 }
 

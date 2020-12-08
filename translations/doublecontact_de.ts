@@ -990,17 +990,17 @@ Nur einige Felder können in diesem Modus bearbeitet werden.</translation>
         <translation> (Ordner)</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="644"/>
+        <location filename="../app/mainwindow.cpp" line="651"/>
         <source>Records: %1</source>
         <translation>Datensätze: %1</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="650"/>
+        <location filename="../app/mainwindow.cpp" line="657"/>
         <source>two panels</source>
         <translation>Zwei Fenster</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="650"/>
+        <location filename="../app/mainwindow.cpp" line="657"/>
         <source>one panel</source>
         <translation>Ein Fenster</translation>
     </message>
@@ -1013,74 +1013,74 @@ Nur einige Felder können in diesem Modus bearbeitet werden.</translation>
         <translation type="obsolete">Nicht sortiert</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="654"/>
+        <location filename="../app/mainwindow.cpp" line="661"/>
         <source>simple editing</source>
         <translation>Einfache Bearbeitung</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="658"/>
+        <location filename="../app/mainwindow.cpp" line="665"/>
         <source>compare</source>
         <translation>Vergleichen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="702"/>
+        <location filename="../app/mainwindow.cpp" line="709"/>
         <source>&apos;%1&apos; was changed.
 Save changes?</source>
         <translation>„%1” wurde geändert.
 Änderungen speichern?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="799"/>
+        <location filename="../app/mainwindow.cpp" line="810"/>
         <source>Restart program to apply language change</source>
         <translation>Anwendung neu starten, um die Sprachumschaltung zu übernehmen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="843"/>
+        <location filename="../app/mainwindow.cpp" line="854"/>
         <source>Two panels and compare mode needed for this operation</source>
         <translation>Zwei Fenster und Vergleichsmodus sind für diese Aufgabe erforderlich</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="858"/>
+        <location filename="../app/mainwindow.cpp" line="869"/>
         <source>Left item</source>
         <translation>Linkes Element</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="858"/>
+        <location filename="../app/mainwindow.cpp" line="869"/>
         <source>Right item</source>
         <translation>Rechtes Element</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="884"/>
+        <location filename="../app/mainwindow.cpp" line="895"/>
         <source>Strongly two records on current panel must be selected for this operation</source>
         <translation>Zwei Datensätze im aktuellen Fenster sind zwingend für diesen Vorgang auszuwählen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="890"/>
+        <location filename="../app/mainwindow.cpp" line="901"/>
         <source>Item 1</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="890"/>
+        <location filename="../app/mainwindow.cpp" line="901"/>
         <source>Item 2</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="958"/>
+        <location filename="../app/mainwindow.cpp" line="969"/>
         <source>Operation requires show two panels</source>
         <translation>Für die Aufgabe sind zwei Fenster erforderlich</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="991"/>
+        <location filename="../app/mainwindow.cpp" line="1002"/>
         <source>Statitics</source>
         <translation>Statistiken</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="998"/>
+        <location filename="../app/mainwindow.cpp" line="1009"/>
         <source>Report file</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1032"/>
+        <location filename="../app/mainwindow.cpp" line="1043"/>
         <source>Column sorting is switched. Hard sort results are not visible.
 Are you want switch column sorting off?</source>
         <translation>Die Spaltensortierung wurde gewechselt. Harte Sortierergebnisse sind nicht sichtbar.
@@ -2263,6 +2263,11 @@ Benutzername, Passwort, Protokoll und Port überprüfen</translation>
     <message>
         <source>Last vMessage section not closed</source>
         <translation type="obsolete">Letzter vMessage-Abschnitt nicht geschlossen</translation>
+    </message>
+    <message>
+        <location filename="../model/recentlist.h" line="21"/>
+        <source>Clear recent list</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

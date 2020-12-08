@@ -958,7 +958,7 @@ Seuls certains champs peuvent être modifiés dans ce mode</translation>
         <translation> (répertoire)</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="644"/>
+        <location filename="../app/mainwindow.cpp" line="651"/>
         <source>Records: %1</source>
         <translation>Enregistrements : %1</translation>
     </message>
@@ -967,12 +967,12 @@ Seuls certains champs peuvent être modifiés dans ce mode</translation>
         <translation type="obsolete">Mode : </translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="650"/>
+        <location filename="../app/mainwindow.cpp" line="657"/>
         <source>two panels</source>
         <translation>deux panneaux</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="650"/>
+        <location filename="../app/mainwindow.cpp" line="657"/>
         <source>one panel</source>
         <translation>un seul panneau</translation>
     </message>
@@ -985,74 +985,74 @@ Seuls certains champs peuvent être modifiés dans ce mode</translation>
         <translation type="obsolete">non trié</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="654"/>
+        <location filename="../app/mainwindow.cpp" line="661"/>
         <source>simple editing</source>
         <translation>modification simple</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="658"/>
+        <location filename="../app/mainwindow.cpp" line="665"/>
         <source>compare</source>
         <translation>comparer</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="702"/>
+        <location filename="../app/mainwindow.cpp" line="709"/>
         <source>&apos;%1&apos; was changed.
 Save changes?</source>
         <translation>« %1 » a été modifié.
 Enregistrer les modifications ?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="799"/>
+        <location filename="../app/mainwindow.cpp" line="810"/>
         <source>Restart program to apply language change</source>
         <translation>Redémarrez le programme pour appliquer le changement de langue</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="843"/>
+        <location filename="../app/mainwindow.cpp" line="854"/>
         <source>Two panels and compare mode needed for this operation</source>
         <translation>L&apos;affichage des deux panneaux et le mode de comparaison sont nécessaires pour cette opération</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="858"/>
+        <location filename="../app/mainwindow.cpp" line="869"/>
         <source>Left item</source>
         <translation>Élément à gauche</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="858"/>
+        <location filename="../app/mainwindow.cpp" line="869"/>
         <source>Right item</source>
         <translation>Élément à droite</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="884"/>
+        <location filename="../app/mainwindow.cpp" line="895"/>
         <source>Strongly two records on current panel must be selected for this operation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="890"/>
+        <location filename="../app/mainwindow.cpp" line="901"/>
         <source>Item 1</source>
         <translation>Élément 1</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="890"/>
+        <location filename="../app/mainwindow.cpp" line="901"/>
         <source>Item 2</source>
         <translation>Élément 2</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="958"/>
+        <location filename="../app/mainwindow.cpp" line="969"/>
         <source>Operation requires show two panels</source>
         <translation>Cette opération nécessite l&apos;affichage des deux panneaux</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="991"/>
+        <location filename="../app/mainwindow.cpp" line="1002"/>
         <source>Statitics</source>
         <translation>Statistiques</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="998"/>
+        <location filename="../app/mainwindow.cpp" line="1009"/>
         <source>Report file</source>
         <translation>Fichier de rapport</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1032"/>
+        <location filename="../app/mainwindow.cpp" line="1043"/>
         <source>Column sorting is switched. Hard sort results are not visible.
 Are you want switch column sorting off?</source>
         <translation type="unfinished"></translation>
@@ -2182,6 +2182,11 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../core/globals.h" line="141"/>
         <source>Unknown vMessage value: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../model/recentlist.h" line="21"/>
+        <source>Clear recent list</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

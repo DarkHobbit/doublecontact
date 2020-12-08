@@ -1006,7 +1006,7 @@ Kun noen felter kan redigeres i dette moduset</translation>
         <translation> (mappe)</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="644"/>
+        <location filename="../app/mainwindow.cpp" line="651"/>
         <source>Records: %1</source>
         <translation>Oppføringer: %1</translation>
     </message>
@@ -1015,12 +1015,12 @@ Kun noen felter kan redigeres i dette moduset</translation>
         <translation type="obsolete">Modus: </translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="650"/>
+        <location filename="../app/mainwindow.cpp" line="657"/>
         <source>two panels</source>
         <translation>to paneler</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="650"/>
+        <location filename="../app/mainwindow.cpp" line="657"/>
         <source>one panel</source>
         <translation>ett panel</translation>
     </message>
@@ -1033,74 +1033,74 @@ Kun noen felter kan redigeres i dette moduset</translation>
         <translation type="obsolete">usortert</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="654"/>
+        <location filename="../app/mainwindow.cpp" line="661"/>
         <source>simple editing</source>
         <translation>enkel redigering</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="658"/>
+        <location filename="../app/mainwindow.cpp" line="665"/>
         <source>compare</source>
         <translation>sammenlign</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="702"/>
+        <location filename="../app/mainwindow.cpp" line="709"/>
         <source>&apos;%1&apos; was changed.
 Save changes?</source>
         <translation>&quot;%1&quot; ble endret.
 Lagre endringer?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="799"/>
+        <location filename="../app/mainwindow.cpp" line="810"/>
         <source>Restart program to apply language change</source>
         <translation>Start programmet på nytt for å legge til programspråk</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="843"/>
+        <location filename="../app/mainwindow.cpp" line="854"/>
         <source>Two panels and compare mode needed for this operation</source>
         <translation>To paneler og sammenligningsmodus trengs for denne handlingen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="858"/>
+        <location filename="../app/mainwindow.cpp" line="869"/>
         <source>Left item</source>
         <translation>Venstre element</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="858"/>
+        <location filename="../app/mainwindow.cpp" line="869"/>
         <source>Right item</source>
         <translation>Høyre element</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="884"/>
+        <location filename="../app/mainwindow.cpp" line="895"/>
         <source>Strongly two records on current panel must be selected for this operation</source>
         <translation>To dataoppføringer på gjeldende panel må være valgt sterkt for denne operasjonen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="890"/>
+        <location filename="../app/mainwindow.cpp" line="901"/>
         <source>Item 1</source>
         <translation>Element 1</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="890"/>
+        <location filename="../app/mainwindow.cpp" line="901"/>
         <source>Item 2</source>
         <translation>Element 2</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="958"/>
+        <location filename="../app/mainwindow.cpp" line="969"/>
         <source>Operation requires show two panels</source>
         <translation type="unfinished">Operasjonen krever visning av to paneler</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="991"/>
+        <location filename="../app/mainwindow.cpp" line="1002"/>
         <source>Statitics</source>
         <translation>Statistikk</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="998"/>
+        <location filename="../app/mainwindow.cpp" line="1009"/>
         <source>Report file</source>
         <translation>Rapportfil</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1032"/>
+        <location filename="../app/mainwindow.cpp" line="1043"/>
         <source>Column sorting is switched. Hard sort results are not visible.
 Are you want switch column sorting off?</source>
         <translation type="unfinished">Kolonnesortering er byttet. Harde sorteringsresultater er ikke synlige.
@@ -2289,6 +2289,11 @@ Sjekk brukernavn, passord, protokoll og port</translation>
     <message>
         <source>Last vMessage section not closed</source>
         <translation type="obsolete">Siste vMessage-seksjon ble ikke sluttført</translation>
+    </message>
+    <message>
+        <location filename="../model/recentlist.h" line="21"/>
+        <source>Clear recent list</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

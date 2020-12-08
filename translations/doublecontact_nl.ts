@@ -1102,7 +1102,7 @@ In deze modus kan slechts een beperkt aantal velden worden gewijzigd</translatio
         <translation>Slechts één van de twee bestanden kan worden versleept naar het applicatievenster</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="644"/>
+        <location filename="../app/mainwindow.cpp" line="651"/>
         <source>Records: %1</source>
         <translation>Items: %1</translation>
     </message>
@@ -1111,12 +1111,12 @@ In deze modus kan slechts een beperkt aantal velden worden gewijzigd</translatio
         <translation type="obsolete">Modus: </translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="650"/>
+        <location filename="../app/mainwindow.cpp" line="657"/>
         <source>two panels</source>
         <translation>twee panelen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="650"/>
+        <location filename="../app/mainwindow.cpp" line="657"/>
         <source>one panel</source>
         <translation>één paneel</translation>
     </message>
@@ -1129,74 +1129,74 @@ In deze modus kan slechts een beperkt aantal velden worden gewijzigd</translatio
         <translation type="obsolete">ongesorteerd</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="654"/>
+        <location filename="../app/mainwindow.cpp" line="661"/>
         <source>simple editing</source>
         <translation>simpele bewerking</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="658"/>
+        <location filename="../app/mainwindow.cpp" line="665"/>
         <source>compare</source>
         <translation>vergelijken</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="702"/>
+        <location filename="../app/mainwindow.cpp" line="709"/>
         <source>&apos;%1&apos; was changed.
 Save changes?</source>
         <translation>&apos;%1&apos; is gewijzigd.
 Wilt u de wijzigingen opslaan?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="799"/>
+        <location filename="../app/mainwindow.cpp" line="810"/>
         <source>Restart program to apply language change</source>
         <translation>Herstart de app om de taalwijziging door te voeren</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="843"/>
+        <location filename="../app/mainwindow.cpp" line="854"/>
         <source>Two panels and compare mode needed for this operation</source>
         <translation>De twee panelen- en vergelijkingsmodus zijn vereist voor deze bewerking</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="858"/>
+        <location filename="../app/mainwindow.cpp" line="869"/>
         <source>Left item</source>
         <translation>Linkeritem</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="858"/>
+        <location filename="../app/mainwindow.cpp" line="869"/>
         <source>Right item</source>
         <translation>Rechteritem</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="884"/>
+        <location filename="../app/mainwindow.cpp" line="895"/>
         <source>Strongly two records on current panel must be selected for this operation</source>
         <translation>Twee items in het huidige paneel dienen te worden geselecteerd voor deze bewerking</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="890"/>
+        <location filename="../app/mainwindow.cpp" line="901"/>
         <source>Item 1</source>
         <translation>Item 1</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="890"/>
+        <location filename="../app/mainwindow.cpp" line="901"/>
         <source>Item 2</source>
         <translation>Item 2</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="958"/>
+        <location filename="../app/mainwindow.cpp" line="969"/>
         <source>Operation requires show two panels</source>
         <translation>Deze bewerking vereist twee panelen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="991"/>
+        <location filename="../app/mainwindow.cpp" line="1002"/>
         <source>Statitics</source>
         <translation>Statistieken</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="998"/>
+        <location filename="../app/mainwindow.cpp" line="1009"/>
         <source>Report file</source>
         <translation>Rapportbestand</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1032"/>
+        <location filename="../app/mainwindow.cpp" line="1043"/>
         <source>Column sorting is switched. Hard sort results are not visible.
 Are you want switch column sorting off?</source>
         <translation>Kolomsortering is gewijzigd. Harde sorteringsresultaten zijn niet zichtbaar.
@@ -2397,6 +2397,11 @@ Controleer gebruikersnaam, wachtwoord, protocol en poort</translation>
     <message>
         <source>Last vMessage section not closed</source>
         <translation type="obsolete">Vorige vMessage-sectie niet gesloten</translation>
+    </message>
+    <message>
+        <location filename="../model/recentlist.h" line="21"/>
+        <source>Clear recent list</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
