@@ -21,6 +21,7 @@ void RecentList::read()
 {
     clear();
     QSettings settings("DarkHobbit", "doublecontact"); // TODO unify with main config
+    settings.setIniCodec("UTF8");
     int _count = settings.value("Recent/Count", 0).toInt();
     for (int i=1; i<=_count; i++)
         push_back(settings.value(QString("Recent/Item%1").arg(i)).toString());
