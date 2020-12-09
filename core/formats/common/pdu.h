@@ -26,10 +26,11 @@ class PDU
 public:
     PDU();
     static bool parseMessage(QDataStream& ds, DecodedMessage& msg, int offset, int& MsgType);
+private:
     static QString readPhoneNumber(QDataStream& s, bool lenInBytes = false);
     static QDateTime readDateTime(QDataStream& s);
-    static QString decodeMessageBody(bool udhi, bool ucs2, QDataStream& s);
-    static QString decodeMessageText(bool udhi, bool ucs2, int len, quint8* buff);
+    static void decodeMessageBody(bool udhi, bool ucs2, QDataStream& s, DecodedMessage& msg);
+    static void decodeMessageText(bool udhi, bool ucs2, int len, quint8* buff, DecodedMessage& msg);
     static quint8* convert8to7(quint8* raw, int len, int inLen, int& outLen);
     static QString decode7bit(quint8* source, int length, int inLength);
     static quint8 readInvertDecimalByte(QDataStream& s);

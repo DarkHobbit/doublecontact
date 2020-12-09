@@ -43,6 +43,7 @@ public:
     // Helpers
     DecodedMessage& item(int index);
     int mergeDupCount();
+    int mergeMultiPartCount();
     bool saveToCSV(const QString& path);
 
 private:

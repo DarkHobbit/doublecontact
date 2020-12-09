@@ -1255,29 +1255,34 @@ Are you want switch column sorting off?</source>
         <translation>Свойства</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="150"/>
+        <location filename="../app/messagewindow.cpp" line="156"/>
         <source> with messages</source>
         <translation> с сообщениями</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="154"/>
+        <location filename="../app/messagewindow.cpp" line="160"/>
         <source>Records: %1</source>
         <translation>Записей: %1</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="155"/>
+        <location filename="../app/messagewindow.cpp" line="161"/>
         <source>Merged dups: %1</source>
         <translation>Слито дублей: %1</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="210"/>
+        <location filename="../app/messagewindow.cpp" line="162"/>
+        <source>Merged multiparted: %1</source>
+        <translation>Слито составных: %1</translation>
+    </message>
+    <message>
+        <location filename="../app/messagewindow.cpp" line="217"/>
         <source>id: %1
 Sources: %2</source>
         <translation>Ид: %1
 Источники: %2</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="228"/>
+        <location filename="../app/messagewindow.cpp" line="235"/>
         <source>Save messages file</source>
         <translation>Сохранить файл сообщений</translation>
     </message>
@@ -2247,54 +2252,54 @@ Check username, password, protocol and port</source>
         <translation>Тест 1 отличается от 0x10: %1</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="62"/>
+        <location filename="../core/decodedmessagelist.cpp" line="67"/>
         <source>Read</source>
         <translation>Читать</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="63"/>
+        <location filename="../core/decodedmessagelist.cpp" line="68"/>
         <source>UnRd</source>
         <translation>Непрочитано</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="64"/>
+        <location filename="../core/decodedmessagelist.cpp" line="69"/>
         <source>Unk.</source>
         <translation>Неизв.</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="66"/>
+        <location filename="../core/decodedmessagelist.cpp" line="71"/>
         <source>Inbox</source>
         <translation>Входящие</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="67"/>
+        <location filename="../core/decodedmessagelist.cpp" line="72"/>
         <source>Outbox</source>
         <translation>Исходящие</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="68"/>
+        <location filename="../core/decodedmessagelist.cpp" line="73"/>
         <source>Sentbox</source>
         <translation>Отправленные</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="69"/>
+        <location filename="../core/decodedmessagelist.cpp" line="74"/>
         <source>Draft</source>
         <translation>Черновики</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="70"/>
+        <location filename="../core/decodedmessagelist.cpp" line="75"/>
         <source>Trash</source>
         <translation>Корзина</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="80"/>
+        <location filename="../core/decodedmessagelist.cpp" line="85"/>
         <source>&quot;Date&quot;,&quot;Box&quot;,&quot;From/To&quot;,&quot;Status&quot;,&quot;Text&quot;,&quot;Aux&quot;
 </source>
         <translation>&quot;Дата&quot;, &quot;Почта&quot;, &quot;От/Кому&quot;, &quot;Состояние&quot;, &quot;Текст&quot;, &quot;Вспомогательные&quot;
 </translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="132"/>
+        <location filename="../core/decodedmessagelist.cpp" line="138"/>
         <source>Dlv</source>
         <translation>Дост</translation>
     </message>
@@ -2303,7 +2308,7 @@ Check username, password, protocol and port</source>
         <translation type="obsolete">Пусто</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="191"/>
+        <location filename="../core/decodedmessagelist.cpp" line="219"/>
         <source>MPB message body missing</source>
         <translation>Отсутствует тело MPB-сообщения</translation>
     </message>

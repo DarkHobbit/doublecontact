@@ -35,9 +35,11 @@ MessageWindow::MessageWindow(ContactList* contacts) :
     lbCount = new QLabel(0);
     lbMode = new QLabel(0);
     lbDups = new QLabel(0);
+    lbMultiParts = new QLabel(0);
     statusBar->addWidget(lbCount);
     statusBar->addWidget(lbMode);
     statusBar->addWidget(lbDups);
+    statusBar->addWidget(lbMultiParts);
     layout()->addWidget(statusBar);
     // Table
     ui->tvMessages->horizontalHeader()->setStretchLastSection(true);
@@ -56,7 +58,7 @@ MessageWindow::MessageWindow(ContactList* contacts) :
     ui->cbVmessageArchive->setChecked(srcFlags.testFlag(useVMessageArchive) && ui->cbVmessageArchive->isEnabled());
     ui->cbBinary->setChecked(srcFlags.testFlag(useBinary) && ui->cbBinary->isEnabled());
     ui->cbMergeDups->setChecked(srcFlags.testFlag(mergeDuplicates));
-    // TODO merge multipart
+    ui->cbMergeMultiparts->setChecked(srcFlags.testFlag(mergeMultiParts));
     checkMergeButton();
     // Model
     model = new MessageModel(this, contacts);
@@ -99,10 +101,8 @@ void MessageWindow::checkMergeButton()
     if (ui->cbVmessage->isChecked()) srcCount++;
     if (ui->cbVmessageArchive->isChecked()) srcCount++;
     if (ui->cbBinary->isChecked()) srcCount++;
-    ui->cbMergeDups->setEnabled(srcCount>1);
-    /* TODO
+    ui->cbMergeDups->setEnabled(srcCount>0);// Initially >1, but dups can be even in one source
     ui->cbMergeMultiparts->setEnabled(srcCount>0);
-    */
 }
 
 void MessageWindow::on_cbPDU_stateChanged(int)
@@ -141,6 +141,12 @@ void MessageWindow::on_cbMergeDups_stateChanged(int)
     checkButtons();
 }
 
+void MessageWindow::on_cbMergeMultiparts_stateChanged(int)
+{
+    setQFlag(srcFlags, mergeMultiParts,  ui->cbMergeMultiparts->isChecked());
+    checkButtons();
+}
+
 void MessageWindow::updateModel()
 {
     QStringList errors;
@@ -153,6 +159,7 @@ void MessageWindow::updateModel()
     }
     lbCount->setText(tr("Records: %1").arg(model->rowCount()));
     lbDups->setText(tr("Merged dups: %1").arg(model->mergeDupCount()));
+    lbMultiParts->setText(tr("Merged multiparted: %1").arg(model->mergeMultiPartCount()));
     updateStatus();
 }
 
@@ -236,4 +243,3 @@ void MessageWindow::showEvent(QShowEvent *)
 {
     ui->tvMessages->resizeRowsToContents();
 }
-

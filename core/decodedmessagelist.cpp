@@ -30,6 +30,9 @@ void DecodedMessage::clear()
     contacts.clear();
     when = QDateTime();
     text.clear();
+    isMultiPart = false;
+    partNumber = 0;
+    totalParts = 0;
 }
 
 QString DecodedMessage::contactsToString() const
@@ -55,8 +58,10 @@ QString DecodedMessage::contactsToString() const
     return res.join(";");
 }
 
-DecodedMessageList::DecodedMessageList(bool mergeDuplicates)
-    : _mergeDuplicates(mergeDuplicates), mergeDupCount(0)
+DecodedMessageList::DecodedMessageList(bool mergeDuplicates, bool mergeMultiParts)
+    : mergeDupCount(0), mergeMultiPartCount(0),
+    _mergeDuplicates(mergeDuplicates), _mergeMultiParts(mergeMultiParts)
+
 {
     sMsgStatus
         << QObject::tr("Read")
@@ -97,7 +102,8 @@ bool DecodedMessageList::toCSV(const QString &path)
 
 DecodedMessageList DecodedMessageList::fromContactList(const ContactList &list, const MessageSourceFlags& flags, QStringList &errors)
 {
-    DecodedMessageList messages(flags.testFlag(mergeDuplicates));
+    DecodedMessageList messages(
+        flags.testFlag(mergeDuplicates), flags.testFlag(mergeMultiParts));
     if (flags.testFlag(useVMessage))
         fromVMessageList(messages, list.extra.vmsgSMS, errors, false);
     if (flags.testFlag(useVMessageArchive))
@@ -133,8 +139,30 @@ QString DecodedMessageList::messageStates(int index, bool delivered) const
     return s;
 }
 #include <iostream>
-void DecodedMessageList::addOrMerge(const DecodedMessage &msg)
+void DecodedMessageList::addOrMerge(DecodedMessage &msg)
 {
+    // Merge multipart messages
+    if (msg.isMultiPart) {
+        if (_mergeMultiParts) {
+            static QString multiText; // inter-parts buffer
+            if (msg.partNumber==1) { // First part
+                multiText = msg.text;
+                return;
+            }
+            else if (msg.partNumber<msg.totalParts) { // Middle parts
+                multiText += msg.text;
+                return;
+            }
+            else { // Last part
+                msg.text = multiText + msg.text;
+                mergeMultiPartCount++;
+            }
+        }
+        else
+            msg.text = QString("(%1)[%2/%3]:%4")
+                    .arg(msg.id).arg(msg.partNumber).arg(msg.totalParts).arg(msg.text);
+    }
+    // Merge duplicates
     if (_mergeDuplicates) {
         // We assume dplicate if date, text and first correspondent phonenumber are equal
         for(DecodedMessage& item: *this) {

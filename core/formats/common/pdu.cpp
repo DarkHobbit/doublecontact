@@ -40,7 +40,7 @@ bool PDU::parseMessage(QDataStream& ds, DecodedMessage& msg, int offset, int &Ms
         ucs2 = (byte == 8);
         msg.when = readDateTime(ds);
         ds >> byte;
-        msg.text = decodeMessageBody(udhi, ucs2, ds);
+        decodeMessageBody(udhi, ucs2, ds, msg);
         break;
     case 1:
         msg.box = DecodedMessage::Outbox;
@@ -53,7 +53,7 @@ bool PDU::parseMessage(QDataStream& ds, DecodedMessage& msg, int offset, int &Ms
         ds >> byte;
         ucs2 = (byte == 8);
         ds >> byte;
-        msg.text = decodeMessageBody(udhi, ucs2, ds);
+        decodeMessageBody(udhi, ucs2, ds, msg);
         break;
     default:
         return false;
@@ -130,7 +130,7 @@ QDateTime PDU::readDateTime(QDataStream &s)
     return QDateTime(QDate(year, month, day), QTime(hour, min, sec));
 }
 
-QString PDU::decodeMessageBody(bool udhi, bool ucs2, QDataStream &s)
+void PDU::decodeMessageBody(bool udhi, bool ucs2, QDataStream &s, DecodedMessage& msg)
 {
     quint8 byte;
     s >> byte;
@@ -147,14 +147,12 @@ QString PDU::decodeMessageBody(bool udhi, bool ucs2, QDataStream &s)
         buff = new quint8[len7];
         s.readRawData((char*)buff, len7);
     }
-    QString res = decodeMessageText(udhi, ucs2, len, buff);
+    decodeMessageText(udhi, ucs2, len, buff, msg);
     delete[] buff;
-    return res;
 }
 
-QString PDU::decodeMessageText(bool udhi, bool ucs2, int len, quint8 *buff)
+void PDU::decodeMessageText(bool udhi, bool ucs2, int len, quint8 *buff, DecodedMessage& msg)
 {
-    QString res;
     if (udhi)
     {
         int headLength = buff[0];
@@ -163,47 +161,41 @@ QString PDU::decodeMessageText(bool udhi, bool ucs2, int len, quint8 *buff)
         if (ucs2)
         {
             QTextCodec* bee = QTextCodec::codecForName("UTF-16BE"); // TODO to constr.
-            res = bee->toUnicode((char*)buff+skipChars, len-skipChars);
+            msg.text = bee->toUnicode((char*)buff+skipChars, len-skipChars);
         }
         else
         {
             skipChars = (int)ceil(skipChars * 8.0 / 7);
-            res = decode7bit(buff, len, len /* ??? TODO valgrind */).mid(skipChars);
+            msg.text = decode7bit(buff, len, len /* ??? TODO valgrind */).mid(skipChars);
         }
-        bool isMultiPart = false;
-        int partNumber;
-        int totalParts;
-        quint8 messageNumber;
+        quint8 messageNumber = 0;
         if (headLength > 4 && buff[2] == 3 && buff[4] > 1)
         {
-            isMultiPart = true;
+            msg.isMultiPart = true;
             messageNumber = buff[3];
-            totalParts = buff[4];
-            partNumber = buff[5];
+            msg.totalParts = buff[4];
+            msg.partNumber = buff[5];
         }
         else if (headLength > 5 && buff[2] == 4)
         {
-            isMultiPart = true;
+            msg.isMultiPart = true;
             messageNumber = buff[4];
-            totalParts = buff[5];
-            partNumber = buff[6];
+            msg.totalParts = buff[5];
+            msg.partNumber = buff[6];
         }
-        if (isMultiPart)
-            res = QString("(%1)[%2/%3]:%4")
-               .arg(messageNumber).arg(partNumber)
-               .arg(totalParts).arg(res);
+        if (messageNumber)
+            msg.id = QString::number(messageNumber);
     }
     else
     {
         if (ucs2)
         {
             QTextCodec* bee = QTextCodec::codecForName("UTF-16BE"); // TODO to constr.
-            res = bee->toUnicode((char*)buff, len);
+            msg.text = bee->toUnicode((char*)buff, len);
         }
         else
-            res = decode7bit(buff, len, len /* ??? TODO valgrind */);
+            msg.text = decode7bit(buff, len, len /* ??? TODO valgrind */);
     }
-    return res;
 }
 
 quint8 *PDU::convert8to7(quint8 *raw, int len, int inLen, int& outLen)

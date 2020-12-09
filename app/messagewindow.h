@@ -41,14 +41,11 @@ private slots:
     void on_cbVmessage_stateChanged(int);
     void on_cbVmessageArchive_stateChanged(int);
     void on_cbMergeDups_stateChanged(int);
+    void on_cbMergeMultiparts_stateChanged(int);
     void toggleSort();
-
     void on_actionCopy_text_triggered();
-
     void on_actionProperties_triggered();
-
     void on_leFilter_textChanged(const QString &newText);
-
     void on_btnSaveAs_clicked();
 
 protected:
@@ -60,7 +57,7 @@ private:
     MessageModel* model;
     ContactSorterFilter *proxy;
     QStatusBar* statusBar;
-    QLabel *lbCount, *lbMode, *lbDups;
+    QLabel *lbCount, *lbMode, *lbDups, *lbMultiParts;
     void updateModel();
     void updateStatus();
     void checkButtons();

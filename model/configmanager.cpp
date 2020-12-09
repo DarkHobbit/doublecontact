@@ -349,7 +349,7 @@ void ConfigManager::readMessageViewConfig(MessageSourceFlags &flags)
     setQFlag(flags, usePDUArchive, settings->value("MessageView/UsePDUArchive", true).toBool());
     setQFlag(flags, useBinary, settings->value("MessageView/UseBinary", true).toBool());
     setQFlag(flags, mergeDuplicates, settings->value("MessageView/MergeDuplicates", true).toBool());
-    // bool mergeMultiParts; // TODO
+    setQFlag(flags, mergeMultiParts, settings->value("MessageView/MergeMultiParts", true).toBool());
 }
 
 void ConfigManager::writeMessageViewConfig(const MessageSourceFlags &flags)
@@ -362,7 +362,7 @@ void ConfigManager::writeMessageViewConfig(const MessageSourceFlags &flags)
     settings->setValue("MessageView/UsePDUArchive", flags.testFlag(usePDUArchive));
     settings->setValue("MessageView/UseBinary", flags.testFlag(useBinary));
     settings->setValue("MessageView/MergeDuplicates", flags.testFlag(mergeDuplicates));
-    // bool mergeMultiParts; // TODO
+    settings->setValue("MessageView/MergeMultiParts", flags.testFlag(mergeMultiParts));
 }
 
 QString ConfigManager::defaultDocDir()

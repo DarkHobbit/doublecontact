@@ -23,8 +23,8 @@ enum MessageSourceFlag {
     usePDU             = 0x04,
     usePDUArchive      = 0x08,
     useBinary          = 0x10,
-    mergeDuplicates    = 0x20
-    // mergeMultiParts // TODO
+    mergeDuplicates    = 0x20,
+    mergeMultiParts    = 0x40
 };
 
 typedef QFlags<MessageSourceFlag> MessageSourceFlags;
@@ -49,6 +49,8 @@ struct DecodedMessage {
     ContactList contacts;
     QDateTime when;
     QString text;
+    bool isMultiPart;
+    int partNumber, totalParts;
     void clear();
     QString contactsToString() const;
     MessageSourceFlags sources;
@@ -57,15 +59,15 @@ struct DecodedMessage {
 class DecodedMessageList : public QList<DecodedMessage>
 {
 public:
-    int mergeDupCount;
-    DecodedMessageList(bool mergeDuplicates);
+    int mergeDupCount, mergeMultiPartCount;
+    DecodedMessageList(bool mergeDuplicates, bool mergeMultiParts);
     bool toCSV(const QString& path);
     static DecodedMessageList fromContactList(const ContactList& list, const MessageSourceFlags& flags, QStringList &errors);
     QString messageBoxes(int index) const;
     QString messageStates(int index, bool delivered) const;
-    void addOrMerge(const DecodedMessage& msg);
+    void addOrMerge(DecodedMessage& msg);
 private:
-    bool _mergeDuplicates;
+    bool _mergeDuplicates, _mergeMultiParts;
     QStringList sMsgStatus, sMsgBox;
     static void fromVMessageList(DecodedMessageList& messages, const QStringList& src, QStringList &errors, bool fromArchive);
     static void fromPDUList(DecodedMessageList& messages, const QStringList& src, QStringList &errors, bool fromArchive);
