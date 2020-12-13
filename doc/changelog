@@ -111,3 +111,4 @@ CURRENT
 * Fixed: non-latin filenames corruption in recent list
 * Fixed: reading of PHOTO binary data if TYPE parameter is omitted
 * Fixed: contact table sorting by birthday
+* Added translations: English (NOT en_GB)
