@@ -47,10 +47,13 @@ bool LanguageManager::load(const QString &fileName)
 
 bool LanguageManager::loadCodecs(const QString& language, bool& qtOk)
 {
+    bool res = true;
     QString langCode = languageManager.nativeNameToCode(language);
-    QString langPath = LanguageManager::transPath()+QDir::separator()+QString("doublecontact_%1.qm").arg(langCode);
+    if (langCode!="en") {
+        QString langPath = LanguageManager::transPath()+QDir::separator()+QString("doublecontact_%1.qm").arg(langCode);
+        res = tr.load(langPath);
+    }
     qtOk = false;
-    bool res = tr.load(langPath);
     if (res) {
         qApp->installTranslator(&tr);
         // Qt standard translation

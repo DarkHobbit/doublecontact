@@ -31,7 +31,7 @@ AboutDialog::AboutDialog(QWidget *parent) :
     ui->lwContributors->addItem("German UI: Andreas Kleinert aka andyk, iLocIT!");
     ui->lwContributors->addItem(QString::fromUtf8("Norwegian (Bokmål) UI: Allan Nordhøy aka comradekingu"));
     ui->lwContributors->addItem("Portuguese UI (work in progress): Manuela Silva aka mansil, Alexandre Costa aka alecosta19, ssantos");
-    ui->lwContributors->addItem("Swiss French UI (work in progress): grovsoper");
+//    ui->lwContributors->addItem("Swiss French UI (work in progress): grovsoper");
     ui->lwContributors->addItem("Ukrainian UI: Olexandr Nesterenko aka burunduk, uievawkejf");
     
     ui->lwContributors->addItem("NBU files support ported from NbuExplorer project");
