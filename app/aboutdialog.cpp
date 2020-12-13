@@ -20,14 +20,20 @@ AboutDialog::AboutDialog(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->lwContributors->addItem("Icons made by Freepik from www.flaticon.com");
+
+    ui->lwContributors->addItem("Different languages translations: " \
+    "J. Lavoie ака Edanas, Oliver aka websites, "
+    );
     ui->lwContributors->addItem("Brazilian Portuguese UI (work in progress): BrunaKimura");
 //    ui->lwContributors->addItem("Chinese (Traditional) UI: Louies");
     ui->lwContributors->addItem("Dutch UI: Heimen Stoffels aka Vistaus");
-    ui->lwContributors->addItem("French UI: Nathan Bonnemains aka NathanBnm");
-    ui->lwContributors->addItem("German UI: Andreas Kleinert aka andyk");
+    ui->lwContributors->addItem("French UI: Nathan Bonnemains aka NathanBnm, Thomas Herbelin, Romain Raumin aka miseajour34");
+    ui->lwContributors->addItem("German UI: Andreas Kleinert aka andyk, iLocIT!");
     ui->lwContributors->addItem(QString::fromUtf8("Norwegian (Bokmål) UI: Allan Nordhøy aka comradekingu"));
-    ui->lwContributors->addItem("Portuguese UI (work in progress): Manuela Silva aka mansil, Alexandre Costa aka alecosta19");
-    ui->lwContributors->addItem("Ukrainian UI: Olexandr Nesterenko aka burunduk");
+    ui->lwContributors->addItem("Portuguese UI (work in progress): Manuela Silva aka mansil, Alexandre Costa aka alecosta19, ssantos");
+    ui->lwContributors->addItem("Swiss French UI (work in progress): grovsoper");
+    ui->lwContributors->addItem("Ukrainian UI: Olexandr Nesterenko aka burunduk, uievawkejf");
+    
     ui->lwContributors->addItem("NBU files support ported from NbuExplorer project");
     ui->lwContributors->addItem("(Author: Petr Vilem, petrusek@seznam.cz)");
     ui->lwContributors->addItem("Bugfixes: antongus, GitKroz, SauronfromMordor");
