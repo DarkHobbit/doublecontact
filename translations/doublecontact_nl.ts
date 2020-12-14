@@ -463,7 +463,7 @@ Wilt u dit certificaat tóch accepteren?</translation>
     <message>
         <location filename="../app/contactdialog.cpp" line="862"/>
         <source>Contact photo</source>
-        <translation type="unfinished"></translation>
+        <translation>Contactpersoonfoto</translation>
     </message>
 </context>
 <context>
@@ -898,7 +898,7 @@ Wilt u dit certificaat tóch accepteren?</translation>
     <message>
         <location filename="../app/mainwindow.ui" line="627"/>
         <source>&amp;Messages...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Berichten...</translation>
     </message>
     <message>
         <source>Settings...</source>
@@ -1208,27 +1208,27 @@ Weet u zeker dat u kolomsortering wilt uitschakelen?</translation>
     <message>
         <location filename="../model/messagemodel.cpp" line="23"/>
         <source>Date</source>
-        <translation type="unfinished">Datum</translation>
+        <translation>Datum</translation>
     </message>
     <message>
         <location filename="../model/messagemodel.cpp" line="24"/>
         <source>From/To</source>
-        <translation type="unfinished"></translation>
+        <translation>Van/Aan</translation>
     </message>
     <message>
         <location filename="../model/messagemodel.cpp" line="25"/>
         <source>Folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Map</translation>
     </message>
     <message>
         <location filename="../model/messagemodel.cpp" line="26"/>
         <source>Flags</source>
-        <translation type="unfinished"></translation>
+        <translation>Vlaggen</translation>
     </message>
     <message>
         <location filename="../model/messagemodel.cpp" line="27"/>
         <source>Text</source>
-        <translation type="unfinished"></translation>
+        <translation>Tekst</translation>
     </message>
 </context>
 <context>
@@ -1236,103 +1236,104 @@ Weet u zeker dat u kolomsortering wilt uitschakelen?</translation>
     <message>
         <location filename="../app/messagewindow.ui" line="14"/>
         <source>Messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Berichten</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="24"/>
         <source>Message sources</source>
-        <translation type="unfinished"></translation>
+        <translation>Berichtbronnen</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="31"/>
         <source>PDU</source>
-        <translation type="unfinished"></translation>
+        <translation>PDU</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="38"/>
         <source>vMessage </source>
-        <translation type="unfinished"></translation>
+        <translation>vMessage </translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="45"/>
         <source>PDU archive</source>
-        <translation type="unfinished"></translation>
+        <translation>PDU-archief</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="52"/>
         <source>vMessage archive</source>
-        <translation type="unfinished"></translation>
+        <translation>vMessage-archief</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="59"/>
         <source>Binary</source>
-        <translation type="unfinished"></translation>
+        <translation>Binair</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="86"/>
         <source>Merge duplicates</source>
-        <translation type="unfinished"></translation>
+        <translation>Duplicaten samenvoegen</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="96"/>
         <source>Merge multipart messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Berichtdelen samenvoegen</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="118"/>
         <source>Filter</source>
-        <translation type="unfinished">Filteren</translation>
+        <translation>Filteren</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="143"/>
         <source>&amp;Save as...</source>
-        <translation type="unfinished"></translation>
+        <translation>Op&amp;slaan als...</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="152"/>
         <source>Copy text</source>
-        <translation type="unfinished">Tekst kopiëren</translation>
+        <translation>Tekst kopiëren</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="155"/>
         <source>Ctrl+C</source>
-        <translation type="unfinished">Ctrl+C</translation>
+        <translation>Ctrl+C</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="160"/>
         <source>Properties</source>
-        <translation type="unfinished"></translation>
+        <translation>Eigenschappen</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.cpp" line="156"/>
         <source> with messages</source>
-        <translation type="unfinished"></translation>
+        <translation> met berichten</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.cpp" line="160"/>
         <source>Records: %1</source>
-        <translation type="unfinished">Items: %1</translation>
+        <translation>Items: %1</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.cpp" line="161"/>
         <source>Merged dups: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Samengevoegde duplicaten: %1</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.cpp" line="162"/>
         <source>Merged multiparted: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Samengevoegde berichtdelen: %1</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.cpp" line="217"/>
         <source>id: %1
 Sources: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>id: %1
+Bronnen: %2</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.cpp" line="235"/>
         <source>Save messages file</source>
-        <translation type="unfinished"></translation>
+        <translation>Berichtenbestand opslaan</translation>
     </message>
 </context>
 <context>
@@ -2037,12 +2038,12 @@ opgeslagen als mobiele telefoon</translation>
     <message>
         <location filename="../core/globals.h" line="120"/>
         <source>Show in new window</source>
-        <translation type="unfinished"></translation>
+        <translation>Openen in nieuw venster</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="131"/>
         <source>Group operation not implemented, select one record</source>
-        <translation type="unfinished"></translation>
+        <translation>Groepsacties zijn nog niet beschikbaar - kies een item</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="138"/>
@@ -2059,17 +2060,17 @@ opgeslagen als mobiele telefoon</translation>
     <message>
         <location filename="../core/globals.h" line="144"/>
         <source>Mode: </source>
-        <translation type="unfinished">Modus: </translation>
+        <translation>Modus: </translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="145"/>
         <source>sorted</source>
-        <translation type="unfinished">gesorteerd</translation>
+        <translation>gesorteerd</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="146"/>
         <source>not sorted</source>
-        <translation type="unfinished">ongesorteerd</translation>
+        <translation>ongesorteerd</translation>
     </message>
     <message>
         <source>P.o. box</source>
@@ -2374,7 +2375,7 @@ Controleer gebruikersnaam, wachtwoord, protocol en poort</translation>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="138"/>
         <source>Dlv</source>
-        <translation type="unfinished"></translation>
+        <translation>Bzgd</translation>
     </message>
     <message>
         <source>Empty</source>
@@ -2406,7 +2407,7 @@ Controleer gebruikersnaam, wachtwoord, protocol en poort</translation>
     <message>
         <location filename="../model/recentlist.h" line="21"/>
         <source>Clear recent list</source>
-        <translation type="unfinished"></translation>
+        <translation>Lijst met recente personen wissen</translation>
     </message>
 </context>
 <context>
@@ -2616,7 +2617,7 @@ Controleer gebruikersnaam, wachtwoord, protocol en poort</translation>
     <message>
         <location filename="../app/settingsdialog.ui" line="298"/>
         <source>Use X-GROUP-MEMBERSHIP for groups save</source>
-        <translation type="unfinished"></translation>
+        <translation>X-GROUP-MEMBERSHIP gebruiken bij het opslaan van groepen</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="319"/>
