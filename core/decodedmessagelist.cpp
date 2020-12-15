@@ -210,10 +210,11 @@ void DecodedMessageList::fromPDUList(DecodedMessageList &messages, const QString
             msg.sources = fromArchive ? usePDUArchive : usePDU;
             QDataStream ds(body);
             PDU::parseMessage(ds, msg, 1, MsgType);
+            if (ss[0].toInt()==1) // For multipart
+                msg.box = DecodedMessage::Inbox;
+            if (ss.length()>2 && !msg.when.isValid()) // For outbox and multipart
+                msg.when = QDateTime::fromString(ss[2], "ddMMyyyyhhmmssv");
             messages.addOrMerge(msg);
-            // Todo field 0
-            if (ss.length()>2 && !messages.last().when.isValid())
-                messages.last().when = QDateTime::fromString(ss[2], "ddMMyyyyhhmmssv");
         }
         else
             errors << QObject::tr("MPB message body missing");
