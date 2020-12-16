@@ -108,6 +108,7 @@ Bugfix release:
 CURRENT
 * SMS from MPB/NBF/NBU files show and save to CSV
 * Added Clear recent list command
+* Import of faked QUOTED-PRINTABLE fields (literal representation of non-ASCII chars, prohibited by RFC 2045)
 * Fixed: non-latin filenames corruption in recent list
 * Fixed: reading of PHOTO binary data if TYPE parameter is omitted
 * Fixed: contact table sorting by birthday
