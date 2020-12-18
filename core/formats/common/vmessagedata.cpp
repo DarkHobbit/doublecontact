@@ -197,14 +197,13 @@ bool VMessageData::importMPBRecords(const QStringList &lines, DecodedMessageList
                 msg.when = QDateTime::fromString(val, "yyyyMMddThhmmsst");
             else if (tag=="NUMBER") {
                 msg.contacts << ContactItem();
-                msg.contacts.first().phones << Phone(uVal);
+                msg.contacts.first().phones << Phone(val);
             }
             else if (tag.startsWith("BODY")) {
                 if (tag.contains("QUOTED-PRINTABLE"))
                     msg.text = QuotedPrintable::decode(val, codec);
                 else
                     msg.text = codec->toUnicode(val.toLocal8Bit());
-                // TODO проверить многострочное!!! хор. пример от Тихомирова
             }
             else if (tag=="SUBFOLDER")
                 msg.subFolder = val;
