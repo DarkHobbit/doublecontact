@@ -111,5 +111,6 @@ CURRENT
 * Import of faked QUOTED-PRINTABLE fields (literal representation of non-ASCII chars, prohibited by RFC 2045)
 * Fixed: non-latin filenames corruption in recent list
 * Fixed: reading of PHOTO binary data if TYPE parameter is omitted
+* Fixed: names comparison in similar contacts search during addressbooks compare
 * Fixed: contact table sorting by birthday
 * Added translations: English (NOT en_GB)
