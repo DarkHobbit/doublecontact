@@ -371,7 +371,7 @@ Deseja aceitar o certificado ?</translation>
     <message>
         <location filename="../app/contactdialog.cpp" line="862"/>
         <source>Contact photo</source>
-        <translation type="unfinished"></translation>
+        <translation>Foto de contato</translation>
     </message>
 </context>
 <context>
@@ -399,7 +399,7 @@ Deseja aceitar o certificado ?</translation>
     <message>
         <location filename="../app/datedetailsdialog.ui" line="60"/>
         <source>h</source>
-        <translation type="unfinished"></translation>
+        <translation>h</translation>
     </message>
     <message>
         <location filename="../app/datedetailsdialog.ui" line="74"/>
@@ -412,7 +412,7 @@ Deseja aceitar o certificado ?</translation>
     <message>
         <location filename="../app/groupdialog.ui" line="14"/>
         <source>Groups</source>
-        <translation type="unfinished">Grupos</translation>
+        <translation>Grupos</translation>
     </message>
     <message>
         <location filename="../app/groupdialog.ui" line="45"/>
@@ -458,7 +458,7 @@ Deseja aceitar o certificado ?</translation>
     <message>
         <location filename="../app/groupdialog.cpp" line="117"/>
         <source>United group</source>
-        <translation type="unfinished"></translation>
+        <translation>Grupo unido</translation>
     </message>
     <message>
         <location filename="../app/groupdialog.cpp" line="122"/>
@@ -478,7 +478,7 @@ Deseja aceitar o certificado ?</translation>
     <message>
         <location filename="../app/groupdialog.cpp" line="153"/>
         <source>Contacts for move</source>
-        <translation type="unfinished"></translation>
+        <translation>Contatos para mover</translation>
     </message>
 </context>
 <context>
@@ -486,7 +486,7 @@ Deseja aceitar o certificado ?</translation>
     <message>
         <location filename="../app/logwindow.ui" line="14"/>
         <source>Log Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Janela de registros</translation>
     </message>
     <message>
         <location filename="../app/logwindow.ui" line="20"/>
@@ -496,12 +496,12 @@ Deseja aceitar o certificado ?</translation>
     <message>
         <location filename="../app/logwindow.ui" line="32"/>
         <source>Copy to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Copiar para a área de transferência</translation>
     </message>
     <message>
         <location filename="../app/logwindow.cpp" line="42"/>
         <source>File %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Arquivo %1</translation>
     </message>
     <message>
         <location filename="../app/logwindow.cpp" line="43"/>
@@ -583,103 +583,103 @@ Deseja aceitar o certificado ?</translation>
     <message>
         <location filename="../app/mainwindow.ui" line="241"/>
         <source>S&amp;ave as</source>
-        <translation type="unfinished"></translation>
+        <translation>S&amp;alvar como</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="248"/>
         <source>&amp;Recent</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Recente</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="262"/>
         <source>&amp;Contact</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Contato</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="289"/>
         <source>&amp;Help</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Ajuda</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="296"/>
         <source>&amp;View</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Visualizar</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="305"/>
         <source>&amp;List</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Lista</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="335"/>
         <source>Ctrl+O</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+O</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="340"/>
         <location filename="../app/mainwindow.ui" line="372"/>
         <source>&amp;Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Diretório</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="345"/>
         <source>&amp;Close</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Fechar</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="348"/>
         <source>Ctrl+W</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="356"/>
         <source>&amp;Save</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Salvar</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="359"/>
         <source>Ctrl+S</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+S</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="367"/>
         <source>Ctrl+Shift+S</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Shift+S</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="377"/>
         <source>E&amp;xit</source>
-        <translation type="unfinished"></translation>
+        <translation>S&amp;air</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="388"/>
         <source>&amp;Two panels</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Dois painéis</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="393"/>
         <source>&amp;Options...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Opções...</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="398"/>
         <source>&amp;Add</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Adicionar</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="401"/>
         <source>Ins</source>
-        <translation type="unfinished"></translation>
+        <translation>Ins</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="406"/>
         <source>&amp;Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Editar</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="409"/>
         <source>Return</source>
-        <translation type="unfinished"></translation>
+        <translation>Retornar</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="414"/>
@@ -689,32 +689,32 @@ Deseja aceitar o certificado ?</translation>
     <message>
         <location filename="../app/mainwindow.ui" line="417"/>
         <source>Del</source>
-        <translation type="unfinished">Deletar</translation>
+        <translation>Del</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="422"/>
         <source>&amp;Copy</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Copiar</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="425"/>
         <source>F5</source>
-        <translation type="unfinished"></translation>
+        <translation>F5</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="430"/>
         <source>&amp;Move</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Mover</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="433"/>
         <source>F6</source>
-        <translation type="unfinished"></translation>
+        <translation>F6</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="438"/>
         <source>&amp;Swap names</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Trocar nomes</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="441"/>
@@ -729,57 +729,57 @@ Deseja aceitar o certificado ?</translation>
     <message>
         <location filename="../app/mainwindow.ui" line="449"/>
         <source>F3</source>
-        <translation type="unfinished"></translation>
+        <translation>F3</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="457"/>
         <source>&amp;Sort</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Ordenar</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="460"/>
         <source>F4</source>
-        <translation type="unfinished"></translation>
+        <translation>F4</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="465"/>
         <source>&amp;Other panel</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Outro painel</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="468"/>
         <source>Tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Aba</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="473"/>
         <source>&amp;Settings...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Configurações...</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="489"/>
         <source>C&amp;ompare Result</source>
-        <translation type="unfinished"></translation>
+        <translation>C&amp;omparar resultado</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="530"/>
         <source>&amp;Internationalize phone prefix</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Internacionalizar prefixo do celular</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="548"/>
         <source>Re&amp;verse full name</source>
-        <translation type="unfinished"></translation>
+        <translation>In&amp;verter nome completo</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="579"/>
         <source>About &amp;Qt</source>
-        <translation type="unfinished"></translation>
+        <translation>Sobre &amp;Qt</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="584"/>
         <source>Format phone &amp;numbers</source>
-        <translation type="unfinished"></translation>
+        <translation>Formatar números de &amp;celular</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="617"/>
