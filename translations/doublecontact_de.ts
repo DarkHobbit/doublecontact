@@ -375,7 +375,7 @@ Möchten Sie dieses Zertifikat trotzdem akzeptieren?</translation>
     <message>
         <location filename="../app/contactdialog.cpp" line="862"/>
         <source>Contact photo</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontaktfoto</translation>
     </message>
 </context>
 <context>
@@ -798,7 +798,7 @@ Möchten Sie dieses Zertifikat trotzdem akzeptieren?</translation>
     <message>
         <location filename="../app/mainwindow.ui" line="627"/>
         <source>&amp;Messages...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Nachrichten …</translation>
     </message>
     <message>
         <source>Settings...</source>
@@ -1092,27 +1092,27 @@ Möchten Sie die Spaltensortierung ausschalten?</translation>
     <message>
         <location filename="../model/messagemodel.cpp" line="23"/>
         <source>Date</source>
-        <translation type="unfinished"></translation>
+        <translation>Datum</translation>
     </message>
     <message>
         <location filename="../model/messagemodel.cpp" line="24"/>
         <source>From/To</source>
-        <translation type="unfinished"></translation>
+        <translation>Von/An</translation>
     </message>
     <message>
         <location filename="../model/messagemodel.cpp" line="25"/>
         <source>Folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Ordner</translation>
     </message>
     <message>
         <location filename="../model/messagemodel.cpp" line="26"/>
         <source>Flags</source>
-        <translation type="unfinished"></translation>
+        <translation>Kennzeichen</translation>
     </message>
     <message>
         <location filename="../model/messagemodel.cpp" line="27"/>
         <source>Text</source>
-        <translation type="unfinished"></translation>
+        <translation>Text</translation>
     </message>
 </context>
 <context>
@@ -1120,12 +1120,12 @@ Möchten Sie die Spaltensortierung ausschalten?</translation>
     <message>
         <location filename="../app/messagewindow.ui" line="14"/>
         <source>Messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Nachrichten</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="24"/>
         <source>Message sources</source>
-        <translation type="unfinished"></translation>
+        <translation>Nachrichtenquellen</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="31"/>
@@ -1135,7 +1135,7 @@ Möchten Sie die Spaltensortierung ausschalten?</translation>
     <message>
         <location filename="../app/messagewindow.ui" line="38"/>
         <source>vMessage </source>
-        <translation type="unfinished"></translation>
+        <translation>vMessage </translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="45"/>
@@ -1145,78 +1145,79 @@ Möchten Sie die Spaltensortierung ausschalten?</translation>
     <message>
         <location filename="../app/messagewindow.ui" line="52"/>
         <source>vMessage archive</source>
-        <translation type="unfinished"></translation>
+        <translation>vMessage-Archiv</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="59"/>
         <source>Binary</source>
-        <translation type="unfinished"></translation>
+        <translation>Binär</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="86"/>
         <source>Merge duplicates</source>
-        <translation type="unfinished"></translation>
+        <translation>Duplikate zusammenführen</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="96"/>
         <source>Merge multipart messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Mehrteilige Nachrichten zusammenführen</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="118"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation>Filter</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="143"/>
         <source>&amp;Save as...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Speichern unter …</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="152"/>
         <source>Copy text</source>
-        <translation type="unfinished">Text kopieren</translation>
+        <translation>Text kopieren</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="155"/>
         <source>Ctrl+C</source>
-        <translation type="unfinished">Strg + C</translation>
+        <translation>Strg + C</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="160"/>
         <source>Properties</source>
-        <translation type="unfinished"></translation>
+        <translation>Eigenschaften</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.cpp" line="156"/>
         <source> with messages</source>
-        <translation type="unfinished"></translation>
+        <translation> mit Nachrichten</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.cpp" line="160"/>
         <source>Records: %1</source>
-        <translation type="unfinished">Datensätze: %1</translation>
+        <translation>Datensätze: %1</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.cpp" line="161"/>
         <source>Merged dups: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Zusammengeführte Datensätze: %1</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.cpp" line="162"/>
         <source>Merged multiparted: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Zusammengeführte Mehrteiler: %1</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.cpp" line="217"/>
         <source>id: %1
 Sources: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>ID: %1
+Quellen: %2</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.cpp" line="235"/>
         <source>Save messages file</source>
-        <translation type="unfinished"></translation>
+        <translation>Nachrichten als Datei speichern</translation>
     </message>
 </context>
 <context>
@@ -1977,12 +1978,12 @@ Zeile %3, Spalte %4
     <message>
         <location filename="../core/globals.h" line="120"/>
         <source>Show in new window</source>
-        <translation type="unfinished"></translation>
+        <translation>In neuem Fenster anzeigen</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="131"/>
         <source>Group operation not implemented, select one record</source>
-        <translation type="unfinished"></translation>
+        <translation>Gruppenfunktion nicht implementiert. Bitte einen Datensatz auswählen.</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="138"/>
@@ -1999,17 +2000,17 @@ Zeile %3, Spalte %4
     <message>
         <location filename="../core/globals.h" line="144"/>
         <source>Mode: </source>
-        <translation type="unfinished"></translation>
+        <translation>Modus: </translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="145"/>
         <source>sorted</source>
-        <translation type="unfinished">Sortiert</translation>
+        <translation>Sortiert</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="146"/>
         <source>not sorted</source>
-        <translation type="unfinished">Nicht sortiert</translation>
+        <translation>Unsortiert</translation>
     </message>
     <message>
         <source>P.o. box</source>
@@ -2272,7 +2273,7 @@ Benutzername, Passwort, Protokoll und Port überprüfen</translation>
     <message>
         <location filename="../model/recentlist.h" line="21"/>
         <source>Clear recent list</source>
-        <translation type="unfinished"></translation>
+        <translation>Neueste Liste leeren</translation>
     </message>
 </context>
 <context>
@@ -2482,7 +2483,7 @@ Benutzername, Passwort, Protokoll und Port überprüfen</translation>
     <message>
         <location filename="../app/settingsdialog.ui" line="298"/>
         <source>Use X-GROUP-MEMBERSHIP for groups save</source>
-        <translation type="unfinished"></translation>
+        <translation>X-GROUP-MEMBERSHIP für „Gruppen speichern” verwenden</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="319"/>
