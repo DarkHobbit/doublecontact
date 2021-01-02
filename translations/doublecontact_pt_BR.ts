@@ -432,7 +432,7 @@ Deseja aceitar o certificado ?</translation>
     <message>
         <location filename="../app/groupdialog.ui" line="70"/>
         <source>&amp;Merge groups...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Combinar grupos...</translation>
     </message>
     <message>
         <location filename="../app/groupdialog.ui" line="77"/>
@@ -453,7 +453,7 @@ Deseja aceitar o certificado ?</translation>
     <message>
         <location filename="../app/groupdialog.cpp" line="114"/>
         <source>Group merge</source>
-        <translation type="unfinished"></translation>
+        <translation>Combinação de grupo</translation>
     </message>
     <message>
         <location filename="../app/groupdialog.cpp" line="117"/>
@@ -463,7 +463,7 @@ Deseja aceitar o certificado ?</translation>
     <message>
         <location filename="../app/groupdialog.cpp" line="122"/>
         <source>Merged group</source>
-        <translation type="unfinished"></translation>
+        <translation>Grupo combinado</translation>
     </message>
     <message>
         <location filename="../app/groupdialog.cpp" line="147"/>
