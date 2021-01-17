@@ -383,7 +383,7 @@ Er du sikker på at du vil godta dette sertifikatet uansett?</translation>
     <message>
         <location filename="../app/contactdialog.cpp" line="862"/>
         <source>Contact photo</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontaktbilde</translation>
     </message>
 </context>
 <context>
@@ -814,7 +814,7 @@ Er du sikker på at du vil godta dette sertifikatet uansett?</translation>
     <message>
         <location filename="../app/mainwindow.ui" line="627"/>
         <source>&amp;Messages...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;Meldinger …</translation>
     </message>
     <message>
         <source>Settings...</source>
