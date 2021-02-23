@@ -24,6 +24,7 @@ class QuotedPrintable
 public:
     // Decode string
     static QString decode(const QString &src, QTextCodec* codec);
+    static QString decodeFromMime(const QString &src);
     // Encode string
     static QString encode(const QString &src, QTextCodec* codec, int prefixLen);
     // Merge quoted-printable linesets

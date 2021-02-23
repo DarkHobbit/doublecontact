@@ -160,6 +160,11 @@
     <string>Properties</string>
    </property>
   </action>
+  <action name="actionSave_MMS_Files">
+   <property name="text">
+    <string>Save MMS Files</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>

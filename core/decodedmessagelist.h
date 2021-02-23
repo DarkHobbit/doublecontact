@@ -51,17 +51,22 @@ struct DecodedMessage {
     QString text;
     bool isMultiPart;
     int partNumber, totalParts;
+    bool isMMS;
+    QString mmsSubject;
+    QList<BinarySMS> mmsFiles;
     void clear();
     QString contactsToString() const;
+    bool saveMMSFiles(const QString& dirPath, QString& fatalError) const;
     MessageSourceFlags sources;
 };
 
 class DecodedMessageList : public QList<DecodedMessage>
 {
 public:
-    int mergeDupCount, mergeMultiPartCount;
+    int mmsCount, mergeDupCount, mergeMultiPartCount;
     DecodedMessageList(bool mergeDuplicates, bool mergeMultiParts);
     bool toCSV(const QString& path);
+    bool saveAllMMSFiles(const QString& dirPath, QString& fatalError) const;
     static DecodedMessageList fromContactList(const ContactList& list, const MessageSourceFlags& flags, QStringList &errors);
     QString messageBoxes(int index) const;
     QString messageStates(int index, bool delivered) const;

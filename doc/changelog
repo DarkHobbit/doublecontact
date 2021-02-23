@@ -106,7 +106,7 @@ Bugfix release:
 * Added translations: Brazilian Portuguese (incomplete)
 
 CURRENT
-* SMS from MPB/NBF/NBU files show and save to CSV
+* SMS from MPB/NBF/NBU files and MMS from NBF/NBU (NBU not checked) show and save to CSV
 * Added Clear recent list command
 * Import of faked QUOTED-PRINTABLE fields (literal representation of non-ASCII chars, prohibited by RFC 2045)
 * Fixed: non-latin filenames corruption in recent list

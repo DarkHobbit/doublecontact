@@ -12,6 +12,7 @@
  */
 
 #include <QByteArray>
+#include <QRegExp>
 #include "quotedprintable.h"
 
 QString QuotedPrintable::decode(const QString &src, QTextCodec *codec)
@@ -42,6 +43,27 @@ QString QuotedPrintable::decode(const QString &src, QTextCodec *codec)
         }
     }
     return codec->toUnicode(res);
+}
+
+QString QuotedPrintable::decodeFromMime(const QString &src)
+{
+    QRegExp mime("=\\?(.*)\\?(.)\\?(.*)\\?=");
+    if (!mime.isValid())
+        return "INVALIDREGEXP"; // Strictly internal error;
+    if (!mime.exactMatch(src))
+        return src;
+    QString charset = mime.cap(1).toUpper();
+    QString encoding = mime.cap(2).toUpper();
+    QString content = mime.cap(3);
+    if (encoding=="Q") {
+        QTextCodec* codec = QTextCodec::codecForName(charset.toLocal8Bit().data());
+        if (!codec)
+            return src;
+        else
+            return decode(content, codec);
+    }
+    else // even if encoding=="B"
+        return src;
 }
 
 QString QuotedPrintable::encode(const QString &src, QTextCodec *codec, int prefixLen)

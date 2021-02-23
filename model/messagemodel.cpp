@@ -62,7 +62,6 @@ QVariant MessageModel::data(const QModelIndex &index, int role) const
     if (index.row() >= msgs.count())
         return QVariant();
     const DecodedMessage& m = msgs[index.row()];
-    // TODO optional show message.id in details (after MMS)
     if (role==Qt::DisplayRole) {
         switch (index.column()) {
             case mcDate:
@@ -70,7 +69,7 @@ QVariant MessageModel::data(const QModelIndex &index, int role) const
             case mcCorrespondent:
                 return m.contactsToString();
             case mcText:
-                return m.text;
+                return (m.isMMS ? tr("<MMS>") : m.text);
             case mcFolder: {
                 QString s = msgs.messageBoxes(m.box);
                 if (!m.subFolder.isEmpty())
@@ -97,6 +96,11 @@ DecodedMessage &MessageModel::item(int index)
     return msgs[index];
 }
 
+int MessageModel::mmsCount()
+{
+    return msgs.mmsCount;
+}
+
 int MessageModel::mergeDupCount()
 {
     return msgs.mergeDupCount;
@@ -110,4 +114,9 @@ int MessageModel::mergeMultiPartCount()
 bool MessageModel::saveToCSV(const QString &path)
 {
     return msgs.toCSV(path);
+}
+
+bool MessageModel::saveAllMMSFiles(const QString &dirPath, QString& fatalError) const
+{
+    return msgs.saveAllMMSFiles(dirPath, fatalError);
 }

@@ -35,6 +35,7 @@ public:
     ~MessageWindow();
 
 private slots:
+    void selectionChanged();
     void on_cbPDU_stateChanged(int);
     void on_cbPDUArchive_stateChanged(int);
     void on_cbBinary_stateChanged(int);
@@ -47,6 +48,7 @@ private slots:
     void on_actionProperties_triggered();
     void on_leFilter_textChanged(const QString &newText);
     void on_btnSaveAs_clicked();
+    void on_actionSave_MMS_Files_triggered();
 
 protected:
     void showEvent(QShowEvent*);
@@ -57,11 +59,13 @@ private:
     MessageModel* model;
     ContactSorterFilter *proxy;
     QStatusBar* statusBar;
-    QLabel *lbCount, *lbMode, *lbDups, *lbMultiParts;
+    QLabel *lbCount, *lbMMSCount, *lbMode, *lbDups, *lbMultiParts;
+    void setSorting(bool needSort);
     void updateModel();
     void updateStatus();
     void checkButtons();
     void checkMergeButton();
+    QModelIndex selectedRecord();
 };
 
 #endif // MESSAGEWINDOW_H

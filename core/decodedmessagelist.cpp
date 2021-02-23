@@ -12,6 +12,7 @@
  */
 
 #include <QFile>
+#include <QDir>
 #include <QTextCodec>
 #include <QTextStream>
 #include <qglobal.h>
@@ -33,6 +34,9 @@ void DecodedMessage::clear()
     isMultiPart = false;
     partNumber = 0;
     totalParts = 0;
+    isMMS = false;
+    mmsSubject = "";
+    mmsFiles.clear();
 }
 
 QString DecodedMessage::contactsToString() const
@@ -58,11 +62,41 @@ QString DecodedMessage::contactsToString() const
     return res.join(";");
 }
 
+bool DecodedMessage::saveMMSFiles(const QString &dirPath, QString& fatalError) const
+{
+    QDir d;
+    if (!d.exists(dirPath)) {
+        if (!d.mkpath(dirPath)) {
+            fatalError = S_MKDIR_ERR.arg(dirPath);
+            return false;
+        }
+    }
+    foreach (const BinarySMS& fileInfo, mmsFiles) {
+        QString fileName = dirPath+QDir::separator()+fileInfo.name;
+        QFile f(fileName);
+        if (f.open(QIODevice::WriteOnly)) {
+            f.write(fileInfo.content);
+#if QT_VERSION >= 0x050A00 // Qt >= 5.10
+            f.setFileTime(this->when, QFileDevice::FileBirthTime);
+            f.setFileTime(this->when, QFileDevice::FileModificationTime);
+            // TODO check on windows, jpeg only?
+#endif
+            f.close();
+        }
+        else {
+            fatalError = S_WRITE_ERR.arg(fileName);
+            return false;
+        }
+    }
+    return true;
+}
+
 DecodedMessageList::DecodedMessageList(bool mergeDuplicates, bool mergeMultiParts)
     : mergeDupCount(0), mergeMultiPartCount(0),
     _mergeDuplicates(mergeDuplicates), _mergeMultiParts(mergeMultiParts)
 
 {
+    mmsCount = 0;
     sMsgStatus
         << QObject::tr("Read")
         << QObject::tr("UnRd")
@@ -94,9 +128,52 @@ bool DecodedMessageList::toCSV(const QString &path)
            << "\",\"" << sMsgBox[msg.box]
            << "\",\"" << msg.contactsToString()
            << "\",\"" << messageStates(msg.status, msg.delivered)
-           << "\",\"" << msgText << "\"\n";
+           << "\",\"" << msgText
+           << "\",\"" << (msg.isMMS ? QObject::tr("MMS") : "")
+           << "\"\n";
     }
     f.close();
+    return true;
+}
+
+bool DecodedMessageList::saveAllMMSFiles(const QString &dirPath, QString& fatalError) const
+{
+    QDir d;
+    if (!d.exists(dirPath)) {
+        if (!d.mkpath(dirPath)) {
+            fatalError = S_MKDIR_ERR.arg(dirPath);
+            return false;
+        }
+    }
+    int index = 0;
+    foreach (const DecodedMessage& msg, *this) {
+        index++;
+        if (!msg.isMMS)
+            continue;
+        // Try compose MMS directory name from its id or datetime
+        QString dirName = "";
+        if (!msg.id.isEmpty()) {
+            int posMinus = msg.id.indexOf("-");
+            int posAt = msg.id.indexOf("@");
+            if (posMinus>-1 && posAt>posMinus) {
+                dirName = msg.id.mid(posMinus+1, posAt-posMinus-1)+"-"+msg.id.left(posMinus); // Date and id prefix
+            }
+        }
+        if (dirName.isEmpty()) {
+            if (msg.when.isValid()) {
+                dirName = msg.when.toString("yyMMddhhmmss");
+                if (!msg.id.isEmpty())
+                    dirName += QString("-%1").arg(msg.id);
+                else
+                    dirName += QString("-%1").arg(index);
+            }
+            else
+                dirName = QString::number(index);
+        }
+        // Save files
+        if (!msg.saveMMSFiles(dirPath + QDir::separator() + dirName, fatalError))
+            return false;
+    }
     return true;
 }
 
@@ -138,9 +215,11 @@ QString DecodedMessageList::messageStates(int index, bool delivered) const
         s += "," + QObject::tr("Dlv");
     return s;
 }
-#include <iostream>
+
 void DecodedMessageList::addOrMerge(DecodedMessage &msg)
 {
+    if (msg.isMMS)
+        mmsCount++;
     // Merge multipart messages
     if (msg.isMultiPart) {
         if (_mergeMultiParts) {
@@ -170,7 +249,7 @@ void DecodedMessageList::addOrMerge(DecodedMessage &msg)
                 const ContactItem ic = item.contacts.first();
                 const ContactItem mc = msg.contacts.first();
                 if (ic.phones.count()==1 && mc.phones.count()==1 && ic.phones.first().value==mc.phones.first().value) {
-                    std::cout << msg.when.toString().toLocal8Bit().data() << std::endl;
+                    // std::cout << msg.when.toString().toLocal8Bit().data() << std::endl;
                     item.sources |= msg.sources;
                     mergeDupCount++;
                     return;

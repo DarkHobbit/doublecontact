@@ -1065,6 +1065,11 @@ Are you want switch column sorting off?</source>
         <source>Text</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../model/messagemodel.cpp" line="72"/>
+        <source>&lt;MMS&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MessageWindow</name>
@@ -1139,34 +1144,57 @@ Are you want switch column sorting off?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="156"/>
+        <location filename="../app/messagewindow.ui" line="165"/>
+        <source>Save MMS Files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/messagewindow.cpp" line="195"/>
         <source> with messages</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="160"/>
+        <location filename="../app/messagewindow.cpp" line="199"/>
         <source>Records: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="161"/>
+        <location filename="../app/messagewindow.cpp" line="200"/>
+        <source>Including MMS: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/messagewindow.cpp" line="201"/>
         <source>Merged dups: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="162"/>
+        <location filename="../app/messagewindow.cpp" line="202"/>
         <source>Merged multiparted: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="217"/>
+        <location filename="../app/messagewindow.cpp" line="245"/>
         <source>id: %1
 Sources: %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="235"/>
+        <location filename="../app/messagewindow.cpp" line="248"/>
+        <source>
+
+MMS properties:
+%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/messagewindow.cpp" line="265"/>
         <source>Save messages file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/messagewindow.cpp" line="272"/>
+        <source>Can you also save media files from MMS (%1 messages)?</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1374,7 +1402,7 @@ phone language %5</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="142"/>
+        <location filename="../core/globals.h" line="141"/>
         <source>Last section not closed</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1528,6 +1556,7 @@ line %3, col %4
     </message>
     <message>
         <location filename="../core/formats/files/vcfdirectory.cpp" line="73"/>
+        <location filename="../core/globals.h" line="129"/>
         <source>Can&apos;t create directory
 %1</source>
         <translation type="unfinished"></translation>
@@ -1675,7 +1704,7 @@ line %3, col %4
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="132"/>
+        <location filename="../core/globals.h" line="133"/>
         <source>This format is read only</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1885,34 +1914,39 @@ line %3, col %4
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="131"/>
+        <location filename="../core/globals.h" line="132"/>
         <source>Group operation not implemented, select one record</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="138"/>
+        <location filename="../core/globals.h" line="139"/>
         <source>Program built without network support. Use WITH_NETWORK define, if building from source code.
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="139"/>
+        <location filename="../core/globals.h" line="140"/>
         <source>Do you really want to delete the selected items?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="144"/>
+        <location filename="../core/globals.h" line="143"/>
         <source>Mode: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="145"/>
+        <location filename="../core/globals.h" line="144"/>
         <source>sorted</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="146"/>
+        <location filename="../core/globals.h" line="145"/>
         <source>not sorted</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/globals.h" line="149"/>
+        <source>Select MMS files Directory</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1993,24 +2027,24 @@ line %3, col %4
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="129"/>
+        <location filename="../core/globals.h" line="130"/>
         <source>Can&apos;t seek to %1 in file
 %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="130"/>
+        <location filename="../core/globals.h" line="131"/>
         <source>Record not selected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="134"/>
+        <location filename="../core/globals.h" line="135"/>
         <source>Warning: contact %1 has %2, not supported in this format.
 Data will be lost</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="136"/>
+        <location filename="../core/globals.h" line="137"/>
         <source>%1 %2 will be lost at contact %3</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2041,68 +2075,73 @@ Check username, password, protocol and port</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="67"/>
+        <location filename="../core/decodedmessagelist.cpp" line="101"/>
         <source>Read</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="68"/>
+        <location filename="../core/decodedmessagelist.cpp" line="102"/>
         <source>UnRd</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="69"/>
+        <location filename="../core/decodedmessagelist.cpp" line="103"/>
         <source>Unk.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="71"/>
+        <location filename="../core/decodedmessagelist.cpp" line="105"/>
         <source>Inbox</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="72"/>
+        <location filename="../core/decodedmessagelist.cpp" line="106"/>
         <source>Outbox</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="73"/>
+        <location filename="../core/decodedmessagelist.cpp" line="107"/>
         <source>Sentbox</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="74"/>
+        <location filename="../core/decodedmessagelist.cpp" line="108"/>
         <source>Draft</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="75"/>
+        <location filename="../core/decodedmessagelist.cpp" line="109"/>
         <source>Trash</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="85"/>
+        <location filename="../core/decodedmessagelist.cpp" line="119"/>
         <source>&quot;Date&quot;,&quot;Box&quot;,&quot;From/To&quot;,&quot;Status&quot;,&quot;Text&quot;,&quot;Aux&quot;
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="138"/>
+        <location filename="../core/decodedmessagelist.cpp" line="132"/>
+        <source>MMS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/decodedmessagelist.cpp" line="215"/>
         <source>Dlv</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="219"/>
+        <location filename="../core/decodedmessagelist.cpp" line="299"/>
         <source>MPB message body missing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="140"/>
+        <location filename="../core/globals.h" line="147"/>
         <source>Unknown vMessage tag: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="141"/>
+        <location filename="../core/globals.h" line="148"/>
         <source>Unknown vMessage value: %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2150,6 +2189,55 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../model/recentlist.h" line="21"/>
         <source>Clear recent list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/formats/common/nokiadata.cpp" line="319"/>
+        <source>Unknown field type: 0x%1 at %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/formats/common/nokiadata.cpp" line="481"/>
+        <source>Invalid MMS Yes/No value (%1) at %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/formats/common/nokiadata.cpp" line="491"/>
+        <source>Invalid MMS octet count (%1) at %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/formats/common/nokiadata.cpp" line="516"/>
+        <source>Personal</source>
+        <comment>MmsClass</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/formats/common/nokiadata.cpp" line="519"/>
+        <source>Advertisement</source>
+        <comment>MmsClass</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/formats/common/nokiadata.cpp" line="522"/>
+        <source>Info</source>
+        <comment>MmsClass</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/formats/common/nokiadata.cpp" line="525"/>
+        <source>Auto</source>
+        <comment>MmsClass</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/formats/common/nokiadata.cpp" line="547"/>
+        <source>Parse value length error (%1) at %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/formats/common/nokiadata.cpp" line="559"/>
+        <source>Error reading uint64_t value: overflow at %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

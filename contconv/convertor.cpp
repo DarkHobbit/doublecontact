@@ -465,9 +465,13 @@ int Convertor::start()
             .arg(items.extra.pduSMSArchive.count())
             .arg(items.extra.binarySMS.count());
         QStringList msgErrors;
-        MessageSourceFlags f = QFlags<MessageSourceFlag>(useVMessage | useVMessageArchive); // TODO to options
+        MessageSourceFlags f = QFlags<MessageSourceFlag>(
+            useVMessage | useVMessageArchive |
+            usePDU | usePDUArchive |
+            useBinary | mergeDuplicates | mergeMultiParts); // TODO to options
         DecodedMessageList messages = DecodedMessageList::fromContactList(items, f, msgErrors);
         if (!messages.isEmpty()) {
+            out << tr("Found MMS: %1\n").arg(messages.mmsCount);
             res = messages.toCSV(outPath);
             if (res) {
                 out << tr("%1 messages written\n").arg(messages.count());

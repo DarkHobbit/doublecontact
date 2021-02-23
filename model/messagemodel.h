@@ -41,11 +41,12 @@ public:
     int columnCount(const QModelIndex &parent = QModelIndex()) const;
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const;
     // Helpers
-    DecodedMessage& item(int index);
+    DecodedMessage& item(int index);    
+    int mmsCount();
     int mergeDupCount();
     int mergeMultiPartCount();
     bool saveToCSV(const QString& path);
-
+    bool saveAllMMSFiles(const QString& dirPath, QString& fatalError) const;
 private:
     ContactList* _src;
     DecodedMessageList msgs;

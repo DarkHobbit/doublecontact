@@ -14,6 +14,7 @@
 #include <QClipboard>
 #include <QFileDialog>
 #include <QFileInfo>
+#include <QItemSelectionModel>
 #include <QMessageBox>
 #include <QShortcut>
 #include <QStringList>
@@ -33,17 +34,19 @@ MessageWindow::MessageWindow(ContactList* contacts) :
     // Status bar
     statusBar = new QStatusBar(this);
     lbCount = new QLabel(0);
+    lbMMSCount = new QLabel(0);
     lbMode = new QLabel(0);
     lbDups = new QLabel(0);
     lbMultiParts = new QLabel(0);
     statusBar->addWidget(lbCount);
+    statusBar->addWidget(lbMMSCount);
     statusBar->addWidget(lbMode);
     statusBar->addWidget(lbDups);
     statusBar->addWidget(lbMultiParts);
     layout()->addWidget(statusBar);
     // Table
     ui->tvMessages->horizontalHeader()->setStretchLastSection(true);
-    updateTableConfig(ui->tvMessages);
+    updateTableConfig(ui->tvMessages);  
     // Check button access
     ui->cbPDU->setEnabled(!contacts->extra.pduSMS.isEmpty());
     ui->cbPDUArchive->setEnabled(!contacts->extra.pduSMSArchive.isEmpty());
@@ -67,21 +70,41 @@ MessageWindow::MessageWindow(ContactList* contacts) :
     proxy->setFilterKeyColumn(-1);
     ui->tvMessages->setModel(proxy);
     ui->tvMessages->setSortingEnabled(configManager.sortingEnabled());
+    connect(ui->tvMessages->selectionModel(), SIGNAL(currentChanged(QItemIndex,QItemIndex)),
+            this, SLOT(selectionChanged()));
+    connect(ui->tvMessages->selectionModel(), SIGNAL(selectionChanged(QItemSelection,QItemSelection)),
+            this, SLOT(selectionChanged()));
     // Shortcuts
     QShortcut* shcSortToggle = new QShortcut(Qt::Key_F4, this);
     connect(shcSortToggle, SIGNAL(activated()), this, SLOT(toggleSort()));
     // Context menu
     ui->tvMessages->setContextMenuPolicy(Qt::ActionsContextMenu);
     ui->tvMessages->addAction(ui->actionCopy_text);
+    ui->tvMessages->addAction(ui->actionSave_MMS_Files);
     ui->tvMessages->addAction(ui->actionProperties);
     // Calc!
     updateModel();
     ui->tvMessages->resizeColumnsToContents();
+    setSorting(configManager.sortingEnabled());
 }
 
 MessageWindow::~MessageWindow()
 {
     delete ui;
+}
+
+void MessageWindow::selectionChanged()
+{
+    QModelIndex sel = selectedRecord();
+    if (!sel.isValid()) {
+        ui->actionProperties->setEnabled(false);
+        ui->actionSave_MMS_Files->setEnabled(false);
+    }
+    else {
+        ui->actionProperties->setEnabled(true);
+        const DecodedMessage& msg = model->item(sel.row());
+        ui->actionSave_MMS_Files->setEnabled(msg.isMMS);
+    }
 }
 
 void MessageWindow::checkButtons()
@@ -103,6 +126,22 @@ void MessageWindow::checkMergeButton()
     if (ui->cbBinary->isChecked()) srcCount++;
     ui->cbMergeDups->setEnabled(srcCount>0);// Initially >1, but dups can be even in one source
     ui->cbMergeMultiparts->setEnabled(srcCount>0);
+}
+
+QModelIndex MessageWindow::selectedRecord()
+{
+    // check Selection
+    QModelIndexList proxySelection = ui->tvMessages->selectionModel()->selectedRows();
+    if (proxySelection.count()==0) {
+        QMessageBox::critical(0, S_ERROR, S_REC_NOT_SEL);
+        return QModelIndex();
+    }
+    if (proxySelection.count()>1) {
+        QMessageBox::critical(0, S_ERROR, S_ONLY_ONE_REC);
+        return QModelIndex();
+    }
+    // Single selection
+    return proxy->mapToSource(proxySelection.first());
 }
 
 void MessageWindow::on_cbPDU_stateChanged(int)
@@ -158,6 +197,7 @@ void MessageWindow::updateModel()
         delete w;
     }
     lbCount->setText(tr("Records: %1").arg(model->rowCount()));
+    lbMMSCount->setText(tr("Including MMS: %1").arg(model->mmsCount()));
     lbDups->setText(tr("Merged dups: %1").arg(model->mergeDupCount()));
     lbMultiParts->setText(tr("Merged multiparted: %1").arg(model->mergeMultiPartCount()));
     updateStatus();
@@ -172,10 +212,7 @@ void MessageWindow::updateStatus()
 void MessageWindow::toggleSort()
 {
     bool needSort = !ui->tvMessages->isSortingEnabled();
-    ui->tvMessages->setSortingEnabled(needSort);
-    int sortColumn = needSort ? 0 : -1;
-    proxy->sort(sortColumn);
-    updateStatus();
+    setSorting(needSort);
 }
 
 void MessageWindow::on_actionCopy_text_triggered()
@@ -188,18 +225,9 @@ void MessageWindow::on_actionCopy_text_triggered()
 
 void MessageWindow::on_actionProperties_triggered()
 {
-    // check Selection (if needed in other places, move to func)
-    QModelIndexList proxySelection = ui->tvMessages->selectionModel()->selectedRows();
-    if (proxySelection.count()==0) {
-        QMessageBox::critical(0, S_ERROR, S_REC_NOT_SEL);
+    QModelIndex sel = selectedRecord();
+    if (!sel.isValid())
         return;
-    }
-    if (proxySelection.count()>1) {
-        QMessageBox::critical(0, S_ERROR, S_ONLY_ONE_REC);
-        return;
-    }
-    // Single selection
-    QModelIndex sel = proxy->mapToSource(proxySelection.first());
     const DecodedMessage& msg = model->item(sel.row());
     // Message sources
     QStringList srcs;
@@ -216,6 +244,8 @@ void MessageWindow::on_actionProperties_triggered()
     // Show info
     QString info = tr("id: %1\nSources: %2")
         .arg(msg.id).arg(srcs.join(", "));
+    if (msg.isMMS)
+        info += tr("\n\nMMS properties:\n%1").arg(msg.text);
     QMessageBox::information(0, S_INFORM, info);
 }
 
@@ -235,11 +265,52 @@ void MessageWindow::on_btnSaveAs_clicked()
     path = QFileDialog::getSaveFileName(0, tr("Save messages file"),
         path, "*.csv",
         &selectedFilter);
-    if (!path.isEmpty())
+    if (!path.isEmpty()) {
         model->saveToCSV(path);
+        if (model->mmsCount()>0) {
+            int btn = QMessageBox::question(0, S_CONFIRM,
+                 tr("Can you also save media files from MMS (%1 messages)?").arg(model->mmsCount()),
+                 QMessageBox::Yes, QMessageBox::No, QMessageBox::Cancel);
+            if (btn==QMessageBox::Yes) {
+                QString path = QFileDialog::getExistingDirectory(this,
+                    S_SELECT_MMS_DIR_TITLE, configManager.lastContactFile(),
+                    QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
+                if (!path.isEmpty()) {
+                    QString fatalError;
+                    if (!model->saveAllMMSFiles(path, fatalError))
+                        QMessageBox::critical(0, S_ERROR, fatalError);
+                }
+            }
+        }
+    }
 }
 
 void MessageWindow::showEvent(QShowEvent *)
 {
     ui->tvMessages->resizeRowsToContents();
+    ui->tvMessages->selectRow(0);
+}
+
+void MessageWindow::setSorting(bool needSort)
+{
+    ui->tvMessages->setSortingEnabled(needSort);
+    int sortColumn = needSort ? 0 : -1;
+    proxy->sort(sortColumn);
+    updateStatus();
+}
+
+void MessageWindow::on_actionSave_MMS_Files_triggered()
+{
+    QModelIndex sel = selectedRecord();
+    if (!sel.isValid())
+        return;
+    const DecodedMessage& msg = model->item(sel.row());
+    QString path = QFileDialog::getExistingDirectory(this,
+        S_SELECT_MMS_DIR_TITLE, configManager.lastContactFile(),
+        QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
+    if (!path.isEmpty()) {
+        QString fatalError;
+        if (!msg.saveMMSFiles(path, fatalError))
+            QMessageBox::critical(0, S_ERROR, fatalError);
+    }
 }
