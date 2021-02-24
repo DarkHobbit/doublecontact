@@ -2338,7 +2338,7 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="132"/>
         <source>MMS</source>
-        <translation type="unfinished"></translation>
+        <translation>MMS</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="215"/>
@@ -2380,17 +2380,17 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../core/formats/common/nokiadata.cpp" line="319"/>
         <source>Unknown field type: 0x%1 at %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Неизвестный тип поля: 0x%1 на %2</translation>
     </message>
     <message>
         <location filename="../core/formats/common/nokiadata.cpp" line="481"/>
         <source>Invalid MMS Yes/No value (%1) at %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Неверное значение Yes/No в MMS (%1) на %2</translation>
     </message>
     <message>
         <location filename="../core/formats/common/nokiadata.cpp" line="491"/>
         <source>Invalid MMS octet count (%1) at %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Неверное значение счётчика октетов в MMS (%1) на %2</translation>
     </message>
     <message>
         <location filename="../core/formats/common/nokiadata.cpp" line="516"/>
@@ -2419,12 +2419,12 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../core/formats/common/nokiadata.cpp" line="547"/>
         <source>Parse value length error (%1) at %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Ошибка чтения длины MMS (%1) на %2</translation>
     </message>
     <message>
         <location filename="../core/formats/common/nokiadata.cpp" line="559"/>
         <source>Error reading uint64_t value: overflow at %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ошибка чтения значения uint64_t в MMS на %1</translation>
     </message>
 </context>
 <context>
