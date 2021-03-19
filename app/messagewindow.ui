@@ -159,6 +159,9 @@
    <property name="text">
     <string>Properties</string>
    </property>
+   <property name="shortcut">
+    <string>Return</string>
+   </property>
   </action>
   <action name="actionSave_MMS_Files">
    <property name="text">
