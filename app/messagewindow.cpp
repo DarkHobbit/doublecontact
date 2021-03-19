@@ -95,7 +95,7 @@ MessageWindow::~MessageWindow()
 
 void MessageWindow::selectionChanged()
 {
-    QModelIndex sel = selectedRecord();
+    QModelIndex sel = selectedRecord(false);
     if (!sel.isValid()) {
         ui->actionProperties->setEnabled(false);
         ui->actionSave_MMS_Files->setEnabled(false);
@@ -128,12 +128,13 @@ void MessageWindow::checkMergeButton()
     ui->cbMergeMultiparts->setEnabled(srcCount>0);
 }
 
-QModelIndex MessageWindow::selectedRecord()
+QModelIndex MessageWindow::selectedRecord(bool errorIfNoSelected)
 {
     // check Selection
     QModelIndexList proxySelection = ui->tvMessages->selectionModel()->selectedRows();
     if (proxySelection.count()==0) {
-        QMessageBox::critical(0, S_ERROR, S_REC_NOT_SEL);
+        if (errorIfNoSelected)
+            QMessageBox::critical(0, S_ERROR, S_REC_NOT_SEL);
         return QModelIndex();
     }
     if (proxySelection.count()>1) {
