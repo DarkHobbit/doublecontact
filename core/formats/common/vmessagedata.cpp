@@ -16,6 +16,8 @@
 #include "vcarddata.h"
 #include "globals.h"
 
+#define S_UNKNOWN_ATT_SUBTYPE QObject::tr("Unknown ATT subtype at line %1: %2")
+
 VMessageData::VMessageData()
 {
 }
@@ -157,20 +159,41 @@ bool VMessageData::importMPBRecords(const QStringList &lines, DecodedMessageList
                 errors << S_UNKNOWN_MSG_TAG.arg(s);
                 continue;
             }
-            QString tag = s.left(scPos).toUpper();
+            QStringList vType = VCardData::splitBySC(s.left(scPos));
+            const QString tag = vType[0].toUpper();
             QString val = s.mid(scPos+1);
             QString uVal = val.toUpper();
-            QStringList ss;
+            // Encoding & charset
+            QString encoding = "";
+            QString charSet = "";
+            for (int i=1; i<vType.count(); i++) {
+                if (vType[i].startsWith("ENCODING=", Qt::CaseInsensitive))
+                    encoding = vType[i].mid(QString("ENCODING=").length()).toUpper();
+                else if (vType[i].startsWith("CHARSET=", Qt::CaseInsensitive)) {
+                    charSet = vType[i].mid(QString("CHARSET=").length()).toUpper();
+                    if (charSet!=codec->name().toUpper()) {
+                        codec = QTextCodec::codecForName(charSet.toLatin1());
+                        if (!codec) {
+                            errors << S_UNKNOWN_CHARSET.arg(charSet);
+                            codec = QTextCodec::codecForName("UTF-8");
+                        }
+                    }
+                }
+            }
             // Known tags
             if (tag=="TYP") {
                 if (uVal=="SMS;IN")
                     msg.box = DecodedMessage::Inbox;
                 else if (uVal=="SMS;OUT")
                     msg.box = DecodedMessage::Outbox;
-                else if (uVal=="MMS;IN")
-                    errors << "MMS not implemented " << s; // TODO SMIL, ATT
-                else if (uVal=="MMS;OUT")
-                    errors << "MMS not implemented " << s; // TODO SMIL, ATT
+                else if (uVal=="MMS;IN") {
+                    msg.box = DecodedMessage::Inbox;
+                    msg.isMMS = true;
+                }
+                else if (uVal=="MMS;OUT") {
+                    msg.box = DecodedMessage::Outbox;
+                    msg.isMMS = true;
+                }
                 else
                     errors << S_UNKNOWN_MSG_VAL.arg(s);
             }
@@ -199,8 +222,8 @@ bool VMessageData::importMPBRecords(const QStringList &lines, DecodedMessageList
                 msg.contacts << ContactItem();
                 msg.contacts.first().phones << Phone(val);
             }
-            else if (tag.startsWith("BODY")) {
-                if (tag.contains("QUOTED-PRINTABLE"))
+            else if (tag=="BODY") {
+                if (encoding=="QUOTED-PRINTABLE")
                     msg.text = QuotedPrintable::decode(val, codec);
                 else
                     msg.text = codec->toUnicode(val.toLocal8Bit());
@@ -209,6 +232,52 @@ bool VMessageData::importMPBRecords(const QStringList &lines, DecodedMessageList
                 msg.subFolder = val;
             else if (tag=="X-IRMC-LUID")
                 msg.id = val;
+            else if (tag=="SMIL") {
+                QString sSmil;
+                if (encoding=="QUOTED-PRINTABLE")
+                    sSmil = QuotedPrintable::decode(val, codec);
+                else
+                    sSmil = codec->toUnicode(val.toLocal8Bit());
+                msg.mmsFiles << BinarySMS();
+                msg.mmsFiles.last().name = "smil.smil";
+                msg.mmsFiles.last().content = sSmil.toLocal8Bit();
+            }
+            else if (tag=="ATT") {
+                msg.mmsFiles << BinarySMS();
+                foreach(const QString& ss, vType) {
+                    if (ss=="ATT")
+                        continue;
+                    int eqPos = ss.indexOf("=");
+                    if (eqPos == -1) {
+                        errors << S_UNKNOWN_ATT_SUBTYPE.arg(line+1).arg(ss+"1");
+                        continue;
+                    }
+                    QString varName = ss.left(eqPos).toUpper();
+                    QString varValue = ss.mid(eqPos+1);
+                    if (varName=="ENCODING" || varName=="CHARSET" || varName=="TYPE")
+                        continue;
+                    long fileSize = 0;
+                    if (varName=="NAME")
+                        msg.mmsFiles.last().name = varValue;
+                    else if (varName=="SIZE")
+                        fileSize = varValue.toLong();
+                    else
+                        errors << S_UNKNOWN_ATT_SUBTYPE.arg(line+1).arg(ss+"2");
+                }
+                if (encoding=="QUOTED-PRINTABLE")
+                    msg.mmsFiles.last().content = QuotedPrintable::decode(val, codec).toLocal8Bit();
+                else if (encoding=="BASE64" || encoding=="B")
+                    msg.mmsFiles.last().content = QByteArray::fromBase64(val.toLatin1());
+                else {
+                    if (!encoding.isEmpty())
+                        errors << S_UNKNOWN_ENCODING.arg(encoding);
+                    if (!charSet.isEmpty())
+                        msg.mmsFiles.last().content = codec->toUnicode(val.toLocal8Bit()).toLatin1();
+                    else
+                        msg.mmsFiles.last().content = val.toLocal8Bit();
+
+                }
+            }
         }
     }
     if (recordOpened) {

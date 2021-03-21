@@ -535,7 +535,7 @@ QString VCardData::decodeValue(const QString &src, QStringList& errors) const
     else
         codec = QTextCodec::codecForName(charSet.toLocal8Bit());
     if (!codec) {
-        errors << QObject::tr("Unknown charset: ")+charSet;
+        errors << S_UNKNOWN_CHARSET.arg(charSet);
         return "";
     }
     // Encoding
@@ -544,7 +544,7 @@ QString VCardData::decodeValue(const QString &src, QStringList& errors) const
     else if (encoding.toUpper()=="QUOTED-PRINTABLE")
         return QuotedPrintable::decode(src, codec);
     else {
-        errors << QObject::tr("Unknown encoding: ")+encoding;
+        errors << S_UNKNOWN_ENCODING.arg(encoding);
         return "";
     }
 }
@@ -635,12 +635,12 @@ QStringList VCardData::splitBySC(const QString &src)
 #endif
 }
 
-QString VCardData::joinBySC(const QStringList &src) const
+QString VCardData::joinBySC(const QStringList &src)
 {
     return QStringList(src).replaceInStrings(";", "\\;").join(";");
 }
 
-QString VCardData::sc(const QString &src) const
+QString VCardData::sc(const QString &src)
 {
     return QString(src).replace(QString(";"), QString("\\;"));
 }
@@ -652,12 +652,12 @@ QStringList VCardData::splitByComma(const QString &src)
     return res;
 }
 
-QString VCardData::joinByComma(const QStringList &src) const
+QString VCardData::joinByComma(const QStringList &src)
 {
     return QStringList(src).replaceInStrings(",", "\\,").join(",");
 }
 
-QString VCardData::cm(const QString &src) const
+QString VCardData::cm(const QString &src)
 {
     return QString(src).replace(QString(","), QString("\\,"));
 }

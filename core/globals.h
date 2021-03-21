@@ -139,6 +139,8 @@ enum ContactColumn {
     QObject::tr("Program built without network support. Use WITH_NETWORK define, if building from source code.\n")
 #define S_REMOVE_CONFIRM QObject::tr("Do you really want to delete the selected items?")
 #define S_LAST_SECTION QObject::tr("Last section not closed")
+#define S_UNKNOWN_ENCODING QObject::tr("Unknown encoding: %1")
+#define S_UNKNOWN_CHARSET QObject::tr("Unknown charset: %1")
 // Status messages
 #define SS_MODE QObject::tr("Mode: ")
 #define SS_SORT_ON QObject::tr("sorted")

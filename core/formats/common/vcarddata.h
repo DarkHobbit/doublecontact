@@ -44,12 +44,13 @@ private:
     QString encodeTypes(const QStringList& aTypes, StandardTypes* st = 0, int syncMLRef = -1) const;
     QString exportDate(const DateItem& item) const;
     QString exportAddress(const PostalAddress& item) const;
-    QStringList splitBySC(const QString& src);
-    QString joinBySC(const QStringList& src) const;
-    QString sc(const QString& src) const;
-    QStringList splitByComma(const QString& src);
-    QString joinByComma(const QStringList& src) const;
-    QString cm(const QString& src) const;
+public:
+    static QStringList splitBySC(const QString& src);
+    static QString joinBySC(const QStringList& src);
+    static QString sc(const QString& src);
+    static QStringList splitByComma(const QString& src);
+    static QString joinByComma(const QStringList& src);
+    static QString cm(const QString& src);
     void debugSave(QFile& logFile, const QString& s, bool firstRec);
 };
 
