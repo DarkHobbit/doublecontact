@@ -91,8 +91,13 @@ tr.commands = lrelease-qt5 \
 }
 }
 } else {
+win32 {
+tr.commands = lrelease \
+    $$_PRO_FILE_
+} else {
 tr.commands = lrelease-qt4 \
     $$_PRO_FILE_
+}
 }
     
 QMAKE_EXTRA_TARGETS += tr
