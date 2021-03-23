@@ -1309,44 +1309,49 @@ Weet u zeker dat u kolomsortering wilt uitschakelen?</translation>
         <translation>Eigenschappen</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.ui" line="165"/>
+        <location filename="../app/messagewindow.ui" line="163"/>
+        <source>Return</source>
+        <translation type="unfinished">Enter</translation>
+    </message>
+    <message>
+        <location filename="../app/messagewindow.ui" line="168"/>
         <source>Save MMS Files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="195"/>
+        <location filename="../app/messagewindow.cpp" line="196"/>
         <source> with messages</source>
         <translation> met berichten</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="199"/>
+        <location filename="../app/messagewindow.cpp" line="200"/>
         <source>Records: %1</source>
         <translation>Items: %1</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="200"/>
+        <location filename="../app/messagewindow.cpp" line="201"/>
         <source>Including MMS: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="201"/>
+        <location filename="../app/messagewindow.cpp" line="202"/>
         <source>Merged dups: %1</source>
         <translation>Samengevoegde duplicaten: %1</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="202"/>
+        <location filename="../app/messagewindow.cpp" line="203"/>
         <source>Merged multiparted: %1</source>
         <translation>Samengevoegde berichtdelen: %1</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="245"/>
+        <location filename="../app/messagewindow.cpp" line="246"/>
         <source>id: %1
 Sources: %2</source>
         <translation>id: %1
 Bronnen: %2</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="248"/>
+        <location filename="../app/messagewindow.cpp" line="249"/>
         <source>
 
 MMS properties:
@@ -1354,12 +1359,12 @@ MMS properties:
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="265"/>
+        <location filename="../app/messagewindow.cpp" line="266"/>
         <source>Save messages file</source>
         <translation>Berichtenbestand opslaan</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="272"/>
+        <location filename="../app/messagewindow.cpp" line="273"/>
         <source>Can you also save media files from MMS (%1 messages)?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1565,8 +1570,8 @@ telefoontaal %5</translation>
     </message>
     <message>
         <location filename="../core/formats/common/vcarddata.cpp" line="81"/>
-        <location filename="../core/formats/common/vmessagedata.cpp" line="37"/>
-        <location filename="../core/formats/common/vmessagedata.cpp" line="142"/>
+        <location filename="../core/formats/common/vmessagedata.cpp" line="39"/>
+        <location filename="../core/formats/common/vmessagedata.cpp" line="144"/>
         <source>Unclosed record before line %1</source>
         <translation>Niet-gesloten item vóór regel %1</translation>
     </message>
@@ -1624,14 +1629,12 @@ telefoontaal %5</translation>
         <translation>%1 onbekende labels gevonden</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="538"/>
         <source>Unknown charset: </source>
-        <translation>Onbekende tekenset: </translation>
+        <translation type="obsolete">Onbekende tekenset: </translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="547"/>
         <source>Unknown encoding: </source>
-        <translation>Onbekende versleuteling: </translation>
+        <translation type="obsolete">Onbekende versleuteling: </translation>
     </message>
     <message>
         <location filename="../core/formats/common/vcarddata.cpp" line="575"/>
@@ -2087,22 +2090,32 @@ opgeslagen als mobiele telefoon</translation>
         <translation>Weet je zeker dat je de geselecteerde items wilt verwijderen?</translation>
     </message>
     <message>
+        <location filename="../core/globals.h" line="142"/>
+        <source>Unknown encoding: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../core/globals.h" line="143"/>
+        <source>Unknown charset: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/globals.h" line="145"/>
         <source>Mode: </source>
         <translation>Modus: </translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="144"/>
+        <location filename="../core/globals.h" line="146"/>
         <source>sorted</source>
         <translation>gesorteerd</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="145"/>
+        <location filename="../core/globals.h" line="147"/>
         <source>not sorted</source>
         <translation>ongesorteerd</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="149"/>
+        <location filename="../core/globals.h" line="151"/>
         <source>Select MMS files Directory</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2430,12 +2443,12 @@ Controleer gebruikersnaam, wachtwoord, protocol en poort</translation>
         <translation type="obsolete">Onbekend berichtformaat</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="147"/>
+        <location filename="../core/globals.h" line="149"/>
         <source>Unknown vMessage tag: %1</source>
         <translation>Onbekend vMessage-label: %1</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="148"/>
+        <location filename="../core/globals.h" line="150"/>
         <source>Unknown vMessage value: %1</source>
         <translation>Onbekende vMessage-waarde: %1</translation>
     </message>
@@ -2454,47 +2467,52 @@ Controleer gebruikersnaam, wachtwoord, protocol en poort</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/common/nokiadata.cpp" line="481"/>
+        <location filename="../core/formats/common/nokiadata.cpp" line="476"/>
         <source>Invalid MMS Yes/No value (%1) at %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/common/nokiadata.cpp" line="491"/>
+        <location filename="../core/formats/common/nokiadata.cpp" line="486"/>
         <source>Invalid MMS octet count (%1) at %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/common/nokiadata.cpp" line="516"/>
+        <location filename="../core/formats/common/nokiadata.cpp" line="511"/>
         <source>Personal</source>
         <comment>MmsClass</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/common/nokiadata.cpp" line="519"/>
+        <location filename="../core/formats/common/nokiadata.cpp" line="514"/>
         <source>Advertisement</source>
         <comment>MmsClass</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/common/nokiadata.cpp" line="522"/>
+        <location filename="../core/formats/common/nokiadata.cpp" line="517"/>
         <source>Info</source>
         <comment>MmsClass</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/common/nokiadata.cpp" line="525"/>
+        <location filename="../core/formats/common/nokiadata.cpp" line="520"/>
         <source>Auto</source>
         <comment>MmsClass</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/common/nokiadata.cpp" line="547"/>
+        <location filename="../core/formats/common/nokiadata.cpp" line="542"/>
         <source>Parse value length error (%1) at %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/common/nokiadata.cpp" line="559"/>
+        <location filename="../core/formats/common/nokiadata.cpp" line="554"/>
         <source>Error reading uint64_t value: overflow at %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/formats/common/vmessagedata.cpp" line="19"/>
+        <source>Unknown ATT subtype at line %1: %2</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
