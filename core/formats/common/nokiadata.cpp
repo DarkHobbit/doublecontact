@@ -398,11 +398,6 @@ bool NokiaData::ReadMMS(QDataStream& ds, DecodedMessage &msg, QStringList &error
             mFile.name = fileName;
             mFile.content = ds.device()->read(datalen);
             msg.mmsFiles << mFile;
-            // TODO write this to container in DecodeMessage and entire collecition in DecodedMessageList
-            // TODO filenames are conflict!
-            // Make subfoldernames by MessageId (reversed) before @ for non-null MessageId
-            // TODO properties as default action?
-            // Add isMMS flag to CSV
         }
     }
 

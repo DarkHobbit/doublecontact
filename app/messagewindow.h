@@ -65,7 +65,7 @@ private:
     void updateStatus();
     void checkButtons();
     void checkMergeButton();
-    QModelIndex selectedRecord();
+    QModelIndex selectedRecord(bool errorIfNoSelected = true);
 };
 
 #endif // MESSAGEWINDOW_H

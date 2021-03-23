@@ -45,7 +45,7 @@ int Convertor::start()
         printUsage();
         return 1;
     }
-    QString inPath, outPath, inFormat, outFormat, inProfile, outProfile, filterString;
+    QString inPath, outPath, inFormat, outFormat, inProfile, outProfile, filterString, mmsDataDir;
     ContactList::SortType sortType = ContactList::SortBySortString;
     gd.groupFormat = GlobalConfig::gfCategories;
     bool infoMode = false;
@@ -61,6 +61,7 @@ int Convertor::start()
     bool hardSort = false;
     bool filterExclusive = false;
     bool filterReverse = false;
+    bool ignoreMMSData = false;
     for (int i=1; i<arguments().count(); i++) {
         if (arguments()[i]=="-i" || arguments()[i]=="--info") {
             i++;
@@ -172,6 +173,17 @@ int Convertor::start()
             forceSingleFile = true;
         else if (arguments()[i]=="-d")
             forceDirectory = true;
+        else if (arguments()[i]=="-md") {
+            i++;
+            if (i==arguments().count()) {
+                out << tr("Error: -md option present, but path for MMS files is missing\n");
+                printUsage();
+                return 12;
+            }
+            mmsDataDir = arguments()[i];
+        }
+        else if (arguments()[i]=="-mi")
+            ignoreMMSData = true;
         else if (arguments()[i]=="-fe")
             filterExclusive = true;
         else if (arguments()[i]=="-fr")
@@ -193,7 +205,7 @@ int Convertor::start()
             if (i==arguments().count()) {
                 out << tr("Error: --sort command present, but sort criterion is missing\n");
                 printUsage();
-                return 12;
+                return 13;
             }
             hardSort = true;
             QString c = arguments()[i];
@@ -210,7 +222,7 @@ int Convertor::start()
             else {
                 out << tr("Error: Unknown sort criterion: %1\n").arg(outProfile);
                 printUsage();
-                return 13;
+                return 14;
             }
         }
         else if (arguments()[i]=="--filter") {
@@ -218,70 +230,80 @@ int Convertor::start()
             if (i==arguments().count()) {
                 out << tr("Error: --filter command present, but filter string is missing\n");
                 printUsage();
-                return 14;
+                return 15;
             }
             filterString = arguments()[i];
         }
         else {
             out << tr("Unknown option: %1\n").arg(arguments()[i]);
             printUsage();
-            return 15;
+            return 16;
         }
     }
     // Check input data completion
     if (inPath.isEmpty()) {
         out << tr("Error: Input path is missing\n");
         printUsage();
-        return 16;
+        return 17;
     }
     if (outPath.isEmpty() && !infoMode) {
         out << tr("Error: Output path is missing\n");
         printUsage();
-        return 17;
+        return 18;
     }
     if (outFormat.isEmpty() && !infoMode) {
         out << tr("Error: Output format name is missing\n");
         printUsage();
-        return 18;
+        return 19;
     }
     if (outFormat=="csv") {
         if (outProfile.isEmpty()) {
             out << tr("Error: Output format is CSV, but profile name is missing\n");
             printUsage();
-            return 19;
+            return 20;
         }
     }
     else {
         if (!outProfile.isEmpty()) {
             out << tr("Error: Output format isn't' CSV, but profile name is present\n");
             printUsage();
-            return 20;
+            return 21;
         }
+    }
+    if (outFormat!="sms" && (ignoreMMSData || !mmsDataDir.isEmpty())) {
+        out << tr("Error: Options -mi and -md applicable only for SMS output format\n");
+        printUsage();
+        return 22;
     }
     if (forceSingleFile && forceDirectory) {
         out << tr("Error: Options -s and -d are not compatible\n");
         printUsage();
-        return 21;
+        return 23;
+    }
+    if (ignoreMMSData && !mmsDataDir.isEmpty()) {
+        out << tr("Error: Options -mi and -md are not compatible\n");
+        printUsage();
+        return 24;
     }
     if (forceDirectory && !outFormat.contains("vcf") && outFormat!="copy") {
         out << tr("Error: -d option applicable only for vCard format");
-        return 22;
+        return 25;
     }
     if (infoMode && !(outPath.isEmpty() && outFormat.isEmpty())) {
         out << tr("Error: Command --info is not compatible with -o and -f options\n");
         printUsage();
-        return 23;
+        return 26;
     }
     if ((filterExclusive || filterReverse) && filterString.isEmpty()) {
         out << tr("Error: -fe and -fr option applicable only with --filter command");
-        return 24;
+        return 27;
     }
     // Check if output file exists
     QFile of(outPath);
     if (of.exists() && !forceOverwrite && !QFileInfo(outPath).isDir()) {
         out << tr("Error: Output file already exists, use -w if necessary\n");
         printUsage();
-        return 25;
+        return 28;
     }
     // Define, create file or directory at output
     // (default: as input)
@@ -291,7 +313,7 @@ int Convertor::start()
         ift = ftNetwork;
 #else
         out << S_ERR_NETWORK_SUPPORT;
-        return 25;
+        return 29;
 #endif
     }
     else
@@ -319,7 +341,7 @@ int Convertor::start()
 #endif
     if (!iFormat) {
         out << factory.error << "\n";
-        return 26;
+        return 30;
     }
     // Input CSV profile
     CSVFile* csvFormat = dynamic_cast<CSVFile*>(iFormat);
@@ -328,7 +350,7 @@ int Convertor::start()
             out << tr("Error: Input format is CSV, but profile name is missing\n");
             printUsage();
             delete iFormat;
-            return 27;
+            return 31;
         }
         else
             setCSVProfile(csvFormat, inProfile);
@@ -339,7 +361,7 @@ int Convertor::start()
     logFormat(iFormat);
     delete iFormat;
     if (!res)
-        return 28;
+        return 32;
     out << tr("%1 records read\n").arg(items.count());
     // Show statistics, if info mode switched on
     if (infoMode) {
@@ -352,7 +374,7 @@ int Convertor::start()
         ImageLoader imgLdr;
 #else
         out << S_ERR_NETWORK_SUPPORT;
-        return 25;
+        return 33;
 #endif
     }
     // Conversions
@@ -443,7 +465,7 @@ int Convertor::start()
             oFormat = new CSVFile();
         else {
             out << "Error: Can't autodetect input format\n";
-            return 29;
+            return 34;
         }
     }
     // Output CSV profile
@@ -472,17 +494,27 @@ int Convertor::start()
         DecodedMessageList messages = DecodedMessageList::fromContactList(items, f, msgErrors);
         if (!messages.isEmpty()) {
             out << tr("Found MMS: %1\n").arg(messages.mmsCount);
+            if (messages.mmsCount>0 && (!ignoreMMSData) && mmsDataDir.isEmpty()) {
+                out << tr("Error: File contains %1 MMS. Set mms save directory \n").arg(messages.mmsCount);
+                return 35;
+            }
             res = messages.toCSV(outPath);
             if (res) {
                 out << tr("%1 messages written\n").arg(messages.count());
             }
             else
                 out << S_WRITE_ERR.arg(outPath) + "\n";
+            if (messages.mmsCount>0 && !ignoreMMSData) {
+                QString err;
+                res = messages.saveAllMMSFiles(mmsDataDir, err);
+                if (!res)
+                    out << err + "\n";
+            }
         }
         foreach (const QString& s, msgErrors)
             out << s << "\n";
     }
-    return res ? 0 : 30;
+    return res ? 0 : 36;
 }
 
 // Print program usage
@@ -490,7 +522,7 @@ void Convertor::printUsage()
 {
     out << tr(
         "Usage:\n" \
-        "contconv -i inputfile -o outfile -f outformat [-n informat] [-ip csvprofile] [-op csvprofile] [-g groupformat] [-w] [-d|-s] [commands]\n" \
+        "contconv -i inputfile -o outfile -f outformat [-n informat] [-ip csvprofile] [-op csvprofile] [-g groupformat] [options] [commands]\n" \
         "contconv --info inputfile\n" \
         "\n" \
         "Possible values for outformat:\n" \
@@ -514,7 +546,9 @@ void Convertor::printUsage()
         "Options:\n" \
         "-w - force overwrite output single file, if exists (directories overwrites already)\n" \
         "-s - write VCF as single file (by default, write as in input)\n" \
-        "-d - write VCFs as directory (not compatible with -d)\n" \
+        "-d - write VCFs as directory (not compatible with -s)\n" \
+        "-md path - set existing directory for MMS files (not compatible with -mi)" \
+        "-mi - don't write MMS files. If MMS found and neither -mi nor -md options, error occured\n" \
         "Commands:\n" \
         "--swap-names - swap first and last name\n" \
         "--split-names - split name by spaces\n" \
