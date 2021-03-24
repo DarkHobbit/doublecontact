@@ -933,6 +933,39 @@ QString DateItem::toString(DateFormat format) const
     return s;
 }
 
+const QString ISO_EXT_TIME_FORMAT =
+#if QT_VERSION >= 0x051000
+        QString("yyyyMMddThhmmsst");
+#else
+        QString("yyyyMMddThhmmss");
+#endif
+
+QDateTime DateItem::readISOExtDateTimeWithZone(const QString &src)
+{
+#if QT_VERSION >= 0x051000
+    return QDateTime::fromString(ISO_EXT_TIME_FORMAT);
+#else
+    QString sDate = src.left(ISO_EXT_TIME_FORMAT.length());
+    QDateTime res = QDateTime::fromString(sDate, ISO_EXT_TIME_FORMAT);
+    // TODO for Qt 5.2(???) - Qt 5.9.x extract timezone here
+    // and manually add it to res
+    // TODO for Qt4, if tail=src.mid(ISO_EXT_TIME_FORMAT.length())!='Z', warn
+    return res;
+#endif
+}
+
+QString DateItem::writeISOExtDateTimeWithZone(const QDateTime &src)
+{
+#if QT_VERSION >= 0x051000
+    return src.toString(ISO_EXT_TIME_FORMAT);
+#else
+    QString res = src.toString(ISO_EXT_TIME_FORMAT);
+    // TODO for Qt 5.2(???) - Qt 5.9.x add timezone here
+    res += "Z";
+    return res;
+#endif
+}
+
 bool PostalAddress::operator ==(const PostalAddress &a) const
 {
     return

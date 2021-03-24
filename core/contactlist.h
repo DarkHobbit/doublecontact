@@ -96,6 +96,10 @@ struct Messenger: public TypedStringItem {
     } standardTypes;
 };
 
+// TODO Maybe, after total port to Qt 5.10+, drop this type
+// and use QDateTime with timezoe support instead it
+// OR make TZDateTime from this class and use it for older Qt
+// Old Qt - inherit from QDateTime, new Qt - TZDateTime==QDateTime
 struct DateItem { // Birthday and anniversaries
     QDateTime value; // date & time
     bool hasTime; // false if date only was in file
@@ -112,6 +116,9 @@ struct DateItem { // Birthday and anniversaries
     void clear();
     QString toString(DateFormat format=DateItem::Local) const;
     inline bool isEmpty() const {return value.isNull(); }
+    // "Little alien" functions for this structure:
+    static QDateTime readISOExtDateTimeWithZone(const QString& src);
+    static QString writeISOExtDateTimeWithZone(const QDateTime& src);
 };
 
 struct PostalAddress: public TypedDataItem {

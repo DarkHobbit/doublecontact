@@ -15,7 +15,6 @@
 #include "mpbfile.h"
 
 const QString SECTION_BEGIN = QString("MyPhoneExplorer_ContentID:");
-const QString MPB_TIME_FORMAT = QString("yyyyMMddThhmmssZ");
 
 MPBFile::MPBFile()
     :FileFormat()
@@ -76,7 +75,7 @@ bool MPBFile::importRecords(const QString &url, ContactList &list, bool append)
             if (secName=="Model")
                 list.extra.model = stream.readLine();
             else if (secName=="TimeStamp")
-                list.extra.timeStamp = QDateTime::fromString(stream.readLine(), MPB_TIME_FORMAT);
+                list.extra.timeStamp = DateItem::readISOExtDateTimeWithZone(stream.readLine());
             else if (secName=="Phonebook")
                 section = secPhonebook;
             else if (secName=="Calls")
@@ -197,7 +196,7 @@ bool MPBFile::exportRecords(const QString &url, ContactList &list)
     stream << list.extra.model;
     winEndl(stream);
     writeSectionHeader(stream, "TimeStamp");
-    stream << list.extra.timeStamp.toString(MPB_TIME_FORMAT);
+    stream << DateItem::writeISOExtDateTimeWithZone(list.extra.timeStamp);
     winEndl(stream);
     // Phone book
     writeSectionHeader(stream, "Phonebook");
