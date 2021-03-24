@@ -244,6 +244,8 @@ bool VMessageData::importMPBRecords(const QStringList &lines, DecodedMessageList
             }
             else if (tag=="ATT") {
                 msg.mmsFiles << BinarySMS();
+                BinarySMS& att = msg.mmsFiles.last();
+                long fileSize = 0;
                 foreach(const QString& ss, vType) {
                     if (ss=="ATT")
                         continue;
@@ -256,27 +258,29 @@ bool VMessageData::importMPBRecords(const QStringList &lines, DecodedMessageList
                     QString varValue = ss.mid(eqPos+1);
                     if (varName=="ENCODING" || varName=="CHARSET" || varName=="TYPE")
                         continue;
-                    long fileSize = 0;// TODO verify real size by it
                     if (varName=="NAME")
-                        msg.mmsFiles.last().name = varValue;
+                        att.name = varValue;
                     else if (varName=="SIZE")
                         fileSize = varValue.toLong();
                     else
                         errors << S_UNKNOWN_ATT_SUBTYPE.arg(line+1).arg(ss+"2");
                 }
                 if (encoding=="QUOTED-PRINTABLE")
-                    msg.mmsFiles.last().content = QuotedPrintable::decode(val, codec).toLocal8Bit();
+                    att.content = QuotedPrintable::decode(val, codec).toLocal8Bit();
                 else if (encoding=="BASE64" || encoding=="B")
-                    msg.mmsFiles.last().content = QByteArray::fromBase64(val.toLatin1());
+                    att.content = QByteArray::fromBase64(val.toLatin1());
                 else {
                     if (!encoding.isEmpty())
                         errors << S_UNKNOWN_ENCODING.arg(encoding);
                     if (!charSet.isEmpty())
-                        msg.mmsFiles.last().content = codec->toUnicode(val.toLocal8Bit()).toLatin1();
+                        att.content = codec->toUnicode(val.toLocal8Bit()).toLatin1();
                     else
-                        msg.mmsFiles.last().content = val.toLocal8Bit();
+                        att.content = val.toLocal8Bit();
 
                 }
+                if (fileSize>0 && fileSize!=att.content.size())
+                    errors << QObject::tr("File %1 has size %2, declared %3")
+                        .arg(att.name).arg(att.content.size()).arg(fileSize);
             }
         }
     }
