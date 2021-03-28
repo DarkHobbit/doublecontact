@@ -185,13 +185,13 @@ bool VMessageData::importMPBRecords(const QStringList &lines, DecodedMessageList
                 if (uVal=="SMS;IN")
                     msg.box = DecodedMessage::Inbox;
                 else if (uVal=="SMS;OUT")
-                    msg.box = DecodedMessage::Outbox;
+                    msg.box = DecodedMessage::Sentbox;
                 else if (uVal=="MMS;IN") {
                     msg.box = DecodedMessage::Inbox;
                     msg.isMMS = true;
                 }
                 else if (uVal=="MMS;OUT") {
-                    msg.box = DecodedMessage::Outbox;
+                    msg.box = DecodedMessage::Sentbox;
                     msg.isMMS = true;
                 }
                 else

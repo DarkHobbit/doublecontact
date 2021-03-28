@@ -130,7 +130,7 @@ bool NokiaData::ReadMMS(QDataStream& ds, DecodedMessage &msg, QStringList &error
                 switch(mmsType) {
                     case 128: {
                         s = "SendReq";
-                        msg.box = DecodedMessage::Outbox;
+                        msg.box = DecodedMessage::Sentbox;
                         break;
                     }
                     case 129: s = "SendConf";

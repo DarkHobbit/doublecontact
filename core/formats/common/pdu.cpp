@@ -43,7 +43,7 @@ bool PDU::parseMessage(QDataStream& ds, DecodedMessage& msg, int offset, int &Ms
         decodeMessageBody(udhi, ucs2, ds, msg);
         break;
     case 1:
-        msg.box = DecodedMessage::Outbox;
+        msg.box = DecodedMessage::Sentbox;
         ds >> byte;
         c.phones << Phone(readPhoneNumber(ds));
         // 358? Finland? ...Nokia???
