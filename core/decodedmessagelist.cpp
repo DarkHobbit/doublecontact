@@ -76,12 +76,16 @@ bool DecodedMessage::saveMMSFiles(const QString &dirPath, QString& fatalError) c
         QFile f(fileName);
         if (f.open(QIODevice::WriteOnly)) {
             f.write(fileInfo.content);
-#if QT_VERSION >= 0x050A00 // Qt >= 5.10
-            f.setFileTime(this->when, QFileDevice::FileBirthTime);
-            f.setFileTime(this->when, QFileDevice::FileModificationTime);
-            // TODO check on windows, jpeg only?
-#endif
             f.close();
+            // Set message time for attachment
+#if QT_VERSION >= 0x050A00 // Qt >= 5.10
+            // Setting time on-the-fly, in WriteOnly mode, not works on some platforms
+            if (f.open(QIODevice::Append)) {
+                f.setFileTime(this->when, QFileDevice::FileBirthTime);
+                f.setFileTime(this->when, QFileDevice::FileModificationTime);
+                f.close();
+            }
+#endif
         }
         else {
             fatalError = S_WRITE_ERR.arg(fileName);
