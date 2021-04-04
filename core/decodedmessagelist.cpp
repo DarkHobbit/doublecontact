@@ -292,7 +292,9 @@ void DecodedMessageList::fromPDUList(DecodedMessageList &messages, const QString
             msg.clear();
             msg.sources = fromArchive ? usePDUArchive : usePDU;
             QDataStream ds(body);
-            PDU::parseMessage(ds, msg, 1, MsgType);
+            bool res = PDU::parseMessage(ds, msg, 1, MsgType);
+            if (!res)
+                    errors << QString("Unknown message type: %1").arg(MsgType);
             if (ss[0].toInt()==1) // For multipart
                 msg.box = DecodedMessage::Inbox;
             if (ss.length()>2 && !msg.when.isValid()) // For outbox and multipart
