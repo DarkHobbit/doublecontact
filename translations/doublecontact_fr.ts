@@ -371,7 +371,7 @@ Voulez-vous accepter ce certificat quand même ?</translation>
     <message>
         <location filename="../app/contactdialog.cpp" line="862"/>
         <source>Contact photo</source>
-        <translation type="unfinished"></translation>
+        <translation>Photo du contact</translation>
     </message>
 </context>
 <context>
@@ -794,7 +794,7 @@ Voulez-vous accepter ce certificat quand même ?</translation>
     <message>
         <location filename="../app/mainwindow.ui" line="627"/>
         <source>&amp;Messages...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Messages…</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="476"/>
@@ -884,7 +884,7 @@ Voulez-vous accepter ce certificat quand même ?</translation>
     <message>
         <location filename="../app/mainwindow.ui" line="566"/>
         <source>&amp;Hard sort</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Tri strict</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="571"/>
