@@ -1233,7 +1233,7 @@ Weet u zeker dat u kolomsortering wilt uitschakelen?</translation>
     <message>
         <location filename="../model/messagemodel.cpp" line="72"/>
         <source>&lt;MMS&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;MMS&gt;</translation>
     </message>
 </context>
 <context>
@@ -1311,12 +1311,12 @@ Weet u zeker dat u kolomsortering wilt uitschakelen?</translation>
     <message>
         <location filename="../app/messagewindow.ui" line="163"/>
         <source>Return</source>
-        <translation type="unfinished">Enter</translation>
+        <translation>Enter</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="168"/>
         <source>Save MMS Files</source>
-        <translation type="unfinished"></translation>
+        <translation>MMS-bestanden opslaan</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.cpp" line="196"/>
@@ -1331,7 +1331,7 @@ Weet u zeker dat u kolomsortering wilt uitschakelen?</translation>
     <message>
         <location filename="../app/messagewindow.cpp" line="201"/>
         <source>Including MMS: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Inclusief mms: %1</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.cpp" line="202"/>
@@ -1356,7 +1356,10 @@ Bronnen: %2</translation>
 
 MMS properties:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>
+
+MMS-informatie:
+%1</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.cpp" line="266"/>
@@ -1366,7 +1369,7 @@ MMS properties:
     <message>
         <location filename="../app/messagewindow.cpp" line="273"/>
         <source>Can you also save media files from MMS (%1 messages)?</source>
-        <translation type="unfinished"></translation>
+        <translation>Kun je ook mediabestanden uit mms&apos;jes opslaan (%1 berichten)?</translation>
     </message>
 </context>
 <context>
@@ -2092,12 +2095,12 @@ opgeslagen als mobiele telefoon</translation>
     <message>
         <location filename="../core/globals.h" line="142"/>
         <source>Unknown encoding: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Onbekende versleuteling: %1</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="143"/>
         <source>Unknown charset: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Onbekende tekenset: %1</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="145"/>
@@ -2117,7 +2120,7 @@ opgeslagen als mobiele telefoon</translation>
     <message>
         <location filename="../core/globals.h" line="151"/>
         <source>Select MMS files Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>MMS-bestanden kiezen uit map</translation>
     </message>
     <message>
         <source>P.o. box</source>
@@ -2422,7 +2425,7 @@ Controleer gebruikersnaam, wachtwoord, protocol en poort</translation>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="132"/>
         <source>MMS</source>
-        <translation type="unfinished"></translation>
+        <translation>MMS</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="215"/>
@@ -2464,56 +2467,56 @@ Controleer gebruikersnaam, wachtwoord, protocol en poort</translation>
     <message>
         <location filename="../core/formats/common/nokiadata.cpp" line="319"/>
         <source>Unknown field type: 0x%1 at %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Onbekend soort veld: 0x%1 op %2</translation>
     </message>
     <message>
         <location filename="../core/formats/common/nokiadata.cpp" line="476"/>
         <source>Invalid MMS Yes/No value (%1) at %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Ongeldige mms-waarde (%1) op %2</translation>
     </message>
     <message>
         <location filename="../core/formats/common/nokiadata.cpp" line="486"/>
         <source>Invalid MMS octet count (%1) at %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Ongeldige mms-telling (%1) op %2</translation>
     </message>
     <message>
         <location filename="../core/formats/common/nokiadata.cpp" line="511"/>
         <source>Personal</source>
         <comment>MmsClass</comment>
-        <translation type="unfinished"></translation>
+        <translation>Persoonlijk</translation>
     </message>
     <message>
         <location filename="../core/formats/common/nokiadata.cpp" line="514"/>
         <source>Advertisement</source>
         <comment>MmsClass</comment>
-        <translation type="unfinished"></translation>
+        <translation>Reclame</translation>
     </message>
     <message>
         <location filename="../core/formats/common/nokiadata.cpp" line="517"/>
         <source>Info</source>
         <comment>MmsClass</comment>
-        <translation type="unfinished"></translation>
+        <translation>Informatie</translation>
     </message>
     <message>
         <location filename="../core/formats/common/nokiadata.cpp" line="520"/>
         <source>Auto</source>
         <comment>MmsClass</comment>
-        <translation type="unfinished"></translation>
+        <translation>Automatisch</translation>
     </message>
     <message>
         <location filename="../core/formats/common/nokiadata.cpp" line="542"/>
         <source>Parse value length error (%1) at %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Fout tijdens verwerken van lengte (%1) op %2</translation>
     </message>
     <message>
         <location filename="../core/formats/common/nokiadata.cpp" line="554"/>
         <source>Error reading uint64_t value: overflow at %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Fout tijdens uitlezen van uint64_t-waarde: overflow op %1</translation>
     </message>
     <message>
         <location filename="../core/formats/common/vmessagedata.cpp" line="19"/>
         <source>Unknown ATT subtype at line %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Onbekend ATT-subtype op regel %1: %2</translation>
     </message>
 </context>
 <context>
