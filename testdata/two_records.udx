@@ -26,11 +26,13 @@
 <vCardField>
 <N>;Doe John</N>
 <TELWORK>+1-213-555-1234</TELWORK>
+<vCardLocation>MMI_NVRAM</vCardLocation>
 </vCardField>
 </vCardInfo>
 <vCardInfo>
 <Sequence>2</Sequence>
 <vCardField>
+<vCardLocation>MMI_SIM</vCardLocation>
 <N>;Попов Александр</N>
 <TEL>+79101234567</TEL>
 <EMAIL>alexpopov@spb.ru</EMAIL>

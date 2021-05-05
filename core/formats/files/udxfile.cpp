@@ -111,7 +111,8 @@ bool UDXFile::importRecords(const QString &url, ContactList &list, bool append)
             _errors << QObject::tr("Can't find 'vCardField' at sequence %1").arg(item.id);
         QDomElement field = fields.firstChildElement();
         while (!field.isNull()) {
-            QString fldName = field.nodeName().toUpper();
+            QString sFldName = field.nodeName();
+            QString fldName = sFldName.toUpper();
             QString fldValue = field.text(); // codec->toUnicode(field.text().toLocal8Bit()); TODO not works on windows
             if (fldValue.contains("=")) { // quoted-printable
                 QuotedPrintable::mergeLines(fldValue);
@@ -152,8 +153,12 @@ bool UDXFile::importRecords(const QString &url, ContactList &list, bool append)
                 email.syncMLRef = -1;
                 item.emails.push_back(email);
             }
-            else
+            else if (fldName=="VCARDLOCATION")
+                item.otherTags.push_back(TagValue("vCardLocation", fldValue));
+            else {
+                item.unknownTags.push_back(TagValue(sFldName, fldValue));
                 _errors << QObject::tr("Unknown 'vCardfield' type: %1").arg(fldName);
+            }
             field = field.nextSiblingElement();
         }
         item.calculateFields();
@@ -283,6 +288,9 @@ bool UDXFile::exportRecords(const QString &url, ContactList &list)
         if (item.birthday.hasTime)
             _errors << QObject::tr("Warning: contact %1 has time (%2) in birthday, not implemented in UDX reader")
                  .arg(item.visibleName).arg(item.birthday.value.toString("hh:mm:ss"));
+        // Unsupported but non-empty fields
+        // TODO port it to lossData()
+        // TODO add ims
         if (!item.addrs.isEmpty())
             _errors << QObject::tr("Warning: contact %1 has address(es), not implemented in UDX")
                  .arg(item.visibleName);
@@ -295,6 +303,11 @@ bool UDXFile::exportRecords(const QString &url, ContactList &list)
         if (!item.anniversary.isEmpty())
             _errors << QObject::tr("Warning: contact %1 has anniversaries, not implemented in UDX").arg(item.visibleName);
         // Here place warning on all other udx-unsupported things
+        // Other&unknown tags
+        foreach(const TagValue& pair, item.otherTags)
+            addElement(vCardField, pair.tag, pair.value);
+        foreach(const TagValue& pair, item.unknownTags)
+            addElement(vCardField, pair.tag, pair.value);
     }
     QString content = toString(0);
     // Add left-aligned file size, completed to 10 characters
