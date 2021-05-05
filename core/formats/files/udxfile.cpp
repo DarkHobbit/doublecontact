@@ -289,19 +289,12 @@ bool UDXFile::exportRecords(const QString &url, ContactList &list)
             _errors << QObject::tr("Warning: contact %1 has time (%2) in birthday, not implemented in UDX reader")
                  .arg(item.visibleName).arg(item.birthday.value.toString("hh:mm:ss"));
         // Unsupported but non-empty fields
-        // TODO port it to lossData()
-        // TODO add ims
-        if (!item.addrs.isEmpty())
-            _errors << QObject::tr("Warning: contact %1 has address(es), not implemented in UDX")
-                 .arg(item.visibleName);
-        if (!item.photo.isEmpty())
-            _errors << QObject::tr("Warning: contact %1 has photo, not implemented in UDX").arg(item.visibleName);
-        if (!item.description.isEmpty())
-            _errors << QObject::tr("Warning: contact %1 has description, not implemented in UDX").arg(item.visibleName);
-        if (!item.title.isEmpty())
-            _errors << QObject::tr("Warning: contact %1 has job title, not implemented in UDX").arg(item.visibleName);
-        if (!item.anniversary.isEmpty())
-            _errors << QObject::tr("Warning: contact %1 has anniversaries, not implemented in UDX").arg(item.visibleName);
+        lossData(_errors, item.visibleName, QObject::tr("IM"), !item.ims.isEmpty());
+        lossData(_errors, item.visibleName, QObject::tr("address"), !item.addrs.isEmpty());
+        lossData(_errors, item.visibleName, QObject::tr("photo"), !item.photo.isEmpty());
+        lossData(_errors, item.visibleName, QObject::tr("description"), !item.description.isEmpty());
+        lossData(_errors, item.visibleName, QObject::tr("job title"), !item.title.isEmpty());
+        lossData(_errors, item.visibleName, QObject::tr("anniversary"), !item.anniversary.isEmpty());
         // Here place warning on all other udx-unsupported things
         // Other&unknown tags
         foreach(const TagValue& pair, item.otherTags)

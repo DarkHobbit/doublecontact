@@ -1403,7 +1403,7 @@ MMS properties:
     <name>QObject</name>
     <message>
         <location filename="../core/contactlist.cpp" line="106"/>
-        <location filename="../core/contactlist.cpp" line="1011"/>
+        <location filename="../core/contactlist.cpp" line="1044"/>
         <source>Home</source>
         <translation>Домашній</translation>
     </message>
@@ -1414,7 +1414,7 @@ MMS properties:
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="108"/>
-        <location filename="../core/contactlist.cpp" line="1012"/>
+        <location filename="../core/contactlist.cpp" line="1045"/>
         <source>Work</source>
         <translation>Службовий</translation>
     </message>
@@ -1422,7 +1422,7 @@ MMS properties:
         <location filename="../core/contactlist.cpp" line="109"/>
         <location filename="../core/contactlist.cpp" line="158"/>
         <location filename="../core/contactlist.cpp" line="194"/>
-        <location filename="../core/contactlist.cpp" line="1013"/>
+        <location filename="../core/contactlist.cpp" line="1046"/>
         <source>Preferable</source>
         <translation>Переважний</translation>
     </message>
@@ -1548,22 +1548,22 @@ SMS: %7
 %9 %10</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1014"/>
+        <location filename="../core/contactlist.cpp" line="1047"/>
         <source>Domestic</source>
         <translation>Внутрішній</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1015"/>
+        <location filename="../core/contactlist.cpp" line="1048"/>
         <source>International</source>
         <translation>Міжнародний</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1016"/>
+        <location filename="../core/contactlist.cpp" line="1049"/>
         <source>Postal</source>
         <translation>Поштовий</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1017"/>
+        <location filename="../core/contactlist.cpp" line="1050"/>
         <source>Parcel</source>
         <translation>Для посилок</translation>
     </message>
@@ -1619,7 +1619,7 @@ SMS: %7
     </message>
     <message>
         <location filename="../core/formats/common/vcarddata.cpp" line="362"/>
-        <location filename="../core/formats/files/udxfile.cpp" line="170"/>
+        <location filename="../core/formats/files/udxfile.cpp" line="175"/>
         <source>%1 unknown tags found</source>
         <translation>Знайдено невідомих ярликів: %1</translation>
     </message>
@@ -1690,27 +1690,27 @@ line %3, col %4
         <translation>Не можу знайти &apos;vCardField&apos; у послідовності %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/udxfile.cpp" line="140"/>
+        <location filename="../core/formats/files/udxfile.cpp" line="141"/>
         <source>Unknown phone type: %1 (%2)</source>
         <translation>Невідомий тип телефону: %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/udxfile.cpp" line="156"/>
+        <location filename="../core/formats/files/udxfile.cpp" line="160"/>
         <source>Unknown &apos;vCardfield&apos; type: %1</source>
         <translation>Невідомий тип ярлика &apos;vCardfield&apos;: %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/udxfile.cpp" line="164"/>
+        <location filename="../core/formats/files/udxfile.cpp" line="169"/>
         <source>%1 records read, %2 expected</source>
         <translation>Прочитано записів: %1, очікувалось: %2</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/udxfile.cpp" line="228"/>
+        <location filename="../core/formats/files/udxfile.cpp" line="233"/>
         <source>Warning: contact %1, duplicate id %2 changed to %3</source>
         <translation>Увага: ідентифікатор %2 контакту %1 змінено на %3 через дублювання</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/udxfile.cpp" line="263"/>
+        <location filename="../core/formats/files/udxfile.cpp" line="268"/>
         <source>Warning: contact %1, unknown tel type:
 %2
  saved as cellular</source>
@@ -1719,34 +1719,59 @@ line %3, col %4
  збережено як стільниковий</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/udxfile.cpp" line="284"/>
+        <location filename="../core/formats/files/udxfile.cpp" line="289"/>
         <source>Warning: contact %1 has time (%2) in birthday, not implemented in UDX reader</source>
         <translation>Увага: контакт %1 містить у дні народження час (%2), не реалізований в UDX-читачі</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/udxfile.cpp" line="287"/>
-        <source>Warning: contact %1 has address(es), not implemented in UDX</source>
-        <translation>Увага: контакт %1 містить адресу(-и), не реалізовані в UDX</translation>
-    </message>
-    <message>
-        <location filename="../core/formats/files/udxfile.cpp" line="290"/>
-        <source>Warning: contact %1 has photo, not implemented in UDX</source>
-        <translation>Увага: контакт %1 містить фотографію, не реалізовану в UDX</translation>
-    </message>
-    <message>
         <location filename="../core/formats/files/udxfile.cpp" line="292"/>
-        <source>Warning: contact %1 has description, not implemented in UDX</source>
-        <translation>Увага: контакт %1 містить опис, не реалізований в UDX</translation>
+        <source>IM</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/formats/files/udxfile.cpp" line="293"/>
+        <source>address</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="294"/>
-        <source>Warning: contact %1 has job title, not implemented in UDX</source>
-        <translation>Увага: контакт %1 містить посаду, не реалізовану в UDX</translation>
+        <source>photo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/formats/files/udxfile.cpp" line="295"/>
+        <source>description</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="296"/>
+        <source>job title</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/formats/files/udxfile.cpp" line="297"/>
+        <source>anniversary</source>
+        <translation type="unfinished">Річницю</translation>
+    </message>
+    <message>
+        <source>Warning: contact %1 has address(es), not implemented in UDX</source>
+        <translation type="obsolete">Увага: контакт %1 містить адресу(-и), не реалізовані в UDX</translation>
+    </message>
+    <message>
+        <source>Warning: contact %1 has photo, not implemented in UDX</source>
+        <translation type="obsolete">Увага: контакт %1 містить фотографію, не реалізовану в UDX</translation>
+    </message>
+    <message>
+        <source>Warning: contact %1 has description, not implemented in UDX</source>
+        <translation type="obsolete">Увага: контакт %1 містить опис, не реалізований в UDX</translation>
+    </message>
+    <message>
+        <source>Warning: contact %1 has job title, not implemented in UDX</source>
+        <translation type="obsolete">Увага: контакт %1 містить посаду, не реалізовану в UDX</translation>
+    </message>
+    <message>
         <source>Warning: contact %1 has anniversaries, not implemented in UDX</source>
-        <translation>Увага: контакт %1 містить річниці, не реалізовані в UDX</translation>
+        <translation type="obsolete">Увага: контакт %1 містить річниці, не реалізовані в UDX</translation>
     </message>
     <message>
         <location filename="../core/formats/formatfactory.cpp" line="77"/>
@@ -2184,42 +2209,42 @@ Data will be lost</source>
 %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="99"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="98"/>
         <source>Unsupported MPB section: </source>
         <translation>Секція MPB не підтримується: </translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="117"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="116"/>
         <source>File isn&apos;t MPB file or corrupted</source>
         <translation>Файл не є MPB-файлом або його пошкоджено</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="127"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="126"/>
         <source>Strange call item: %1, size %2</source>
         <translation>Дивний елемент виклику: %1, розмір %2</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="162"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="161"/>
         <source>No contact records in this file</source>
         <translation>В файлі не виявлено контактів</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="173"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="172"/>
         <source>MPB record allowed only for MPB source</source>
         <translation>Запис до файлу MPB допускається лише за умови, що оригінал також був у форматі MPB</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="226"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="225"/>
         <source>Name for number %1 changed from %2 to %3</source>
         <translation>Ім&apos;я для телефону %1 змінено з%2 на %3</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="238"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="237"/>
         <source>Number %1 without original name not found in addressbook</source>
         <translation>Номер %1 без імені не знайдено в переліку контактів</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="240"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="239"/>
         <source>Number %1 not found in addressbook. Original name (%2) saved</source>
         <translation>Номер %1 не знайдено в переліку контактів. Збережено джерельне ім&apos;я (%2)</translation>
     </message>
@@ -2360,59 +2385,59 @@ Check username, password, protocol and port</source>
         <translation>Тест 1 відрізняється від 0x10: %1</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="101"/>
+        <location filename="../core/decodedmessagelist.cpp" line="105"/>
         <source>Read</source>
         <translation>Прочитане</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="102"/>
+        <location filename="../core/decodedmessagelist.cpp" line="106"/>
         <source>UnRd</source>
         <translation>Непрочитане</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="103"/>
+        <location filename="../core/decodedmessagelist.cpp" line="107"/>
         <source>Unk.</source>
         <translation>Невідоме</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="105"/>
+        <location filename="../core/decodedmessagelist.cpp" line="109"/>
         <source>Inbox</source>
         <translation>Вхідні</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="106"/>
+        <location filename="../core/decodedmessagelist.cpp" line="110"/>
         <source>Outbox</source>
         <translation>Вихідні</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="107"/>
+        <location filename="../core/decodedmessagelist.cpp" line="111"/>
         <source>Sentbox</source>
         <translation>Надіслані</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="108"/>
+        <location filename="../core/decodedmessagelist.cpp" line="112"/>
         <source>Draft</source>
         <translation>Чернетки</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="109"/>
+        <location filename="../core/decodedmessagelist.cpp" line="113"/>
         <source>Trash</source>
         <translation>Кошик</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="119"/>
+        <location filename="../core/decodedmessagelist.cpp" line="123"/>
         <source>&quot;Date&quot;,&quot;Box&quot;,&quot;From/To&quot;,&quot;Status&quot;,&quot;Text&quot;,&quot;Aux&quot;
 </source>
         <translation>&quot;Дата&quot;,&quot;Скринька&quot;,&quot;Від/Для&quot;,&quot;Статус&quot;,&quot;Текст&quot;,&quot;Додатково&quot;
 </translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="132"/>
+        <location filename="../core/decodedmessagelist.cpp" line="136"/>
         <source>MMS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="215"/>
+        <location filename="../core/decodedmessagelist.cpp" line="219"/>
         <source>Dlv</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2421,7 +2446,7 @@ Check username, password, protocol and port</source>
         <translation type="obsolete">Порожньо</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="299"/>
+        <location filename="../core/decodedmessagelist.cpp" line="305"/>
         <source>MPB message body missing</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2500,6 +2525,11 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../core/formats/common/vmessagedata.cpp" line="19"/>
         <source>Unknown ATT subtype at line %1: %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/formats/common/vmessagedata.cpp" line="282"/>
+        <source>File %1 has size %2, declared %3</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

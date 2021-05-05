@@ -1307,7 +1307,7 @@ MMS properties:
     <name>QObject</name>
     <message>
         <location filename="../core/contactlist.cpp" line="106"/>
-        <location filename="../core/contactlist.cpp" line="1011"/>
+        <location filename="../core/contactlist.cpp" line="1044"/>
         <source>Home</source>
         <translation>Hjem</translation>
     </message>
@@ -1318,7 +1318,7 @@ MMS properties:
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="108"/>
-        <location filename="../core/contactlist.cpp" line="1012"/>
+        <location filename="../core/contactlist.cpp" line="1045"/>
         <source>Work</source>
         <translation>Arbeid</translation>
     </message>
@@ -1326,7 +1326,7 @@ MMS properties:
         <location filename="../core/contactlist.cpp" line="109"/>
         <location filename="../core/contactlist.cpp" line="158"/>
         <location filename="../core/contactlist.cpp" line="194"/>
-        <location filename="../core/contactlist.cpp" line="1013"/>
+        <location filename="../core/contactlist.cpp" line="1046"/>
         <source>Preferable</source>
         <translation type="unfinished">Foretrukket</translation>
     </message>
@@ -1452,22 +1452,22 @@ telefonspråk %5</translation>
 %9 %10</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1014"/>
+        <location filename="../core/contactlist.cpp" line="1047"/>
         <source>Domestic</source>
         <translation>Innenlands</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1015"/>
+        <location filename="../core/contactlist.cpp" line="1048"/>
         <source>International</source>
         <translation>Internasjonal</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1016"/>
+        <location filename="../core/contactlist.cpp" line="1049"/>
         <source>Postal</source>
         <translation>Postadresse</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1017"/>
+        <location filename="../core/contactlist.cpp" line="1050"/>
         <source>Parcel</source>
         <translation>Pakkeadresse</translation>
     </message>
@@ -1515,7 +1515,7 @@ telefonspråk %5</translation>
     </message>
     <message>
         <location filename="../core/formats/common/vcarddata.cpp" line="362"/>
-        <location filename="../core/formats/files/udxfile.cpp" line="170"/>
+        <location filename="../core/formats/files/udxfile.cpp" line="175"/>
         <source>%1 unknown tags found</source>
         <translation>%1 ukjente etiketter funnet</translation>
     </message>
@@ -1586,27 +1586,27 @@ linje %3, kol. %4
         <translation type="unfinished">Finner ikke &quot;vCardField&quot; i sekvensen %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/udxfile.cpp" line="140"/>
+        <location filename="../core/formats/files/udxfile.cpp" line="141"/>
         <source>Unknown phone type: %1 (%2)</source>
         <translation>Ukjent telefontype: %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/udxfile.cpp" line="156"/>
+        <location filename="../core/formats/files/udxfile.cpp" line="160"/>
         <source>Unknown &apos;vCardfield&apos; type: %1</source>
         <translation>Ukjent &quot;vCardField&quot;-type: %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/udxfile.cpp" line="164"/>
+        <location filename="../core/formats/files/udxfile.cpp" line="169"/>
         <source>%1 records read, %2 expected</source>
         <translation>%1 oppføringer lest, %2 ventet</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/udxfile.cpp" line="228"/>
+        <location filename="../core/formats/files/udxfile.cpp" line="233"/>
         <source>Warning: contact %1, duplicate id %2 changed to %3</source>
         <translation>Advarsel: Kontakt %1, duplikat-ID %2 endret til %3</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/udxfile.cpp" line="263"/>
+        <location filename="../core/formats/files/udxfile.cpp" line="268"/>
         <source>Warning: contact %1, unknown tel type:
 %2
  saved as cellular</source>
@@ -1615,34 +1615,59 @@ linje %3, kol. %4
 lagret som mobil</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/udxfile.cpp" line="284"/>
+        <location filename="../core/formats/files/udxfile.cpp" line="289"/>
         <source>Warning: contact %1 has time (%2) in birthday, not implemented in UDX reader</source>
         <translation type="unfinished">Advarsel: Kontakten %1 har tiden (%2) i geburtsdag, ikke implementert i UDX-leser</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/udxfile.cpp" line="287"/>
-        <source>Warning: contact %1 has address(es), not implemented in UDX</source>
-        <translation>Advarsel: Kontakten %1 har adresse(ne), ikke implementert i UDX</translation>
-    </message>
-    <message>
-        <location filename="../core/formats/files/udxfile.cpp" line="290"/>
-        <source>Warning: contact %1 has photo, not implemented in UDX</source>
-        <translation>Advarsel: Kontakten %1 har bilde, ikke implementert i UDX</translation>
-    </message>
-    <message>
         <location filename="../core/formats/files/udxfile.cpp" line="292"/>
-        <source>Warning: contact %1 has description, not implemented in UDX</source>
-        <translation>Advarsel: Kontakten %1 har beskrivelse, ikke implementert i UDX</translation>
+        <source>IM</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/formats/files/udxfile.cpp" line="293"/>
+        <source>address</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="294"/>
-        <source>Warning: contact %1 has job title, not implemented in UDX</source>
-        <translation>Advarsel: Kontakten %1 har jobbtittel, ikke implementert i UDX</translation>
+        <source>photo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/formats/files/udxfile.cpp" line="295"/>
+        <source>description</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="296"/>
+        <source>job title</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/formats/files/udxfile.cpp" line="297"/>
+        <source>anniversary</source>
+        <translation type="unfinished">jubileum</translation>
+    </message>
+    <message>
+        <source>Warning: contact %1 has address(es), not implemented in UDX</source>
+        <translation type="obsolete">Advarsel: Kontakten %1 har adresse(ne), ikke implementert i UDX</translation>
+    </message>
+    <message>
+        <source>Warning: contact %1 has photo, not implemented in UDX</source>
+        <translation type="obsolete">Advarsel: Kontakten %1 har bilde, ikke implementert i UDX</translation>
+    </message>
+    <message>
+        <source>Warning: contact %1 has description, not implemented in UDX</source>
+        <translation type="obsolete">Advarsel: Kontakten %1 har beskrivelse, ikke implementert i UDX</translation>
+    </message>
+    <message>
+        <source>Warning: contact %1 has job title, not implemented in UDX</source>
+        <translation type="obsolete">Advarsel: Kontakten %1 har jobbtittel, ikke implementert i UDX</translation>
+    </message>
+    <message>
         <source>Warning: contact %1 has anniversaries, not implemented in UDX</source>
-        <translation>Advarsel: Kontakten %1 har jubileum, ikke implementert i UDX</translation>
+        <translation type="obsolete">Advarsel: Kontakten %1 har jubileum, ikke implementert i UDX</translation>
     </message>
     <message>
         <location filename="../core/formats/formatfactory.cpp" line="77"/>
@@ -1679,42 +1704,42 @@ lagret som mobil</translation>
 %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="99"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="98"/>
         <source>Unsupported MPB section: </source>
         <translation>Ustøttet MPB-del: </translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="117"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="116"/>
         <source>File isn&apos;t MPB file or corrupted</source>
         <translation>Filen er ikke MPB, eller skadet</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="127"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="126"/>
         <source>Strange call item: %1, size %2</source>
         <translation>Merkelig samtaleelement: %1, størrelse %2</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="162"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="161"/>
         <source>No contact records in this file</source>
         <translation>Ingen kontaktlisteoppføringer i denne filen</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="173"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="172"/>
         <source>MPB record allowed only for MPB source</source>
         <translation>MPB-dataoppføring tillatt kun for MPB-kilde</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="226"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="225"/>
         <source>Name for number %1 changed from %2 to %3</source>
         <translation>Navn for nummer %1 endret fra %2 til %3</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="238"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="237"/>
         <source>Number %1 without original name not found in addressbook</source>
         <translation>Nummer %1 uten opprinnelig navn ikke funnet i adressebok</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="240"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="239"/>
         <source>Number %1 not found in addressbook. Original name (%2) saved</source>
         <translation>Nummer %1 ikke funnet i adressebok. Opprinnelig navn (%2) lagret</translation>
     </message>
@@ -2264,59 +2289,59 @@ Sjekk brukernavn, passord, protokoll og port</translation>
         <translation>Test 1 forskjellig fra 0x01: %1</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="101"/>
+        <location filename="../core/decodedmessagelist.cpp" line="105"/>
         <source>Read</source>
         <translation>Les</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="102"/>
+        <location filename="../core/decodedmessagelist.cpp" line="106"/>
         <source>UnRd</source>
         <translation>Ulest</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="103"/>
+        <location filename="../core/decodedmessagelist.cpp" line="107"/>
         <source>Unk.</source>
         <translation type="unfinished">Ukjent</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="105"/>
+        <location filename="../core/decodedmessagelist.cpp" line="109"/>
         <source>Inbox</source>
         <translation>Innboks</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="106"/>
+        <location filename="../core/decodedmessagelist.cpp" line="110"/>
         <source>Outbox</source>
         <translation>Utboks</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="107"/>
+        <location filename="../core/decodedmessagelist.cpp" line="111"/>
         <source>Sentbox</source>
         <translation>Sendt</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="108"/>
+        <location filename="../core/decodedmessagelist.cpp" line="112"/>
         <source>Draft</source>
         <translation>Kladd</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="109"/>
+        <location filename="../core/decodedmessagelist.cpp" line="113"/>
         <source>Trash</source>
         <translation>Søppel</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="119"/>
+        <location filename="../core/decodedmessagelist.cpp" line="123"/>
         <source>&quot;Date&quot;,&quot;Box&quot;,&quot;From/To&quot;,&quot;Status&quot;,&quot;Text&quot;,&quot;Aux&quot;
 </source>
         <translation>&quot;Dato&quot;,&quot;Boks&quot;,&quot;Fra/til&quot;,&quot;Status&quot;,Tekst&quot;,Fjern&quot;
 </translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="132"/>
+        <location filename="../core/decodedmessagelist.cpp" line="136"/>
         <source>MMS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="215"/>
+        <location filename="../core/decodedmessagelist.cpp" line="219"/>
         <source>Dlv</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2325,7 +2350,7 @@ Sjekk brukernavn, passord, protokoll og port</translation>
         <translation type="obsolete">Tom</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="299"/>
+        <location filename="../core/decodedmessagelist.cpp" line="305"/>
         <source>MPB message body missing</source>
         <translation>MPB-meldingskropp mangler</translation>
     </message>
@@ -2404,6 +2429,11 @@ Sjekk brukernavn, passord, protokoll og port</translation>
     <message>
         <location filename="../core/formats/common/vmessagedata.cpp" line="19"/>
         <source>Unknown ATT subtype at line %1: %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/formats/common/vmessagedata.cpp" line="282"/>
+        <source>File %1 has size %2, declared %3</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
