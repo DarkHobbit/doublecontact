@@ -1719,37 +1719,41 @@ line %3, col %4
  збережено як стільниковий</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/udxfile.cpp" line="289"/>
-        <source>Warning: contact %1 has time (%2) in birthday, not implemented in UDX reader</source>
-        <translation>Увага: контакт %1 містить у дні народження час (%2), не реалізований в UDX-читачі</translation>
+        <location filename="../core/formats/files/udxfile.cpp" line="288"/>
+        <source>time in birthday</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/files/udxfile.cpp" line="292"/>
+        <source>Warning: contact %1 has time (%2) in birthday, not implemented in UDX reader</source>
+        <translation type="obsolete">Увага: контакт %1 містить у дні народження час (%2), не реалізований в UDX-читачі</translation>
+    </message>
+    <message>
+        <location filename="../core/formats/files/udxfile.cpp" line="290"/>
         <source>IM</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/files/udxfile.cpp" line="293"/>
+        <location filename="../core/formats/files/udxfile.cpp" line="291"/>
         <source>address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/files/udxfile.cpp" line="294"/>
+        <location filename="../core/formats/files/udxfile.cpp" line="292"/>
         <source>photo</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/files/udxfile.cpp" line="295"/>
+        <location filename="../core/formats/files/udxfile.cpp" line="293"/>
         <source>description</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/files/udxfile.cpp" line="296"/>
+        <location filename="../core/formats/files/udxfile.cpp" line="294"/>
         <source>job title</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/files/udxfile.cpp" line="297"/>
+        <location filename="../core/formats/files/udxfile.cpp" line="295"/>
         <source>anniversary</source>
         <translation type="unfinished">Річницю</translation>
     </message>

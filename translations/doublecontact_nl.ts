@@ -1727,37 +1727,41 @@ regel %3, kolom %4
 opgeslagen als mobiele telefoon</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/udxfile.cpp" line="289"/>
-        <source>Warning: contact %1 has time (%2) in birthday, not implemented in UDX reader</source>
-        <translation>Waarschuwing: contactpersoon %1 heeft de tijd (%2) in de verjaardag maar dit is niet geïmplementeerd in de UDX-lezer</translation>
+        <location filename="../core/formats/files/udxfile.cpp" line="288"/>
+        <source>time in birthday</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/files/udxfile.cpp" line="292"/>
+        <source>Warning: contact %1 has time (%2) in birthday, not implemented in UDX reader</source>
+        <translation type="obsolete">Waarschuwing: contactpersoon %1 heeft de tijd (%2) in de verjaardag maar dit is niet geïmplementeerd in de UDX-lezer</translation>
+    </message>
+    <message>
+        <location filename="../core/formats/files/udxfile.cpp" line="290"/>
         <source>IM</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/files/udxfile.cpp" line="293"/>
+        <location filename="../core/formats/files/udxfile.cpp" line="291"/>
         <source>address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/files/udxfile.cpp" line="294"/>
+        <location filename="../core/formats/files/udxfile.cpp" line="292"/>
         <source>photo</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/files/udxfile.cpp" line="295"/>
+        <location filename="../core/formats/files/udxfile.cpp" line="293"/>
         <source>description</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/files/udxfile.cpp" line="296"/>
+        <location filename="../core/formats/files/udxfile.cpp" line="294"/>
         <source>job title</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/files/udxfile.cpp" line="297"/>
+        <location filename="../core/formats/files/udxfile.cpp" line="295"/>
         <source>anniversary</source>
         <translation type="unfinished">jubileum</translation>
     </message>

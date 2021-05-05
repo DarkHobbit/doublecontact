@@ -1654,37 +1654,41 @@ line %3, col %4
  сохранён как мобильный</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/udxfile.cpp" line="289"/>
-        <source>Warning: contact %1 has time (%2) in birthday, not implemented in UDX reader</source>
-        <translation>Предупреждение: у контакта %1 есть день рождения со временем, не реализовано в UDX</translation>
+        <location filename="../core/formats/files/udxfile.cpp" line="288"/>
+        <source>time in birthday</source>
+        <translation>день рождения со временем</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/udxfile.cpp" line="292"/>
+        <source>Warning: contact %1 has time (%2) in birthday, not implemented in UDX reader</source>
+        <translation type="obsolete">Предупреждение: у контакта %1 есть день рождения со временем, не реализовано в UDX</translation>
+    </message>
+    <message>
+        <location filename="../core/formats/files/udxfile.cpp" line="290"/>
         <source>IM</source>
         <translation>IM</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/udxfile.cpp" line="293"/>
+        <location filename="../core/formats/files/udxfile.cpp" line="291"/>
         <source>address</source>
         <translation>адрес</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/udxfile.cpp" line="294"/>
+        <location filename="../core/formats/files/udxfile.cpp" line="292"/>
         <source>photo</source>
         <translation>фотографию</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/udxfile.cpp" line="295"/>
+        <location filename="../core/formats/files/udxfile.cpp" line="293"/>
         <source>description</source>
         <translation>описание</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/udxfile.cpp" line="296"/>
+        <location filename="../core/formats/files/udxfile.cpp" line="294"/>
         <source>job title</source>
         <translation>должность</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/udxfile.cpp" line="297"/>
+        <location filename="../core/formats/files/udxfile.cpp" line="295"/>
         <source>anniversary</source>
         <translation>годовщину</translation>
     </message>

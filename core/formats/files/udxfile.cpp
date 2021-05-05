@@ -285,9 +285,7 @@ bool UDXFile::exportRecords(const QString &url, ContactList &list)
             addElement(vCardField, "BDAY", item.birthday.toString(DateItem::ISOBasic));
         // TODO maybe some phones support time in udx? need search specs, and maybe need use DateItem::toString() here
         // but check format, - and T, maybe it's vCard 2.1
-        if (item.birthday.hasTime)
-            _errors << QObject::tr("Warning: contact %1 has time (%2) in birthday, not implemented in UDX reader")
-                 .arg(item.visibleName).arg(item.birthday.value.toString("hh:mm:ss"));
+        lossData(_errors, item.visibleName, QObject::tr("time in birthday"), item.birthday.hasTime);
         // Unsupported but non-empty fields
         lossData(_errors, item.visibleName, QObject::tr("IM"), !item.ims.isEmpty());
         lossData(_errors, item.visibleName, QObject::tr("address"), !item.addrs.isEmpty());
