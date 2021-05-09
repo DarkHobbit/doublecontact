@@ -82,6 +82,7 @@ QString PDU::readPhoneNumber(QDataStream &s, bool lenInBytes)
             goto case0x0A;
         case 0x09: // 1001
             sb += "+";
+            goto case0x0A; // instead non-portable fallthrough attribute
 case0x0A:
         case 0x0A: // 1010
         case 0x0B: // 1011
@@ -115,7 +116,9 @@ case0x0A:
         default:
             return "Unknown phone number format";
     }
-    return sb;
+    sb.replace("\n", " ");
+    sb.replace("\r", " ");
+    return sb.trimmed();
 }
 
 QDateTime PDU::readDateTime(QDataStream &s)

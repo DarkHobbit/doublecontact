@@ -127,6 +127,7 @@ bool DecodedMessageList::toCSV(const QString &path)
         QString msgText = msg.text;
         msgText.replace("\"", "'");
         msgText.replace("\n", " ");
+        msgText.replace("\r", " ");
         // Write current message
         ss << "\""    << msg.when.toString("dd.MM.yyyy hh:mm:ss")
            << "\",\"" << sMsgBox[msg.box]
