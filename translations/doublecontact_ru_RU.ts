@@ -2421,13 +2421,13 @@ Check username, password, protocol and port</source>
         <location filename="../core/formats/common/nokiadata.cpp" line="517"/>
         <source>Info</source>
         <comment>MmsClass</comment>
-        <translation type="unfinished"></translation>
+        <translation>Информация</translation>
     </message>
     <message>
         <location filename="../core/formats/common/nokiadata.cpp" line="520"/>
         <source>Auto</source>
         <comment>MmsClass</comment>
-        <translation type="unfinished"></translation>
+        <translation>Автоматически</translation>
     </message>
     <message>
         <location filename="../core/formats/common/nokiadata.cpp" line="542"/>
