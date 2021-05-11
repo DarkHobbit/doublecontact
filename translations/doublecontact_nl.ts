@@ -1729,7 +1729,7 @@ opgeslagen als mobiele telefoon</translation>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="288"/>
         <source>time in birthday</source>
-        <translation type="unfinished"></translation>
+        <translation>tijd in verjaardag</translation>
     </message>
     <message>
         <source>Warning: contact %1 has time (%2) in birthday, not implemented in UDX reader</source>
@@ -1738,32 +1738,32 @@ opgeslagen als mobiele telefoon</translation>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="290"/>
         <source>IM</source>
-        <translation type="unfinished"></translation>
+        <translation>IM</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="291"/>
         <source>address</source>
-        <translation type="unfinished"></translation>
+        <translation>adres</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="292"/>
         <source>photo</source>
-        <translation type="unfinished"></translation>
+        <translation>foto</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="293"/>
         <source>description</source>
-        <translation type="unfinished"></translation>
+        <translation>omschrijving</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="294"/>
         <source>job title</source>
-        <translation type="unfinished"></translation>
+        <translation>functietitel</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="295"/>
         <source>anniversary</source>
-        <translation type="unfinished">jubileum</translation>
+        <translation>jubileum</translation>
     </message>
     <message>
         <source>Warning: contact %1 has address(es), not implemented in UDX</source>
@@ -2550,7 +2550,7 @@ Controleer gebruikersnaam, wachtwoord, protocol en poort</translation>
     <message>
         <location filename="../core/formats/common/vmessagedata.cpp" line="282"/>
         <source>File %1 has size %2, declared %3</source>
-        <translation type="unfinished"></translation>
+        <translation>Bestand ‘%1’ heeft een grootte van %2 maar is %3 verklaard</translation>
     </message>
 </context>
 <context>
