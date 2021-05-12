@@ -15,6 +15,7 @@
 
 #include <QDialog>
 #include <QLabel>
+#include <QMenu>
 #include <QStatusBar>
 
 #include "contactlist.h"
@@ -49,6 +50,7 @@ private slots:
     void on_leFilter_textChanged(const QString &newText);
     void on_btnSaveAs_clicked();
     void on_actionSave_MMS_Files_triggered();
+    void onShowMMSFile(bool);
 
 protected:
     void showEvent(QShowEvent*);
@@ -60,6 +62,7 @@ private:
     ContactSorterFilter *proxy;
     QStatusBar* statusBar;
     QLabel *lbCount, *lbMMSCount, *lbMode, *lbDups, *lbMultiParts;
+    QMenu* menuMMSFiles;
     void setSorting(bool needSort);
     void updateModel();
     void updateStatus();

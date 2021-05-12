@@ -30,6 +30,7 @@ public:
     void setDefaults(const QString& tableFont, const QString& gridColor1, const QString& gridColor2);
     void readConfig();
     void writeConfig();
+    void addFileToRemove(const QString& path);
     // Separate settings, managed by main window and other dialogs
     QString readLanguage();
     void writeLanguage(const QString& language);
@@ -65,6 +66,7 @@ public:
     QStringList validColumnNames; // Available list
 private:
     QSettings* settings;
+    QStringList filesToRemove;
     void updateFormats();
 };
 

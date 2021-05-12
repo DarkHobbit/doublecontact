@@ -1270,39 +1270,45 @@ Are you want switch column sorting off?</source>
         <translation>Сохранить файлы из MMS</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="196"/>
+        <location filename="../app/messagewindow.ui" line="173"/>
+        <location filename="../app/messagewindow.ui" line="176"/>
+        <source>Show MMS Files</source>
+        <translation>Показать файлы из MMS</translation>
+    </message>
+    <message>
+        <location filename="../app/messagewindow.cpp" line="215"/>
         <source> with messages</source>
         <translation> с сообщениями</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="200"/>
+        <location filename="../app/messagewindow.cpp" line="219"/>
         <source>Records: %1</source>
         <translation>Записей: %1</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="201"/>
+        <location filename="../app/messagewindow.cpp" line="220"/>
         <source>Including MMS: %1</source>
         <translation>В т.ч. MMS: %1</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="202"/>
+        <location filename="../app/messagewindow.cpp" line="221"/>
         <source>Merged dups: %1</source>
         <translation>Слито дублей: %1</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="203"/>
+        <location filename="../app/messagewindow.cpp" line="222"/>
         <source>Merged multiparted: %1</source>
         <translation>Слито составных: %1</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="246"/>
+        <location filename="../app/messagewindow.cpp" line="265"/>
         <source>id: %1
 Sources: %2</source>
         <translation>Ид: %1
 Источники: %2</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="249"/>
+        <location filename="../app/messagewindow.cpp" line="268"/>
         <source>
 
 MMS properties:
@@ -1313,12 +1319,12 @@ MMS properties:
 %1</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="266"/>
+        <location filename="../app/messagewindow.cpp" line="285"/>
         <source>Save messages file</source>
         <translation>Сохранить файл сообщений</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="273"/>
+        <location filename="../app/messagewindow.cpp" line="292"/>
         <source>Can you also save media files from MMS (%1 messages)?</source>
         <translation>Хотите также сохранить медиафайлы из MMS (%1 сообщений)?</translation>
     </message>
@@ -2378,12 +2384,12 @@ Check username, password, protocol and port</source>
 </translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="136"/>
+        <location filename="../core/decodedmessagelist.cpp" line="137"/>
         <source>MMS</source>
         <translation>MMS</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="219"/>
+        <location filename="../core/decodedmessagelist.cpp" line="220"/>
         <source>Dlv</source>
         <translation>Дост</translation>
     </message>
@@ -2392,7 +2398,7 @@ Check username, password, protocol and port</source>
         <translation type="obsolete">Пусто</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="305"/>
+        <location filename="../core/decodedmessagelist.cpp" line="306"/>
         <source>MPB message body missing</source>
         <translation>Отсутствует тело MPB-сообщения</translation>
     </message>
@@ -2420,51 +2426,51 @@ Check username, password, protocol and port</source>
         <translation>Очистить список недавних</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/nokiadata.cpp" line="319"/>
+        <location filename="../core/formats/common/nokiadata.cpp" line="320"/>
         <source>Unknown field type: 0x%1 at %2</source>
         <translation>Неизвестный тип поля: 0x%1 на %2</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/nokiadata.cpp" line="476"/>
+        <location filename="../core/formats/common/nokiadata.cpp" line="477"/>
         <source>Invalid MMS Yes/No value (%1) at %2</source>
         <translation>Неверное значение Yes/No в MMS (%1) на %2</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/nokiadata.cpp" line="486"/>
+        <location filename="../core/formats/common/nokiadata.cpp" line="487"/>
         <source>Invalid MMS octet count (%1) at %2</source>
         <translation>Неверное значение счётчика октетов в MMS (%1) на %2</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/nokiadata.cpp" line="511"/>
+        <location filename="../core/formats/common/nokiadata.cpp" line="512"/>
         <source>Personal</source>
         <comment>MmsClass</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/common/nokiadata.cpp" line="514"/>
+        <location filename="../core/formats/common/nokiadata.cpp" line="515"/>
         <source>Advertisement</source>
         <comment>MmsClass</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/common/nokiadata.cpp" line="517"/>
+        <location filename="../core/formats/common/nokiadata.cpp" line="518"/>
         <source>Info</source>
         <comment>MmsClass</comment>
         <translation>Информация</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/nokiadata.cpp" line="520"/>
+        <location filename="../core/formats/common/nokiadata.cpp" line="521"/>
         <source>Auto</source>
         <comment>MmsClass</comment>
         <translation>Автоматически</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/nokiadata.cpp" line="542"/>
+        <location filename="../core/formats/common/nokiadata.cpp" line="543"/>
         <source>Parse value length error (%1) at %2</source>
         <translation>Ошибка чтения длины MMS (%1) на %2</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/nokiadata.cpp" line="554"/>
+        <location filename="../core/formats/common/nokiadata.cpp" line="555"/>
         <source>Error reading uint64_t value: overflow at %1</source>
         <translation>Ошибка чтения значения uint64_t в MMS на %1</translation>
     </message>

@@ -13,6 +13,7 @@
 
 #include <QApplication>
 #include <QDir>
+#include <QFile>
 #include <QLocale>
 #if QT_VERSION >= 0x050000
 #include <QStandardPaths>
@@ -33,6 +34,8 @@ ConfigManager::~ConfigManager()
 {
     if (settings)
         delete settings;
+    foreach(const QString& path, filesToRemove)
+        QFile::remove(path);
 }
 
 void ConfigManager::prepare()
@@ -164,6 +167,11 @@ void ConfigManager::writeConfig()
     settings->setValue("Loading/WarnOnNonStandardTypes", gd.warnOnNonStandardTypes);
     settings->setValue("Loading/ReadNamesFromFileName", gd.readNamesFromFileName);
     settings->setValue("Loading/DebugSave", gd.debugSave);
+}
+
+void ConfigManager::addFileToRemove(const QString &path)
+{
+    filesToRemove << path;
 }
 
 QString ConfigManager::readLanguage()

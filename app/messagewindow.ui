@@ -168,6 +168,14 @@
     <string>Save MMS Files</string>
    </property>
   </action>
+  <action name="actionShow_MMS_Files">
+   <property name="text">
+    <string>Show MMS Files</string>
+   </property>
+   <property name="toolTip">
+    <string>Show MMS Files</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>

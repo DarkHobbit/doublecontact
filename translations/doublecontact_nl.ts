@@ -1319,39 +1319,45 @@ Weet u zeker dat u kolomsortering wilt uitschakelen?</translation>
         <translation>MMS-bestanden opslaan</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="196"/>
+        <location filename="../app/messagewindow.ui" line="173"/>
+        <location filename="../app/messagewindow.ui" line="176"/>
+        <source>Show MMS Files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/messagewindow.cpp" line="215"/>
         <source> with messages</source>
         <translation> met berichten</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="200"/>
+        <location filename="../app/messagewindow.cpp" line="219"/>
         <source>Records: %1</source>
         <translation>Items: %1</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="201"/>
+        <location filename="../app/messagewindow.cpp" line="220"/>
         <source>Including MMS: %1</source>
         <translation>Inclusief mms: %1</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="202"/>
+        <location filename="../app/messagewindow.cpp" line="221"/>
         <source>Merged dups: %1</source>
         <translation>Samengevoegde duplicaten: %1</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="203"/>
+        <location filename="../app/messagewindow.cpp" line="222"/>
         <source>Merged multiparted: %1</source>
         <translation>Samengevoegde berichtdelen: %1</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="246"/>
+        <location filename="../app/messagewindow.cpp" line="265"/>
         <source>id: %1
 Sources: %2</source>
         <translation>id: %1
 Bronnen: %2</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="249"/>
+        <location filename="../app/messagewindow.cpp" line="268"/>
         <source>
 
 MMS properties:
@@ -1362,12 +1368,12 @@ MMS-informatie:
 %1</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="266"/>
+        <location filename="../app/messagewindow.cpp" line="285"/>
         <source>Save messages file</source>
         <translation>Berichtenbestand opslaan</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="273"/>
+        <location filename="../app/messagewindow.cpp" line="292"/>
         <source>Can you also save media files from MMS (%1 messages)?</source>
         <translation>Kun je ook mediabestanden uit mms&apos;jes opslaan (%1 berichten)?</translation>
     </message>
@@ -2452,12 +2458,12 @@ Controleer gebruikersnaam, wachtwoord, protocol en poort</translation>
 </translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="136"/>
+        <location filename="../core/decodedmessagelist.cpp" line="137"/>
         <source>MMS</source>
         <translation>MMS</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="219"/>
+        <location filename="../core/decodedmessagelist.cpp" line="220"/>
         <source>Dlv</source>
         <translation>Bzgd</translation>
     </message>
@@ -2466,7 +2472,7 @@ Controleer gebruikersnaam, wachtwoord, protocol en poort</translation>
         <translation type="obsolete">Leeg</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="305"/>
+        <location filename="../core/decodedmessagelist.cpp" line="306"/>
         <source>MPB message body missing</source>
         <translation>MPB-berichtinhoud ontbreekt</translation>
     </message>
@@ -2494,51 +2500,51 @@ Controleer gebruikersnaam, wachtwoord, protocol en poort</translation>
         <translation>Lijst met recente personen wissen</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/nokiadata.cpp" line="319"/>
+        <location filename="../core/formats/common/nokiadata.cpp" line="320"/>
         <source>Unknown field type: 0x%1 at %2</source>
         <translation>Onbekend soort veld: 0x%1 op %2</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/nokiadata.cpp" line="476"/>
+        <location filename="../core/formats/common/nokiadata.cpp" line="477"/>
         <source>Invalid MMS Yes/No value (%1) at %2</source>
         <translation>Ongeldige mms-waarde (%1) op %2</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/nokiadata.cpp" line="486"/>
+        <location filename="../core/formats/common/nokiadata.cpp" line="487"/>
         <source>Invalid MMS octet count (%1) at %2</source>
         <translation>Ongeldige mms-telling (%1) op %2</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/nokiadata.cpp" line="511"/>
+        <location filename="../core/formats/common/nokiadata.cpp" line="512"/>
         <source>Personal</source>
         <comment>MmsClass</comment>
         <translation>Persoonlijk</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/nokiadata.cpp" line="514"/>
+        <location filename="../core/formats/common/nokiadata.cpp" line="515"/>
         <source>Advertisement</source>
         <comment>MmsClass</comment>
         <translation>Reclame</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/nokiadata.cpp" line="517"/>
+        <location filename="../core/formats/common/nokiadata.cpp" line="518"/>
         <source>Info</source>
         <comment>MmsClass</comment>
         <translation>Informatie</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/nokiadata.cpp" line="520"/>
+        <location filename="../core/formats/common/nokiadata.cpp" line="521"/>
         <source>Auto</source>
         <comment>MmsClass</comment>
         <translation>Automatisch</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/nokiadata.cpp" line="542"/>
+        <location filename="../core/formats/common/nokiadata.cpp" line="543"/>
         <source>Parse value length error (%1) at %2</source>
         <translation>Fout tijdens verwerken van lengte (%1) op %2</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/nokiadata.cpp" line="554"/>
+        <location filename="../core/formats/common/nokiadata.cpp" line="555"/>
         <source>Error reading uint64_t value: overflow at %1</source>
         <translation>Fout tijdens uitlezen van uint64_t-waarde: overflow op %1</translation>
     </message>

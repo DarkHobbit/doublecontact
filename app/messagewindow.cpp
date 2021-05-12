@@ -12,12 +12,14 @@
  */
 
 #include <QClipboard>
+#include <QDesktopServices>
 #include <QFileDialog>
 #include <QFileInfo>
 #include <QItemSelectionModel>
 #include <QMessageBox>
 #include <QShortcut>
 #include <QStringList>
+#include <QTemporaryFile>
 
 #include "messagewindow.h"
 #include "ui_messagewindow.h"
@@ -81,7 +83,10 @@ MessageWindow::MessageWindow(ContactList* contacts) :
     ui->tvMessages->setContextMenuPolicy(Qt::ActionsContextMenu);
     ui->tvMessages->addAction(ui->actionCopy_text);
     ui->tvMessages->addAction(ui->actionSave_MMS_Files);
+    ui->tvMessages->addAction(ui->actionShow_MMS_Files);
     ui->tvMessages->addAction(ui->actionProperties);
+    menuMMSFiles = new QMenu(this);
+    ui->actionShow_MMS_Files->setMenu(menuMMSFiles);
     // Calc!
     updateModel();
     ui->tvMessages->resizeColumnsToContents();
@@ -96,14 +101,28 @@ MessageWindow::~MessageWindow()
 void MessageWindow::selectionChanged()
 {
     QModelIndex sel = selectedRecord(false);
+    // Context menu permissions
     if (!sel.isValid()) {
         ui->actionProperties->setEnabled(false);
         ui->actionSave_MMS_Files->setEnabled(false);
+        ui->actionShow_MMS_Files->setEnabled(false);
     }
     else {
         ui->actionProperties->setEnabled(true);
         const DecodedMessage& msg = model->item(sel.row());
         ui->actionSave_MMS_Files->setEnabled(msg.isMMS);
+        ui->actionShow_MMS_Files->setEnabled(msg.isMMS);
+        if (msg.isMMS) {
+            menuMMSFiles->clear();
+            int index = 0;
+            foreach(const BinarySMS& f, msg.mmsFiles) {
+                QAction* a = new QAction(f.name, this);
+                a->setData(index);
+                connect(a, SIGNAL(triggered(bool)), this, SLOT(onShowMMSFile(bool)));
+                menuMMSFiles->addAction(a);
+                index++;
+            }
+        }
     }
 }
 
@@ -313,5 +332,31 @@ void MessageWindow::on_actionSave_MMS_Files_triggered()
         QString fatalError;
         if (!msg.saveMMSFiles(path, fatalError))
             QMessageBox::critical(0, S_ERROR, fatalError);
+    }
+}
+
+void MessageWindow::onShowMMSFile(bool)
+{
+    QModelIndex sel = selectedRecord(false);
+    if (!sel.isValid())
+        return;
+    const DecodedMessage& msg = model->item(sel.row());
+    QAction* a = dynamic_cast<QAction*>(sender());
+    if (a) {
+        int index = a->data().toInt();
+        if (index>=0 && index<msg.mmsFiles.count()) {
+            const BinarySMS& f = msg.mmsFiles[index];
+            QTemporaryFile tf(QString("XXXXXX.")+f.name);
+            tf.setAutoRemove(false);
+            if (tf.open()) {
+                tf.write(f.content);
+                tf.close();
+                if (!QDesktopServices::openUrl(QString("file:///%1").arg(tf.fileName())))
+                    QMessageBox::critical(0, S_ERROR, S_READ_ERR.arg(tf.fileName()));
+                configManager.addFileToRemove(tf.fileName());
+            }
+            else
+                QMessageBox::critical(0, S_ERROR, S_WRITE_ERR.arg(f.name));
+        }
     }
 }
