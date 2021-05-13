@@ -54,6 +54,8 @@ struct DecodedMessage {
     bool isMMS;
     QString mmsSubject;
     QList<BinarySMS> mmsFiles;
+    // Calculated fields
+    QString contactName;
     void clear();
     QString contactsToString() const;
     bool saveMMSFiles(const QString& dirPath, QString& fatalError) const;
@@ -68,6 +70,7 @@ public:
     bool toCSV(const QString& path);
     bool saveAllMMSFiles(const QString& dirPath, QString& fatalError) const;
     static DecodedMessageList fromContactList(const ContactList& list, const MessageSourceFlags& flags, QStringList &errors);
+    void bindToContacts(const ContactList& list);
     QString messageBoxes(int index) const;
     QString messageStates(int index, bool delivered) const;
     void addOrMerge(DecodedMessage& msg);

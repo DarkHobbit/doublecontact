@@ -13,6 +13,7 @@
 
 #include <QFile>
 #include <QDir>
+#include <QMap>
 #include <QTextCodec>
 #include <QTextStream>
 #include <qglobal.h>
@@ -37,6 +38,7 @@ void DecodedMessage::clear()
     isMMS = false;
     mmsSubject = "";
     mmsFiles.clear();
+    contactName.clear();
 }
 
 QString DecodedMessage::contactsToString() const
@@ -200,6 +202,7 @@ DecodedMessageList DecodedMessageList::fromContactList(const ContactList &list, 
         foreach(const BinarySMS& sms, list.extra.binarySMS)
             NokiaData::ReadPredefBinMessage(sms.name, sms.content, messages, true, errors);
     }
+    messages.bindToContacts(list);
     return messages;
 }
 
@@ -304,5 +307,30 @@ void DecodedMessageList::fromPDUList(DecodedMessageList &messages, const QString
         }
         else
             errors << QObject::tr("MPB message body missing");
+    }
+}
+
+void DecodedMessageList::bindToContacts(const ContactList &list)
+{
+    // TODO move using country rule to options
+    QMap<QString,QString> contactsByName;
+    // Collect contacts
+    foreach(const ContactItem& c, list) {
+        QString cName = c.makeGenericName();
+        foreach(const Phone& p, c.phones) {
+            //QString number = p.value;
+            QString number = p.expandNumber(gd.defaultCountryRule);
+            number.remove(" ").remove("-").remove("(").remove(")");
+            contactsByName[number] = cName;
+        }
+    }
+    // Bind!
+    for (int i=0; i<this->count(); i++) {
+        QStringList names;
+        DecodedMessage& msg = (*this)[i];
+        foreach(const ContactItem& c, msg.contacts)
+            //names << contactsByName[c.phones.first().value];
+            names << contactsByName[c.phones.first().expandNumber(gd.defaultCountryRule)];
+        msg.contactName = names.join(";");
     }
 }

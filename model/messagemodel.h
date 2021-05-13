@@ -21,6 +21,7 @@
 enum MessageColumn {
     mcDate,
     mcCorrespondent,
+    mcNumber,
     mcFolder,
     mcFlags,
     mcText,

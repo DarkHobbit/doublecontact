@@ -1072,21 +1072,26 @@ Are you want switch column sorting off?</source>
     </message>
     <message>
         <location filename="../model/messagemodel.cpp" line="25"/>
-        <source>Folder</source>
+        <source>Number</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../model/messagemodel.cpp" line="26"/>
-        <source>Flags</source>
+        <source>Folder</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../model/messagemodel.cpp" line="27"/>
+        <source>Flags</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../model/messagemodel.cpp" line="28"/>
         <source>Text</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../model/messagemodel.cpp" line="72"/>
+        <location filename="../model/messagemodel.cpp" line="75"/>
         <source>&lt;MMS&gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2178,58 +2183,58 @@ Check username, password, protocol and port</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="105"/>
+        <location filename="../core/decodedmessagelist.cpp" line="107"/>
         <source>Read</source>
         <translation>Lu</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="106"/>
+        <location filename="../core/decodedmessagelist.cpp" line="108"/>
         <source>UnRd</source>
         <translation>Non lu</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="107"/>
+        <location filename="../core/decodedmessagelist.cpp" line="109"/>
         <source>Unk.</source>
         <translation>Inc.</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="109"/>
+        <location filename="../core/decodedmessagelist.cpp" line="111"/>
         <source>Inbox</source>
         <translation>Boîte de réception</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="110"/>
+        <location filename="../core/decodedmessagelist.cpp" line="112"/>
         <source>Outbox</source>
         <translation>Boîte d&apos;envoi</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="111"/>
+        <location filename="../core/decodedmessagelist.cpp" line="113"/>
         <source>Sentbox</source>
         <translation>Envoyés</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="112"/>
+        <location filename="../core/decodedmessagelist.cpp" line="114"/>
         <source>Draft</source>
         <translation>Brouillon</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="113"/>
+        <location filename="../core/decodedmessagelist.cpp" line="115"/>
         <source>Trash</source>
         <translation>Corbeille</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="123"/>
+        <location filename="../core/decodedmessagelist.cpp" line="125"/>
         <source>&quot;Date&quot;,&quot;Box&quot;,&quot;From/To&quot;,&quot;Status&quot;,&quot;Text&quot;,&quot;Aux&quot;
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="137"/>
+        <location filename="../core/decodedmessagelist.cpp" line="139"/>
         <source>MMS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="220"/>
+        <location filename="../core/decodedmessagelist.cpp" line="223"/>
         <source>Dlv</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2238,7 +2243,7 @@ Check username, password, protocol and port</source>
         <translation type="obsolete">Vide</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="306"/>
+        <location filename="../core/decodedmessagelist.cpp" line="309"/>
         <source>MPB message body missing</source>
         <translation type="unfinished"></translation>
     </message>

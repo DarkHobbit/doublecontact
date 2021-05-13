@@ -22,6 +22,7 @@ MessageModel::MessageModel(QObject *parent, ContactList* src)
     headers
         << tr("Date")
         << tr("From/To")
+        << tr("Number")
         << tr("Folder")
         << tr("Flags")
         << tr("Text");
@@ -67,6 +68,8 @@ QVariant MessageModel::data(const QModelIndex &index, int role) const
             case mcDate:
                 return m.when.toString("dd.MM.yyyy HH:mm:ss t");
             case mcCorrespondent:
+                return m.contactName;
+            case mcNumber:
                 return m.contactsToString();
             case mcText:
                 return (m.isMMS ? tr("<MMS>") : m.text);

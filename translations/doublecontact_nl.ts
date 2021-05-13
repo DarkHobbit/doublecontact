@@ -1217,21 +1217,26 @@ Weet u zeker dat u kolomsortering wilt uitschakelen?</translation>
     </message>
     <message>
         <location filename="../model/messagemodel.cpp" line="25"/>
+        <source>Number</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../model/messagemodel.cpp" line="26"/>
         <source>Folder</source>
         <translation>Map</translation>
     </message>
     <message>
-        <location filename="../model/messagemodel.cpp" line="26"/>
+        <location filename="../model/messagemodel.cpp" line="27"/>
         <source>Flags</source>
         <translation>Vlaggen</translation>
     </message>
     <message>
-        <location filename="../model/messagemodel.cpp" line="27"/>
+        <location filename="../model/messagemodel.cpp" line="28"/>
         <source>Text</source>
         <translation>Tekst</translation>
     </message>
     <message>
-        <location filename="../model/messagemodel.cpp" line="72"/>
+        <location filename="../model/messagemodel.cpp" line="75"/>
         <source>&lt;MMS&gt;</source>
         <translation>&lt;MMS&gt;</translation>
     </message>
@@ -2411,59 +2416,59 @@ Controleer gebruikersnaam, wachtwoord, protocol en poort</translation>
         <translation>Test 1 is anders dan 0x10: %1</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="105"/>
+        <location filename="../core/decodedmessagelist.cpp" line="107"/>
         <source>Read</source>
         <translation>Gelezen</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="106"/>
+        <location filename="../core/decodedmessagelist.cpp" line="108"/>
         <source>UnRd</source>
         <translation>Ongelezen</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="107"/>
+        <location filename="../core/decodedmessagelist.cpp" line="109"/>
         <source>Unk.</source>
         <translation>Onbekend</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="109"/>
+        <location filename="../core/decodedmessagelist.cpp" line="111"/>
         <source>Inbox</source>
         <translation>Postvak IN</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="110"/>
+        <location filename="../core/decodedmessagelist.cpp" line="112"/>
         <source>Outbox</source>
         <translation>Postvak UIT</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="111"/>
+        <location filename="../core/decodedmessagelist.cpp" line="113"/>
         <source>Sentbox</source>
         <translation>Verzonden items</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="112"/>
+        <location filename="../core/decodedmessagelist.cpp" line="114"/>
         <source>Draft</source>
         <translation>Concept</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="113"/>
+        <location filename="../core/decodedmessagelist.cpp" line="115"/>
         <source>Trash</source>
         <translation>Prullenbak</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="123"/>
+        <location filename="../core/decodedmessagelist.cpp" line="125"/>
         <source>&quot;Date&quot;,&quot;Box&quot;,&quot;From/To&quot;,&quot;Status&quot;,&quot;Text&quot;,&quot;Aux&quot;
 </source>
         <translation>&quot;Date&quot;,&quot;Box&quot;,&quot;From/To&quot;,&quot;Status&quot;,&quot;Text&quot;,&quot;Aux&quot;
 </translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="137"/>
+        <location filename="../core/decodedmessagelist.cpp" line="139"/>
         <source>MMS</source>
         <translation>MMS</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="220"/>
+        <location filename="../core/decodedmessagelist.cpp" line="223"/>
         <source>Dlv</source>
         <translation>Bzgd</translation>
     </message>
@@ -2472,7 +2477,7 @@ Controleer gebruikersnaam, wachtwoord, protocol en poort</translation>
         <translation type="obsolete">Leeg</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="306"/>
+        <location filename="../core/decodedmessagelist.cpp" line="309"/>
         <source>MPB message body missing</source>
         <translation>MPB-berichtinhoud ontbreekt</translation>
     </message>
