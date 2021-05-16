@@ -2457,18 +2457,23 @@ Controleer gebruikersnaam, wachtwoord, protocol en poort</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="125"/>
+        <source>&quot;Date&quot;,&quot;Box&quot;,&quot;From/To&quot;,&quot;Number&quot;,&quot;Status&quot;,&quot;Text&quot;,&quot;Aux&quot;
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>&quot;Date&quot;,&quot;Box&quot;,&quot;From/To&quot;,&quot;Status&quot;,&quot;Text&quot;,&quot;Aux&quot;
 </source>
-        <translation>&quot;Date&quot;,&quot;Box&quot;,&quot;From/To&quot;,&quot;Status&quot;,&quot;Text&quot;,&quot;Aux&quot;
+        <translation type="obsolete">&quot;Date&quot;,&quot;Box&quot;,&quot;From/To&quot;,&quot;Status&quot;,&quot;Text&quot;,&quot;Aux&quot;
 </translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="139"/>
+        <location filename="../core/decodedmessagelist.cpp" line="140"/>
         <source>MMS</source>
         <translation>MMS</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="223"/>
+        <location filename="../core/decodedmessagelist.cpp" line="224"/>
         <source>Dlv</source>
         <translation>Bzgd</translation>
     </message>
@@ -2477,7 +2482,7 @@ Controleer gebruikersnaam, wachtwoord, protocol en poort</translation>
         <translation type="obsolete">Leeg</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="309"/>
+        <location filename="../core/decodedmessagelist.cpp" line="310"/>
         <source>MPB message body missing</source>
         <translation>MPB-berichtinhoud ontbreekt</translation>
     </message>

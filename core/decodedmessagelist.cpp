@@ -122,7 +122,7 @@ bool DecodedMessageList::toCSV(const QString &path)
         return false;
     QTextStream ss(&f);
     ss.setCodec("UTF-8");
-    ss << QObject::tr("\"Date\",\"Box\",\"From/To\",\"Status\",\"Text\",\"Aux\"\n");
+    ss << QObject::tr("\"Date\",\"Box\",\"From/To\",\"Number\",\"Status\",\"Text\",\"Aux\"\n");
     foreach(const DecodedMessage& msg, *this) {
         // Stricted text, without qoutes and line breaks
         // TODO m.b. implement write to vMessage (VMessageData::importRecords), it's not destructive format
@@ -133,6 +133,7 @@ bool DecodedMessageList::toCSV(const QString &path)
         // Write current message
         ss << "\""    << msg.when.toString("dd.MM.yyyy hh:mm:ss")
            << "\",\"" << sMsgBox[msg.box]
+           << "\",\"" << msg.contactName
            << "\",\"" << msg.contactsToString()
            << "\",\"" << messageStates(msg.status, msg.delivered)
            << "\",\"" << msgText

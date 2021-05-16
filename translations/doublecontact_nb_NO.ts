@@ -2345,18 +2345,23 @@ Sjekk brukernavn, passord, protokoll og port</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="125"/>
+        <source>&quot;Date&quot;,&quot;Box&quot;,&quot;From/To&quot;,&quot;Number&quot;,&quot;Status&quot;,&quot;Text&quot;,&quot;Aux&quot;
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>&quot;Date&quot;,&quot;Box&quot;,&quot;From/To&quot;,&quot;Status&quot;,&quot;Text&quot;,&quot;Aux&quot;
 </source>
-        <translation>&quot;Dato&quot;,&quot;Boks&quot;,&quot;Fra/til&quot;,&quot;Status&quot;,Tekst&quot;,Fjern&quot;
+        <translation type="obsolete">&quot;Dato&quot;,&quot;Boks&quot;,&quot;Fra/til&quot;,&quot;Status&quot;,Tekst&quot;,Fjern&quot;
 </translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="139"/>
+        <location filename="../core/decodedmessagelist.cpp" line="140"/>
         <source>MMS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="223"/>
+        <location filename="../core/decodedmessagelist.cpp" line="224"/>
         <source>Dlv</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2365,7 +2370,7 @@ Sjekk brukernavn, passord, protokoll og port</translation>
         <translation type="obsolete">Tom</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="309"/>
+        <location filename="../core/decodedmessagelist.cpp" line="310"/>
         <source>MPB message body missing</source>
         <translation>MPB-meldingskropp mangler</translation>
     </message>
