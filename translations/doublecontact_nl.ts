@@ -1218,7 +1218,7 @@ Weet u zeker dat u kolomsortering wilt uitschakelen?</translation>
     <message>
         <location filename="../model/messagemodel.cpp" line="25"/>
         <source>Number</source>
-        <translation type="unfinished"></translation>
+        <translation>Getal</translation>
     </message>
     <message>
         <location filename="../model/messagemodel.cpp" line="26"/>
@@ -1327,7 +1327,7 @@ Weet u zeker dat u kolomsortering wilt uitschakelen?</translation>
         <location filename="../app/messagewindow.ui" line="173"/>
         <location filename="../app/messagewindow.ui" line="176"/>
         <source>Show MMS Files</source>
-        <translation type="unfinished"></translation>
+        <translation>MMS-bestanden tonen</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.cpp" line="215"/>
@@ -2459,7 +2459,8 @@ Controleer gebruikersnaam, wachtwoord, protocol en poort</translation>
         <location filename="../core/decodedmessagelist.cpp" line="125"/>
         <source>&quot;Date&quot;,&quot;Box&quot;,&quot;From/To&quot;,&quot;Number&quot;,&quot;Status&quot;,&quot;Text&quot;,&quot;Aux&quot;
 </source>
-        <translation type="unfinished"></translation>
+        <translation>&quot;Date&quot;,&quot;Box&quot;,&quot;From/To&quot;,&quot;Number&quot;,&quot;Status&quot;,&quot;Text&quot;,&quot;Aux&quot;
+</translation>
     </message>
     <message>
         <source>&quot;Date&quot;,&quot;Box&quot;,&quot;From/To&quot;,&quot;Status&quot;,&quot;Text&quot;,&quot;Aux&quot;
