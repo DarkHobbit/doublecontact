@@ -1117,32 +1117,32 @@ Er du sikker på at du ønsker skru av kolonnesortering?</translation>
     <message>
         <location filename="../model/messagemodel.cpp" line="24"/>
         <source>From/To</source>
-        <translation type="unfinished"></translation>
+        <translation>Fra/til</translation>
     </message>
     <message>
         <location filename="../model/messagemodel.cpp" line="25"/>
         <source>Number</source>
-        <translation type="unfinished"></translation>
+        <translation>Nummer</translation>
     </message>
     <message>
         <location filename="../model/messagemodel.cpp" line="26"/>
         <source>Folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Mappe</translation>
     </message>
     <message>
         <location filename="../model/messagemodel.cpp" line="27"/>
         <source>Flags</source>
-        <translation type="unfinished"></translation>
+        <translation>Flagg</translation>
     </message>
     <message>
         <location filename="../model/messagemodel.cpp" line="28"/>
         <source>Text</source>
-        <translation type="unfinished"></translation>
+        <translation>Tekst</translation>
     </message>
     <message>
         <location filename="../model/messagemodel.cpp" line="75"/>
         <source>&lt;MMS&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;MMS&gt;</translation>
     </message>
 </context>
 <context>
@@ -1150,12 +1150,12 @@ Er du sikker på at du ønsker skru av kolonnesortering?</translation>
     <message>
         <location filename="../app/messagewindow.ui" line="14"/>
         <source>Messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Meldinger</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="24"/>
         <source>Message sources</source>
-        <translation type="unfinished"></translation>
+        <translation>Meldingskilder</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="31"/>
@@ -1215,7 +1215,7 @@ Er du sikker på at du ønsker skru av kolonnesortering?</translation>
     <message>
         <location filename="../app/messagewindow.ui" line="160"/>
         <source>Properties</source>
-        <translation type="unfinished"></translation>
+        <translation>Egenskaper</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="163"/>
@@ -1225,13 +1225,13 @@ Er du sikker på at du ønsker skru av kolonnesortering?</translation>
     <message>
         <location filename="../app/messagewindow.ui" line="168"/>
         <source>Save MMS Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Lagre MMS-filer</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="173"/>
         <location filename="../app/messagewindow.ui" line="176"/>
         <source>Show MMS Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Vis MMS-filer</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.cpp" line="215"/>
@@ -2096,7 +2096,7 @@ lagret som mobil</translation>
     <message>
         <location filename="../core/globals.h" line="143"/>
         <source>Unknown charset: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukjent tegnsett: %1</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="145"/>
@@ -2422,13 +2422,13 @@ Sjekk brukernavn, passord, protokoll og port</translation>
         <location filename="../core/formats/common/nokiadata.cpp" line="515"/>
         <source>Advertisement</source>
         <comment>MmsClass</comment>
-        <translation type="unfinished"></translation>
+        <translation>Reklame</translation>
     </message>
     <message>
         <location filename="../core/formats/common/nokiadata.cpp" line="518"/>
         <source>Info</source>
         <comment>MmsClass</comment>
-        <translation type="unfinished"></translation>
+        <translation>Info</translation>
     </message>
     <message>
         <location filename="../core/formats/common/nokiadata.cpp" line="521"/>
