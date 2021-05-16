@@ -80,7 +80,7 @@ bool NokiaData::ReadPredefBinMessage(const QString& fileName, const QByteArray &
             ph.value = QString::fromUtf16(raw, len);
             delete raw;
         }
-        ph.value.remove('\0');
+        ph.value.remove(QChar('\0'));
     }
     // If date&time not found...
     if (msg.when.isNull() && fileName.length() > 16)
