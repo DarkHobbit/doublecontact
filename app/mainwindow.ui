@@ -626,6 +626,9 @@
    <property name="text">
     <string>&amp;Messages...</string>
    </property>
+   <property name="shortcut">
+    <string>Shift+F7</string>
+   </property>
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>

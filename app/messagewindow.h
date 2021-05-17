@@ -52,6 +52,8 @@ private slots:
     void on_actionSave_MMS_Files_triggered();
     void onShowMMSFile(bool);
 
+    void on_btnApply_clicked();
+
 protected:
     void showEvent(QShowEvent*);
 

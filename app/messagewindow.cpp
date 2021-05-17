@@ -129,7 +129,6 @@ void MessageWindow::selectionChanged()
 
 void MessageWindow::checkButtons()
 {
-    checkMergeButton();
     configManager.writeMessageViewConfig(srcFlags);
     if (model)
         updateModel();
@@ -167,44 +166,51 @@ QModelIndex MessageWindow::selectedRecord(bool errorIfNoSelected)
 
 void MessageWindow::on_cbPDU_stateChanged(int)
 {
+    checkMergeButton();
     setQFlag(srcFlags, usePDU, ui->cbPDU->isChecked());
-    checkButtons();
+    ui->btnApply->setEnabled(true);
 }
 
 void MessageWindow::on_cbPDUArchive_stateChanged(int)
 {
+    checkMergeButton();
     setQFlag(srcFlags, usePDUArchive,  ui->cbPDUArchive->isChecked());
-    checkButtons();
+    ui->btnApply->setEnabled(true);
 }
 
 void MessageWindow::on_cbBinary_stateChanged(int)
 {
+    checkMergeButton();
     setQFlag(srcFlags, useBinary,  ui->cbBinary->isChecked());
-    checkButtons();
+    ui->btnApply->setEnabled(true);
 }
 
 void MessageWindow::on_cbVmessage_stateChanged(int)
 {
+    checkMergeButton();
     setQFlag(srcFlags, useVMessage,  ui->cbVmessage->isChecked());
-    checkButtons();
+    ui->btnApply->setEnabled(true);
 }
 
 void MessageWindow::on_cbVmessageArchive_stateChanged(int)
 {
+    checkMergeButton();
     setQFlag(srcFlags, useVMessageArchive,  ui->cbVmessageArchive->isChecked());
-    checkButtons();
+    ui->btnApply->setEnabled(true);
 }
 
 void MessageWindow::on_cbMergeDups_stateChanged(int)
 {
+    checkMergeButton();
     setQFlag(srcFlags, mergeDuplicates,  ui->cbMergeDups->isChecked());
-    checkButtons();
+    ui->btnApply->setEnabled(true);
 }
 
 void MessageWindow::on_cbMergeMultiparts_stateChanged(int)
 {
+    checkMergeButton();
     setQFlag(srcFlags, mergeMultiParts,  ui->cbMergeMultiparts->isChecked());
-    checkButtons();
+    ui->btnApply->setEnabled(true);
 }
 
 void MessageWindow::updateModel()
@@ -360,4 +366,10 @@ void MessageWindow::onShowMMSFile(bool)
                 QMessageBox::critical(0, S_ERROR, S_WRITE_ERR.arg(f.name));
         }
     }
+}
+
+void MessageWindow::on_btnApply_clicked()
+{
+    checkButtons();
+    ui->btnApply->setEnabled(false);
 }

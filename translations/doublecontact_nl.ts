@@ -901,6 +901,11 @@ Wilt u dit certificaat tóch accepteren?</translation>
         <translation>&amp;Berichten...</translation>
     </message>
     <message>
+        <location filename="../app/mainwindow.ui" line="630"/>
+        <source>Shift+F7</source>
+        <translation type="unfinished">Shift+F7</translation>
+    </message>
+    <message>
         <source>Settings...</source>
         <translation type="obsolete">Instellingen...</translation>
     </message>
@@ -1249,120 +1254,130 @@ Weet u zeker dat u kolomsortering wilt uitschakelen?</translation>
         <translation>Berichten</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.ui" line="24"/>
+        <location filename="../app/messagewindow.ui" line="30"/>
         <source>Message sources</source>
         <translation>Berichtbronnen</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.ui" line="31"/>
+        <location filename="../app/messagewindow.ui" line="50"/>
         <source>PDU</source>
         <translation>PDU</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.ui" line="38"/>
+        <location filename="../app/messagewindow.ui" line="57"/>
         <source>vMessage </source>
         <translation>vMessage </translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.ui" line="45"/>
+        <location filename="../app/messagewindow.ui" line="74"/>
         <source>PDU archive</source>
         <translation>PDU-archief</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.ui" line="52"/>
+        <location filename="../app/messagewindow.ui" line="81"/>
         <source>vMessage archive</source>
         <translation>vMessage-archief</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.ui" line="59"/>
+        <location filename="../app/messagewindow.ui" line="98"/>
         <source>Binary</source>
         <translation>Binair</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.ui" line="86"/>
+        <location filename="../app/messagewindow.ui" line="67"/>
         <source>Merge duplicates</source>
         <translation>Duplicaten samenvoegen</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.ui" line="96"/>
+        <location filename="../app/messagewindow.ui" line="43"/>
+        <source>Processing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/messagewindow.ui" line="91"/>
         <source>Merge multipart messages</source>
         <translation>Berichtdelen samenvoegen</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.ui" line="118"/>
+        <location filename="../app/messagewindow.ui" line="123"/>
+        <source>Apply</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/messagewindow.ui" line="143"/>
         <source>Filter</source>
         <translation>Filteren</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.ui" line="143"/>
+        <location filename="../app/messagewindow.ui" line="168"/>
         <source>&amp;Save as...</source>
         <translation>Op&amp;slaan als...</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.ui" line="152"/>
+        <location filename="../app/messagewindow.ui" line="177"/>
         <source>Copy text</source>
         <translation>Tekst kopiëren</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.ui" line="155"/>
+        <location filename="../app/messagewindow.ui" line="180"/>
         <source>Ctrl+C</source>
         <translation>Ctrl+C</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.ui" line="160"/>
+        <location filename="../app/messagewindow.ui" line="185"/>
         <source>Properties</source>
         <translation>Eigenschappen</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.ui" line="163"/>
+        <location filename="../app/messagewindow.ui" line="188"/>
         <source>Return</source>
         <translation>Enter</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.ui" line="168"/>
+        <location filename="../app/messagewindow.ui" line="193"/>
         <source>Save MMS Files</source>
         <translation>MMS-bestanden opslaan</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.ui" line="173"/>
-        <location filename="../app/messagewindow.ui" line="176"/>
+        <location filename="../app/messagewindow.ui" line="198"/>
+        <location filename="../app/messagewindow.ui" line="201"/>
         <source>Show MMS Files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="215"/>
+        <location filename="../app/messagewindow.cpp" line="222"/>
         <source> with messages</source>
         <translation> met berichten</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="219"/>
+        <location filename="../app/messagewindow.cpp" line="226"/>
         <source>Records: %1</source>
         <translation>Items: %1</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="220"/>
+        <location filename="../app/messagewindow.cpp" line="227"/>
         <source>Including MMS: %1</source>
         <translation>Inclusief mms: %1</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="221"/>
+        <location filename="../app/messagewindow.cpp" line="228"/>
         <source>Merged dups: %1</source>
         <translation>Samengevoegde duplicaten: %1</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="222"/>
+        <location filename="../app/messagewindow.cpp" line="229"/>
         <source>Merged multiparted: %1</source>
         <translation>Samengevoegde berichtdelen: %1</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="265"/>
+        <location filename="../app/messagewindow.cpp" line="272"/>
         <source>id: %1
 Sources: %2</source>
         <translation>id: %1
 Bronnen: %2</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="268"/>
+        <location filename="../app/messagewindow.cpp" line="275"/>
         <source>
 
 MMS properties:
@@ -1373,12 +1388,12 @@ MMS-informatie:
 %1</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="285"/>
+        <location filename="../app/messagewindow.cpp" line="292"/>
         <source>Save messages file</source>
         <translation>Berichtenbestand opslaan</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="292"/>
+        <location filename="../app/messagewindow.cpp" line="299"/>
         <source>Can you also save media files from MMS (%1 messages)?</source>
         <translation>Kun je ook mediabestanden uit mms&apos;jes opslaan (%1 berichten)?</translation>
     </message>

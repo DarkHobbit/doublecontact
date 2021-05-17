@@ -817,6 +817,11 @@ Er du sikker på at du vil godta dette sertifikatet uansett?</translation>
         <translation type="unfinished">&amp;Meldinger …</translation>
     </message>
     <message>
+        <location filename="../app/mainwindow.ui" line="630"/>
+        <source>Shift+F7</source>
+        <translation type="unfinished">Shift+F7</translation>
+    </message>
+    <message>
         <source>Settings...</source>
         <translation type="obsolete">Innstillinger</translation>
     </message>
@@ -1153,119 +1158,129 @@ Er du sikker på at du ønsker skru av kolonnesortering?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.ui" line="24"/>
+        <location filename="../app/messagewindow.ui" line="30"/>
         <source>Message sources</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.ui" line="31"/>
+        <location filename="../app/messagewindow.ui" line="50"/>
         <source>PDU</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.ui" line="38"/>
+        <location filename="../app/messagewindow.ui" line="57"/>
         <source>vMessage </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.ui" line="45"/>
+        <location filename="../app/messagewindow.ui" line="74"/>
         <source>PDU archive</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.ui" line="52"/>
+        <location filename="../app/messagewindow.ui" line="81"/>
         <source>vMessage archive</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.ui" line="59"/>
+        <location filename="../app/messagewindow.ui" line="98"/>
         <source>Binary</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.ui" line="86"/>
+        <location filename="../app/messagewindow.ui" line="67"/>
         <source>Merge duplicates</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.ui" line="96"/>
+        <location filename="../app/messagewindow.ui" line="43"/>
+        <source>Processing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/messagewindow.ui" line="91"/>
         <source>Merge multipart messages</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.ui" line="118"/>
+        <location filename="../app/messagewindow.ui" line="123"/>
+        <source>Apply</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/messagewindow.ui" line="143"/>
         <source>Filter</source>
         <translation type="unfinished">Filter</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.ui" line="143"/>
+        <location filename="../app/messagewindow.ui" line="168"/>
         <source>&amp;Save as...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.ui" line="152"/>
+        <location filename="../app/messagewindow.ui" line="177"/>
         <source>Copy text</source>
         <translation type="unfinished">Kopier tekst</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.ui" line="155"/>
+        <location filename="../app/messagewindow.ui" line="180"/>
         <source>Ctrl+C</source>
         <translation type="unfinished">Ctrl+C</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.ui" line="160"/>
+        <location filename="../app/messagewindow.ui" line="185"/>
         <source>Properties</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.ui" line="163"/>
+        <location filename="../app/messagewindow.ui" line="188"/>
         <source>Return</source>
         <translation type="unfinished">Tilbake</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.ui" line="168"/>
+        <location filename="../app/messagewindow.ui" line="193"/>
         <source>Save MMS Files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.ui" line="173"/>
-        <location filename="../app/messagewindow.ui" line="176"/>
+        <location filename="../app/messagewindow.ui" line="198"/>
+        <location filename="../app/messagewindow.ui" line="201"/>
         <source>Show MMS Files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="215"/>
+        <location filename="../app/messagewindow.cpp" line="222"/>
         <source> with messages</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="219"/>
+        <location filename="../app/messagewindow.cpp" line="226"/>
         <source>Records: %1</source>
         <translation type="unfinished">Oppføringer: %1</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="220"/>
+        <location filename="../app/messagewindow.cpp" line="227"/>
         <source>Including MMS: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="221"/>
+        <location filename="../app/messagewindow.cpp" line="228"/>
         <source>Merged dups: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="222"/>
+        <location filename="../app/messagewindow.cpp" line="229"/>
         <source>Merged multiparted: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="265"/>
+        <location filename="../app/messagewindow.cpp" line="272"/>
         <source>id: %1
 Sources: %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="268"/>
+        <location filename="../app/messagewindow.cpp" line="275"/>
         <source>
 
 MMS properties:
@@ -1273,12 +1288,12 @@ MMS properties:
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="285"/>
+        <location filename="../app/messagewindow.cpp" line="292"/>
         <source>Save messages file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="292"/>
+        <location filename="../app/messagewindow.cpp" line="299"/>
         <source>Can you also save media files from MMS (%1 messages)?</source>
         <translation type="unfinished"></translation>
     </message>

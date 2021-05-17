@@ -881,6 +881,11 @@ Are you want to accept this certificate anyway?</source>
         <translation>&amp;Сообщения...</translation>
     </message>
     <message>
+        <location filename="../app/mainwindow.ui" line="630"/>
+        <source>Shift+F7</source>
+        <translation>Shift+F7</translation>
+    </message>
+    <message>
         <location filename="../app/mainwindow.ui" line="476"/>
         <source>Ctrl+P</source>
         <translation>Ctrl+P</translation>
@@ -1200,120 +1205,130 @@ Are you want switch column sorting off?</source>
         <translation>Сообщения</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.ui" line="24"/>
+        <location filename="../app/messagewindow.ui" line="30"/>
         <source>Message sources</source>
         <translation>Источники сообщений</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.ui" line="31"/>
+        <location filename="../app/messagewindow.ui" line="50"/>
         <source>PDU</source>
         <translation>PDU</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.ui" line="38"/>
+        <location filename="../app/messagewindow.ui" line="57"/>
         <source>vMessage </source>
         <translation>vMessage</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.ui" line="45"/>
+        <location filename="../app/messagewindow.ui" line="74"/>
         <source>PDU archive</source>
         <translation>архив PDU</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.ui" line="52"/>
+        <location filename="../app/messagewindow.ui" line="81"/>
         <source>vMessage archive</source>
         <translation>архив vMessage</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.ui" line="59"/>
+        <location filename="../app/messagewindow.ui" line="98"/>
         <source>Binary</source>
         <translation>Двоичные</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.ui" line="86"/>
+        <location filename="../app/messagewindow.ui" line="67"/>
         <source>Merge duplicates</source>
         <translation>Сливать дубликаты</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.ui" line="96"/>
+        <location filename="../app/messagewindow.ui" line="43"/>
+        <source>Processing</source>
+        <translation>Обработка</translation>
+    </message>
+    <message>
+        <location filename="../app/messagewindow.ui" line="91"/>
         <source>Merge multipart messages</source>
         <translation>Сливать составные сообщения</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.ui" line="118"/>
+        <location filename="../app/messagewindow.ui" line="123"/>
+        <source>Apply</source>
+        <translation>Применить</translation>
+    </message>
+    <message>
+        <location filename="../app/messagewindow.ui" line="143"/>
         <source>Filter</source>
         <translation>Фильтр</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.ui" line="143"/>
+        <location filename="../app/messagewindow.ui" line="168"/>
         <source>&amp;Save as...</source>
         <translation>Сохранить как...</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.ui" line="152"/>
+        <location filename="../app/messagewindow.ui" line="177"/>
         <source>Copy text</source>
         <translation>Копировать текст</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.ui" line="155"/>
+        <location filename="../app/messagewindow.ui" line="180"/>
         <source>Ctrl+C</source>
         <translation>Ctrl+C</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.ui" line="160"/>
+        <location filename="../app/messagewindow.ui" line="185"/>
         <source>Properties</source>
         <translation>Свойства</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.ui" line="163"/>
+        <location filename="../app/messagewindow.ui" line="188"/>
         <source>Return</source>
         <translation>Return</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.ui" line="168"/>
+        <location filename="../app/messagewindow.ui" line="193"/>
         <source>Save MMS Files</source>
         <translation>Сохранить файлы из MMS</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.ui" line="173"/>
-        <location filename="../app/messagewindow.ui" line="176"/>
+        <location filename="../app/messagewindow.ui" line="198"/>
+        <location filename="../app/messagewindow.ui" line="201"/>
         <source>Show MMS Files</source>
         <translation>Показать файлы из MMS</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="215"/>
+        <location filename="../app/messagewindow.cpp" line="222"/>
         <source> with messages</source>
         <translation> с сообщениями</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="219"/>
+        <location filename="../app/messagewindow.cpp" line="226"/>
         <source>Records: %1</source>
         <translation>Записей: %1</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="220"/>
+        <location filename="../app/messagewindow.cpp" line="227"/>
         <source>Including MMS: %1</source>
         <translation>В т.ч. MMS: %1</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="221"/>
+        <location filename="../app/messagewindow.cpp" line="228"/>
         <source>Merged dups: %1</source>
         <translation>Слито дублей: %1</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="222"/>
+        <location filename="../app/messagewindow.cpp" line="229"/>
         <source>Merged multiparted: %1</source>
         <translation>Слито составных: %1</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="265"/>
+        <location filename="../app/messagewindow.cpp" line="272"/>
         <source>id: %1
 Sources: %2</source>
         <translation>Ид: %1
 Источники: %2</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="268"/>
+        <location filename="../app/messagewindow.cpp" line="275"/>
         <source>
 
 MMS properties:
@@ -1324,12 +1339,12 @@ MMS properties:
 %1</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="285"/>
+        <location filename="../app/messagewindow.cpp" line="292"/>
         <source>Save messages file</source>
         <translation>Сохранить файл сообщений</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="292"/>
+        <location filename="../app/messagewindow.cpp" line="299"/>
         <source>Can you also save media files from MMS (%1 messages)?</source>
         <translation>Хотите также сохранить медиафайлы из MMS (%1 сообщений)?</translation>
     </message>
