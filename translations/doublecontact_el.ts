@@ -34,7 +34,7 @@
     <message>
         <location filename="../app/csvprofiledialog.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Διάλογος</translation>
     </message>
     <message>
         <location filename="../app/csvprofiledialog.ui" line="25"/>
