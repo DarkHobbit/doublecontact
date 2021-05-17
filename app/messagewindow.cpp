@@ -20,6 +20,7 @@
 #include <QShortcut>
 #include <QStringList>
 #include <QTemporaryFile>
+#include <QUrl>
 
 #include "messagewindow.h"
 #include "ui_messagewindow.h"
@@ -351,7 +352,7 @@ void MessageWindow::onShowMMSFile(bool)
             if (tf.open()) {
                 tf.write(f.content);
                 tf.close();
-                if (!QDesktopServices::openUrl(QString("file:///%1").arg(tf.fileName())))
+                if (!QDesktopServices::openUrl(QUrl(QString("file:///%1").arg(tf.fileName()))))
                     QMessageBox::critical(0, S_ERROR, S_READ_ERR.arg(tf.fileName()));
                 configManager.addFileToRemove(tf.fileName());
             }
