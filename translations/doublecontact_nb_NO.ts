@@ -1205,7 +1205,7 @@ Er du sikker på at du ønsker skru av kolonnesortering?</translation>
     <message>
         <location filename="../app/messagewindow.ui" line="123"/>
         <source>Apply</source>
-        <translation type="unfinished"></translation>
+        <translation>Bruk</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="143"/>
@@ -1215,7 +1215,7 @@ Er du sikker på at du ønsker skru av kolonnesortering?</translation>
     <message>
         <location filename="../app/messagewindow.ui" line="168"/>
         <source>&amp;Save as...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;Lagre som …</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="177"/>
