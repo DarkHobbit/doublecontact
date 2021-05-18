@@ -903,7 +903,7 @@ Wilt u dit certificaat tóch accepteren?</translation>
     <message>
         <location filename="../app/mainwindow.ui" line="630"/>
         <source>Shift+F7</source>
-        <translation type="unfinished">Shift+F7</translation>
+        <translation>Shift+F7</translation>
     </message>
     <message>
         <source>Settings...</source>
@@ -1291,7 +1291,7 @@ Weet u zeker dat u kolomsortering wilt uitschakelen?</translation>
     <message>
         <location filename="../app/messagewindow.ui" line="43"/>
         <source>Processing</source>
-        <translation type="unfinished"></translation>
+        <translation>Bezig met verwerken…</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="91"/>
@@ -1301,7 +1301,7 @@ Weet u zeker dat u kolomsortering wilt uitschakelen?</translation>
     <message>
         <location filename="../app/messagewindow.ui" line="123"/>
         <source>Apply</source>
-        <translation type="unfinished"></translation>
+        <translation>Toepassen</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="143"/>
