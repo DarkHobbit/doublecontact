@@ -19,10 +19,9 @@ PDU::PDU()
 {
 }
 
-bool PDU::parseMessage(QDataStream& ds, DecodedMessage& msg, int offset, int &MsgType)
+bool PDU::parseMessage(QDataStream& ds, DecodedMessage& msg, int &MsgType)
 {
     quint8 byte;
-    ds.skipRawData(offset);
     ds >> byte;
     int MsgHeaderFlags = byte;
     bool udhi = (MsgHeaderFlags & 0x40) > 0;

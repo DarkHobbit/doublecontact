@@ -113,6 +113,7 @@ DecodedMessageList::DecodedMessageList(bool mergeDuplicates, bool mergeMultiPart
         << QObject::tr("Sentbox")
         << QObject::tr("Draft")
         << QObject::tr("Trash");
+    multiText.clear();
 }
 
 bool DecodedMessageList::toCSV(const QString &path)
@@ -188,7 +189,7 @@ bool DecodedMessageList::saveAllMMSFiles(const QString &dirPath, QString& fatalE
 DecodedMessageList DecodedMessageList::fromContactList(const ContactList &list, const MessageSourceFlags& flags, QStringList &errors)
 {
     DecodedMessageList messages(
-        flags.testFlag(mergeDuplicates), flags.testFlag(mergeMultiParts));
+        flags.testFlag(mergeDuplicates), flags.testFlag(mergeMultiParts));    
     if (flags.testFlag(useVMessage))
         fromVMessageList(messages, list.extra.vmsgSMS, errors, false);
     if (flags.testFlag(useVMessageArchive))
@@ -232,7 +233,6 @@ void DecodedMessageList::addOrMerge(DecodedMessage &msg)
     // Merge multipart messages
     if (msg.isMultiPart) {
         if (_mergeMultiParts) {
-            static QString multiText; // inter-parts buffer
             if (msg.partNumber==1) { // First part
                 multiText = msg.text;
                 return;
@@ -297,7 +297,12 @@ void DecodedMessageList::fromPDUList(DecodedMessageList &messages, const QString
             msg.clear();
             msg.sources = fromArchive ? usePDUArchive : usePDU;
             QDataStream ds(body);
-            bool res = PDU::parseMessage(ds, msg, 1, MsgType);
+            // SMSC data
+            quint8 byte;
+            ds >> byte;
+            ds.skipRawData(byte);
+            // PDU data
+            bool res = PDU::parseMessage(ds, msg, MsgType);
             if (!res)
                     errors << QString("Unknown message type: %1").arg(MsgType);
             if (ss[0].toInt()==1) // For multipart

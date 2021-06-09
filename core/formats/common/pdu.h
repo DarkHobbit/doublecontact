@@ -25,7 +25,7 @@ class PDU
 {
 public:
     PDU();
-    static bool parseMessage(QDataStream& ds, DecodedMessage& msg, int offset, int& MsgType);
+    static bool parseMessage(QDataStream& ds, DecodedMessage& msg, int& MsgType);
 private:
     static QString readPhoneNumber(QDataStream& s, bool lenInBytes = false);
     static QDateTime readDateTime(QDataStream& s);

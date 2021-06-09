@@ -77,6 +77,7 @@ public:
 private:
     bool _mergeDuplicates, _mergeMultiParts;
     QStringList sMsgStatus, sMsgBox;
+    QString multiText; // inter-parts buffer for addOrMerge
     static void fromVMessageList(DecodedMessageList& messages, const QStringList& src, QStringList &errors, bool fromArchive);
     static void fromPDUList(DecodedMessageList& messages, const QStringList& src, QStringList &errors, bool fromArchive);
 };

@@ -37,7 +37,8 @@ bool NokiaData::ReadPredefBinMessage(const QString& fileName, const QByteArray &
         list.clear();
     QDataStream ds(src);
     int MsgType;
-    bool res = PDU::parseMessage(ds, msg, 0xB0, MsgType);
+    ds.skipRawData(0xB0);
+    bool res = PDU::parseMessage(ds, msg, MsgType);
     if (!res) {
         if (MsgType==0x0C) {
             ds.device()->seek(ds.device()->pos()-1);
