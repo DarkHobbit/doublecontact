@@ -80,7 +80,7 @@ void ConfigManager::readConfig()
     gd.gridColor2 = settings->value("View/GridColor2", gd.gridColor2).toString();
     // For column view
     validColumnNames.clear();
-    for (int i=0; i<ccLast; i++)
+    for (int i=0; i<contactColumnHeaders.count(); i++)
          validColumnNames << contactColumnHeaders[i];
     // Column view
     gd.columnNames.clear();
