@@ -220,6 +220,7 @@ void ContactItem::clear()
     originalFormat.clear();
     version.clear();
     subVersion.clear();
+    lastRev.clear();
     prefPhone.clear();
     prefEmail.clear();
     prefIM.clear();

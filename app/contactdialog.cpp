@@ -197,6 +197,7 @@ void ContactDialog::setData(const ContactItem& c, const ContactList& l)
 
 void ContactDialog::getData(ContactItem& c, ContactList& l)
 {
+    c.lastRev = DateItem(QDateTime::currentDateTime()); // TODO to settings
     // Names
     c.fullName = ui->leFullName->text();
     fixCount(nameCount, "Name", MIN_VISIBLE_NAMES);

@@ -49,6 +49,7 @@ void ContactColumnHeaders::fill()
     << S_IM_JABBER
     << S_IM_ICQ
     << S_IM_SKYPE
+    << S_LAST_REV
     << S_HAS_PHONE
     << S_HAS_EMAIL
     << S_HAS_ADDRESS

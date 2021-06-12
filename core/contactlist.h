@@ -169,6 +169,7 @@ struct ContactItem {
     QString idType; // tag name    
     QString originalFormat;
     QString version, subVersion;
+    DateItem lastRev;
     TagList otherTags;   // Known but un-editing tags
     TagList unknownTags; // specific tags for any file format, i.e. vcf
     // Calculated fields for higher perfomance

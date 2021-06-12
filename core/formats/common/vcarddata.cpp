@@ -166,6 +166,8 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
             // Known tags
             if (tag=="VERSION")
                 item.version = decodeValue(vValue[0], errors);
+            else if (tag=="REV")
+                        importDate(item.lastRev, decodeValue(vValue[0], errors), errors, item.makeGenericName());
             else if (tag=="FN") {
                 item.fullName = decodeValue(vValue[0], errors);
                 // Name compilation for error messages
@@ -402,6 +404,8 @@ void VCardData::exportRecord(QStringList &lines, const ContactItem &item, QStrin
         sVersion = "4.0";
     }
     lines << QString("VERSION:") + sVersion;
+    if (!item.lastRev.isEmpty())
+        lines << QString("REV:") + exportDate(item.lastRev);
     // Known tags
     if (!item.names.isEmpty()) {
         QString seps = "";

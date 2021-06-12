@@ -130,6 +130,7 @@ QVariant ContactModel::data(const QModelIndex &index, int role) const
             case ccIMJabber:    return c.findIMByType("xmpp");
             case ccIMICQ:       return c.findIMByType("icq");
             case ccIMSkype:     return c.findIMByType("skype");
+            case ccLastRev:        return c.lastRev.toString();
             case ccHasPhone:    return !c.phones.isEmpty() ? "*" : QVariant();
             case ccHasEmail:    return !c.emails.isEmpty() ? "*" : QVariant();
             case ccHasAddress:  return !c.addrs.isEmpty() ? "*" : QVariant();
