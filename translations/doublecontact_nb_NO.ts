@@ -162,19 +162,19 @@ Er du sikker på at du vil godta dette sertifikatet uansett?</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="156"/>
-        <location filename="../app/contactdialog.cpp" line="719"/>
+        <location filename="../app/contactdialog.cpp" line="721"/>
         <source>name</source>
         <translation>navn</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="161"/>
-        <location filename="../app/contactdialog.cpp" line="721"/>
+        <location filename="../app/contactdialog.cpp" line="723"/>
         <source>phone</source>
         <translation>telefon</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="166"/>
-        <location filename="../app/contactdialog.cpp" line="723"/>
+        <location filename="../app/contactdialog.cpp" line="725"/>
         <source>email</source>
         <translation>e-postadresse</translation>
     </message>
@@ -269,74 +269,79 @@ Er du sikker på at du vil godta dette sertifikatet uansett?</translation>
         <translation>Annet</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="543"/>
+        <location filename="../app/contactdialog.ui" line="557"/>
         <source>Format version:</source>
         <translation>Formatversjon:</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="550"/>
+        <location filename="../app/contactdialog.ui" line="589"/>
         <source>ID</source>
         <translation>ID</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="571"/>
+        <location filename="../app/contactdialog.ui" line="543"/>
         <source>Original format:</source>
         <translation>Opprinnelig format:</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="588"/>
+        <location filename="../app/contactdialog.ui" line="573"/>
+        <source>Updated:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/contactdialog.ui" line="603"/>
         <source>Sort string</source>
         <translation>Sorter streng</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="597"/>
+        <location filename="../app/contactdialog.ui" line="615"/>
         <source>Other contact attributes</source>
         <translation>Andre kontaktdetaljer</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="611"/>
-        <location filename="../app/contactdialog.ui" line="642"/>
+        <location filename="../app/contactdialog.ui" line="629"/>
+        <location filename="../app/contactdialog.ui" line="660"/>
         <source>Tag</source>
         <translation>Etikett</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="616"/>
-        <location filename="../app/contactdialog.ui" line="647"/>
+        <location filename="../app/contactdialog.ui" line="634"/>
+        <location filename="../app/contactdialog.ui" line="665"/>
         <source>Value</source>
         <translation>Verdi</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="625"/>
+        <location filename="../app/contactdialog.ui" line="643"/>
         <source>Problems</source>
         <translation>Problemer</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="631"/>
+        <location filename="../app/contactdialog.ui" line="649"/>
         <source>Unknown contact attributes</source>
         <translation>Ukjente kontaktdetaljer</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="661"/>
+        <location filename="../app/contactdialog.ui" line="679"/>
         <source>Save View</source>
         <translation>Lagre visning</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="693"/>
+        <location filename="../app/contactdialog.ui" line="711"/>
         <source>&amp;Remove</source>
         <translation type="unfinished">&amp;Fjern</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="696"/>
+        <location filename="../app/contactdialog.ui" line="714"/>
         <source>Del</source>
         <translation type="unfinished">Del</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="701"/>
+        <location filename="../app/contactdialog.ui" line="719"/>
         <source>Copy text</source>
         <translation type="unfinished">Kopier tekst</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="704"/>
+        <location filename="../app/contactdialog.ui" line="722"/>
         <source>Ctrl+C</source>
         <translation type="unfinished">Ctrl+C</translation>
     </message>
@@ -351,37 +356,37 @@ Er du sikker på at du vil godta dette sertifikatet uansett?</translation>
         <translation>Rediger kontakt</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="733"/>
+        <location filename="../app/contactdialog.cpp" line="735"/>
         <source>Phone type</source>
         <translation>Telefontype</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="735"/>
+        <location filename="../app/contactdialog.cpp" line="737"/>
         <source>Email type</source>
         <translation>E-posttype</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="737"/>
+        <location filename="../app/contactdialog.cpp" line="739"/>
         <source>Address type</source>
         <translation>Adressetype</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="739"/>
+        <location filename="../app/contactdialog.cpp" line="741"/>
         <source>IM type</source>
         <translation>Lynmeldingstype</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="812"/>
+        <location filename="../app/contactdialog.cpp" line="814"/>
         <source>Open image file</source>
         <translation>Åpne bildefil</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="844"/>
+        <location filename="../app/contactdialog.cpp" line="846"/>
         <source>Save image file</source>
         <translation>Lagre bildefil</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="862"/>
+        <location filename="../app/contactdialog.cpp" line="864"/>
         <source>Contact photo</source>
         <translation>Kontaktbilde</translation>
     </message>
@@ -1554,12 +1559,12 @@ telefonspråk %5</translation>
         <translation type="obsolete">Ukjent koding: </translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="577"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="579"/>
         <source>Invalid timezone: </source>
         <translation>Ugyldig tidssone: </translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="607"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="609"/>
         <source>Invalid datetime: </source>
         <translation>Ugyldig datotid: </translation>
     </message>
@@ -2390,7 +2395,7 @@ Sjekk brukernavn, passord, protokoll og port</translation>
         <translation type="obsolete">Tom</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="315"/>
+        <location filename="../core/decodedmessagelist.cpp" line="320"/>
         <source>MPB message body missing</source>
         <translation>MPB-meldingskropp mangler</translation>
     </message>

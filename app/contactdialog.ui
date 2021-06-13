@@ -17,7 +17,7 @@
    <item>
     <widget class="QTabWidget" name="twContact">
      <property name="currentIndex">
-      <number>0</number>
+      <number>4</number>
      </property>
      <widget class="QWidget" name="tabGeneral">
       <attribute name="title">
@@ -537,24 +537,10 @@
       <layout class="QVBoxLayout" name="verticalLayout_5">
        <item>
         <layout class="QGridLayout" name="gridLayout_2">
-         <item row="0" column="2">
-          <widget class="QLabel" name="lbFormatVersion">
+         <item row="0" column="0">
+          <widget class="QLabel" name="lbOriginalFormat">
            <property name="text">
-            <string>Format version:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="0">
-          <widget class="QLabel" name="lbID">
-           <property name="text">
-            <string>ID</string>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="3">
-          <widget class="QLabel" name="lbFormatVersionValue">
-           <property name="text">
-            <string notr="true">===</string>
+            <string>Original format:</string>
            </property>
           </widget>
          </item>
@@ -565,10 +551,42 @@
            </property>
           </widget>
          </item>
-         <item row="0" column="0">
-          <widget class="QLabel" name="lbOriginalFormat">
+         <item row="0" column="2">
+          <widget class="QLabel" name="lbFormatVersion">
            <property name="text">
-            <string>Original format:</string>
+            <string>Format version:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="3">
+          <layout class="QHBoxLayout" name="horizontalLayout_6">
+           <item>
+            <widget class="QLabel" name="lbFormatVersionValue">
+             <property name="text">
+              <string notr="true">===</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="lbUpdated">
+             <property name="text">
+              <string>Updated:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="lbUpdatedValue">
+             <property name="text">
+              <string notr="true">===</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="lbID">
+           <property name="text">
+            <string>ID</string>
            </property>
           </widget>
          </item>
@@ -579,15 +597,15 @@
            </property>
           </widget>
          </item>
-         <item row="1" column="3">
-          <widget class="QLineEdit" name="leSortString"/>
-         </item>
          <item row="1" column="2">
           <widget class="QLabel" name="lbSortString">
            <property name="text">
             <string>Sort string</string>
            </property>
           </widget>
+         </item>
+         <item row="1" column="3">
+          <widget class="QLineEdit" name="leSortString"/>
          </item>
         </layout>
        </item>

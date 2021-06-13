@@ -185,6 +185,7 @@ void ContactDialog::setData(const ContactItem& c, const ContactList& l)
     ui->lbOriginalFormatValue->setText(c.originalFormat);
     ui->lbFormatVersionValue->setText(c.version);
     ui->lbIDValue->setText(c.id);
+    ui->lbUpdatedValue->setText(c.lastRev.toString());
     setTagTable(c.otherTags, ui->twOtherTags);
     // Unknown tags
     setTagTable(c.unknownTags, ui->twUnknownTags);

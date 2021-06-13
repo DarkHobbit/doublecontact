@@ -158,19 +158,19 @@ Deseja aceitar o certificado ?</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="156"/>
-        <location filename="../app/contactdialog.cpp" line="719"/>
+        <location filename="../app/contactdialog.cpp" line="721"/>
         <source>name</source>
         <translation>nome</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="161"/>
-        <location filename="../app/contactdialog.cpp" line="721"/>
+        <location filename="../app/contactdialog.cpp" line="723"/>
         <source>phone</source>
         <translation>telefone</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="166"/>
-        <location filename="../app/contactdialog.cpp" line="723"/>
+        <location filename="../app/contactdialog.cpp" line="725"/>
         <source>email</source>
         <translation>e-mail</translation>
     </message>
@@ -227,27 +227,32 @@ Deseja aceitar o certificado ?</translation>
         <translation>Mensagem Instantânea</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="661"/>
+        <location filename="../app/contactdialog.ui" line="573"/>
+        <source>Updated:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/contactdialog.ui" line="679"/>
         <source>Save View</source>
         <translation>Gravar visualização</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="693"/>
+        <location filename="../app/contactdialog.ui" line="711"/>
         <source>&amp;Remove</source>
         <translation>&amp;Remover</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="696"/>
+        <location filename="../app/contactdialog.ui" line="714"/>
         <source>Del</source>
         <translation>Deletar</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="701"/>
+        <location filename="../app/contactdialog.ui" line="719"/>
         <source>Copy text</source>
         <translation>Copiar Texto</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="704"/>
+        <location filename="../app/contactdialog.ui" line="722"/>
         <source>Ctrl+C</source>
         <translation>Ctrl+C</translation>
     </message>
@@ -282,49 +287,49 @@ Deseja aceitar o certificado ?</translation>
         <translation>Outros</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="543"/>
+        <location filename="../app/contactdialog.ui" line="557"/>
         <source>Format version:</source>
         <translation>Versão Formatada:</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="550"/>
+        <location filename="../app/contactdialog.ui" line="589"/>
         <source>ID</source>
         <translation>Identificação</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="571"/>
+        <location filename="../app/contactdialog.ui" line="543"/>
         <source>Original format:</source>
         <translation>Formato Original:</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="588"/>
+        <location filename="../app/contactdialog.ui" line="603"/>
         <source>Sort string</source>
         <translation>Ordenar cadeia</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="597"/>
+        <location filename="../app/contactdialog.ui" line="615"/>
         <source>Other contact attributes</source>
         <translation>Atributos de outros contatos</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="611"/>
-        <location filename="../app/contactdialog.ui" line="642"/>
+        <location filename="../app/contactdialog.ui" line="629"/>
+        <location filename="../app/contactdialog.ui" line="660"/>
         <source>Tag</source>
         <translation>Etiqueta</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="616"/>
-        <location filename="../app/contactdialog.ui" line="647"/>
+        <location filename="../app/contactdialog.ui" line="634"/>
+        <location filename="../app/contactdialog.ui" line="665"/>
         <source>Value</source>
         <translation>Valor</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="625"/>
+        <location filename="../app/contactdialog.ui" line="643"/>
         <source>Problems</source>
         <translation>Problemas</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.ui" line="631"/>
+        <location filename="../app/contactdialog.ui" line="649"/>
         <source>Unknown contact attributes</source>
         <translation>Atributos de contatos desconhecidos</translation>
     </message>
@@ -339,37 +344,37 @@ Deseja aceitar o certificado ?</translation>
         <translation>Editar contato</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="733"/>
+        <location filename="../app/contactdialog.cpp" line="735"/>
         <source>Phone type</source>
         <translation>Tipo de Telefone</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="735"/>
+        <location filename="../app/contactdialog.cpp" line="737"/>
         <source>Email type</source>
         <translation>Tipo de E-mail</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="737"/>
+        <location filename="../app/contactdialog.cpp" line="739"/>
         <source>Address type</source>
         <translation>Tipo de endereço</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="739"/>
+        <location filename="../app/contactdialog.cpp" line="741"/>
         <source>IM type</source>
         <translation>Tipo IM</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="812"/>
+        <location filename="../app/contactdialog.cpp" line="814"/>
         <source>Open image file</source>
         <translation>Abrir ficheiro de imagem</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="844"/>
+        <location filename="../app/contactdialog.cpp" line="846"/>
         <source>Save image file</source>
         <translation>Gravar ficheiro de imagem</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="862"/>
+        <location filename="../app/contactdialog.cpp" line="864"/>
         <source>Contact photo</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1450,12 +1455,12 @@ phone language %5</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="577"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="579"/>
         <source>Invalid timezone: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="607"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="609"/>
         <source>Invalid datetime: </source>
         <translation type="unfinished"></translation>
     </message>
@@ -2219,7 +2224,7 @@ Check username, password, protocol and port</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="315"/>
+        <location filename="../core/decodedmessagelist.cpp" line="320"/>
         <source>MPB message body missing</source>
         <translation type="unfinished"></translation>
     </message>
