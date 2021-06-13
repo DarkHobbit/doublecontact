@@ -253,7 +253,12 @@ void DecodedMessageList::addOrMerge(DecodedMessage &msg)
     // Merge duplicates
     if (_mergeDuplicates) {
         // We assume dplicate if date, text and first correspondent phonenumber are equal
+#if __GNUC__ >= 5
         for(DecodedMessage& item: *this) {
+#else
+        for (int i=0; i<this->count(); i++) {
+            DecodedMessage& item = (*this)[i];
+#endif
             if (item.when==msg.when && item.contacts.count()==1 && msg.contacts.count()==1 && item.text==msg.text) {
                 const ContactItem ic = item.contacts.first();
                 const ContactItem mc = msg.contacts.first();
