@@ -2464,13 +2464,13 @@ Check username, password, protocol and port</source>
         <location filename="../core/formats/common/nokiadata.cpp" line="512"/>
         <source>Personal</source>
         <comment>MmsClass</comment>
-        <translation type="unfinished"></translation>
+        <translation>Персональные</translation>
     </message>
     <message>
         <location filename="../core/formats/common/nokiadata.cpp" line="515"/>
         <source>Advertisement</source>
         <comment>MmsClass</comment>
-        <translation type="unfinished"></translation>
+        <translation>Реклама</translation>
     </message>
     <message>
         <location filename="../core/formats/common/nokiadata.cpp" line="518"/>
