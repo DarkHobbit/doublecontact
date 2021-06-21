@@ -242,7 +242,7 @@ Wilt u dit certificaat tóch accepteren?</translation>
     <message>
         <location filename="../app/contactdialog.ui" line="573"/>
         <source>Updated:</source>
-        <translation type="unfinished"></translation>
+        <translation>Bijgewerkt op:</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="679"/>
@@ -2093,7 +2093,7 @@ opgeslagen als mobiele telefoon</translation>
     <message>
         <location filename="../core/globals.h" line="100"/>
         <source>Updated</source>
-        <translation type="unfinished"></translation>
+        <translation>Bijgewerkt</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="102"/>
