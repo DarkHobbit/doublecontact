@@ -284,11 +284,14 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                     g.remove(g.length()-1, 1);
                 item.groups << g;
             }
-            // Work, addresses
+            // Work
             else if (tag=="ORG")
                 item.organization = decodeValue(vValue[0], errors);
             else if (tag=="TITLE")
                 item.title = decodeValue(vValue[0], errors);
+            else if (tag=="ROLE")
+                item.role = decodeValue(vValue[0], errors);
+            // Addresses
             else if (tag=="ADR") {
                 PostalAddress addr;
                 importAddress(addr, types, vValue, errors);
@@ -464,13 +467,16 @@ void VCardData::exportRecord(QStringList &lines, const ContactItem &item, QStrin
             break;
         }
     }
-    // Organization, addresses
+    // Addresses
     foreach (const PostalAddress& addr, item.addrs)
         lines << exportAddress(addr);
+    // Organization
     if (!item.organization.isEmpty())
         lines << encodeAll("ORG", 0, true, sc(item.organization));
     if (!item.title.isEmpty())
         lines << encodeAll("TITLE", 0, true, sc(item.title));
+    if (!item.role.isEmpty())
+        lines << encodeAll("ROLE", 0, true, sc(item.role));
     // Internet 1
     if (!item.url.isEmpty())
         lines << encodeAll("URL", 0, false, sc(item.url));

@@ -97,7 +97,8 @@ bool GenericCSVProfile::prepareExport(const ContactList &list)
         checkStr(c.groups.join(""), hasGroups);
         checkStr(c.organization, hasOrg);
         checkStr(c.title, hasTitle);
-        // TODO role, logo?
+        checkStr(c.role, hasRole);
+        // TODO logo?
         checkTypeCombinations(c.addrs, addrTypeCombinations);
         checkStr(c.nickName, hasNick);
         checkStr(c.url, hasUrl);
@@ -125,6 +126,7 @@ QStringList GenericCSVProfile::makeHeader()
     makeHeaderItem(header, "X-CATEGORIES", hasGroups); // TODO categories if 40
     makeHeaderItem(header, "ORG", hasOrg);
     makeHeaderItem(header, "TITLE", hasTitle);
+    makeHeaderItem(header, "ROLE", hasRole);
     makeHeaderGroup(header, "ADR", addrTypeCombinations);
     makeHeaderItem(header, "NICKNAME", hasNick);
     makeHeaderItem(header, "URL", hasUrl);
@@ -154,6 +156,7 @@ bool GenericCSVProfile::exportRecord(QStringList &row, const ContactItem &item, 
     putItem(row, item.groups.join(";"), hasGroups);
     putItem(row, item.organization, hasOrg);
     putItem(row, item.title, hasTitle);
+    putItem(row, item.role, hasRole);
     putTypeCombinations(row, item.addrs, addrTypeCombinations);
     putItem(row, item.nickName, hasNick);
     putItem(row, item.url, hasUrl);
@@ -173,7 +176,7 @@ void GenericCSVProfile::clearCounters()
     addrTypeCombinations.clear();
     imTypeCombinations.clear();
     hasBDay = hasAnn = hasSortString = hasDesc = hasPhotoUrl = false;
-    hasGroups = hasOrg = hasTitle = hasNick = hasUrl = false;
+    hasGroups = hasOrg = hasTitle = hasRole = hasNick = hasUrl = false;
     otherTags.clear();
     unknownTags.clear();
 }

@@ -33,6 +33,7 @@ enum ContactColumn {
   ccGroups,     // all groups
   ccTitle,      // Job title
   ccOrg,        // Organization
+  ccRole,
   ccAddr,       // postal address
   ccNickName,   // nickname
   ccUrl,        // site url
@@ -89,6 +90,7 @@ enum ContactColumn {
 #define S_PHOTO QObject::tr("Photo")
 #define S_TITLE QObject::tr("Job title")
 #define S_ORG QObject::tr("Organization")
+#define S_ROLE QObject::tr("Role")
 #define S_ADDR QObject::tr("Address")
 #define S_NICK QObject::tr("NickName")
 #define S_URL QObject::tr("URL")

@@ -107,6 +107,7 @@ Bugfix release:
 
 CURRENT
 * SMS from MPB/NBF/NBU files and MMS from NBF/NBU (NBU not checked) show and save to CSV
+* Added tags: REV, ROLE
 * Added Clear recent list command
 * Import of faked QUOTED-PRINTABLE fields (literal representation of non-ASCII chars, prohibited by RFC 2045)
 * UDX tag vCardLocation added to uneditnig; unknown UDX tags now saved like vCard

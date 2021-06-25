@@ -157,8 +157,8 @@ struct ContactItem {
     Photo photo;
     QStringList groups;
     // Work
-    QString organization, title;
-    // TODO role, logo?
+    QString organization, title, role;
+    // TODO logo?
     // Addresses
     QList<PostalAddress> addrs;
     // Internet

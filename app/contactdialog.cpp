@@ -179,6 +179,7 @@ void ContactDialog::setData(const ContactItem& c, const ContactList& l)
     // Work
     ui->leOrganization->setText(c.organization);
     ui->leTitle->setText(c.title);
+    ui->leRole->setText(c.role);
     // Other
     ui->leSortString->setText(c.sortString);
     ui->edDescription->setPlainText(c.description);
@@ -252,6 +253,7 @@ void ContactDialog::getData(ContactItem& c, ContactList& l)
     // Work
     c.organization = ui->leOrganization->text();
     c.title = ui->leTitle->text();
+    c.role = ui->leRole->text();
     // Other
     c.sortString = ui->leSortString->text();
     c.description = ui->edDescription->toPlainText();

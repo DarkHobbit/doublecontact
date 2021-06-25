@@ -215,6 +215,7 @@ void ContactItem::clear()
     groups.clear();
     organization.clear();
     title.clear();
+    role.clear();
     otherTags.clear();
     unknownTags.clear();
     originalFormat.clear();
@@ -404,6 +405,8 @@ QString ContactItem::makeGenericName() const
         res = formatNames();
     else if (!organization.isEmpty())
         res = organization;
+    else if (!role.isEmpty())
+        res = role;
     else if (!description.isEmpty())
         res = description;
     else if (!emails.isEmpty())
@@ -553,6 +556,7 @@ bool ContactItem::identicalTo(const ContactItem &pair)
     if (!(photo==pair.photo)) return false;
     if (organization!=pair.organization) return false;
     if (title!=pair.title) return false;
+    if (role!=pair.role) return false;
     if (addrs!=pair.addrs) return false;
     if (nickName!=pair.nickName) return false;
     if (url!=pair.url) return false;

@@ -42,6 +42,7 @@ void ContactColumnHeaders::fill()
     << S_GROUP
     << S_TITLE
     << S_ORG
+    << S_ROLE
     << S_ADDR
     << S_NICK
     << S_URL

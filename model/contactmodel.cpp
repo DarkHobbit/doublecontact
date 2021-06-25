@@ -112,6 +112,7 @@ QVariant ContactModel::data(const QModelIndex &index, int role) const
             case ccGroups:      return c.groups.join(", ");
             case ccTitle:       return c.title;
             case ccOrg:         return c.organization;
+            case ccRole:         return c.role;
             case ccAddr:  {
                 QString res = "";
                 foreach (const PostalAddress& addr, c.addrs) {

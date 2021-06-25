@@ -67,6 +67,7 @@ bool HTMLFile::exportRecords(const QString &url, ContactList &list)
         // Work
         exportString(stream, item.organization, S_ORG);
         exportString(stream, item.title, S_TITLE);
+        exportString(stream, item.title, S_ROLE);
         // Addresses
         exportTypedItems(stream, item.addrs, S_ADDR);
         // Internet
