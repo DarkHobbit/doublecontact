@@ -468,7 +468,7 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/contactdialog.cpp" line="864"/>
         <source>Contact photo</source>
-        <translation type="unfinished"></translation>
+        <translation>Світлина контакту</translation>
     </message>
 </context>
 <context>
@@ -903,12 +903,12 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/mainwindow.ui" line="627"/>
         <source>&amp;Messages...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Повідомлення...</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="630"/>
         <source>Shift+F7</source>
-        <translation type="unfinished">Shift+F7</translation>
+        <translation>Shift+F7</translation>
     </message>
     <message>
         <source>Settings...</source>
@@ -1218,37 +1218,37 @@ Are you want switch column sorting off?</source>
     <message>
         <location filename="../model/messagemodel.cpp" line="23"/>
         <source>Date</source>
-        <translation type="unfinished">Дата</translation>
+        <translation>Дата</translation>
     </message>
     <message>
         <location filename="../model/messagemodel.cpp" line="24"/>
         <source>From/To</source>
-        <translation type="unfinished"></translation>
+        <translation>Від/кому</translation>
     </message>
     <message>
         <location filename="../model/messagemodel.cpp" line="25"/>
         <source>Number</source>
-        <translation type="unfinished"></translation>
+        <translation>Номер</translation>
     </message>
     <message>
         <location filename="../model/messagemodel.cpp" line="26"/>
         <source>Folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Тека</translation>
     </message>
     <message>
         <location filename="../model/messagemodel.cpp" line="27"/>
         <source>Flags</source>
-        <translation type="unfinished"></translation>
+        <translation>Прапорці</translation>
     </message>
     <message>
         <location filename="../model/messagemodel.cpp" line="28"/>
         <source>Text</source>
-        <translation type="unfinished"></translation>
+        <translation>Текст</translation>
     </message>
     <message>
         <location filename="../model/messagemodel.cpp" line="75"/>
         <source>&lt;MMS&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;MMS&gt;</translation>
     </message>
 </context>
 <context>
@@ -1256,118 +1256,118 @@ Are you want switch column sorting off?</source>
     <message>
         <location filename="../app/messagewindow.ui" line="14"/>
         <source>Messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Повідомлення</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="30"/>
         <source>Message sources</source>
-        <translation type="unfinished"></translation>
+        <translation>Джерела повідомлень</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="50"/>
         <source>PDU</source>
-        <translation type="unfinished"></translation>
+        <translation>PDU</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="57"/>
         <source>vMessage </source>
-        <translation type="unfinished"></translation>
+        <translation>vMessage </translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="74"/>
         <source>PDU archive</source>
-        <translation type="unfinished"></translation>
+        <translation>Архів PDU</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="81"/>
         <source>vMessage archive</source>
-        <translation type="unfinished"></translation>
+        <translation>Архів vMessage</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="98"/>
         <source>Binary</source>
-        <translation type="unfinished"></translation>
+        <translation>Бінарні</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="67"/>
         <source>Merge duplicates</source>
-        <translation type="unfinished"></translation>
+        <translation>Обʼєднувати дублікати</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="43"/>
         <source>Processing</source>
-        <translation type="unfinished"></translation>
+        <translation>Обробка</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="91"/>
         <source>Merge multipart messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Об&apos;єднувати зіставні повідомлення</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="123"/>
         <source>Apply</source>
-        <translation type="unfinished"></translation>
+        <translation>Застосувати</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="143"/>
         <source>Filter</source>
-        <translation type="unfinished">Фільтр</translation>
+        <translation>Фільтр</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="168"/>
         <source>&amp;Save as...</source>
-        <translation type="unfinished"></translation>
+        <translation>Зберегти як...</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="177"/>
         <source>Copy text</source>
-        <translation type="unfinished">Копіювати текст</translation>
+        <translation>Копіювати текст</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="180"/>
         <source>Ctrl+C</source>
-        <translation type="unfinished">Ctrl+C</translation>
+        <translation>Ctrl+C</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="185"/>
         <source>Properties</source>
-        <translation type="unfinished"></translation>
+        <translation>Властивості</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="188"/>
         <source>Return</source>
-        <translation type="unfinished">Return</translation>
+        <translation>Return</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="193"/>
         <source>Save MMS Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Зберегти файли з MMS</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="198"/>
         <location filename="../app/messagewindow.ui" line="201"/>
         <source>Show MMS Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Показати файли з MMS</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.cpp" line="222"/>
         <source> with messages</source>
-        <translation type="unfinished"></translation>
+        <translation> з повідомленнями</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.cpp" line="226"/>
         <source>Records: %1</source>
-        <translation type="unfinished">Записів: %1</translation>
+        <translation>Записів: %1</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.cpp" line="227"/>
         <source>Including MMS: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Також MMS: %1</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.cpp" line="228"/>
         <source>Merged dups: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Об&apos;єднано дулів: %1</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.cpp" line="229"/>
@@ -1391,7 +1391,7 @@ MMS properties:
     <message>
         <location filename="../app/messagewindow.cpp" line="292"/>
         <source>Save messages file</source>
-        <translation type="unfinished"></translation>
+        <translation>Зберегти файл повідомлень</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.cpp" line="299"/>
@@ -1752,7 +1752,7 @@ line %3, col %4
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="288"/>
         <source>time in birthday</source>
-        <translation type="unfinished"></translation>
+        <translation>день народження з часом</translation>
     </message>
     <message>
         <source>Warning: contact %1 has time (%2) in birthday, not implemented in UDX reader</source>
@@ -1786,7 +1786,7 @@ line %3, col %4
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="295"/>
         <source>anniversary</source>
-        <translation type="unfinished">Річницю</translation>
+        <translation>річницю</translation>
     </message>
     <message>
         <source>Warning: contact %1 has address(es), not implemented in UDX</source>
@@ -2089,17 +2089,17 @@ line %3, col %4
     <message>
         <location filename="../core/globals.h" line="144"/>
         <source>Unknown encoding: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Невідоме кодування: %1</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="145"/>
         <source>Unknown charset: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Невідома таблиця символів: %1</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="147"/>
         <source>Mode: </source>
-        <translation type="unfinished">Режим: </translation>
+        <translation>Режим: </translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="148"/>
@@ -2203,7 +2203,8 @@ line %3, col %4
         <location filename="../core/globals.h" line="132"/>
         <source>Can&apos;t seek to %1 in file
 %2</source>
-        <translation>Не можу перейти до %1 у файлі %2</translation>
+        <translation>Не можу перейти до %1 у файлі
+%2</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="133"/>
@@ -2479,7 +2480,7 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="141"/>
         <source>MMS</source>
-        <translation type="unfinished"></translation>
+        <translation>MMS</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="225"/>
@@ -2549,7 +2550,7 @@ Check username, password, protocol and port</source>
         <location filename="../core/formats/common/nokiadata.cpp" line="519"/>
         <source>Info</source>
         <comment>MmsClass</comment>
-        <translation type="unfinished"></translation>
+        <translation>Інформація</translation>
     </message>
     <message>
         <location filename="../core/formats/common/nokiadata.cpp" line="522"/>
