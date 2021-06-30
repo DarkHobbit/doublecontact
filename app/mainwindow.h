@@ -17,10 +17,10 @@
 #include <QLabel>
 #include <QMainWindow>
 #include <QModelIndexList>
+#include <QSortFilterProxyModel>
 #include <QTableView>
 
 #include "contactmodel.h"
-#include "contactsorterfilter.h"
 #include "recentlist.h"
 
 namespace Ui {
@@ -110,7 +110,7 @@ private:
     QTableView* selectedView;
     ContactModel* selectedModel;
     QLabel* selectedHeader;
-    ContactSorterFilter *proxyLeft, *proxyRight;
+    QSortFilterProxyModel *proxyLeft, *proxyRight;
     // End of potentially unsafe pointers
     QModelIndexList selection;
     QLabel *lbCount, *lbMode;

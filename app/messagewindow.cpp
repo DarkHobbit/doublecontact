@@ -68,9 +68,11 @@ MessageWindow::MessageWindow(ContactList* contacts) :
     checkMergeButton();
     // Model
     model = new MessageModel(this, contacts);
-    proxy = new ContactSorterFilter(this);
+    proxy = new QSortFilterProxyModel(this);
     proxy->setSourceModel(model);
     proxy->setFilterKeyColumn(-1);
+    proxy->setSortRole(SortStringRole);
+    proxy->setFilterCaseSensitivity(Qt::CaseInsensitive); // Driver == driver
     ui->tvMessages->setModel(proxy);
     ui->tvMessages->setSortingEnabled(configManager.sortingEnabled());
     connect(ui->tvMessages->selectionModel(), SIGNAL(currentChanged(QItemIndex,QItemIndex)),

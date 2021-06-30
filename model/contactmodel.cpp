@@ -162,8 +162,14 @@ QVariant ContactModel::data(const QModelIndex &index, int role) const
         ContactColumn col = visibleColumns[index.column()];
         if (col==ccBDay) // Dates must be sort by year, not by day
             return c.birthday.toString(DateItem::ISOBasic);
-        else
-            return data(index, Qt::DisplayRole);
+        else {
+            QVariant res = data(index, Qt::DisplayRole);
+            // Empty items - to end
+            if (res.toString().isEmpty())
+                return QString("\uFFFD");
+            else
+                return res;
+        }
     }
     return QVariant();
 }

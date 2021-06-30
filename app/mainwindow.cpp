@@ -67,14 +67,18 @@ MainWindow::MainWindow(QWidget *parent) :
     // Models
     modLeft = new ContactModel(this, S_NEW_LIST, recent);
     modRight = new ContactModel(this, S_NEW_LIST + " 2", recent);
-    proxyLeft  = new ContactSorterFilter(this);
-    proxyRight  = new ContactSorterFilter(this);
+    proxyLeft  = new QSortFilterProxyModel(this);
+    proxyRight  = new QSortFilterProxyModel(this);
     /*ui->tvLeft->setModel(modLeft);
     ui->tvRight->setModel(modRight);*/
     proxyLeft->setSourceModel(modLeft);
     proxyRight->setSourceModel(modRight);
     proxyLeft->setFilterKeyColumn(-1);
     proxyRight->setFilterKeyColumn(-1);
+    proxyLeft->setSortRole(SortStringRole);
+    proxyRight->setSortRole(SortStringRole);
+    proxyLeft->setFilterCaseSensitivity(Qt::CaseInsensitive); // Driver == driver
+    proxyRight->setFilterCaseSensitivity(Qt::CaseInsensitive); // Driver == driver
     ui->tvLeft->setModel(proxyLeft);
     ui->tvRight->setModel(proxyRight);
     connect(modLeft, SIGNAL(requestCSVProfile(CSVFile*)), this, SLOT(onRequestCSVProfile(CSVFile*)), Qt::DirectConnection);
@@ -518,7 +522,7 @@ bool MainWindow::checkSelection(bool errorIfNoSelected, bool onlyOneRowAllowed)
         return false;
     }
     // If proxy models works...
-    ContactSorterFilter* selectedProxy = (selectedView==ui->tvLeft) ? proxyLeft : proxyRight;
+    QSortFilterProxyModel* selectedProxy = (selectedView==ui->tvLeft) ? proxyLeft : proxyRight;
     selection.clear();
     foreach(QModelIndex index, proxySelection)
         selection << selectedProxy->mapToSource(index);
@@ -972,7 +976,7 @@ void MainWindow::on_actionS_wap_Panels_triggered()
     ContactModel* bufModel = modLeft;
     modLeft = modRight;
     modRight = bufModel;
-    ContactSorterFilter * bufProxy = proxyLeft;
+    QSortFilterProxyModel* bufProxy = proxyLeft;
     proxyLeft = proxyRight;
     proxyRight = bufProxy;
     ui->tvLeft->setModel(proxyLeft);
@@ -1126,7 +1130,7 @@ void MainWindow::on_actionFormat_phone_numbers_triggered()
 void MainWindow::on_actionCopy_text_triggered()
 {
     QModelIndex ind = selectedView->selectionModel()->currentIndex();
-    ContactSorterFilter* selectedProxy = (selectedView==ui->tvLeft) ? proxyLeft : proxyRight;
+    QSortFilterProxyModel* selectedProxy = (selectedView==ui->tvLeft) ? proxyLeft : proxyRight;
     ind = selectedProxy->mapToSource(ind);
     QString text = selectedModel->data(ind, Qt::DisplayRole).toString();
     qApp->clipboard()->setText(text);

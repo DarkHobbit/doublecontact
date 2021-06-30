@@ -16,10 +16,10 @@
 #include <QDialog>
 #include <QLabel>
 #include <QMenu>
+#include <QSortFilterProxyModel>
 #include <QStatusBar>
 
 #include "contactlist.h"
-#include "contactsorterfilter.h"
 #include "decodedmessagelist.h"
 #include "messagemodel.h"
 
@@ -61,7 +61,7 @@ private:
     Ui::MessageWindow *ui;
     MessageSourceFlags srcFlags;
     MessageModel* model;
-    ContactSorterFilter *proxy;
+    QSortFilterProxyModel *proxy;
     QStatusBar* statusBar;
     QLabel *lbCount, *lbMMSCount, *lbMode, *lbDups, *lbMultiParts;
     QMenu* menuMMSFiles;

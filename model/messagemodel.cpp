@@ -92,8 +92,14 @@ QVariant MessageModel::data(const QModelIndex &index, int role) const
     else if (role==SortStringRole) {
         if (index.column()==mcDate) // Dates must be sort by year, not by day
             return m.when.toString("yyyyMMddThhmmss");
-        else
-            return data(index, Qt::DisplayRole);
+        else {
+            QVariant res = data(index, Qt::DisplayRole);
+            // Empty items - to end
+            if (res.toString().isEmpty())
+                return QString("\uFFFD");
+            else
+                return res;
+        }
     }
     return QVariant();
 }
