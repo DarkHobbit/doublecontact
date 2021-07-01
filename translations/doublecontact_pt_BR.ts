@@ -922,134 +922,134 @@ Deseja aceitar o certificado ?</translation>
         <translation type="unfinished">Ctrl+C</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="174"/>
+        <location filename="../app/mainwindow.cpp" line="178"/>
         <source>Only one of two files can be dropped to program window</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="244"/>
+        <location filename="../app/mainwindow.cpp" line="248"/>
         <source>Open contact file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="261"/>
+        <location filename="../app/mainwindow.cpp" line="265"/>
         <source>Open VCF Directory</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="285"/>
+        <location filename="../app/mainwindow.cpp" line="289"/>
         <source>Save contact file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="301"/>
+        <location filename="../app/mainwindow.cpp" line="305"/>
         <source>Save VCF Directory</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="310"/>
+        <location filename="../app/mainwindow.cpp" line="314"/>
         <source>Directory exists. Are You really want rewrite it?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="359"/>
+        <location filename="../app/mainwindow.cpp" line="363"/>
         <source>Are You really want to edit more than one record?
 Only some fields can this edited in this mode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="471"/>
+        <location filename="../app/mainwindow.cpp" line="475"/>
         <source>Compare mode requires show two panels and load contact lists in both panels</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="544"/>
+        <location filename="../app/mainwindow.cpp" line="548"/>
         <source> (directory)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="651"/>
+        <location filename="../app/mainwindow.cpp" line="655"/>
         <source>Records: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="657"/>
+        <location filename="../app/mainwindow.cpp" line="661"/>
         <source>two panels</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="657"/>
+        <location filename="../app/mainwindow.cpp" line="661"/>
         <source>one panel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="661"/>
+        <location filename="../app/mainwindow.cpp" line="665"/>
         <source>simple editing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="665"/>
+        <location filename="../app/mainwindow.cpp" line="669"/>
         <source>compare</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="709"/>
+        <location filename="../app/mainwindow.cpp" line="713"/>
         <source>&apos;%1&apos; was changed.
 Save changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="810"/>
+        <location filename="../app/mainwindow.cpp" line="814"/>
         <source>Restart program to apply language change</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="854"/>
+        <location filename="../app/mainwindow.cpp" line="858"/>
         <source>Two panels and compare mode needed for this operation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="869"/>
+        <location filename="../app/mainwindow.cpp" line="873"/>
         <source>Left item</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="869"/>
+        <location filename="../app/mainwindow.cpp" line="873"/>
         <source>Right item</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="895"/>
+        <location filename="../app/mainwindow.cpp" line="899"/>
         <source>Strongly two records on current panel must be selected for this operation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="901"/>
+        <location filename="../app/mainwindow.cpp" line="905"/>
         <source>Item 1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="901"/>
+        <location filename="../app/mainwindow.cpp" line="905"/>
         <source>Item 2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="969"/>
+        <location filename="../app/mainwindow.cpp" line="973"/>
         <source>Operation requires show two panels</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1002"/>
+        <location filename="../app/mainwindow.cpp" line="1006"/>
         <source>Statitics</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1009"/>
+        <location filename="../app/mainwindow.cpp" line="1013"/>
         <source>Report file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1043"/>
+        <location filename="../app/mainwindow.cpp" line="1047"/>
         <source>Column sorting is switched. Hard sort results are not visible.
 Are you want switch column sorting off?</source>
         <translation type="unfinished"></translation>
@@ -1192,38 +1192,38 @@ Are you want switch column sorting off?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="222"/>
+        <location filename="../app/messagewindow.cpp" line="224"/>
         <source> with messages</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="226"/>
+        <location filename="../app/messagewindow.cpp" line="228"/>
         <source>Records: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="227"/>
+        <location filename="../app/messagewindow.cpp" line="229"/>
         <source>Including MMS: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="228"/>
+        <location filename="../app/messagewindow.cpp" line="230"/>
         <source>Merged dups: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="229"/>
+        <location filename="../app/messagewindow.cpp" line="231"/>
         <source>Merged multiparted: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="272"/>
+        <location filename="../app/messagewindow.cpp" line="274"/>
         <source>id: %1
 Sources: %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="275"/>
+        <location filename="../app/messagewindow.cpp" line="277"/>
         <source>
 
 MMS properties:
@@ -1231,12 +1231,12 @@ MMS properties:
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="292"/>
+        <location filename="../app/messagewindow.cpp" line="294"/>
         <source>Save messages file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="299"/>
+        <location filename="../app/messagewindow.cpp" line="301"/>
         <source>Can you also save media files from MMS (%1 messages)?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1420,27 +1420,27 @@ phone language %5</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="195"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="196"/>
         <source>Missing phone type at line %1: %2%3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="206"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="205"/>
         <source>Non-standard phone type at line %1: %2%3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="251"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="250"/>
         <source>Unsupported photo type at line %1: %2%3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="245"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="244"/>
         <source>Unknown encoding type at line %1: %2%3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="263"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="262"/>
         <source>Unknown photo kind at line %1: %2</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1450,18 +1450,18 @@ phone language %5</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="367"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="366"/>
         <location filename="../core/formats/files/udxfile.cpp" line="175"/>
         <source>%1 unknown tags found</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="585"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="584"/>
         <source>Invalid timezone: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="615"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="614"/>
         <source>Invalid datetime: </source>
         <translation type="unfinished"></translation>
     </message>
@@ -2535,26 +2535,31 @@ Check username, password, protocol and port</source>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="346"/>
-        <source>Warning on non-standard phone types</source>
+        <source>Warning on missing phone types</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="353"/>
-        <source>Debug save</source>
+        <source>Warning on non-standard phone types</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="360"/>
+        <source>Debug save</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/settingsdialog.ui" line="367"/>
         <source>While VCF directory reading</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="366"/>
+        <location filename="../app/settingsdialog.ui" line="373"/>
         <source>Read contact names from file name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.cpp" line="134"/>
+        <location filename="../app/settingsdialog.cpp" line="136"/>
         <source>List must contain at least one visible column</source>
         <translation type="unfinished"></translation>
     </message>

@@ -1054,32 +1054,32 @@ Wilt u dit certificaat tóch accepteren?</translation>
         <translation>Ctrl+C</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="244"/>
+        <location filename="../app/mainwindow.cpp" line="248"/>
         <source>Open contact file</source>
         <translation>Contactpersoonbestand openen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="261"/>
+        <location filename="../app/mainwindow.cpp" line="265"/>
         <source>Open VCF Directory</source>
         <translation>VCF-map openen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="285"/>
+        <location filename="../app/mainwindow.cpp" line="289"/>
         <source>Save contact file</source>
         <translation>Contactpersoonbestand opslaan</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="301"/>
+        <location filename="../app/mainwindow.cpp" line="305"/>
         <source>Save VCF Directory</source>
         <translation>VCF-map opslaan</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="310"/>
+        <location filename="../app/mainwindow.cpp" line="314"/>
         <source>Directory exists. Are You really want rewrite it?</source>
         <translation>De map bestaat al. Weet u zeker dat u hem wilt overschrijven?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="359"/>
+        <location filename="../app/mainwindow.cpp" line="363"/>
         <source>Are You really want to edit more than one record?
 Only some fields can this edited in this mode</source>
         <translation>Weet u zeker dat u meer dan één item wilt wijzigen?
@@ -1090,7 +1090,7 @@ In deze modus kan slechts een beperkt aantal velden worden gewijzigd</translatio
         <translation type="obsolete">Weet u zeker u de geselecteerde items wilt verwijderen?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="471"/>
+        <location filename="../app/mainwindow.cpp" line="475"/>
         <source>Compare mode requires show two panels and load contact lists in both panels</source>
         <translation>Om de vergelijkingsmodus te kunnen gebruiken moet u de twee panelen-modus inschakelen en lijsten laden in beide panelen</translation>
     </message>
@@ -1103,7 +1103,7 @@ In deze modus kan slechts een beperkt aantal velden worden gewijzigd</translatio
         <translation type="obsolete">Groepsbewerkingen zijn nog niet geïmplementeerd; selecteer één item</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="544"/>
+        <location filename="../app/mainwindow.cpp" line="548"/>
         <source> (directory)</source>
         <translation> (map)</translation>
     </message>
@@ -1112,12 +1112,12 @@ In deze modus kan slechts een beperkt aantal velden worden gewijzigd</translatio
         <translation type="obsolete">Dubbele contactpersoon - %1</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="174"/>
+        <location filename="../app/mainwindow.cpp" line="178"/>
         <source>Only one of two files can be dropped to program window</source>
         <translation>Slechts één van de twee bestanden kan worden versleept naar het applicatievenster</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="651"/>
+        <location filename="../app/mainwindow.cpp" line="655"/>
         <source>Records: %1</source>
         <translation>Items: %1</translation>
     </message>
@@ -1126,12 +1126,12 @@ In deze modus kan slechts een beperkt aantal velden worden gewijzigd</translatio
         <translation type="obsolete">Modus: </translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="657"/>
+        <location filename="../app/mainwindow.cpp" line="661"/>
         <source>two panels</source>
         <translation>twee panelen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="657"/>
+        <location filename="../app/mainwindow.cpp" line="661"/>
         <source>one panel</source>
         <translation>één paneel</translation>
     </message>
@@ -1144,74 +1144,74 @@ In deze modus kan slechts een beperkt aantal velden worden gewijzigd</translatio
         <translation type="obsolete">ongesorteerd</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="661"/>
+        <location filename="../app/mainwindow.cpp" line="665"/>
         <source>simple editing</source>
         <translation>simpele bewerking</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="665"/>
+        <location filename="../app/mainwindow.cpp" line="669"/>
         <source>compare</source>
         <translation>vergelijken</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="709"/>
+        <location filename="../app/mainwindow.cpp" line="713"/>
         <source>&apos;%1&apos; was changed.
 Save changes?</source>
         <translation>&apos;%1&apos; is gewijzigd.
 Wilt u de wijzigingen opslaan?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="810"/>
+        <location filename="../app/mainwindow.cpp" line="814"/>
         <source>Restart program to apply language change</source>
         <translation>Herstart de app om de taalwijziging door te voeren</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="854"/>
+        <location filename="../app/mainwindow.cpp" line="858"/>
         <source>Two panels and compare mode needed for this operation</source>
         <translation>De twee panelen- en vergelijkingsmodus zijn vereist voor deze bewerking</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="869"/>
+        <location filename="../app/mainwindow.cpp" line="873"/>
         <source>Left item</source>
         <translation>Linkeritem</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="869"/>
+        <location filename="../app/mainwindow.cpp" line="873"/>
         <source>Right item</source>
         <translation>Rechteritem</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="895"/>
+        <location filename="../app/mainwindow.cpp" line="899"/>
         <source>Strongly two records on current panel must be selected for this operation</source>
         <translation>Twee items in het huidige paneel dienen te worden geselecteerd voor deze bewerking</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="901"/>
+        <location filename="../app/mainwindow.cpp" line="905"/>
         <source>Item 1</source>
         <translation>Item 1</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="901"/>
+        <location filename="../app/mainwindow.cpp" line="905"/>
         <source>Item 2</source>
         <translation>Item 2</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="969"/>
+        <location filename="../app/mainwindow.cpp" line="973"/>
         <source>Operation requires show two panels</source>
         <translation>Deze bewerking vereist twee panelen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1002"/>
+        <location filename="../app/mainwindow.cpp" line="1006"/>
         <source>Statitics</source>
         <translation>Statistieken</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1009"/>
+        <location filename="../app/mainwindow.cpp" line="1013"/>
         <source>Report file</source>
         <translation>Rapportbestand</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1043"/>
+        <location filename="../app/mainwindow.cpp" line="1047"/>
         <source>Column sorting is switched. Hard sort results are not visible.
 Are you want switch column sorting off?</source>
         <translation>Kolomsortering is gewijzigd. Harde sorteringsresultaten zijn niet zichtbaar.
@@ -1355,39 +1355,39 @@ Weet u zeker dat u kolomsortering wilt uitschakelen?</translation>
         <translation>MMS-bestanden tonen</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="222"/>
+        <location filename="../app/messagewindow.cpp" line="224"/>
         <source> with messages</source>
         <translation> met berichten</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="226"/>
+        <location filename="../app/messagewindow.cpp" line="228"/>
         <source>Records: %1</source>
         <translation>Items: %1</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="227"/>
+        <location filename="../app/messagewindow.cpp" line="229"/>
         <source>Including MMS: %1</source>
         <translation>Inclusief mms: %1</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="228"/>
+        <location filename="../app/messagewindow.cpp" line="230"/>
         <source>Merged dups: %1</source>
         <translation>Samengevoegde duplicaten: %1</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="229"/>
+        <location filename="../app/messagewindow.cpp" line="231"/>
         <source>Merged multiparted: %1</source>
         <translation>Samengevoegde berichtdelen: %1</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="272"/>
+        <location filename="../app/messagewindow.cpp" line="274"/>
         <source>id: %1
 Sources: %2</source>
         <translation>id: %1
 Bronnen: %2</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="275"/>
+        <location filename="../app/messagewindow.cpp" line="277"/>
         <source>
 
 MMS properties:
@@ -1398,12 +1398,12 @@ MMS-informatie:
 %1</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="292"/>
+        <location filename="../app/messagewindow.cpp" line="294"/>
         <source>Save messages file</source>
         <translation>Berichtenbestand opslaan</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="299"/>
+        <location filename="../app/messagewindow.cpp" line="301"/>
         <source>Can you also save media files from MMS (%1 messages)?</source>
         <translation>Kun je ook mediabestanden uit mms&apos;jes opslaan (%1 berichten)?</translation>
     </message>
@@ -1620,12 +1620,12 @@ telefoontaal %5</translation>
         <translation>Onbekend TYPE uiterlijk op regel %1: label %2</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="195"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="196"/>
         <source>Missing phone type at line %1: %2%3</source>
         <translation>Ontbrekend telefoontype op regel %1: %2:%3</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="206"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="205"/>
         <source>Non-standard phone type at line %1: %2%3</source>
         <translation>Niet-standaard telefoontype op regel %1: %2%3</translation>
     </message>
@@ -1638,7 +1638,7 @@ telefoontaal %5</translation>
         <translation type="obsolete">Niet-ondersteund fototype op regel %1: %2%3</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="245"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="244"/>
         <source>Unknown encoding type at line %1: %2%3</source>
         <translation>Onbekend versleutelingstype op regel %1: %2%3</translation>
     </message>
@@ -1647,12 +1647,12 @@ telefoontaal %5</translation>
         <translation type="obsolete">Onbekend adrestype op regel %1: %2%3</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="251"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="250"/>
         <source>Unsupported photo type at line %1: %2%3</source>
         <translation>Niet-ondersteund fototype op regel %1: %2%3</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="263"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="262"/>
         <source>Unknown photo kind at line %1: %2</source>
         <translation>Onbekend soort foto op regel %1: %2</translation>
     </message>
@@ -1662,7 +1662,7 @@ telefoontaal %5</translation>
         <translation>Laatste sectie is niet gesloten</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="367"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="366"/>
         <location filename="../core/formats/files/udxfile.cpp" line="175"/>
         <source>%1 unknown tags found</source>
         <translation>%1 onbekende labels gevonden</translation>
@@ -1676,12 +1676,12 @@ telefoontaal %5</translation>
         <translation type="obsolete">Onbekende versleuteling: </translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="585"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="584"/>
         <source>Invalid timezone: </source>
         <translation>Ongeldige tijdzone: </translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="615"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="614"/>
         <source>Invalid datetime: </source>
         <translation>Ongeldige datum/tijd: </translation>
     </message>
@@ -2830,26 +2830,31 @@ Controleer gebruikersnaam, wachtwoord, protocol en poort</translation>
         <translation>(veel telefoons vatten &apos;Spraakoproep&apos; op als &apos;Overig&apos;)</translation>
     </message>
     <message>
+        <location filename="../app/settingsdialog.ui" line="346"/>
+        <source>Warning on missing phone types</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>(many phones treats &apos;Voice&apos; as &apos;Other&apos;)</source>
         <translation type="obsolete">(veel telefoons nemen &apos;Overig&apos; aan i.p.v. &apos;Spraak&apos;)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="346"/>
+        <location filename="../app/settingsdialog.ui" line="353"/>
         <source>Warning on non-standard phone types</source>
         <translation>Waarschuwing bij niet-standaard telefoontypes</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="353"/>
+        <location filename="../app/settingsdialog.ui" line="360"/>
         <source>Debug save</source>
         <translation>Foutopsporing opslaan</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="360"/>
+        <location filename="../app/settingsdialog.ui" line="367"/>
         <source>While VCF directory reading</source>
         <translation>Tijdens het uitlezen van mappen door VCF</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="366"/>
+        <location filename="../app/settingsdialog.ui" line="373"/>
         <source>Read contact names from file name</source>
         <translation>Contactpersoonnamen uitlezen uit bestandsnaam</translation>
     </message>
@@ -2858,7 +2863,7 @@ Controleer gebruikersnaam, wachtwoord, protocol en poort</translation>
         <translation type="obsolete">Waarschuwen bij niet-standaard telefoonummers/e-mailadressen</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.cpp" line="134"/>
+        <location filename="../app/settingsdialog.cpp" line="136"/>
         <source>List must contain at least one visible column</source>
         <translation>De lijst moet minimaal één zichtbare kolom bevatten</translation>
     </message>

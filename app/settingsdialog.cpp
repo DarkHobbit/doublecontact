@@ -64,6 +64,7 @@ bool SettingsDialog::setData()
     int index = ui->cbDefaultEmptyPhoneType->findText(gd.defaultEmptyPhoneType);
     if (index!=-1)
         ui->cbDefaultEmptyPhoneType->setCurrentIndex(index);
+    ui->cbWarnOnMissingTypes->setChecked(gd.warnOnMissingTypes);
     ui->cbWarnOnNonStandardTypes->setChecked(gd.warnOnNonStandardTypes);
     ui->cbReadNamesFromFileName->setChecked(gd.readNamesFromFileName);
     ui->cbDebugSave->setChecked(gd.debugSave);
@@ -108,6 +109,7 @@ bool SettingsDialog::getData()
         gd.groupFormat = GlobalConfig::gfCategories;
     // Loading
     gd.defaultEmptyPhoneType = ui->cbDefaultEmptyPhoneType->currentText();
+    gd.warnOnMissingTypes = ui->cbWarnOnMissingTypes->isChecked();
     gd.warnOnNonStandardTypes = ui->cbWarnOnNonStandardTypes->isChecked();
     gd.readNamesFromFileName = ui->cbReadNamesFromFileName->isChecked();
     gd.debugSave = ui->cbDebugSave->isChecked();

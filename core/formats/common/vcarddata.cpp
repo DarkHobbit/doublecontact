@@ -192,9 +192,8 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                 phone.value = decodeValue(vValue[0], errors);
                 // Phone type(s)
                 if (types.isEmpty()) {
-                    errors << QObject::tr("Missing phone type at line %1: %2%3").arg(line+1).arg(vValue[0]).arg(visName);
-                    // TODO mb. no type is valid (in this case compare container and contact edit dialog must be updated)
-                    // TODO in this case make warning optional in settings (and, probably, false by default)
+                    if (gd.warnOnMissingTypes)
+                        errors << QObject::tr("Missing phone type at line %1: %2%3").arg(line+1).arg(vValue[0]).arg(visName);
                     phone.types << defaultEmptyPhoneType.toUpper();
                 }
                 else phone.types = types;

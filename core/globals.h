@@ -217,6 +217,7 @@ struct GlobalConfig {
     } groupFormat;
     // Load
     QString defaultEmptyPhoneType; // if phone w/o type was in loaded file
+    bool warnOnMissingTypes;
     bool warnOnNonStandardTypes;
     bool readNamesFromFileName;
     bool debugSave;

@@ -113,6 +113,7 @@ void ConfigManager::readConfig()
     // Loading
     gd.defaultEmptyPhoneType = settings->value("Loading/DefaultEmptyPhoneType",
         Phone::standardTypes.translate("voice")).toString(); // many phones treat type 'voice' as 'other'
+    gd.warnOnMissingTypes = settings->value("Loading/WarnOnMissingTypes", false).toBool();
     gd.warnOnNonStandardTypes = settings->value("Loading/WarnOnNonStandardTypes", true).toBool();
     gd.readNamesFromFileName = settings->value("Loading/ReadNamesFromFileName", false).toBool();
     gd.debugSave = settings->value("Loading/DebugSave", false).toBool();
@@ -164,6 +165,7 @@ void ConfigManager::writeConfig()
     settings->setValue("Saving/GroupFormat", sGroupFormat);
     // Loading
     settings->setValue("Loading/DefaultEmptyPhoneType", gd.defaultEmptyPhoneType);
+    settings->setValue("Loading/WarnOnMissingTypes", gd.warnOnMissingTypes);
     settings->setValue("Loading/WarnOnNonStandardTypes", gd.warnOnNonStandardTypes);
     settings->setValue("Loading/ReadNamesFromFileName", gd.readNamesFromFileName);
     settings->setValue("Loading/DebugSave", gd.debugSave);

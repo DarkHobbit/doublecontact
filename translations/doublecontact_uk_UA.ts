@@ -1054,32 +1054,32 @@ Are you want to accept this certificate anyway?</source>
         <translation>Ctrl+C</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="244"/>
+        <location filename="../app/mainwindow.cpp" line="248"/>
         <source>Open contact file</source>
         <translation>Відкрити файл контактів</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="261"/>
+        <location filename="../app/mainwindow.cpp" line="265"/>
         <source>Open VCF Directory</source>
         <translation>Відкрити теку VCF</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="285"/>
+        <location filename="../app/mainwindow.cpp" line="289"/>
         <source>Save contact file</source>
         <translation>Зберегти файл контактів</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="301"/>
+        <location filename="../app/mainwindow.cpp" line="305"/>
         <source>Save VCF Directory</source>
         <translation>Зберегти теку VCF</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="310"/>
+        <location filename="../app/mainwindow.cpp" line="314"/>
         <source>Directory exists. Are You really want rewrite it?</source>
         <translation>Тека існує. Бажаєте перезаписати її вміст?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="359"/>
+        <location filename="../app/mainwindow.cpp" line="363"/>
         <source>Are You really want to edit more than one record?
 Only some fields can this edited in this mode</source>
         <translation>Ви дійсно бажаєте відредагувати більш ніж один запис?
@@ -1090,7 +1090,7 @@ Only some fields can this edited in this mode</source>
         <translation type="obsolete">Ви дійсно бажаєте видалити обрані записи?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="471"/>
+        <location filename="../app/mainwindow.cpp" line="475"/>
         <source>Compare mode requires show two panels and load contact lists in both panels</source>
         <translation>Режим порівняння потребує відображення двох панелей та завантаження списку контактів у кожну з них</translation>
     </message>
@@ -1103,7 +1103,7 @@ Only some fields can this edited in this mode</source>
         <translation type="obsolete">Групова операція не реалізована, оберіть один запис</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="544"/>
+        <location filename="../app/mainwindow.cpp" line="548"/>
         <source> (directory)</source>
         <translation> (тека)</translation>
     </message>
@@ -1112,12 +1112,12 @@ Only some fields can this edited in this mode</source>
         <translation type="obsolete">Double Contact - %1</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="174"/>
+        <location filename="../app/mainwindow.cpp" line="178"/>
         <source>Only one of two files can be dropped to program window</source>
         <translation>Лише один з двох файлів можна перетягнути у вікно програми</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="651"/>
+        <location filename="../app/mainwindow.cpp" line="655"/>
         <source>Records: %1</source>
         <translation>Записів: %1</translation>
     </message>
@@ -1126,12 +1126,12 @@ Only some fields can this edited in this mode</source>
         <translation type="obsolete">Режим: </translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="657"/>
+        <location filename="../app/mainwindow.cpp" line="661"/>
         <source>two panels</source>
         <translation>2 панелі</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="657"/>
+        <location filename="../app/mainwindow.cpp" line="661"/>
         <source>one panel</source>
         <translation>1 панель</translation>
     </message>
@@ -1144,74 +1144,74 @@ Only some fields can this edited in this mode</source>
         <translation type="obsolete">не відсортовано</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="661"/>
+        <location filename="../app/mainwindow.cpp" line="665"/>
         <source>simple editing</source>
         <translation>проста правка</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="665"/>
+        <location filename="../app/mainwindow.cpp" line="669"/>
         <source>compare</source>
         <translation>порівняння</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="709"/>
+        <location filename="../app/mainwindow.cpp" line="713"/>
         <source>&apos;%1&apos; was changed.
 Save changes?</source>
         <translation>%1 було змінено.
 Зберегти зміни?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="810"/>
+        <location filename="../app/mainwindow.cpp" line="814"/>
         <source>Restart program to apply language change</source>
         <translation>Мову буде змінено після перезавантаження додатку</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="854"/>
+        <location filename="../app/mainwindow.cpp" line="858"/>
         <source>Two panels and compare mode needed for this operation</source>
         <translation>Спершу увімкніть дві панелі та режим порівняння</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="869"/>
+        <location filename="../app/mainwindow.cpp" line="873"/>
         <source>Left item</source>
         <translation>Лівий елемент</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="869"/>
+        <location filename="../app/mainwindow.cpp" line="873"/>
         <source>Right item</source>
         <translation>Правий елемент</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="895"/>
+        <location filename="../app/mainwindow.cpp" line="899"/>
         <source>Strongly two records on current panel must be selected for this operation</source>
         <translation>Для цієї операції необхідно обрати рівно два записи на поточній панелі</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="901"/>
+        <location filename="../app/mainwindow.cpp" line="905"/>
         <source>Item 1</source>
         <translation>Елемент 1</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="901"/>
+        <location filename="../app/mainwindow.cpp" line="905"/>
         <source>Item 2</source>
         <translation>Елемент 2</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="969"/>
+        <location filename="../app/mainwindow.cpp" line="973"/>
         <source>Operation requires show two panels</source>
         <translation>Операція потребує відображення двох панелей</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1002"/>
+        <location filename="../app/mainwindow.cpp" line="1006"/>
         <source>Statitics</source>
         <translation>Статистика</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1009"/>
+        <location filename="../app/mainwindow.cpp" line="1013"/>
         <source>Report file</source>
         <translation>Файл звіту</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1043"/>
+        <location filename="../app/mainwindow.cpp" line="1047"/>
         <source>Column sorting is switched. Hard sort results are not visible.
 Are you want switch column sorting off?</source>
         <translation>Увімкнено сортування по стовпцям. Результати жорсткого сортування не відображаються.
@@ -1355,38 +1355,38 @@ Are you want switch column sorting off?</source>
         <translation>Показати файли з MMS</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="222"/>
+        <location filename="../app/messagewindow.cpp" line="224"/>
         <source> with messages</source>
         <translation> з повідомленнями</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="226"/>
+        <location filename="../app/messagewindow.cpp" line="228"/>
         <source>Records: %1</source>
         <translation>Записів: %1</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="227"/>
+        <location filename="../app/messagewindow.cpp" line="229"/>
         <source>Including MMS: %1</source>
         <translation>Також MMS: %1</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="228"/>
+        <location filename="../app/messagewindow.cpp" line="230"/>
         <source>Merged dups: %1</source>
         <translation>Об&apos;єднано дулів: %1</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="229"/>
+        <location filename="../app/messagewindow.cpp" line="231"/>
         <source>Merged multiparted: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="272"/>
+        <location filename="../app/messagewindow.cpp" line="274"/>
         <source>id: %1
 Sources: %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="275"/>
+        <location filename="../app/messagewindow.cpp" line="277"/>
         <source>
 
 MMS properties:
@@ -1394,12 +1394,12 @@ MMS properties:
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="292"/>
+        <location filename="../app/messagewindow.cpp" line="294"/>
         <source>Save messages file</source>
         <translation>Зберегти файл повідомлень</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="299"/>
+        <location filename="../app/messagewindow.cpp" line="301"/>
         <source>Can you also save media files from MMS (%1 messages)?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1616,12 +1616,12 @@ SMS: %7
         <translation>Несподівана поява TYPE в рядку %1: ярлик %2</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="195"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="196"/>
         <source>Missing phone type at line %1: %2%3</source>
         <translation>Відсутній тип телефону в рядку %1: %2%3</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="206"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="205"/>
         <source>Non-standard phone type at line %1: %2%3</source>
         <translation>Нестандартний тип телефону в рядку %1: %2%3</translation>
     </message>
@@ -1630,12 +1630,12 @@ SMS: %7
         <translation type="obsolete">Нестандартний тип електронної пошти в рядку %1: %2%3</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="251"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="250"/>
         <source>Unsupported photo type at line %1: %2%3</source>
         <translation>Непідтримуваний тип фотографії в рядку %1: %2%3</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="245"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="244"/>
         <source>Unknown encoding type at line %1: %2%3</source>
         <translation>Невідомий тип кодування в рядку %1: %2%3</translation>
     </message>
@@ -1644,7 +1644,7 @@ SMS: %7
         <translation type="obsolete">Невідомий тип адреси в рядку %1: %2%3</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="263"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="262"/>
         <source>Unknown photo kind at line %1: %2</source>
         <translation>Невідомий вигляд фото в рядку %1: %2</translation>
     </message>
@@ -1654,7 +1654,7 @@ SMS: %7
         <translation>Остання секція не закрита</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="367"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="366"/>
         <location filename="../core/formats/files/udxfile.cpp" line="175"/>
         <source>%1 unknown tags found</source>
         <translation>Знайдено невідомих ярликів: %1</translation>
@@ -1668,12 +1668,12 @@ SMS: %7
         <translation type="obsolete">Невідоме кодування: </translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="585"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="584"/>
         <source>Invalid timezone: </source>
         <translation>Хибний часовий пояс: </translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="615"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="614"/>
         <source>Invalid datetime: </source>
         <translation>Хибна дата/час: </translation>
     </message>
@@ -2814,26 +2814,31 @@ Check username, password, protocol and port</source>
         <translation>(багато телефонів трактують «Голосовий» як «Інше»)</translation>
     </message>
     <message>
+        <location filename="../app/settingsdialog.ui" line="346"/>
+        <source>Warning on missing phone types</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>(many phones treats &apos;Voice&apos; as &apos;Other&apos;)</source>
         <translation type="obsolete">(деякі телефони трактують тип &apos;Голосовий&apos; як &apos;Інший&apos;)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="346"/>
+        <location filename="../app/settingsdialog.ui" line="353"/>
         <source>Warning on non-standard phone types</source>
         <translation>Попереджувати про нестандартні типи телефонів</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="353"/>
+        <location filename="../app/settingsdialog.ui" line="360"/>
         <source>Debug save</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="360"/>
+        <location filename="../app/settingsdialog.ui" line="367"/>
         <source>While VCF directory reading</source>
         <translation>Під час читання каталогу VCF</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="366"/>
+        <location filename="../app/settingsdialog.ui" line="373"/>
         <source>Read contact names from file name</source>
         <translation>Брати ім&apos;я контакту з імені файлу</translation>
     </message>
@@ -2842,7 +2847,7 @@ Check username, password, protocol and port</source>
         <translation type="obsolete">Попереджувати про нестандартні типи телефонів/пошти</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.cpp" line="134"/>
+        <location filename="../app/settingsdialog.cpp" line="136"/>
         <source>List must contain at least one visible column</source>
         <translation>В переліку має бути хоча б один стовпчик</translation>
     </message>
