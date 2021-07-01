@@ -100,7 +100,8 @@ QString LanguageManager::transPath()
 #ifdef WIN32
     return qApp->applicationDirPath();
 #else
-    if (QDir("/usr/share/doublecontact/translations").exists())
+//    if (QDir("/usr/share/doublecontact/translations").exists())
+    if (qApp->applicationDirPath().contains("/usr/bin"))
         // Standard case
         return "/usr/share/doublecontact/translations";       
     else {
