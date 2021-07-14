@@ -283,18 +283,28 @@ void ConfigManager::readEditResolution(int &width, int &height)
     height = settings->value("Edit/Height", 0).toInt();
 }
 
-bool ConfigManager::sortingEnabled()
-{
-    if (!settings)
-        return false;
-    return settings->value("General/SortingEnabled", false).toBool();
-}
-
-void ConfigManager::setSortingEnabled(bool value)
+void ConfigManager::readSortConfig(const QString& tableName,
+                                      bool& enabled, int& column, Qt::SortOrder& order)
 {
     if (!settings)
         return;
-    settings->setValue("General/SortingEnabled", value);
+    //    return settings->value("General/SortingEnabled", false).toBool();
+    QString section = QString("Tables/%1/").arg(tableName);
+    enabled = settings->value(section+"SortingEnabled", true).toBool();
+    column = settings->value(section+"SortColumn", 0).toInt();
+    int iOrder = settings->value(section+"SortOrder", Qt::AscendingOrder).toInt();
+    order = (iOrder==0) ? Qt::AscendingOrder : Qt::DescendingOrder;
+}
+
+void ConfigManager::writeSortConfig(const QString& tableName,
+                                       bool enabled, int column, Qt::SortOrder order)
+{
+    if (!settings)
+        return;
+    QString section = QString("Tables/%1/").arg(tableName);
+    settings->setValue(section+"SortingEnabled", enabled);
+    settings->setValue(section+"SortColumn", column);
+    settings->setValue(section+"SortOrder", order);
 }
 
 ContactList::SortType ConfigManager::hardSortType()

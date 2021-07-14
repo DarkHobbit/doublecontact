@@ -45,6 +45,7 @@ private slots:
     void on_cbMergeDups_stateChanged(int);
     void on_cbMergeMultiparts_stateChanged(int);
     void toggleSort();
+    void onSortIndicatorChanged(int,Qt::SortOrder);
     void on_actionCopy_text_triggered();
     void on_actionProperties_triggered();
     void on_leFilter_textChanged(const QString &newText);
@@ -65,7 +66,6 @@ private:
     QStatusBar* statusBar;
     QLabel *lbCount, *lbMMSCount, *lbMode, *lbDups, *lbMultiParts;
     QMenu* menuMMSFiles;
-    void setSorting(bool needSort);
     void updateModel();
     void updateStatus();
     void checkButtons();

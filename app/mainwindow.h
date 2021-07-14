@@ -67,6 +67,7 @@ private slots:
     void on_tvLeft_clicked(const QModelIndex&);
     void on_tvRight_clicked(const QModelIndex&);
     void on_action_Sort_toggled(bool needSort);
+    void onSortIndicatorChanged(int,Qt::SortOrder);
     void on_btnSort_clicked();
     void on_action_OpenFile_triggered();
     void on_action_OpenDir_triggered();
@@ -117,7 +118,6 @@ private:
     void buildContextMenu(QTableView* view);
     void selectView(QTableView* view);
     bool checkSelection(bool errorIfNoSelected = true, bool onlyOneRowAllowed = false);
-    void setSorting(bool needSort);
     void updateListHeader(ContactModel* model, QLabel* header);
     void updateHeaders();
     void updateModeStatus();

@@ -14,6 +14,7 @@
 #ifndef CONFIGMANAGER_H
 #define CONFIGMANAGER_H
 
+#include <QtGlobal>
 #include <QSettings>
 #include <QStringList>
 
@@ -53,8 +54,10 @@ public:
         int& addrCount, QStringList& addrTypes,
         int& width, int& height);
     void readEditResolution(int& width, int& height);
-    bool sortingEnabled();
-    void setSortingEnabled(bool value);
+    void readSortConfig(const QString& tableName,
+        bool& enabled, int& column, Qt::SortOrder& order);
+    void writeSortConfig(const QString& tableName,
+        bool enabled, int column, Qt::SortOrder order);
     ContactList::SortType hardSortType();
     void setHardSortType(ContactList::SortType sortType);
     void csvConfig(QString& profile, QString& genEncoding, QString& genSeparator);

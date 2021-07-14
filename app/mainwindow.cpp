@@ -82,9 +82,12 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->tvLeft->setModel(proxyLeft);
     ui->tvRight->setModel(proxyRight);
     connect(modLeft, SIGNAL(requestCSVProfile(CSVFile*)), this, SLOT(onRequestCSVProfile(CSVFile*)), Qt::DirectConnection);
+    connect(modRight, SIGNAL(requestCSVProfile(CSVFile*)), this, SLOT(onRequestCSVProfile(CSVFile*)), Qt::DirectConnection);
     ui->tvLeft->horizontalHeader()->setStretchLastSection(true);
     ui->tvRight->horizontalHeader()->setStretchLastSection(true);
-    // Status bar
+    connect(ui->tvLeft->horizontalHeader(), SIGNAL(sortIndicatorChanged(int,Qt::SortOrder)), this, SLOT(onSortIndicatorChanged(int,Qt::SortOrder)));
+    connect(ui->tvRight->horizontalHeader(), SIGNAL(sortIndicatorChanged(int,Qt::SortOrder)), this, SLOT(onSortIndicatorChanged(int,Qt::SortOrder)));
+     // Status bar
     lbCount = new QLabel(0);
     lbMode = new QLabel(0);
     statusBar()->addWidget(lbCount);
@@ -126,8 +129,9 @@ MainWindow::MainWindow(QWidget *parent) :
         open(selectedModel, configManager.lastContactFile(), ftAuto);
     // Show data
     ui->action_Two_panels->setChecked(configManager.showTwoPanels());
-    ui->action_Sort->setChecked(configManager.sortingEnabled());
-    setSorting(configManager.sortingEnabled());
+    readTableSortConfig(ui->tvLeft, false);
+    readTableSortConfig(ui->tvRight, false);
+    ui->action_Sort->setChecked(ui->tvLeft->isSortingEnabled());
     updateHeaders();
     updateModeStatus();
     updateRecent();
@@ -491,9 +495,16 @@ void MainWindow::on_btnCompare_clicked()
 // Sort List
 void MainWindow::on_action_Sort_toggled(bool needSort)
 {
-    setSorting(needSort);
-    configManager.setSortingEnabled(needSort);
+    readTableSortConfig(selectedView, true, needSort);
+    writeTableSortConfig(selectedView);
     updateModeStatus();
+}
+
+void MainWindow::onSortIndicatorChanged(int, Qt::SortOrder)
+{
+    QHeaderView* header = dynamic_cast<QHeaderView*>(sender());
+    if (header)
+        writeTableSortConfig(header);
 }
 
 void MainWindow::on_btnSort_clicked()
@@ -527,15 +538,6 @@ bool MainWindow::checkSelection(bool errorIfNoSelected, bool onlyOneRowAllowed)
     foreach(QModelIndex index, proxySelection)
         selection << selectedProxy->mapToSource(index);
     return true;
-}
-
-void MainWindow::setSorting(bool needSort)
-{
-    ui->tvLeft->setSortingEnabled(needSort);
-    ui->tvRight->setSortingEnabled(needSort);
-    int sortColumn = needSort ? 0 : -1;
-    proxyLeft->sort(sortColumn);
-    proxyRight->sort(sortColumn);
 }
 
 void MainWindow::updateListHeader(ContactModel *model, QLabel *header)
@@ -572,6 +574,7 @@ void MainWindow::setButtonsAccess()
     ui->btnEdit->setEnabled(hasSelectedRows);
     ui->btnRemove->setEnabled(hasSelectedRows);
     ui->btnSwapNames->setEnabled(hasSelectedRows);
+    ui->action_Sort->setChecked(selectedView->isSortingEnabled());
 }
 
 void MainWindow::selectionChanged()

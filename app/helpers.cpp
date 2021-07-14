@@ -15,6 +15,7 @@
 #include <QHeaderView>
 #include <QMessageBox>
 #include <QPixmap>
+#include <QSortFilterProxyModel>
 
 #include "globals.h"
 #include "helpers.h"
@@ -67,3 +68,36 @@ void updateTableConfig(QTableView *table)
     }
 }
 
+void readTableSortConfig(QTableView *table, bool forceNeedSort, bool needSort)
+{
+    bool enabled;
+    int column;
+    Qt::SortOrder order;
+    configManager.readSortConfig(table->objectName(), enabled, column, order);
+    if (forceNeedSort)
+        enabled = needSort;
+    if (!enabled)
+        column = -1;
+    table->setSortingEnabled(enabled);
+    if (enabled)
+        table->horizontalHeader()->setSortIndicator(column, order);
+}
+
+void writeTableSortConfig(QTableView *table)
+{
+    QHeaderView *header = table->horizontalHeader();
+    configManager.writeSortConfig(table->objectName(),
+           table->isSortingEnabled(),
+           header->sortIndicatorSection(),
+           header->sortIndicatorOrder());
+}
+
+void writeTableSortConfig(QHeaderView* header)
+{
+    QTableView* table = dynamic_cast<QTableView*>(header->parent());
+    if (table)
+        configManager.writeSortConfig(table->objectName(),
+               table->isSortingEnabled(),
+               header->sortIndicatorSection(),
+               header->sortIndicatorOrder());
+}

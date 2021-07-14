@@ -14,10 +14,13 @@
 #ifndef HELPERS_H
 #define HELPERS_H
 
+#include <QtGlobal>
+#include <QHeaderView>
 #include <QItemDelegate>
 #include <QLabel>
 #include <QTableView>
 
+#include "configmanager.h"
 #include "contactlist.h"
 
 // Delegate for making table widgets read only
@@ -39,5 +42,9 @@ void showPhoto(const Photo& photo, QLabel* label);
 // Set color/font for each table view
 void updateTableConfig(QTableView* table);
 
+// Table view sort settings
+void readTableSortConfig(QTableView* table, bool forceNeedSort, bool needSort = false);
+void writeTableSortConfig(QTableView* table);
+void writeTableSortConfig(QHeaderView* header);
 
 #endif // HELPERS_H

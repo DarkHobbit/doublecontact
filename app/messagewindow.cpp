@@ -74,7 +74,7 @@ MessageWindow::MessageWindow(ContactList* contacts) :
     proxy->setSortRole(SortStringRole);
     proxy->setFilterCaseSensitivity(Qt::CaseInsensitive); // Driver == driver
     ui->tvMessages->setModel(proxy);
-    ui->tvMessages->setSortingEnabled(configManager.sortingEnabled());
+    connect(ui->tvMessages->horizontalHeader(), SIGNAL(sortIndicatorChanged(int,Qt::SortOrder)), this, SLOT(onSortIndicatorChanged(int,Qt::SortOrder)));
     connect(ui->tvMessages->selectionModel(), SIGNAL(currentChanged(QItemIndex,QItemIndex)),
             this, SLOT(selectionChanged()));
     connect(ui->tvMessages->selectionModel(), SIGNAL(selectionChanged(QItemSelection,QItemSelection)),
@@ -93,7 +93,7 @@ MessageWindow::MessageWindow(ContactList* contacts) :
     // Calc!
     updateModel();
     ui->tvMessages->resizeColumnsToContents();
-    setSorting(configManager.sortingEnabled());
+    readTableSortConfig(ui->tvMessages, false);
 }
 
 MessageWindow::~MessageWindow()
@@ -241,7 +241,16 @@ void MessageWindow::updateStatus()
 void MessageWindow::toggleSort()
 {
     bool needSort = !ui->tvMessages->isSortingEnabled();
-    setSorting(needSort);
+    readTableSortConfig(ui->tvMessages, true, needSort);
+    writeTableSortConfig(ui->tvMessages);
+    updateStatus();
+}
+
+void MessageWindow::onSortIndicatorChanged(int, Qt::SortOrder)
+{
+    QHeaderView* header = dynamic_cast<QHeaderView*>(sender());
+    if (header)
+        writeTableSortConfig(header);
 }
 
 void MessageWindow::on_actionCopy_text_triggered()
@@ -318,14 +327,6 @@ void MessageWindow::showEvent(QShowEvent *)
 {
     ui->tvMessages->resizeRowsToContents();
     ui->tvMessages->selectRow(0);
-}
-
-void MessageWindow::setSorting(bool needSort)
-{
-    ui->tvMessages->setSortingEnabled(needSort);
-    int sortColumn = needSort ? 0 : -1;
-    proxy->sort(sortColumn);
-    updateStatus();
 }
 
 void MessageWindow::on_actionSave_MMS_Files_triggered()

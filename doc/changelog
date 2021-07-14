@@ -112,6 +112,7 @@ CURRENT
 * Import of faked QUOTED-PRINTABLE fields (literal representation of non-ASCII chars, prohibited by RFC 2045)
 * UDX tag vCardLocation added to uneditnig; unknown UDX tags now saved like vCard
 * Warning on missing phone types via vСard opening disabled by default and can be activated in settings
+* Sort column and order now stored for each table
 * Fixed: non-latin filenames corruption in recent list
 * Fixed: reading of PHOTO binary data if TYPE parameter is omitted
 * Fixed: names comparison in similar contacts search during addressbooks compare
