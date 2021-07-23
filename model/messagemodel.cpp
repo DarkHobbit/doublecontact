@@ -15,6 +15,7 @@
 
 #include "globals.h"
 #include "messagemodel.h"
+#include "modelhelpers.h"
 
 MessageModel::MessageModel(QObject *parent, ContactList* src)
     : QAbstractTableModel(parent), _src(src), msgs(0, 0)
@@ -92,14 +93,8 @@ QVariant MessageModel::data(const QModelIndex &index, int role) const
     else if (role==SortStringRole) {
         if (index.column()==mcDate) // Dates must be sort by year, not by day
             return m.when.toString("yyyyMMddThhmmss");
-        else {
-            QVariant res = data(index, Qt::DisplayRole);
-            // Empty items - to end
-            if (res.toString().isEmpty())
-                return QString("\uFFFD");
-            else
-                return res;
-        }
+        else
+            return emptyItemsToEnd(data(index, Qt::DisplayRole));
     }
     return QVariant();
 }

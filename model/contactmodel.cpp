@@ -18,6 +18,7 @@
 #include <QTextStream>
 
 #include "contactmodel.h"
+#include "modelhelpers.h"
 #include "formats/common/vcarddata.h"
 #include "formats/files/vcfdirectory.h"
 
@@ -162,14 +163,8 @@ QVariant ContactModel::data(const QModelIndex &index, int role) const
         ContactColumn col = visibleColumns[index.column()];
         if (col==ccBDay) // Dates must be sort by year, not by day
             return c.birthday.toString(DateItem::ISOBasic);
-        else {
-            QVariant res = data(index, Qt::DisplayRole);
-            // Empty items - to end
-            if (res.toString().isEmpty())
-                return QString("\uFFFD");
-            else
-                return res;
-        }
+        else
+            return emptyItemsToEnd(data(index, Qt::DisplayRole));
     }
     return QVariant();
 }

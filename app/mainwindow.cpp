@@ -30,6 +30,7 @@
 
 #include "configmanager.h"
 #include "aboutdialog.h"
+#include "callwindow.h"
 #include "contactdialog.h"
 #include "comparedialog.h"
 #include "csvprofiledialog.h"
@@ -1158,6 +1159,13 @@ void MainWindow::on_actionParse_full_name_triggered()
 void MainWindow::on_actionMessages_triggered()
 {
     MessageWindow* w = new MessageWindow(&selectedModel->itemList());
+    w->exec();
+    delete w;
+}
+
+void MainWindow::on_actionCalls_triggered()
+{
+    CallWindow* w = new CallWindow(&selectedModel->itemList());
     w->exec();
     delete w;
 }

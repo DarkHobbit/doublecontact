@@ -24,6 +24,7 @@ SOURCES += main.cpp \
     csvprofiledialog.cpp \
     sortdialog.cpp \
     groupdialog.cpp \
+    callwindow.cpp \
     messagewindow.cpp
 
 HEADERS += mainwindow.h \
@@ -41,6 +42,7 @@ HEADERS += mainwindow.h \
     csvprofiledialog.h \
     sortdialog.h \
     groupdialog.h \
+    callwindow.h \
     messagewindow.h
 
 FORMS += mainwindow.ui \
@@ -56,6 +58,7 @@ FORMS += mainwindow.ui \
     csvprofiledialog.ui \
     sortdialog.ui \
     groupdialog.ui \
+    callwindow.ui \
     messagewindow.ui
 unix { 
     OBJECTS_DIR = .obj

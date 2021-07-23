@@ -102,6 +102,7 @@ private slots:
     void on_actionParse_full_name_triggered();
 
     void on_actionMessages_triggered();
+    void on_actionCalls_triggered();
 
 private:
     Ui::MainWindow *ui;

@@ -298,6 +298,7 @@
     <addaction name="action_Two_panels"/>
     <addaction name="action_Groups"/>
     <addaction name="actionMessages"/>
+    <addaction name="actionCalls"/>
     <addaction name="actionSettings"/>
    </widget>
    <widget class="QMenu" name="menu_List">
@@ -628,6 +629,14 @@
    </property>
    <property name="shortcut">
     <string>Shift+F7</string>
+   </property>
+  </action>
+  <action name="actionCalls">
+   <property name="text">
+    <string>&amp;Calls...</string>
+   </property>
+   <property name="shortcut">
+    <string>Shift+F8</string>
    </property>
   </action>
  </widget>
