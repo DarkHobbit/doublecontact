@@ -214,7 +214,7 @@ Wilt u dit certificaat tóch accepteren?</translation>
         <location filename="../app/contactdialog.ui" line="384"/>
         <location filename="../app/contactdialog.ui" line="482"/>
         <source>Add...</source>
-        <translation>Toevoegen...</translation>
+        <translation>Toevoegen…</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="156"/>
@@ -242,7 +242,7 @@ Wilt u dit certificaat tóch accepteren?</translation>
     <message>
         <location filename="../app/contactdialog.ui" line="355"/>
         <source>Role</source>
-        <translation type="unfinished"></translation>
+        <translation>Rol</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="583"/>
@@ -542,12 +542,12 @@ Wilt u dit certificaat tóch accepteren?</translation>
     <message>
         <location filename="../app/groupdialog.ui" line="70"/>
         <source>&amp;Merge groups...</source>
-        <translation>Groepen sa&amp;menvoegen...</translation>
+        <translation>Groepen sa&amp;menvoegen…</translation>
     </message>
     <message>
         <location filename="../app/groupdialog.ui" line="77"/>
         <source>&amp;Split group...</source>
-        <translation>Groepen &amp;splitsen...</translation>
+        <translation>Groepen &amp;splitsen…</translation>
     </message>
     <message>
         <location filename="../app/groupdialog.ui" line="86"/>
@@ -773,7 +773,7 @@ Wilt u dit certificaat tóch accepteren?</translation>
     <message>
         <location filename="../app/mainwindow.ui" line="393"/>
         <source>&amp;Options...</source>
-        <translation>&amp;Opties...</translation>
+        <translation>&amp;Opties…</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="398"/>
@@ -868,7 +868,7 @@ Wilt u dit certificaat tóch accepteren?</translation>
     <message>
         <location filename="../app/mainwindow.ui" line="473"/>
         <source>&amp;Settings...</source>
-        <translation>In&amp;stellingen...</translation>
+        <translation>In&amp;stellingen…</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="489"/>
@@ -908,7 +908,7 @@ Wilt u dit certificaat tóch accepteren?</translation>
     <message>
         <location filename="../app/mainwindow.ui" line="627"/>
         <source>&amp;Messages...</source>
-        <translation>&amp;Berichten...</translation>
+        <translation>&amp;Berichten…</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="630"/>
@@ -1024,7 +1024,7 @@ Wilt u dit certificaat tóch accepteren?</translation>
     <message>
         <location filename="../app/mainwindow.ui" line="571"/>
         <source>&amp;Groups...</source>
-        <translation>&amp;Groepen...</translation>
+        <translation>&amp;Groepen…</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="574"/>
@@ -1321,7 +1321,7 @@ Weet u zeker dat u kolomsortering wilt uitschakelen?</translation>
     <message>
         <location filename="../app/messagewindow.ui" line="168"/>
         <source>&amp;Save as...</source>
-        <translation>Op&amp;slaan als...</translation>
+        <translation>Op&amp;slaan als…</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="177"/>
@@ -1714,12 +1714,12 @@ regel %3, kolom %4
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="80"/>
         <source>Warning: codepage not found, trying use UTF-8...</source>
-        <translation>Waarschuwing: de tekenset kan niet worden gevonden; UTF-8 wordt geprobeerd...</translation>
+        <translation>Waarschuwing: de tekenset kan niet worden gevonden; utf-8 wordt geprobeerd…</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="85"/>
         <source>Warning: udx version not found, treat as 1.0...</source>
-        <translation>Waarschuwing: de udx-versie kan niet worden gevonden; 1.0 wordt aangenomen...</translation>
+        <translation>Waarschuwing: de udx-versie kan niet worden gevonden; 1.0 wordt aangenomen…</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="94"/>
@@ -1963,7 +1963,7 @@ opgeslagen als mobiele telefoon</translation>
     <message>
         <location filename="../core/globals.h" line="71"/>
         <source>mixed...</source>
-        <translation>gemengd...</translation>
+        <translation>gemengd…</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="73"/>
@@ -2063,7 +2063,7 @@ opgeslagen als mobiele telefoon</translation>
     <message>
         <location filename="../core/globals.h" line="93"/>
         <source>Role</source>
-        <translation type="unfinished"></translation>
+        <translation>Rol</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="94"/>
@@ -2422,7 +2422,7 @@ Controleer gebruikersnaam, wachtwoord, protocol en poort</translation>
     <message>
         <location filename="../core/formats/files/nbufile.cpp" line="154"/>
         <source>Signature not recognized, trying anyway...</source>
-        <translation>Ondertekening wordt niet herkend; bezig met opnieuw proberen...</translation>
+        <translation>Ondertekening wordt niet herkend; bezig met opnieuw proberen…</translation>
     </message>
     <message>
         <location filename="../core/formats/files/nbufile.cpp" line="203"/>
@@ -2797,7 +2797,7 @@ Controleer gebruikersnaam, wachtwoord, protocol en poort</translation>
     <message>
         <location filename="../app/settingsdialog.ui" line="275"/>
         <source>Non-standard phone/email types</source>
-        <translation>Niet-standaard types telefoonnummers/e-mailadressen</translation>
+        <translation>Niet-standaardtypes telefoonnummers/e-mailadressen</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="281"/>
@@ -2822,7 +2822,7 @@ Controleer gebruikersnaam, wachtwoord, protocol en poort</translation>
     <message>
         <location filename="../app/settingsdialog.ui" line="327"/>
         <source>Default type if empty</source>
-        <translation>Standaard type indien leeg</translation>
+        <translation>Standaardtype indien leeg</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="339"/>
@@ -2832,7 +2832,7 @@ Controleer gebruikersnaam, wachtwoord, protocol en poort</translation>
     <message>
         <location filename="../app/settingsdialog.ui" line="346"/>
         <source>Warning on missing phone types</source>
-        <translation type="unfinished"></translation>
+        <translation>Waarschuwen bij ontbrekende telefoonnummers</translation>
     </message>
     <message>
         <source>(many phones treats &apos;Voice&apos; as &apos;Other&apos;)</source>
@@ -2841,7 +2841,7 @@ Controleer gebruikersnaam, wachtwoord, protocol en poort</translation>
     <message>
         <location filename="../app/settingsdialog.ui" line="353"/>
         <source>Warning on non-standard phone types</source>
-        <translation>Waarschuwing bij niet-standaard telefoontypes</translation>
+        <translation>Waarschuwen bij niet-standaard telefoontypes</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="360"/>
