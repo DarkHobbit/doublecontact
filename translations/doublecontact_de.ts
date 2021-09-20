@@ -238,7 +238,7 @@ Möchten Sie dieses Zertifikat trotzdem akzeptieren?</translation>
     <message>
         <location filename="../app/contactdialog.ui" line="583"/>
         <source>Updated:</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktualisiert:</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="689"/>
@@ -813,7 +813,7 @@ Möchten Sie dieses Zertifikat trotzdem akzeptieren?</translation>
     <message>
         <location filename="../app/mainwindow.ui" line="630"/>
         <source>Shift+F7</source>
-        <translation type="unfinished"></translation>
+        <translation>Umschalt + F7</translation>
     </message>
     <message>
         <source>Settings...</source>
@@ -1117,7 +1117,7 @@ Möchten Sie die Spaltensortierung ausschalten?</translation>
     <message>
         <location filename="../model/messagemodel.cpp" line="25"/>
         <source>Number</source>
-        <translation type="unfinished"></translation>
+        <translation>Zahl</translation>
     </message>
     <message>
         <location filename="../model/messagemodel.cpp" line="26"/>
@@ -1137,7 +1137,7 @@ Möchten Sie die Spaltensortierung ausschalten?</translation>
     <message>
         <location filename="../model/messagemodel.cpp" line="79"/>
         <source>&lt;MMS&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;MMS&gt;</translation>
     </message>
 </context>
 <context>
@@ -1155,7 +1155,7 @@ Möchten Sie die Spaltensortierung ausschalten?</translation>
     <message>
         <location filename="../app/messagewindow.ui" line="50"/>
         <source>PDU</source>
-        <translation type="unfinished"></translation>
+        <translation>PDU</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="57"/>
@@ -1165,7 +1165,7 @@ Möchten Sie die Spaltensortierung ausschalten?</translation>
     <message>
         <location filename="../app/messagewindow.ui" line="74"/>
         <source>PDU archive</source>
-        <translation type="unfinished"></translation>
+        <translation>PDU-Archiv</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="81"/>
@@ -1185,7 +1185,7 @@ Möchten Sie die Spaltensortierung ausschalten?</translation>
     <message>
         <location filename="../app/messagewindow.ui" line="43"/>
         <source>Processing</source>
-        <translation type="unfinished"></translation>
+        <translation>Wird verarbeitet</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="91"/>
@@ -1195,7 +1195,7 @@ Möchten Sie die Spaltensortierung ausschalten?</translation>
     <message>
         <location filename="../app/messagewindow.ui" line="123"/>
         <source>Apply</source>
-        <translation type="unfinished"></translation>
+        <translation>Übernehmen</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="143"/>
@@ -1225,18 +1225,18 @@ Möchten Sie die Spaltensortierung ausschalten?</translation>
     <message>
         <location filename="../app/messagewindow.ui" line="188"/>
         <source>Return</source>
-        <translation type="unfinished"></translation>
+        <translation>Eingabe</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="193"/>
         <source>Save MMS Files</source>
-        <translation type="unfinished"></translation>
+        <translation>MMS-Dateien speichern</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="198"/>
         <location filename="../app/messagewindow.ui" line="201"/>
         <source>Show MMS Files</source>
-        <translation type="unfinished"></translation>
+        <translation>MMS-Dateien anzeigen</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.cpp" line="224"/>
@@ -1251,7 +1251,7 @@ Möchten Sie die Spaltensortierung ausschalten?</translation>
     <message>
         <location filename="../app/messagewindow.cpp" line="229"/>
         <source>Including MMS: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Einschließlich MMS: %1</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.cpp" line="230"/>
@@ -1276,7 +1276,10 @@ Quellen: %2</translation>
 
 MMS properties:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>
+
+MMS-Eigenschaften:
+%1</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.cpp" line="294"/>
@@ -1643,32 +1646,32 @@ Zeile %3, Spalte %4
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="290"/>
         <source>IM</source>
-        <translation type="unfinished"></translation>
+        <translation>IM</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="291"/>
         <source>address</source>
-        <translation type="unfinished"></translation>
+        <translation>Adresse</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="292"/>
         <source>photo</source>
-        <translation type="unfinished"></translation>
+        <translation>Foto</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="293"/>
         <source>description</source>
-        <translation type="unfinished"></translation>
+        <translation>Beschreibung</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="294"/>
         <source>job title</source>
-        <translation type="unfinished"></translation>
+        <translation>Position</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="295"/>
         <source>anniversary</source>
-        <translation type="unfinished"></translation>
+        <translation>Jahrestag</translation>
     </message>
     <message>
         <source>Warning: contact %1 has address(es), not implemented in UDX</source>
@@ -2040,7 +2043,7 @@ Zeile %3, Spalte %4
     <message>
         <location filename="../core/globals.h" line="102"/>
         <source>Updated</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktualisiert</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="104"/>
@@ -2107,12 +2110,12 @@ Zeile %3, Spalte %4
     <message>
         <location filename="../core/globals.h" line="146"/>
         <source>Unknown encoding: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Unbekannte Kodierung: %1</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="147"/>
         <source>Unknown charset: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Unbekannter Zeichensatz: %1</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="149"/>
@@ -2132,7 +2135,7 @@ Zeile %3, Spalte %4
     <message>
         <location filename="../core/globals.h" line="155"/>
         <source>Select MMS files Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Ordner für MMS-Dateien auswählen</translation>
     </message>
     <message>
         <source>P.o. box</source>
@@ -2357,7 +2360,8 @@ Benutzername, Passwort, Protokoll und Port überprüfen</translation>
         <location filename="../core/decodedmessagelist.cpp" line="126"/>
         <source>&quot;Date&quot;,&quot;Box&quot;,&quot;From/To&quot;,&quot;Number&quot;,&quot;Status&quot;,&quot;Text&quot;,&quot;Aux&quot;
 </source>
-        <translation type="unfinished"></translation>
+        <translation>&quot;Datum&quot;, &quot;Feld&quot;, &quot;Von/Bis&quot;, &quot;Nummer&quot;, &quot;Status&quot;, &quot;Text&quot;, &quot;Aux&quot;
+</translation>
     </message>
     <message>
         <source>&quot;Date&quot;,&quot;Box&quot;,&quot;From/To&quot;,&quot;Status&quot;,&quot;Text&quot;,&quot;Aux&quot;
@@ -2368,7 +2372,7 @@ Benutzername, Passwort, Protokoll und Port überprüfen</translation>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="141"/>
         <source>MMS</source>
-        <translation type="unfinished"></translation>
+        <translation>MMS</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="225"/>
@@ -2410,17 +2414,17 @@ Benutzername, Passwort, Protokoll und Port überprüfen</translation>
     <message>
         <location filename="../core/formats/common/nokiadata.cpp" line="321"/>
         <source>Unknown field type: 0x%1 at %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Unbekannter Feldtyp: 0x%1 bei %2</translation>
     </message>
     <message>
         <location filename="../core/formats/common/nokiadata.cpp" line="478"/>
         <source>Invalid MMS Yes/No value (%1) at %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Ungültiger MMS Ja/Nein-Wert (%1) bei %2</translation>
     </message>
     <message>
         <location filename="../core/formats/common/nokiadata.cpp" line="488"/>
         <source>Invalid MMS octet count (%1) at %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Ungültige MMS-Oktettzahl (%1) bei %2</translation>
     </message>
     <message>
         <location filename="../core/formats/common/nokiadata.cpp" line="513"/>
@@ -2432,39 +2436,39 @@ Benutzername, Passwort, Protokoll und Port überprüfen</translation>
         <location filename="../core/formats/common/nokiadata.cpp" line="516"/>
         <source>Advertisement</source>
         <comment>MmsClass</comment>
-        <translation type="unfinished"></translation>
+        <translation>Werbung</translation>
     </message>
     <message>
         <location filename="../core/formats/common/nokiadata.cpp" line="519"/>
         <source>Info</source>
         <comment>MmsClass</comment>
-        <translation type="unfinished"></translation>
+        <translation>Info</translation>
     </message>
     <message>
         <location filename="../core/formats/common/nokiadata.cpp" line="522"/>
         <source>Auto</source>
         <comment>MmsClass</comment>
-        <translation type="unfinished"></translation>
+        <translation>Automatisch</translation>
     </message>
     <message>
         <location filename="../core/formats/common/nokiadata.cpp" line="544"/>
         <source>Parse value length error (%1) at %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Wert-Längenfehler (%1) bei %2 verarbeiten</translation>
     </message>
     <message>
         <location filename="../core/formats/common/nokiadata.cpp" line="556"/>
         <source>Error reading uint64_t value: overflow at %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Fehler beim Lesen von uint64_t-Werten: Überlauf bei %1</translation>
     </message>
     <message>
         <location filename="../core/formats/common/vmessagedata.cpp" line="19"/>
         <source>Unknown ATT subtype at line %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Unbekannter ATT-Subtyp in Zeile %1: %2</translation>
     </message>
     <message>
         <location filename="../core/formats/common/vmessagedata.cpp" line="282"/>
         <source>File %1 has size %2, declared %3</source>
-        <translation type="unfinished"></translation>
+        <translation>Datei %1 hat Größe %2, deklariert %3</translation>
     </message>
 </context>
 <context>
