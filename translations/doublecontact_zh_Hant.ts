@@ -1482,6 +1482,21 @@ phone language %5</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../core/contactlist.cpp" line="1115"/>
+        <source>Dialed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/contactlist.cpp" line="1117"/>
+        <source>Received</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/contactlist.cpp" line="1119"/>
+        <source>Missed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../core/formats/common/vcarddata.cpp" line="81"/>
         <location filename="../core/formats/common/vmessagedata.cpp" line="39"/>
         <location filename="../core/formats/common/vmessagedata.cpp" line="144"/>

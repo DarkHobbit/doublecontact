@@ -212,6 +212,7 @@ struct ContactItem {
 // Specific data for backup files (MPB, NBF, NBU)
 struct CallInfo {
     QString cType, timeStamp, duration, number, name;
+    QString typeName() const;
 };
 
 struct BinarySMS { //primarilly for Nokia Prefdef messages

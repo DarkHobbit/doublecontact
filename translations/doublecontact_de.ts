@@ -1528,6 +1528,21 @@ Firmware %4
 Sprache des Telefons %5</translation>
     </message>
     <message>
+        <location filename="../core/contactlist.cpp" line="1115"/>
+        <source>Dialed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/contactlist.cpp" line="1117"/>
+        <source>Received</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/contactlist.cpp" line="1119"/>
+        <source>Missed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>%1 records
 %2 phones
 %3 emails

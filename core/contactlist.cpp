@@ -1108,3 +1108,15 @@ Phone::StandardTypes Phone::standardTypes;
 Email::StandardTypes Email::standardTypes;
 PostalAddress::StandardTypes PostalAddress::standardTypes;
 Messenger::StandardTypes Messenger::standardTypes;
+
+QString CallInfo::typeName() const
+{
+    if (cType=="DC")
+        return QObject::tr("Dialed");
+    else if (cType=="RC")
+        return QObject::tr("Received");
+    else if (cType=="MC")
+        return QObject::tr("Missed");
+    else
+        return cType;
+}

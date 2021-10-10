@@ -110,7 +110,7 @@
     <message>
         <location filename="../app/callwindow.cpp" line="142"/>
         <source>Save calls file</source>
-        <translation type="unfinished"></translation>
+        <translation>Сохранить историю вызовов</translation>
     </message>
 </context>
 <context>
@@ -1615,6 +1615,21 @@ IMEI %3
         <translation>Для посылок</translation>
     </message>
     <message>
+        <location filename="../core/contactlist.cpp" line="1115"/>
+        <source>Dialed</source>
+        <translation>Набранный</translation>
+    </message>
+    <message>
+        <location filename="../core/contactlist.cpp" line="1117"/>
+        <source>Received</source>
+        <translation>Принятый</translation>
+    </message>
+    <message>
+        <location filename="../core/contactlist.cpp" line="1119"/>
+        <source>Missed</source>
+        <translation>Пропущенный</translation>
+    </message>
+    <message>
         <location filename="../core/formats/common/vcarddata.cpp" line="81"/>
         <location filename="../core/formats/common/vmessagedata.cpp" line="39"/>
         <location filename="../core/formats/common/vmessagedata.cpp" line="144"/>
@@ -2603,8 +2618,8 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../model/callmodel.cpp" line="102"/>
         <source>&quot;Type&quot;,&quot;Date&quot;,&quot;Duration&quot;,&quot;Number&quot;,&quot;Name&quot;
-</source>        
-<translation>&quot;Тип&quot;,&quot;Когда&quot;,&quot;Длительность&quot;,&quot;Номер&quot;,&quot;Имя&quot;
+</source>
+        <translation>&quot;Тип&quot;,&quot;Когда&quot;,&quot;Длительность&quot;,&quot;Номер&quot;,&quot;Имя&quot;
 </translation>
     </message>
 </context>

@@ -64,7 +64,7 @@ QVariant CallModel::data(const QModelIndex &index, int role) const
     if (role==Qt::DisplayRole) {
         switch (index.column()) {
             case cacType:
-                return c.cType;
+                return c.typeName();
             case cacTimeStamp: {
                 QDateTime when = QDateTime::fromString(c.timeStamp, "yyyyMMddThhmmss");
                 if (when.isValid())
@@ -101,7 +101,7 @@ bool CallModel::saveToCSV(const QString &path)
     ss.setCodec("UTF-8");
     ss << QObject::tr("\"Type\",\"Date\",\"Duration\",\"Number\",\"Name\"\n");
     foreach(const CallInfo& c, _src->extra.calls) {
-        ss << "\""    << c.cType
+        ss << "\""    << c.typeName()
            << "\",\"" << c.timeStamp
            << "\",\"" << c.duration
            << "\",\"" << c.number
