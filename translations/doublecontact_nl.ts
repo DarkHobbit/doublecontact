@@ -75,12 +75,12 @@
     <message>
         <location filename="../model/callmodel.cpp" line="27"/>
         <source>Number</source>
-        <translation type="unfinished">Getal</translation>
+        <translation>Nummer</translation>
     </message>
     <message>
         <location filename="../model/callmodel.cpp" line="28"/>
         <source>Name</source>
-        <translation type="unfinished">Naam</translation>
+        <translation>Naam</translation>
     </message>
 </context>
 <context>
@@ -88,37 +88,37 @@
     <message>
         <location filename="../app/callwindow.ui" line="14"/>
         <source>Calls</source>
-        <translation type="unfinished"></translation>
+        <translation>Gesprekken</translation>
     </message>
     <message>
         <location filename="../app/callwindow.ui" line="31"/>
         <source>Filter</source>
-        <translation type="unfinished">Filteren</translation>
+        <translation>Filteren</translation>
     </message>
     <message>
         <location filename="../app/callwindow.ui" line="56"/>
         <source>&amp;Save as...</source>
-        <translation type="unfinished">Op&amp;slaan als…</translation>
+        <translation>Op&amp;slaan als…</translation>
     </message>
     <message>
         <location filename="../app/callwindow.ui" line="65"/>
         <source>Copy text</source>
-        <translation type="unfinished">Tekst kopiëren</translation>
+        <translation>Tekst kopiëren</translation>
     </message>
     <message>
         <location filename="../app/callwindow.ui" line="68"/>
         <source>Ctrl+C</source>
-        <translation type="unfinished">Ctrl+C</translation>
+        <translation>Ctrl+C</translation>
     </message>
     <message>
         <location filename="../app/callwindow.cpp" line="96"/>
         <source>Records: %1</source>
-        <translation type="unfinished">Items: %1</translation>
+        <translation>Items: %1</translation>
     </message>
     <message>
         <location filename="../app/callwindow.cpp" line="142"/>
         <source>Save calls file</source>
-        <translation type="unfinished"></translation>
+        <translation>Gespreksbestand opslaan</translation>
     </message>
 </context>
 <context>
@@ -984,12 +984,12 @@ Wilt u dit certificaat tóch accepteren?</translation>
     <message>
         <location filename="../app/mainwindow.ui" line="636"/>
         <source>&amp;Calls...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ge&amp;sprekken…</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="639"/>
         <source>Shift+F8</source>
-        <translation type="unfinished">Shift+F8</translation>
+        <translation>Shift+F8</translation>
     </message>
     <message>
         <source>Settings...</source>
@@ -1233,7 +1233,7 @@ In deze modus kan slechts een beperkt aantal velden worden gewijzigd</translatio
         <location filename="../app/mainwindow.cpp" line="717"/>
         <source>&apos;%1&apos; was changed.
 Save changes?</source>
-        <translation>&apos;%1&apos; is gewijzigd.
+        <translation>‘%1’ is gewijzigd.
 Wilt u de wijzigingen opslaan?</translation>
     </message>
     <message>
@@ -1646,17 +1646,17 @@ telefoontaal %5</translation>
     <message>
         <location filename="../core/contactlist.cpp" line="1115"/>
         <source>Dialed</source>
-        <translation type="unfinished"></translation>
+        <translation>Uitgaand</translation>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="1117"/>
         <source>Received</source>
-        <translation type="unfinished"></translation>
+        <translation>Inkomend</translation>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="1119"/>
         <source>Missed</source>
-        <translation type="unfinished"></translation>
+        <translation>Gemist</translation>
     </message>
     <message>
         <source>%1 records
@@ -2699,7 +2699,8 @@ Controleer gebruikersnaam, wachtwoord, protocol en poort</translation>
         <location filename="../model/callmodel.cpp" line="102"/>
         <source>&quot;Type&quot;,&quot;Date&quot;,&quot;Duration&quot;,&quot;Number&quot;,&quot;Name&quot;
 </source>
-        <translation type="unfinished"></translation>
+        <translation>&quot;Soort&quot;,&quot;Datum&quot;,&quot;Duur&quot;,&quot;Nummer&quot;,&quot;Naam&quot;
+</translation>
     </message>
 </context>
 <context>
