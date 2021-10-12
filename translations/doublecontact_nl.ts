@@ -60,17 +60,17 @@
     <message>
         <location filename="../model/callmodel.cpp" line="24"/>
         <source>Type</source>
-        <translation type="unfinished"></translation>
+        <translation>Soort</translation>
     </message>
     <message>
         <location filename="../model/callmodel.cpp" line="25"/>
         <source>TimeStamp</source>
-        <translation type="unfinished"></translation>
+        <translation>Tijdstempel</translation>
     </message>
     <message>
         <location filename="../model/callmodel.cpp" line="26"/>
         <source>Duration</source>
-        <translation type="unfinished"></translation>
+        <translation>Duur</translation>
     </message>
     <message>
         <location filename="../model/callmodel.cpp" line="27"/>
