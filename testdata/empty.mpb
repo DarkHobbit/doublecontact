@@ -1,0 +1,57 @@
+�MyPhoneExplorer_ContentID:Model
+samsung SM-A505FM
+�MyPhoneExplorer_ContentID:TimeStamp
+20200617T041530Z
+�MyPhoneExplorer_ContentID:Phonebook
+BEGIN:VCARD
+N;CHARSET=UTF-8:Кулешов;Виктор;;;
+FN;CHARSET=UTF-8:Виктор Кулешов
+TEL;HOME:123456
+END:VCARD
+
+�MyPhoneExplorer_ContentID:Calls
+DC	20200601T164800	23	+79012223333	Игорь Владимирович Тушканов	
+�MyPhoneExplorer_ContentID:Organizer
+BEGIN:VCALENDAR
+BEGIN:VEVENT
+SUMMARY:Father's Day
+DTSTART:20190616
+DTEND:20190617
+CLASS:PUBLIC
+TRANSP:TRANSPARENT
+X-CALENDAR;CHARSET=UTF-8:v.pupkin@gmail.com@com.google/NULL;Праздники Соединенных Штатов Америки
+X-IRMC-LUID:000010000001
+END:VEVENT
+END:VCALENDAR
+
+�MyPhoneExplorer_ContentID:Notes
+BEGIN:VNOTE
+BODY;ENCODING=QUOTED-PRINTABLE;CHARSET=UTF-8:Тында=0A15.12 Ледяная 20:22 Тында 09:07 поезд 081Ч плац 1213р купе 2407=0A16.12 Тында 16:50 Ледяная 05:26 поезд 081Э плац 1213р купе 3083
+LAST-MODIFIED:20181213T201741Z
+X-IRMC-LUID:000000000001
+END:VNOTE
+
+�MyPhoneExplorer_ContentID:SMS
+�MyPhoneExplorer_ContentID:Messages
+BEGIN:VMESSAGE
+TYP:SMS;IN
+BOX:INBOX
+READ:1
+DATE:20200615T093431Z
+NUMBER:+79607654321
+BODY;CHARSET=UTF-8:Этот абонент пытался Вам позвонить
+X-IRMC-LUID:00000000000A
+END:VMESSAGE
+
+�MyPhoneExplorer_ContentID:SMSArchive
+�MyPhoneExplorer_ContentID:MessageArchive
+BEGIN:VMESSAGE
+TYP:SMS;IN
+BOX:INBOX
+READ:1
+DATE:20180109T191627Z
+NUMBER:+79039398896
+BODY;CHARSET=UTF-8:Этот абонент доступен для звонка.
+SUBFOLDER:Backup 11.06.2020, 17:58
+END:VMESSAGE
+�MyPhoneExplorer_ContentID:EndofData
