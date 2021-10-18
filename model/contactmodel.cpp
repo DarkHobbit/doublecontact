@@ -200,7 +200,7 @@ QMimeData *ContactModel::mimeData(const QModelIndexList &indexes) const
     mimeData->setData(mimeTypes()[0], encodedData);
     return mimeData;
 }
-#include <iostream>
+
 bool ContactModel::dropMimeData(const QMimeData *data, Qt::DropAction action,
       int, int column, const QModelIndex& index)
 {
@@ -230,15 +230,19 @@ bool ContactModel::dropMimeData(const QMimeData *data, Qt::DropAction action,
     }
     endResetModel();
     _changed = true;
+    items.updateCallHistory();
     // TODO insert to pointed line
     return (action == Qt::CopyAction || action == Qt::MoveAction);
 }
 
 bool ContactModel::removeRows(int row, int count, const QModelIndex&)
 {
+    QStringList droppedFullNames;
     beginRemoveRows (QModelIndex(), row, row+count-1);
-    for (int i=row+count-1; i>=row; i--)
+    for (int i=row+count-1; i>=row; i--) {
+        droppedFullNames << items[i].fullName;
         items.removeAt(i);
+    }
     endRemoveRows();
     _changed = true;
     return false;
@@ -351,16 +355,25 @@ void ContactModel::addRow(const ContactItem& c)
     items.push_back(c);
     endInsertRows();
     _changed = true;
+    items.updateCallHistory();
 }
 
 ContactItem& ContactModel::beginEditRow(QModelIndex& index)
 {
-    return items[index.row()];
+    int eRow = index.row();
+    items[eRow].prevFullName = items[eRow].fullName;
+    return items[eRow];
 }
 
 void ContactModel::endEditRow(QModelIndex& index)
 {
     _changed = true;
+    QStringList droppedFullNames;
+    QString oldName = items[index.row()].prevFullName;
+    QString newName = items[index.row()].fullName;
+    if ((!oldName.isEmpty()) && newName.isEmpty())
+        droppedFullNames << oldName;
+    items.updateCallHistory(droppedFullNames);
     emit dataChanged(index, index.sibling(index.row(), columnCount()-1));
 }
 
@@ -375,10 +388,14 @@ void ContactModel::removeAnyRows(QModelIndexList& indices)
     qSort(indices.begin(), indices.end());
     // foreach not usable here - reverse order needed
     beginRemoveRows (QModelIndex(), 0, indices.count()-1);
-    for (int i=indices.count()-1; i>=0; i--)
+    QStringList droppedFullNames;
+    for (int i=indices.count()-1; i>=0; i--) {
+        droppedFullNames << items[indices[i].row()].fullName;
         items.removeAt(indices[i].row());
+    }
     endRemoveRows();
     _changed = true;
+    items.updateCallHistory(droppedFullNames);
 }
 
 void ContactModel::swapNames(const QModelIndexList& indices)
@@ -429,6 +446,7 @@ void ContactModel::generateFullNames(const QModelIndexList &indices)
         endEditRow(index);
     }
     _changed = true;
+    items.updateCallHistory();
 }
 
 void ContactModel::parseFullName(const QModelIndexList& indices)
@@ -443,12 +461,15 @@ void ContactModel::parseFullName(const QModelIndexList& indices)
 
 void ContactModel::dropFullNames(const QModelIndexList &indices)
 {
+    QStringList droppedFullNames;
     foreach(QModelIndex index, indices) {
         beginEditRow(index);
+        droppedFullNames << items[index.row()].fullName;
         items[index.row()].fullName.clear();
         endEditRow(index);
     }
     _changed = true;
+    items.updateCallHistory(droppedFullNames);
 }
 
 void ContactModel::reverseFullNames(const QModelIndexList &indices)
@@ -459,6 +480,7 @@ void ContactModel::reverseFullNames(const QModelIndexList &indices)
         endEditRow(index);
     }
     _changed = true;
+    items.updateCallHistory();
 }
 
 void ContactModel::formatPhones(const QModelIndexList &indices, const QString &templ)
@@ -483,6 +505,7 @@ void ContactModel::splitNumbers(const QModelIndexList &indices)
         for (int i=1; i<item.phones.count(); i++) {
             ContactItem nc;
             nc.names = item.names;
+            nc.fullName = item.fullName;
             QString tType = Phone::standardTypes.translate(item.phones[i].types[0]);
             if (nc.names.count()<3)
                 nc.names.push_back(tType);
@@ -507,6 +530,7 @@ void ContactModel::intlPhonePrefix(const QModelIndexList &indices, int countryRu
         endEditRow(index);
     }
     _changed = true;
+    items.updateCallHistory();
 }
 
 void ContactModel::addGroup(const QString &group)

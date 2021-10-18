@@ -434,6 +434,8 @@ void ContactItem::parseFullName()
 
 void ContactItem::reverseFullName()
 {
+    // TODO now works for two components
+    // modify for three, or add in documentation and/or in faq
     int sPos = fullName.indexOf(" ");
     if (sPos!=-1)
         fullName = fullName.right(fullName.length()-sPos-1)
@@ -870,6 +872,26 @@ QString ContactList::statistics() const
     return res;
 }
 
+void ContactList::updateCallHistory(const QStringList& droppedFullNames)
+{
+    if (extra.calls.isEmpty())
+        return; // exclude slow map building for most formats
+    NumberNameMap nNames(*this);
+    for (int i=0; i<extra.calls.count(); i++) {
+        CallInfo& call = extra.calls[i];
+        QString newName = nNames.nameByNumber(call.number);
+        if (newName == call.name)
+            continue;
+        if (newName.isEmpty()) {
+            if (!droppedFullNames.contains(call.name))
+                continue; // No remove, if not in list!
+            // Setting empty newName may destroy special contact info
+            // Also it work incorrect if default country rule wrong or missing
+        }
+        call.name = newName;
+    }
+}
+
 TagValue::TagValue(const QString& _tag, const QString& _value)
     :tag(_tag), value(_value)
 {}
@@ -1119,4 +1141,25 @@ QString CallInfo::typeName() const
         return QObject::tr("Missed");
     else
         return cType;
+}
+
+NumberNameMap::NumberNameMap(const ContactList &list)
+{
+    // TODO move using country rule to options (here and in nameByNumber())
+    // Collect contacts
+    foreach(const ContactItem& c, list) {
+        QString cName = c.makeGenericName();
+        foreach(const Phone& p, c.phones) {
+            //QString number = p.value;
+            QString number = p.expandNumber(gd.defaultCountryRule);
+            number.remove(" ").remove("-").remove("(").remove(")");
+            (*this)[number] = cName;
+        }
+    }
+}
+
+QString NumberNameMap::nameByNumber(const QString &number)
+{
+    //return << (*this)[number];
+    return (*this)[Phone::expandNumber(number, gd.defaultCountryRule)];
 }

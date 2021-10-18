@@ -323,25 +323,13 @@ void DecodedMessageList::fromPDUList(DecodedMessageList &messages, const QString
 
 void DecodedMessageList::bindToContacts(const ContactList &list)
 {
-    // TODO move using country rule to options
-    QMap<QString,QString> contactsByName;
-    // Collect contacts
-    foreach(const ContactItem& c, list) {
-        QString cName = c.makeGenericName();
-        foreach(const Phone& p, c.phones) {
-            //QString number = p.value;
-            QString number = p.expandNumber(gd.defaultCountryRule);
-            number.remove(" ").remove("-").remove("(").remove(")");
-            contactsByName[number] = cName;
-        }
-    }
+    NumberNameMap contactsByName(list);
     // Bind!
     for (int i=0; i<this->count(); i++) {
         QStringList names;
         DecodedMessage& msg = (*this)[i];
         foreach(const ContactItem& c, msg.contacts)
-            //names << contactsByName[c.phones.first().value];
-            names << contactsByName[c.phones.first().expandNumber(gd.defaultCountryRule)];
+            names << contactsByName.nameByNumber(c.phones.first().value);
         msg.contactName = names.join(";");
     }
 }

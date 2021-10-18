@@ -185,6 +185,8 @@ struct ContactItem {
     int pairIndex;
     // Calculated fields for hard sorting
     QString actualSortString; // Can be sortString, name(s), nick, depends on settings
+    // Calculated tempory fields for call history update
+    QString prevFullName;
     // Editing
     void clear();
     bool swapNames();
@@ -267,12 +269,21 @@ public:
     // Info
     int findById(const QString& idValue) const;
     QString statistics() const;
+    void updateCallHistory(const QStringList& droppedFullNames = QStringList());
     ExtraData extra;
     QStringList emptyGroups;
     QString originalPath; // for append-only formats, such as NBF
     QString originalProfile; // for CSV; see also ContactItem::originalFormat
     // Calculated
     int photoURLCount;
+};
+
+// Helper class for binding names to phone numbers
+// TODO maybe make analytic reports based on it
+class NumberNameMap: public QMap<QString,QString> {
+public:
+    NumberNameMap(const ContactList &list);
+    QString nameByNumber(const QString& number);
 };
 
 #endif // CONTACTLIST_H
