@@ -75,7 +75,7 @@ MessageWindow::MessageWindow(ContactList* contacts) :
     proxy->setFilterCaseSensitivity(Qt::CaseInsensitive); // Driver == driver
     ui->tvMessages->setModel(proxy);
     connect(ui->tvMessages->horizontalHeader(), SIGNAL(sortIndicatorChanged(int,Qt::SortOrder)), this, SLOT(onSortIndicatorChanged(int,Qt::SortOrder)));
-    connect(ui->tvMessages->selectionModel(), SIGNAL(currentChanged(QItemIndex,QItemIndex)),
+    connect(ui->tvMessages->selectionModel(), SIGNAL(currentChanged(QModelIndex,QModelIndex)),
             this, SLOT(selectionChanged()));
     connect(ui->tvMessages->selectionModel(), SIGNAL(selectionChanged(QItemSelection,QItemSelection)),
             this, SLOT(selectionChanged()));

@@ -52,10 +52,6 @@ CallWindow::CallWindow(ContactList* contacts) :
     proxy->setFilterCaseSensitivity(Qt::CaseInsensitive); // Driver == driver
     ui->tvCalls->setModel(proxy);
     connect(ui->tvCalls->horizontalHeader(), SIGNAL(sortIndicatorChanged(int,Qt::SortOrder)), this, SLOT(onSortIndicatorChanged(int,Qt::SortOrder)));
-    connect(ui->tvCalls->selectionModel(), SIGNAL(currentChanged(QItemIndex,QItemIndex)),
-            this, SLOT(selectionChanged()));
-    connect(ui->tvCalls->selectionModel(), SIGNAL(selectionChanged(QItemSelection,QItemSelection)),
-            this, SLOT(selectionChanged()));
     // Shortcuts
     QShortcut* shcSortToggle = new QShortcut(Qt::Key_F4, this);
     connect(shcSortToggle, SIGNAL(activated()), this, SLOT(toggleSort()));
