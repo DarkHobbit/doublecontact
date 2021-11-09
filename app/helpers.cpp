@@ -81,6 +81,10 @@ void readTableSortConfig(QTableView *table, bool forceNeedSort, bool needSort)
     table->setSortingEnabled(enabled);
     if (enabled)
         table->horizontalHeader()->setSortIndicator(column, order);
+    QSortFilterProxyModel* model =
+            dynamic_cast<QSortFilterProxyModel*>(table->model());
+    if (model)
+        model->sort(column);
 }
 
 void writeTableSortConfig(QTableView *table)
