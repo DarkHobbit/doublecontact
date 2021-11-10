@@ -259,13 +259,23 @@ void DecodedMessageList::addOrMerge(DecodedMessage &msg)
     // Merge duplicates
     if (_mergeDuplicates) {
         // We assume dplicate if date, text and first correspondent phonenumber are equal
+        const int secsInHour = 60*60;
 #if __GNUC__ >= 5
         for(DecodedMessage& item: *this) {
 #else
         for (int i=0; i<this->count(); i++) {
             DecodedMessage& item = (*this)[i];
 #endif
-            if (item.when==msg.when && item.contacts.count()==1 && msg.contacts.count()==1 && item.text==msg.text) {
+            if (item.contacts.count()==1 && msg.contacts.count()==1 && item.text==msg.text) {
+                if (item.when!=msg.when) {
+                    // Daylight saving time oddities in different countries and years
+                    // For example, in Russia daylight saving time was cancelled 26.10.2014
+                    // In MPB files, PDU time is local, VMSG time is GMT
+                    if (item.when.secsTo(msg.when)%secsInHour!=0)
+                        continue;
+                    if (msg.when<item.when) // unify time (in most cases, to GMT)
+                        item.when = msg.when;
+                }
                 const ContactItem ic = item.contacts.first();
                 const ContactItem mc = msg.contacts.first();
                 if (ic.phones.count()==1 && mc.phones.count()==1 && ic.phones.first().value==mc.phones.first().value) {
