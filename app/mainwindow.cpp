@@ -1047,9 +1047,8 @@ void MainWindow::on_action_Hard_sort_triggered()
         selectedModel->hardSort(d->getData());
         // Warning if sort view switched on
         if (ui->action_Sort->isChecked())
-            if (QMessageBox::question(0, S_CONFIRM,
-                                      tr("Column sorting is switched. Hard sort results are not visible.\nAre you want switch column sorting off?"),
-                                      QMessageBox::Yes, QMessageBox::No)==QMessageBox::Yes)
+            if (QMessageBox::question(0, S_CONFIRM, S_SORTMASK_CONFIRM,
+                    QMessageBox::Yes, QMessageBox::No)==QMessageBox::Yes)
                 ui->action_Sort->toggle();
     }
     delete d;

@@ -11,6 +11,7 @@
  *
  */
 
+#include <QtAlgorithms>
 #include <QFile>
 #include <QDir>
 #include <QMap>
@@ -95,6 +96,11 @@ bool DecodedMessage::saveMMSFiles(const QString &dirPath, QString& fatalError) c
         }
     }
     return true;
+}
+
+bool DecodedMessage::operator <(const DecodedMessage &pair) const
+{
+    return when < pair.when;
 }
 
 DecodedMessageList::DecodedMessageList(bool mergeDuplicates, bool mergeMultiParts)
@@ -274,6 +280,11 @@ void DecodedMessageList::addOrMerge(DecodedMessage &msg)
     }
     else
         *this << msg;
+}
+
+void DecodedMessageList::sort()
+{
+    qSort(*this);
 }
 
 void DecodedMessageList::fromVMessageList(DecodedMessageList &messages, const QStringList &src, QStringList &errors, bool fromArchive)

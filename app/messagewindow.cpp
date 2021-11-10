@@ -225,15 +225,15 @@ void MessageWindow::updateModel()
         w->exec();
         delete w;
     }
-    lbCount->setText(tr("Records: %1").arg(model->rowCount()));
-    lbMMSCount->setText(tr("Including MMS: %1").arg(model->mmsCount()));
-    lbDups->setText(tr("Merged dups: %1").arg(model->mergeDupCount()));
-    lbMultiParts->setText(tr("Merged multiparted: %1").arg(model->mergeMultiPartCount()));
     updateStatus();
 }
 
 void MessageWindow::updateStatus()
 {
+    lbCount->setText(tr("Records: %1").arg(model->rowCount()));
+    lbMMSCount->setText(tr("Including MMS: %1").arg(model->mmsCount()));
+    lbDups->setText(tr("Merged dups: %1").arg(model->mergeDupCount()));
+    lbMultiParts->setText(tr("Merged multiparted: %1").arg(model->mergeMultiPartCount()));
     lbMode->setText(SS_MODE +
                     (ui->tvMessages->isSortingEnabled() ? SS_SORT_ON : SS_SORT_OFF));
 }
@@ -376,3 +376,19 @@ void MessageWindow::on_btnApply_clicked()
     checkButtons();
     ui->btnApply->setEnabled(false);
 }
+
+void MessageWindow::on_btnHardSort_clicked()
+{
+    model->hardSort();
+    // Warning if sort view switched on
+    if (ui->tvMessages->isSortingEnabled())
+        if (QMessageBox::question(0, S_CONFIRM, S_SORTMASK_CONFIRM,
+                 QMessageBox::Yes, QMessageBox::No)==QMessageBox::Yes)
+        {
+            readTableSortConfig(ui->tvMessages, true, false);
+            writeTableSortConfig(ui->tvMessages);
+            updateStatus();
+        }
+    model->updateView();
+}
+

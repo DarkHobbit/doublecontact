@@ -107,12 +107,12 @@
         <translation type="unfinished">Ctrl+C</translation>
     </message>
     <message>
-        <location filename="../app/callwindow.cpp" line="96"/>
+        <location filename="../app/callwindow.cpp" line="92"/>
         <source>Records: %1</source>
         <translation type="unfinished">Oppføringer: %1</translation>
     </message>
     <message>
-        <location filename="../app/callwindow.cpp" line="142"/>
+        <location filename="../app/callwindow.cpp" line="138"/>
         <source>Save calls file</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1191,10 +1191,9 @@ Lagre endringer?</translation>
         <translation>Rapportfil</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1051"/>
         <source>Column sorting is switched. Hard sort results are not visible.
 Are you want switch column sorting off?</source>
-        <translation type="unfinished">Kolonnesortering er byttet. Harde sorteringsresultater er ikke synlige.
+        <translation type="obsolete">Kolonnesortering er byttet. Harde sorteringsresultater er ikke synlige.
 Er du sikker på at du ønsker skru av kolonnesortering?</translation>
     </message>
 </context>
@@ -1231,7 +1230,7 @@ Er du sikker på at du ønsker skru av kolonnesortering?</translation>
         <translation>Tekst</translation>
     </message>
     <message>
-        <location filename="../model/messagemodel.cpp" line="80"/>
+        <location filename="../model/messagemodel.cpp" line="86"/>
         <source>&lt;MMS&gt;</source>
         <translation>&lt;MMS&gt;</translation>
     </message>
@@ -1300,37 +1299,42 @@ Er du sikker på at du ønsker skru av kolonnesortering?</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="168"/>
+        <source>Hard sort</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/messagewindow.ui" line="175"/>
         <source>&amp;Save as...</source>
         <translation type="unfinished">&amp;Lagre som …</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.ui" line="177"/>
+        <location filename="../app/messagewindow.ui" line="184"/>
         <source>Copy text</source>
         <translation type="unfinished">Kopier tekst</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.ui" line="180"/>
+        <location filename="../app/messagewindow.ui" line="187"/>
         <source>Ctrl+C</source>
         <translation type="unfinished">Ctrl+C</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.ui" line="185"/>
+        <location filename="../app/messagewindow.ui" line="192"/>
         <source>Properties</source>
         <translation>Egenskaper</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.ui" line="188"/>
+        <location filename="../app/messagewindow.ui" line="195"/>
         <source>Return</source>
         <translation type="unfinished">Tilbake</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.ui" line="193"/>
+        <location filename="../app/messagewindow.ui" line="200"/>
         <source>Save MMS Files</source>
         <translation>Lagre MMS-filer</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.ui" line="198"/>
-        <location filename="../app/messagewindow.ui" line="201"/>
+        <location filename="../app/messagewindow.ui" line="205"/>
+        <location filename="../app/messagewindow.ui" line="208"/>
         <source>Show MMS Files</source>
         <translation>Vis MMS-filer</translation>
     </message>
@@ -1340,22 +1344,22 @@ Er du sikker på at du ønsker skru av kolonnesortering?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="228"/>
+        <location filename="../app/messagewindow.cpp" line="233"/>
         <source>Records: %1</source>
         <translation type="unfinished">Oppføringer: %1</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="229"/>
+        <location filename="../app/messagewindow.cpp" line="234"/>
         <source>Including MMS: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="230"/>
+        <location filename="../app/messagewindow.cpp" line="235"/>
         <source>Merged dups: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="231"/>
+        <location filename="../app/messagewindow.cpp" line="236"/>
         <source>Merged multiparted: %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1418,97 +1422,97 @@ MMS properties:
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../core/contactlist.cpp" line="106"/>
-        <location filename="../core/contactlist.cpp" line="1049"/>
+        <location filename="../core/contactlist.cpp" line="107"/>
+        <location filename="../core/contactlist.cpp" line="1072"/>
         <source>Home</source>
         <translation>Hjem</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="107"/>
+        <location filename="../core/contactlist.cpp" line="108"/>
         <source>Message</source>
         <translation>Melding</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="108"/>
-        <location filename="../core/contactlist.cpp" line="1050"/>
+        <location filename="../core/contactlist.cpp" line="109"/>
+        <location filename="../core/contactlist.cpp" line="1073"/>
         <source>Work</source>
         <translation>Arbeid</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="109"/>
-        <location filename="../core/contactlist.cpp" line="158"/>
-        <location filename="../core/contactlist.cpp" line="194"/>
-        <location filename="../core/contactlist.cpp" line="1051"/>
+        <location filename="../core/contactlist.cpp" line="110"/>
+        <location filename="../core/contactlist.cpp" line="159"/>
+        <location filename="../core/contactlist.cpp" line="195"/>
+        <location filename="../core/contactlist.cpp" line="1074"/>
         <source>Preferable</source>
         <translation type="unfinished">Foretrukket</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="110"/>
+        <location filename="../core/contactlist.cpp" line="111"/>
         <source>Voice</source>
         <translation>Stemme</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="111"/>
+        <location filename="../core/contactlist.cpp" line="112"/>
         <source>Fax</source>
         <translation>Faks</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="112"/>
+        <location filename="../core/contactlist.cpp" line="113"/>
         <source>Cell</source>
         <translation>Mobil</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="113"/>
+        <location filename="../core/contactlist.cpp" line="114"/>
         <source>Video</source>
         <translation>Video</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="114"/>
+        <location filename="../core/contactlist.cpp" line="115"/>
         <source>Pager</source>
         <translation>Personsøker</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="115"/>
+        <location filename="../core/contactlist.cpp" line="116"/>
         <source>BBS</source>
         <translation>BBS</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="116"/>
+        <location filename="../core/contactlist.cpp" line="117"/>
         <source>Modem</source>
         <translation>Modem</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="117"/>
+        <location filename="../core/contactlist.cpp" line="118"/>
         <source>Car</source>
         <translation>Bil</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="118"/>
+        <location filename="../core/contactlist.cpp" line="119"/>
         <source>ISDN</source>
         <translation>ISDN</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="119"/>
+        <location filename="../core/contactlist.cpp" line="120"/>
         <source>PCS</source>
         <translation>PCS</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="156"/>
+        <location filename="../core/contactlist.cpp" line="157"/>
         <source>Internet</source>
         <translation>Internett</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="157"/>
+        <location filename="../core/contactlist.cpp" line="158"/>
         <source>X.400</source>
         <translation>X.400</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="421"/>
+        <location filename="../core/contactlist.cpp" line="422"/>
         <source>Strange empty contact</source>
         <translation>Rar tom kontakt</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="863"/>
+        <location filename="../core/contactlist.cpp" line="866"/>
         <source>%1 records
 %2 phones
 %3 emails
@@ -1527,7 +1531,7 @@ MMS properties:
 %8 arkiverte SMS</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="867"/>
+        <location filename="../core/contactlist.cpp" line="870"/>
         <source>
 
 model %1
@@ -1544,17 +1548,17 @@ fastvare %4
 telefonspråk %5</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1115"/>
+        <location filename="../core/contactlist.cpp" line="1138"/>
         <source>Dialed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1117"/>
+        <location filename="../core/contactlist.cpp" line="1140"/>
         <source>Received</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1119"/>
+        <location filename="../core/contactlist.cpp" line="1142"/>
         <source>Missed</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1579,22 +1583,22 @@ telefonspråk %5</translation>
 %9 %10</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1052"/>
+        <location filename="../core/contactlist.cpp" line="1075"/>
         <source>Domestic</source>
         <translation>Innenlands</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1053"/>
+        <location filename="../core/contactlist.cpp" line="1076"/>
         <source>International</source>
         <translation>Internasjonal</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1054"/>
+        <location filename="../core/contactlist.cpp" line="1077"/>
         <source>Postal</source>
         <translation>Postadresse</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1055"/>
+        <location filename="../core/contactlist.cpp" line="1078"/>
         <source>Parcel</source>
         <translation>Pakkeadresse</translation>
     </message>
@@ -1636,7 +1640,7 @@ telefonspråk %5</translation>
         <translation>Ukjent bildetype på slutten av linje %1: %2</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="145"/>
+        <location filename="../core/globals.h" line="146"/>
         <source>Last section not closed</source>
         <translation>Siste del ulukket</translation>
     </message>
@@ -2215,32 +2219,39 @@ lagret som mobil</translation>
         <translation>Ønsker du virkelig å slette valgte elementer?</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="146"/>
+        <location filename="../core/globals.h" line="145"/>
+        <source>Column sorting is switched. Hard sort results are not visible.
+Are you want switch column sorting off?</source>
+        <translation>Kolonnesortering er byttet. Harde sorteringsresultater er ikke synlige.
+Er du sikker på at du ønsker skru av kolonnesortering?</translation>
+    </message>
+    <message>
+        <location filename="../core/globals.h" line="147"/>
         <source>Unknown encoding: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="147"/>
+        <location filename="../core/globals.h" line="148"/>
         <source>Unknown charset: %1</source>
         <translation>Ukjent tegnsett: %1</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="149"/>
+        <location filename="../core/globals.h" line="150"/>
         <source>Mode: </source>
         <translation type="unfinished">Modus: </translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="150"/>
+        <location filename="../core/globals.h" line="151"/>
         <source>sorted</source>
         <translation type="unfinished">sorter</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="151"/>
+        <location filename="../core/globals.h" line="152"/>
         <source>not sorted</source>
         <translation type="unfinished">usortert</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="155"/>
+        <location filename="../core/globals.h" line="156"/>
         <source>Select MMS files Directory</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2430,47 +2441,47 @@ Sjekk brukernavn, passord, protokoll og port</translation>
         <translation>Test 1 forskjellig fra 0x01: %1</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="107"/>
+        <location filename="../core/decodedmessagelist.cpp" line="113"/>
         <source>Read</source>
         <translation>Les</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="108"/>
+        <location filename="../core/decodedmessagelist.cpp" line="114"/>
         <source>UnRd</source>
         <translation>Ulest</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="109"/>
+        <location filename="../core/decodedmessagelist.cpp" line="115"/>
         <source>Unk.</source>
         <translation type="unfinished">Ukjent</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="111"/>
+        <location filename="../core/decodedmessagelist.cpp" line="117"/>
         <source>Inbox</source>
         <translation>Innboks</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="112"/>
+        <location filename="../core/decodedmessagelist.cpp" line="118"/>
         <source>Outbox</source>
         <translation>Utboks</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="113"/>
+        <location filename="../core/decodedmessagelist.cpp" line="119"/>
         <source>Sentbox</source>
         <translation>Sendt</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="114"/>
+        <location filename="../core/decodedmessagelist.cpp" line="120"/>
         <source>Draft</source>
         <translation>Kladd</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="115"/>
+        <location filename="../core/decodedmessagelist.cpp" line="121"/>
         <source>Trash</source>
         <translation>Søppel</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="126"/>
+        <location filename="../core/decodedmessagelist.cpp" line="132"/>
         <source>&quot;Date&quot;,&quot;Box&quot;,&quot;From/To&quot;,&quot;Number&quot;,&quot;Status&quot;,&quot;Text&quot;,&quot;Aux&quot;
 </source>
         <translation type="unfinished"></translation>
@@ -2482,12 +2493,12 @@ Sjekk brukernavn, passord, protokoll og port</translation>
 </translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="141"/>
+        <location filename="../core/decodedmessagelist.cpp" line="147"/>
         <source>MMS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="225"/>
+        <location filename="../core/decodedmessagelist.cpp" line="231"/>
         <source>Dlv</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2496,7 +2507,7 @@ Sjekk brukernavn, passord, protokoll og port</translation>
         <translation type="obsolete">Tom</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="320"/>
+        <location filename="../core/decodedmessagelist.cpp" line="331"/>
         <source>MPB message body missing</source>
         <translation>MPB-meldingskropp mangler</translation>
     </message>
@@ -2505,12 +2516,12 @@ Sjekk brukernavn, passord, protokoll og port</translation>
         <translation type="obsolete">Ukjent meldingsformat</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="153"/>
+        <location filename="../core/globals.h" line="154"/>
         <source>Unknown vMessage tag: %1</source>
         <translation type="unfinished">Ukjent vMessage-tagg: %1</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="154"/>
+        <location filename="../core/globals.h" line="155"/>
         <source>Unknown vMessage value: %1</source>
         <translation>Ukjent vMessage-verdi: %1</translation>
     </message>

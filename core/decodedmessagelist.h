@@ -60,6 +60,7 @@ struct DecodedMessage {
     QString contactsToString() const;
     bool saveMMSFiles(const QString& dirPath, QString& fatalError) const;
     MessageSourceFlags sources;
+    bool operator <(const DecodedMessage& pair) const;
 };
 
 class DecodedMessageList : public QList<DecodedMessage>
@@ -74,6 +75,7 @@ public:
     QString messageBoxes(int index) const;
     QString messageStates(int index, bool delivered) const;
     void addOrMerge(DecodedMessage& msg);
+    void sort();
 private:
     bool _mergeDuplicates, _mergeMultiParts;
     QStringList sMsgStatus, sMsgBox;

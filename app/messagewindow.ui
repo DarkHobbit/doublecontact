@@ -163,6 +163,13 @@
       </spacer>
      </item>
      <item>
+      <widget class="QPushButton" name="btnHardSort">
+       <property name="text">
+        <string>Hard sort</string>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QPushButton" name="btnSaveAs">
        <property name="text">
         <string>&amp;Save as...</string>

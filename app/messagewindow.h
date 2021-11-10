@@ -55,6 +55,8 @@ private slots:
 
     void on_btnApply_clicked();
 
+    void on_btnHardSort_clicked();
+
 protected:
     void showEvent(QShowEvent*);
 

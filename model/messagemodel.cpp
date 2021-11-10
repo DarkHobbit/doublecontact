@@ -37,6 +37,12 @@ void MessageModel::update(const MessageSourceFlags &flags, QStringList& errors)
     endResetModel();
 }
 
+void MessageModel::updateView()
+{
+    beginResetModel();
+    endResetModel();
+}
+
 QVariant MessageModel::headerData(int section, Qt::Orientation orientation, int role) const
 {
     if ((role == Qt::DisplayRole) && (orientation==Qt::Horizontal))
@@ -127,4 +133,10 @@ bool MessageModel::saveToCSV(const QString &path)
 bool MessageModel::saveAllMMSFiles(const QString &dirPath, QString& fatalError) const
 {
     return msgs.saveAllMMSFiles(dirPath, fatalError);
+}
+
+void MessageModel::hardSort()
+{
+    msgs.sort();
+    // _changed = true; // TODO Think about 'changed' in SMS/Calls
 }

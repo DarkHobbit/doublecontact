@@ -11,6 +11,7 @@
  *
  */
 
+#include <QtAlgorithms>
 #include "contactlist.h"
 
 // Rules for phone number internationalization

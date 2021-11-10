@@ -35,6 +35,7 @@ class MessageModel : public QAbstractTableModel
 public:
     explicit MessageModel(QObject *parent, ContactList* src);
     void update(const MessageSourceFlags& flags, QStringList& errors);
+    void updateView();
     // Header:
     QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const;
     // Basic functionality:
@@ -48,6 +49,7 @@ public:
     int mergeMultiPartCount();
     bool saveToCSV(const QString& path);
     bool saveAllMMSFiles(const QString& dirPath, QString& fatalError) const;
+    void hardSort();
 private:
     ContactList* _src;
     DecodedMessageList msgs;
