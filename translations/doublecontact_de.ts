@@ -1407,7 +1407,7 @@ MMS-Eigenschaften:
     <name>QObject</name>
     <message>
         <location filename="../core/contactlist.cpp" line="107"/>
-        <location filename="../core/contactlist.cpp" line="1072"/>
+        <location filename="../core/contactlist.cpp" line="1074"/>
         <source>Home</source>
         <translation></translation>
     </message>
@@ -1418,15 +1418,15 @@ MMS-Eigenschaften:
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="109"/>
-        <location filename="../core/contactlist.cpp" line="1073"/>
+        <location filename="../core/contactlist.cpp" line="1075"/>
         <source>Work</source>
         <translation>Geschäftlich</translation>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="110"/>
-        <location filename="../core/contactlist.cpp" line="159"/>
-        <location filename="../core/contactlist.cpp" line="195"/>
-        <location filename="../core/contactlist.cpp" line="1074"/>
+        <location filename="../core/contactlist.cpp" line="161"/>
+        <location filename="../core/contactlist.cpp" line="197"/>
+        <location filename="../core/contactlist.cpp" line="1076"/>
         <source>Preferable</source>
         <translation>Bevorzugt</translation>
     </message>
@@ -1481,22 +1481,27 @@ MMS-Eigenschaften:
         <translation></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="157"/>
+        <location filename="../core/contactlist.cpp" line="121"/>
+        <source>CALLBACK</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/contactlist.cpp" line="159"/>
         <source>Internet</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="158"/>
+        <location filename="../core/contactlist.cpp" line="160"/>
         <source>X.400</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="422"/>
+        <location filename="../core/contactlist.cpp" line="424"/>
         <source>Strange empty contact</source>
         <translation>Unbekannter leerer Kontakt</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="866"/>
+        <location filename="../core/contactlist.cpp" line="868"/>
         <source>%1 records
 %2 phones
 %3 emails
@@ -1515,7 +1520,7 @@ MMS-Eigenschaften:
 %8 archivierte SMS</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="870"/>
+        <location filename="../core/contactlist.cpp" line="872"/>
         <source>
 
 model %1
@@ -1532,17 +1537,17 @@ Firmware %4
 Sprache des Telefons %5</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1138"/>
+        <location filename="../core/contactlist.cpp" line="1140"/>
         <source>Dialed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1140"/>
+        <location filename="../core/contactlist.cpp" line="1142"/>
         <source>Received</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1142"/>
+        <location filename="../core/contactlist.cpp" line="1144"/>
         <source>Missed</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1567,22 +1572,22 @@ Sprache des Telefons %5</translation>
 %9 %10</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1075"/>
+        <location filename="../core/contactlist.cpp" line="1077"/>
         <source>Domestic</source>
         <translation>Inländisch</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1076"/>
+        <location filename="../core/contactlist.cpp" line="1078"/>
         <source>International</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1077"/>
+        <location filename="../core/contactlist.cpp" line="1079"/>
         <source>Postal</source>
         <translation>Postalisch</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1078"/>
+        <location filename="../core/contactlist.cpp" line="1080"/>
         <source>Parcel</source>
         <translation>Paket</translation>
     </message>
@@ -2486,7 +2491,7 @@ Benutzername, Passwort, Protokoll und Port überprüfen</translation>
         <translation type="obsolete">Leer</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="331"/>
+        <location filename="../core/decodedmessagelist.cpp" line="341"/>
         <source>MPB message body missing</source>
         <translation>MPB-Nachrichtentext fehlt</translation>
     </message>

@@ -118,13 +118,15 @@ void Phone::StandardTypes::fill()
     (*this)["car"] = QObject::tr("Car");
     (*this)["isdn"] = QObject::tr("ISDN");
     (*this)["pcs"] = QObject::tr("PCS");
+    (*this)["callback"] = QObject::tr("CALLBACK"); // Samsung A50
     displayValues
         << (*this)["home"]  << (*this)["work"] << (*this)["cell"]
         << (*this)["pref"] << (*this)["voice"]
         << (*this)["msg"] << (*this)["fax"] << (*this)["video"]
         << (*this)["pager"] << (*this)["bbs"]
         << (*this)["modem"] << (*this)["car"]
-        << (*this)["isdn"] << (*this)["pcs"];
+        << (*this)["isdn"] << (*this)["pcs"]
+        << (*this)["callback"];
 }
 
 Email::Email()
