@@ -52,7 +52,7 @@
     <message>
         <location filename="../model/callmodel.cpp" line="24"/>
         <source>Type</source>
-        <translation type="unfinished"></translation>
+        <translation>Type</translation>
     </message>
     <message>
         <location filename="../model/callmodel.cpp" line="25"/>
@@ -62,12 +62,12 @@
     <message>
         <location filename="../model/callmodel.cpp" line="26"/>
         <source>Duration</source>
-        <translation type="unfinished"></translation>
+        <translation>Durée</translation>
     </message>
     <message>
         <location filename="../model/callmodel.cpp" line="27"/>
         <source>Number</source>
-        <translation type="unfinished"></translation>
+        <translation>Numéro</translation>
     </message>
     <message>
         <location filename="../model/callmodel.cpp" line="28"/>
@@ -80,17 +80,17 @@
     <message>
         <location filename="../app/callwindow.ui" line="14"/>
         <source>Calls</source>
-        <translation type="unfinished"></translation>
+        <translation>Appels</translation>
     </message>
     <message>
         <location filename="../app/callwindow.ui" line="31"/>
         <source>Filter</source>
-        <translation type="unfinished">Filtrer</translation>
+        <translation>Filtre</translation>
     </message>
     <message>
         <location filename="../app/callwindow.ui" line="56"/>
         <source>&amp;Save as...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Sauvegarder comme...</translation>
     </message>
     <message>
         <location filename="../app/callwindow.ui" line="65"/>
@@ -110,7 +110,7 @@
     <message>
         <location filename="../app/callwindow.cpp" line="142"/>
         <source>Save calls file</source>
-        <translation type="unfinished"></translation>
+        <translation>Sauvegarder dans un fichier d&apos;appels</translation>
     </message>
 </context>
 <context>
@@ -280,7 +280,7 @@ Voulez-vous accepter ce certificat quand même ?</translation>
     <message>
         <location filename="../app/contactdialog.ui" line="355"/>
         <source>Role</source>
-        <translation type="unfinished"></translation>
+        <translation>Rôle</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="392"/>
@@ -300,7 +300,7 @@ Voulez-vous accepter ce certificat quand même ?</translation>
     <message>
         <location filename="../app/contactdialog.ui" line="583"/>
         <source>Updated:</source>
-        <translation type="unfinished"></translation>
+        <translation>Mis à jour :</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="689"/>
@@ -880,7 +880,7 @@ Voulez-vous accepter ce certificat quand même ?</translation>
     <message>
         <location filename="../app/mainwindow.ui" line="636"/>
         <source>&amp;Calls...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Appels...</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="639"/>
@@ -1159,32 +1159,32 @@ Are you want switch column sorting off?</source>
     <message>
         <location filename="../model/messagemodel.cpp" line="25"/>
         <source>From/To</source>
-        <translation type="unfinished"></translation>
+        <translation>Depuis/Vers</translation>
     </message>
     <message>
         <location filename="../model/messagemodel.cpp" line="26"/>
         <source>Number</source>
-        <translation type="unfinished"></translation>
+        <translation>Numéro</translation>
     </message>
     <message>
         <location filename="../model/messagemodel.cpp" line="27"/>
         <source>Folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Dossier</translation>
     </message>
     <message>
         <location filename="../model/messagemodel.cpp" line="28"/>
         <source>Flags</source>
-        <translation type="unfinished"></translation>
+        <translation>Drapeaux</translation>
     </message>
     <message>
         <location filename="../model/messagemodel.cpp" line="29"/>
         <source>Text</source>
-        <translation type="unfinished"></translation>
+        <translation>Texte</translation>
     </message>
     <message>
         <location filename="../model/messagemodel.cpp" line="80"/>
         <source>&lt;MMS&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;MMS&gt;</translation>
     </message>
 </context>
 <context>
@@ -1192,67 +1192,67 @@ Are you want switch column sorting off?</source>
     <message>
         <location filename="../app/messagewindow.ui" line="14"/>
         <source>Messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Messages</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="30"/>
         <source>Message sources</source>
-        <translation type="unfinished"></translation>
+        <translation>Sources des messages</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="50"/>
         <source>PDU</source>
-        <translation type="unfinished"></translation>
+        <translation>PDU</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="57"/>
         <source>vMessage </source>
-        <translation type="unfinished"></translation>
+        <translation>vMessage </translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="74"/>
         <source>PDU archive</source>
-        <translation type="unfinished"></translation>
+        <translation>Archive PDU</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="81"/>
         <source>vMessage archive</source>
-        <translation type="unfinished"></translation>
+        <translation>Archive vMessage</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="98"/>
         <source>Binary</source>
-        <translation type="unfinished"></translation>
+        <translation>Binaire</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="67"/>
         <source>Merge duplicates</source>
-        <translation type="unfinished"></translation>
+        <translation>Fusionner les doublons</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="43"/>
         <source>Processing</source>
-        <translation type="unfinished"></translation>
+        <translation>Traitement</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="91"/>
         <source>Merge multipart messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Fusionner les message multipart</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="123"/>
         <source>Apply</source>
-        <translation type="unfinished"></translation>
+        <translation>Appliquer</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="143"/>
         <source>Filter</source>
-        <translation type="unfinished">Filtrer</translation>
+        <translation>Filtre</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="168"/>
         <source>&amp;Save as...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Sauvegarder comme...</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="177"/>
@@ -1267,7 +1267,7 @@ Are you want switch column sorting off?</source>
     <message>
         <location filename="../app/messagewindow.ui" line="185"/>
         <source>Properties</source>
-        <translation type="unfinished"></translation>
+        <translation>Propriétés</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="188"/>
@@ -1277,18 +1277,18 @@ Are you want switch column sorting off?</source>
     <message>
         <location filename="../app/messagewindow.ui" line="193"/>
         <source>Save MMS Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Enregistrer les fichiers MMS</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="198"/>
         <location filename="../app/messagewindow.ui" line="201"/>
         <source>Show MMS Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Afficher les fichiers MMS</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.cpp" line="224"/>
         <source> with messages</source>
-        <translation type="unfinished"></translation>
+        <translation> avec messages</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.cpp" line="228"/>
@@ -1298,23 +1298,24 @@ Are you want switch column sorting off?</source>
     <message>
         <location filename="../app/messagewindow.cpp" line="229"/>
         <source>Including MMS: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Dont le MMS : %1</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.cpp" line="230"/>
         <source>Merged dups: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Doublons fusionnés : %1</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.cpp" line="231"/>
         <source>Merged multiparted: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Multipart fusionnés : %1</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.cpp" line="283"/>
         <source>id: %1
 Sources: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>identifiant : %1
+Sources : %2</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.cpp" line="286"/>
@@ -1322,17 +1323,20 @@ Sources: %2</source>
 
 MMS properties:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>
+
+Propriétés du MMS :
+%1</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.cpp" line="303"/>
         <source>Save messages file</source>
-        <translation type="unfinished"></translation>
+        <translation>Enregistrer le fichier des messages</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.cpp" line="310"/>
         <source>Can you also save media files from MMS (%1 messages)?</source>
-        <translation type="unfinished"></translation>
+        <translation>Pouvez-vous aussi sauvegarder les fichiers média depuis les MMS (%1 messages)&#xa0;?</translation>
     </message>
 </context>
 <context>
@@ -1517,17 +1521,17 @@ langue du téléphone %5</translation>
     <message>
         <location filename="../core/contactlist.cpp" line="1115"/>
         <source>Dialed</source>
-        <translation type="unfinished"></translation>
+        <translation>Composés</translation>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="1117"/>
         <source>Received</source>
-        <translation type="unfinished"></translation>
+        <translation>Reçus</translation>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="1119"/>
         <source>Missed</source>
-        <translation type="unfinished"></translation>
+        <translation>Manqués</translation>
     </message>
     <message>
         <location filename="../core/formats/common/vcarddata.cpp" line="81"/>
@@ -1624,23 +1628,24 @@ ligne %3, colonne %4
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="80"/>
         <source>Warning: codepage not found, trying use UTF-8...</source>
-        <translation type="unfinished"></translation>
+        <translation>Avertissement&#xa0;:&#xa0;le code de la page n&apos;a pas été trouvé ; essai en UTF-8...</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="85"/>
         <source>Warning: udx version not found, treat as 1.0...</source>
-        <translation type="unfinished"></translation>
+        <translation>Avertissement&#xa0;:&#xa0;la version de UDX n&apos;a pas été trouvée ; version 1.0 utilisée...</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="94"/>
         <source>Can&apos;t find &apos;vCard&apos; records at file
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ne pas trouver de contacts &apos;vCard&apos; dans ce fichier&#xa0;:
+%1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="111"/>
         <source>Can&apos;t find &apos;vCardField&apos; at sequence %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ne peut trouver &apos;vCarField&apos; dans cette séquence %1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="141"/>
@@ -1650,59 +1655,61 @@ ligne %3, colonne %4
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="160"/>
         <source>Unknown &apos;vCardfield&apos; type: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Type pour &apos;vCarfield&apos; inconnu : %1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="169"/>
         <source>%1 records read, %2 expected</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 enregistrements lus, %2 attendus</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="233"/>
         <source>Warning: contact %1, duplicate id %2 changed to %3</source>
-        <translation type="unfinished"></translation>
+        <translation>Avertissement&#xa0;:&#xa0;Pour le contact %1, l&apos;identifiant en double a été changé de %2 en %3</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="268"/>
         <source>Warning: contact %1, unknown tel type:
 %2
  saved as cellular</source>
-        <translation type="unfinished"></translation>
+        <translation>Avertissement&#xa0;:&#xa0;Le contact %1 a un type de téléphone inconnu&#xa0;:
+%2
+ a été enregistré en cellulaire</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="288"/>
         <source>time in birthday</source>
-        <translation type="unfinished"></translation>
+        <translation>L&apos;heure de la naissance</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="290"/>
         <source>IM</source>
-        <translation type="unfinished"></translation>
+        <translation>IM</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="291"/>
         <source>address</source>
-        <translation type="unfinished"></translation>
+        <translation>adresse</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="292"/>
         <source>photo</source>
-        <translation type="unfinished"></translation>
+        <translation>photo</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="293"/>
         <source>description</source>
-        <translation type="unfinished"></translation>
+        <translation>description</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="294"/>
         <source>job title</source>
-        <translation type="unfinished"></translation>
+        <translation>Profession</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="295"/>
         <source>anniversary</source>
-        <translation type="unfinished"></translation>
+        <translation>anniversaire</translation>
     </message>
     <message>
         <location filename="../core/formats/formatfactory.cpp" line="77"/>
@@ -1713,36 +1720,40 @@ ligne %3, colonne %4
         <location filename="../core/formats/formatfactory.cpp" line="128"/>
         <source>Unknown file format:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Format de fichier inconnu :
+%1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/vcfdirectory.cpp" line="35"/>
         <source>Directory not exists:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ce dossier n&apos;existe pas :
+%1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/vcfdirectory.cpp" line="40"/>
         <source>Directory not contains VCF files:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ce dossier ne contient pas de fichier VCF&#xa0;:
+%1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/vcfdirectory.cpp" line="73"/>
         <location filename="../core/globals.h" line="133"/>
         <source>Can&apos;t create directory
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ce dossier ne peut pas être créé :
+%1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/mpbfile.cpp" line="98"/>
         <source>Unsupported MPB section: </source>
-        <translation type="unfinished"></translation>
+        <translation>Section MPB non supportée : </translation>
     </message>
     <message>
         <location filename="../core/formats/files/mpbfile.cpp" line="116"/>
         <source>File isn&apos;t MPB file or corrupted</source>
-        <translation type="unfinished"></translation>
+        <translation>Ce fichier n&apos;est pas un fichier MPB, ou alors est corrompu</translation>
     </message>
     <message>
         <location filename="../core/formats/files/mpbfile.cpp" line="126"/>
@@ -1752,7 +1763,7 @@ ligne %3, colonne %4
     <message>
         <location filename="../core/formats/files/mpbfile.cpp" line="161"/>
         <source>No contact records in this file</source>
-        <translation type="unfinished"></translation>
+        <translation>Aucun contact dans ce fichier</translation>
     </message>
     <message>
         <location filename="../core/formats/files/mpbfile.cpp" line="172"/>
@@ -1762,49 +1773,50 @@ ligne %3, colonne %4
     <message>
         <location filename="../core/formats/files/mpbfile.cpp" line="225"/>
         <source>Name for number %1 changed from %2 to %3</source>
-        <translation type="unfinished"></translation>
+        <translation>Le nom pour le numéro %1 a été changé de %1 en %3</translation>
     </message>
     <message>
         <location filename="../core/formats/files/mpbfile.cpp" line="237"/>
         <source>Number %1 without original name not found in addressbook</source>
-        <translation type="unfinished"></translation>
+        <translation>Le numéro %1 sans nom à l&apos;origine n&apos;est pas dans le répertoire</translation>
     </message>
     <message>
         <location filename="../core/formats/files/mpbfile.cpp" line="239"/>
         <source>Number %1 not found in addressbook. Original name (%2) saved</source>
-        <translation type="unfinished"></translation>
+        <translation>Le numéro %1 n&apos;est pas dans le répertoire. Le nom à l&apos;origine (%2) enregistré</translation>
     </message>
     <message>
         <location filename="../core/formats/profiles/csvprofilebase.h" line="21"/>
         <source>CSV row too short for this profile at line %1</source>
-        <translation type="unfinished"></translation>
+        <translation>La ligne %1 du CSV est trop courte pour ce profil</translation>
     </message>
     <message>
         <location filename="../core/formats/profiles/explaybm50profile.cpp" line="91"/>
         <source>Name prefixes merged with last name (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Les préfixes des noms ont été fusionnés avec le nom de famille (%1)</translation>
     </message>
     <message>
         <location filename="../core/formats/profiles/genericcsvprofile.cpp" line="61"/>
         <source>Row length (%1) is not equal header length (%2). Possibly, incorrect CSV. 
 %3</source>
-        <translation type="unfinished"></translation>
+        <translation>La longueur de cette ligne (%1) n&apos;est pas égale avec celle de l&apos;entête (%2). Ce CSV peut être invalide.
+%3</translation>
     </message>
     <message>
         <location filename="../core/formats/profiles/osmoprofile.cpp" line="19"/>
         <source>None</source>
         <comment>Osmo PIM marker for contacts without groups for YOUR language</comment>
-        <translation type="unfinished"></translation>
+        <translation>Aucun</translation>
     </message>
     <message>
         <location filename="../core/formats/profiles/osmoprofile.cpp" line="69"/>
         <source>Name day loaded as anniversary, contact %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Le nom du jour a été utilisé pour l&apos;anniversaire pour le contact %1</translation>
     </message>
     <message>
         <location filename="../core/formats/profiles/osmoprofile.cpp" line="89"/>
         <source>Department loaded as Job title, contact %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Le département est utilisé pour la profession pour le contact %1</translation>
     </message>
     <message>
         <location filename="../core/formats/profiles/osmoprofile.cpp" line="189"/>
@@ -1819,47 +1831,47 @@ ligne %3, colonne %4
     <message>
         <location filename="../core/formats/files/nbffile.cpp" line="64"/>
         <source>Can&apos;t open %1 directory in archive</source>
-        <translation type="unfinished"></translation>
+        <translation>Ne peut pas ouvrir le dossier %1 dans l&apos;archive</translation>
     </message>
     <message>
         <location filename="../core/formats/files/nbffile.cpp" line="27"/>
         <source>Can&apos;t set %1 item as current in archive</source>
-        <translation type="unfinished"></translation>
+        <translation>Ne peut mettre l&apos;élément %1 comme étant l&apos;actuel dans l&apos;archive</translation>
     </message>
     <message>
         <location filename="../core/formats/files/nbffile.cpp" line="131"/>
         <source>NBF file can be saved only if original addressbook also was in NBF format</source>
-        <translation type="unfinished"></translation>
+        <translation>Le fichier NBF ne peut être enregistré que si le répertoire d&apos;origine est aussi au format NBF</translation>
     </message>
     <message>
         <location filename="../core/formats/files/nbffile.cpp" line="136"/>
         <source>Original NBF file was moved or deleted</source>
-        <translation type="unfinished"></translation>
+        <translation>Le fichier NBF d&apos;origine a été déplacé ou supprimé</translation>
     </message>
     <message>
         <location filename="../core/formats/files/nbffile.cpp" line="28"/>
         <source>Can&apos;t open %1 item in archive</source>
-        <translation type="unfinished"></translation>
+        <translation>Ne peut pas ouvrir l&apos;élément %1 dans l&apos;archive</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="58"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Erreur</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="59"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Avertissement</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="60"/>
         <source>Confirmation</source>
-        <translation type="unfinished"></translation>
+        <translation>Confirmation</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="61"/>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informations</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="63"/>
@@ -1999,7 +2011,7 @@ ligne %3, colonne %4
     <message>
         <location filename="../core/globals.h" line="91"/>
         <source>Job title</source>
-        <translation type="unfinished"></translation>
+        <translation>Profession</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="92"/>
@@ -2009,12 +2021,12 @@ ligne %3, colonne %4
     <message>
         <location filename="../core/globals.h" line="93"/>
         <source>Role</source>
-        <translation type="unfinished"></translation>
+        <translation>Rôle</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="94"/>
         <source>Address</source>
-        <translation type="unfinished"></translation>
+        <translation>Adresse</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="95"/>
@@ -2029,32 +2041,32 @@ ligne %3, colonne %4
     <message>
         <location filename="../core/globals.h" line="98"/>
         <source>Jabber</source>
-        <translation type="unfinished"></translation>
+        <translation>Jabber</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="99"/>
         <source>ICQ</source>
-        <translation type="unfinished"></translation>
+        <translation>ICQ</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="100"/>
         <source>Skype</source>
-        <translation type="unfinished"></translation>
+        <translation>Skype</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="101"/>
         <source>Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Groupe</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="102"/>
         <source>Updated</source>
-        <translation type="unfinished"></translation>
+        <translation>Mis à jour</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="104"/>
         <source>Has phone</source>
-        <translation type="unfinished"></translation>
+        <translation>A un téléphone</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="105"/>
@@ -2064,27 +2076,27 @@ ligne %3, colonne %4
     <message>
         <location filename="../core/globals.h" line="106"/>
         <source>Has address</source>
-        <translation type="unfinished"></translation>
+        <translation>A une adresse</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="107"/>
         <source>Has birthday</source>
-        <translation type="unfinished"></translation>
+        <translation>A une date d&apos;anniversaire</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="108"/>
         <source>Has photo</source>
-        <translation type="unfinished"></translation>
+        <translation>A une photo</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="109"/>
         <source>Has problems</source>
-        <translation type="unfinished"></translation>
+        <translation>A des problèmes</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="110"/>
         <source>Some phones</source>
-        <translation type="unfinished"></translation>
+        <translation>Certains téléphones</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="111"/>
@@ -2094,33 +2106,34 @@ ligne %3, colonne %4
     <message>
         <location filename="../core/globals.h" line="124"/>
         <source>Show in new window</source>
-        <translation type="unfinished"></translation>
+        <translation>Afficher une nouvelle fenêtre</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="136"/>
         <source>Group operation not implemented, select one record</source>
-        <translation type="unfinished"></translation>
+        <translation>L&apos;opération sur un groupe n&apos;est pas disponible, veuillez sélection un seul contact</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="143"/>
         <source>Program built without network support. Use WITH_NETWORK define, if building from source code.
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Ce programme a été compilé avec le support réseau. Utilisez le define WITH_NETWORK lors de la compilation depuis le code source.
+</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="144"/>
         <source>Do you really want to delete the selected items?</source>
-        <translation type="unfinished"></translation>
+        <translation>Voulez-vous vraiment supprimer les éléments sélectionnés&#xa0;?</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="146"/>
         <source>Unknown encoding: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Encodage inconnu : %1</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="147"/>
         <source>Unknown charset: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Caractères inconnus : %1</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="149"/>
@@ -2140,173 +2153,178 @@ ligne %3, colonne %4
     <message>
         <location filename="../core/globals.h" line="155"/>
         <source>Select MMS files Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Choisir le dossier pour les fichiers MMS</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="114"/>
         <source>Ext.addr.</source>
-        <translation type="unfinished"></translation>
+        <translation>Adr. ext.</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="115"/>
         <source>Street</source>
-        <translation type="unfinished"></translation>
+        <translation>Rue</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="116"/>
         <source>City/Locality</source>
-        <translation type="unfinished"></translation>
+        <translation>Ville</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="117"/>
         <source>Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Département</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="118"/>
         <source>Postal code</source>
-        <translation type="unfinished"></translation>
+        <translation>Code postal</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="119"/>
         <source>Country</source>
-        <translation type="unfinished"></translation>
+        <translation>Pays</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="121"/>
         <source>[Unknown photo format]</source>
-        <translation type="unfinished"></translation>
+        <translation>[Format de photo inconnu]</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="122"/>
         <source>Load image</source>
-        <translation type="unfinished"></translation>
+        <translation>Charger une image</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="123"/>
         <source>Save image</source>
-        <translation type="unfinished"></translation>
+        <translation>Enregistrer l&apos;image</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="125"/>
         <source>Set URL</source>
-        <translation type="unfinished"></translation>
+        <translation>Mettre une URL</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="126"/>
         <source>Remove photo</source>
-        <translation type="unfinished"></translation>
+        <translation>Supprimer la photo</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="128"/>
         <source>All supported files (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Tous les fichiers supportés (%1)</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="129"/>
         <source>All files (*.*)</source>
-        <translation type="unfinished"></translation>
+        <translation>Tous les fichiers (*.*)</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="131"/>
         <source>Can&apos;t read file
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ce fichier ne peut pas être lu
+%1</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="132"/>
         <source>Can&apos;t write file
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ce fichier ne peut pas être écrit
+%1</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="134"/>
         <source>Can&apos;t seek to %1 in file
 %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Ne peut pas se déplacer à %1 dans le fichier
+%2</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="135"/>
         <source>Record not selected</source>
-        <translation type="unfinished"></translation>
+        <translation>Contact non sélectionné</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="139"/>
         <source>Warning: contact %1 has %2, not supported in this format.
 Data will be lost</source>
-        <translation type="unfinished"></translation>
+        <translation>Avertissement&#xa0;:&#xa0;le contact %1 a %2, ce qui n&apos;est pas supporté par ce format.
+Des données vont être perdues</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="141"/>
         <source>%1 %2 will be lost at contact %3</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 %2 seront perdus pour le contact %3</translation>
     </message>
     <message>
         <location filename="../app/groupdialog.cpp" line="29"/>
         <source>Empty group name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nom du groupe vide</translation>
     </message>
     <message>
         <location filename="../app/groupdialog.cpp" line="30"/>
         <source>Group already exists</source>
-        <translation type="unfinished"></translation>
+        <translation>Ce groupe existe déjà</translation>
     </message>
     <message>
         <location filename="../core/formats/network/asyncformat.h" line="20"/>
         <source>Server %1 not found</source>
-        <translation type="unfinished"></translation>
+        <translation>Serveur %1 introuvable</translation>
     </message>
     <message>
         <location filename="../core/formats/network/asyncformat.h" line="21"/>
         <source>Network error. Server %1 replied: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Erreur de connexion. Le serveur %1 a répondu&#xa0;:&#xa0;%2</translation>
     </message>
     <message>
         <location filename="../core/formats/network/asyncformat.h" line="22"/>
         <source>
 Check username, password, protocol and port</source>
-        <translation type="unfinished"></translation>
+        <translation>
+Vérifiez le nom d&apos;utilisateur, le mot de passe, le protocole et le port</translation>
     </message>
     <message>
         <location filename="../core/formats/files/nbufile.cpp" line="24"/>
         <source>Unsupported NBU file section type: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ce type de section pour le fichier NBU n&apos;est pas supportée&#xa0;:&#xa0;%1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/nbufile.cpp" line="25"/>
         <source>Unsupported NBU file folder type: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ce type de dossier pour le fichier NBU n&apos;est pas supportée : %1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/nbufile.cpp" line="154"/>
         <source>Signature not recognized, trying anyway...</source>
-        <translation type="unfinished"></translation>
+        <translation>La signature n&apos;est pas reconnue, essai quand même...</translation>
     </message>
     <message>
         <location filename="../core/formats/files/nbufile.cpp" line="203"/>
         <source>Unknown NBU file section type</source>
-        <translation type="unfinished"></translation>
+        <translation>Type de section pour le fichier NBU inconnu</translation>
     </message>
     <message>
         <location filename="../core/formats/files/nbufile.cpp" line="224"/>
         <location filename="../core/formats/files/nbufile.cpp" line="235"/>
         <source>Unknown vcard folder structure at section %1, subsection %2</source>
-        <translation type="unfinished"></translation>
+        <translation>La structure du dossier vcard n&apos;est pas valide pour la sous-section %2 de la section %1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/nbufile.cpp" line="264"/>
         <source>Invalid index: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Position invalide : %1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/nbufile.cpp" line="413"/>
         <source>Test 2 greater than 0x01: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Test2 est plus grand que 0x01&#xa0;:&#xa0;%1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/nbufile.cpp" line="416"/>
         <source>Test 1 different than 0x10: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Test 1 est différent de 0x10&#xa0;:&#xa0;%1</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="107"/>
@@ -2357,7 +2375,7 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="141"/>
         <source>MMS</source>
-        <translation type="unfinished"></translation>
+        <translation>MMS</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="225"/>
@@ -2371,43 +2389,43 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="320"/>
         <source>MPB message body missing</source>
-        <translation type="unfinished"></translation>
+        <translation>Corps du message MPB manquant</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="153"/>
         <source>Unknown vMessage tag: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Étiquette de ce vMessage inconnu : %1</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="154"/>
         <source>Unknown vMessage value: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>La valeur de ce vMessage est inconnue : %1</translation>
     </message>
     <message>
         <location filename="../model/recentlist.h" line="21"/>
         <source>Clear recent list</source>
-        <translation type="unfinished"></translation>
+        <translation>Effacer l&apos;historique</translation>
     </message>
     <message>
         <location filename="../core/formats/common/nokiadata.cpp" line="321"/>
         <source>Unknown field type: 0x%1 at %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Type de champ inconnu&#xa0;%&#xa0;0x%1 à %2</translation>
     </message>
     <message>
         <location filename="../core/formats/common/nokiadata.cpp" line="478"/>
         <source>Invalid MMS Yes/No value (%1) at %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Valeur Oui/Non invalide (%1) pour le MMS à %2</translation>
     </message>
     <message>
         <location filename="../core/formats/common/nokiadata.cpp" line="488"/>
         <source>Invalid MMS octet count (%1) at %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Taille en octet invalide (%1) pour le MMS à %2</translation>
     </message>
     <message>
         <location filename="../core/formats/common/nokiadata.cpp" line="513"/>
         <source>Personal</source>
         <comment>MmsClass</comment>
-        <translation type="unfinished"></translation>
+        <translation>Personnel</translation>
     </message>
     <message>
         <location filename="../core/formats/common/nokiadata.cpp" line="516"/>
@@ -2419,33 +2437,33 @@ Check username, password, protocol and port</source>
         <location filename="../core/formats/common/nokiadata.cpp" line="519"/>
         <source>Info</source>
         <comment>MmsClass</comment>
-        <translation type="unfinished"></translation>
+        <translation>Info</translation>
     </message>
     <message>
         <location filename="../core/formats/common/nokiadata.cpp" line="522"/>
         <source>Auto</source>
         <comment>MmsClass</comment>
-        <translation type="unfinished"></translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <location filename="../core/formats/common/nokiadata.cpp" line="544"/>
         <source>Parse value length error (%1) at %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Erreur dans la longueur interprétée (%1) à %2</translation>
     </message>
     <message>
         <location filename="../core/formats/common/nokiadata.cpp" line="556"/>
         <source>Error reading uint64_t value: overflow at %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Erreur à la lecture d&apos;une valeur uint64_t&#xa0;:&#xa0;dépassement à %1</translation>
     </message>
     <message>
         <location filename="../core/formats/common/vmessagedata.cpp" line="19"/>
         <source>Unknown ATT subtype at line %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Sous-type ATT inconnu à la ligne %1&#xa0;:&#xa0;%2</translation>
     </message>
     <message>
         <location filename="../core/formats/common/vmessagedata.cpp" line="282"/>
         <source>File %1 has size %2, declared %3</source>
-        <translation type="unfinished"></translation>
+        <translation>Le fichier %1 à une taille de %2, pourtant déclarée à %3</translation>
     </message>
     <message>
         <location filename="../model/callmodel.cpp" line="102"/>
@@ -2459,22 +2477,22 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../3rdparty/quazip/quazip/quagzipfile.cpp" line="60"/>
         <source>QIODevice::Append is not supported for GZIP</source>
-        <translation type="unfinished"></translation>
+        <translation>QIODevice::Append n&apos;est pas supporté pour GZIP</translation>
     </message>
     <message>
         <location filename="../3rdparty/quazip/quazip/quagzipfile.cpp" line="66"/>
         <source>Opening gzip for both reading and writing is not supported</source>
-        <translation type="unfinished"></translation>
+        <translation>Ouvrir gzip pour à la fois la lecture et l&apos;écriture n&apos;est pas supporté</translation>
     </message>
     <message>
         <location filename="../3rdparty/quazip/quazip/quagzipfile.cpp" line="74"/>
         <source>You can open a gzip either for reading or for writing. Which is it?</source>
-        <translation type="unfinished"></translation>
+        <translation>Vous pouvez ouvrir un gzip seulement en lecture ou en écriture. Quel mode choisissez-vous&#xa0;?</translation>
     </message>
     <message>
         <location filename="../3rdparty/quazip/quazip/quagzipfile.cpp" line="80"/>
         <source>Could not gzopen() file</source>
-        <translation type="unfinished"></translation>
+        <translation>Ce fichier ne peut pas être gzopen()</translation>
     </message>
 </context>
 <context>
@@ -2482,12 +2500,12 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../3rdparty/quazip/quazip/quaziodevice.cpp" line="147"/>
         <source>QIODevice::Append is not supported for QuaZIODevice</source>
-        <translation type="unfinished"></translation>
+        <translation>QIODevice::Append n&apos;est pas supporté pour QuaZIODevice</translation>
     </message>
     <message>
         <location filename="../3rdparty/quazip/quazip/quaziodevice.cpp" line="152"/>
         <source>QIODevice::ReadWrite is not supported for QuaZIODevice</source>
-        <translation type="unfinished"></translation>
+        <translation>QIODevice::ReadWrite n&apos;est pas supporté pour QuaZIODevice</translation>
     </message>
 </context>
 <context>
@@ -2495,7 +2513,7 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../3rdparty/quazip/quazip/quazipfile.cpp" line="247"/>
         <source>ZIP/UNZIP API error %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Erreur %1 de l&apos;APi pour ZIP/UNZIP</translation>
     </message>
 </context>
 <context>
@@ -2503,7 +2521,7 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../app/helpers.cpp" line="31"/>
         <source>This table is read only</source>
-        <translation type="unfinished"></translation>
+        <translation>Ce tableau est en lecture seule</translation>
     </message>
 </context>
 <context>
@@ -2511,7 +2529,7 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../app/settingsdialog.ui" line="14"/>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Préférences</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="24"/>
@@ -2521,42 +2539,42 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../app/settingsdialog.ui" line="32"/>
         <source>Language</source>
-        <translation type="unfinished"></translation>
+        <translation>Langue</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="42"/>
         <source>Date format</source>
-        <translation type="unfinished"></translation>
+        <translation>Format de la date</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="52"/>
         <source>Time format</source>
-        <translation type="unfinished"></translation>
+        <translation>Format de l&apos;heure</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="64"/>
         <source>Use system date/time format</source>
-        <translation type="unfinished"></translation>
+        <translation>Utiliser le format horaire du système</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="71"/>
         <source>Open last files at startup</source>
-        <translation type="unfinished"></translation>
+        <translation>Ouvrir les derniers fichiers au lancement</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="78"/>
         <source>Show grid in tables</source>
-        <translation type="unfinished"></translation>
+        <translation>Afficher la grille dans les tableaux</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="85"/>
         <source>Show line numbers</source>
-        <translation type="unfinished"></translation>
+        <translation>Afficher le numéro des lignes</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="92"/>
         <source>Use alternate row colors in table</source>
-        <translation type="unfinished"></translation>
+        <translation>Utiliser des couleurs alternées dans les tableaux</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="99"/>
@@ -2576,12 +2594,12 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../app/settingsdialog.ui" line="119"/>
         <source>Grid base</source>
-        <translation type="unfinished"></translation>
+        <translation>Grille de base</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="126"/>
         <source>Grid alternate</source>
-        <translation type="unfinished"></translation>
+        <translation>Grille alternée</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="137"/>
@@ -2606,27 +2624,27 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../app/settingsdialog.ui" line="212"/>
         <source>Preferred vCard version</source>
-        <translation type="unfinished"></translation>
+        <translation>La version vCard préférée</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="220"/>
         <source>2.1</source>
-        <translation type="unfinished">2.1</translation>
+        <translation>2.1</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="225"/>
         <source>3.0</source>
-        <translation type="unfinished">3.0</translation>
+        <translation>3.0</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="230"/>
         <source>4.0</source>
-        <translation type="unfinished">4.0</translation>
+        <translation>4.0</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="240"/>
         <source>Use original file version (if present)</source>
-        <translation type="unfinished"></translation>
+        <translation>Utiliser la version originale du fichier (si existe)</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="249"/>
@@ -2636,12 +2654,12 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../app/settingsdialog.ui" line="261"/>
         <source>(for phone number internationalization)</source>
-        <translation type="unfinished"></translation>
+        <translation>(pour l&apos;internalisation des numéros de téléphone)</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="268"/>
         <source>Skip time from birthday and anniversaries</source>
-        <translation type="unfinished"></translation>
+        <translation>Ignorer l&apos;heure pour les anniversaires</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="275"/>
@@ -2671,42 +2689,42 @@ Check username, password, protocol and port</source>
     <message>
         <location filename="../app/settingsdialog.ui" line="327"/>
         <source>Default type if empty</source>
-        <translation type="unfinished"></translation>
+        <translation>Choisir le type par défaut si vide</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="339"/>
         <source>(many phones treat &apos;Voice&apos; as &apos;Other&apos;)</source>
-        <translation type="unfinished"></translation>
+        <translation>(plusieurs téléphones utilisent &apos;Autre&apos; pour &apos;Voix&apos;)</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="346"/>
         <source>Warning on missing phone types</source>
-        <translation type="unfinished"></translation>
+        <translation>Avertissement pour les types de téléphone manquants</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="353"/>
         <source>Warning on non-standard phone types</source>
-        <translation type="unfinished"></translation>
+        <translation>Avertissement pour les types de téléphone non-standards</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="360"/>
         <source>Debug save</source>
-        <translation type="unfinished"></translation>
+        <translation>Enregistrer (debug)</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="367"/>
         <source>While VCF directory reading</source>
-        <translation type="unfinished"></translation>
+        <translation>Durant la lecture du dossier VCF</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="373"/>
         <source>Read contact names from file name</source>
-        <translation type="unfinished"></translation>
+        <translation>Récupérer le nom des contacts depuis le nom du fichier</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.cpp" line="136"/>
         <source>List must contain at least one visible column</source>
-        <translation type="unfinished"></translation>
+        <translation>La liste doit contenir au moins une colonne visible</translation>
     </message>
 </context>
 <context>
