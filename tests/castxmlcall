@@ -1,0 +1,3 @@
+#!/bin/bash
+
+castxml ../core/globals.cpp --castxml-gccxml -o ./out.xml -I ../model -I ../core -I /usr/include/qt4/QtCore -I /usr/include/qt4/QtGui -I /usr/include/qt4

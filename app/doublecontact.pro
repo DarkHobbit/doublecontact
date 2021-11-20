@@ -60,6 +60,7 @@ FORMS += mainwindow.ui \
     groupdialog.ui \
     callwindow.ui \
     messagewindow.ui
+
 unix { 
     OBJECTS_DIR = .obj
     UI_DIR = .ui
