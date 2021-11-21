@@ -132,6 +132,20 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                     else // one value - it's more fast in most cases
                         types << typeCand;
                 }
+                else if (vType[i].startsWith("X-CUSTOM(")) { // Non-standard non-latin types (at least, in Samsung A50 with Android 9)
+                    QString typeCand = vType[i].mid(QString("X-CUSTOM(").length());
+                    typeCand = typeCand.remove(typeCand.length()-1, 1);
+                    QStringList typeAttrs = typeCand.left(-1).split(",");
+                    foreach (const QString& attr, typeAttrs) {
+                        if (attr.startsWith("ENCODING=", Qt::CaseInsensitive))
+                            encoding = attr.mid(QString("ENCODING=").length()).toUpper();
+                        else if (attr.startsWith("CHARSET=", Qt::CaseInsensitive))
+                            charSet = attr.mid(QString("CHARSET=").length());
+                        else
+                            typeCand = attr;
+                    }
+                    types << decodeValue(typeCand, errors);
+                }
                 else if (vType[i].startsWith("VALUE=", Qt::CaseInsensitive))
                     // for PHOTO/URI, at least
                     typeVal = vType[i].mid(QString("VALUE=").length());
@@ -156,6 +170,10 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                     }
                 }
             }
+            // Remove X-prefix from non-standard types
+            for (int i=0; i<types.count(); i++)
+                if (types[i].startsWith("X-"))
+                    types[i]=types[i].mid(2);
             // Helper for non-standard types
             if (encoding.startsWith("QUOTED-PRINTABLE", Qt::CaseInsensitive))
                     quotedPrintableDefault = true;
@@ -197,13 +215,14 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                     phone.types << defaultEmptyPhoneType.toUpper();
                 }
                 else phone.types = types;
-                if (gd.warnOnNonStandardTypes)
+                if (gd.warnOnNonStandardTypes) {
                     foreach(const QString& tType, types) {
                         bool isStandard;
                         Phone::standardTypes.translate(tType, &isStandard);
                         if (!isStandard)
                             errors << QObject::tr("Non-standard phone type at line %1: %2%3").arg(line+1).arg(tType).arg(visName);
                     }
+                }
                 phone.syncMLRef = syncMLRef;
                 item.phones << phone;
             }
@@ -727,7 +746,7 @@ QString VCardData::encodeTypes(const QStringList &aTypes, StandardTypes* st, int
     bool shortType = (formatVersion!=GlobalConfig::VCF30);
     QString separator = shortType ? ";" : ";TYPE=";
     QString typeStr = "";
-    if (st!=0 && (gd.addXToNonStandardTypes || gd.replaceNLNSNames)) { // very rare case
+    if (st!=0) {
         foreach (const QString& typeVal, aTypes) {
             bool isStandard;
             st->translate(typeVal, &isStandard);
@@ -735,18 +754,32 @@ QString VCardData::encodeTypes(const QStringList &aTypes, StandardTypes* st, int
                 typeStr += separator + typeVal.toUpper();
             else { // very-very rare case
                 QString mTypeVal = typeVal;
-                if (gd.replaceNLNSNames && mTypeVal.toLatin1()!=mTypeVal.toUtf8()) //non-latin
-                    mTypeVal = "PREF"; // TODO m.b. use spec. value (separate for phones, emails, addresses, etc.)? define virtual defaultValue() in StandardType...
-                else if (gd.addXToNonStandardTypes)
+                if (mTypeVal.toLatin1()!=mTypeVal.toUtf8() && formatVersion==GlobalConfig::VCF21) { //non-latin type name
+                    switch(gd.nonLatinTypeNamesPolicy) {
+                    case GlobalConfig::nltnReplaceToDefault:
+                        mTypeVal = "PREF"; // TODO m.b. use spec. value (separate for phones, emails, addresses, etc.)? define virtual defaultValue() in StandardType...
+                        break;
+                    case GlobalConfig::nltnUseXCustom:
+                        mTypeVal = QString("X-CUSTOM(CHARSET=UTF-8,ENCODING=QUOTED-PRINTABLE,%1)")
+                            .arg(encodeValue(mTypeVal, typeStr.length()+50));
+                        break;
+                    case GlobalConfig::nltnSaveAsIs:
+                    default:
+                        break;
+                    }
+                }
+                else if (gd.addXToNonStandardTypes && !mTypeVal.startsWith("X-", Qt::CaseInsensitive))
                     mTypeVal = QString("X-")+mTypeVal;
                 typeStr += separator + mTypeVal;
             }
         }
+        return typeStr;
     }
     else { // general case
         typeStr = separator;
         // typeStr += aTypes.join(",").toUpper(); // value list
         typeStr += aTypes.join(separator).toUpper(); // parameter list; RFC 2426 allows both form
+        return encodeValue(typeStr, 0);
     }
     /*
      * TODO now syncMLRef recording is switched off, because it corrupted while editing/comparing
@@ -757,7 +790,6 @@ QString VCardData::encodeTypes(const QStringList &aTypes, StandardTypes* st, int
     if (syncMLRef!=-1)
         typeStr += ";X-SYNCMLREF" + QString::number(syncMLRef);
     */
-    return encodeValue(typeStr, 0);
 }
 
 QString VCardData::exportDate(const DateItem &item) const

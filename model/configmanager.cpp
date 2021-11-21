@@ -106,8 +106,14 @@ void ConfigManager::readConfig()
     gd.useOriginalFileVersion = settings->value("Saving/UseOriginalFileVCardVersion", true).toBool();
     gd.defaultCountryRule = settings->value("Saving/DefaultCountryRule", 0).toInt();
     gd.skipTimeFromDate = settings->value("Saving/SkipTimeFromDate", false).toBool();
-    gd.addXToNonStandardTypes = settings->value("Saving/AddXToNonStandardTypes", false).toBool();
-    gd.replaceNLNSNames = settings->value("Saving/ReplaceNLNSNames", false).toBool();
+    gd.addXToNonStandardTypes = settings->value("Saving/AddXToNonStandardTypes", true).toBool();
+    QString sNlTnPolicy = settings->value("Saving/NonLatinTypeNamesPolicy", "UseXCustom").toString();
+    if (sNlTnPolicy=="SaveAsIs")
+        gd.nonLatinTypeNamesPolicy = GlobalConfig::nltnSaveAsIs;
+    else if (sNlTnPolicy=="ReplaceToDefault")
+        gd.nonLatinTypeNamesPolicy = GlobalConfig::nltnReplaceToDefault;
+    else
+        gd.nonLatinTypeNamesPolicy = GlobalConfig::nltnUseXCustom;
     QString sGroupFormat = settings->value("Saving/GroupFormat", "CATEGORIES").toString();
     gd.groupFormat = (sGroupFormat=="X-GROUP-MEMBERSHIP") ? GlobalConfig::gfXGroupMembership : GlobalConfig::gfCategories;
     // Loading
@@ -160,7 +166,18 @@ void ConfigManager::writeConfig()
     settings->setValue("Saving/DefaultCountryRule", gd.defaultCountryRule);
     settings->setValue("Saving/SkipTimeFromDate", gd.skipTimeFromDate);
     settings->setValue("Saving/AddXToNonStandardTypes", gd.addXToNonStandardTypes);
-    settings->setValue("Saving/ReplaceNLNSNames", gd.replaceNLNSNames);
+    QString sNlTnPolicy;
+    switch (gd.nonLatinTypeNamesPolicy) {
+    case GlobalConfig::nltnSaveAsIs:
+        sNlTnPolicy = "SaveAsIs";
+        break;
+    case GlobalConfig::nltnReplaceToDefault:
+        sNlTnPolicy = "ReplaceToDefault";
+        break;
+    default:
+        sNlTnPolicy = "UseXCustom";
+    }
+    settings->setValue("Saving/NonLatinTypeNamesPolicy", sNlTnPolicy);
     QString sGroupFormat = (gd.groupFormat==GlobalConfig::gfXGroupMembership) ? "X-GROUP-MEMBERSHIP" : "CATEGORIES";
     settings->setValue("Saving/GroupFormat", sGroupFormat);
     // Loading

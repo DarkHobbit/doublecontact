@@ -1711,17 +1711,17 @@ SMS: %7
         <translation>Незавершений запис перед рядком %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="165"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="179"/>
         <source>Unexpected TYPE appearance at line %1: tag %2</source>
         <translation>Несподівана поява TYPE в рядку %1: ярлик %2</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="196"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="210"/>
         <source>Missing phone type at line %1: %2%3</source>
         <translation>Відсутній тип телефону в рядку %1: %2%3</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="205"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="219"/>
         <source>Non-standard phone type at line %1: %2%3</source>
         <translation>Нестандартний тип телефону в рядку %1: %2%3</translation>
     </message>
@@ -1730,12 +1730,12 @@ SMS: %7
         <translation type="obsolete">Нестандартний тип електронної пошти в рядку %1: %2%3</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="250"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="264"/>
         <source>Unsupported photo type at line %1: %2%3</source>
         <translation>Непідтримуваний тип фотографії в рядку %1: %2%3</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="244"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="258"/>
         <source>Unknown encoding type at line %1: %2%3</source>
         <translation>Невідомий тип кодування в рядку %1: %2%3</translation>
     </message>
@@ -1744,7 +1744,7 @@ SMS: %7
         <translation type="obsolete">Невідомий тип адреси в рядку %1: %2%3</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="262"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="276"/>
         <source>Unknown photo kind at line %1: %2</source>
         <translation>Невідомий вигляд фото в рядку %1: %2</translation>
     </message>
@@ -1754,7 +1754,7 @@ SMS: %7
         <translation>Остання секція не закрита</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="366"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="380"/>
         <location filename="../core/formats/files/udxfile.cpp" line="175"/>
         <source>%1 unknown tags found</source>
         <translation>Знайдено невідомих ярликів: %1</translation>
@@ -1768,12 +1768,12 @@ SMS: %7
         <translation type="obsolete">Невідоме кодування: </translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="584"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="598"/>
         <source>Invalid timezone: </source>
         <translation>Хибний часовий пояс: </translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="614"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="628"/>
         <source>Invalid datetime: </source>
         <translation>Хибна дата/час: </translation>
     </message>
@@ -2903,31 +2903,50 @@ Check username, password, protocol and port</source>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="288"/>
-        <source>Replace non-latin type named</source>
-        <translation>Замінювати не латинські назви типів</translation>
+        <source>Non-latin type names:</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="298"/>
+        <location filename="../app/settingsdialog.ui" line="295"/>
+        <source>Save as is</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/settingsdialog.ui" line="305"/>
+        <source>Replace to default type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/settingsdialog.ui" line="315"/>
+        <source>Place to X-CUSTOM</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Replace non-latin type named</source>
+        <translation type="obsolete">Замінювати не латинські назви типів</translation>
+    </message>
+    <message>
+        <location filename="../app/settingsdialog.ui" line="328"/>
         <source>Use X-GROUP-MEMBERSHIP for groups save</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="319"/>
+        <location filename="../app/settingsdialog.ui" line="349"/>
         <source>Loading</source>
         <translation>Завантаження</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="327"/>
+        <location filename="../app/settingsdialog.ui" line="357"/>
         <source>Default type if empty</source>
         <translation>Тип телефону, якщо порожній</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="339"/>
+        <location filename="../app/settingsdialog.ui" line="369"/>
         <source>(many phones treat &apos;Voice&apos; as &apos;Other&apos;)</source>
         <translation>(багато телефонів трактують «Голосовий» як «Інше»)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="346"/>
+        <location filename="../app/settingsdialog.ui" line="376"/>
         <source>Warning on missing phone types</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2936,22 +2955,22 @@ Check username, password, protocol and port</source>
         <translation type="obsolete">(деякі телефони трактують тип &apos;Голосовий&apos; як &apos;Інший&apos;)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="353"/>
+        <location filename="../app/settingsdialog.ui" line="383"/>
         <source>Warning on non-standard phone types</source>
         <translation>Попереджувати про нестандартні типи телефонів</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="360"/>
+        <location filename="../app/settingsdialog.ui" line="390"/>
         <source>Debug save</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="367"/>
+        <location filename="../app/settingsdialog.ui" line="397"/>
         <source>While VCF directory reading</source>
         <translation>Під час читання каталогу VCF</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="373"/>
+        <location filename="../app/settingsdialog.ui" line="403"/>
         <source>Read contact names from file name</source>
         <translation>Брати ім&apos;я контакту з імені файлу</translation>
     </message>
@@ -2960,7 +2979,7 @@ Check username, password, protocol and port</source>
         <translation type="obsolete">Попереджувати про нестандартні типи телефонів/пошти</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.cpp" line="136"/>
+        <location filename="../app/settingsdialog.cpp" line="140"/>
         <source>List must contain at least one visible column</source>
         <translation>В переліку має бути хоча б один стовпчик</translation>
     </message>

@@ -204,10 +204,15 @@ struct GlobalConfig {
     bool useOriginalFileVersion;
     int defaultCountryRule; // for phone i18n during compare numbers (i.e. for Russia +7 = 8)
     bool skipTimeFromDate;
-    // addXToNonStandardTypes and replaceNLNSNames is standard behaviour of some vCard2.1-based
-    // addressbooks (LG Leon)
+    // addXToNonStandardTypes and nltnReplaceToDefault is standard behaviour
+    // of some vCard2.1-based addressbooks (LG Leon)
+    // Samsung A50 uses nltnUseXCustom
     bool addXToNonStandardTypes;
-    bool replaceNLNSNames;
+    enum NonLatinTypeNamesPolicy { // What Shall We Do with... non-latin phonetypenames
+        nltnSaveAsIs,         // when we saving it in vCard structures
+        nltnReplaceToDefault, // replace to any tag TODO make it tunnable
+        nltnUseXCustom        // use X-CUSTOM parameter
+    } nonLatinTypeNamesPolicy;
     enum GroupFormat {
         gfCategories,
         gfXGroupMembership,

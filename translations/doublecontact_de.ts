@@ -1599,32 +1599,32 @@ Sprache des Telefons %5</translation>
         <translation>Nicht abgeschlossener Datensatz vor Zeile %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="165"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="179"/>
         <source>Unexpected TYPE appearance at line %1: tag %2</source>
         <translation>Unerwartetes Auftreten von TYPE in Zeile %1: Tag %2</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="196"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="210"/>
         <source>Missing phone type at line %1: %2%3</source>
         <translation>Fehlender Telefontyp in Zeile %1: %2%3</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="205"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="219"/>
         <source>Non-standard phone type at line %1: %2%3</source>
         <translation>Nicht-Standard-Telefontyp in Zeile %1: %2%3</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="250"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="264"/>
         <source>Unsupported photo type at line %1: %2%3</source>
         <translation>Nicht unterstützter Fototyp in Zeile %1: %2%3</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="244"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="258"/>
         <source>Unknown encoding type at line %1: %2%3</source>
         <translation>Unbekannter Kodierungstyp in Zeile %1: %2%3</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="262"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="276"/>
         <source>Unknown photo kind at line %1: %2</source>
         <translation>Unbekannte Fotoart in Zeile %1: %2</translation>
     </message>
@@ -1634,7 +1634,7 @@ Sprache des Telefons %5</translation>
         <translation>Letzter Abschnitt nicht geschlossen</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="366"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="380"/>
         <location filename="../core/formats/files/udxfile.cpp" line="175"/>
         <source>%1 unknown tags found</source>
         <translation>%1 unbekannte Schlagwörter gefunden</translation>
@@ -1648,12 +1648,12 @@ Sprache des Telefons %5</translation>
         <translation type="obsolete">Unbekannte Codierung: </translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="584"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="598"/>
         <source>Invalid timezone: </source>
         <translation>Ungültige Zeitzone: </translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="614"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="628"/>
         <source>Invalid datetime: </source>
         <translation>Ungültige Datumzeit: </translation>
     </message>
@@ -2785,31 +2785,50 @@ Benutzername, Passwort, Protokoll und Port überprüfen</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="288"/>
-        <source>Replace non-latin type named</source>
-        <translation>Nicht-lateinisch benannten Typ ersetzen</translation>
+        <source>Non-latin type names:</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="298"/>
+        <location filename="../app/settingsdialog.ui" line="295"/>
+        <source>Save as is</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/settingsdialog.ui" line="305"/>
+        <source>Replace to default type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/settingsdialog.ui" line="315"/>
+        <source>Place to X-CUSTOM</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Replace non-latin type named</source>
+        <translation type="obsolete">Nicht-lateinisch benannten Typ ersetzen</translation>
+    </message>
+    <message>
+        <location filename="../app/settingsdialog.ui" line="328"/>
         <source>Use X-GROUP-MEMBERSHIP for groups save</source>
         <translation>X-GROUP-MEMBERSHIP für „Gruppen speichern” verwenden</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="319"/>
+        <location filename="../app/settingsdialog.ui" line="349"/>
         <source>Loading</source>
         <translation>Wird geladen</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="327"/>
+        <location filename="../app/settingsdialog.ui" line="357"/>
         <source>Default type if empty</source>
         <translation>Standardtyp, wenn leer</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="339"/>
+        <location filename="../app/settingsdialog.ui" line="369"/>
         <source>(many phones treat &apos;Voice&apos; as &apos;Other&apos;)</source>
         <translation>(viele Telefone behandeln „Stimme“ als „Andere“)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="346"/>
+        <location filename="../app/settingsdialog.ui" line="376"/>
         <source>Warning on missing phone types</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2818,27 +2837,27 @@ Benutzername, Passwort, Protokoll und Port überprüfen</translation>
         <translation type="obsolete">(Viele Telefone behandeln „Stimme” als „Weitere”)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="353"/>
+        <location filename="../app/settingsdialog.ui" line="383"/>
         <source>Warning on non-standard phone types</source>
         <translation>Warnhinweis bei nicht standardgemäßen Telefontypen</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="360"/>
+        <location filename="../app/settingsdialog.ui" line="390"/>
         <source>Debug save</source>
         <translation>Debug speichern</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="367"/>
+        <location filename="../app/settingsdialog.ui" line="397"/>
         <source>While VCF directory reading</source>
         <translation>Während das VCF-Verzeichnis gelesen wird</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="373"/>
+        <location filename="../app/settingsdialog.ui" line="403"/>
         <source>Read contact names from file name</source>
         <translation>Kontaktnamen aus Dateinamen auslesen</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.cpp" line="136"/>
+        <location filename="../app/settingsdialog.cpp" line="140"/>
         <source>List must contain at least one visible column</source>
         <translation>Liste muss mindestens eine sichtbare Spalte enthalten</translation>
     </message>

@@ -110,6 +110,8 @@ CURRENT
 * Calls history from MPB files show and save to CSV
 * Added tags: REV, ROLE
 * Added Clear recent list command
+* Added placing non-latin typenames in X-CUSTOM
+* X- prefix support works both for write and read
 * Import of faked QUOTED-PRINTABLE fields (literal representation of non-ASCII chars, prohibited by RFC 2045)
 * UDX tag vCardLocation added to uneditnig; unknown UDX tags now saved like vCard
 * Warning on missing phone types via vСard opening disabled by default and can be activated in settings

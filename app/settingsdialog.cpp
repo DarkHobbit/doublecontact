@@ -15,6 +15,9 @@ SettingsDialog::SettingsDialog(QWidget *parent) :
     _lang(""), _langChanged(false), ui(new Ui::SettingsDialog)
 {
     ui->setupUi(this);
+    ui->bgNlTnPolicy->setId(ui->rbSaveNLNSNamesAsIs, 0);
+    ui->bgNlTnPolicy->setId(ui->rbReplaceNLNSNames, 1);
+    ui->bgNlTnPolicy->setId(ui->rbXCustomizeNLNSNames, 2);
 }
 
 SettingsDialog::~SettingsDialog()
@@ -56,7 +59,7 @@ bool SettingsDialog::setData()
         ui->cbDefaultCountryRules->setCurrentIndex(gd.defaultCountryRule);
     ui->cbSkipTimeFromDate->setChecked(gd.skipTimeFromDate);
     ui->cbAddXToNonStandardTypes->setChecked(gd.addXToNonStandardTypes);
-    ui->cbReplaceNLNSNames->setChecked(gd.replaceNLNSNames);
+    ui->bgNlTnPolicy->button((int)gd.nonLatinTypeNamesPolicy)->setChecked(true); // local-unsafe but setData() called only with checked values
     ui->cbXgr->setChecked(gd.groupFormat==GlobalConfig::gfXGroupMembership);
     // Loading
     ui->cbDefaultEmptyPhoneType->clear();
@@ -102,7 +105,8 @@ bool SettingsDialog::getData()
     gd.defaultCountryRule = ui->cbDefaultCountryRules->currentIndex();
     gd.skipTimeFromDate = ui->cbSkipTimeFromDate->isChecked();
     gd.addXToNonStandardTypes = ui->cbAddXToNonStandardTypes->isChecked();
-    gd.replaceNLNSNames = ui->cbReplaceNLNSNames->isChecked();
+    gd.nonLatinTypeNamesPolicy =
+        (GlobalConfig::NonLatinTypeNamesPolicy) ui->bgNlTnPolicy->checkedId();
     if (ui->cbXgr->isChecked())
         gd.groupFormat = GlobalConfig::gfXGroupMembership;
     else

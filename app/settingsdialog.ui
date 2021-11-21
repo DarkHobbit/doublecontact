@@ -283,10 +283,40 @@
            </widget>
           </item>
           <item>
-           <widget class="QCheckBox" name="cbReplaceNLNSNames">
+           <widget class="QLabel" name="lbNonLatinTypeNamesPolicy">
             <property name="text">
-             <string>Replace non-latin type named</string>
+             <string>Non-latin type names:</string>
             </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="rbSaveNLNSNamesAsIs">
+            <property name="text">
+             <string>Save as is</string>
+            </property>
+            <attribute name="buttonGroup">
+             <string notr="true">bgNlTnPolicy</string>
+            </attribute>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="rbReplaceNLNSNames">
+            <property name="text">
+             <string>Replace to default type</string>
+            </property>
+            <attribute name="buttonGroup">
+             <string notr="true">bgNlTnPolicy</string>
+            </attribute>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="rbXCustomizeNLNSNames">
+            <property name="text">
+             <string>Place to X-CUSTOM</string>
+            </property>
+            <attribute name="buttonGroup">
+             <string notr="true">bgNlTnPolicy</string>
+            </attribute>
            </widget>
           </item>
          </layout>
@@ -441,4 +471,7 @@
    </hints>
   </connection>
  </connections>
+ <buttongroups>
+  <buttongroup name="bgNlTnPolicy"/>
+ </buttongroups>
 </ui>

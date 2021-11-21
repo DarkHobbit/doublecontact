@@ -1646,17 +1646,17 @@ IMEI %3
         <translation>Неоконченная запись перед строкой %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="165"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="179"/>
         <source>Unexpected TYPE appearance at line %1: tag %2</source>
         <translation>Неожиданный TYPE в строке %1: тег %2</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="196"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="210"/>
         <source>Missing phone type at line %1: %2%3</source>
         <translation>Телефон без типа в строке %1: %2%3</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="205"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="219"/>
         <source>Non-standard phone type at line %1: %2%3</source>
         <translation>Нестандартный тип телефона в строке %1: %2%3</translation>
     </message>
@@ -1665,12 +1665,12 @@ IMEI %3
         <translation type="obsolete">Нестандартный тип электронной почты в строке %1: %2%3</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="250"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="264"/>
         <source>Unsupported photo type at line %1: %2%3</source>
         <translation>Неподдерживаемый тип фотографии в строке %1: %2%3</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="244"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="258"/>
         <source>Unknown encoding type at line %1: %2%3</source>
         <translation>Неизвестное кодирование в строке %1: %2%3</translation>
     </message>
@@ -1679,7 +1679,7 @@ IMEI %3
         <translation type="obsolete">Неизвестный тип адреса в строке %1: %2%3</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="262"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="276"/>
         <source>Unknown photo kind at line %1: %2</source>
         <translation>Неизвестный вид фото в строке %1%: %2</translation>
     </message>
@@ -1689,7 +1689,7 @@ IMEI %3
         <translation>Последняя секция не закрыта</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="366"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="380"/>
         <location filename="../core/formats/files/udxfile.cpp" line="175"/>
         <source>%1 unknown tags found</source>
         <translation>Неизвестных тегов: %1</translation>
@@ -1703,12 +1703,12 @@ IMEI %3
         <translation type="obsolete">Неизвестное кодирование: </translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="584"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="598"/>
         <source>Invalid timezone: </source>
         <translation>Неправильный часовой пояс: </translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="614"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="628"/>
         <source>Invalid datetime: </source>
         <translation>Неправильная дата/время: </translation>
     </message>
@@ -2840,31 +2840,50 @@ Check username, password, protocol and port</source>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="288"/>
-        <source>Replace non-latin type named</source>
-        <translation>Заменять нелатинские имена типов</translation>
+        <source>Non-latin type names:</source>
+        <translation>Нелатинские имена типов:</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="298"/>
+        <location filename="../app/settingsdialog.ui" line="295"/>
+        <source>Save as is</source>
+        <translation>Сохранять как есть</translation>
+    </message>
+    <message>
+        <location filename="../app/settingsdialog.ui" line="305"/>
+        <source>Replace to default type</source>
+        <translation>Заменять типом по умолчанию</translation>
+    </message>
+    <message>
+        <location filename="../app/settingsdialog.ui" line="315"/>
+        <source>Place to X-CUSTOM</source>
+        <translation>Помещать в X-CUSTOM</translation>
+    </message>
+    <message>
+        <source>Replace non-latin type named</source>
+        <translation type="obsolete">Заменять нелатинские имена типов</translation>
+    </message>
+    <message>
+        <location filename="../app/settingsdialog.ui" line="328"/>
         <source>Use X-GROUP-MEMBERSHIP for groups save</source>
         <translation>Сохранять группы в теге X-GROUP-MEMBERSHIP</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="319"/>
+        <location filename="../app/settingsdialog.ui" line="349"/>
         <source>Loading</source>
         <translation>Загрузка</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="327"/>
+        <location filename="../app/settingsdialog.ui" line="357"/>
         <source>Default type if empty</source>
         <translation>Тип телефона, если пустой</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="339"/>
+        <location filename="../app/settingsdialog.ui" line="369"/>
         <source>(many phones treat &apos;Voice&apos; as &apos;Other&apos;)</source>
         <translation>(многие телефоны трактуют &apos;Голосовой&apos; как &apos;Прочий&apos;)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="346"/>
+        <location filename="../app/settingsdialog.ui" line="376"/>
         <source>Warning on missing phone types</source>
         <translation>Предупреждать о телефонах без типа</translation>
     </message>
@@ -2873,22 +2892,22 @@ Check username, password, protocol and port</source>
         <translation type="obsolete">(многие телефоны трактуют &apos;Голосовой&apos; как &apos;Прочий&apos;)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="353"/>
+        <location filename="../app/settingsdialog.ui" line="383"/>
         <source>Warning on non-standard phone types</source>
         <translation>Предупреждать о нестандартных типах телефонов</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="360"/>
+        <location filename="../app/settingsdialog.ui" line="390"/>
         <source>Debug save</source>
         <translation>Отладочная запись</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="367"/>
+        <location filename="../app/settingsdialog.ui" line="397"/>
         <source>While VCF directory reading</source>
         <translation>При чтении каталога VCF</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="373"/>
+        <location filename="../app/settingsdialog.ui" line="403"/>
         <source>Read contact names from file name</source>
         <translation>Брать имена контакта из имени файла</translation>
     </message>
@@ -2897,7 +2916,7 @@ Check username, password, protocol and port</source>
         <translation type="obsolete">Предупреждать о нестандартных типах телефонов/почты</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.cpp" line="136"/>
+        <location filename="../app/settingsdialog.cpp" line="140"/>
         <source>List must contain at least one visible column</source>
         <translation>В списке должен быть хотя бы один видимый столбец</translation>
     </message>
