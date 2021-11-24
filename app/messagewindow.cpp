@@ -25,6 +25,7 @@
 #include "messagewindow.h"
 #include "ui_messagewindow.h"
 #include "configmanager.h"
+#include "corehelpers.h"
 #include "helpers.h"
 #include "logwindow.h"
 

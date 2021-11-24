@@ -23,8 +23,23 @@
 #include <QTextCodec>
 
 #include "configmanager.h"
+#include "corehelpers.h"
 #include "globals.h"
 #include "contactlist.h"
+
+EnumSetting enPrefVCFVersion =
+{
+    "Saving", "PreferredVCardVersion",
+    "2.1;3.0;4.0",
+    0
+};
+
+EnumSetting enNlTnPolicy =
+{
+    "Saving", "NonLatinTypeNamesPolicy",
+    "SaveAsIs;ReplaceToDefault;UseXCustom",
+    2
+};
 
 ConfigManager::ConfigManager()
     :settings(0)
@@ -96,24 +111,13 @@ void ConfigManager::readConfig()
         gd.columnNames.push_back(ccPhone);
     }
     // Saving
-    QString sPrefVer = settings->value("Saving/PreferredVCardVersion", "2.1").toString();
-    if (sPrefVer=="2.1")
-        gd.preferredVCFVersion = GlobalConfig::VCF21;
-    else if (sPrefVer=="3.0")
-        gd.preferredVCFVersion = GlobalConfig::VCF30;
-    else
-        gd.preferredVCFVersion = GlobalConfig::VCF40;
+    gd.preferredVCFVersion = (GlobalConfig::VCFVersion)enPrefVCFVersion.load(settings);
     gd.useOriginalFileVersion = settings->value("Saving/UseOriginalFileVCardVersion", true).toBool();
     gd.defaultCountryRule = settings->value("Saving/DefaultCountryRule", 0).toInt();
     gd.skipTimeFromDate = settings->value("Saving/SkipTimeFromDate", false).toBool();
     gd.addXToNonStandardTypes = settings->value("Saving/AddXToNonStandardTypes", true).toBool();
-    QString sNlTnPolicy = settings->value("Saving/NonLatinTypeNamesPolicy", "UseXCustom").toString();
-    if (sNlTnPolicy=="SaveAsIs")
-        gd.nonLatinTypeNamesPolicy = GlobalConfig::nltnSaveAsIs;
-    else if (sNlTnPolicy=="ReplaceToDefault")
-        gd.nonLatinTypeNamesPolicy = GlobalConfig::nltnReplaceToDefault;
-    else
-        gd.nonLatinTypeNamesPolicy = GlobalConfig::nltnUseXCustom;
+    gd.nonLatinTypeNamesPolicy =
+        (GlobalConfig::NonLatinTypeNamesPolicy)enNlTnPolicy.load(settings);
     QString sGroupFormat = settings->value("Saving/GroupFormat", "CATEGORIES").toString();
     gd.groupFormat = (sGroupFormat=="X-GROUP-MEMBERSHIP") ? GlobalConfig::gfXGroupMembership : GlobalConfig::gfCategories;
     // Loading
@@ -149,35 +153,12 @@ void ConfigManager::writeConfig()
     for (int i=0; i<gd.columnNames.count(); i++)
         settings->setValue(QString("VisibleColumns/Column%1").arg(i+1), contactColumnHeaders[gd.columnNames[i]]);
     // Saving
-    QString sPrefVer;
-    switch (gd.preferredVCFVersion) {
-    case GlobalConfig::VCF21:
-        sPrefVer = "2.1";
-        break;
-    case GlobalConfig::VCF30:
-        sPrefVer = "3.0";
-        break;
-    default:
-        sPrefVer = "4.0";
-        break;
-    }
-    settings->setValue("Saving/PreferredVCardVersion", sPrefVer);
+    enPrefVCFVersion.save(settings, gd.preferredVCFVersion);
     settings->setValue("Saving/UseOriginalFileVCardVersion", gd.useOriginalFileVersion);
     settings->setValue("Saving/DefaultCountryRule", gd.defaultCountryRule);
     settings->setValue("Saving/SkipTimeFromDate", gd.skipTimeFromDate);
     settings->setValue("Saving/AddXToNonStandardTypes", gd.addXToNonStandardTypes);
-    QString sNlTnPolicy;
-    switch (gd.nonLatinTypeNamesPolicy) {
-    case GlobalConfig::nltnSaveAsIs:
-        sNlTnPolicy = "SaveAsIs";
-        break;
-    case GlobalConfig::nltnReplaceToDefault:
-        sNlTnPolicy = "ReplaceToDefault";
-        break;
-    default:
-        sNlTnPolicy = "UseXCustom";
-    }
-    settings->setValue("Saving/NonLatinTypeNamesPolicy", sNlTnPolicy);
+    enNlTnPolicy.save(settings, gd.nonLatinTypeNamesPolicy);
     QString sGroupFormat = (gd.groupFormat==GlobalConfig::gfXGroupMembership) ? "X-GROUP-MEMBERSHIP" : "CATEGORIES";
     settings->setValue("Saving/GroupFormat", sGroupFormat);
     // Loading

@@ -23,6 +23,7 @@ INCLUDEPATH += $$PWD
 
 HEADERS	+= \
     $$PWD/contactlist.h \
+    $$PWD/corehelpers.h \
     $$PWD/decodedmessagelist.h \
     $$PWD/globals.h \
     $$PWD/languagemanager.h \
@@ -51,6 +52,7 @@ HEADERS	+= \
 
 SOURCES	+= \
     $$PWD/contactlist.cpp \
+    $$PWD/corehelpers.cpp \
     $$PWD/decodedmessagelist.cpp \
     $$PWD/globals.cpp \
     $$PWD/languagemanager.cpp \

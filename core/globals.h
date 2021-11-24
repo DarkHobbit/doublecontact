@@ -234,14 +234,4 @@ struct GlobalConfig {
     QStringList startupFiles;
 } gd;
 
-// QFlag helper
-template<typename T>
-void setQFlag(QFlags<T>& flags, T f, bool value)
-{
-    if (value)
-        flags |= f;
-    else
-        flags &= ~f;
-}
-
 #endif // GLOBALS_H
