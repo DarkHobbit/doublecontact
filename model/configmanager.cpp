@@ -23,23 +23,8 @@
 #include <QTextCodec>
 
 #include "configmanager.h"
-#include "corehelpers.h"
 #include "globals.h"
 #include "contactlist.h"
-
-EnumSetting enPrefVCFVersion =
-{
-    "Saving", "PreferredVCardVersion",
-    "2.1;3.0;4.0",
-    0
-};
-
-EnumSetting enNlTnPolicy =
-{
-    "Saving", "NonLatinTypeNamesPolicy",
-    "SaveAsIs;ReplaceToDefault;UseXCustom",
-    2
-};
 
 ConfigManager::ConfigManager()
     :settings(0)
@@ -118,8 +103,7 @@ void ConfigManager::readConfig()
     gd.addXToNonStandardTypes = settings->value("Saving/AddXToNonStandardTypes", true).toBool();
     gd.nonLatinTypeNamesPolicy =
         (GlobalConfig::NonLatinTypeNamesPolicy)enNlTnPolicy.load(settings);
-    QString sGroupFormat = settings->value("Saving/GroupFormat", "CATEGORIES").toString();
-    gd.groupFormat = (sGroupFormat=="X-GROUP-MEMBERSHIP") ? GlobalConfig::gfXGroupMembership : GlobalConfig::gfCategories;
+    gd.groupFormat = (GlobalConfig::GroupFormat)enGroupFormat.load(settings);
     // Loading
     gd.defaultEmptyPhoneType = settings->value("Loading/DefaultEmptyPhoneType",
         Phone::standardTypes.translate("voice")).toString(); // many phones treat type 'voice' as 'other'
@@ -159,8 +143,7 @@ void ConfigManager::writeConfig()
     settings->setValue("Saving/SkipTimeFromDate", gd.skipTimeFromDate);
     settings->setValue("Saving/AddXToNonStandardTypes", gd.addXToNonStandardTypes);
     enNlTnPolicy.save(settings, gd.nonLatinTypeNamesPolicy);
-    QString sGroupFormat = (gd.groupFormat==GlobalConfig::gfXGroupMembership) ? "X-GROUP-MEMBERSHIP" : "CATEGORIES";
-    settings->setValue("Saving/GroupFormat", sGroupFormat);
+    enGroupFormat.save(settings, gd.groupFormat);
     // Loading
     settings->setValue("Loading/DefaultEmptyPhoneType", gd.defaultEmptyPhoneType);
     settings->setValue("Loading/WarnOnMissingTypes", gd.warnOnMissingTypes);

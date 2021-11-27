@@ -19,6 +19,7 @@
 #include <QStringList>
 
 #include "contactlist.h"
+#include "corehelpers.h"
 #include "decodedmessagelist.h"
 
 class ConfigManager

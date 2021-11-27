@@ -51,6 +51,7 @@ bool SettingsDialog::setData()
         if (ui->lwVisibleColumns->findItems(configManager.validColumnNames[i], Qt::MatchCaseSensitive).isEmpty())
             ui->lwAvailableColumns->addItem(configManager.validColumnNames[i]);
     // Saving
+    ui->cbPrefVCardVer->addItems(enPrefVCFVersion.possibleValues());
     ui->cbPrefVCardVer->setCurrentIndex((short)gd.preferredVCFVersion);
     ui->cbUseOrigVer->setChecked(gd.useOriginalFileVersion);
     ui->cbDefaultCountryRules->clear();
@@ -60,7 +61,8 @@ bool SettingsDialog::setData()
     ui->cbSkipTimeFromDate->setChecked(gd.skipTimeFromDate);
     ui->cbAddXToNonStandardTypes->setChecked(gd.addXToNonStandardTypes);
     ui->bgNlTnPolicy->button((int)gd.nonLatinTypeNamesPolicy)->setChecked(true); // local-unsafe but setData() called only with checked values
-    ui->cbXgr->setChecked(gd.groupFormat==GlobalConfig::gfXGroupMembership);
+    ui->cbGroupFormat->addItems(enGroupFormat.possibleValues());
+    ui->cbGroupFormat->setCurrentIndex((short)gd.groupFormat);
     // Loading
     ui->cbDefaultEmptyPhoneType->clear();
     ui->cbDefaultEmptyPhoneType->insertItems(0, Phone::standardTypes.displayValues);
@@ -107,10 +109,7 @@ bool SettingsDialog::getData()
     gd.addXToNonStandardTypes = ui->cbAddXToNonStandardTypes->isChecked();
     gd.nonLatinTypeNamesPolicy =
         (GlobalConfig::NonLatinTypeNamesPolicy) ui->bgNlTnPolicy->checkedId();
-    if (ui->cbXgr->isChecked())
-        gd.groupFormat = GlobalConfig::gfXGroupMembership;
-    else
-        gd.groupFormat = GlobalConfig::gfCategories;
+    gd.groupFormat = (GlobalConfig::GroupFormat)ui->cbGroupFormat->currentIndex();
     // Loading
     gd.defaultEmptyPhoneType = ui->cbDefaultEmptyPhoneType->currentText();
     gd.warnOnMissingTypes = ui->cbWarnOnMissingTypes->isChecked();

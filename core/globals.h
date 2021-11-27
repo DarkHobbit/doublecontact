@@ -19,6 +19,8 @@
 #include <QStringList>
 #include <qnamespace.h>
 
+#include "corehelpers.h"
+
 // Visible columns
 enum ContactColumn {
   ccFirstName, ccLastName, ccMiddleName, // names
@@ -214,10 +216,12 @@ struct GlobalConfig {
         nltnUseXCustom        // use X-CUSTOM parameter
     } nonLatinTypeNamesPolicy;
     enum GroupFormat {
-        gfCategories,
-        gfXGroupMembership,
-        // gfXCategories, // x-categories used by Nokia suite according Anisimov's article
+        gfCategories = 0,
+        gfXGroupMembership = 1, // Honor/Huawei
+        gfXOppoGroups = 2,      // Realme/OPPO
+        // gfXCategories,   // x-categories used by Nokia suite according Anisimov's article
         // Auto
+        // Next options are for specific file format and don't selectable by user
         gfNBF,
         gfMPB
     } groupFormat;
@@ -233,5 +237,8 @@ struct GlobalConfig {
     bool quietMode; // Don't load any files
     QStringList startupFiles;
 } gd;
+
+// Enumerations
+extern EnumSetting enPrefVCFVersion, enNlTnPolicy, enGroupFormat;
 
 #endif // GLOBALS_H

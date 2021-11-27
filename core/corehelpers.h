@@ -16,6 +16,7 @@
 #include <QFlags>
 #include <QSettings>
 #include <QString>
+#include <QStringList>
 
 // Enum settings helper
 struct EnumSetting {
@@ -23,8 +24,9 @@ struct EnumSetting {
     QString item;       // config item name
     QString allValues;  // semicolon-sepatated possible values
     short defaultValue; // index of default value
-    short load(QSettings* settings);
-    void save(QSettings* settings, short value);
+    short load(QSettings* settings) const;
+    void save(QSettings* settings, short value) const;
+    QStringList possibleValues() const;
 };
 
 // QFlag helper

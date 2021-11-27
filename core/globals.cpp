@@ -79,3 +79,26 @@ QString StandardTypes::unTranslate(const QString &value) const
 }
 
 GlobalConfig gd;
+
+// Enumerations
+EnumSetting enPrefVCFVersion =
+{
+    "Saving", "PreferredVCardVersion",
+    "2.1;3.0;4.0",
+    0
+};
+
+EnumSetting enNlTnPolicy =
+{
+    "Saving", "NonLatinTypeNamesPolicy",
+    "SaveAsIs;ReplaceToDefault;UseXCustom",
+    2
+};
+
+EnumSetting enGroupFormat =
+{
+    "Saving", "GroupFormat",
+    "CATEGORIES;X-GROUP-MEMBERSHIP;X-OPPO-GROUP",
+    0
+};
+

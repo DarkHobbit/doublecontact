@@ -214,23 +214,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QComboBox" name="cbPrefVCardVer">
-           <item>
-            <property name="text">
-             <string>2.1</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>3.0</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>4.0</string>
-            </property>
-           </item>
-          </widget>
+          <widget class="QComboBox" name="cbPrefVCardVer"/>
          </item>
         </layout>
        </item>
@@ -323,11 +307,18 @@
         </widget>
        </item>
        <item>
-        <widget class="QCheckBox" name="cbXgr">
-         <property name="text">
-          <string>Use X-GROUP-MEMBERSHIP for groups save</string>
-         </property>
-        </widget>
+        <layout class="QHBoxLayout" name="horizontalLayout_6">
+         <item>
+          <widget class="QLabel" name="lbGroupFormat">
+           <property name="text">
+            <string>Tag for group save</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="cbGroupFormat"/>
+         </item>
+        </layout>
        </item>
        <item>
         <spacer name="verticalSpacer">

@@ -281,7 +281,10 @@ bool VCardData::importRecords(QStringList &lines, ContactList& list, bool append
                     errors << QObject::tr("Unknown photo kind at line %1: %2").arg(line+1).arg(visName);
             }
             // Groups
-            else if (tag=="CATEGORIES" || tag=="X-CATEGORIES" || tag=="X-GROUP-MEMBERSHIP")
+            else if (tag=="CATEGORIES"
+                  || tag=="X-CATEGORIES"       // some Nokia Suite versions
+                  || tag=="X-GROUP-MEMBERSHIP" // Honor/Huawei
+                  || tag=="X-OPPO-GROUP")      // Realme/OPPO
                 // X-CATEGORIES - some Nokia Suite versions
                 foreach(const QString& val, vValue) {
                     // CATEGORIES can use "," (RFC) or ";" (MPB)
@@ -464,19 +467,23 @@ void VCardData::exportRecord(QStringList &lines, const ContactItem &item, QStrin
     }
     if (!item.groups.isEmpty()) {
         switch(groupFormat) {
-        case GlobalConfig::gfCategories:
+        case GlobalConfig::gfCategories: // One tag - all groups
             lines << encodeAll("CATEGORIES", 0, false, joinByComma(item.groups));
             break;
-        case GlobalConfig::gfXGroupMembership:
+        case GlobalConfig::gfXGroupMembership: // Separate tag for each group
             foreach (const QString& gr, item.groups)
                 lines << encodeAll("X-GROUP-MEMBERSHIP", 0, false, cm(gr));
+            break;
+        case GlobalConfig::gfXOppoGroups: // Separate tag for each group
+            foreach (const QString& gr, item.groups)
+                lines << encodeAll("X-OPPO-GROUP", 0, false, cm(gr));
             break;
             /*
         case GlobalConfig::gfXCategories:
             // no more info
             break;
             */
-        case GlobalConfig::gfNBF:
+        case GlobalConfig::gfNBF: // Separate tag for each group + force UTF16
             foreach (const QString& gr, item.groups)
                 lines << QString("X-NOKIA-PND-GROUP:") + QString((char*)(cm(gr).utf16()));
             break;

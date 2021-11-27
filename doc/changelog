@@ -108,7 +108,7 @@ Bugfix release:
 CURRENT
 * SMS from MPB/NBF/NBU files and MMS from NBF/NBU (NBU not checked) show and save to CSV
 * Calls history from MPB files show and save to CSV
-* Added tags: REV, ROLE
+* Added tags: REV, ROLE, X-OPPO-GROUP
 * Added Clear recent list command
 * Added placing non-latin typenames in X-CUSTOM
 * X- prefix support works both for write and read

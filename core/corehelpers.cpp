@@ -15,21 +15,26 @@
 #include "corehelpers.h"
 
 // Enum settings helper
-short EnumSetting::load(QSettings *settings)
+short EnumSetting::load(QSettings *settings) const
 {
     QString sVal = settings->value(section+"/"+item).toString();
-    QStringList allV = allValues.split(";");
+    QStringList allV = possibleValues();
     for (int i=0; i<allV.count(); i++)
         if (sVal==allV[i])
             return i;
     return defaultValue;
 }
 
-void EnumSetting::save(QSettings *settings, short value)
+void EnumSetting::save(QSettings *settings, short value) const
 {
-    QStringList allV = allValues.split(";");
+    QStringList allV = possibleValues();
     if (value<0 || value >=allV.count())
         value = defaultValue;
     settings->setValue(section+"/"+item, allV[value]);
+}
+
+QStringList EnumSetting::possibleValues() const
+{
+    return allValues.split(";");
 }
 
