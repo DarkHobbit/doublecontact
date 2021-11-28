@@ -47,6 +47,14 @@ QStringList TagList::findByName(const QString &tagName) const
     return res;
 }
 
+int TagList::findOneByName(const QString &tagName) const
+{
+    for(int i=0; i<count(); i++)
+        if ((*this)[i].tag.toUpper()==tagName)
+            return i;
+    return -1;
+}
+
 QString TypedStringItem::toString(bool) const
 {
     return value;
@@ -840,6 +848,41 @@ void ContactList::splitGroup(const QString &existGroup, const QString &newGroup,
         emptyGroups << newGroup;
         qSort(emptyGroups);
     }
+}
+
+QMap<QString, int> ContactList::nonStandardTagUsage() const
+{
+    QMap<QString, int> res;
+    foreach (const ContactItem& item, *this) {
+        foreach(const TagValue& tag, item.unknownTags)
+            res[tag.tag]++;
+        foreach(const TagValue& tag, item.otherTags)
+            if (tag.tag.startsWith("X-", Qt::CaseInsensitive))
+                res[tag.tag]++;
+    }
+    return res;
+}
+
+bool ContactList::massTagRemove(const QStringList &tagNames)
+{
+    bool res = false;
+    for (ContactItem& c: *this) {
+        foreach(const QString& tag, tagNames) {
+            int index = c.unknownTags.findOneByName(tag);
+            if (index>-1) {
+                c.unknownTags.removeAt(index);
+                res = true;
+            }
+            else {
+                index = c.otherTags.findOneByName(tag);
+                if (index>-1) {
+                    c.otherTags.removeAt(index);
+                    res = true;
+                }
+            }
+        }
+    }
+    return res;
 }
 
 int ContactList::findById(const QString &idValue) const

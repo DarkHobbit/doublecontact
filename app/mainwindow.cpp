@@ -41,6 +41,7 @@
 #include "multicontactdialog.h"
 #include "settingsdialog.h"
 #include "sortdialog.h"
+#include "tagremovedialog.h"
 #include "formats/iformat.h"
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -1168,3 +1169,19 @@ void MainWindow::on_actionCalls_triggered()
     w->exec();
     delete w;
 }
+
+void MainWindow::on_actionMass_tags_remove_triggered()
+{
+    TagRemoveDialog* d = new TagRemoveDialog(0);
+    if (!d->setData(selectedModel->itemList()))
+        return;
+    d->exec();
+    // Remove
+    if (d->result()==QDialog::Accepted) {
+        selectedModel->massTagRemove(d->getData());
+        updateViewMode();
+        updateHeaders();
+    }
+    delete d;
+}
+

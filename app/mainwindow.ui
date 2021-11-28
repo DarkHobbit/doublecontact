@@ -311,6 +311,7 @@
     <addaction name="action_Other_panel"/>
     <addaction name="action_Filter"/>
     <addaction name="actionS_wap_Panels"/>
+    <addaction name="actionMass_tags_remove"/>
     <addaction name="actionS_tatistics"/>
    </widget>
    <addaction name="menu_File"/>
@@ -637,6 +638,11 @@
    </property>
    <property name="shortcut">
     <string>Shift+F8</string>
+   </property>
+  </action>
+  <action name="actionMass_tags_remove">
+   <property name="text">
+    <string>Mass tags remove</string>
    </property>
   </action>
  </widget>

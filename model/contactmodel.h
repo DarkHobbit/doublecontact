@@ -82,6 +82,7 @@ public:
     void splitGroup(const QString& existGroup, const QString& newGroup, const QList<int>& movedIndicesInGroup);
     // Whole addressbook operation methods
     void hardSort(ContactList::SortType sortType);
+    void massTagRemove(const QStringList& tagNames);
     void testList(); // Test data
     // Info
     void setViewMode(ContactViewMode mode, ContactModel* target);

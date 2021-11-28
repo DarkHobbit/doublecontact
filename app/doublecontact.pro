@@ -23,6 +23,7 @@ SOURCES += main.cpp \
     languageselectdialog.cpp \
     csvprofiledialog.cpp \
     sortdialog.cpp \
+    tagremovedialog.cpp \
     groupdialog.cpp \
     callwindow.cpp \
     messagewindow.cpp
@@ -41,6 +42,7 @@ HEADERS += mainwindow.h \
     languageselectdialog.h \
     csvprofiledialog.h \
     sortdialog.h \
+    tagremovedialog.h \
     groupdialog.h \
     callwindow.h \
     messagewindow.h
@@ -57,6 +59,7 @@ FORMS += mainwindow.ui \
     languageselectdialog.ui \
     csvprofiledialog.ui \
     sortdialog.ui \
+    tagremovedialog.ui \
     groupdialog.ui \
     callwindow.ui \
     messagewindow.ui

@@ -38,6 +38,7 @@ struct TagValue { // for non-editing ang unknown tags
 class TagList: public QList<TagValue> {
 public:
     QStringList findByName(const QString& tagName) const;
+    int findOneByName(const QString& tagName) const;
 };
 
 // vCard item with one of more types (one phone, email, impp, address, etc.)
@@ -266,6 +267,9 @@ public:
     void excludeFromGroup(const QString& group, ContactItem& item);
     void mergeGroups(const QString& unitedGroup, const QString& mergedGroup);
     void splitGroup(const QString& existGroup, const QString& newGroup, const QList<int>& movedIndicesInGroup);
+    // Non-standard tag cleaning
+    QMap<QString, int> nonStandardTagUsage() const;
+    bool massTagRemove(const QStringList& tagNames);
     // Info
     int findById(const QString& idValue) const;
     QString statistics() const;

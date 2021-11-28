@@ -569,6 +569,12 @@ void ContactModel::hardSort(ContactList::SortType sortType)
     _changed = true;
 }
 
+void ContactModel::massTagRemove(const QStringList &tagNames)
+{
+    if (items.massTagRemove(tagNames))
+        _changed = true;
+}
+
 void ContactModel::setViewMode(ContactModel::ContactViewMode mode, ContactModel *target)
 {
     beginResetModel();

@@ -110,6 +110,7 @@ CURRENT
 * Calls history from MPB files show and save to CSV
 * Added tags: REV, ROLE, X-OPPO-GROUP
 * Added Clear recent list command
+* Added Mass non-standard tags remove command
 * Added placing non-latin typenames in X-CUSTOM
 * X- prefix support works both for write and read
 * Import of faked QUOTED-PRINTABLE fields (literal representation of non-ASCII chars, prohibited by RFC 2045)
