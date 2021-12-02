@@ -2674,27 +2674,15 @@ Vérifiez le nom d&apos;utilisateur, le mot de passe, le protocole et le port</t
     </message>
     <message>
         <source>2.1</source>
-<<<<<<< HEAD
-        <translation type="obsolete">2.1</translation>
-=======
         <translation>2.1</translation>
->>>>>>> weblate/master
     </message>
     <message>
         <source>3.0</source>
-<<<<<<< HEAD
-        <translation type="obsolete">3.0</translation>
-=======
         <translation>3.0</translation>
->>>>>>> weblate/master
     </message>
     <message>
         <source>4.0</source>
-<<<<<<< HEAD
-        <translation type="obsolete">4.0</translation>
-=======
         <translation>4.0</translation>
->>>>>>> weblate/master
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="224"/>
