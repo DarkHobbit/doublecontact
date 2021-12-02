@@ -1135,32 +1135,32 @@ Wilt u dit certificaat tóch accepteren?</translation>
         <translation>Ctrl+C</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="254"/>
+        <location filename="../app/mainwindow.cpp" line="264"/>
         <source>Open contact file</source>
         <translation>Contactpersoonbestand openen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="271"/>
+        <location filename="../app/mainwindow.cpp" line="281"/>
         <source>Open VCF Directory</source>
         <translation>VCF-map openen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="295"/>
+        <location filename="../app/mainwindow.cpp" line="305"/>
         <source>Save contact file</source>
         <translation>Contactpersoonbestand opslaan</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="311"/>
+        <location filename="../app/mainwindow.cpp" line="321"/>
         <source>Save VCF Directory</source>
         <translation>VCF-map opslaan</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="320"/>
+        <location filename="../app/mainwindow.cpp" line="330"/>
         <source>Directory exists. Are You really want rewrite it?</source>
         <translation>De map bestaat al. Weet u zeker dat u hem wilt overschrijven?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="369"/>
+        <location filename="../app/mainwindow.cpp" line="379"/>
         <source>Are You really want to edit more than one record?
 Only some fields can this edited in this mode</source>
         <translation>Weet u zeker dat u meer dan één item wilt wijzigen?
@@ -1171,7 +1171,7 @@ In deze modus kan slechts een beperkt aantal velden worden gewijzigd</translatio
         <translation type="obsolete">Weet u zeker u de geselecteerde items wilt verwijderen?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="481"/>
+        <location filename="../app/mainwindow.cpp" line="491"/>
         <source>Compare mode requires show two panels and load contact lists in both panels</source>
         <translation>Om de vergelijkingsmodus te kunnen gebruiken moet u de twee panelen-modus inschakelen en lijsten laden in beide panelen</translation>
     </message>
@@ -1184,7 +1184,7 @@ In deze modus kan slechts een beperkt aantal velden worden gewijzigd</translatio
         <translation type="obsolete">Groepsbewerkingen zijn nog niet geïmplementeerd; selecteer één item</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="552"/>
+        <location filename="../app/mainwindow.cpp" line="562"/>
         <source> (directory)</source>
         <translation> (map)</translation>
     </message>
@@ -1193,12 +1193,12 @@ In deze modus kan slechts een beperkt aantal velden worden gewijzigd</translatio
         <translation type="obsolete">Dubbele contactpersoon - %1</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="184"/>
+        <location filename="../app/mainwindow.cpp" line="194"/>
         <source>Only one of two files can be dropped to program window</source>
         <translation>Slechts één van de twee bestanden kan worden versleept naar het applicatievenster</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="660"/>
+        <location filename="../app/mainwindow.cpp" line="670"/>
         <source>Records: %1</source>
         <translation>Items: %1</translation>
     </message>
@@ -1207,12 +1207,12 @@ In deze modus kan slechts een beperkt aantal velden worden gewijzigd</translatio
         <translation type="obsolete">Modus: </translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="666"/>
+        <location filename="../app/mainwindow.cpp" line="676"/>
         <source>two panels</source>
         <translation>twee panelen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="666"/>
+        <location filename="../app/mainwindow.cpp" line="676"/>
         <source>one panel</source>
         <translation>één paneel</translation>
     </message>
@@ -1225,69 +1225,69 @@ In deze modus kan slechts een beperkt aantal velden worden gewijzigd</translatio
         <translation type="obsolete">ongesorteerd</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="670"/>
+        <location filename="../app/mainwindow.cpp" line="680"/>
         <source>simple editing</source>
         <translation>simpele bewerking</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="674"/>
+        <location filename="../app/mainwindow.cpp" line="684"/>
         <source>compare</source>
         <translation>vergelijken</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="718"/>
+        <location filename="../app/mainwindow.cpp" line="728"/>
         <source>&apos;%1&apos; was changed.
 Save changes?</source>
         <translation>‘%1’ is gewijzigd.
 Wilt u de wijzigingen opslaan?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="819"/>
+        <location filename="../app/mainwindow.cpp" line="829"/>
         <source>Restart program to apply language change</source>
         <translation>Herstart de app om de taalwijziging door te voeren</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="863"/>
+        <location filename="../app/mainwindow.cpp" line="873"/>
         <source>Two panels and compare mode needed for this operation</source>
         <translation>De twee panelen- en vergelijkingsmodus zijn vereist voor deze bewerking</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="878"/>
+        <location filename="../app/mainwindow.cpp" line="888"/>
         <source>Left item</source>
         <translation>Linkeritem</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="878"/>
+        <location filename="../app/mainwindow.cpp" line="888"/>
         <source>Right item</source>
         <translation>Rechteritem</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="904"/>
+        <location filename="../app/mainwindow.cpp" line="914"/>
         <source>Strongly two records on current panel must be selected for this operation</source>
         <translation>Twee items in het huidige paneel dienen te worden geselecteerd voor deze bewerking</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="910"/>
+        <location filename="../app/mainwindow.cpp" line="920"/>
         <source>Item 1</source>
         <translation>Item 1</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="910"/>
+        <location filename="../app/mainwindow.cpp" line="920"/>
         <source>Item 2</source>
         <translation>Item 2</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="978"/>
+        <location filename="../app/mainwindow.cpp" line="988"/>
         <source>Operation requires show two panels</source>
         <translation>Deze bewerking vereist twee panelen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1011"/>
+        <location filename="../app/mainwindow.cpp" line="1021"/>
         <source>Statitics</source>
         <translation>Statistieken</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1018"/>
+        <location filename="../app/mainwindow.cpp" line="1028"/>
         <source>Report file</source>
         <translation>Rapportbestand</translation>
     </message>
@@ -1528,7 +1528,7 @@ MMS-informatie:
     <name>QObject</name>
     <message>
         <location filename="../core/contactlist.cpp" line="115"/>
-        <location filename="../core/contactlist.cpp" line="1107"/>
+        <location filename="../core/contactlist.cpp" line="1124"/>
         <source>Home</source>
         <translation>Thuis</translation>
     </message>
@@ -1539,7 +1539,7 @@ MMS-informatie:
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="117"/>
-        <location filename="../core/contactlist.cpp" line="1108"/>
+        <location filename="../core/contactlist.cpp" line="1125"/>
         <source>Work</source>
         <translation>Werk</translation>
     </message>
@@ -1547,7 +1547,7 @@ MMS-informatie:
         <location filename="../core/contactlist.cpp" line="118"/>
         <location filename="../core/contactlist.cpp" line="169"/>
         <location filename="../core/contactlist.cpp" line="205"/>
-        <location filename="../core/contactlist.cpp" line="1109"/>
+        <location filename="../core/contactlist.cpp" line="1126"/>
         <source>Preferable</source>
         <translation>Prefereren</translation>
     </message>
@@ -1622,7 +1622,28 @@ MMS-informatie:
         <translation>Vreemde, lege contactpersoon</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="901"/>
+        <location filename="../core/contactlist.cpp" line="909"/>
+        <source>%1 records
+%2 phones
+%3 emails
+%4 addresses
+%5 birthdays</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/contactlist.cpp" line="912"/>
+        <source>
+%1 calls</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/contactlist.cpp" line="917"/>
+        <source>
+%1 SMS
+%2 archived SMS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>%1 records
 %2 phones
 %3 emails
@@ -1631,7 +1652,7 @@ MMS-informatie:
 %6 calls
 %7 SMS
 %8 archived SMS</source>
-        <translation>%1 vermeldingen
+        <translation type="obsolete">%1 vermeldingen
 %2 telefoonnumers
 %3 e-mailadressen
 %4 adressen
@@ -1641,7 +1662,7 @@ MMS-informatie:
 %8 gearchiveerde sms&apos;jes</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="905"/>
+        <location filename="../core/contactlist.cpp" line="920"/>
         <source>
 
 model %1
@@ -1658,17 +1679,17 @@ firmware %4
 telefoontaal %5</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1173"/>
+        <location filename="../core/contactlist.cpp" line="1195"/>
         <source>Dialed</source>
         <translation>Uitgaand</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1175"/>
+        <location filename="../core/contactlist.cpp" line="1197"/>
         <source>Received</source>
         <translation>Inkomend</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1177"/>
+        <location filename="../core/contactlist.cpp" line="1199"/>
         <source>Missed</source>
         <translation>Gemist</translation>
     </message>
@@ -1693,22 +1714,22 @@ telefoontaal %5</translation>
 %9 %10</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1110"/>
+        <location filename="../core/contactlist.cpp" line="1127"/>
         <source>Domestic</source>
         <translation>Binnenland</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1111"/>
+        <location filename="../core/contactlist.cpp" line="1128"/>
         <source>International</source>
         <translation>Internationaal</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1112"/>
+        <location filename="../core/contactlist.cpp" line="1129"/>
         <source>Postal</source>
         <translation>Post</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1113"/>
+        <location filename="../core/contactlist.cpp" line="1130"/>
         <source>Parcel</source>
         <translation>Pakket</translation>
     </message>
@@ -1976,27 +1997,27 @@ opgeslagen als mobiele telefoon</translation>
         <translation>Vreemd oproepitem: %1, grootte %2</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="161"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="165"/>
         <source>No contact records in this file</source>
         <translation>Er zijn geen contactpersoonitems in dit bestand</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="172"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="176"/>
         <source>MPB record allowed only for MPB source</source>
         <translation>MPB-item is alleen toegestaan voor MPB-bron</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="225"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="229"/>
         <source>Name for number %1 changed from %2 to %3</source>
         <translation>De naam van de persoon met nummer %1 is gewijzigd van %2 in %3</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="237"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="241"/>
         <source>Number %1 without original name not found in addressbook</source>
         <translation>Het nummer zonder originele naam, %1, kan niet worden gevonden in het adresboek</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="239"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="243"/>
         <source>Number %1 not found in addressbook. Original name (%2) saved</source>
         <translation>Het nummer, %1, kan niet worden gevonden in het adresboek. De originele naam (%2) is opgeslagen</translation>
     </message>
@@ -2485,12 +2506,12 @@ De gegevens zullen verloren gaan</translation>
         <translation>Item %1 in archief kan niet worden ingesteld als huidig</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/nbffile.cpp" line="131"/>
+        <location filename="../core/formats/files/nbffile.cpp" line="132"/>
         <source>NBF file can be saved only if original addressbook also was in NBF format</source>
         <translation>NBF-bestanden kunnen alleen worden opgeslagen als het originele adresboek ook NBF-formaat is</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/nbffile.cpp" line="136"/>
+        <location filename="../core/formats/files/nbffile.cpp" line="137"/>
         <source>Original NBF file was moved or deleted</source>
         <translation>Originele NBF-bestand is verplaatst of verwijderd</translation>
     </message>

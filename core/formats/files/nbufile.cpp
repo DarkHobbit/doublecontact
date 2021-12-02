@@ -567,13 +567,16 @@ std::cout << "tst=0x" << std::hex << tst << std::dec << std::endl;
                           << " file " << fileName.toLocal8Bit().data()
                           << " size " << size << std::endl;
                 file.seek(file.pos()+2);
+#ifdef WITH_MESSAGES
                 if (folderName.contains("predefmessages")) {
                     BinarySMS sms;
                     sms.name = fileName;
                     sms.content = file.read(size);
                     list.extra.binarySMS << sms;
                 }
-                else {
+                else
+#endif
+                {
                     // TODO read file here
                     file.seek(file.pos()+size); //===>
                 }

@@ -20,7 +20,9 @@
 
 #include "contactlist.h"
 #include "corehelpers.h"
+#ifdef WITH_MESSAGES
 #include "decodedmessagelist.h"
+#endif
 
 class ConfigManager
 {
@@ -63,8 +65,10 @@ public:
     void setHardSortType(ContactList::SortType sortType);
     void csvConfig(QString& profile, QString& genEncoding, QString& genSeparator);
     void setCSVConfig(const QString& profile, const QString& genEncoding, const QString& genSeparator);
+#ifdef WITH_MESSAGES
     void readMessageViewConfig(MessageSourceFlags& flags);
     void writeMessageViewConfig(const MessageSourceFlags& flags);
+#endif
     static QString defaultDocDir();
     static QString defaultImageDir();
     QStringList validColumnNames; // Available list

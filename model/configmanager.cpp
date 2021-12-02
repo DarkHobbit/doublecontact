@@ -339,6 +339,7 @@ void ConfigManager::setCSVConfig(const QString &profile, const QString &genEncod
     settings->setValue("CSV/GenericProfileSeparator", genSeparator);
 }
 
+#ifdef WITH_MESSAGES
 void ConfigManager::readMessageViewConfig(MessageSourceFlags &flags)
 {
     if (!settings)
@@ -365,6 +366,7 @@ void ConfigManager::writeMessageViewConfig(const MessageSourceFlags &flags)
     settings->setValue("MessageView/MergeDuplicates", flags.testFlag(mergeDuplicates));
     settings->setValue("MessageView/MergeMultiParts", flags.testFlag(mergeMultiParts));
 }
+#endif
 
 QString ConfigManager::defaultDocDir()
 {

@@ -16,15 +16,18 @@
 #include <QStringList>
 
 #include "convertor.h"
-#include "decodedmessagelist.h"
 #include "formats/formatfactory.h"
-#include "formats/common/vmessagedata.h"
 #include "formats/files/htmlfile.h"
 #include "formats/files/mpbfile.h"
 #include "formats/files/nbffile.h"
 #include "formats/files/udxfile.h"
 #include "formats/files/vcfdirectory.h"
 #include "formats/files/vcffile.h"
+
+#ifdef WITH_MESSAGES
+#include "decodedmessagelist.h"
+#include "formats/common/vmessagedata.h"
+#endif
 #ifdef WITH_NETWORK
 #include "formats/network/carddavformat.h"
 #include "formats/network/imageloader.h"
@@ -497,6 +500,7 @@ int Convertor::start()
         out << tr("%1 records written\n").arg(items.count());
     }
     else {
+#ifdef WITH_MESSAGES
         out << tr("Found vmessage SMS %1 (+Archived %2), PDU %3 (+Archived %4), binary %5\n")
             .arg(items.extra.vmsgSMS.count())
             .arg(items.extra.vmsgSMSArchive.count())
@@ -530,6 +534,9 @@ int Convertor::start()
         }
         foreach (const QString& s, msgErrors)
             out << s << "\n";
+#else
+        out << "RECOMPILE\n"; // TODO add S_ERR_MESSAGES_SUPPORT errormessage
+#endif
     }
     return res ? 0 : 1;
 }

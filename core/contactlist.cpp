@@ -906,11 +906,16 @@ QString ContactList::statistics() const
         if (!item.birthday.isEmpty())
             bdayCount++;
     }
+    QString res= QObject::tr("%1 records\n%2 phones\n%3 emails\n%4 addresses\n%5 birthdays")        
+        .arg(count()).arg(phoneCount).arg(emailCount).arg(addrCount).arg(bdayCount);
+#ifdef WITH_CALLS
+    res += QObject::tr("\n%1 calls").arg(extra.calls.count());
+#endif
+#ifdef WITH_MESSAGES
     QString smsStat = QString("%1+%2+%3").arg(extra.vmsgSMS.count()).arg(extra.pduSMS.count()).arg(extra.binarySMS.count());
     QString archSmsStat = QString("%1+%2").arg(extra.vmsgSMSArchive.count()).arg(extra.pduSMSArchive.count());
-    QString res= QObject::tr("%1 records\n%2 phones\n%3 emails\n%4 addresses\n%5 birthdays\n%6 calls\n%7 SMS\n%8 archived SMS")
-        .arg(count()).arg(phoneCount).arg(emailCount).arg(addrCount).arg(bdayCount)
-        .arg(extra.calls.count()).arg(smsStat).arg(archSmsStat);
+    res += QObject::tr("\n%1 SMS\n%2 archived SMS").arg(smsStat).arg(archSmsStat);
+#endif
     if (!extra.model.isEmpty())
         res += QObject::tr("\n\nmodel %1\nwritten %2\nIMEI %3\nfirmware %4\nphone language %5")
             .arg(extra.model).arg(extra.timeStamp.toString())
@@ -920,6 +925,7 @@ QString ContactList::statistics() const
 
 void ContactList::updateCallHistory(const QStringList& droppedFullNames)
 {
+#ifdef WITH_CALLS
     if (extra.calls.isEmpty())
         return; // exclude slow map building for most formats
     NumberNameMap nNames(*this);
@@ -936,6 +942,7 @@ void ContactList::updateCallHistory(const QStringList& droppedFullNames)
         }
         call.name = newName;
     }
+#endif
 }
 
 TagValue::TagValue(const QString& _tag, const QString& _value)
@@ -1133,12 +1140,16 @@ void ExtraData::clear()
     timeStamp = QDateTime();
     organizer.clear();
     notes.clear();
+#ifdef WITH_MESSAGES
     vmsgSMS.clear();
     pduSMS.clear();
     binarySMS.clear();
     vmsgSMSArchive.clear();
     pduSMSArchive.clear();
+#endif
+#ifdef WITH_CALLS
     calls.clear();
+#endif
     imei.clear();
     firmware.clear();
     phoneLang.clear();
@@ -1177,6 +1188,7 @@ Email::StandardTypes Email::standardTypes;
 PostalAddress::StandardTypes PostalAddress::standardTypes;
 Messenger::StandardTypes Messenger::standardTypes;
 
+#ifdef WITH_CALLS
 QString CallInfo::typeName() const
 {
     if (cType=="DC")
@@ -1188,6 +1200,7 @@ QString CallInfo::typeName() const
     else
         return cType;
 }
+#endif
 
 NumberNameMap::NumberNameMap(const ContactList &list)
 {

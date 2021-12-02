@@ -105,9 +105,7 @@ Bugfix release:
 * Fixed: Recent files didn't added in list in some cases
 * Added translations: Brazilian Portuguese (incomplete)
 
-CURRENT
-* SMS from MPB/NBF/NBU files and MMS from NBF/NBU (NBU not checked) show and save to CSV
-* Calls history from MPB files show and save to CSV
+0.2.4 [2021-**-**]
 * Added tags: REV, ROLE, X-OPPO-GROUP
 * Added Clear recent list command
 * Added Mass non-standard tags remove command
@@ -122,3 +120,8 @@ CURRENT
 * Fixed: names comparison in similar contacts search during addressbooks compare
 * Fixed: contact table sorting by birthday
 * Added translations: English (NOT en_GB)
+
+CURRENT
+* SMS from MPB/NBF/NBU files and MMS from NBF/NBU (NBU not checked) show and save to CSV
+* Calls history from MPB files show and save to CSV
+

@@ -89,6 +89,7 @@ bool NBFFile::importRecords(const QString &url, ContactList &list, bool append)
         VCardData::importRecords(content, list, true, _errors);
         list.last().originalFormat = "NBF";
     }
+#ifdef WITH_MESSAGES
     // SMS
     QuaZipDir nbds(&nbf);
     if (nbds.cd(NBF_SMS_PATH)) {
@@ -116,7 +117,7 @@ bool NBFFile::importRecords(const QString &url, ContactList &list, bool append)
             }
         }
     }
-    // TODO calls
+#endif
     nbf.close();
     return true;
 }

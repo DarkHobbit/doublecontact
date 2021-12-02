@@ -30,14 +30,18 @@
 
 #include "configmanager.h"
 #include "aboutdialog.h"
+#ifdef WITH_CALLS
 #include "callwindow.h"
+#endif
 #include "contactdialog.h"
 #include "comparedialog.h"
 #include "csvprofiledialog.h"
 #include "groupdialog.h"
 #include "helpers.h"
 #include "logwindow.h"
+#ifdef WITH_MESSAGES
 #include "messagewindow.h"
+#endif
 #include "multicontactdialog.h"
 #include "settingsdialog.h"
 #include "sortdialog.h"
@@ -49,6 +53,12 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+#ifndef WITH_MESSAGES
+    ui->actionMessages->setVisible(false);
+#endif
+#ifndef WITH_CALLS
+    ui->actionCalls->setVisible(false);
+#endif
     // Drag'n'drop support
     ui->tvLeft->setDragEnabled(true);
     ui->tvRight->setDragEnabled(true);
@@ -1156,19 +1166,23 @@ void MainWindow::on_actionParse_full_name_triggered()
     updateHeaders();
 }
 
+#ifdef WITH_MESSAGES
 void MainWindow::on_actionMessages_triggered()
 {
     MessageWindow* w = new MessageWindow(&selectedModel->itemList());
     w->exec();
     delete w;
 }
+#endif
 
+#ifdef WITH_CALLS
 void MainWindow::on_actionCalls_triggered()
 {
     CallWindow* w = new CallWindow(&selectedModel->itemList());
     w->exec();
     delete w;
 }
+#endif
 
 void MainWindow::on_actionMass_tags_remove_triggered()
 {

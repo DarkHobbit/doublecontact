@@ -5,18 +5,23 @@ QT += gui
 INCLUDEPATH += $$PWD
 
 HEADERS	+= \
-    $$PWD/callmodel.h \
     $$PWD/contactmodel.h \
     $$PWD/modelhelpers.h \
     $$PWD/recentlist.h \
-    $$PWD/configmanager.h \
-    $$PWD/messagemodel.h
+    $$PWD/configmanager.h
 
 SOURCES	+= \
-    $$PWD/callmodel.cpp \
     $$PWD/contactmodel.cpp \
     $$PWD/modelhelpers.cpp \
     $$PWD/recentlist.cpp \
-    $$PWD/configmanager.cpp \
-    $$PWD/messagemodel.cpp
+    $$PWD/configmanager.cpp
 
+contains(DEFINES, WITH_MESSAGES) {
+HEADERS	+= $$PWD/messagemodel.h
+SOURCES	+= $$PWD/messagemodel.cpp
+}
+
+contains(DEFINES, WITH_MESSAGES) {
+HEADERS	+= $$PWD/callmodel.h
+SOURCES	+= $$PWD/callmodel.cpp
+}

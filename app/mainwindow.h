@@ -101,8 +101,12 @@ private slots:
     void on_actionJoin_names_triggered();
     void on_actionParse_full_name_triggered();
 
+#ifdef WITH_MESSAGES
     void on_actionMessages_triggered();
+#endif
+#ifdef WITH_CALLS
     void on_actionCalls_triggered();
+#endif
 
     void on_actionMass_tags_remove_triggered();
 

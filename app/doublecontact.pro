@@ -1,5 +1,8 @@
 # Desktop application of DoubleContact
 
+DEFINES -= WITH_MESSAGES
+DEFINES -= WITH_CALLS
+
 include(../core/core.pri)
 include(../model/model.pri)
 
@@ -8,7 +11,8 @@ greaterThan(QT_MAJOR_VERSION, 4):QT += widgets
 
 TARGET = doublecontact
 TEMPLATE = app
-SOURCES += main.cpp \
+SOURCES += \
+    main.cpp \
     mainwindow.cpp \
     contactdialog.cpp \
     phonetypedialog.cpp \
@@ -24,11 +28,10 @@ SOURCES += main.cpp \
     csvprofiledialog.cpp \
     sortdialog.cpp \
     tagremovedialog.cpp \
-    groupdialog.cpp \
-    callwindow.cpp \
-    messagewindow.cpp
+    groupdialog.cpp
 
-HEADERS += mainwindow.h \
+HEADERS += \
+    mainwindow.h \
     contactdialog.h \
     phonetypedialog.h \
     logwindow.h \
@@ -43,11 +46,10 @@ HEADERS += mainwindow.h \
     csvprofiledialog.h \
     sortdialog.h \
     tagremovedialog.h \
-    groupdialog.h \
-    callwindow.h \
-    messagewindow.h
+    groupdialog.h    
 
-FORMS += mainwindow.ui \
+FORMS += \
+    mainwindow.ui \
     contactdialog.ui \
     phonetypedialog.ui \
     logwindow.ui \
@@ -60,9 +62,19 @@ FORMS += mainwindow.ui \
     csvprofiledialog.ui \
     sortdialog.ui \
     tagremovedialog.ui \
-    groupdialog.ui \
-    callwindow.ui \
-    messagewindow.ui
+    groupdialog.ui
+
+contains(DEFINES, WITH_MESSAGES) {
+SOURCES += messagewindow.cpp
+HEADERS += messagewindow.h
+FORMS += messagewindow.ui
+}
+
+contains(DEFINES, WITH_CALLS) {
+SOURCES += callwindow.cpp
+HEADERS += callwindow.h
+FORMS += callwindow.ui
+}
 
 unix { 
     OBJECTS_DIR = .obj

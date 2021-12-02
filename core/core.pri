@@ -24,16 +24,12 @@ INCLUDEPATH += $$PWD
 HEADERS	+= \
     $$PWD/contactlist.h \
     $$PWD/corehelpers.h \
-    $$PWD/decodedmessagelist.h \
     $$PWD/globals.h \
     $$PWD/languagemanager.h \
     $$PWD/formats/iformat.h \
     $$PWD/formats/formatfactory.h \
-    $$PWD/formats/common/nokiadata.h \
-    $$PWD/formats/common/pdu.h \
     $$PWD/formats/common/quotedprintable.h \
     $$PWD/formats/common/vcarddata.h \
-    $$PWD/formats/common/vmessagedata.h \
     $$PWD/formats/files/csvfile.h \
     $$PWD/formats/files/fileformat.h \
     $$PWD/formats/files/htmlfile.h \
@@ -53,15 +49,11 @@ HEADERS	+= \
 SOURCES	+= \
     $$PWD/contactlist.cpp \
     $$PWD/corehelpers.cpp \
-    $$PWD/decodedmessagelist.cpp \
     $$PWD/globals.cpp \
     $$PWD/languagemanager.cpp \
     $$PWD/formats/formatfactory.cpp \
-    $$PWD/formats/common/nokiadata.cpp \
-    $$PWD/formats/common/pdu.cpp \
     $$PWD/formats/common/quotedprintable.cpp \
     $$PWD/formats/common/vcarddata.cpp \
-    $$PWD/formats/common/vmessagedata.cpp \
     $$PWD/formats/files/csvfile.cpp \
     $$PWD/formats/files/fileformat.cpp \
     $$PWD/formats/files/htmlfile.cpp \
@@ -77,6 +69,19 @@ SOURCES	+= \
     $$PWD/formats/profiles/explaytv240profile.cpp \
     $$PWD/formats/profiles/genericcsvprofile.cpp \
     $$PWD/formats/profiles/osmoprofile.cpp
+
+contains(DEFINES, WITH_MESSAGES) {
+    HEADERS += \
+    $$PWD/decodedmessagelist.h \
+    $$PWD/formats/common/nokiadata.h \
+    $$PWD/formats/common/pdu.h \
+    $$PWD/formats/common/vmessagedata.h
+    SOURCES += \
+    $$PWD/decodedmessagelist.cpp \
+    $$PWD/formats/common/nokiadata.cpp \
+    $$PWD/formats/common/pdu.cpp \
+    $$PWD/formats/common/vmessagedata.cpp
+}
 
 contains(DEFINES, WITH_NETWORK) {
     include(../3rdparty/qwebdavlib/qwebdavlib/qwebdavlib.pri)

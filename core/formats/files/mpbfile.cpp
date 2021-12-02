@@ -150,8 +150,12 @@ bool MPBFile::importRecords(const QString &url, ContactList &list, bool append)
             break;
         case secMessages:
             list.extra.vmsgSMS << line;
+            break;
         case secMessageArchive:
             list.extra.vmsgSMSArchive << line;
+            break;
+        default:
+            break;
         }
     } while (!stream.atEnd());
     closeFile();
