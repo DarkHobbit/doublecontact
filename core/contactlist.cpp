@@ -866,7 +866,12 @@ QMap<QString, int> ContactList::nonStandardTagUsage() const
 bool ContactList::massTagRemove(const QStringList &tagNames)
 {
     bool res = false;
+#if __GNUC__ >= 5
     for (ContactItem& c: *this) {
+#else
+    for (int i=0; i<count(); i++) {
+        ContactItem& c = (*this)[i];
+#endif
         foreach(const QString& tag, tagNames) {
             int index = c.unknownTags.findOneByName(tag);
             if (index>-1) {
