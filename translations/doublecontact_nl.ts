@@ -994,7 +994,7 @@ Wilt u dit certificaat tóch accepteren?</translation>
     <message>
         <location filename="../app/mainwindow.ui" line="645"/>
         <source>Mass tags remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Meerdere labels verwijderen</translation>
     </message>
     <message>
         <source>Settings...</source>
@@ -1401,7 +1401,7 @@ Weet u zeker dat u kolomsortering wilt uitschakelen?</translation>
     <message>
         <location filename="../app/messagewindow.ui" line="168"/>
         <source>Hard sort</source>
-        <translation type="unfinished"></translation>
+        <translation>Vaste sortering</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="175"/>
@@ -1604,7 +1604,7 @@ MMS-informatie:
     <message>
         <location filename="../core/contactlist.cpp" line="129"/>
         <source>CALLBACK</source>
-        <translation type="unfinished"></translation>
+        <translation>TERUGBELNUMMER</translation>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="167"/>
@@ -1628,20 +1628,27 @@ MMS-informatie:
 %3 emails
 %4 addresses
 %5 birthdays</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 items
+%2 telefoonnummers
+%3 e-mailadressen
+%4 woonadressen
+%5 verjaardagen</translation>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="912"/>
         <source>
 %1 calls</source>
-        <translation type="unfinished"></translation>
+        <translation>
+%1 oproepen</translation>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="917"/>
         <source>
 %1 SMS
 %2 archived SMS</source>
-        <translation type="unfinished"></translation>
+        <translation>
+%1 sms&apos;jes
+%2 gearchiveerde sms&apos;jes</translation>
     </message>
     <message>
         <source>%1 records
@@ -2079,7 +2086,7 @@ opgeslagen als mobiele telefoon</translation>
     <message>
         <location filename="../core/globals.h" line="70"/>
         <source>Select tags for remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecteer de te verwijderen labels</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="71"/>
@@ -2907,7 +2914,7 @@ Controleer gebruikersnaam, wachtwoord, protocol en poort</translation>
     <message>
         <location filename="../app/settingsdialog.ui" line="314"/>
         <source>Tag for group save</source>
-        <translation type="unfinished"></translation>
+        <translation>Groepslabel</translation>
     </message>
     <message>
         <source>2.1</source>
@@ -2954,22 +2961,22 @@ Controleer gebruikersnaam, wachtwoord, protocol en poort</translation>
     <message>
         <location filename="../app/settingsdialog.ui" line="272"/>
         <source>Non-latin type names:</source>
-        <translation type="unfinished"></translation>
+        <translation>Niet-latijnse soortnamen:</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="279"/>
         <source>Save as is</source>
-        <translation type="unfinished"></translation>
+        <translation>Opslaan</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="289"/>
         <source>Replace to default type</source>
-        <translation type="unfinished"></translation>
+        <translation>Standaardtype vervangen</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="299"/>
         <source>Place to X-CUSTOM</source>
-        <translation type="unfinished"></translation>
+        <translation>X-CUSTOM-locatie</translation>
     </message>
     <message>
         <source>Replace non-latin type named</source>
@@ -3065,17 +3072,17 @@ Controleer gebruikersnaam, wachtwoord, protocol en poort</translation>
     <message>
         <location filename="../app/tagremovedialog.ui" line="23"/>
         <source>Tags for remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Te verwijderen labels</translation>
     </message>
     <message>
         <location filename="../app/tagremovedialog.ui" line="33"/>
         <source>Select all</source>
-        <translation type="unfinished"></translation>
+        <translation>Alles selecteren</translation>
     </message>
     <message>
         <location filename="../app/tagremovedialog.cpp" line="39"/>
         <source>Unknown tags not found</source>
-        <translation type="unfinished"></translation>
+        <translation>Geen onbekende labels gevonden</translation>
     </message>
 </context>
 </TS>
