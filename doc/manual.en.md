@@ -61,7 +61,7 @@ If you got load problems (in most cases, unknown tags), DoubleContact show log w
 
 Before saving, you must define, for which device or program you write an address book. Most modern devices support vCard 3.0 or 4.0. But some phones requires vCard 2.1. You can set vCard version in settings window ( **View -> Settings** menu item, "Saving" tab). If you check "Use original file version (if present)" option, DoubleContact will try use vCard version from original file. Otherwise, program always will use version from Settings window.
 
-In some cases, for example, for SIM cards,gh each contact must not contain more than one phone number. In this case, before saving you must split multi-phone contacts. Select splitting items (usually, the best way is select all) and choose **Contact -> Split** menu item.
+In some cases, for example, for SIM cards, each contact must not contain more than one phone number. In this case, before saving you must split multi-phone contacts. Select splitting items (usually, the best way is select all) and choose **Contact -> Split** menu item.
 
 Some devices don't recognize birthdays, containing time. In this case, before saving you must activate time skipping ( **View -> Settings** menu item, "Saving" tab, set "Skip time from birthday and anniversaries" option).
 
