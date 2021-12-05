@@ -16,7 +16,7 @@ Features:
   - UDX (Philips Xenium file);
 * contact view in table, sorting and filtering supported;
 * two panel view of two address books, with copy/move features;
-* single record editing;
+* single record editing, insert and remove;
 * group operations under selected records:
   - first/last name swap;
   - first/last name splitting;
@@ -26,6 +26,7 @@ Features:
   - contact merge;
   - drop slashes and other specials;
   - formatted name generation;
+* mass non-standard X-tags remove;
 * two address books comparison with highlighting of identical, similar and differ contacts;
 * interactive merge according to the comparison results;
 * HTML report generation.
@@ -35,6 +36,8 @@ Features:
 Before loading, you must prepare address book file(s).
 
 For example, Android phones allows save its address book in single VCF file (**Contacts -> Import/Export -> Export contacts to: -> SD card** in device menu). Depending on the Android version and modification, menu items may slightly differ from it. Copy result file from memory card to PC.
+
+If you combine contacts into groups, such as "Family", "Friends", etc., please, read also [Group of contacts](#group-of-contacts) section to avoid loss of information.
 
 You may get similar file from hardware phones - SonyEricsson and some other vendors. Special case - Philips Xenium phones: it use UDX, its own format. DoubleContact also support this format.
 
@@ -58,13 +61,37 @@ If you got load problems (in most cases, unknown tags), DoubleContact show log w
 
 Before saving, you must define, for which device or program you write an address book. Most modern devices support vCard 3.0 or 4.0. But some phones requires vCard 2.1. You can set vCard version in settings window ( **View -> Settings** menu item, "Saving" tab). If you check "Use original file version (if present)" option, DoubleContact will try use vCard version from original file. Otherwise, program always will use version from Settings window.
 
-In some cases, for example, for SIM cards, each contact must not contain more than one phone number. In this case, before saving you must split multi-phone contacts. Select splitting items (usually, the best way is select all) and choose **Contact -> Split** menu item.
+In some cases, for example, for SIM cards,gh each contact must not contain more than one phone number. In this case, before saving you must split multi-phone contacts. Select splitting items (usually, the best way is select all) and choose **Contact -> Split** menu item.
 
 Some devices don't recognize birthdays, containing time. In this case, before saving you must activate time skipping ( **View -> Settings** menu item, "Saving" tab, set "Skip time from birthday and anniversaries" option).
+
+Phones often add non-stanard tags to VCF files and destination device (by other vendor) can't read such file. In most cases, names of these tags start with X-, for example, X-STARRED. If you prepare file for phone, which not recognize such tags, or you simply want to simplify addressbook, choose **List -> Mass tags remove**. Program will scan all contacts in addressbook and offer you to select tags to be deleted from among those found. Notice that this operation processes all addressbook regardless of selected records in main window.
+
+If you combine contacts into groups, such as "Family", "Friends", etc., please, read also [Group of contacts](#group-of-contacts) section to avoid loss of information.
 
 To save address book to single file, choose **File -> Save as -> File** in DoubleContact menu, select type (VCF, UDX or MPB) and enter file name. To save address book to VCF directory, choose **File -> Save as -> Directory**. Now you can copy result file (directory) on device and import it.
 
 DoubleContact allows save to MPB file **only** if original file also had MPB format. The reason is that MPB file contains  not only contacts, but also call history, organizer, notes and SMS (VCF and UDX not support this data). If save MPB to VCF, an then VCF to MPB, extra data will be loss!
+
+## Group of contacts ##
+
+If you combine contacts into groups, keep in mind that transfer it to other device is a very problematic task.
+
+vCard format provides CATEGORIES tags to point, which group(s) contains a contact. Unfortunately, most Android phones don't use this tag or use it for service information. So group information are lost.
+
+Some vendors save group in non-stanard tags, for example:
+
+* X-GROUP-MEMBERSHIP for Huawei/Honor devices;
+* X-OPPO-GROUP for Realme/OPPO devices.
+
+DoubleContact does support write to this tags, it also support stanard CATEGORIES tag. If you plan to import your contacts to a phone by one of this vendors, choose appropriate tag in settings window (**View -> Settings** menu item, "Saving" tab, "Tag for group save" combo box).
+
+If you can't use this method (source and/or destination device(s) does not support any of the listed tags), try to consider other methods of groups saving:
+
+* co-use DoubleContact and MyPhoneExplorer (MPB files);
+* use [Google Contacts](https://contacts.google.com/) site and export contacts to VCF file.
+
+If you know other tags for groups saving or other device, which does support the above tags, please, contact DoubleContact author.
 
 ## CSV specials ##
 
@@ -125,6 +152,8 @@ To add new name, phone, or email, select information kind in list next to the "A
 
 Entering phone, don't forget select its type: home, work, cellular, etc. You can want to combine this types (in most cases, one from simple types is combined with "preferable" type). In this case, select "Mixed...". Program will open "Phone type" window to let you make needed combinations by flags. Note that many devices treat "Voice" type as "Other".
 
+Some devices allow to add phone numbers with non-standard types while phone number save in contact. Consider that such types may be lost during export to VCF on device, especially if it contains non-latin characters. For example, "NEW" type will be exported as X-NEW, type "ДОМАШНИЙ" (cyrillic) will be lost. Some device, for example, some Samsung phones, save non-latin phone number types into non-stanard X-CUSTOM attribute. DoubleContact does support this attribute, but in most cases, to avoid important information loss, we strongly recommend use only latin characters in non-stanard phone types.
+
 Contact can contain a birthday. In most cases, birthday contains only date: set flag, enter day, month and year. But vCard standard allows also set a birthday time. To do it, press "Details" button. Program will open "Date details" window. In it, besides date, you can set time and even time zone for it.
 
 Besides birthday, you can set other anniversary (in most cases, it's a marriage anniversary). Select "anniversary" in list near "Add..." button and press "Add..." button. Anniversary is edited as well as birthday.
@@ -133,6 +162,7 @@ If contact contains photo or photo URL, it's shown in "Photo" field. Under it, y
 
 * "Load image" - load photo from JPEG or PNG file. If contact already contains photo or photo URL, it will be removed;
 * "Save image" - save photo to file of same format as contact source;
+* "Show in new window" - open new window with contact photo. It's may be useful for hi-res images;
 * "Set URL" - enter or edit photo URL in separate window. If contact already contains photo, it will be removed;
 * "Remove photo" - remove current photo or photo URL from contact.
 
@@ -155,7 +185,7 @@ To add new contact in current address book, press "Insert" in main window or Ins
 If you want to change default quantity of names, phones and emails in edit window, simply add this fields during editing or adding and press "Save view" button. At next add operations, this fields will be added automatically, for phones and emails field types will be filled according saved station. Postal addresses fields, IM fields and window size also will be restored.
 
 
-## Group operations ##
+## Mult-Contact operations ##
 
 Often first and last names in differ contacts of one address book are written in differ order (especially if address book is many year old). To fix it, select all items, where first and last names are confused (for example, last name is John, first name is Doe), and choose **Contact -> Swap names**. DoubleContact will exchange first and last name for all selected items.
 
@@ -233,7 +263,7 @@ The second thing you can help in development is translation to national language
 
 ## Tips and tricks ##
 
-You can pass addressbook filename as a program argument. DoubleContact support simple file paths and URLs like file:///home/imp/Downloads/addressbook.vcf. Second form allow to associate addressbook files with DoubleContact in some file managers, such as PCManFM.
+You can pass addressbook filename as a program argument. DoubleContact does support simple file paths and URLs like file:///home/imp/Downloads/addressbook.vcf. Second form allow to associate addressbook files with DoubleContact in some file managers, such as PCManFM.
 
 Yet another way to open files - drag'n'drop file/directory icon from file manager to program window. If drag one file, it will be opened in drop panel. If two files - first file will be opened in drop panel, second file in opposite panel. If three of more files, program will reports an error message.
 
