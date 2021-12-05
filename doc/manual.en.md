@@ -244,7 +244,7 @@ After repeated **List -> Compare** (F3) choosing, DoubleContact will switched in
 ## Report generation##
 
 To create HTML report by addressbook, choose **File -> Report** (Ctrl+R). You can
-print resulting file or upload it to your website.
+view resulting file in web browser, print it or upload it to your website.
 
 
 ## How to help ##
