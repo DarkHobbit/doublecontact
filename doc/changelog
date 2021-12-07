@@ -105,7 +105,7 @@ Bugfix release:
 * Fixed: Recent files didn't added in list in some cases
 * Added translations: Brazilian Portuguese (incomplete)
 
-0.2.4 [2021-**-**]
+0.2.4 [2021-12-07]
 * Added tags: REV, ROLE, X-OPPO-GROUP
 * Added Clear recent list command
 * Added Mass non-standard tags remove command

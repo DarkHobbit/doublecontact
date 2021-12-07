@@ -99,7 +99,9 @@ QString LanguageManager::transPath()
 {
 #ifdef WIN32
     return qApp->applicationDirPath();
-#else
+#elif defined(Q_OS_MAC)
+    return qApp->applicationDirPath()+"/../Translations";
+#else // Linux, BSD...
 //    if (QDir("/usr/share/doublecontact/translations").exists())
     if (qApp->applicationDirPath().contains("/usr/bin"))
         // Standard case
@@ -112,7 +114,6 @@ QString LanguageManager::transPath()
             return qApp->applicationDirPath()+"/../../doublecontact/translations"; // shadow build
     }
 #endif
-    // TODO what for mac?
 }
 
 QStringList LanguageManager::availableCodecs()
