@@ -14,6 +14,7 @@ mkdir -p ${TRANS_PATH}
 cp ../../translations/*.qm ${TRANS_PATH}/
 cp ../../translations/iso639-1.utf8 ${TRANS_PATH}/
 cp ${BUILD_PATH}/contconv/contconv ${BUNDLE_MAC_PATH}/
+cp ./Info.plist ${BUILD_PATH}/app/doublecontact.app/Contents/
 # /usr/libexec/PlistBuddy -c "Set :CFBundleShortVersionString ${DC_VER}" ${BUILD_PATH}/app/doublecontact.app/Contents/Info.plist
 ${QT_PATH}/bin/macdeployqt ${BUILD_PATH}/app/doublecontact.app -dmg
 mv ${BUILD_PATH}/app/doublecontact.dmg ${BUILD_PATH}/app/doublecontact-${DC_VER}.dmg
