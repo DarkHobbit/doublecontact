@@ -27,6 +27,10 @@ qmake
 
 make
 
+For Qt5, you may need install zlib before qmake. For example, for Debian:
+
+sudo apt-get install zlib1g-dev
+
 ## Help ##
 
 ### User manual ###
