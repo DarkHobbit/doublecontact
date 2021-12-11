@@ -1,0 +1,5 @@
+#!/bin/bash
+
+sed 's/*/[*]/' $1 > $1.bb
+sed -e 's/^* /<li>/' -e 's/$/<\/li>/' $1 > $1.html
+

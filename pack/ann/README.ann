@@ -1,0 +1,6 @@
+Scripts for announces translation (changelog, full feature list) from markdowm to bbcode and HTML
+
+Manual markdown to HTML: https://markdowntohtml.com/ :
+- TODO local links not processed
+- TODO auto-set laquo and raquo
+
