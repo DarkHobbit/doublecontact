@@ -22,7 +22,7 @@ AboutDialog::AboutDialog(QWidget *parent) :
     ui->lwContributors->addItem("Icons made by Freepik from www.flaticon.com");
 
     ui->lwContributors->addItem("Different languages translations: " \
-    "J. Lavoie ака Edanas, Oliver aka websites, "
+    "J. Lavoie ака Edanas, Oliver aka websites"
     );
     ui->lwContributors->addItem("Brazilian Portuguese UI (work in progress): BrunaKimura");
 //    ui->lwContributors->addItem("Chinese (Traditional) UI: Louies");
@@ -34,6 +34,7 @@ AboutDialog::AboutDialog(QWidget *parent) :
 //    ui->lwContributors->addItem("Swiss French UI (work in progress): grovsoper");
     ui->lwContributors->addItem("Ukrainian UI: Olexandr Nesterenko aka burunduk, uievawkejf");
     
+    ui->lwContributors->addItem("AUR build: sirocco");
     ui->lwContributors->addItem("NBU files support ported from NbuExplorer project");
     ui->lwContributors->addItem("(Author: Petr Vilem, petrusek@seznam.cz)");
     ui->lwContributors->addItem("Bugfixes: antongus, GitKroz, SauronfromMordor");
