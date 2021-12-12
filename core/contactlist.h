@@ -280,6 +280,12 @@ public:
     // Info
     int findById(const QString& idValue) const;
     QString statistics() const;
+#ifdef WITH_MESSAGES
+    bool hasMessages();
+#endif
+#ifdef WITH_CALLS
+    bool hasCalls();
+#endif
     void updateCallHistory(const QStringList& droppedFullNames = QStringList());
     ExtraData extra;
     QStringList emptyGroups;

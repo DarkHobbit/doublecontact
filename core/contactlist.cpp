@@ -928,6 +928,22 @@ QString ContactList::statistics() const
     return res;
 }
 
+#ifdef WITH_MESSAGES
+bool ContactList::hasMessages()
+{
+    return
+        (!extra.vmsgSMS.isEmpty() || !extra.pduSMS.isEmpty() || !extra.binarySMS.isEmpty()
+        || !extra.vmsgSMSArchive.isEmpty() || !extra.pduSMSArchive.isEmpty());
+}
+#endif
+
+#ifdef WITH_CALLS
+bool ContactList::hasCalls()
+{
+    return !extra.calls.isEmpty();
+}
+#endif
+
 void ContactList::updateCallHistory(const QStringList& droppedFullNames)
 {
 #ifdef WITH_CALLS

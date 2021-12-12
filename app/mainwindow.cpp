@@ -587,6 +587,12 @@ void MainWindow::setButtonsAccess()
     ui->btnRemove->setEnabled(hasSelectedRows);
     ui->btnSwapNames->setEnabled(hasSelectedRows);
     ui->action_Sort->setChecked(selectedView->isSortingEnabled());
+#ifdef WITH_MESSAGES
+    ui->actionMessages->setEnabled(selectedModel->itemList().hasMessages());
+#endif
+#ifdef WITH_CALLS
+    ui->actionCalls->setEnabled(selectedModel->itemList().hasCalls());
+#endif
 }
 
 void MainWindow::selectionChanged()

@@ -1,7 +1,7 @@
 # Desktop application of DoubleContact
 
-DEFINES -= WITH_MESSAGES
-DEFINES -= WITH_CALLS
+DEFINES += WITH_MESSAGES
+DEFINES += WITH_CALLS
 
 include(../core/core.pri)
 include(../model/model.pri)
