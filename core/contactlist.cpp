@@ -1161,16 +1161,14 @@ void ExtraData::clear()
     timeStamp = QDateTime();
     organizer.clear();
     notes.clear();
-#ifdef WITH_MESSAGES
     vmsgSMS.clear();
     pduSMS.clear();
+#ifdef WITH_MESSAGES
     binarySMS.clear();
+#endif
     vmsgSMSArchive.clear();
     pduSMSArchive.clear();
-#endif
-#ifdef WITH_CALLS
     calls.clear();
-#endif
     imei.clear();
     firmware.clear();
     phoneLang.clear();
