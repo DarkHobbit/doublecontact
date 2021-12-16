@@ -57,7 +57,7 @@
     <message>
         <location filename="../model/callmodel.cpp" line="25"/>
         <source>TimeStamp</source>
-        <translation type="unfinished"></translation>
+        <translation>Horodatage</translation>
     </message>
     <message>
         <location filename="../model/callmodel.cpp" line="26"/>
@@ -72,7 +72,7 @@
     <message>
         <location filename="../model/callmodel.cpp" line="28"/>
         <source>Name</source>
-        <translation type="unfinished">Nom</translation>
+        <translation>Nom</translation>
     </message>
 </context>
 <context>
@@ -95,17 +95,17 @@
     <message>
         <location filename="../app/callwindow.ui" line="65"/>
         <source>Copy text</source>
-        <translation type="unfinished">Copier le texte</translation>
+        <translation>Copier le texte</translation>
     </message>
     <message>
         <location filename="../app/callwindow.ui" line="68"/>
         <source>Ctrl+C</source>
-        <translation type="unfinished">Ctrl + C</translation>
+        <translation>Ctrl+C</translation>
     </message>
     <message>
         <location filename="../app/callwindow.cpp" line="92"/>
         <source>Records: %1</source>
-        <translation type="unfinished">Enregistrements : %1</translation>
+        <translation>Enregistrements : %1</translation>
     </message>
     <message>
         <location filename="../app/callwindow.cpp" line="138"/>
@@ -875,7 +875,7 @@ Voulez-vous accepter ce certificat quand même ?</translation>
     <message>
         <location filename="../app/mainwindow.ui" line="632"/>
         <source>Shift+F7</source>
-        <translation type="unfinished">Maj + F7</translation>
+        <translation>Maj+F7</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="637"/>
@@ -885,12 +885,12 @@ Voulez-vous accepter ce certificat quand même ?</translation>
     <message>
         <location filename="../app/mainwindow.ui" line="640"/>
         <source>Shift+F8</source>
-        <translation type="unfinished">Maj + F8</translation>
+        <translation>Maj+F8</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="645"/>
         <source>Mass tags remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Supprimer plusieurs étiquettes</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="478"/>
@@ -980,7 +980,7 @@ Voulez-vous accepter ce certificat quand même ?</translation>
     <message>
         <location filename="../app/mainwindow.ui" line="568"/>
         <source>&amp;Hard sort</source>
-        <translation>&amp;Tri strict</translation>
+        <translation>&amp;Tri manuel</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="573"/>
@@ -1120,7 +1120,7 @@ Enregistrer les modifications ?</translation>
     <message>
         <location filename="../app/mainwindow.cpp" line="914"/>
         <source>Strongly two records on current panel must be selected for this operation</source>
-        <translation type="unfinished"></translation>
+        <translation>Deux enregistrements fortement liés doivent être sélectionnés dans ce panneau pour cette opération</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.cpp" line="920"/>
@@ -1153,7 +1153,7 @@ Enregistrer les modifications ?</translation>
     <message>
         <location filename="../model/messagemodel.cpp" line="24"/>
         <source>Date</source>
-        <translation type="unfinished">Date</translation>
+        <translation>Date</translation>
     </message>
     <message>
         <location filename="../model/messagemodel.cpp" line="25"/>
@@ -1251,7 +1251,7 @@ Enregistrer les modifications ?</translation>
     <message>
         <location filename="../app/messagewindow.ui" line="168"/>
         <source>Hard sort</source>
-        <translation type="unfinished"></translation>
+        <translation>Tri manuel</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="175"/>
@@ -1261,12 +1261,12 @@ Enregistrer les modifications ?</translation>
     <message>
         <location filename="../app/messagewindow.ui" line="184"/>
         <source>Copy text</source>
-        <translation type="unfinished">Copier le texte</translation>
+        <translation>Copier le texte</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="187"/>
         <source>Ctrl+C</source>
-        <translation type="unfinished">Ctrl + C</translation>
+        <translation>Ctrl+C</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="192"/>
@@ -1297,7 +1297,7 @@ Enregistrer les modifications ?</translation>
     <message>
         <location filename="../app/messagewindow.cpp" line="234"/>
         <source>Records: %1</source>
-        <translation type="unfinished">Enregistrements : %1</translation>
+        <translation>Enregistrements : %1</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.cpp" line="235"/>
@@ -1478,20 +1478,27 @@ Propriétés du MMS :
 %3 emails
 %4 addresses
 %5 birthdays</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 enregistrements
+%2 téléphones
+%3 e-mails
+%4 adresses
+%5 anniversaires</translation>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="912"/>
         <source>
 %1 calls</source>
-        <translation type="unfinished"></translation>
+        <translation>
+%1 appels</translation>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="917"/>
         <source>
 %1 SMS
 %2 archived SMS</source>
-        <translation type="unfinished"></translation>
+        <translation>
+%1 SMS
+%2 SMS archivés</translation>
     </message>
     <message>
         <source>%1 records
@@ -1573,7 +1580,7 @@ langue du téléphone %5</translation>
     <message>
         <location filename="../core/formats/common/vcarddata.cpp" line="183"/>
         <source>Unexpected TYPE appearance at line %1: tag %2</source>
-        <translation type="unfinished"></translation>
+        <translation>TYPE d&apos;apparence inattendu à la ligne %1&#xa0;: marqueur %2</translation>
     </message>
     <message>
         <location filename="../core/formats/common/vcarddata.cpp" line="214"/>
@@ -1788,7 +1795,7 @@ ligne %3, colonne %4
     <message>
         <location filename="../core/formats/files/mpbfile.cpp" line="126"/>
         <source>Strange call item: %1, size %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Élément d&apos;appel suspect&#xa0;: %1, de taille %2</translation>
     </message>
     <message>
         <location filename="../core/formats/files/mpbfile.cpp" line="165"/>
@@ -1798,7 +1805,7 @@ ligne %3, colonne %4
     <message>
         <location filename="../core/formats/files/mpbfile.cpp" line="176"/>
         <source>MPB record allowed only for MPB source</source>
-        <translation type="unfinished"></translation>
+        <translation>Enregistrement MPB seulement autorisé pour les sources MPB</translation>
     </message>
     <message>
         <location filename="../core/formats/files/mpbfile.cpp" line="229"/>
@@ -1851,12 +1858,12 @@ ligne %3, colonne %4
     <message>
         <location filename="../core/formats/profiles/osmoprofile.cpp" line="189"/>
         <source>Anniversary saved as name day, contact %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Seul le jour a été enregistré pour l&apos;anniversaire du contact %1</translation>
     </message>
     <message>
         <location filename="../core/formats/profiles/osmoprofile.cpp" line="208"/>
         <source>Job title saved as Department, contact %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Titre du travail enregistré comme département pour le contact %1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/nbffile.cpp" line="64"/>
@@ -1941,7 +1948,7 @@ ligne %3, colonne %4
     <message>
         <location filename="../core/globals.h" line="70"/>
         <source>Select tags for remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Sélectionnez les étiquettes à supprimer</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="71"/>
@@ -2164,7 +2171,8 @@ ligne %3, colonne %4
         <location filename="../core/globals.h" line="148"/>
         <source>Column sorting is switched. Hard sort results are not visible.
 Are you want switch column sorting off?</source>
-        <translation type="unfinished"></translation>
+        <translation>Le tri de la colonne à été changé. Le tri manuel n&apos;est plus visible.
+Voulez-vous désactiver le changement du tri&#xa0;?</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="150"/>
@@ -2179,17 +2187,17 @@ Are you want switch column sorting off?</source>
     <message>
         <location filename="../core/globals.h" line="153"/>
         <source>Mode: </source>
-        <translation type="unfinished">Mode : </translation>
+        <translation>Mode : </translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="154"/>
         <source>sorted</source>
-        <translation type="unfinished">trié</translation>
+        <translation>trié</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="155"/>
         <source>not sorted</source>
-        <translation type="unfinished">non trié</translation>
+        <translation>non trié</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="159"/>
@@ -2472,7 +2480,7 @@ Vérifiez le nom d&apos;utilisateur, le mot de passe, le protocole et le port</t
         <location filename="../core/formats/common/nokiadata.cpp" line="516"/>
         <source>Advertisement</source>
         <comment>MmsClass</comment>
-        <translation type="unfinished"></translation>
+        <translation>Annonce</translation>
     </message>
     <message>
         <location filename="../core/formats/common/nokiadata.cpp" line="519"/>
@@ -2510,7 +2518,8 @@ Vérifiez le nom d&apos;utilisateur, le mot de passe, le protocole et le port</t
         <location filename="../model/callmodel.cpp" line="102"/>
         <source>&quot;Type&quot;,&quot;Date&quot;,&quot;Duration&quot;,&quot;Number&quot;,&quot;Name&quot;
 </source>
-        <translation type="unfinished"></translation>
+        <translation>&quot;Type&quot;,&quot;Date&quot;,&quot;Durée&quot;,&quot;Numéro&quot;,&quot;Nom&quot;
+</translation>
     </message>
 </context>
 <context>
@@ -2712,7 +2721,7 @@ Vérifiez le nom d&apos;utilisateur, le mot de passe, le protocole et le port</t
     <message>
         <location filename="../app/settingsdialog.ui" line="265"/>
         <source>Add X- to type names</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajouter X- aux noms des types</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="272"/>
@@ -2722,17 +2731,17 @@ Vérifiez le nom d&apos;utilisateur, le mot de passe, le protocole et le port</t
     <message>
         <location filename="../app/settingsdialog.ui" line="279"/>
         <source>Save as is</source>
-        <translation type="unfinished"></translation>
+        <translation>Enregistrer ainsi</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="289"/>
         <source>Replace to default type</source>
-        <translation type="unfinished"></translation>
+        <translation>Remplacer le type par défaut</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="299"/>
         <source>Place to X-CUSTOM</source>
-        <translation type="unfinished"></translation>
+        <translation>Emplacement de X-CUSTOM</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="340"/>
@@ -2812,12 +2821,12 @@ Vérifiez le nom d&apos;utilisateur, le mot de passe, le protocole et le port</t
     <message>
         <location filename="../app/tagremovedialog.ui" line="23"/>
         <source>Tags for remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Étiquettes à supprimer</translation>
     </message>
     <message>
         <location filename="../app/tagremovedialog.ui" line="33"/>
         <source>Select all</source>
-        <translation type="unfinished"></translation>
+        <translation>Tout sélectionner</translation>
     </message>
     <message>
         <location filename="../app/tagremovedialog.cpp" line="39"/>
