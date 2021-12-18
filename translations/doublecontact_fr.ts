@@ -2419,7 +2419,8 @@ Vérifiez le nom d&apos;utilisateur, le mot de passe, le protocole et le port</t
         <location filename="../core/decodedmessagelist.cpp" line="132"/>
         <source>&quot;Date&quot;,&quot;Box&quot;,&quot;From/To&quot;,&quot;Number&quot;,&quot;Status&quot;,&quot;Text&quot;,&quot;Aux&quot;
 </source>
-        <translation type="unfinished"></translation>
+        <translation>&quot;Date&quot;,&quot;Champ&quot;,&quot;De/Vers&quot;,&quot;Numéro&quot;,&quot;Status&quot;,&quot;Texte&quot;,&quot;Aux.&quot;
+</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="147"/>
@@ -2679,7 +2680,7 @@ Vérifiez le nom d&apos;utilisateur, le mot de passe, le protocole et le port</t
     <message>
         <location filename="../app/settingsdialog.ui" line="314"/>
         <source>Tag for group save</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Étiquette pour enregistrement d&apos;un groupe</translation>
     </message>
     <message>
         <source>2.1</source>
@@ -2726,7 +2727,7 @@ Vérifiez le nom d&apos;utilisateur, le mot de passe, le protocole et le port</t
     <message>
         <location filename="../app/settingsdialog.ui" line="272"/>
         <source>Non-latin type names:</source>
-        <translation type="unfinished"></translation>
+        <translation>Noms d&apos;origine non-latine&#xa0;:</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="279"/>
@@ -2831,7 +2832,7 @@ Vérifiez le nom d&apos;utilisateur, le mot de passe, le protocole et le port</t
     <message>
         <location filename="../app/tagremovedialog.cpp" line="39"/>
         <source>Unknown tags not found</source>
-        <translation type="unfinished"></translation>
+        <translation>Étiquette inconnue non trouvée</translation>
     </message>
 </context>
 </TS>
