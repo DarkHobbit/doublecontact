@@ -285,8 +285,8 @@ public:
 #endif
 #ifdef WITH_CALLS
     bool hasCalls();
-#endif
     void updateCallHistory(const QStringList& droppedFullNames = QStringList());
+#endif
     ExtraData extra;
     QStringList emptyGroups;
     QString originalPath; // for append-only formats, such as NBF

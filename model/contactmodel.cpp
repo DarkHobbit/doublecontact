@@ -230,7 +230,9 @@ bool ContactModel::dropMimeData(const QMimeData *data, Qt::DropAction action,
     }
     endResetModel();
     _changed = true;
+#ifdef WITH_CALLS
     items.updateCallHistory();
+#endif
     // TODO insert to pointed line
     return (action == Qt::CopyAction || action == Qt::MoveAction);
 }
@@ -355,7 +357,9 @@ void ContactModel::addRow(const ContactItem& c)
     items.push_back(c);
     endInsertRows();
     _changed = true;
+#ifdef WITH_CALLS
     items.updateCallHistory();
+#endif
 }
 
 ContactItem& ContactModel::beginEditRow(QModelIndex& index)
@@ -373,7 +377,9 @@ void ContactModel::endEditRow(QModelIndex& index)
     QString newName = items[index.row()].fullName;
     if ((!oldName.isEmpty()) && newName.isEmpty())
         droppedFullNames << oldName;
+#ifdef WITH_CALLS
     items.updateCallHistory(droppedFullNames);
+#endif
     emit dataChanged(index, index.sibling(index.row(), columnCount()-1));
 }
 
@@ -395,7 +401,9 @@ void ContactModel::removeAnyRows(QModelIndexList& indices)
     }
     endRemoveRows();
     _changed = true;
+#ifdef WITH_CALLS
     items.updateCallHistory(droppedFullNames);
+#endif
 }
 
 void ContactModel::swapNames(const QModelIndexList& indices)
@@ -446,7 +454,9 @@ void ContactModel::generateFullNames(const QModelIndexList &indices)
         endEditRow(index);
     }
     _changed = true;
+#ifdef WITH_CALLS
     items.updateCallHistory();
+#endif
 }
 
 void ContactModel::parseFullName(const QModelIndexList& indices)
@@ -469,7 +479,9 @@ void ContactModel::dropFullNames(const QModelIndexList &indices)
         endEditRow(index);
     }
     _changed = true;
+#ifdef WITH_CALLS
     items.updateCallHistory(droppedFullNames);
+#endif
 }
 
 void ContactModel::reverseFullNames(const QModelIndexList &indices)
@@ -480,7 +492,9 @@ void ContactModel::reverseFullNames(const QModelIndexList &indices)
         endEditRow(index);
     }
     _changed = true;
+#ifdef WITH_CALLS
     items.updateCallHistory();
+#endif
 }
 
 void ContactModel::formatPhones(const QModelIndexList &indices, const QString &templ)
@@ -530,7 +544,9 @@ void ContactModel::intlPhonePrefix(const QModelIndexList &indices, int countryRu
         endEditRow(index);
     }
     _changed = true;
+#ifdef WITH_CALLS
     items.updateCallHistory();
+#endif
 }
 
 void ContactModel::addGroup(const QString &group)

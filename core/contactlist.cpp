@@ -942,11 +942,9 @@ bool ContactList::hasCalls()
 {
     return !extra.calls.isEmpty();
 }
-#endif
 
 void ContactList::updateCallHistory(const QStringList& droppedFullNames)
 {
-#ifdef WITH_CALLS
     if (extra.calls.isEmpty())
         return; // exclude slow map building for most formats
     NumberNameMap nNames(*this);
@@ -963,8 +961,8 @@ void ContactList::updateCallHistory(const QStringList& droppedFullNames)
         }
         call.name = newName;
     }
-#endif
 }
+#endif
 
 TagValue::TagValue(const QString& _tag, const QString& _value)
     :tag(_tag), value(_value)
