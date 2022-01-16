@@ -123,6 +123,7 @@ Bugfix release:
 * Added translations: English (NOT en_GB)
 
 CURRENT
+* Rows in table can be resized to contents
 * SMS from MPB/NBF/NBU files and MMS from NBF/NBU (NBU not checked) show and save to CSV
 * Calls history from MPB files show and save to CSV
 

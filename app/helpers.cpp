@@ -66,6 +66,8 @@ void updateTableConfig(QTableView *table)
         table->setStyleSheet(QString("QTableView { alternate-background-color: %1; background: %2 }")
                .arg(gd.gridColor2).arg(gd.gridColor1));
     }
+    if (gd.resizeTableRowsToContents)
+        table->resizeRowsToContents();
 }
 
 void readTableSortConfig(QTableView *table, bool forceNeedSort, bool needSort)

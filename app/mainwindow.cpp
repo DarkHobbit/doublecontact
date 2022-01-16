@@ -699,6 +699,8 @@ void MainWindow::updateModeStatus()
 void MainWindow::updateViewMode()
 {
     selectedModel->setViewMode(selectedModel->viewMode(), oppositeModel());
+    if (gd.resizeTableRowsToContents)
+        selectedView->resizeRowsToContents();
 }
 
 void MainWindow::setSelectionModelEvents()
@@ -790,14 +792,13 @@ void MainWindow::showIOErrors(const QString &path, int count, const QStringList 
 // Manage immediately applied but settings window managed options
 void MainWindow::updateConfig()
 {
-    // Table(s) general config
-    updateTableConfig(ui->tvLeft);
-    updateTableConfig(ui->tvRight);
     // Table(s) visible columns
     modLeft->updateVisibleColumns();
     if (modRight)
         modRight->updateVisibleColumns();
-    // TODO add here font changes, etc.
+    // Table(s) general config (must be after updateVisibleColumns(), because resizeRowsToContents())
+    updateTableConfig(ui->tvLeft);
+    updateTableConfig(ui->tvRight);
 }
 
 void MainWindow::updateRecent()
@@ -902,6 +903,7 @@ void MainWindow::on_actionCompare_Result_triggered()
     // Restore panel
     if (!wasRight)
         on_action_Other_panel_triggered(); // to left
+    updateViewMode();
 }
 
 void MainWindow::on_action_Drop_slashes_triggered()

@@ -866,9 +866,10 @@ QMap<QString, int> ContactList::nonStandardTagUsage() const
 bool ContactList::massTagRemove(const QStringList &tagNames)
 {
     bool res = false;
-#if __GNUC__ >= 5
+#if __cplusplus >= 201103L
     for (ContactItem& c: *this) {
 #else
+    // TODO check on Wheeze
     for (int i=0; i<count(); i++) {
         ContactItem& c = (*this)[i];
 #endif

@@ -1054,7 +1054,7 @@ Seuls certains champs peuvent être modifiés dans ce mode</translation>
         <translation> (répertoire)</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="670"/>
+        <location filename="../app/mainwindow.cpp" line="676"/>
         <source>Records: %1</source>
         <translation>Enregistrements : %1</translation>
     </message>
@@ -1063,12 +1063,12 @@ Seuls certains champs peuvent être modifiés dans ce mode</translation>
         <translation type="obsolete">Mode : </translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="676"/>
+        <location filename="../app/mainwindow.cpp" line="682"/>
         <source>two panels</source>
         <translation>deux panneaux</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="676"/>
+        <location filename="../app/mainwindow.cpp" line="682"/>
         <source>one panel</source>
         <translation>un seul panneau</translation>
     </message>
@@ -1081,69 +1081,69 @@ Seuls certains champs peuvent être modifiés dans ce mode</translation>
         <translation type="obsolete">non trié</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="680"/>
+        <location filename="../app/mainwindow.cpp" line="686"/>
         <source>simple editing</source>
         <translation>modification simple</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="684"/>
+        <location filename="../app/mainwindow.cpp" line="690"/>
         <source>compare</source>
         <translation>comparer</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="728"/>
+        <location filename="../app/mainwindow.cpp" line="736"/>
         <source>&apos;%1&apos; was changed.
 Save changes?</source>
         <translation>« %1 » a été modifié.
 Enregistrer les modifications ?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="829"/>
+        <location filename="../app/mainwindow.cpp" line="837"/>
         <source>Restart program to apply language change</source>
         <translation>Redémarrez le programme pour appliquer le changement de langue</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="873"/>
+        <location filename="../app/mainwindow.cpp" line="881"/>
         <source>Two panels and compare mode needed for this operation</source>
         <translation>L&apos;affichage des deux panneaux et le mode de comparaison sont nécessaires pour cette opération</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="888"/>
+        <location filename="../app/mainwindow.cpp" line="896"/>
         <source>Left item</source>
         <translation>Élément à gauche</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="888"/>
+        <location filename="../app/mainwindow.cpp" line="896"/>
         <source>Right item</source>
         <translation>Élément à droite</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="914"/>
+        <location filename="../app/mainwindow.cpp" line="923"/>
         <source>Strongly two records on current panel must be selected for this operation</source>
         <translation>Deux enregistrements fortement liés doivent être sélectionnés dans ce panneau pour cette opération</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="920"/>
+        <location filename="../app/mainwindow.cpp" line="929"/>
         <source>Item 1</source>
         <translation>Élément 1</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="920"/>
+        <location filename="../app/mainwindow.cpp" line="929"/>
         <source>Item 2</source>
         <translation>Élément 2</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="988"/>
+        <location filename="../app/mainwindow.cpp" line="997"/>
         <source>Operation requires show two panels</source>
         <translation>Cette opération nécessite l&apos;affichage des deux panneaux</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1021"/>
+        <location filename="../app/mainwindow.cpp" line="1030"/>
         <source>Statitics</source>
         <translation>Statistiques</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1028"/>
+        <location filename="../app/mainwindow.cpp" line="1037"/>
         <source>Report file</source>
         <translation>Fichier de rapport</translation>
     </message>
@@ -1340,7 +1340,7 @@ Propriétés du MMS :
     <message>
         <location filename="../app/messagewindow.cpp" line="311"/>
         <source>Can you also save media files from MMS (%1 messages)?</source>
-        <translation>Pouvez-vous aussi sauvegarder les fichiers média depuis les MMS (%1 messages)&#xa0;?</translation>
+        <translation>Pouvez-vous aussi sauvegarder les fichiers média depuis les MMS (%1 messages) ?</translation>
     </message>
 </context>
 <context>
@@ -1378,7 +1378,7 @@ Propriétés du MMS :
     <name>QObject</name>
     <message>
         <location filename="../core/contactlist.cpp" line="115"/>
-        <location filename="../core/contactlist.cpp" line="1124"/>
+        <location filename="../core/contactlist.cpp" line="1144"/>
         <source>Home</source>
         <translation>Accueil</translation>
     </message>
@@ -1389,7 +1389,7 @@ Propriétés du MMS :
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="117"/>
-        <location filename="../core/contactlist.cpp" line="1125"/>
+        <location filename="../core/contactlist.cpp" line="1145"/>
         <source>Work</source>
         <translation>Travail</translation>
     </message>
@@ -1397,7 +1397,7 @@ Propriétés du MMS :
         <location filename="../core/contactlist.cpp" line="118"/>
         <location filename="../core/contactlist.cpp" line="169"/>
         <location filename="../core/contactlist.cpp" line="205"/>
-        <location filename="../core/contactlist.cpp" line="1126"/>
+        <location filename="../core/contactlist.cpp" line="1146"/>
         <source>Preferable</source>
         <translation>Préférable</translation>
     </message>
@@ -1472,7 +1472,7 @@ Propriétés du MMS :
         <translation>Contact vide étrange</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="909"/>
+        <location filename="../core/contactlist.cpp" line="915"/>
         <source>%1 records
 %2 phones
 %3 emails
@@ -1485,14 +1485,14 @@ Propriétés du MMS :
 %5 anniversaires</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="912"/>
+        <location filename="../core/contactlist.cpp" line="918"/>
         <source>
 %1 calls</source>
         <translation>
 %1 appels</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="917"/>
+        <location filename="../core/contactlist.cpp" line="923"/>
         <source>
 %1 SMS
 %2 archived SMS</source>
@@ -1519,7 +1519,7 @@ Propriétés du MMS :
 %8 SMS archivés</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="920"/>
+        <location filename="../core/contactlist.cpp" line="926"/>
         <source>
 
 model %1
@@ -1536,37 +1536,37 @@ firmware %4
 langue du téléphone %5</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1127"/>
+        <location filename="../core/contactlist.cpp" line="1147"/>
         <source>Domestic</source>
         <translation>Domestique</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1128"/>
+        <location filename="../core/contactlist.cpp" line="1148"/>
         <source>International</source>
         <translation>International</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1129"/>
+        <location filename="../core/contactlist.cpp" line="1149"/>
         <source>Postal</source>
         <translation>Postal</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1130"/>
+        <location filename="../core/contactlist.cpp" line="1150"/>
         <source>Parcel</source>
         <translation>Colis</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1195"/>
+        <location filename="../core/contactlist.cpp" line="1213"/>
         <source>Dialed</source>
         <translation>Composés</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1197"/>
+        <location filename="../core/contactlist.cpp" line="1215"/>
         <source>Received</source>
         <translation>Reçus</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1199"/>
+        <location filename="../core/contactlist.cpp" line="1217"/>
         <source>Missed</source>
         <translation>Manqués</translation>
     </message>
@@ -1580,7 +1580,7 @@ langue du téléphone %5</translation>
     <message>
         <location filename="../core/formats/common/vcarddata.cpp" line="183"/>
         <source>Unexpected TYPE appearance at line %1: tag %2</source>
-        <translation>TYPE d&apos;apparence inattendu à la ligne %1&#xa0;: marqueur %2</translation>
+        <translation>TYPE d&apos;apparence inattendu à la ligne %1 : marqueur %2</translation>
     </message>
     <message>
         <location filename="../core/formats/common/vcarddata.cpp" line="214"/>
@@ -1665,18 +1665,18 @@ ligne %3, colonne %4
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="80"/>
         <source>Warning: codepage not found, trying use UTF-8...</source>
-        <translation>Avertissement&#xa0;:&#xa0;le code de la page n&apos;a pas été trouvé ; essai en UTF-8...</translation>
+        <translation>Avertissement : le code de la page n&apos;a pas été trouvé ; essai en UTF-8...</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="85"/>
         <source>Warning: udx version not found, treat as 1.0...</source>
-        <translation>Avertissement&#xa0;:&#xa0;la version de UDX n&apos;a pas été trouvée ; version 1.0 utilisée...</translation>
+        <translation>Avertissement : la version de UDX n&apos;a pas été trouvée ; version 1.0 utilisée...</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="94"/>
         <source>Can&apos;t find &apos;vCard&apos; records at file
 %1</source>
-        <translation>Ne pas trouver de contacts &apos;vCard&apos; dans ce fichier&#xa0;:
+        <translation>Ne pas trouver de contacts &apos;vCard&apos; dans ce fichier :
 %1</translation>
     </message>
     <message>
@@ -1702,14 +1702,14 @@ ligne %3, colonne %4
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="233"/>
         <source>Warning: contact %1, duplicate id %2 changed to %3</source>
-        <translation>Avertissement&#xa0;:&#xa0;Pour le contact %1, l&apos;identifiant en double a été changé de %2 en %3</translation>
+        <translation>Avertissement : Pour le contact %1, l&apos;identifiant en double a été changé de %2 en %3</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="268"/>
         <source>Warning: contact %1, unknown tel type:
 %2
  saved as cellular</source>
-        <translation>Avertissement&#xa0;:&#xa0;Le contact %1 a un type de téléphone inconnu&#xa0;:
+        <translation>Avertissement : Le contact %1 a un type de téléphone inconnu :
 %2
  a été enregistré en cellulaire</translation>
     </message>
@@ -1771,7 +1771,7 @@ ligne %3, colonne %4
         <location filename="../core/formats/files/vcfdirectory.cpp" line="40"/>
         <source>Directory not contains VCF files:
 %1</source>
-        <translation>Ce dossier ne contient pas de fichier VCF&#xa0;:
+        <translation>Ce dossier ne contient pas de fichier VCF :
 %1</translation>
     </message>
     <message>
@@ -1795,7 +1795,7 @@ ligne %3, colonne %4
     <message>
         <location filename="../core/formats/files/mpbfile.cpp" line="126"/>
         <source>Strange call item: %1, size %2</source>
-        <translation>Élément d&apos;appel suspect&#xa0;: %1, de taille %2</translation>
+        <translation>Élément d&apos;appel suspect : %1, de taille %2</translation>
     </message>
     <message>
         <location filename="../core/formats/files/mpbfile.cpp" line="165"/>
@@ -2165,14 +2165,14 @@ ligne %3, colonne %4
     <message>
         <location filename="../core/globals.h" line="147"/>
         <source>Do you really want to delete the selected items?</source>
-        <translation>Voulez-vous vraiment supprimer les éléments sélectionnés&#xa0;?</translation>
+        <translation>Voulez-vous vraiment supprimer les éléments sélectionnés ?</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="148"/>
         <source>Column sorting is switched. Hard sort results are not visible.
 Are you want switch column sorting off?</source>
         <translation>Le tri de la colonne à été changé. Le tri manuel n&apos;est plus visible.
-Voulez-vous désactiver le changement du tri&#xa0;?</translation>
+Voulez-vous désactiver le changement du tri ?</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="150"/>
@@ -2299,7 +2299,7 @@ Voulez-vous désactiver le changement du tri&#xa0;?</translation>
         <location filename="../core/globals.h" line="142"/>
         <source>Warning: contact %1 has %2, not supported in this format.
 Data will be lost</source>
-        <translation>Avertissement&#xa0;:&#xa0;le contact %1 a %2, ce qui n&apos;est pas supporté par ce format.
+        <translation>Avertissement : le contact %1 a %2, ce qui n&apos;est pas supporté par ce format.
 Des données vont être perdues</translation>
     </message>
     <message>
@@ -2325,7 +2325,7 @@ Des données vont être perdues</translation>
     <message>
         <location filename="../core/formats/network/asyncformat.h" line="21"/>
         <source>Network error. Server %1 replied: %2</source>
-        <translation>Erreur de connexion. Le serveur %1 a répondu&#xa0;:&#xa0;%2</translation>
+        <translation>Erreur de connexion. Le serveur %1 a répondu : %2</translation>
     </message>
     <message>
         <location filename="../core/formats/network/asyncformat.h" line="22"/>
@@ -2337,7 +2337,7 @@ Vérifiez le nom d&apos;utilisateur, le mot de passe, le protocole et le port</t
     <message>
         <location filename="../core/formats/files/nbufile.cpp" line="24"/>
         <source>Unsupported NBU file section type: %1</source>
-        <translation>Ce type de section pour le fichier NBU n&apos;est pas supportée&#xa0;:&#xa0;%1</translation>
+        <translation>Ce type de section pour le fichier NBU n&apos;est pas supportée : %1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/nbufile.cpp" line="25"/>
@@ -2368,12 +2368,12 @@ Vérifiez le nom d&apos;utilisateur, le mot de passe, le protocole et le port</t
     <message>
         <location filename="../core/formats/files/nbufile.cpp" line="413"/>
         <source>Test 2 greater than 0x01: %1</source>
-        <translation>Test2 est plus grand que 0x01&#xa0;:&#xa0;%1</translation>
+        <translation>Test2 est plus grand que 0x01 : %1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/nbufile.cpp" line="416"/>
         <source>Test 1 different than 0x10: %1</source>
-        <translation>Test 1 est différent de 0x10&#xa0;:&#xa0;%1</translation>
+        <translation>Test 1 est différent de 0x10 : %1</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="113"/>
@@ -2459,7 +2459,7 @@ Vérifiez le nom d&apos;utilisateur, le mot de passe, le protocole et le port</t
     <message>
         <location filename="../core/formats/common/nokiadata.cpp" line="321"/>
         <source>Unknown field type: 0x%1 at %2</source>
-        <translation>Type de champ inconnu&#xa0;%&#xa0;0x%1 à %2</translation>
+        <translation>Type de champ inconnu % 0x%1 à %2</translation>
     </message>
     <message>
         <location filename="../core/formats/common/nokiadata.cpp" line="478"/>
@@ -2503,12 +2503,12 @@ Vérifiez le nom d&apos;utilisateur, le mot de passe, le protocole et le port</t
     <message>
         <location filename="../core/formats/common/nokiadata.cpp" line="556"/>
         <source>Error reading uint64_t value: overflow at %1</source>
-        <translation>Erreur à la lecture d&apos;une valeur uint64_t&#xa0;:&#xa0;dépassement à %1</translation>
+        <translation>Erreur à la lecture d&apos;une valeur uint64_t : dépassement à %1</translation>
     </message>
     <message>
         <location filename="../core/formats/common/vmessagedata.cpp" line="19"/>
         <source>Unknown ATT subtype at line %1: %2</source>
-        <translation>Sous-type ATT inconnu à la ligne %1&#xa0;:&#xa0;%2</translation>
+        <translation>Sous-type ATT inconnu à la ligne %1 : %2</translation>
     </message>
     <message>
         <location filename="../core/formats/common/vmessagedata.cpp" line="282"/>
@@ -2538,7 +2538,7 @@ Vérifiez le nom d&apos;utilisateur, le mot de passe, le protocole et le port</t
     <message>
         <location filename="../3rdparty/quazip/quazip/quagzipfile.cpp" line="74"/>
         <source>You can open a gzip either for reading or for writing. Which is it?</source>
-        <translation>Vous pouvez ouvrir un gzip seulement en lecture ou en écriture. Quel mode choisissez-vous&#xa0;?</translation>
+        <translation>Vous pouvez ouvrir un gzip seulement en lecture ou en écriture. Quel mode choisissez-vous ?</translation>
     </message>
     <message>
         <location filename="../3rdparty/quazip/quazip/quagzipfile.cpp" line="80"/>
@@ -2624,168 +2624,173 @@ Vérifiez le nom d&apos;utilisateur, le mot de passe, le protocole et le port</t
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="92"/>
+        <source>Resize table rows to contents</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/settingsdialog.ui" line="99"/>
         <source>Use alternate row colors in table</source>
         <translation>Utiliser des couleurs alternées dans les tableaux</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="99"/>
+        <location filename="../app/settingsdialog.ui" line="106"/>
         <source>Use system fonts and colors</source>
         <translation>Utiliser les polices et les couleurs du systèmes</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="106"/>
+        <location filename="../app/settingsdialog.ui" line="113"/>
         <source>Table font</source>
         <translation>Police des tableaux</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="113"/>
+        <location filename="../app/settingsdialog.ui" line="120"/>
         <source>Colors</source>
         <translation>Couleurs</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="119"/>
+        <location filename="../app/settingsdialog.ui" line="126"/>
         <source>Grid base</source>
         <translation>Grille de base</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="126"/>
+        <location filename="../app/settingsdialog.ui" line="133"/>
         <source>Grid alternate</source>
         <translation>Grille alternée</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="137"/>
+        <location filename="../app/settingsdialog.ui" line="144"/>
         <source>Columns</source>
         <translation>Colonnes</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="143"/>
+        <location filename="../app/settingsdialog.ui" line="150"/>
         <source>Visible</source>
         <translation>Visible</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="150"/>
+        <location filename="../app/settingsdialog.ui" line="157"/>
         <source>Available</source>
         <translation>Disponible</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="204"/>
+        <location filename="../app/settingsdialog.ui" line="211"/>
         <source>Saving</source>
         <translation>Sauvegarde en cours</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="212"/>
+        <location filename="../app/settingsdialog.ui" line="219"/>
         <source>Preferred vCard version</source>
         <translation>La version vCard préférée</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="314"/>
+        <location filename="../app/settingsdialog.ui" line="321"/>
         <source>Tag for group save</source>
         <translation type="unfinished">Étiquette pour enregistrement d&apos;un groupe</translation>
     </message>
     <message>
         <source>2.1</source>
-        <translation>2.1</translation>
+        <translation type="obsolete">2.1</translation>
     </message>
     <message>
         <source>3.0</source>
-        <translation>3.0</translation>
+        <translation type="obsolete">3.0</translation>
     </message>
     <message>
         <source>4.0</source>
-        <translation>4.0</translation>
+        <translation type="obsolete">4.0</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="224"/>
+        <location filename="../app/settingsdialog.ui" line="231"/>
         <source>Use original file version (if present)</source>
         <translation>Utiliser la version originale du fichier (si existe)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="233"/>
+        <location filename="../app/settingsdialog.ui" line="240"/>
         <source>Default country</source>
         <translation>Pays par défaut</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="245"/>
+        <location filename="../app/settingsdialog.ui" line="252"/>
         <source>(for phone number internationalization)</source>
         <translation>(pour l&apos;internalisation des numéros de téléphone)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="252"/>
+        <location filename="../app/settingsdialog.ui" line="259"/>
         <source>Skip time from birthday and anniversaries</source>
         <translation>Ignorer l&apos;heure pour les anniversaires</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="259"/>
+        <location filename="../app/settingsdialog.ui" line="266"/>
         <source>Non-standard phone/email types</source>
         <translation>Types de téléphone/courriel non standard</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="265"/>
+        <location filename="../app/settingsdialog.ui" line="272"/>
         <source>Add X- to type names</source>
         <translation>Ajouter X- aux noms des types</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="272"/>
+        <location filename="../app/settingsdialog.ui" line="279"/>
         <source>Non-latin type names:</source>
-        <translation>Noms d&apos;origine non-latine&#xa0;:</translation>
+        <translation>Noms d&apos;origine non-latine :</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="279"/>
+        <location filename="../app/settingsdialog.ui" line="286"/>
         <source>Save as is</source>
         <translation>Enregistrer ainsi</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="289"/>
+        <location filename="../app/settingsdialog.ui" line="296"/>
         <source>Replace to default type</source>
         <translation>Remplacer le type par défaut</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="299"/>
+        <location filename="../app/settingsdialog.ui" line="306"/>
         <source>Place to X-CUSTOM</source>
         <translation>Emplacement de X-CUSTOM</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="340"/>
+        <location filename="../app/settingsdialog.ui" line="347"/>
         <source>Loading</source>
         <translation>Chargement</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="348"/>
+        <location filename="../app/settingsdialog.ui" line="355"/>
         <source>Default type if empty</source>
         <translation>Choisir le type par défaut si vide</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="360"/>
+        <location filename="../app/settingsdialog.ui" line="367"/>
         <source>(many phones treat &apos;Voice&apos; as &apos;Other&apos;)</source>
         <translation>(plusieurs téléphones utilisent &apos;Autre&apos; pour &apos;Voix&apos;)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="367"/>
+        <location filename="../app/settingsdialog.ui" line="374"/>
         <source>Warning on missing phone types</source>
         <translation>Avertissement pour les types de téléphone manquants</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="374"/>
+        <location filename="../app/settingsdialog.ui" line="381"/>
         <source>Warning on non-standard phone types</source>
         <translation>Avertissement pour les types de téléphone non-standards</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="381"/>
+        <location filename="../app/settingsdialog.ui" line="388"/>
         <source>Debug save</source>
         <translation>Enregistrer (debug)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="388"/>
+        <location filename="../app/settingsdialog.ui" line="395"/>
         <source>While VCF directory reading</source>
         <translation>Durant la lecture du dossier VCF</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="394"/>
+        <location filename="../app/settingsdialog.ui" line="401"/>
         <source>Read contact names from file name</source>
         <translation>Récupérer le nom des contacts depuis le nom du fichier</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.cpp" line="139"/>
+        <location filename="../app/settingsdialog.cpp" line="141"/>
         <source>List must contain at least one visible column</source>
         <translation>La liste doit contenir au moins une colonne visible</translation>
     </message>

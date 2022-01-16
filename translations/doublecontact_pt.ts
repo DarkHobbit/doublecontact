@@ -1049,7 +1049,7 @@ Only some fields can this edited in this mode</source>
         <translation> (diretoria)</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="670"/>
+        <location filename="../app/mainwindow.cpp" line="676"/>
         <source>Records: %1</source>
         <translation>Registos: %1</translation>
     </message>
@@ -1058,78 +1058,78 @@ Only some fields can this edited in this mode</source>
         <translation type="obsolete">Modo: </translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="676"/>
+        <location filename="../app/mainwindow.cpp" line="682"/>
         <source>two panels</source>
         <translation>dois painéis</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="676"/>
+        <location filename="../app/mainwindow.cpp" line="682"/>
         <source>one panel</source>
         <translation>um painel</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="680"/>
+        <location filename="../app/mainwindow.cpp" line="686"/>
         <source>simple editing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="684"/>
+        <location filename="../app/mainwindow.cpp" line="690"/>
         <source>compare</source>
         <translation>comparar</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="728"/>
+        <location filename="../app/mainwindow.cpp" line="736"/>
         <source>&apos;%1&apos; was changed.
 Save changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="829"/>
+        <location filename="../app/mainwindow.cpp" line="837"/>
         <source>Restart program to apply language change</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="873"/>
+        <location filename="../app/mainwindow.cpp" line="881"/>
         <source>Two panels and compare mode needed for this operation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="888"/>
+        <location filename="../app/mainwindow.cpp" line="896"/>
         <source>Left item</source>
         <translation>Item esquerdo</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="888"/>
+        <location filename="../app/mainwindow.cpp" line="896"/>
         <source>Right item</source>
         <translation>Item direito</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="914"/>
+        <location filename="../app/mainwindow.cpp" line="923"/>
         <source>Strongly two records on current panel must be selected for this operation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="920"/>
+        <location filename="../app/mainwindow.cpp" line="929"/>
         <source>Item 1</source>
         <translation>Item 1</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="920"/>
+        <location filename="../app/mainwindow.cpp" line="929"/>
         <source>Item 2</source>
         <translation>Item 2</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="988"/>
+        <location filename="../app/mainwindow.cpp" line="997"/>
         <source>Operation requires show two panels</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1021"/>
+        <location filename="../app/mainwindow.cpp" line="1030"/>
         <source>Statitics</source>
         <translation>Estatísticas</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1028"/>
+        <location filename="../app/mainwindow.cpp" line="1037"/>
         <source>Report file</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1360,7 +1360,7 @@ MMS properties:
     <name>QObject</name>
     <message>
         <location filename="../core/contactlist.cpp" line="115"/>
-        <location filename="../core/contactlist.cpp" line="1124"/>
+        <location filename="../core/contactlist.cpp" line="1144"/>
         <source>Home</source>
         <translation>Casa</translation>
     </message>
@@ -1371,7 +1371,7 @@ MMS properties:
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="117"/>
-        <location filename="../core/contactlist.cpp" line="1125"/>
+        <location filename="../core/contactlist.cpp" line="1145"/>
         <source>Work</source>
         <translation>Trabalho</translation>
     </message>
@@ -1379,7 +1379,7 @@ MMS properties:
         <location filename="../core/contactlist.cpp" line="118"/>
         <location filename="../core/contactlist.cpp" line="169"/>
         <location filename="../core/contactlist.cpp" line="205"/>
-        <location filename="../core/contactlist.cpp" line="1126"/>
+        <location filename="../core/contactlist.cpp" line="1146"/>
         <source>Preferable</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1454,7 +1454,7 @@ MMS properties:
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="909"/>
+        <location filename="../core/contactlist.cpp" line="915"/>
         <source>%1 records
 %2 phones
 %3 emails
@@ -1463,20 +1463,20 @@ MMS properties:
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="912"/>
+        <location filename="../core/contactlist.cpp" line="918"/>
         <source>
 %1 calls</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="917"/>
+        <location filename="../core/contactlist.cpp" line="923"/>
         <source>
 %1 SMS
 %2 archived SMS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="920"/>
+        <location filename="../core/contactlist.cpp" line="926"/>
         <source>
 
 model %1
@@ -1487,37 +1487,37 @@ phone language %5</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1127"/>
+        <location filename="../core/contactlist.cpp" line="1147"/>
         <source>Domestic</source>
         <translation>Doméstico</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1128"/>
+        <location filename="../core/contactlist.cpp" line="1148"/>
         <source>International</source>
         <translation>Internacional</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1129"/>
+        <location filename="../core/contactlist.cpp" line="1149"/>
         <source>Postal</source>
         <translation>Postal</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1130"/>
+        <location filename="../core/contactlist.cpp" line="1150"/>
         <source>Parcel</source>
         <translation>Parcela</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1195"/>
+        <location filename="../core/contactlist.cpp" line="1213"/>
         <source>Dialed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1197"/>
+        <location filename="../core/contactlist.cpp" line="1215"/>
         <source>Received</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1199"/>
+        <location filename="../core/contactlist.cpp" line="1217"/>
         <source>Missed</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2541,156 +2541,161 @@ Check username, password, protocol and port</source>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="92"/>
-        <source>Use alternate row colors in table</source>
+        <source>Resize table rows to contents</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="99"/>
-        <source>Use system fonts and colors</source>
+        <source>Use alternate row colors in table</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="106"/>
-        <source>Table font</source>
+        <source>Use system fonts and colors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="113"/>
+        <source>Table font</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/settingsdialog.ui" line="120"/>
         <source>Colors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="119"/>
+        <location filename="../app/settingsdialog.ui" line="126"/>
         <source>Grid base</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="126"/>
+        <location filename="../app/settingsdialog.ui" line="133"/>
         <source>Grid alternate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="137"/>
+        <location filename="../app/settingsdialog.ui" line="144"/>
         <source>Columns</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="143"/>
+        <location filename="../app/settingsdialog.ui" line="150"/>
         <source>Visible</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="150"/>
+        <location filename="../app/settingsdialog.ui" line="157"/>
         <source>Available</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="204"/>
+        <location filename="../app/settingsdialog.ui" line="211"/>
         <source>Saving</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="212"/>
+        <location filename="../app/settingsdialog.ui" line="219"/>
         <source>Preferred vCard version</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="314"/>
+        <location filename="../app/settingsdialog.ui" line="321"/>
         <source>Tag for group save</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="224"/>
+        <location filename="../app/settingsdialog.ui" line="231"/>
         <source>Use original file version (if present)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="233"/>
+        <location filename="../app/settingsdialog.ui" line="240"/>
         <source>Default country</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="245"/>
+        <location filename="../app/settingsdialog.ui" line="252"/>
         <source>(for phone number internationalization)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="252"/>
+        <location filename="../app/settingsdialog.ui" line="259"/>
         <source>Skip time from birthday and anniversaries</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="259"/>
+        <location filename="../app/settingsdialog.ui" line="266"/>
         <source>Non-standard phone/email types</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="265"/>
+        <location filename="../app/settingsdialog.ui" line="272"/>
         <source>Add X- to type names</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="272"/>
+        <location filename="../app/settingsdialog.ui" line="279"/>
         <source>Non-latin type names:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="279"/>
+        <location filename="../app/settingsdialog.ui" line="286"/>
         <source>Save as is</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="289"/>
+        <location filename="../app/settingsdialog.ui" line="296"/>
         <source>Replace to default type</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="299"/>
+        <location filename="../app/settingsdialog.ui" line="306"/>
         <source>Place to X-CUSTOM</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="340"/>
+        <location filename="../app/settingsdialog.ui" line="347"/>
         <source>Loading</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="348"/>
+        <location filename="../app/settingsdialog.ui" line="355"/>
         <source>Default type if empty</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="360"/>
+        <location filename="../app/settingsdialog.ui" line="367"/>
         <source>(many phones treat &apos;Voice&apos; as &apos;Other&apos;)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="367"/>
+        <location filename="../app/settingsdialog.ui" line="374"/>
         <source>Warning on missing phone types</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="374"/>
+        <location filename="../app/settingsdialog.ui" line="381"/>
         <source>Warning on non-standard phone types</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="381"/>
+        <location filename="../app/settingsdialog.ui" line="388"/>
         <source>Debug save</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="388"/>
+        <location filename="../app/settingsdialog.ui" line="395"/>
         <source>While VCF directory reading</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="394"/>
+        <location filename="../app/settingsdialog.ui" line="401"/>
         <source>Read contact names from file name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.cpp" line="139"/>
+        <location filename="../app/settingsdialog.cpp" line="141"/>
         <source>List must contain at least one visible column</source>
         <translation type="unfinished"></translation>
     </message>

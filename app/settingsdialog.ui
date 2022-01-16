@@ -87,6 +87,13 @@
         </widget>
        </item>
        <item>
+        <widget class="QCheckBox" name="cbResizeTableRowsToContents">
+         <property name="text">
+          <string>Resize table rows to contents</string>
+         </property>
+        </widget>
+       </item>
+       <item>
         <widget class="QCheckBox" name="cbUseTableAlternateColors">
          <property name="text">
           <string>Use alternate row colors in table</string>

@@ -42,7 +42,6 @@ CallWindow::CallWindow(ContactList* contacts) :
     layout()->addWidget(statusBar);
     // Table
     ui->tvCalls->horizontalHeader()->setStretchLastSection(true);
-    updateTableConfig(ui->tvCalls);  
     // Model
     model = new CallModel(this, contacts);
     proxy = new QSortFilterProxyModel(this);
@@ -144,6 +143,6 @@ void CallWindow::on_btnSaveAs_clicked()
 
 void CallWindow::showEvent(QShowEvent *)
 {
-    ui->tvCalls->resizeRowsToContents();
+    updateTableConfig(ui->tvCalls);
     ui->tvCalls->selectRow(0);
 }

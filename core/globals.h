@@ -190,6 +190,7 @@ struct GlobalConfig {
     // View
     bool showTableGrid;
     bool showLineNumbers;
+    bool resizeTableRowsToContents;
     bool useTableAlternateColors;
     bool useSystemFontsAndColors;
     QString tableFont, gridColor1, gridColor2;

@@ -50,7 +50,6 @@ MessageWindow::MessageWindow(ContactList* contacts) :
     layout()->addWidget(statusBar);
     // Table
     ui->tvMessages->horizontalHeader()->setStretchLastSection(true);
-    updateTableConfig(ui->tvMessages);  
     // Check button access
     ui->cbPDU->setEnabled(!contacts->extra.pduSMS.isEmpty());
     ui->cbPDUArchive->setEnabled(!contacts->extra.pduSMSArchive.isEmpty());
@@ -326,7 +325,7 @@ void MessageWindow::on_btnSaveAs_clicked()
 
 void MessageWindow::showEvent(QShowEvent *)
 {
-    ui->tvMessages->resizeRowsToContents();
+    updateTableConfig(ui->tvMessages);
     ui->tvMessages->selectRow(0);
 }
 
