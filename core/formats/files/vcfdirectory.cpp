@@ -15,6 +15,7 @@
 #include <QStringList>
 #include <QTextStream>
 
+#include "corehelpers.h"
 #include "globals.h"
 #include "../common/vcarddata.h"
 
@@ -84,7 +85,7 @@ bool VCFDirectory::exportRecords(const QString &url, ContactList &list)
             return false;
         QTextStream stream(&file);
         foreach (const QString line, content)
-            stream << line << (char)13 << endl;
+            stream << line << (char)13 << ENDL;
         closeFile();
         i++;
     }

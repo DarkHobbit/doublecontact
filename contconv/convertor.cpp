@@ -404,25 +404,30 @@ int Convertor::start()
         bool filtered = true;
         if (!filterString.isEmpty()) {
             filtered = item.fullName.contains(filterString);
-            if (!filtered)
+            if (!filtered) {
                 foreach (const QString& name, item.names)
                     if (name.contains(filterString))
                         filtered = true;
-            if (!filtered)
+            }
+            if (!filtered) {
                 if (item.description.contains(filterString))
                     filtered = true;
-            if (!filtered)
+            }
+            if (!filtered) {
                 foreach (const Phone& p, item.phones)
                     if (p.value.contains(filterString))
                         filtered = true;
-            if (!filtered)
+            }
+            if (!filtered) {
                 foreach (const Phone& p, item.phones)
                     if (p.value.contains(filterString))
                         filtered = true;
-            if (!filtered)
+            }
+            if (!filtered) {
                 foreach (const Email& m, item.emails)
                     if (m.value.contains(filterString))
                         filtered = true;
+            }
         }
         if (filterReverse)
             filtered = !filtered;

@@ -12,6 +12,7 @@
  */
 #include <qglobal.h>
 #include <QStringList>
+#include "corehelpers.h"
 #include "mpbfile.h"
 
 const QString SECTION_BEGIN = QString("MyPhoneExplorer_ContentID:");
@@ -307,5 +308,5 @@ void MPBFile::writeSectionHeader(QTextStream &stream, const QString &sectionName
 
 void MPBFile::winEndl(QTextStream &stream)
 {
-    stream << (char)13 << endl;
+    stream << (char)13 << ENDL;
 }

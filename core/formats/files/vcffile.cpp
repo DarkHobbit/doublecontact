@@ -10,6 +10,8 @@
  * (at your option) any later version. See COPYING file for more details.
  *
  */
+
+#include "corehelpers.h"
 #include "vcffile.h"
 #include <QStringList>
 #include <QTextStream>
@@ -65,7 +67,7 @@ bool VCFFile::exportRecords(const QString &url, ContactList &list)
     _errors.clear();
     QTextStream stream(&file);
     foreach (const QString line, content)
-        stream << line << (char)13 << endl;
+        stream << line << (char)13 << ENDL;
     closeFile();
     return true;
 }

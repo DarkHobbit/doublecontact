@@ -11,6 +11,7 @@
  *
  */
 
+#include "corehelpers.h"
 #include "htmlfile.h"
 
 HTMLFile::HTMLFile()
@@ -40,14 +41,14 @@ bool HTMLFile::exportRecords(const QString &url, ContactList &list)
     _errors.clear();
     QTextStream stream(&file);
     stream.setCodec("UTF-8");
-    stream << QString("<html><head>\n<meta charset=\"utf-8\">\n<title>%1</title>\n</head>\n<body>").arg(url) << endl;
+    stream << QString("<html><head>\n<meta charset=\"utf-8\">\n<title>%1</title>\n</head>\n<body>").arg(url) << ENDL;
     // General data
     stream << QString("<b>%1</b>: %2<br/>\n").arg(S_ADDRESS_BOOK).arg(url);
     if (!list.extra.model.isEmpty())
         stream << QString("%1<br/>\n").arg(list.extra.model);
     if (list.extra.timeStamp.isValid())
         stream << QString("%1<br/>\n").arg(list.extra.timeStamp.toString());
-    stream << endl;
+    stream << ENDL;
     foreach (const ContactItem& item, list) {
         stream << QString("<p>\n");
         // Name
@@ -77,7 +78,7 @@ bool HTMLFile::exportRecords(const QString &url, ContactList &list)
         stream << QString("</p>\n\n");
     }
     // TODO hr and summary here
-    stream << "\n<body>\n<html>" << endl;
+    stream << "\n<body>\n<html>" << ENDL;
     closeFile();
     return true;
 }
@@ -113,6 +114,6 @@ void HTMLFile::exportTypedItems(QTextStream &stream, const QList<T> &lst, const 
             if (i<lst.count())
                 stream << ", ";
         }
-        stream << endl;
+        stream << ENDL;
     }
 }

@@ -14,6 +14,7 @@
 
 #include <QTextCodec>
 #include "csvfile.h"
+#include "corehelpers.h"
 #include "../profiles/explaybm50profile.h"
 #include "../profiles/explaytv240profile.h"
 #include "../profiles/genericcsvprofile.h"
@@ -207,5 +208,5 @@ void CSVFile::putLine(QTextStream& stream, const QStringList &source)
     // Line ending
     if (currentProfile->lineEnding()==CSVProfileBase::CRLFEnding)
         stream << (char)13;
-    stream << endl;
+    stream << ENDL;
 }

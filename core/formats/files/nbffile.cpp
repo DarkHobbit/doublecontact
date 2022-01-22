@@ -16,6 +16,7 @@
 #include <QStringList>
 #include <QTextCodec>
 #include <QTextStream>
+#include "corehelpers.h"
 #include "nbffile.h"
 #include "quazip.h"
 #include "quazipdir.h"
@@ -206,7 +207,7 @@ bool NBFFile::exportRecords(const QString &url, ContactList &list)
         {
             QTextStream stream(&f);
             foreach (const QString line, lines)
-                stream << line << (char)13 << endl;
+                stream << line << (char)13 << ENDL;
             f.close();
         }
         else

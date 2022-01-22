@@ -18,6 +18,7 @@
 #include <QRegExp>
 #include <QTextCodec>
 #include "languagemanager.h"
+#include "corehelpers.h"
 
 LanguageManager::LanguageManager()
 {
@@ -36,7 +37,7 @@ bool LanguageManager::load(const QString &fileName)
     {
         QString record = QString::fromUtf8(inf.readLine());
         record.remove(QRegExp("[\\n\\r]*$")); // chomp new lines
-        const QStringList& fields = record.split("\t", QString::SkipEmptyParts);
+        const QStringList& fields = record.split("\t", SKIP_EMPTY_PARTS);
         if (fields.count()<3)
             break;
         iso639codes.insert(fields.at(2), fields.at(0));

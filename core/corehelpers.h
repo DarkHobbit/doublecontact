@@ -14,6 +14,7 @@
 #define COREHELPERS_H
 
 #include <algorithm>
+#include <QtGlobal>
 #include <QFlags>
 #include <QSettings>
 #include <QString>
@@ -46,3 +47,13 @@ void setQFlag(QFlags<T>& flags, T f, bool value)
 #define sortP(X) std::sort(X->begin(), X->end())
 
 #endif // COREHELPERS_H
+
+// Qt inter-versional hacks
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+#define ENDL Qt::endl
+#define SKIP_EMPTY_PARTS Qt::SkipEmptyParts
+#else
+#define ENDL endl
+#define SKIP_EMPTY_PARTS QString::SkipEmptyParts
+#endif
+
