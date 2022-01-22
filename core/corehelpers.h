@@ -13,6 +13,7 @@
 #ifndef COREHELPERS_H
 #define COREHELPERS_H
 
+#include <algorithm>
 #include <QFlags>
 #include <QSettings>
 #include <QString>
@@ -38,5 +39,10 @@ void setQFlag(QFlags<T>& flags, T f, bool value)
     else
         flags &= ~f;
 }
+
+// Entire container sort syntax like qSort
+// In C++20, I can use std::ranges::sort... but later... later...
+#define sortO(X) std::sort(X.begin(), X.end())
+#define sortP(X) std::sort(X->begin(), X->end())
 
 #endif // COREHELPERS_H

@@ -48,6 +48,7 @@
 **
 ****************************************************************************/
 
+#include <algorithm>
 #include "qwebdavdirparser.h"
 
 QWebdavDirParser::QWebdavDirParser(QObject *parent) : QObject(parent)
@@ -328,7 +329,7 @@ void QWebdavDirParser::parseMultiResponse(const QByteArray &data)
 
     }
 
-    qSort(m_dirList.begin(), m_dirList.end());
+    std::sort(m_dirList.begin(), m_dirList.end());
 }
 
 void QWebdavDirParser::parseResponse(const QDomElement &dom)

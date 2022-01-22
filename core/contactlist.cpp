@@ -11,8 +11,9 @@
  *
  */
 
-#include <QtAlgorithms>
+#include <algorithm>
 #include "contactlist.h"
+#include "corehelpers.h"
 
 // Rules for phone number internationalization
 struct CountryRule{
@@ -654,7 +655,7 @@ void ContactList::sort(ContactList::SortType sortType)
             c.actualSortString = c.groups.join(", ");
         }
     }
-    qSort(*this);
+    sortP(this);
 }
 
 void ContactList::compareWith(ContactList &pairList)
@@ -736,7 +737,7 @@ bool ContactList::addGroup(const QString &group)
     if (hasGroup(group))
         return false;
     emptyGroups << group;
-    qSort(emptyGroups);
+    sortO(emptyGroups);
     return true;
 }
 
@@ -747,7 +748,7 @@ bool ContactList::renameGroup(const QString &oldName, const QString &newName)
     if (emptyGroups.contains(oldName)) {
         emptyGroups.removeOne(oldName);
         emptyGroups << newName;
-        qSort(emptyGroups);
+        sortO(emptyGroups);
     }
     else {
         for (int i=0; i<this->count(); i++) {
@@ -755,7 +756,7 @@ bool ContactList::renameGroup(const QString &oldName, const QString &newName)
             if (item.groups.contains(oldName)) {
                 item.groups.removeOne(oldName);
                 item.groups << newName;
-                qSort(item.groups);
+                sortO(item.groups);
             }
         }
     }
@@ -783,7 +784,7 @@ void ContactList::includeToGroup(const QString &group, ContactItem &item)
 {
     if (!item.groups.contains(group)) {
         item.groups << group;
-        qSort(item.groups);
+        sortO(item.groups);
     }
     if (emptyGroups.contains(group))
         emptyGroups.removeOne(group);
@@ -800,7 +801,7 @@ void ContactList::excludeFromGroup(const QString &group, ContactItem &item)
         }
     if (groupWillBeEmpty) {
         emptyGroups << group;
-        qSort(emptyGroups);
+        sortO(emptyGroups);
     }
 }
 
@@ -812,14 +813,14 @@ void ContactList::mergeGroups(const QString &unitedGroup, const QString &mergedG
             item.groups.removeOne(mergedGroup);
             if (!item.groups.contains(unitedGroup)) {
                 item.groups << unitedGroup;
-                qSort(item.groups);
+                sortO(item.groups);
             }
         }
     }
     emptyGroups.removeOne(mergedGroup);
     if (groupStat()[unitedGroup]==0) {
         emptyGroups << unitedGroup;
-        qSort(emptyGroups);
+        sortO(emptyGroups);
     }
 }
 
@@ -834,7 +835,7 @@ void ContactList::splitGroup(const QString &existGroup, const QString &newGroup,
                 item.groups.removeOne(existGroup);
                 if (!item.groups.contains(newGroup)) {
                     item.groups << newGroup;
-                    qSort(item.groups);
+                    sortO(item.groups);
                 }
             }
         }
@@ -842,11 +843,11 @@ void ContactList::splitGroup(const QString &existGroup, const QString &newGroup,
     QMap<QString, int> groups = groupStat();
     if (groups[existGroup]==0 && !emptyGroups.contains(existGroup)) {
         emptyGroups << existGroup;
-        qSort(emptyGroups);
+        sortO(emptyGroups);
     }
     if (groups[newGroup]==0 && !emptyGroups.contains(newGroup)) {
         emptyGroups << newGroup;
-        qSort(emptyGroups);
+        sortO(emptyGroups);
     }
 }
 

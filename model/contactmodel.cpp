@@ -11,7 +11,7 @@
  *
  */
 
-#include <QtAlgorithms>
+#include <algorithm>
 #include <QBrush>
 #include <QFileInfo>
 #include <QMimeData>
@@ -391,7 +391,7 @@ void ContactModel::copyRows(QModelIndexList& indices, ContactModel* target)
 
 void ContactModel::removeAnyRows(QModelIndexList& indices)
 {
-    qSort(indices.begin(), indices.end());
+    std::sort(indices.begin(), indices.end());
     // foreach not usable here - reverse order needed
     beginRemoveRows (QModelIndex(), 0, indices.count()-1);
     QStringList droppedFullNames;

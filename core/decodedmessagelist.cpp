@@ -11,13 +11,13 @@
  *
  */
 
-#include <QtAlgorithms>
 #include <QFile>
 #include <QDir>
 #include <QMap>
 #include <QTextCodec>
 #include <QTextStream>
 #include <qglobal.h>
+#include "corehelpers.h"
 #include "decodedmessagelist.h"
 #include "formats/common/nokiadata.h"
 #include "formats/common/pdu.h"
@@ -294,7 +294,7 @@ void DecodedMessageList::addOrMerge(DecodedMessage &msg)
 
 void DecodedMessageList::sort()
 {
-    qSort(*this);
+    sortP(this);
 }
 
 void DecodedMessageList::fromVMessageList(DecodedMessageList &messages, const QStringList &src, QStringList &errors, bool fromArchive)
