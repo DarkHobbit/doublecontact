@@ -346,7 +346,7 @@ void ConfigManager::readMessageViewConfig(MessageSourceFlags &flags)
 {
     if (!settings)
         return;
-    flags = 0;
+    flags = {};
     setQFlag(flags, useVMessage, settings->value("MessageView/UseVMessage", true).toBool());
     setQFlag(flags, useVMessageArchive, settings->value("MessageView/UseVMessageArchive", true).toBool());
     setQFlag(flags, usePDU, settings->value("MessageView/UsePDU", true).toBool());
