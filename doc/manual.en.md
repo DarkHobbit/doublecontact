@@ -91,6 +91,7 @@ If you can't use this method (source and/or destination device(s) does not suppo
 * co-use DoubleContact and MyPhoneExplorer (MPB files);
 * use [Google Contacts](https://contacts.google.com/) site and export contacts to VCF file.
 
+Notice that before export to Google Contacts or ownCloud/Nextcloud, you must set CATEGORIES as "Tag for group save".
 If you know other tags for groups saving or other device, which does support the above tags, please, contact DoubleContact author.
 
 ## CSV specials ##
