@@ -23,7 +23,13 @@ QString QuotedPrintable::decode(const QString &src, QTextCodec *codec)
         if (src[i]=='=') {
             if (i<src.length()-1)
                 if (src[i+1]==' ') i++; // sometime bad space after = appears
-            const quint8 code = src.midRef(i+1, 2).toInt(&ok, 16);
+            const quint8 code = src.
+#if QT_VERSION >= 0x050100
+                    midRef
+#else
+                    mid
+#endif
+                    (i+1, 2).toInt(&ok, 16);
             res.append(code);
             i += 2;
         }
