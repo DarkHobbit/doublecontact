@@ -231,17 +231,20 @@ void MainWindow::on_actionE_xit_triggered()
 
 void MainWindow::on_action_Two_panels_toggled(bool showTwoPanels)
 {
+    int splitSize = ui->splitter->width();
     if (showTwoPanels) {
         ui->tvRight->show();
         ui->lbRight->show();
         ui->lbFilterRight->show();
         ui->leFilterRight->show();
+        ui->splitter->setSizes(QList<int>() << splitSize/2 << splitSize/2);
     }
     else {
         ui->tvRight->hide();
         ui->lbRight->hide();
         ui->lbFilterRight->hide();
         ui->leFilterRight->hide();
+        ui->splitter->setSizes(QList<int>() << splitSize);
     }
     selectView(ui->tvLeft);
     ui->tvLeft->setFocus();
