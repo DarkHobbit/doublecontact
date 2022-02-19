@@ -17,6 +17,7 @@
 #include <QtAlgorithms>
 #include <QDataStream>
 #include <QFile>
+#include <QTextStream>
 #include "nbufile.h"
 
 #define SUMMARY_OFFSET_OFFSET 0x00000014
@@ -417,8 +418,21 @@ bool NBUFile::parseFolderVcard(QDataStream &stream, ContactList &list, const QSt
         int vcLen = getU32(stream);
         char* raw = new char[vcLen];
         stream.readRawData((char*)raw, vcLen);
-        QString vCard = QString::fromUtf8(raw, vcLen);
-        QStringList content = vCard.split("\x0d\n");
+
+
+        // Old: works only if encoding=quoted-printable
+        //QString vCard = QString::fromUtf8(raw, vcLen);
+        //QStringList content = vCard.split("\x0d\n");
+
+        // New: works with encoding=8bit, but it's very dirty hack!!!
+        // TODO: port to QByteArray
+        QByteArray ppc(raw, vcLen);
+        QTextStream ss (&ppc);
+        QStringList content;
+        while (!ss.atEnd())
+            content << ss.readLine();
+
+
         VCardData::importRecords(content, list, true, _errors);
         delete raw;
         list.last().originalFormat = "NBU";
