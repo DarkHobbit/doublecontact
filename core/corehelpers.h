@@ -41,12 +41,13 @@ void setQFlag(QFlags<T>& flags, T f, bool value)
         flags &= ~f;
 }
 
+// Console output helper
+#define DSTR(x) x.toLocal8Bit().data()
+
 // Entire container sort syntax like qSort
 // In C++20, I can use std::ranges::sort... but later... later...
 #define sortO(X) std::sort(X.begin(), X.end())
 #define sortP(X) std::sort(X->begin(), X->end())
-
-#endif // COREHELPERS_H
 
 // Qt inter-versional hacks
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
@@ -57,3 +58,4 @@ void setQFlag(QFlags<T>& flags, T f, bool value)
 #define SKIP_EMPTY_PARTS QString::SkipEmptyParts
 #endif
 
+#endif // COREHELPERS_H
