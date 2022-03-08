@@ -53,12 +53,11 @@ struct DecodedMessage {
     int partNumber, totalParts;
     bool isMMS;
     QString mmsSubject;
-    QList<BinarySMS> mmsFiles;
+    InnerFiles mmsFiles;
     // Calculated fields
     QString contactName;
     void clear();
     QString contactsToString() const;
-    bool saveMMSFiles(const QString& dirPath, QString& fatalError) const;
     MessageSourceFlags sources;
     bool operator <(const DecodedMessage& pair) const;
 };

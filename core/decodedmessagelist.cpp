@@ -11,8 +11,8 @@
  *
  */
 
-#include <QFile>
 #include <QDir>
+#include <QFile>
 #include <QMap>
 #include <QTextCodec>
 #include <QTextStream>
@@ -63,39 +63,6 @@ QString DecodedMessage::contactsToString() const
         res << peer;
     }
     return res.join(";");
-}
-
-bool DecodedMessage::saveMMSFiles(const QString &dirPath, QString& fatalError) const
-{
-    QDir d;
-    if (!d.exists(dirPath)) {
-        if (!d.mkpath(dirPath)) {
-            fatalError = S_MKDIR_ERR.arg(dirPath);
-            return false;
-        }
-    }
-    foreach (const BinarySMS& fileInfo, mmsFiles) {
-        QString fileName = dirPath+QDir::separator()+fileInfo.name;
-        QFile f(fileName);
-        if (f.open(QIODevice::WriteOnly)) {
-            f.write(fileInfo.content);
-            f.close();
-            // Set message time for attachment
-#if QT_VERSION >= 0x050A00 // Qt >= 5.10
-            // Setting time on-the-fly, in WriteOnly mode, not works on some platforms
-            if (f.open(QIODevice::Append)) {
-                f.setFileTime(this->when, QFileDevice::FileBirthTime);
-                f.setFileTime(this->when, QFileDevice::FileModificationTime);
-                f.close();
-            }
-#endif
-        }
-        else {
-            fatalError = S_WRITE_ERR.arg(fileName);
-            return false;
-        }
-    }
-    return true;
 }
 
 bool DecodedMessage::operator <(const DecodedMessage &pair) const
@@ -186,7 +153,7 @@ bool DecodedMessageList::saveAllMMSFiles(const QString &dirPath, QString& fatalE
                 dirName = QString::number(index);
         }
         // Save files
-        if (!msg.saveMMSFiles(dirPath + QDir::separator() + dirName, fatalError))
+        if (!msg.mmsFiles.saveAll(dirPath + QDir::separator() + dirName, fatalError))
             return false;
     }
     return true;

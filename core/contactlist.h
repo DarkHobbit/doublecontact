@@ -19,6 +19,7 @@
 #include <QMap>
 #include <QStringList>
 
+#include "extra.h"
 #include "globals.h"
 
 #define MAX_COMPARE_PRIORITY_LEVEL 5
@@ -210,39 +211,6 @@ struct ContactItem {
     static QString nameComponent(int compNum);
     const QString findIMByType(const QString& itemType) const;
     bool operator <(const ContactItem& pair) const;
-};
-
-// Specific data for backup files (MPB, NBF, NBU)
-struct CallInfo {
-    QString cType, timeStamp, duration, number, name;
-#ifdef WITH_CALLS
-    QString typeName() const;
-#endif
-};
-
-#ifdef WITH_MESSAGES
-struct BinarySMS { //primarilly for Nokia Prefdef messages
-    QString name;
-    QByteArray content;
-};
-#endif
-
-struct ExtraData {
-    // Common fields
-    QString model;
-    QDateTime timeStamp;
-    QStringList vmsgSMS, pduSMS; // some file formats may contains both SMS type sets
-    // MPB specific
-    QStringList organizer, notes;
-    QStringList vmsgSMSArchive, pduSMSArchive;
-    QList<CallInfo> calls;
-    // NBU specific
-    QString imei, firmware, phoneLang;
-    // NBU + NBF
-#ifdef WITH_MESSAGES
-    QList<BinarySMS> binarySMS;
-#endif
-    void clear();
 };
 
 // Entire address book

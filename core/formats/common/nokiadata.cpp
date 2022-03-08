@@ -396,10 +396,7 @@ bool NokiaData::ReadMMS(QDataStream& ds, DecodedMessage &msg, QStringList &error
             log << QString("Part %1:\n headLength = %2, dataLength = %3, ctype = %4,\n filename = %5")
                 .arg(i+1).arg(headlen).arg(datalen).arg(ctype).arg(fileName);
             ds.device()->seek(ctypepos + headlen);
-            BinarySMS mFile;
-            mFile.name = fileName;
-            mFile.content = ds.device()->read(datalen);
-            msg.mmsFiles << mFile;
+            msg.mmsFiles << InnerFile("", fileName, msg.when, ds.device()->read(datalen));
         }
     }
 

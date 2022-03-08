@@ -11,11 +11,14 @@
  *
  */
 
+#include <QDesktopServices>
 #include <QFont>
 #include <QHeaderView>
 #include <QMessageBox>
 #include <QPixmap>
 #include <QSortFilterProxyModel>
+#include <QTemporaryFile>
+#include <QUrl>
 
 #include "globals.h"
 #include "helpers.h"
@@ -50,6 +53,22 @@ void showPhoto(const Photo &photo, QLabel *label)
     }
     else if (!photo.isEmpty())
         label->setText(S_PH_UNKNOWN_FORMAT);
+}
+
+// Show inner file from memory
+void showInnerFile(const InnerFile &f)
+{
+    QTemporaryFile tf(QString("XXXXXX.")+f.name);
+    tf.setAutoRemove(false);
+    if (tf.open()) {
+        tf.write(f.content);
+        tf.close();
+        if (!QDesktopServices::openUrl(QUrl(QString("file:///%1").arg(tf.fileName()))))
+            QMessageBox::critical(0, S_ERROR, S_READ_ERR.arg(tf.fileName()));
+        configManager.addFileToRemove(tf.fileName());
+    }
+    else
+        QMessageBox::critical(0, S_ERROR, S_WRITE_ERR.arg(f.name));
 }
 
 // Set color/font for each table view
@@ -107,3 +126,4 @@ void writeTableSortConfig(QHeaderView* header)
                header->sortIndicatorSection(),
                header->sortIndicatorOrder());
 }
+

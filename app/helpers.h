@@ -39,6 +39,9 @@ private:
 // Show photo on label
 void showPhoto(const Photo& photo, QLabel* label);
 
+// Show inner file from memory
+void showInnerFile(const InnerFile& f);
+
 // Set color/font for each table view
 void updateTableConfig(QTableView* table);
 

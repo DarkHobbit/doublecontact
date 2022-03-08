@@ -24,6 +24,7 @@ INCLUDEPATH += $$PWD
 HEADERS	+= \
     $$PWD/contactlist.h \
     $$PWD/corehelpers.h \
+    $$PWD/extra.h \
     $$PWD/globals.h \
     $$PWD/languagemanager.h \
     $$PWD/formats/iformat.h \
@@ -49,6 +50,7 @@ HEADERS	+= \
 SOURCES	+= \
     $$PWD/contactlist.cpp \
     $$PWD/corehelpers.cpp \
+    $$PWD/extra.cpp \
     $$PWD/globals.cpp \
     $$PWD/languagemanager.cpp \
     $$PWD/formats/formatfactory.cpp \

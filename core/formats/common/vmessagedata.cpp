@@ -238,13 +238,11 @@ bool VMessageData::importMPBRecords(const QStringList &lines, DecodedMessageList
                     sSmil = QuotedPrintable::decode(val, codec);
                 else
                     sSmil = codec->toUnicode(val.toLocal8Bit());
-                msg.mmsFiles << BinarySMS();
-                msg.mmsFiles.last().name = "smil.smil";
-                msg.mmsFiles.last().content = sSmil.toLocal8Bit();
+                msg.mmsFiles << InnerFile("", "smil.smil", QDateTime(), sSmil.toLocal8Bit());
             }
             else if (tag=="ATT") {
-                msg.mmsFiles << BinarySMS();
-                BinarySMS& att = msg.mmsFiles.last();
+                msg.mmsFiles << InnerFile("", "", msg.when, QByteArray());
+                InnerFile& att = msg.mmsFiles.last();
                 long fileSize = 0;
                 foreach(const QString& ss, vType) {
                     if (ss=="ATT")

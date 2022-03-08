@@ -12,15 +12,12 @@
  */
 
 #include <QClipboard>
-#include <QDesktopServices>
 #include <QFileDialog>
 #include <QFileInfo>
 #include <QItemSelectionModel>
 #include <QMessageBox>
 #include <QShortcut>
 #include <QStringList>
-#include <QTemporaryFile>
-#include <QUrl>
 
 #include "messagewindow.h"
 #include "ui_messagewindow.h"
@@ -118,7 +115,7 @@ void MessageWindow::selectionChanged()
         if (msg.isMMS) {
             menuMMSFiles->clear();
             int index = 0;
-            foreach(const BinarySMS& f, msg.mmsFiles) {
+            foreach(const InnerFile& f, msg.mmsFiles) {
                 QAction* a = new QAction(f.name, this);
                 a->setData(index);
                 connect(a, SIGNAL(triggered(bool)), this, SLOT(onShowMMSFile(bool)));
@@ -340,7 +337,7 @@ void MessageWindow::on_actionSave_MMS_Files_triggered()
         QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
     if (!path.isEmpty()) {
         QString fatalError;
-        if (!msg.saveMMSFiles(path, fatalError))
+        if (!msg.mmsFiles.saveAll(path, fatalError))
             QMessageBox::critical(0, S_ERROR, fatalError);
     }
 }
@@ -354,20 +351,8 @@ void MessageWindow::onShowMMSFile(bool)
     QAction* a = dynamic_cast<QAction*>(sender());
     if (a) {
         int index = a->data().toInt();
-        if (index>=0 && index<msg.mmsFiles.count()) {
-            const BinarySMS& f = msg.mmsFiles[index];
-            QTemporaryFile tf(QString("XXXXXX.")+f.name);
-            tf.setAutoRemove(false);
-            if (tf.open()) {
-                tf.write(f.content);
-                tf.close();
-                if (!QDesktopServices::openUrl(QUrl(QString("file:///%1").arg(tf.fileName()))))
-                    QMessageBox::critical(0, S_ERROR, S_READ_ERR.arg(tf.fileName()));
-                configManager.addFileToRemove(tf.fileName());
-            }
-            else
-                QMessageBox::critical(0, S_ERROR, S_WRITE_ERR.arg(f.name));
-        }
+        if (index>=0 && index<msg.mmsFiles.count())
+            showInnerFile(msg.mmsFiles[index]);
     }
 }
 

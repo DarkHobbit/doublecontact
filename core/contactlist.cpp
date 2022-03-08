@@ -1155,25 +1155,6 @@ void PostalAddress::StandardTypes::fill()
         << (*this)["intl"] << (*this)["postal"] << (*this)["parcel"];
 }
 
-void ExtraData::clear()
-{
-    model.clear();
-    timeStamp = QDateTime();
-    organizer.clear();
-    notes.clear();
-    vmsgSMS.clear();
-    pduSMS.clear();
-#ifdef WITH_MESSAGES
-    binarySMS.clear();
-#endif
-    vmsgSMSArchive.clear();
-    pduSMSArchive.clear();
-    calls.clear();
-    imei.clear();
-    firmware.clear();
-    phoneLang.clear();
-}
-
 bool Photo::operator ==(const Photo &p) const
 {
     return pType==p.pType && url==p.url && data==p.data;
@@ -1206,20 +1187,6 @@ Phone::StandardTypes Phone::standardTypes;
 Email::StandardTypes Email::standardTypes;
 PostalAddress::StandardTypes PostalAddress::standardTypes;
 Messenger::StandardTypes Messenger::standardTypes;
-
-#ifdef WITH_CALLS
-QString CallInfo::typeName() const
-{
-    if (cType=="DC")
-        return QObject::tr("Dialed");
-    else if (cType=="RC")
-        return QObject::tr("Received");
-    else if (cType=="MC")
-        return QObject::tr("Missed");
-    else
-        return cType;
-}
-#endif
 
 NumberNameMap::NumberNameMap(const ContactList &list)
 {
