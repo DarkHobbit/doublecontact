@@ -3,5 +3,4 @@ Makefile*
 *.qm
 *.moc
 *.obj
-*.ui
 qrc_*.cpp

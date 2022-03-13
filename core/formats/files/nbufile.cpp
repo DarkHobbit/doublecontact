@@ -18,6 +18,8 @@
 #include <QDataStream>
 #include <QFile>
 #include <QTextStream>
+
+#include "corehelpers.h"
 #include "nbufile.h"
 
 #define SUMMARY_OFFSET_OFFSET 0x00000014
@@ -209,7 +211,37 @@ std::cout << "sections: " << sectCount << std::endl; //===>
         QString folderName;
 std::cout << "Section: " << section->type << "::" << section->name.toLocal8Bit().data() << "::" << section->name2.toLocal8Bit().data() << std::endl;
         switch (section->type) {
-        /*case ProcessType.FileSystem: TODO*/
+        case NBUSectionType::FileSystem:
+        {
+            ss >> count;
+            file.seek(file.pos()+0x14); // ?
+            quint64 dirStartAddr = getU64(ss);
+            quint64 fileStartAddr = sectStart + 0x30;
+            partPos = file.pos();
+            file.seek(dirStartAddr + 20);
+            list.extra.files.clear();
+            for (quint32 j = 0; j < count; j++) {
+                QString folderName = trimStart(getString16c(ss), "\\");
+                QString fileName = getString16c(ss);
+                file.seek(file.pos()+4); // ???
+                long fileSize = getU32(ss);
+                QDateTime fileTime = getDateTime(ss);
+                file.seek(file.pos()+12); // ???
+                // Store file
+                if (fileSize>0) {
+                    long __pos = file.pos();
+                    file.seek(fileStartAddr);
+                    list.extra.files << InnerFile(folderName, fileName, fileTime, file.read(fileSize));
+                    if (list.extra.files.last().content.length()<fileSize)
+                        _errors << QObject::tr("NBU inner file %1/%2 truncated.\nRead %3 bytes, %4 expected")
+                           .arg(folderName).arg(fileName).arg(list.extra.files.last().content.length()).arg(fileSize);
+                    file.seek(__pos);
+                }
+                fileStartAddr += fileSize;
+            }
+            file.seek(partPos);
+            break;
+        }
         case NBUSectionType::Vcards:
             ss >> count >> count2;
 std::cout << "VCards " << count << "!"<< count2 << std::endl;
@@ -355,7 +387,7 @@ QString NBUFile::getString16c(QDataStream& stream)
     ushort* raw = new ushort[cnt];
     stream.readRawData((char*)raw, 2*cnt);
     QString res = QString::fromUtf16(raw, cnt);
-    delete raw;
+    delete[] raw;
     return res;
 }
 
@@ -434,7 +466,7 @@ bool NBUFile::parseFolderVcard(QDataStream &stream, ContactList &list, const QSt
 
 
         VCardData::importRecords(content, list, true, _errors);
-        delete raw;
+        delete[] raw;
         list.last().originalFormat = "NBU";
     }
     return true;
@@ -462,7 +494,7 @@ std::cout << "Messages " << count << "!"<< folderName.toLocal8Bit().data() << st
                 raw[len+1] = 0;
                 QString msg = QString::fromUtf16((ushort*)raw);
                 list.extra.vmsgSMS << msg;
-                delete raw;
+                delete[] raw;
             }
         }
         return true;

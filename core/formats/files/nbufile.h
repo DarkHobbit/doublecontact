@@ -54,6 +54,12 @@ private:
     bool parseFolderVcard(QDataStream& stream, ContactList &list, const QString& sectName);
     bool parseFolder(QDataStream& stream, long start, const QString& sectName, ContactList &list);
     void parseContacts (QDataStream &stream);
+    inline QString trimStart(const QString& src, const QString& pattern) {
+        QString res = src;
+        while (res.startsWith(pattern))
+            res = res.remove(0, pattern.length());
+        return res;
+    }
 };
 
 #endif // NBUFILE_H

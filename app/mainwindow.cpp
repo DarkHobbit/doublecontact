@@ -38,6 +38,7 @@
 #include "csvprofiledialog.h"
 #include "groupdialog.h"
 #include "helpers.h"
+#include "innerfilewindow.h"
 #include "logwindow.h"
 #ifdef WITH_MESSAGES
 #include "messagewindow.h"
@@ -596,6 +597,7 @@ void MainWindow::setButtonsAccess()
 #ifdef WITH_CALLS
     ui->actionCalls->setEnabled(selectedModel->itemList().hasCalls());
 #endif
+    ui->action_Files->setEnabled(selectedModel->itemList().hasFiles());
 }
 
 void MainWindow::selectionChanged()
@@ -1208,5 +1210,18 @@ void MainWindow::on_actionMass_tags_remove_triggered()
         updateHeaders();
     }
     delete d;
+}
+
+
+void MainWindow::on_action_Files_triggered()
+{
+    InnerFileWindow* w = new InnerFileWindow(&selectedModel->itemList());
+    w->exec();
+    delete w;
+    /* fgh atr
+    QMessageBox::information(0, "Dbg", QString("c %1 s %2")
+        .arg(selectedModel->itemList().extra.files.count())
+        .arg(selectedModel->itemList().extra.files.totalSize()));
+*/
 }
 

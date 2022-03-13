@@ -295,7 +295,7 @@ void MessageWindow::on_leFilter_textChanged(const QString &newText)
 void MessageWindow::on_btnSaveAs_clicked()
 {
     QFileInfo fi(configManager.lastContactFile());
-    QString path = fi.path() + QDir::separator() + fi.baseName() + ".csv";
+    QString path = fi.path() + QDir::separator() + fi.baseName() + "-messages.csv";
     QString selectedFilter;
     path = QFileDialog::getSaveFileName(0, tr("Save messages file"),
         path, "*.csv",

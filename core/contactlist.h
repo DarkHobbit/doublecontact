@@ -255,6 +255,7 @@ public:
     bool hasCalls();
     void updateCallHistory(const QStringList& droppedFullNames = QStringList());
 #endif
+    bool hasFiles();
     ExtraData extra;
     QStringList emptyGroups;
     QString originalPath; // for append-only formats, such as NBF

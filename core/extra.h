@@ -32,17 +32,23 @@ struct BinarySMS { //primarilly for Nokia Prefdef messages
 };
 #endif
 
+#define S_FILES_STATUS QObject::tr("Records: %1. Size: %2 byte(s)")
+#define S_ATT_FILES_DIR QObject::tr("Select attached files Directory")
+#define S_SAVE_ATT QObject::tr("Save attachment")
+
 struct InnerFile {
     QString relPath, name;
     QDateTime modified;
     QByteArray content;
     InnerFile(const QString& _relPath, const QString& _name,
         const QDateTime& _modified, const QByteArray& _content);
+    bool saveAs(const QString &path, QString &fatalError) const;
 };
 
 class InnerFiles: public QList<InnerFile> {
 public:
     bool saveAll(const QString& dirPath, QString& fatalError) const;
+    int totalSize();
 };
 
 struct ExtraData {
@@ -60,6 +66,7 @@ struct ExtraData {
 #ifdef WITH_MESSAGES
     QList<BinarySMS> binarySMS;
 #endif
+    InnerFiles files; // TODO check maybe nbu only?
     void clear();
 };
 

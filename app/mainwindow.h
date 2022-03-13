@@ -110,6 +110,8 @@ private slots:
 
     void on_actionMass_tags_remove_triggered();
 
+    void on_action_Files_triggered();
+
 private:
     Ui::MainWindow *ui;
     ContactModel *modLeft, *modRight;

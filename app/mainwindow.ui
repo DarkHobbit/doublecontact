@@ -36,7 +36,6 @@
          <widget class="QLabel" name="lbLeft">
           <property name="font">
            <font>
-            <weight>75</weight>
             <bold>true</bold>
            </font>
           </property>
@@ -80,7 +79,6 @@
          <widget class="QLabel" name="lbRight">
           <property name="font">
            <font>
-            <weight>75</weight>
             <bold>true</bold>
            </font>
           </property>
@@ -222,7 +220,7 @@
      <x>0</x>
      <y>0</y>
      <width>817</width>
-     <height>30</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_File">
@@ -297,8 +295,11 @@
     </property>
     <addaction name="action_Two_panels"/>
     <addaction name="action_Groups"/>
+    <addaction name="separator"/>
     <addaction name="actionMessages"/>
     <addaction name="actionCalls"/>
+    <addaction name="action_Files"/>
+    <addaction name="separator"/>
     <addaction name="actionSettings"/>
    </widget>
    <widget class="QMenu" name="menu_List">
@@ -643,6 +644,11 @@
   <action name="actionMass_tags_remove">
    <property name="text">
     <string>Mass tags remove</string>
+   </property>
+  </action>
+  <action name="action_Files">
+   <property name="text">
+    <string>&amp;Files...</string>
    </property>
   </action>
  </widget>

@@ -6,12 +6,14 @@ INCLUDEPATH += $$PWD
 
 HEADERS	+= \
     $$PWD/contactmodel.h \
+    $$PWD/innerfilemodel.h \
     $$PWD/modelhelpers.h \
     $$PWD/recentlist.h \
     $$PWD/configmanager.h
 
 SOURCES	+= \
     $$PWD/contactmodel.cpp \
+    $$PWD/innerfilemodel.cpp \
     $$PWD/modelhelpers.cpp \
     $$PWD/recentlist.cpp \
     $$PWD/configmanager.cpp

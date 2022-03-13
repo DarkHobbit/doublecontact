@@ -966,6 +966,11 @@ void ContactList::updateCallHistory(const QStringList& droppedFullNames)
 }
 #endif
 
+bool ContactList::hasFiles()
+{
+    return !extra.files.isEmpty();
+}
+
 TagValue::TagValue(const QString& _tag, const QString& _value)
     :tag(_tag), value(_value)
 {}

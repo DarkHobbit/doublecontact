@@ -50,12 +50,37 @@ void ExtraData::clear()
     imei.clear();
     firmware.clear();
     phoneLang.clear();
+    files.clear();
 }
 
 
 InnerFile::InnerFile(const QString &_relPath, const QString &_name, const QDateTime &_modified, const QByteArray &_content)
     :relPath(_relPath), name(_name), modified(_modified), content(_content)
 {}
+
+bool InnerFile::saveAs(const QString &path, QString &fatalError) const
+{
+    QFile f(path);
+    if (f.open(QIODevice::WriteOnly)) {
+        f.write(content);
+        f.close();
+        // Set file time
+#if QT_VERSION >= 0x050A00 // Qt >= 5.10
+        // Setting time on-the-fly, in WriteOnly mode, not works on some platforms
+        if (modified.isValid())
+        if (f.open(QIODevice::Append)) {
+            f.setFileTime(modified, QFileDevice::FileBirthTime);
+            f.setFileTime(modified, QFileDevice::FileModificationTime);
+            f.close();
+        }
+#endif
+        return true;
+    }
+    else {
+        fatalError = S_WRITE_ERR.arg(path);
+        return false;
+    }
+}
 
 bool InnerFiles::saveAll(const QString &dirPath, QString &fatalError) const
 {
@@ -68,28 +93,28 @@ bool InnerFiles::saveAll(const QString &dirPath, QString &fatalError) const
     }
     foreach (const InnerFile& fileInfo, *this) {
         QString fileName = dirPath+QDir::separator();
-        if (!fileInfo.relPath.isEmpty())
-            fileName += fileInfo.relPath+QDir::separator();
-        fileName += fileInfo.name;
-        QFile f(fileName);
-        if (f.open(QIODevice::WriteOnly)) {
-            f.write(fileInfo.content);
-            f.close();
-            // Set message time for attachment
-#if QT_VERSION >= 0x050A00 // Qt >= 5.10
-            // Setting time on-the-fly, in WriteOnly mode, not works on some platforms
-            if (fileInfo.modified.isValid())
-            if (f.open(QIODevice::Append)) {
-                f.setFileTime(fileInfo.modified, QFileDevice::FileBirthTime);
-                f.setFileTime(fileInfo.modified, QFileDevice::FileModificationTime);
-                f.close();
+        if (!fileInfo.relPath.isEmpty()) {
+            QDir subDir;
+            QString subPath = fileInfo.relPath;
+            subPath.replace("c:", "c_", Qt::CaseInsensitive);
+            subPath.replace("\\", "/");
+            if (!subDir.mkpath(fileName+subPath)) {
+                fatalError = S_MKDIR_ERR.arg(fileName+subPath);
+                return false;
             }
-#endif
+            fileName += subPath+QDir::separator();
         }
-        else {
-            fatalError = S_WRITE_ERR.arg(fileName);
+        fileName += fileInfo.name;
+        if (!fileInfo.saveAs(fileName, fatalError))
             return false;
-        }
     }
     return true;
+}
+
+int InnerFiles::totalSize()
+{
+    int res = 0;
+    foreach(const InnerFile& f, *this)
+        res +=f.content.count();
+    return res;
 }

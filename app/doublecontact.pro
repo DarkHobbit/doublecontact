@@ -22,6 +22,7 @@ SOURCES += \
     helpers.cpp \
     comparecontainers.cpp \
     comparedialog.cpp \
+    innerfilewindow.cpp \
     multicontactdialog.cpp \
     aboutdialog.cpp \
     languageselectdialog.cpp \
@@ -40,6 +41,7 @@ HEADERS += \
     helpers.h \
     comparecontainers.h \
     comparedialog.h \
+    innerfilewindow.h \
     multicontactdialog.h \
     aboutdialog.h \
     languageselectdialog.h \
@@ -56,6 +58,7 @@ FORMS += \
     settingsdialog.ui \
     datedetailsdialog.ui \
     comparedialog.ui \
+    innerfilewindow.ui \
     multicontactdialog.ui \
     aboutdialog.ui \
     languageselectdialog.ui \
