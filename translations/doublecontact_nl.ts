@@ -111,12 +111,12 @@
         <translation>Ctrl+C</translation>
     </message>
     <message>
-        <location filename="../app/callwindow.cpp" line="92"/>
+        <location filename="../app/callwindow.cpp" line="91"/>
         <source>Records: %1</source>
         <translation>Items: %1</translation>
     </message>
     <message>
-        <location filename="../app/callwindow.cpp" line="138"/>
+        <location filename="../app/callwindow.cpp" line="137"/>
         <source>Save calls file</source>
         <translation>Gespreksbestand opslaan</translation>
     </message>
@@ -658,6 +658,67 @@ Wilt u dit certificaat tóch accepteren?</translation>
     </message>
 </context>
 <context>
+    <name>InnerFileModel</name>
+    <message>
+        <location filename="../model/innerfilemodel.cpp" line="24"/>
+        <source>Folder</source>
+        <translation type="unfinished">Map</translation>
+    </message>
+    <message>
+        <location filename="../model/innerfilemodel.cpp" line="25"/>
+        <source>Name</source>
+        <translation type="unfinished">Naam</translation>
+    </message>
+    <message>
+        <location filename="../model/innerfilemodel.cpp" line="26"/>
+        <source>TimeStamp</source>
+        <translation type="unfinished">Tijdstempel</translation>
+    </message>
+    <message>
+        <location filename="../model/innerfilemodel.cpp" line="27"/>
+        <source>Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>InnerFileWindow</name>
+    <message>
+        <location filename="../app/innerfilewindow.ui" line="14"/>
+        <source>Files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/innerfilewindow.ui" line="31"/>
+        <source>Filter</source>
+        <translation type="unfinished">Filteren</translation>
+    </message>
+    <message>
+        <location filename="../app/innerfilewindow.ui" line="56"/>
+        <source>&amp;Save all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/innerfilewindow.ui" line="65"/>
+        <source>Copy text</source>
+        <translation type="unfinished">Tekst kopiëren</translation>
+    </message>
+    <message>
+        <location filename="../app/innerfilewindow.ui" line="68"/>
+        <source>Ctrl+C</source>
+        <translation type="unfinished">Ctrl+C</translation>
+    </message>
+    <message>
+        <location filename="../app/innerfilewindow.ui" line="73"/>
+        <source>Show file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/innerfilewindow.ui" line="78"/>
+        <source>Save file</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>LogWindow</name>
     <message>
         <location filename="../app/logwindow.ui" line="14"/>
@@ -692,326 +753,331 @@ Wilt u dit certificaat tóch accepteren?</translation>
         <translation type="obsolete">Dubbele contactpersoon</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="44"/>
-        <location filename="../app/mainwindow.ui" line="88"/>
+        <location filename="../app/mainwindow.ui" line="43"/>
+        <location filename="../app/mainwindow.ui" line="86"/>
         <source>&lt;Empty&gt;</source>
         <translation>&lt;Leeg&gt;</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="66"/>
-        <location filename="../app/mainwindow.ui" line="107"/>
+        <location filename="../app/mainwindow.ui" line="65"/>
+        <location filename="../app/mainwindow.ui" line="105"/>
         <source>Filter</source>
         <translation>Filteren</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="125"/>
+        <location filename="../app/mainwindow.ui" line="123"/>
         <source>Add (Ins)</source>
         <translation>Toevoegen (Ins)</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="132"/>
+        <location filename="../app/mainwindow.ui" line="130"/>
         <source>Edit (Enter)</source>
         <translation>Bewerken (Enter)</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="139"/>
+        <location filename="../app/mainwindow.ui" line="137"/>
         <source>Remove (Del)</source>
         <translation>Verwijderen (Del)</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="159"/>
+        <location filename="../app/mainwindow.ui" line="157"/>
         <source>F2 Swap Names</source>
         <translation>F2 Namen omwisselen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="166"/>
+        <location filename="../app/mainwindow.ui" line="164"/>
         <source>F3 Compare</source>
         <translation>F3 Vergelijken</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="173"/>
+        <location filename="../app/mainwindow.ui" line="171"/>
         <source>F4 Sort</source>
         <translation>F4 Sorteren</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="184"/>
+        <location filename="../app/mainwindow.ui" line="182"/>
         <source>F5 Copy</source>
         <translation>F5 Kopiëren</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="191"/>
+        <location filename="../app/mainwindow.ui" line="189"/>
         <source>F6 Move</source>
         <translation>F6 Verplaatsen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="211"/>
+        <location filename="../app/mainwindow.ui" line="209"/>
         <source>Exit</source>
         <translation>Afsluiten</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="230"/>
-        <location filename="../app/mainwindow.ui" line="334"/>
-        <location filename="../app/mainwindow.ui" line="366"/>
+        <location filename="../app/mainwindow.ui" line="228"/>
+        <location filename="../app/mainwindow.ui" line="335"/>
+        <location filename="../app/mainwindow.ui" line="367"/>
         <source>&amp;File</source>
         <translation>&amp;Bestand</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="234"/>
+        <location filename="../app/mainwindow.ui" line="232"/>
         <source>&amp;Open</source>
         <translation>&amp;Openen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="241"/>
+        <location filename="../app/mainwindow.ui" line="239"/>
         <source>S&amp;ave as</source>
         <translation>Ops&amp;laan als</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="248"/>
+        <location filename="../app/mainwindow.ui" line="246"/>
         <source>&amp;Recent</source>
         <translation>&amp;Recent</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="262"/>
+        <location filename="../app/mainwindow.ui" line="260"/>
         <source>&amp;Contact</source>
         <translation>&amp;Contactpersoon</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="289"/>
+        <location filename="../app/mainwindow.ui" line="287"/>
         <source>&amp;Help</source>
         <translation>&amp;Hulp</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="296"/>
+        <location filename="../app/mainwindow.ui" line="294"/>
         <source>&amp;View</source>
         <translation>&amp;Beeld</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="306"/>
+        <location filename="../app/mainwindow.ui" line="307"/>
         <source>&amp;List</source>
         <translation>&amp;Lijst</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="337"/>
+        <location filename="../app/mainwindow.ui" line="338"/>
         <source>Ctrl+O</source>
         <translation>Ctrl+O</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="342"/>
-        <location filename="../app/mainwindow.ui" line="374"/>
+        <location filename="../app/mainwindow.ui" line="343"/>
+        <location filename="../app/mainwindow.ui" line="375"/>
         <source>&amp;Directory</source>
         <translation>&amp;Map</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="347"/>
+        <location filename="../app/mainwindow.ui" line="348"/>
         <source>&amp;Close</source>
         <translation>&amp;Sluiten</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="350"/>
+        <location filename="../app/mainwindow.ui" line="351"/>
         <source>Ctrl+W</source>
         <translation>Ctrl+W</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="358"/>
+        <location filename="../app/mainwindow.ui" line="359"/>
         <source>&amp;Save</source>
         <translation>Op&amp;slaan</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="361"/>
+        <location filename="../app/mainwindow.ui" line="362"/>
         <source>Ctrl+S</source>
         <translation>Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="369"/>
+        <location filename="../app/mainwindow.ui" line="370"/>
         <source>Ctrl+Shift+S</source>
         <translation>Ctrl+Shift+S</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="379"/>
+        <location filename="../app/mainwindow.ui" line="380"/>
         <source>E&amp;xit</source>
         <translation>A&amp;fsluiten</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="390"/>
+        <location filename="../app/mainwindow.ui" line="391"/>
         <source>&amp;Two panels</source>
         <translation>&amp;Twee panelen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="395"/>
+        <location filename="../app/mainwindow.ui" line="396"/>
         <source>&amp;Options...</source>
         <translation>&amp;Opties…</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="400"/>
+        <location filename="../app/mainwindow.ui" line="401"/>
         <source>&amp;Add</source>
         <translation>&amp;Toevoegen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="403"/>
+        <location filename="../app/mainwindow.ui" line="404"/>
         <source>Ins</source>
         <translation>Ins</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="408"/>
+        <location filename="../app/mainwindow.ui" line="409"/>
         <source>&amp;Edit</source>
         <translation>B&amp;ewerken</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="411"/>
+        <location filename="../app/mainwindow.ui" line="412"/>
         <source>Return</source>
         <translation>Enter</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="416"/>
+        <location filename="../app/mainwindow.ui" line="417"/>
         <source>&amp;Remove</source>
         <translation>Ve&amp;rwijderen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="419"/>
+        <location filename="../app/mainwindow.ui" line="420"/>
         <source>Del</source>
         <translation>Del</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="424"/>
+        <location filename="../app/mainwindow.ui" line="425"/>
         <source>&amp;Copy</source>
         <translation>&amp;Kopiëren</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="427"/>
+        <location filename="../app/mainwindow.ui" line="428"/>
         <source>F5</source>
         <translation>F5</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="432"/>
+        <location filename="../app/mainwindow.ui" line="433"/>
         <source>&amp;Move</source>
         <translation>&amp;Verplaatsen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="435"/>
+        <location filename="../app/mainwindow.ui" line="436"/>
         <source>F6</source>
         <translation>F6</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="440"/>
+        <location filename="../app/mainwindow.ui" line="441"/>
         <source>&amp;Swap names</source>
         <translation>Namen omwi&amp;sselen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="443"/>
+        <location filename="../app/mainwindow.ui" line="444"/>
         <source>F2</source>
         <translation>F2</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="448"/>
+        <location filename="../app/mainwindow.ui" line="449"/>
         <source>&amp;Compare/Uncompare</source>
         <translation>&amp;Vergelijken/Niet meer vergelijken</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="451"/>
+        <location filename="../app/mainwindow.ui" line="452"/>
         <source>F3</source>
         <translation>F3</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="459"/>
+        <location filename="../app/mainwindow.ui" line="460"/>
         <source>&amp;Sort</source>
         <translation>&amp;Sorteren</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="462"/>
+        <location filename="../app/mainwindow.ui" line="463"/>
         <source>F4</source>
         <translation>F4</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="467"/>
+        <location filename="../app/mainwindow.ui" line="468"/>
         <source>&amp;Other panel</source>
         <translation>&amp;Ander paneel</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="470"/>
+        <location filename="../app/mainwindow.ui" line="471"/>
         <source>Tab</source>
         <translation>Tab</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="475"/>
+        <location filename="../app/mainwindow.ui" line="476"/>
         <source>&amp;Settings...</source>
         <translation>In&amp;stellingen…</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="491"/>
+        <location filename="../app/mainwindow.ui" line="492"/>
         <source>C&amp;ompare Result</source>
         <translation>Resultaat ver&amp;gelijken</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="532"/>
+        <location filename="../app/mainwindow.ui" line="533"/>
         <source>&amp;Internationalize phone prefix</source>
         <translation>Telefoonnummer voorz&amp;ien van landcode</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="550"/>
+        <location filename="../app/mainwindow.ui" line="551"/>
         <source>Re&amp;verse full name</source>
         <translation>Volledige naam om&amp;draaien</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="581"/>
+        <location filename="../app/mainwindow.ui" line="582"/>
         <source>About &amp;Qt</source>
         <translation>Over &amp;Qt</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="586"/>
+        <location filename="../app/mainwindow.ui" line="587"/>
         <source>Format phone &amp;numbers</source>
         <translation>Telefoon&amp;nummers opmaken</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="619"/>
+        <location filename="../app/mainwindow.ui" line="620"/>
         <source>Join names</source>
         <translation>Namen samenvoegen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="624"/>
+        <location filename="../app/mainwindow.ui" line="625"/>
         <source>Parse full name</source>
         <translation>Volledige naam verwerken</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="629"/>
+        <location filename="../app/mainwindow.ui" line="630"/>
         <source>&amp;Messages...</source>
         <translation>&amp;Berichten…</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="632"/>
+        <location filename="../app/mainwindow.ui" line="633"/>
         <source>Shift+F7</source>
         <translation>Shift+F7</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="637"/>
+        <location filename="../app/mainwindow.ui" line="638"/>
         <source>&amp;Calls...</source>
         <translation>Ge&amp;sprekken…</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="640"/>
+        <location filename="../app/mainwindow.ui" line="641"/>
         <source>Shift+F8</source>
         <translation>Shift+F8</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="645"/>
+        <location filename="../app/mainwindow.ui" line="646"/>
         <source>Mass tags remove</source>
         <translation>Meerdere labels verwijderen</translation>
+    </message>
+    <message>
+        <location filename="../app/mainwindow.ui" line="651"/>
+        <source>&amp;Files...</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Settings...</source>
         <translation type="obsolete">Instellingen...</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="478"/>
+        <location filename="../app/mainwindow.ui" line="479"/>
         <source>Ctrl+P</source>
         <translation>Ctrl+P</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="483"/>
+        <location filename="../app/mainwindow.ui" line="484"/>
         <source>&amp;Filter</source>
         <translation>&amp;Filteren</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="486"/>
+        <location filename="../app/mainwindow.ui" line="487"/>
         <source>Ctrl+F</source>
         <translation>Ctrl+F</translation>
     </message>
@@ -1020,42 +1086,42 @@ Wilt u dit certificaat tóch accepteren?</translation>
         <translation type="obsolete">&amp;Resultaat vergelijken</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="494"/>
+        <location filename="../app/mainwindow.ui" line="495"/>
         <source>Shift+F3</source>
         <translation>Shift+F3</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="499"/>
+        <location filename="../app/mainwindow.ui" line="500"/>
         <source>S&amp;plit names</source>
         <translation>Namen s&amp;plitsen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="502"/>
+        <location filename="../app/mainwindow.ui" line="503"/>
         <source>Shift+F2</source>
         <translation>Shift+F2</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="507"/>
+        <location filename="../app/mainwindow.ui" line="508"/>
         <source>&amp;Drop slashes</source>
         <translation>Schuine strepen verwij&amp;deren</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="512"/>
+        <location filename="../app/mainwindow.ui" line="513"/>
         <source>&amp;Generate full name</source>
         <translation>Volledige naam &amp;genereren</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="517"/>
+        <location filename="../app/mainwindow.ui" line="518"/>
         <source>&amp;Join</source>
         <translation>&amp;Deelnemen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="522"/>
+        <location filename="../app/mainwindow.ui" line="523"/>
         <source>Drop &amp;full name</source>
         <translation>&amp;Volledige naam verwijderen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="527"/>
+        <location filename="../app/mainwindow.ui" line="528"/>
         <source>Sp&amp;lit</source>
         <translation>Sp&amp;litsen</translation>
     </message>
@@ -1064,17 +1130,17 @@ Wilt u dit certificaat tóch accepteren?</translation>
         <translation type="obsolete">Internationaal netnummer</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="537"/>
+        <location filename="../app/mainwindow.ui" line="538"/>
         <source>S&amp;wap Panels</source>
         <translation>Panelen om&amp;wisselen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="540"/>
+        <location filename="../app/mainwindow.ui" line="541"/>
         <source>Ctrl+U</source>
         <translation>Ctrl+U</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="545"/>
+        <location filename="../app/mainwindow.ui" line="546"/>
         <source>&amp;About</source>
         <translation>&amp;Over</translation>
     </message>
@@ -1083,32 +1149,32 @@ Wilt u dit certificaat tóch accepteren?</translation>
         <translation type="obsolete">Volledige naam omdraaien</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="555"/>
+        <location filename="../app/mainwindow.ui" line="556"/>
         <source>S&amp;tatistics</source>
         <translation>S&amp;tatistieken</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="560"/>
+        <location filename="../app/mainwindow.ui" line="561"/>
         <source>Re&amp;port</source>
         <translation>Ra&amp;pporteren</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="563"/>
+        <location filename="../app/mainwindow.ui" line="564"/>
         <source>Ctrl+R</source>
         <translation>Ctrl+R</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="568"/>
+        <location filename="../app/mainwindow.ui" line="569"/>
         <source>&amp;Hard sort</source>
         <translation>&amp;Hard sorteren</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="573"/>
+        <location filename="../app/mainwindow.ui" line="574"/>
         <source>&amp;Groups...</source>
         <translation>&amp;Groepen…</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="576"/>
+        <location filename="../app/mainwindow.ui" line="577"/>
         <source>Ctrl+G</source>
         <translation>Ctrl+G</translation>
     </message>
@@ -1125,42 +1191,42 @@ Wilt u dit certificaat tóch accepteren?</translation>
         <translation type="obsolete">Scheidingsteken</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="611"/>
+        <location filename="../app/mainwindow.ui" line="612"/>
         <source>Copy text</source>
         <translation>Tekst kopiëren</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.ui" line="614"/>
+        <location filename="../app/mainwindow.ui" line="615"/>
         <source>Ctrl+C</source>
         <translation>Ctrl+C</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="264"/>
+        <location filename="../app/mainwindow.cpp" line="268"/>
         <source>Open contact file</source>
         <translation>Contactpersoonbestand openen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="281"/>
+        <location filename="../app/mainwindow.cpp" line="285"/>
         <source>Open VCF Directory</source>
         <translation>VCF-map openen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="305"/>
+        <location filename="../app/mainwindow.cpp" line="309"/>
         <source>Save contact file</source>
         <translation>Contactpersoonbestand opslaan</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="321"/>
+        <location filename="../app/mainwindow.cpp" line="325"/>
         <source>Save VCF Directory</source>
         <translation>VCF-map opslaan</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="330"/>
+        <location filename="../app/mainwindow.cpp" line="334"/>
         <source>Directory exists. Are You really want rewrite it?</source>
         <translation>De map bestaat al. Weet u zeker dat u hem wilt overschrijven?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="379"/>
+        <location filename="../app/mainwindow.cpp" line="383"/>
         <source>Are You really want to edit more than one record?
 Only some fields can this edited in this mode</source>
         <translation>Weet u zeker dat u meer dan één item wilt wijzigen?
@@ -1171,7 +1237,7 @@ In deze modus kan slechts een beperkt aantal velden worden gewijzigd</translatio
         <translation type="obsolete">Weet u zeker u de geselecteerde items wilt verwijderen?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="491"/>
+        <location filename="../app/mainwindow.cpp" line="495"/>
         <source>Compare mode requires show two panels and load contact lists in both panels</source>
         <translation>Om de vergelijkingsmodus te kunnen gebruiken moet u de twee panelen-modus inschakelen en lijsten laden in beide panelen</translation>
     </message>
@@ -1184,7 +1250,7 @@ In deze modus kan slechts een beperkt aantal velden worden gewijzigd</translatio
         <translation type="obsolete">Groepsbewerkingen zijn nog niet geïmplementeerd; selecteer één item</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="562"/>
+        <location filename="../app/mainwindow.cpp" line="566"/>
         <source> (directory)</source>
         <translation> (map)</translation>
     </message>
@@ -1193,12 +1259,12 @@ In deze modus kan slechts een beperkt aantal velden worden gewijzigd</translatio
         <translation type="obsolete">Dubbele contactpersoon - %1</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="194"/>
+        <location filename="../app/mainwindow.cpp" line="195"/>
         <source>Only one of two files can be dropped to program window</source>
         <translation>Slechts één van de twee bestanden kan worden versleept naar het applicatievenster</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="676"/>
+        <location filename="../app/mainwindow.cpp" line="681"/>
         <source>Records: %1</source>
         <translation>Items: %1</translation>
     </message>
@@ -1207,12 +1273,12 @@ In deze modus kan slechts een beperkt aantal velden worden gewijzigd</translatio
         <translation type="obsolete">Modus: </translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="682"/>
+        <location filename="../app/mainwindow.cpp" line="687"/>
         <source>two panels</source>
         <translation>twee panelen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="682"/>
+        <location filename="../app/mainwindow.cpp" line="687"/>
         <source>one panel</source>
         <translation>één paneel</translation>
     </message>
@@ -1225,69 +1291,69 @@ In deze modus kan slechts een beperkt aantal velden worden gewijzigd</translatio
         <translation type="obsolete">ongesorteerd</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="686"/>
+        <location filename="../app/mainwindow.cpp" line="691"/>
         <source>simple editing</source>
         <translation>simpele bewerking</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="690"/>
+        <location filename="../app/mainwindow.cpp" line="695"/>
         <source>compare</source>
         <translation>vergelijken</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="736"/>
+        <location filename="../app/mainwindow.cpp" line="741"/>
         <source>&apos;%1&apos; was changed.
 Save changes?</source>
         <translation>‘%1’ is gewijzigd.
 Wilt u de wijzigingen opslaan?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="837"/>
+        <location filename="../app/mainwindow.cpp" line="841"/>
         <source>Restart program to apply language change</source>
         <translation>Herstart de app om de taalwijziging door te voeren</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="881"/>
+        <location filename="../app/mainwindow.cpp" line="885"/>
         <source>Two panels and compare mode needed for this operation</source>
         <translation>De twee panelen- en vergelijkingsmodus zijn vereist voor deze bewerking</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="896"/>
+        <location filename="../app/mainwindow.cpp" line="900"/>
         <source>Left item</source>
         <translation>Linkeritem</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="896"/>
+        <location filename="../app/mainwindow.cpp" line="900"/>
         <source>Right item</source>
         <translation>Rechteritem</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="923"/>
+        <location filename="../app/mainwindow.cpp" line="927"/>
         <source>Strongly two records on current panel must be selected for this operation</source>
         <translation>Twee items in het huidige paneel dienen te worden geselecteerd voor deze bewerking</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="929"/>
+        <location filename="../app/mainwindow.cpp" line="933"/>
         <source>Item 1</source>
         <translation>Item 1</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="929"/>
+        <location filename="../app/mainwindow.cpp" line="933"/>
         <source>Item 2</source>
         <translation>Item 2</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="997"/>
+        <location filename="../app/mainwindow.cpp" line="1001"/>
         <source>Operation requires show two panels</source>
         <translation>Deze bewerking vereist twee panelen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1030"/>
+        <location filename="../app/mainwindow.cpp" line="1034"/>
         <source>Statitics</source>
         <translation>Statistieken</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1037"/>
+        <location filename="../app/mainwindow.cpp" line="1041"/>
         <source>Report file</source>
         <translation>Rapportbestand</translation>
     </message>
@@ -1440,39 +1506,39 @@ Weet u zeker dat u kolomsortering wilt uitschakelen?</translation>
         <translation>MMS-bestanden tonen</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="225"/>
+        <location filename="../app/messagewindow.cpp" line="221"/>
         <source> with messages</source>
         <translation> met berichten</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="234"/>
+        <location filename="../app/messagewindow.cpp" line="230"/>
         <source>Records: %1</source>
         <translation>Items: %1</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="235"/>
+        <location filename="../app/messagewindow.cpp" line="231"/>
         <source>Including MMS: %1</source>
         <translation>Inclusief mms: %1</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="236"/>
+        <location filename="../app/messagewindow.cpp" line="232"/>
         <source>Merged dups: %1</source>
         <translation>Samengevoegde duplicaten: %1</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="237"/>
+        <location filename="../app/messagewindow.cpp" line="233"/>
         <source>Merged multiparted: %1</source>
         <translation>Samengevoegde berichtdelen: %1</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="284"/>
+        <location filename="../app/messagewindow.cpp" line="280"/>
         <source>id: %1
 Sources: %2</source>
         <translation>id: %1
 Bronnen: %2</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="287"/>
+        <location filename="../app/messagewindow.cpp" line="283"/>
         <source>
 
 MMS properties:
@@ -1483,12 +1549,12 @@ MMS-informatie:
 %1</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="304"/>
+        <location filename="../app/messagewindow.cpp" line="300"/>
         <source>Save messages file</source>
         <translation>Berichtenbestand opslaan</translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="311"/>
+        <location filename="../app/messagewindow.cpp" line="307"/>
         <source>Can you also save media files from MMS (%1 messages)?</source>
         <translation>Kun je ook mediabestanden uit mms&apos;jes opslaan (%1 berichten)?</translation>
     </message>
@@ -1527,102 +1593,102 @@ MMS-informatie:
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../core/contactlist.cpp" line="115"/>
-        <location filename="../core/contactlist.cpp" line="1144"/>
+        <location filename="../core/contactlist.cpp" line="116"/>
+        <location filename="../core/contactlist.cpp" line="1150"/>
         <source>Home</source>
         <translation>Thuis</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="116"/>
+        <location filename="../core/contactlist.cpp" line="117"/>
         <source>Message</source>
         <translation>Bericht</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="117"/>
-        <location filename="../core/contactlist.cpp" line="1145"/>
+        <location filename="../core/contactlist.cpp" line="118"/>
+        <location filename="../core/contactlist.cpp" line="1151"/>
         <source>Work</source>
         <translation>Werk</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="118"/>
-        <location filename="../core/contactlist.cpp" line="169"/>
-        <location filename="../core/contactlist.cpp" line="205"/>
-        <location filename="../core/contactlist.cpp" line="1146"/>
+        <location filename="../core/contactlist.cpp" line="119"/>
+        <location filename="../core/contactlist.cpp" line="170"/>
+        <location filename="../core/contactlist.cpp" line="206"/>
+        <location filename="../core/contactlist.cpp" line="1152"/>
         <source>Preferable</source>
         <translation>Prefereren</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="119"/>
+        <location filename="../core/contactlist.cpp" line="120"/>
         <source>Voice</source>
         <translation>Spraak</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="120"/>
+        <location filename="../core/contactlist.cpp" line="121"/>
         <source>Fax</source>
         <translation>Fax</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="121"/>
+        <location filename="../core/contactlist.cpp" line="122"/>
         <source>Cell</source>
         <translation>Mobiel</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="122"/>
+        <location filename="../core/contactlist.cpp" line="123"/>
         <source>Video</source>
         <translation>Video</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="123"/>
+        <location filename="../core/contactlist.cpp" line="124"/>
         <source>Pager</source>
         <translation>Pager</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="124"/>
+        <location filename="../core/contactlist.cpp" line="125"/>
         <source>BBS</source>
         <translation>BBS</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="125"/>
+        <location filename="../core/contactlist.cpp" line="126"/>
         <source>Modem</source>
         <translation>Modem</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="126"/>
+        <location filename="../core/contactlist.cpp" line="127"/>
         <source>Car</source>
         <translation>Auto</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="127"/>
+        <location filename="../core/contactlist.cpp" line="128"/>
         <source>ISDN</source>
         <translation>ISDN</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="128"/>
+        <location filename="../core/contactlist.cpp" line="129"/>
         <source>PCS</source>
         <translation>PCS</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="129"/>
+        <location filename="../core/contactlist.cpp" line="130"/>
         <source>CALLBACK</source>
         <translation>TERUGBELNUMMER</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="167"/>
+        <location filename="../core/contactlist.cpp" line="168"/>
         <source>Internet</source>
         <translation>Internet</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="168"/>
+        <location filename="../core/contactlist.cpp" line="169"/>
         <source>X.400</source>
         <translation>X.400</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="432"/>
+        <location filename="../core/contactlist.cpp" line="433"/>
         <source>Strange empty contact</source>
         <translation>Vreemde, lege contactpersoon</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="915"/>
+        <location filename="../core/contactlist.cpp" line="916"/>
         <source>%1 records
 %2 phones
 %3 emails
@@ -1635,14 +1701,14 @@ MMS-informatie:
 %5 verjaardagen</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="918"/>
+        <location filename="../core/contactlist.cpp" line="919"/>
         <source>
 %1 calls</source>
         <translation>
 %1 oproepen</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="923"/>
+        <location filename="../core/contactlist.cpp" line="924"/>
         <source>
 %1 SMS
 %2 archived SMS</source>
@@ -1669,7 +1735,7 @@ MMS-informatie:
 %8 gearchiveerde sms&apos;jes</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="926"/>
+        <location filename="../core/contactlist.cpp" line="927"/>
         <source>
 
 model %1
@@ -1686,17 +1752,17 @@ firmware %4
 telefoontaal %5</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1213"/>
+        <location filename="../core/extra.cpp" line="26"/>
         <source>Dialed</source>
         <translation>Uitgaand</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1215"/>
+        <location filename="../core/extra.cpp" line="28"/>
         <source>Received</source>
         <translation>Inkomend</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1217"/>
+        <location filename="../core/extra.cpp" line="30"/>
         <source>Missed</source>
         <translation>Gemist</translation>
     </message>
@@ -1721,22 +1787,22 @@ telefoontaal %5</translation>
 %9 %10</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1147"/>
+        <location filename="../core/contactlist.cpp" line="1153"/>
         <source>Domestic</source>
         <translation>Binnenland</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1148"/>
+        <location filename="../core/contactlist.cpp" line="1154"/>
         <source>International</source>
         <translation>Internationaal</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1149"/>
+        <location filename="../core/contactlist.cpp" line="1155"/>
         <source>Postal</source>
         <translation>Post</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1150"/>
+        <location filename="../core/contactlist.cpp" line="1156"/>
         <source>Parcel</source>
         <translation>Pakket</translation>
     </message>
@@ -1967,21 +2033,21 @@ opgeslagen als mobiele telefoon</translation>
 %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/vcfdirectory.cpp" line="35"/>
+        <location filename="../core/formats/files/vcfdirectory.cpp" line="36"/>
         <source>Directory not exists:
 %1</source>
         <translation>De map bestaat niet:
 %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/vcfdirectory.cpp" line="40"/>
+        <location filename="../core/formats/files/vcfdirectory.cpp" line="41"/>
         <source>Directory not contains VCF files:
 %1</source>
         <translation>De map bevat geen VCF-bestanden:
 %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/vcfdirectory.cpp" line="73"/>
+        <location filename="../core/formats/files/vcfdirectory.cpp" line="74"/>
         <location filename="../core/globals.h" line="136"/>
         <source>Can&apos;t create directory
 %1</source>
@@ -1989,42 +2055,42 @@ opgeslagen als mobiele telefoon</translation>
 %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="98"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="99"/>
         <source>Unsupported MPB section: </source>
         <translation>Niet-ondersteunde MPB-sectie: </translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="116"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="117"/>
         <source>File isn&apos;t MPB file or corrupted</source>
         <translation>Het bestand is geen MPB-bestand of is beschadigd</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="126"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="127"/>
         <source>Strange call item: %1, size %2</source>
         <translation>Vreemd oproepitem: %1, grootte %2</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="165"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="166"/>
         <source>No contact records in this file</source>
         <translation>Er zijn geen contactpersoonitems in dit bestand</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="176"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="177"/>
         <source>MPB record allowed only for MPB source</source>
         <translation>MPB-item is alleen toegestaan voor MPB-bron</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="229"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="230"/>
         <source>Name for number %1 changed from %2 to %3</source>
         <translation>De naam van de persoon met nummer %1 is gewijzigd van %2 in %3</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="241"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="242"/>
         <source>Number %1 without original name not found in addressbook</source>
         <translation>Het nummer zonder originele naam, %1, kan niet worden gevonden in het adresboek</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="243"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="244"/>
         <source>Number %1 not found in addressbook. Original name (%2) saved</source>
         <translation>Het nummer, %1, kan niet worden gevonden in het adresboek. De originele naam (%2) is opgeslagen</translation>
     </message>
@@ -2503,27 +2569,27 @@ De gegevens zullen verloren gaan</translation>
         <translation>Werktitel opgeslagen als afdeling, contactpersoon %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/nbffile.cpp" line="64"/>
+        <location filename="../core/formats/files/nbffile.cpp" line="65"/>
         <source>Can&apos;t open %1 directory in archive</source>
         <translation>Map %1 in archief kan niet worden geopend</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/nbffile.cpp" line="27"/>
+        <location filename="../core/formats/files/nbffile.cpp" line="28"/>
         <source>Can&apos;t set %1 item as current in archive</source>
         <translation>Item %1 in archief kan niet worden ingesteld als huidig</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/nbffile.cpp" line="132"/>
+        <location filename="../core/formats/files/nbffile.cpp" line="133"/>
         <source>NBF file can be saved only if original addressbook also was in NBF format</source>
         <translation>NBF-bestanden kunnen alleen worden opgeslagen als het originele adresboek ook NBF-formaat is</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/nbffile.cpp" line="137"/>
+        <location filename="../core/formats/files/nbffile.cpp" line="138"/>
         <source>Original NBF file was moved or deleted</source>
         <translation>Originele NBF-bestand is verplaatst of verwijderd</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/nbffile.cpp" line="28"/>
+        <location filename="../core/formats/files/nbffile.cpp" line="29"/>
         <source>Can&apos;t open %1 item in archive</source>
         <translation>Item %1 in archief kan niet worden geopend</translation>
     </message>
@@ -2555,88 +2621,94 @@ Check username, password, protocol and port</source>
 Controleer gebruikersnaam, wachtwoord, protocol en poort</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/nbufile.cpp" line="24"/>
+        <location filename="../core/formats/files/nbufile.cpp" line="27"/>
         <source>Unsupported NBU file section type: %1</source>
         <translation>Niet-ondersteund soort NBU-bestandssectie: %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/nbufile.cpp" line="25"/>
+        <location filename="../core/formats/files/nbufile.cpp" line="28"/>
         <source>Unsupported NBU file folder type: %1</source>
         <translation>Niet-ondersteund NBU-bestandsmaptype: %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/nbufile.cpp" line="154"/>
+        <location filename="../core/formats/files/nbufile.cpp" line="157"/>
         <source>Signature not recognized, trying anyway...</source>
         <translation>Ondertekening wordt niet herkend; bezig met opnieuw proberen…</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/nbufile.cpp" line="203"/>
+        <location filename="../core/formats/files/nbufile.cpp" line="206"/>
         <source>Unknown NBU file section type</source>
         <translation>Onbekend soort NBU-bestanddssectie</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/nbufile.cpp" line="224"/>
-        <location filename="../core/formats/files/nbufile.cpp" line="235"/>
+        <location filename="../core/formats/files/nbufile.cpp" line="236"/>
+        <source>NBU inner file %1/%2 truncated.
+Read %3 bytes, %4 expected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/formats/files/nbufile.cpp" line="257"/>
+        <location filename="../core/formats/files/nbufile.cpp" line="268"/>
         <source>Unknown vcard folder structure at section %1, subsection %2</source>
         <translation>Onbekende vcard-mappenstructuur in sectie %1, subsectie %2</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/nbufile.cpp" line="264"/>
+        <location filename="../core/formats/files/nbufile.cpp" line="297"/>
         <source>Invalid index: %1</source>
         <translation>Ongeldige index: %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/nbufile.cpp" line="413"/>
+        <location filename="../core/formats/files/nbufile.cpp" line="446"/>
         <source>Test 2 greater than 0x01: %1</source>
         <translation>Test 2 groter dan 0x01: %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/nbufile.cpp" line="416"/>
+        <location filename="../core/formats/files/nbufile.cpp" line="449"/>
         <source>Test 1 different than 0x10: %1</source>
         <translation>Test 1 is anders dan 0x10: %1</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="113"/>
+        <location filename="../core/decodedmessagelist.cpp" line="80"/>
         <source>Read</source>
         <translation>Gelezen</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="114"/>
+        <location filename="../core/decodedmessagelist.cpp" line="81"/>
         <source>UnRd</source>
         <translation>Ongelezen</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="115"/>
+        <location filename="../core/decodedmessagelist.cpp" line="82"/>
         <source>Unk.</source>
         <translation>Onbekend</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="117"/>
+        <location filename="../core/decodedmessagelist.cpp" line="84"/>
         <source>Inbox</source>
         <translation>Postvak IN</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="118"/>
+        <location filename="../core/decodedmessagelist.cpp" line="85"/>
         <source>Outbox</source>
         <translation>Postvak UIT</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="119"/>
+        <location filename="../core/decodedmessagelist.cpp" line="86"/>
         <source>Sentbox</source>
         <translation>Verzonden items</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="120"/>
+        <location filename="../core/decodedmessagelist.cpp" line="87"/>
         <source>Draft</source>
         <translation>Concept</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="121"/>
+        <location filename="../core/decodedmessagelist.cpp" line="88"/>
         <source>Trash</source>
         <translation>Prullenbak</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="132"/>
+        <location filename="../core/decodedmessagelist.cpp" line="99"/>
         <source>&quot;Date&quot;,&quot;Box&quot;,&quot;From/To&quot;,&quot;Number&quot;,&quot;Status&quot;,&quot;Text&quot;,&quot;Aux&quot;
 </source>
         <translation>&quot;Date&quot;,&quot;Box&quot;,&quot;From/To&quot;,&quot;Number&quot;,&quot;Status&quot;,&quot;Text&quot;,&quot;Aux&quot;
@@ -2649,12 +2721,12 @@ Controleer gebruikersnaam, wachtwoord, protocol en poort</translation>
 </translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="147"/>
+        <location filename="../core/decodedmessagelist.cpp" line="114"/>
         <source>MMS</source>
         <translation>MMS</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="231"/>
+        <location filename="../core/decodedmessagelist.cpp" line="198"/>
         <source>Dlv</source>
         <translation>Bzgd</translation>
     </message>
@@ -2663,7 +2735,7 @@ Controleer gebruikersnaam, wachtwoord, protocol en poort</translation>
         <translation type="obsolete">Leeg</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="341"/>
+        <location filename="../core/decodedmessagelist.cpp" line="308"/>
         <source>MPB message body missing</source>
         <translation>MPB-berichtinhoud ontbreekt</translation>
     </message>
@@ -2696,46 +2768,46 @@ Controleer gebruikersnaam, wachtwoord, protocol en poort</translation>
         <translation>Onbekend soort veld: 0x%1 op %2</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/nokiadata.cpp" line="478"/>
+        <location filename="../core/formats/common/nokiadata.cpp" line="475"/>
         <source>Invalid MMS Yes/No value (%1) at %2</source>
         <translation>Ongeldige mms-waarde (%1) op %2</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/nokiadata.cpp" line="488"/>
+        <location filename="../core/formats/common/nokiadata.cpp" line="485"/>
         <source>Invalid MMS octet count (%1) at %2</source>
         <translation>Ongeldige mms-telling (%1) op %2</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/nokiadata.cpp" line="513"/>
+        <location filename="../core/formats/common/nokiadata.cpp" line="510"/>
         <source>Personal</source>
         <comment>MmsClass</comment>
         <translation>Persoonlijk</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/nokiadata.cpp" line="516"/>
+        <location filename="../core/formats/common/nokiadata.cpp" line="513"/>
         <source>Advertisement</source>
         <comment>MmsClass</comment>
         <translation>Reclame</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/nokiadata.cpp" line="519"/>
+        <location filename="../core/formats/common/nokiadata.cpp" line="516"/>
         <source>Info</source>
         <comment>MmsClass</comment>
         <translation>Informatie</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/nokiadata.cpp" line="522"/>
+        <location filename="../core/formats/common/nokiadata.cpp" line="519"/>
         <source>Auto</source>
         <comment>MmsClass</comment>
         <translation>Automatisch</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/nokiadata.cpp" line="544"/>
+        <location filename="../core/formats/common/nokiadata.cpp" line="541"/>
         <source>Parse value length error (%1) at %2</source>
         <translation>Fout tijdens verwerken van lengte (%1) op %2</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/nokiadata.cpp" line="556"/>
+        <location filename="../core/formats/common/nokiadata.cpp" line="553"/>
         <source>Error reading uint64_t value: overflow at %1</source>
         <translation>Fout tijdens uitlezen van uint64_t-waarde: overflow op %1</translation>
     </message>
@@ -2745,7 +2817,7 @@ Controleer gebruikersnaam, wachtwoord, protocol en poort</translation>
         <translation>Onbekend ATT-subtype op regel %1: %2</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vmessagedata.cpp" line="282"/>
+        <location filename="../core/formats/common/vmessagedata.cpp" line="280"/>
         <source>File %1 has size %2, declared %3</source>
         <translation>Bestand ‘%1’ heeft een grootte van %2 maar is %3 verklaard</translation>
     </message>
@@ -2755,6 +2827,21 @@ Controleer gebruikersnaam, wachtwoord, protocol en poort</translation>
 </source>
         <translation>&quot;Soort&quot;,&quot;Datum&quot;,&quot;Duur&quot;,&quot;Nummer&quot;,&quot;Naam&quot;
 </translation>
+    </message>
+    <message>
+        <location filename="../core/extra.h" line="35"/>
+        <source>Records: %1. Size: %2 byte(s)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/extra.h" line="36"/>
+        <source>Select attached files Directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/extra.h" line="37"/>
+        <source>Save attachment</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2804,7 +2891,7 @@ Controleer gebruikersnaam, wachtwoord, protocol en poort</translation>
 <context>
     <name>ReadOnlyTableDelegate</name>
     <message>
-        <location filename="../app/helpers.cpp" line="31"/>
+        <location filename="../app/helpers.cpp" line="34"/>
         <source>This table is read only</source>
         <translation>Deze tabel is alleen-lezen</translation>
     </message>
