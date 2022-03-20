@@ -141,7 +141,8 @@ bool MPBFile::importRecords(const QString &url, ContactList &list, bool append)
             list.extra.organizer << line;
             break;
         case secNotes:
-            list.extra.notes << line;
+            list.extra.notes << Note(0, QDateTime::currentDateTime(), line);
+            // TODO нормальный VNOTE-парсер
             break;
         case secSMS:
             list.extra.pduSMS << line;
@@ -259,8 +260,9 @@ bool MPBFile::exportRecords(const QString &url, ContactList &list)
         winEndl(stream);
     }
     writeSectionHeader(stream, "Notes");
-    foreach (const QString& line, list.extra.notes) {
-        stream << line;
+    // TODO нормальный парсер
+    foreach (const Note& n, list.extra.notes) {
+        stream << n.text;
         winEndl(stream);
     }
     // PDU SMS

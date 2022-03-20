@@ -49,6 +49,7 @@ private:
     static QString getString16c(QDataStream& stream);
     static quint64 getU64(QDataStream& stream);
     static quint32 getU32(QDataStream& stream);
+    static quint16 getU16(QDataStream& stream);
     static quint8 getU8(QDataStream& stream);
     NBUSectionType* findSectionType(quint8* sectID);
     bool parseFolderVcard(QDataStream& stream, ContactList &list, const QString& sectName);

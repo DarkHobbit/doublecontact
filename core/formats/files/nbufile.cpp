@@ -17,6 +17,7 @@
 #include <QtAlgorithms>
 #include <QDataStream>
 #include <QFile>
+#include <QTextCodec>
 #include <QTextStream>
 
 #include "corehelpers.h"
@@ -243,7 +244,7 @@ std::cout << "Section: " << section->type << "::" << section->name.toLocal8Bit()
             break;
         }
         case NBUSectionType::Vcards:
-            ss >> count >> count2;
+            ss >> count >> count2; // >> files >> folders
 std::cout << "VCards " << count << "!"<< count2 << std::endl;
             if (count2>0) {
                 for (quint32 j = 0; j < count2; j++) {
@@ -271,7 +272,22 @@ std::cout << "No vcard folders" << std::endl;
                 file.seek(partPos);
             }
             break;
-        /*case ProcessType.Memos: TODO*/
+        case NBUSectionType::Memos: {
+            ss >> count;
+            std::cout << "Memos " << count << std::endl;
+            partPos = file.pos();
+            file.seek(sectStart + 0x30);
+            QTextCodec* codecU16 = QTextCodec::codecForName("UTF-16");
+            for (quint32 i = 0; i < count; i++)
+            {
+                file.seek(file.pos()+4);
+                int len = getU16(ss) * 2;
+                QByteArray body = file.read(len);
+                list.extra.notes << Note(i+1, QDateTime(), codecU16->toUnicode(body));
+            }
+            file.seek(partPos);
+            break;
+        }
         case NBUSectionType::Groups:
             ss >> count2 >> count;
             std::cout << "Groups " << count << "!"<< count2 << std::endl;
@@ -382,8 +398,7 @@ QDateTime NBUFile::getDateTime(QDataStream &stream)
 
 QString NBUFile::getString16c(QDataStream& stream)
 {
-    quint16 cnt;
-    stream >> cnt;
+    quint16 cnt = getU16(stream);
     ushort* raw = new ushort[cnt];
     stream.readRawData((char*)raw, 2*cnt);
     QString res = QString::fromUtf16(raw, cnt);
@@ -401,6 +416,13 @@ quint64 NBUFile::getU64(QDataStream &stream)
 quint32 NBUFile::getU32(QDataStream &stream)
 {
     quint32 res;
+    stream >> res;
+    return res;
+}
+
+quint16 NBUFile::getU16(QDataStream &stream)
+{
+    quint16 res;
     stream >> res;
     return res;
 }
@@ -523,8 +545,7 @@ std::cout << "tst=0x" << std::hex << tst << std::dec << std::endl;
             std::cout << "Pos: 0x" << std::hex << file.pos() << std::dec << std::endl;
             _errors << S_UNSUPPORTED_FOLDER.arg("S60 compressed fragments");
             while (file.pos()<file.size()) {
-                quint16 x;
-                stream >> x;
+                quint16 x = getU16(stream);
                 if (x == 0xFFFF)
                 {
                     break; // correct end of folder structure

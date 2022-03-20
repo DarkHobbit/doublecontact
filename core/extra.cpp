@@ -118,3 +118,8 @@ int InnerFiles::totalSize()
         res +=f.content.count();
     return res;
 }
+
+Note::Note(long _id, const QDateTime &_when, const QString &_text)
+    :id(_id), when(_when), text(_text)
+{}
+

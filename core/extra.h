@@ -51,13 +51,25 @@ public:
     int totalSize();
 };
 
+struct Note {
+    long id;
+    QDateTime when;
+    QString text;
+    Note(long _id, const QDateTime& _when, const QString& _text);
+};
+
+class Notes: public QList<Note> {
+    // some about saveall??
+};
+
 struct ExtraData {
     // Common fields
     QString model;
     QDateTime timeStamp;
     QStringList vmsgSMS, pduSMS; // some file formats may contains both SMS type sets
+    Notes notes; // TODO check nbf
     // MPB specific
-    QStringList organizer, notes;
+    QStringList organizer;
     QStringList vmsgSMSArchive, pduSMSArchive;
     QList<CallInfo> calls;
     // NBU specific
