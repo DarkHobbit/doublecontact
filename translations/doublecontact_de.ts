@@ -56,27 +56,27 @@
     <message>
         <location filename="../model/callmodel.cpp" line="24"/>
         <source>Type</source>
-        <translation type="unfinished"></translation>
+        <translation>Typ</translation>
     </message>
     <message>
         <location filename="../model/callmodel.cpp" line="25"/>
         <source>TimeStamp</source>
-        <translation type="unfinished"></translation>
+        <translation>Zeitstempel</translation>
     </message>
     <message>
         <location filename="../model/callmodel.cpp" line="26"/>
         <source>Duration</source>
-        <translation type="unfinished"></translation>
+        <translation>Dauer</translation>
     </message>
     <message>
         <location filename="../model/callmodel.cpp" line="27"/>
         <source>Number</source>
-        <translation type="unfinished">Zahl</translation>
+        <translation>Rufnummer</translation>
     </message>
     <message>
         <location filename="../model/callmodel.cpp" line="28"/>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Name</translation>
     </message>
 </context>
 <context>
@@ -84,37 +84,37 @@
     <message>
         <location filename="../app/callwindow.ui" line="14"/>
         <source>Calls</source>
-        <translation type="unfinished"></translation>
+        <translation>Anrufe</translation>
     </message>
     <message>
         <location filename="../app/callwindow.ui" line="31"/>
         <source>Filter</source>
-        <translation type="unfinished">Filter</translation>
+        <translation>Filter</translation>
     </message>
     <message>
         <location filename="../app/callwindow.ui" line="56"/>
         <source>&amp;Save as...</source>
-        <translation type="unfinished">&amp;Speichern unter …</translation>
+        <translation>&amp;Speichern unter …</translation>
     </message>
     <message>
         <location filename="../app/callwindow.ui" line="65"/>
         <source>Copy text</source>
-        <translation type="unfinished">Text kopieren</translation>
+        <translation>Text kopieren</translation>
     </message>
     <message>
         <location filename="../app/callwindow.ui" line="68"/>
         <source>Ctrl+C</source>
-        <translation type="unfinished">Strg + C</translation>
+        <translation>Strg + C</translation>
     </message>
     <message>
         <location filename="../app/callwindow.cpp" line="92"/>
         <source>Records: %1</source>
-        <translation type="unfinished">Datensätze: %1</translation>
+        <translation>Datensätze: %1</translation>
     </message>
     <message>
         <location filename="../app/callwindow.cpp" line="138"/>
         <source>Save calls file</source>
-        <translation type="unfinished"></translation>
+        <translation>Anrufedatei speichern</translation>
     </message>
 </context>
 <context>
@@ -284,7 +284,7 @@ Möchten Sie dieses Zertifikat trotzdem akzeptieren?</translation>
     <message>
         <location filename="../app/contactdialog.ui" line="355"/>
         <source>Role</source>
-        <translation type="unfinished"></translation>
+        <translation>Funktion</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="392"/>
@@ -884,12 +884,12 @@ Möchten Sie dieses Zertifikat trotzdem akzeptieren?</translation>
     <message>
         <location filename="../app/mainwindow.ui" line="637"/>
         <source>&amp;Calls...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Anrufe ...</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="640"/>
         <source>Shift+F8</source>
-        <translation type="unfinished">Umschalt + F8</translation>
+        <translation>Umschalt + F8</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="645"/>
@@ -1197,7 +1197,7 @@ Möchten Sie die Spaltensortierung ausschalten?</translation>
     <message>
         <location filename="../model/messagemodel.cpp" line="26"/>
         <source>Number</source>
-        <translation>Zahl</translation>
+        <translation>Rufnummer</translation>
     </message>
     <message>
         <location filename="../model/messagemodel.cpp" line="27"/>
@@ -1285,7 +1285,7 @@ Möchten Sie die Spaltensortierung ausschalten?</translation>
     <message>
         <location filename="../app/messagewindow.ui" line="168"/>
         <source>Hard sort</source>
-        <translation type="unfinished"></translation>
+        <translation>Feste Sortierung</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="175"/>
@@ -1374,7 +1374,7 @@ MMS-Eigenschaften:
     <message>
         <location filename="../app/messagewindow.cpp" line="311"/>
         <source>Can you also save media files from MMS (%1 messages)?</source>
-        <translation type="unfinished"></translation>
+        <translation>Möchten Sie auch Mediendateien aus MMS (%1 Nachrichten) speichern?</translation>
     </message>
 </context>
 <context>
@@ -1488,7 +1488,7 @@ MMS-Eigenschaften:
     <message>
         <location filename="../core/contactlist.cpp" line="129"/>
         <source>CALLBACK</source>
-        <translation type="unfinished"></translation>
+        <translation>Rückruf</translation>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="167"/>
@@ -1512,20 +1512,27 @@ MMS-Eigenschaften:
 %3 emails
 %4 addresses
 %5 birthdays</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Datensätze
+%2 Telefone
+%3 E-Mail-Adressen
+%4 Adressen
+%5 Geburtstage</translation>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="912"/>
         <source>
 %1 calls</source>
-        <translation type="unfinished"></translation>
+        <translation>
+%1 Anrufe</translation>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="917"/>
         <source>
 %1 SMS
 %2 archived SMS</source>
-        <translation type="unfinished"></translation>
+        <translation>
+%1 SMS
+%2 archivierte SMS</translation>
     </message>
     <message>
         <source>%1 records
@@ -1565,17 +1572,17 @@ Sprache des Telefons %5</translation>
     <message>
         <location filename="../core/contactlist.cpp" line="1195"/>
         <source>Dialed</source>
-        <translation type="unfinished"></translation>
+        <translation>Angerufen</translation>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="1197"/>
         <source>Received</source>
-        <translation type="unfinished"></translation>
+        <translation>Empfangen</translation>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="1199"/>
         <source>Missed</source>
-        <translation type="unfinished"></translation>
+        <translation>Verpasst</translation>
     </message>
     <message>
         <source>%1 records
@@ -1763,7 +1770,7 @@ Zeile %3, Spalte %4
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="288"/>
         <source>time in birthday</source>
-        <translation type="unfinished"></translation>
+        <translation>Zeit in Geburtstag</translation>
     </message>
     <message>
         <source>Warning: contact %1 has time (%2) in birthday, not implemented in UDX reader</source>
@@ -1881,7 +1888,7 @@ Zeile %3, Spalte %4
     <message>
         <location filename="../core/formats/files/mpbfile.cpp" line="229"/>
         <source>Name for number %1 changed from %2 to %3</source>
-        <translation>Name für die Nummer %1 geändert von %2 auf %3</translation>
+        <translation>Name für die Rufnummer %1 geändert von %2 auf %3</translation>
     </message>
     <message>
         <location filename="../core/formats/files/mpbfile.cpp" line="241"/>
@@ -2019,7 +2026,7 @@ Zeile %3, Spalte %4
     <message>
         <location filename="../core/globals.h" line="70"/>
         <source>Select tags for remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Zum Entfernen ausgewählte Schlagwörter</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="71"/>
@@ -2134,7 +2141,7 @@ Zeile %3, Spalte %4
     <message>
         <location filename="../core/globals.h" line="96"/>
         <source>Role</source>
-        <translation type="unfinished"></translation>
+        <translation>Funktion</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="97"/>
@@ -2498,7 +2505,7 @@ Benutzername, Passwort, Protokoll und Port überprüfen</translation>
         <location filename="../core/decodedmessagelist.cpp" line="132"/>
         <source>&quot;Date&quot;,&quot;Box&quot;,&quot;From/To&quot;,&quot;Number&quot;,&quot;Status&quot;,&quot;Text&quot;,&quot;Aux&quot;
 </source>
-        <translation>&quot;Datum&quot;, &quot;Feld&quot;, &quot;Von/Bis&quot;, &quot;Nummer&quot;, &quot;Status&quot;, &quot;Text&quot;, &quot;Aux&quot;
+        <translation>&quot;Datum&quot;, &quot;Feld&quot;, &quot;Von/Bis&quot;, &quot;Rufnummer&quot;, &quot;Status&quot;, &quot;Text&quot;, &quot;Aux&quot;
 </translation>
     </message>
     <message>
@@ -2568,7 +2575,7 @@ Benutzername, Passwort, Protokoll und Port überprüfen</translation>
         <location filename="../core/formats/common/nokiadata.cpp" line="513"/>
         <source>Personal</source>
         <comment>MmsClass</comment>
-        <translation type="unfinished"></translation>
+        <translation>Persönlich</translation>
     </message>
     <message>
         <location filename="../core/formats/common/nokiadata.cpp" line="516"/>
@@ -2612,7 +2619,8 @@ Benutzername, Passwort, Protokoll und Port überprüfen</translation>
         <location filename="../model/callmodel.cpp" line="102"/>
         <source>&quot;Type&quot;,&quot;Date&quot;,&quot;Duration&quot;,&quot;Number&quot;,&quot;Name&quot;
 </source>
-        <translation type="unfinished"></translation>
+        <translation>&quot;Typ&quot;,&quot;Datum&quot;,&quot;Dauer&quot;,&quot;Rufnummer&quot;,&quot;Name&quot;
+</translation>
     </message>
 </context>
 <context>
@@ -2812,12 +2820,12 @@ Benutzername, Passwort, Protokoll und Port überprüfen</translation>
     <message>
         <location filename="../app/settingsdialog.ui" line="279"/>
         <source>Save as is</source>
-        <translation type="unfinished"></translation>
+        <translation>Unverändert speichern</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="289"/>
         <source>Replace to default type</source>
-        <translation type="unfinished"></translation>
+        <translation>Durch Standardtyp ersetzen</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="299"/>
@@ -2850,7 +2858,7 @@ Benutzername, Passwort, Protokoll und Port überprüfen</translation>
     <message>
         <location filename="../app/settingsdialog.ui" line="367"/>
         <source>Warning on missing phone types</source>
-        <translation type="unfinished"></translation>
+        <translation>Bei fehlenden Telefonnummern warnen</translation>
     </message>
     <message>
         <source>(many phones treats &apos;Voice&apos; as &apos;Other&apos;)</source>
@@ -2919,7 +2927,7 @@ Benutzername, Passwort, Protokoll und Port überprüfen</translation>
     <message>
         <location filename="../app/tagremovedialog.ui" line="33"/>
         <source>Select all</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle auswählen</translation>
     </message>
     <message>
         <location filename="../app/tagremovedialog.cpp" line="39"/>
