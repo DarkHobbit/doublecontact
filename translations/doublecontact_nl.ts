@@ -662,22 +662,22 @@ Wilt u dit certificaat tóch accepteren?</translation>
     <message>
         <location filename="../model/innerfilemodel.cpp" line="24"/>
         <source>Folder</source>
-        <translation type="unfinished">Map</translation>
+        <translation>Map</translation>
     </message>
     <message>
         <location filename="../model/innerfilemodel.cpp" line="25"/>
         <source>Name</source>
-        <translation type="unfinished">Naam</translation>
+        <translation>Naam</translation>
     </message>
     <message>
         <location filename="../model/innerfilemodel.cpp" line="26"/>
         <source>TimeStamp</source>
-        <translation type="unfinished">Tijdstempel</translation>
+        <translation>Tijdstempel</translation>
     </message>
     <message>
         <location filename="../model/innerfilemodel.cpp" line="27"/>
         <source>Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Omvang</translation>
     </message>
 </context>
 <context>
@@ -685,37 +685,37 @@ Wilt u dit certificaat tóch accepteren?</translation>
     <message>
         <location filename="../app/innerfilewindow.ui" line="14"/>
         <source>Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Bestanden</translation>
     </message>
     <message>
         <location filename="../app/innerfilewindow.ui" line="31"/>
         <source>Filter</source>
-        <translation type="unfinished">Filteren</translation>
+        <translation>Filteren</translation>
     </message>
     <message>
         <location filename="../app/innerfilewindow.ui" line="56"/>
         <source>&amp;Save all</source>
-        <translation type="unfinished"></translation>
+        <translation>Alles op&amp;slaan</translation>
     </message>
     <message>
         <location filename="../app/innerfilewindow.ui" line="65"/>
         <source>Copy text</source>
-        <translation type="unfinished">Tekst kopiëren</translation>
+        <translation>Tekst kopiëren</translation>
     </message>
     <message>
         <location filename="../app/innerfilewindow.ui" line="68"/>
         <source>Ctrl+C</source>
-        <translation type="unfinished">Ctrl+C</translation>
+        <translation>Ctrl+C</translation>
     </message>
     <message>
         <location filename="../app/innerfilewindow.ui" line="73"/>
         <source>Show file</source>
-        <translation type="unfinished"></translation>
+        <translation>Bestand tonen</translation>
     </message>
     <message>
         <location filename="../app/innerfilewindow.ui" line="78"/>
         <source>Save file</source>
-        <translation type="unfinished"></translation>
+        <translation>Bestand opslaan</translation>
     </message>
 </context>
 <context>
@@ -1060,7 +1060,7 @@ Wilt u dit certificaat tóch accepteren?</translation>
     <message>
         <location filename="../app/mainwindow.ui" line="651"/>
         <source>&amp;Files...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Bestanden…</translation>
     </message>
     <message>
         <source>Settings...</source>
@@ -2644,7 +2644,8 @@ Controleer gebruikersnaam, wachtwoord, protocol en poort</translation>
         <location filename="../core/formats/files/nbufile.cpp" line="236"/>
         <source>NBU inner file %1/%2 truncated.
 Read %3 bytes, %4 expected</source>
-        <translation type="unfinished"></translation>
+        <translation>NBU-innerbestand %1/%2 ingekort.
+Uitgelezen: %3 bytes - Verwacht: %4 bytes</translation>
     </message>
     <message>
         <location filename="../core/formats/files/nbufile.cpp" line="257"/>
@@ -2831,17 +2832,17 @@ Read %3 bytes, %4 expected</source>
     <message>
         <location filename="../core/extra.h" line="35"/>
         <source>Records: %1. Size: %2 byte(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>Aantal items: %1 - Omvang: %2 byte(s)</translation>
     </message>
     <message>
         <location filename="../core/extra.h" line="36"/>
         <source>Select attached files Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Bijlagemap kiezen</translation>
     </message>
     <message>
         <location filename="../core/extra.h" line="37"/>
         <source>Save attachment</source>
-        <translation type="unfinished"></translation>
+        <translation>Bijlage opslaan</translation>
     </message>
 </context>
 <context>
@@ -2946,7 +2947,7 @@ Read %3 bytes, %4 expected</source>
     <message>
         <location filename="../app/settingsdialog.ui" line="92"/>
         <source>Resize table rows to contents</source>
-        <translation type="unfinished"></translation>
+        <translation>Tabel aanpassen aan inhoud</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="99"/>
