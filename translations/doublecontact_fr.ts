@@ -577,7 +577,7 @@ Voulez-vous accepter ce certificat quand même ?</translation>
     <message>
         <location filename="../model/innerfilemodel.cpp" line="27"/>
         <source>Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Taille</translation>
     </message>
 </context>
 <context>
@@ -585,22 +585,22 @@ Voulez-vous accepter ce certificat quand même ?</translation>
     <message>
         <location filename="../app/innerfilewindow.ui" line="14"/>
         <source>Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Fichiers</translation>
     </message>
     <message>
         <location filename="../app/innerfilewindow.ui" line="31"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation>Filtre</translation>
     </message>
     <message>
         <location filename="../app/innerfilewindow.ui" line="56"/>
         <source>&amp;Save all</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Tout enregistrer</translation>
     </message>
     <message>
         <location filename="../app/innerfilewindow.ui" line="65"/>
         <source>Copy text</source>
-        <translation type="unfinished">Copier le texte</translation>
+        <translation>Copier le texte</translation>
     </message>
     <message>
         <location filename="../app/innerfilewindow.ui" line="68"/>
@@ -610,12 +610,12 @@ Voulez-vous accepter ce certificat quand même ?</translation>
     <message>
         <location filename="../app/innerfilewindow.ui" line="73"/>
         <source>Show file</source>
-        <translation type="unfinished"></translation>
+        <translation>Afficher le fichier</translation>
     </message>
     <message>
         <location filename="../app/innerfilewindow.ui" line="78"/>
         <source>Save file</source>
-        <translation type="unfinished"></translation>
+        <translation>Enregistrer le fichier</translation>
     </message>
 </context>
 <context>
@@ -956,7 +956,7 @@ Voulez-vous accepter ce certificat quand même ?</translation>
     <message>
         <location filename="../app/mainwindow.ui" line="651"/>
         <source>&amp;Files...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Fichiers...</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="479"/>
@@ -1406,7 +1406,7 @@ Propriétés du MMS :
     <message>
         <location filename="../app/messagewindow.cpp" line="307"/>
         <source>Can you also save media files from MMS (%1 messages)?</source>
-        <translation>Pouvez-vous aussi sauvegarder les fichiers média depuis les MMS (%1 messages) ?</translation>
+        <translation>Pouvez-vous aussi sauvegarder les fichiers média depuis les MMS (%1 messages)&#xa0;?</translation>
     </message>
 </context>
 <context>
@@ -1646,7 +1646,7 @@ langue du téléphone %5</translation>
     <message>
         <location filename="../core/formats/common/vcarddata.cpp" line="183"/>
         <source>Unexpected TYPE appearance at line %1: tag %2</source>
-        <translation>TYPE d&apos;apparence inattendu à la ligne %1 : marqueur %2</translation>
+        <translation>TYPE d&apos;apparence inattendu à la ligne %1&#xa0;: marqueur %2</translation>
     </message>
     <message>
         <location filename="../core/formats/common/vcarddata.cpp" line="214"/>
@@ -1731,18 +1731,18 @@ ligne %3, colonne %4
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="80"/>
         <source>Warning: codepage not found, trying use UTF-8...</source>
-        <translation>Avertissement : le code de la page n&apos;a pas été trouvé ; essai en UTF-8...</translation>
+        <translation>Avertissement&#xa0;:&#xa0;le code de la page n&apos;a pas été trouvé ; essai en UTF-8...</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="85"/>
         <source>Warning: udx version not found, treat as 1.0...</source>
-        <translation>Avertissement : la version de UDX n&apos;a pas été trouvée ; version 1.0 utilisée...</translation>
+        <translation>Avertissement&#xa0;:&#xa0;la version de UDX n&apos;a pas été trouvée ; version 1.0 utilisée...</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="94"/>
         <source>Can&apos;t find &apos;vCard&apos; records at file
 %1</source>
-        <translation>Ne pas trouver de contacts &apos;vCard&apos; dans ce fichier :
+        <translation>Ne pas trouver de contacts &apos;vCard&apos; dans ce fichier&#xa0;:
 %1</translation>
     </message>
     <message>
@@ -1768,14 +1768,14 @@ ligne %3, colonne %4
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="233"/>
         <source>Warning: contact %1, duplicate id %2 changed to %3</source>
-        <translation>Avertissement : Pour le contact %1, l&apos;identifiant en double a été changé de %2 en %3</translation>
+        <translation>Avertissement&#xa0;:&#xa0;Pour le contact %1, l&apos;identifiant en double a été changé de %2 en %3</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="268"/>
         <source>Warning: contact %1, unknown tel type:
 %2
  saved as cellular</source>
-        <translation>Avertissement : Le contact %1 a un type de téléphone inconnu :
+        <translation>Avertissement&#xa0;:&#xa0;Le contact %1 a un type de téléphone inconnu&#xa0;:
 %2
  a été enregistré en cellulaire</translation>
     </message>
@@ -1837,7 +1837,7 @@ ligne %3, colonne %4
         <location filename="../core/formats/files/vcfdirectory.cpp" line="41"/>
         <source>Directory not contains VCF files:
 %1</source>
-        <translation>Ce dossier ne contient pas de fichier VCF :
+        <translation>Ce dossier ne contient pas de fichier VCF&#xa0;:
 %1</translation>
     </message>
     <message>
@@ -1861,7 +1861,7 @@ ligne %3, colonne %4
     <message>
         <location filename="../core/formats/files/mpbfile.cpp" line="127"/>
         <source>Strange call item: %1, size %2</source>
-        <translation>Élément d&apos;appel suspect : %1, de taille %2</translation>
+        <translation>Élément d&apos;appel suspect&#xa0;: %1, de taille %2</translation>
     </message>
     <message>
         <location filename="../core/formats/files/mpbfile.cpp" line="166"/>
@@ -2231,14 +2231,14 @@ ligne %3, colonne %4
     <message>
         <location filename="../core/globals.h" line="147"/>
         <source>Do you really want to delete the selected items?</source>
-        <translation>Voulez-vous vraiment supprimer les éléments sélectionnés ?</translation>
+        <translation>Voulez-vous vraiment supprimer les éléments sélectionnés&#xa0;?</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="148"/>
         <source>Column sorting is switched. Hard sort results are not visible.
 Are you want switch column sorting off?</source>
         <translation>Le tri de la colonne à été changé. Le tri manuel n&apos;est plus visible.
-Voulez-vous désactiver le changement du tri ?</translation>
+Voulez-vous désactiver le changement du tri&#xa0;?</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="150"/>
@@ -2365,7 +2365,7 @@ Voulez-vous désactiver le changement du tri ?</translation>
         <location filename="../core/globals.h" line="142"/>
         <source>Warning: contact %1 has %2, not supported in this format.
 Data will be lost</source>
-        <translation>Avertissement : le contact %1 a %2, ce qui n&apos;est pas supporté par ce format.
+        <translation>Avertissement&#xa0;:&#xa0;le contact %1 a %2, ce qui n&apos;est pas supporté par ce format.
 Des données vont être perdues</translation>
     </message>
     <message>
@@ -2391,7 +2391,7 @@ Des données vont être perdues</translation>
     <message>
         <location filename="../core/formats/network/asyncformat.h" line="21"/>
         <source>Network error. Server %1 replied: %2</source>
-        <translation>Erreur de connexion. Le serveur %1 a répondu : %2</translation>
+        <translation>Erreur de connexion. Le serveur %1 a répondu&#xa0;:&#xa0;%2</translation>
     </message>
     <message>
         <location filename="../core/formats/network/asyncformat.h" line="22"/>
@@ -2403,7 +2403,7 @@ Vérifiez le nom d&apos;utilisateur, le mot de passe, le protocole et le port</t
     <message>
         <location filename="../core/formats/files/nbufile.cpp" line="27"/>
         <source>Unsupported NBU file section type: %1</source>
-        <translation>Ce type de section pour le fichier NBU n&apos;est pas supportée : %1</translation>
+        <translation>Ce type de section pour le fichier NBU n&apos;est pas supportée&#xa0;:&#xa0;%1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/nbufile.cpp" line="28"/>
@@ -2440,12 +2440,12 @@ Read %3 bytes, %4 expected</source>
     <message>
         <location filename="../core/formats/files/nbufile.cpp" line="446"/>
         <source>Test 2 greater than 0x01: %1</source>
-        <translation>Test2 est plus grand que 0x01 : %1</translation>
+        <translation>Test2 est plus grand que 0x01&#xa0;:&#xa0;%1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/nbufile.cpp" line="449"/>
         <source>Test 1 different than 0x10: %1</source>
-        <translation>Test 1 est différent de 0x10 : %1</translation>
+        <translation>Test 1 est différent de 0x10&#xa0;:&#xa0;%1</translation>
     </message>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="80"/>
@@ -2531,7 +2531,7 @@ Read %3 bytes, %4 expected</source>
     <message>
         <location filename="../core/formats/common/nokiadata.cpp" line="321"/>
         <source>Unknown field type: 0x%1 at %2</source>
-        <translation>Type de champ inconnu % 0x%1 à %2</translation>
+        <translation>Type de champ inconnu&#xa0;%&#xa0;0x%1 à %2</translation>
     </message>
     <message>
         <location filename="../core/formats/common/nokiadata.cpp" line="475"/>
@@ -2575,12 +2575,12 @@ Read %3 bytes, %4 expected</source>
     <message>
         <location filename="../core/formats/common/nokiadata.cpp" line="553"/>
         <source>Error reading uint64_t value: overflow at %1</source>
-        <translation>Erreur à la lecture d&apos;une valeur uint64_t : dépassement à %1</translation>
+        <translation>Erreur à la lecture d&apos;une valeur uint64_t&#xa0;:&#xa0;dépassement à %1</translation>
     </message>
     <message>
         <location filename="../core/formats/common/vmessagedata.cpp" line="19"/>
         <source>Unknown ATT subtype at line %1: %2</source>
-        <translation>Sous-type ATT inconnu à la ligne %1 : %2</translation>
+        <translation>Sous-type ATT inconnu à la ligne %1&#xa0;:&#xa0;%2</translation>
     </message>
     <message>
         <location filename="../core/formats/common/vmessagedata.cpp" line="280"/>
@@ -2597,7 +2597,7 @@ Read %3 bytes, %4 expected</source>
     <message>
         <location filename="../core/extra.h" line="35"/>
         <source>Records: %1. Size: %2 byte(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>Enregistrements : %1. Taille : %2 octets(s)</translation>
     </message>
     <message>
         <location filename="../core/extra.h" line="36"/>
@@ -2625,7 +2625,7 @@ Read %3 bytes, %4 expected</source>
     <message>
         <location filename="../3rdparty/quazip/quazip/quagzipfile.cpp" line="74"/>
         <source>You can open a gzip either for reading or for writing. Which is it?</source>
-        <translation>Vous pouvez ouvrir un gzip seulement en lecture ou en écriture. Quel mode choisissez-vous ?</translation>
+        <translation>Vous pouvez ouvrir un gzip seulement en lecture ou en écriture. Quel mode choisissez-vous&#xa0;?</translation>
     </message>
     <message>
         <location filename="../3rdparty/quazip/quazip/quagzipfile.cpp" line="80"/>
@@ -2712,7 +2712,7 @@ Read %3 bytes, %4 expected</source>
     <message>
         <location filename="../app/settingsdialog.ui" line="92"/>
         <source>Resize table rows to contents</source>
-        <translation type="unfinished"></translation>
+        <translation>Redimensionner les lignes suivant le contenu</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="99"/>
@@ -2819,7 +2819,7 @@ Read %3 bytes, %4 expected</source>
     <message>
         <location filename="../app/settingsdialog.ui" line="279"/>
         <source>Non-latin type names:</source>
-        <translation>Noms d&apos;origine non-latine :</translation>
+        <translation>Noms d&apos;origine non-latine&#xa0;:</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="286"/>
