@@ -364,12 +364,12 @@ Möchten Sie dieses Zertifikat trotzdem akzeptieren?</translation>
     <message>
         <location filename="../app/contactdialog.ui" line="567"/>
         <source>Format version:</source>
-        <translation></translation>
+        <translation>Formatversion:</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="599"/>
         <source>ID</source>
-        <translation></translation>
+        <translation>Kennung</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="553"/>
@@ -390,7 +390,7 @@ Möchten Sie dieses Zertifikat trotzdem akzeptieren?</translation>
         <location filename="../app/contactdialog.ui" line="639"/>
         <location filename="../app/contactdialog.ui" line="670"/>
         <source>Tag</source>
-        <translation></translation>
+        <translation>Schlagwort</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="644"/>
@@ -566,22 +566,22 @@ Möchten Sie dieses Zertifikat trotzdem akzeptieren?</translation>
     <message>
         <location filename="../model/innerfilemodel.cpp" line="24"/>
         <source>Folder</source>
-        <translation type="unfinished">Ordner</translation>
+        <translation>Ordner</translation>
     </message>
     <message>
         <location filename="../model/innerfilemodel.cpp" line="25"/>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Name</translation>
     </message>
     <message>
         <location filename="../model/innerfilemodel.cpp" line="26"/>
         <source>TimeStamp</source>
-        <translation type="unfinished"></translation>
+        <translation>ZeitStempel</translation>
     </message>
     <message>
         <location filename="../model/innerfilemodel.cpp" line="27"/>
         <source>Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Größe</translation>
     </message>
 </context>
 <context>
@@ -589,37 +589,37 @@ Möchten Sie dieses Zertifikat trotzdem akzeptieren?</translation>
     <message>
         <location filename="../app/innerfilewindow.ui" line="14"/>
         <source>Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Dateien</translation>
     </message>
     <message>
         <location filename="../app/innerfilewindow.ui" line="31"/>
         <source>Filter</source>
-        <translation type="unfinished">Filter</translation>
+        <translation>Filter</translation>
     </message>
     <message>
         <location filename="../app/innerfilewindow.ui" line="56"/>
         <source>&amp;Save all</source>
-        <translation type="unfinished"></translation>
+        <translation>Alles &amp;speichern</translation>
     </message>
     <message>
         <location filename="../app/innerfilewindow.ui" line="65"/>
         <source>Copy text</source>
-        <translation type="unfinished">Text kopieren</translation>
+        <translation>Text kopieren</translation>
     </message>
     <message>
         <location filename="../app/innerfilewindow.ui" line="68"/>
         <source>Ctrl+C</source>
-        <translation type="unfinished">Strg + C</translation>
+        <translation>Strg+C</translation>
     </message>
     <message>
         <location filename="../app/innerfilewindow.ui" line="73"/>
         <source>Show file</source>
-        <translation type="unfinished"></translation>
+        <translation>Datei anzeigen</translation>
     </message>
     <message>
         <location filename="../app/innerfilewindow.ui" line="78"/>
         <source>Save file</source>
-        <translation type="unfinished"></translation>
+        <translation>Datei speichern</translation>
     </message>
 </context>
 <context>
@@ -955,12 +955,12 @@ Möchten Sie dieses Zertifikat trotzdem akzeptieren?</translation>
     <message>
         <location filename="../app/mainwindow.ui" line="646"/>
         <source>Mass tags remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Massenentfernung von Schlagwörtern</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="651"/>
         <source>&amp;Files...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Dateien...</translation>
     </message>
     <message>
         <source>Settings...</source>
@@ -2697,7 +2697,7 @@ Read %3 bytes, %4 expected</source>
     <message>
         <location filename="../core/extra.h" line="35"/>
         <source>Records: %1. Size: %2 byte(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>Einträge: %1. Größe: %2 Byte(s)</translation>
     </message>
     <message>
         <location filename="../core/extra.h" line="36"/>
@@ -2707,7 +2707,7 @@ Read %3 bytes, %4 expected</source>
     <message>
         <location filename="../core/extra.h" line="37"/>
         <source>Save attachment</source>
-        <translation type="unfinished"></translation>
+        <translation>Anhang speichern</translation>
     </message>
 </context>
 <context>
@@ -2812,7 +2812,7 @@ Read %3 bytes, %4 expected</source>
     <message>
         <location filename="../app/settingsdialog.ui" line="92"/>
         <source>Resize table rows to contents</source>
-        <translation type="unfinished"></translation>
+        <translation>Größe der Tabellenzeilen an den Inhalt anpassen</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="99"/>
@@ -2907,7 +2907,7 @@ Read %3 bytes, %4 expected</source>
     <message>
         <location filename="../app/settingsdialog.ui" line="279"/>
         <source>Non-latin type names:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nicht-lateinische Typennamen:</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="286"/>
