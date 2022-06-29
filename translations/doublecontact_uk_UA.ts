@@ -2255,7 +2255,7 @@ line %3, col %4
     <message>
         <location filename="../core/globals.h" line="111"/>
         <source>Has photo</source>
-        <translation>Має фото</translation>
+        <translation>Має світлину</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="112"/>
@@ -2367,7 +2367,7 @@ Are you want switch column sorting off?</source>
     <message>
         <location filename="../core/globals.h" line="124"/>
         <source>[Unknown photo format]</source>
-        <translation>[Невідомий формат фотографії]</translation>
+        <translation>[Невідомий формат світлини]</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="125"/>
@@ -2387,7 +2387,7 @@ Are you want switch column sorting off?</source>
     <message>
         <location filename="../core/globals.h" line="129"/>
         <source>Remove photo</source>
-        <translation>Видалити фотографію</translation>
+        <translation>Видалити світлину</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="131"/>
