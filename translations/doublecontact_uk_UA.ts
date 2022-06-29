@@ -363,7 +363,7 @@ Are you want to accept this certificate anyway?</source>
         <location filename="../app/contactdialog.ui" line="254"/>
         <location filename="../app/contactdialog.ui" line="315"/>
         <source>Photo</source>
-        <translation>Фотографія</translation>
+        <translation>Світлина</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="277"/>
@@ -1824,7 +1824,7 @@ SMS: %7
     <message>
         <location filename="../core/formats/common/vcarddata.cpp" line="269"/>
         <source>Unsupported photo type at line %1: %2%3</source>
-        <translation>Непідтримуваний тип фотографії в рядку %1: %2%3</translation>
+        <translation>Непідтримуваний тип світлини в рядку %1: %2%3</translation>
     </message>
     <message>
         <location filename="../core/formats/common/vcarddata.cpp" line="263"/>
@@ -1838,7 +1838,7 @@ SMS: %7
     <message>
         <location filename="../core/formats/common/vcarddata.cpp" line="281"/>
         <source>Unknown photo kind at line %1: %2</source>
-        <translation>Невідомий вигляд фото в рядку %1: %2</translation>
+        <translation>Невідомий вигляд світлини в рядку %1: %2</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="149"/>
@@ -2175,7 +2175,7 @@ line %3, col %4
     <message>
         <location filename="../core/globals.h" line="93"/>
         <source>Photo</source>
-        <translation>Фотографія</translation>
+        <translation>Світлина</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="94"/>
