@@ -562,17 +562,17 @@ Voulez-vous accepter ce certificat quand même ?</translation>
     <message>
         <location filename="../model/innerfilemodel.cpp" line="24"/>
         <source>Folder</source>
-        <translation type="unfinished">Dossier</translation>
+        <translation>Dossier</translation>
     </message>
     <message>
         <location filename="../model/innerfilemodel.cpp" line="25"/>
         <source>Name</source>
-        <translation type="unfinished">Nom</translation>
+        <translation>Nom</translation>
     </message>
     <message>
         <location filename="../model/innerfilemodel.cpp" line="26"/>
         <source>TimeStamp</source>
-        <translation type="unfinished">Horodatage</translation>
+        <translation>Horodatage</translation>
     </message>
     <message>
         <location filename="../model/innerfilemodel.cpp" line="27"/>
@@ -1342,7 +1342,7 @@ Enregistrer les modifications ?</translation>
     <message>
         <location filename="../app/messagewindow.ui" line="195"/>
         <source>Return</source>
-        <translation type="unfinished">Entrée</translation>
+        <translation>Entrée</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="200"/>
@@ -2602,12 +2602,12 @@ Read %3 bytes, %4 expected</source>
     <message>
         <location filename="../core/extra.h" line="36"/>
         <source>Select attached files Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Sélectionner le dossier des fichiers attachés</translation>
     </message>
     <message>
         <location filename="../core/extra.h" line="37"/>
         <source>Save attachment</source>
-        <translation type="unfinished"></translation>
+        <translation>Enregistrer les attachements</translation>
     </message>
 </context>
 <context>
