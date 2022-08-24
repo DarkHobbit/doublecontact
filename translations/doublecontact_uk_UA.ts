@@ -16,7 +16,7 @@
     <message>
         <location filename="../app/aboutdialog.ui" line="104"/>
         <source>Distributed under GPL v3 or above</source>
-        <translation>Поширюється під ліценцією GPL v3 чи більш новою</translation>
+        <translation>Поширюється під ліценцією GPL v3 чи новішою</translation>
     </message>
     <message>
         <source>DoubleContact</source>
