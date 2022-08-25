@@ -6,7 +6,7 @@
     <message>
         <location filename="../app/aboutdialog.ui" line="14"/>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>關於</translation>
     </message>
     <message>
         <location filename="../app/aboutdialog.ui" line="24"/>
@@ -52,7 +52,7 @@
     <message>
         <location filename="../model/callmodel.cpp" line="24"/>
         <source>Type</source>
-        <translation type="unfinished"></translation>
+        <translation>類型</translation>
     </message>
     <message>
         <location filename="../model/callmodel.cpp" line="25"/>
@@ -67,12 +67,12 @@
     <message>
         <location filename="../model/callmodel.cpp" line="27"/>
         <source>Number</source>
-        <translation type="unfinished"></translation>
+        <translation>數字</translation>
     </message>
     <message>
         <location filename="../model/callmodel.cpp" line="28"/>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>姓名</translation>
     </message>
 </context>
 <context>
