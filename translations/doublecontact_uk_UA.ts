@@ -60,27 +60,27 @@
     <message>
         <location filename="../model/callmodel.cpp" line="24"/>
         <source>Type</source>
-        <translation type="unfinished"></translation>
+        <translation>Тип</translation>
     </message>
     <message>
         <location filename="../model/callmodel.cpp" line="25"/>
         <source>TimeStamp</source>
-        <translation type="unfinished"></translation>
+        <translation>Часова мітка</translation>
     </message>
     <message>
         <location filename="../model/callmodel.cpp" line="26"/>
         <source>Duration</source>
-        <translation type="unfinished"></translation>
+        <translation>Тривалість</translation>
     </message>
     <message>
         <location filename="../model/callmodel.cpp" line="27"/>
         <source>Number</source>
-        <translation type="unfinished">Номер</translation>
+        <translation>Номер</translation>
     </message>
     <message>
         <location filename="../model/callmodel.cpp" line="28"/>
         <source>Name</source>
-        <translation type="unfinished">Ім&apos;я</translation>
+        <translation>Ім&apos;я</translation>
     </message>
 </context>
 <context>
@@ -88,32 +88,32 @@
     <message>
         <location filename="../app/callwindow.ui" line="14"/>
         <source>Calls</source>
-        <translation type="unfinished"></translation>
+        <translation>Виклики</translation>
     </message>
     <message>
         <location filename="../app/callwindow.ui" line="31"/>
         <source>Filter</source>
-        <translation type="unfinished">Фільтр</translation>
+        <translation>Фільтр</translation>
     </message>
     <message>
         <location filename="../app/callwindow.ui" line="56"/>
         <source>&amp;Save as...</source>
-        <translation type="unfinished">Зберегти як...</translation>
+        <translation>Зберегти як...</translation>
     </message>
     <message>
         <location filename="../app/callwindow.ui" line="65"/>
         <source>Copy text</source>
-        <translation type="unfinished">Копіювати текст</translation>
+        <translation>Копіювати текст</translation>
     </message>
     <message>
         <location filename="../app/callwindow.ui" line="68"/>
         <source>Ctrl+C</source>
-        <translation type="unfinished">Ctrl+C</translation>
+        <translation>Ctrl+C</translation>
     </message>
     <message>
         <location filename="../app/callwindow.cpp" line="91"/>
         <source>Records: %1</source>
-        <translation type="unfinished">Записів: %1</translation>
+        <translation>Записів: %1</translation>
     </message>
     <message>
         <location filename="../app/callwindow.cpp" line="137"/>
@@ -308,12 +308,12 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/contactdialog.ui" line="355"/>
         <source>Role</source>
-        <translation type="unfinished"></translation>
+        <translation>Роль</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="583"/>
         <source>Updated:</source>
-        <translation type="unfinished"></translation>
+        <translation>Оновлено:</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="689"/>
@@ -662,12 +662,12 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../model/innerfilemodel.cpp" line="24"/>
         <source>Folder</source>
-        <translation type="unfinished">Тека</translation>
+        <translation>Тека</translation>
     </message>
     <message>
         <location filename="../model/innerfilemodel.cpp" line="25"/>
         <source>Name</source>
-        <translation type="unfinished">Ім&apos;я</translation>
+        <translation>Ім&apos;я</translation>
     </message>
     <message>
         <location filename="../model/innerfilemodel.cpp" line="26"/>
@@ -677,7 +677,7 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../model/innerfilemodel.cpp" line="27"/>
         <source>Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Розмір</translation>
     </message>
 </context>
 <context>
@@ -685,37 +685,37 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/innerfilewindow.ui" line="14"/>
         <source>Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Файли</translation>
     </message>
     <message>
         <location filename="../app/innerfilewindow.ui" line="31"/>
         <source>Filter</source>
-        <translation type="unfinished">Фільтр</translation>
+        <translation>Фільтр</translation>
     </message>
     <message>
         <location filename="../app/innerfilewindow.ui" line="56"/>
         <source>&amp;Save all</source>
-        <translation type="unfinished"></translation>
+        <translation>Зберегти все</translation>
     </message>
     <message>
         <location filename="../app/innerfilewindow.ui" line="65"/>
         <source>Copy text</source>
-        <translation type="unfinished">Копіювати текст</translation>
+        <translation>Копіювати текст</translation>
     </message>
     <message>
         <location filename="../app/innerfilewindow.ui" line="68"/>
         <source>Ctrl+C</source>
-        <translation type="unfinished">Ctrl+C</translation>
+        <translation>Ctrl+C</translation>
     </message>
     <message>
         <location filename="../app/innerfilewindow.ui" line="73"/>
         <source>Show file</source>
-        <translation type="unfinished"></translation>
+        <translation>Показати файл</translation>
     </message>
     <message>
         <location filename="../app/innerfilewindow.ui" line="78"/>
         <source>Save file</source>
-        <translation type="unfinished"></translation>
+        <translation>Зберегти файл</translation>
     </message>
 </context>
 <context>
@@ -1045,22 +1045,22 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/mainwindow.ui" line="638"/>
         <source>&amp;Calls...</source>
-        <translation type="unfinished"></translation>
+        <translation>Виклики...</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="641"/>
         <source>Shift+F8</source>
-        <translation type="unfinished">Shift+F8</translation>
+        <translation>Shift+F8</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="646"/>
         <source>Mass tags remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Масове вилучення тегів</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="651"/>
         <source>&amp;Files...</source>
-        <translation type="unfinished"></translation>
+        <translation>Файли...</translation>
     </message>
     <message>
         <source>Settings...</source>
@@ -1542,7 +1542,10 @@ Sources: %2</source>
 
 MMS properties:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>
+
+Властивості MMS:
+%1</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.cpp" line="300"/>
@@ -1696,7 +1699,8 @@ MMS properties:
         <location filename="../core/contactlist.cpp" line="919"/>
         <source>
 %1 calls</source>
-        <translation type="unfinished"></translation>
+        <translation>
+Викликів: %1</translation>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="924"/>
@@ -1963,7 +1967,7 @@ line %3, col %4
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="291"/>
         <source>address</source>
-        <translation type="unfinished"></translation>
+        <translation>адреса</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="292"/>
@@ -2230,7 +2234,7 @@ line %3, col %4
     <message>
         <location filename="../core/globals.h" line="105"/>
         <source>Updated</source>
-        <translation type="unfinished"></translation>
+        <translation>Оновлено</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="107"/>
@@ -3141,7 +3145,7 @@ Read %3 bytes, %4 expected</source>
     <message>
         <location filename="../app/tagremovedialog.ui" line="33"/>
         <source>Select all</source>
-        <translation type="unfinished"></translation>
+        <translation>Вибрати все</translation>
     </message>
     <message>
         <location filename="../app/tagremovedialog.cpp" line="39"/>
