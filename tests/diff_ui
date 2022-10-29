@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# Search differences between two *.ui files ignoring line numbers and obsolete mark
+
+SKIPPED_ATTRIBUTES='-e s/line=\"[0-9]*\"// -e s/\stype=\"obsolete\"//'
+
+sed ${SKIPPED_ATTRIBUTES} $1 > ${TMPDIR}/diffxml1
+sed ${SKIPPED_ATTRIBUTES} $2 > ${TMPDIR}/diffxml2
+diff -u ${TMPDIR}/diffxml1 ${TMPDIR}/diffxml2
+rm ${TMPDIR}/diffxml1
+rm ${TMPDIR}/diffxml2
+
