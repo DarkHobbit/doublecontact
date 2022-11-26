@@ -685,7 +685,7 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/innerfilewindow.ui" line="68"/>
         <source>Ctrl+C</source>
-        <translation type="unfinished">Ctrl+C</translation>
+        <translation>Ctrl+C</translation>
     </message>
     <message>
         <location filename="../app/innerfilewindow.ui" line="73"/>
@@ -1281,7 +1281,7 @@ Save changes?</source>
     <message>
         <location filename="../app/mainwindow.cpp" line="927"/>
         <source>Strongly two records on current panel must be selected for this operation</source>
-        <translation>Сначала надо выбрать ровно 2 записи на текущей панели</translation>
+        <translation>Для этой операции должны быть выбраны строго две записи на текущей панели</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.cpp" line="933"/>
