@@ -6,7 +6,7 @@
     <message>
         <location filename="../app/aboutdialog.ui" line="14"/>
         <source>About</source>
-        <translation>Про додаток</translation>
+        <translation>Про застосунок</translation>
     </message>
     <message>
         <location filename="../app/aboutdialog.ui" line="24"/>
