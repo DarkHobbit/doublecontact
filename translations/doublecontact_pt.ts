@@ -2807,7 +2807,7 @@ Read %3 bytes, %4 expected</source>
     <message>
         <location filename="../app/sortdialog.cpp" line="22"/>
         <source>Sort string</source>
-        <translation type="unfinished">Ordenar String</translation>
+        <translation>Ordenar cadeia</translation>
     </message>
 </context>
 <context>
