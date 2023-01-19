@@ -118,7 +118,7 @@
     <message>
         <location filename="../app/callwindow.cpp" line="137"/>
         <source>Save calls file</source>
-        <translation type="unfinished"></translation>
+        <translation>Зберегти файл викликів</translation>
     </message>
 </context>
 <context>
@@ -672,7 +672,7 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../model/innerfilemodel.cpp" line="26"/>
         <source>TimeStamp</source>
-        <translation type="unfinished"></translation>
+        <translation>Часова мітка</translation>
     </message>
     <message>
         <location filename="../model/innerfilemodel.cpp" line="27"/>
@@ -1467,7 +1467,7 @@ Are you want switch column sorting off?</source>
     <message>
         <location filename="../app/messagewindow.ui" line="168"/>
         <source>Hard sort</source>
-        <translation type="unfinished"></translation>
+        <translation>Жорстке сортування</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="175"/>
@@ -1528,13 +1528,14 @@ Are you want switch column sorting off?</source>
     <message>
         <location filename="../app/messagewindow.cpp" line="233"/>
         <source>Merged multiparted: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Об’єднані багатокомпонентні: %1</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.cpp" line="280"/>
         <source>id: %1
 Sources: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Id: %1
+Джерела: %2</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.cpp" line="283"/>
@@ -1555,7 +1556,7 @@ MMS properties:
     <message>
         <location filename="../app/messagewindow.cpp" line="307"/>
         <source>Can you also save media files from MMS (%1 messages)?</source>
-        <translation type="unfinished"></translation>
+        <translation>Чи можна також зберігати мультимедійні файли з MMS (%1 повідомлень)?</translation>
     </message>
 </context>
 <context>
@@ -1669,7 +1670,7 @@ MMS properties:
     <message>
         <location filename="../core/contactlist.cpp" line="130"/>
         <source>CALLBACK</source>
-        <translation type="unfinished"></translation>
+        <translation>ЗВОРОТНИЙ ВИКЛИК</translation>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="168"/>
@@ -1693,7 +1694,11 @@ MMS properties:
 %3 emails
 %4 addresses
 %5 birthdays</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 записів
+%2 телефонів
+%3 електронних листів
+%4 адрес
+%5 днів народжень</translation>
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="919"/>
@@ -1707,7 +1712,9 @@ MMS properties:
         <source>
 %1 SMS
 %2 archived SMS</source>
-        <translation type="unfinished"></translation>
+        <translation>
+%1 SMS
+%2 заархівовані SMS</translation>
     </message>
     <message>
         <source>%1 records
@@ -1747,17 +1754,17 @@ IMEI %3
     <message>
         <location filename="../core/extra.cpp" line="26"/>
         <source>Dialed</source>
-        <translation type="unfinished"></translation>
+        <translation>Набрано</translation>
     </message>
     <message>
         <location filename="../core/extra.cpp" line="28"/>
         <source>Received</source>
-        <translation type="unfinished"></translation>
+        <translation>Отримано</translation>
     </message>
     <message>
         <location filename="../core/extra.cpp" line="30"/>
         <source>Missed</source>
-        <translation type="unfinished"></translation>
+        <translation>Пропущено</translation>
     </message>
     <message>
         <source>%1 records
@@ -1962,7 +1969,7 @@ line %3, col %4
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="290"/>
         <source>IM</source>
-        <translation type="unfinished"></translation>
+        <translation>IM</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="291"/>
@@ -1972,17 +1979,17 @@ line %3, col %4
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="292"/>
         <source>photo</source>
-        <translation type="unfinished"></translation>
+        <translation>фото</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="293"/>
         <source>description</source>
-        <translation type="unfinished"></translation>
+        <translation>опис</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="294"/>
         <source>job title</source>
-        <translation type="unfinished"></translation>
+        <translation>назва посади</translation>
     </message>
     <message>
         <location filename="../core/formats/files/udxfile.cpp" line="295"/>
@@ -2079,7 +2086,7 @@ line %3, col %4
     <message>
         <location filename="../core/globals.h" line="70"/>
         <source>Select tags for remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Виберіть теґи для видалення</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="71"/>
@@ -2194,7 +2201,7 @@ line %3, col %4
     <message>
         <location filename="../core/globals.h" line="96"/>
         <source>Role</source>
-        <translation type="unfinished"></translation>
+        <translation>Роль</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="97"/>
@@ -2249,7 +2256,7 @@ line %3, col %4
     <message>
         <location filename="../core/globals.h" line="109"/>
         <source>Has address</source>
-        <translation type="unfinished"></translation>
+        <translation>Має адресу</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="110"/>
@@ -2279,18 +2286,19 @@ line %3, col %4
     <message>
         <location filename="../core/globals.h" line="127"/>
         <source>Show in new window</source>
-        <translation type="unfinished"></translation>
+        <translation>Показати в новому вікні</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="139"/>
         <source>Group operation not implemented, select one record</source>
-        <translation type="unfinished"></translation>
+        <translation>Групова операція не реалізована, виберіть один запис</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="146"/>
         <source>Program built without network support. Use WITH_NETWORK define, if building from source code.
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Програма створена без підтримки мережі. Використовуйте визначення WITH_NETWORK, якщо створюєте з вихідного коду.
+</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="147"/>
@@ -2322,17 +2330,17 @@ Are you want switch column sorting off?</source>
     <message>
         <location filename="../core/globals.h" line="154"/>
         <source>sorted</source>
-        <translation type="unfinished">відсортовано</translation>
+        <translation>відсортовано</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="155"/>
         <source>not sorted</source>
-        <translation type="unfinished">не відсортовано</translation>
+        <translation>не відсортовано</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="159"/>
         <source>Select MMS files Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Виберіть каталог файлів MMS</translation>
     </message>
     <message>
         <source>P.o. box</source>
@@ -2626,7 +2634,8 @@ Check username, password, protocol and port</source>
         <location filename="../core/formats/files/nbufile.cpp" line="236"/>
         <source>NBU inner file %1/%2 truncated.
 Read %3 bytes, %4 expected</source>
-        <translation type="unfinished"></translation>
+        <translation>Внутрішній файл NBU %1/%2 скорочено.
+Прочитати %3 байти, очікувано %4</translation>
     </message>
     <message>
         <location filename="../core/formats/files/nbufile.cpp" line="257"/>
@@ -2693,7 +2702,8 @@ Read %3 bytes, %4 expected</source>
         <location filename="../core/decodedmessagelist.cpp" line="99"/>
         <source>&quot;Date&quot;,&quot;Box&quot;,&quot;From/To&quot;,&quot;Number&quot;,&quot;Status&quot;,&quot;Text&quot;,&quot;Aux&quot;
 </source>
-        <translation type="unfinished"></translation>
+        <translation>&quot;Дата&quot;, &quot;Ящик&quot;, &quot;Від/Кому&quot;, &quot;Номер&quot;, &quot;Статус&quot;, &quot;Текст&quot;, &quot;Допоміжний&quot;
+</translation>
     </message>
     <message>
         <source>&quot;Date&quot;,&quot;Box&quot;,&quot;From/To&quot;,&quot;Status&quot;,&quot;Text&quot;,&quot;Aux&quot;
@@ -2709,7 +2719,7 @@ Read %3 bytes, %4 expected</source>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="198"/>
         <source>Dlv</source>
-        <translation type="unfinished"></translation>
+        <translation>Доставлено</translation>
     </message>
     <message>
         <source>Empty</source>
@@ -2718,7 +2728,7 @@ Read %3 bytes, %4 expected</source>
     <message>
         <location filename="../core/decodedmessagelist.cpp" line="308"/>
         <source>MPB message body missing</source>
-        <translation type="unfinished"></translation>
+        <translation>Відсутнє тіло повідомлення MPB</translation>
     </message>
     <message>
         <source>Unknown messages format</source>
@@ -2741,34 +2751,34 @@ Read %3 bytes, %4 expected</source>
     <message>
         <location filename="../model/recentlist.h" line="21"/>
         <source>Clear recent list</source>
-        <translation type="unfinished"></translation>
+        <translation>Очистити останній список</translation>
     </message>
     <message>
         <location filename="../core/formats/common/nokiadata.cpp" line="321"/>
         <source>Unknown field type: 0x%1 at %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Невідомий тип поля: 0x%1 при %2</translation>
     </message>
     <message>
         <location filename="../core/formats/common/nokiadata.cpp" line="475"/>
         <source>Invalid MMS Yes/No value (%1) at %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Неприпустиме значення MMS Так/Ні (%1) при %2</translation>
     </message>
     <message>
         <location filename="../core/formats/common/nokiadata.cpp" line="485"/>
         <source>Invalid MMS octet count (%1) at %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Недійсна кількість октетів MMS (%1) при %2</translation>
     </message>
     <message>
         <location filename="../core/formats/common/nokiadata.cpp" line="510"/>
         <source>Personal</source>
         <comment>MmsClass</comment>
-        <translation type="unfinished"></translation>
+        <translation>Особисте</translation>
     </message>
     <message>
         <location filename="../core/formats/common/nokiadata.cpp" line="513"/>
         <source>Advertisement</source>
         <comment>MmsClass</comment>
-        <translation type="unfinished"></translation>
+        <translation>Реклама</translation>
     </message>
     <message>
         <location filename="../core/formats/common/nokiadata.cpp" line="516"/>
@@ -2780,48 +2790,49 @@ Read %3 bytes, %4 expected</source>
         <location filename="../core/formats/common/nokiadata.cpp" line="519"/>
         <source>Auto</source>
         <comment>MmsClass</comment>
-        <translation type="unfinished"></translation>
+        <translation>Автоматично</translation>
     </message>
     <message>
         <location filename="../core/formats/common/nokiadata.cpp" line="541"/>
         <source>Parse value length error (%1) at %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Помилка аналізу довжини значення (%1) при %2</translation>
     </message>
     <message>
         <location filename="../core/formats/common/nokiadata.cpp" line="553"/>
         <source>Error reading uint64_t value: overflow at %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Помилка зчитування uint64_t значення: переповнення при %1</translation>
     </message>
     <message>
         <location filename="../core/formats/common/vmessagedata.cpp" line="19"/>
         <source>Unknown ATT subtype at line %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Невідомий підтип ATT у рядку %1: %2</translation>
     </message>
     <message>
         <location filename="../core/formats/common/vmessagedata.cpp" line="280"/>
         <source>File %1 has size %2, declared %3</source>
-        <translation type="unfinished"></translation>
+        <translation>Файл %1 має розмір %2, заявлений %3</translation>
     </message>
     <message>
         <location filename="../model/callmodel.cpp" line="102"/>
         <source>&quot;Type&quot;,&quot;Date&quot;,&quot;Duration&quot;,&quot;Number&quot;,&quot;Name&quot;
 </source>
-        <translation type="unfinished"></translation>
+        <translation>&quot;Тип&quot;, &quot;Дата&quot;, &quot;Тривалість&quot;, &quot;Число&quot;, &quot;Ім&apos;я&quot;
+</translation>
     </message>
     <message>
         <location filename="../core/extra.h" line="35"/>
         <source>Records: %1. Size: %2 byte(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>Записи: %1. Розмір: %2 байт(ів)</translation>
     </message>
     <message>
         <location filename="../core/extra.h" line="36"/>
         <source>Select attached files Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Виберіть каталог вкладених файлів</translation>
     </message>
     <message>
         <location filename="../core/extra.h" line="37"/>
         <source>Save attachment</source>
-        <translation type="unfinished"></translation>
+        <translation>Зберегти вкладення</translation>
     </message>
 </context>
 <context>
@@ -2926,7 +2937,7 @@ Read %3 bytes, %4 expected</source>
     <message>
         <location filename="../app/settingsdialog.ui" line="92"/>
         <source>Resize table rows to contents</source>
-        <translation type="unfinished"></translation>
+        <translation>Змінити розмір рядків таблиці до вмісту</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="99"/>
@@ -2986,7 +2997,7 @@ Read %3 bytes, %4 expected</source>
     <message>
         <location filename="../app/settingsdialog.ui" line="321"/>
         <source>Tag for group save</source>
-        <translation type="unfinished"></translation>
+        <translation>Теґ для збереження групи</translation>
     </message>
     <message>
         <source>2.1</source>
@@ -3033,22 +3044,22 @@ Read %3 bytes, %4 expected</source>
     <message>
         <location filename="../app/settingsdialog.ui" line="279"/>
         <source>Non-latin type names:</source>
-        <translation type="unfinished"></translation>
+        <translation>Назви нелатинського типу:</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="286"/>
         <source>Save as is</source>
-        <translation type="unfinished"></translation>
+        <translation>Зберегти як є</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="296"/>
         <source>Replace to default type</source>
-        <translation type="unfinished"></translation>
+        <translation>Замінити на тип за замовчуванням</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="306"/>
         <source>Place to X-CUSTOM</source>
-        <translation type="unfinished"></translation>
+        <translation>Помістіть до X-CUSTOM</translation>
     </message>
     <message>
         <source>Replace non-latin type named</source>
@@ -3072,7 +3083,7 @@ Read %3 bytes, %4 expected</source>
     <message>
         <location filename="../app/settingsdialog.ui" line="374"/>
         <source>Warning on missing phone types</source>
-        <translation type="unfinished"></translation>
+        <translation>Попередження про відсутні типи телефонів</translation>
     </message>
     <message>
         <source>(many phones treats &apos;Voice&apos; as &apos;Other&apos;)</source>
@@ -3086,7 +3097,7 @@ Read %3 bytes, %4 expected</source>
     <message>
         <location filename="../app/settingsdialog.ui" line="388"/>
         <source>Debug save</source>
-        <translation type="unfinished"></translation>
+        <translation>Збереження налагодження</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="395"/>
@@ -3140,7 +3151,7 @@ Read %3 bytes, %4 expected</source>
     <message>
         <location filename="../app/tagremovedialog.ui" line="23"/>
         <source>Tags for remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Теґи для видалення</translation>
     </message>
     <message>
         <location filename="../app/tagremovedialog.ui" line="33"/>
@@ -3150,7 +3161,7 @@ Read %3 bytes, %4 expected</source>
     <message>
         <location filename="../app/tagremovedialog.cpp" line="39"/>
         <source>Unknown tags not found</source>
-        <translation type="unfinished"></translation>
+        <translation>Невідомі теґи не знайдено</translation>
     </message>
 </context>
 </TS>
