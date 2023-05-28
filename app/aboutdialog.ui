@@ -137,6 +137,57 @@
        </item>
       </layout>
      </widget>
+     <widget class="QWidget" name="tabAdditional">
+      <attribute name="title">
+       <string>Additional</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="layAdditional">
+       <item>
+        <widget class="QLabel" name="lbCompilerName">
+         <property name="text">
+          <string>Compiler:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="lbCompilerValue">
+         <property name="text">
+          <string>unknown compiler</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="lbTrasPathName">
+         <property name="text">
+          <string>Path to translations:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="lbTrasPathValue">
+         <property name="text">
+          <string>unknown path</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="spacerAdditional">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Expanding</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
     </widget>
    </item>
    <item>
