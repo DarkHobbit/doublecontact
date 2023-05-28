@@ -33,7 +33,11 @@
 // some tags with one tagname can be found
 struct TagValue { // for non-editing ang unknown tags
     QString tag, value;
+    QByteArray data;
+    bool isBinary;
     TagValue(const QString& _tag, const QString& _value);
+    TagValue(const QString& _tag, const QByteArray _data);
+    QString text();
 };
 
 class TagList: public QList<TagValue> {

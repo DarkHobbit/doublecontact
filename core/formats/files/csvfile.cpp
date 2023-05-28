@@ -182,6 +182,7 @@ bool CSVFile::exportRecords(const QString &url, ContactList &list)
     closeFile();
     return true;
 }
+
 void CSVFile::putLine(QTextStream& stream, const QStringList &source)
 {
     // Quoting

@@ -279,6 +279,8 @@ void MessageWindow::on_actionProperties_triggered()
     // Show info
     QString info = tr("id: %1\nSources: %2")
         .arg(msg.id).arg(srcs.join(", "));
+    if (!msg.subFolder.isEmpty())
+        info += tr("\n\nSMS subfolder: %1").arg(msg.subFolder);
     if (msg.isMMS)
         info += tr("\n\nMMS properties:\n%1").arg(msg.text);
     QMessageBox::information(0, S_INFORM, info);

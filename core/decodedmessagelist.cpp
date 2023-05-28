@@ -264,14 +264,14 @@ void DecodedMessageList::sort()
     sortP(this);
 }
 
-void DecodedMessageList::fromVMessageList(DecodedMessageList &messages, const QStringList &src, QStringList &errors, bool fromArchive)
+void DecodedMessageList::fromVMessageList(DecodedMessageList &messages, const BStringList &src, QStringList &errors, bool fromArchive)
 {
     VMessageData vmg;
     if (src.isEmpty()) // Crash protect
         return;
     if (src.first().startsWith("BEGIN:VMSG")) { // classic/Nokia vmessage
-        foreach(const QString& s, src) {
-            QStringList ss = s.split("\n");
+        foreach(const BString& s, src) {
+            BStringList ss = s.splitByLines();
             vmg.importRecords(ss, messages, true, errors);
         }
     }
@@ -279,12 +279,12 @@ void DecodedMessageList::fromVMessageList(DecodedMessageList &messages, const QS
         vmg.importMPBRecords(src, messages, true, errors, fromArchive);
 }
 
-void DecodedMessageList::fromPDUList(DecodedMessageList &messages, const QStringList &src, QStringList &errors, bool fromArchive)
+void DecodedMessageList::fromPDUList(DecodedMessageList &messages, const BStringList &src, QStringList &errors, bool fromArchive)
 {
-    foreach(const QString& s, src) {
-        QStringList ss = s.split(",");
-        if (ss.length()>1) {
-            QByteArray body = QByteArray::fromHex(ss[1].toLatin1());
+    foreach(const BString& s, src) {
+        QList<QByteArray> ss = s.split(',');
+        if (ss.count()>1) {
+            QByteArray body = QByteArray::fromHex(ss[1]);
             int MsgType;
             DecodedMessage msg;
             msg.clear();
@@ -300,8 +300,10 @@ void DecodedMessageList::fromPDUList(DecodedMessageList &messages, const QString
                     errors << QString("Unknown message type: %1").arg(MsgType);
             if (ss[0].toInt()==1) // For multipart
                 msg.box = DecodedMessage::Inbox;
-            if (ss.length()>2 && !msg.when.isValid()) // For outbox and multipart
+            if (ss.count()>2 && !msg.when.isValid()) // For outbox and multipart
                 msg.when = QDateTime::fromString(ss[2], "ddMMyyyyhhmmssv");
+            if (ss.count()>3)
+                msg.subFolder = VMessageData::readMPBMsgSubfolder(ss[3]);
             messages.addOrMerge(msg);
         }
         else

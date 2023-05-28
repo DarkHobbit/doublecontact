@@ -14,8 +14,6 @@
 #ifndef MPBFILE_H
 #define MPBFILE_H
 
-#include <QTextStream>
-
 #include "fileformat.h"
 #include "../common/vcarddata.h"
 
@@ -32,9 +30,9 @@ public:
     bool importRecords(const QString &url, ContactList &list, bool append);
     bool exportRecords(const QString &url, ContactList &list);
 private:
-    void writeSectionHeader(QTextStream& stream, const QString& sectionName,
-        const char* codecAfter="UTF-8", bool writeEOL=true);
-    void winEndl(QTextStream & stream);
+    void writeSectionHeader(QIODevice& out, const BString& sectionName,
+        bool writeEOL=true);
+    void winEndl(QIODevice & out);
 };
 
 #endif // MPBFILE_H

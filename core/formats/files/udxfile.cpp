@@ -88,6 +88,8 @@ bool UDXFile::importRecords(const QString &url, ContactList &list, bool append)
     QDomElement vcfInfo = recInfo.firstChildElement("RecordOfvCard");
     QString vcVer = vcfInfo.firstChildElement("vCardVersion").text();
     int expCount = vcfInfo.firstChildElement("vCardRecord").text().toInt();
+    if (!expCount) // older udx files without vCardVersion/vCardRecord
+        expCount = vcfInfo.text().toInt();
     // vCard set
     QDomElement vCard = root.firstChildElement("vCard");
     if (vCard.isNull()) {
@@ -116,7 +118,7 @@ bool UDXFile::importRecords(const QString &url, ContactList &list, bool append)
             QString fldValue = field.text(); // codec->toUnicode(field.text().toLocal8Bit()); TODO not works on windows
             if (fldValue.contains("=")) { // quoted-printable
                 QuotedPrintable::mergeLines(fldValue);
-                fldValue = QuotedPrintable::decode(fldValue, codec);
+                fldValue = QuotedPrintable::decode(fldValue.toLatin1(), codec);
             }
             if (fldName=="N") {
                 fldValue.replace("\\;", " ");

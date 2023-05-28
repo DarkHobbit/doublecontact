@@ -22,7 +22,7 @@ VMessageData::VMessageData()
 {
 }
 
-bool VMessageData::importRecords(const QStringList &lines, DecodedMessageList &list, bool append, QStringList &errors)
+bool VMessageData::importRecords(const BStringList &lines, DecodedMessageList &list, bool append, QStringList &errors)
 {
     bool recordOpened = false;
     DecodedMessage msg;
@@ -31,17 +31,18 @@ bool VMessageData::importRecords(const QStringList &lines, DecodedMessageList &l
         list.clear();
     // Collect records
     for (int line=0; line<lines.count(); line++) {
-        QString s = lines[line];
+        BString s = lines[line];
         if (s.isEmpty()) // vmg can contain empty lines
             continue;
-        if (s.startsWith("BEGIN:VMSG", Qt::CaseInsensitive)) {
+        BString us = s.toUpper();
+        if (us.startsWith("BEGIN:VMSG")) {
             if (recordOpened)
                 errors << QObject::tr("Unclosed record before line %1").arg(line+1);
             recordOpened = true;
             msg.clear();
             msg.sources = useVMessage;
         }
-        else if (s.startsWith("END:VMSG", Qt::CaseInsensitive)) {
+        else if (us.startsWith("END:VMSG")) {
             recordOpened = false;
             //msg.calculateFields();
             list.addOrMerge(msg);
@@ -51,13 +52,13 @@ bool VMessageData::importRecords(const QStringList &lines, DecodedMessageList &l
             // Split type:value
             int scPos = s.indexOf(":");
             if (scPos==-1) {
-                errors << S_UNKNOWN_MSG_TAG.arg(s);
+                errors << S_UNKNOWN_MSG_TAG.arg(QString(s));
                 continue;
             }
             QString tag = s.left(scPos).toUpper();
             QString val = s.mid(scPos+1);
             QString uVal = val.toUpper();
-            QStringList ss;
+            BStringList ss;
             // Known tags
             if (tag=="VERSION")
                 msg.version = val;
@@ -67,7 +68,7 @@ bool VMessageData::importRecords(const QStringList &lines, DecodedMessageList &l
                 else if (uVal=="UNREAD")
                     msg.status = DecodedMessage::Unread;
                 else {
-                    errors << S_UNKNOWN_MSG_VAL.arg(s);
+                    errors << S_UNKNOWN_MSG_VAL.arg(QString(s));
                 }
             }
             else if (tag=="X-IRMC-BOX") {
@@ -80,7 +81,7 @@ bool VMessageData::importRecords(const QStringList &lines, DecodedMessageList &l
                 else if (uVal=="DRAFT")
                     msg.box = DecodedMessage::Draft;
                 else
-                    errors << S_UNKNOWN_MSG_VAL.arg(s);
+                    errors << S_UNKNOWN_MSG_VAL.arg(QString(s));
             }
             else if (tag=="X-NOK-DT")
                 msg.when = DateItem::readISOExtDateTimeWithZone(val);
@@ -88,7 +89,7 @@ bool VMessageData::importRecords(const QStringList &lines, DecodedMessageList &l
                 if (uVal=="DELIVER")
                     msg.delivered = true;
                 else
-                    errors << S_UNKNOWN_MSG_VAL.arg(s);
+                    errors << S_UNKNOWN_MSG_VAL.arg(QString(s));
             }
             else if (s=="BEGIN:VCARD") { // inner contact(s)
                 ss.clear();
@@ -106,13 +107,13 @@ bool VMessageData::importRecords(const QStringList &lines, DecodedMessageList &l
                 while (line<lines.count()-1) {
                     s = lines[++line];
                     if (s=="END:VBODY") break;
-                    if (!s.startsWith("Date:", Qt::CaseInsensitive))
+                    if (!s.toUpper().startsWith("DATE:"))
                         ss << s;
                 }
-                msg.text = ss.join("\n");
+                msg.text = decodeValue(ss.joinByLines(), errors);
             }
             else if (s!="BEGIN:VENV" && s!="END:VENV")
-                errors << S_UNKNOWN_MSG_TAG.arg(s);
+                errors << S_UNKNOWN_MSG_TAG.arg(QString(s));
         }
     }
     if (recordOpened) {
@@ -124,7 +125,7 @@ bool VMessageData::importRecords(const QStringList &lines, DecodedMessageList &l
 }
 
 // Format used in MPB files. It's very similar to vMessage, but tag names are different
-bool VMessageData::importMPBRecords(const QStringList &lines, DecodedMessageList &list, bool append, QStringList &errors, bool fromArchive)
+bool VMessageData::importMPBRecords(const BStringList &lines, DecodedMessageList &list, bool append, QStringList &errors, bool fromArchive)
 {
     bool recordOpened = false;
     QTextCodec* codec = QTextCodec::codecForName("UTF-8"); // non-standart types also may be non-latin
@@ -132,21 +133,23 @@ bool VMessageData::importMPBRecords(const QStringList &lines, DecodedMessageList
     msg.clear();
     if (!append)
         list.clear();
-    QStringList mLines = lines;
+    BStringList mLines = lines;
     QuotedPrintable::mergeLinesets(mLines);
+    bool wasBody = false; // to process multiline message
     // Collect records
     for (int line=0; line<mLines.count(); line++) {
-        QString s = mLines[line];
+        BString s = mLines[line];
         if (s.isEmpty()) // vmg can contain empty lines
             continue;
-        if (s.startsWith("BEGIN:VMESSAGE", Qt::CaseInsensitive)) {
+        BString us = s.toUpper();
+        if (us.startsWith("BEGIN:VMESSAGE")) {
             if (recordOpened)
                 errors << QObject::tr("Unclosed record before line %1").arg(line+1);
             recordOpened = true;
             msg.clear();
             msg.sources = fromArchive ? useVMessageArchive : useVMessage;
         }
-        else if (s.startsWith("END:VMESSAGE", Qt::CaseInsensitive)) {
+        else if (us.startsWith("END:VMESSAGE")) {
             recordOpened = false;
             //msg.calculateFields();
             list.addOrMerge(msg);
@@ -156,21 +159,25 @@ bool VMessageData::importMPBRecords(const QStringList &lines, DecodedMessageList
             // Split type:value
             int scPos = s.indexOf(":");
             if (scPos==-1) {
-                errors << S_UNKNOWN_MSG_TAG.arg(s);
+                if (wasBody)
+                    msg.text +='\n' + decodeValue(s, errors);
+                else
+                    errors << S_UNKNOWN_MSG_TAG.arg(QString(s));
                 continue;
             }
-            QStringList vType = VCardData::splitBySC(s.left(scPos));
-            const QString tag = vType[0].toUpper();
-            QString val = s.mid(scPos+1);
-            QString uVal = val.toUpper();
+            BStringList vType = splitBySC(s.left(scPos));
+            const BString tag = vType[0].toUpper();
+            BString val = s.mid(scPos+1);
+            BString uVal = val.toUpper();
             // Encoding & charset
             QString encoding = "";
             QString charSet = "";
             for (int i=1; i<vType.count(); i++) {
-                if (vType[i].startsWith("ENCODING=", Qt::CaseInsensitive))
-                    encoding = vType[i].mid(QString("ENCODING=").length()).toUpper();
-                else if (vType[i].startsWith("CHARSET=", Qt::CaseInsensitive)) {
-                    charSet = vType[i].mid(QString("CHARSET=").length()).toUpper();
+                BString typeBegin = vType[i].toUpper();
+                if (typeBegin.startsWith("ENCODING="))
+                    encoding = typeBegin.mid(QString("ENCODING=").length()).toUpper();
+                else if (typeBegin.startsWith("CHARSET=")) {
+                    charSet = typeBegin.mid(QString("CHARSET=").length()).toUpper();
                     if (charSet!=codec->name().toUpper()) {
                         codec = QTextCodec::codecForName(charSet.toLatin1());
                         if (!codec) {
@@ -195,7 +202,7 @@ bool VMessageData::importMPBRecords(const QStringList &lines, DecodedMessageList
                     msg.isMMS = true;
                 }
                 else
-                    errors << S_UNKNOWN_MSG_VAL.arg(s);
+                    errors << S_UNKNOWN_MSG_VAL.arg(QString(s));
             }
             else if (tag=="BOX") {
                 if (uVal=="INBOX")
@@ -206,7 +213,7 @@ bool VMessageData::importMPBRecords(const QStringList &lines, DecodedMessageList
                     msg.box = DecodedMessage::Draft;
                 // TODO other foldertypes
                 else
-                    errors << S_UNKNOWN_MSG_VAL.arg(s);
+                    errors << S_UNKNOWN_MSG_VAL.arg(QString(s));
             }
             else if (tag=="READ") {
                 if (uVal=="1")
@@ -214,7 +221,7 @@ bool VMessageData::importMPBRecords(const QStringList &lines, DecodedMessageList
                 else if (uVal=="0")
                     msg.status = DecodedMessage::Unread;
                 else
-                    errors << S_UNKNOWN_MSG_VAL.arg(s);
+                    errors << S_UNKNOWN_MSG_VAL.arg(QString(s));
             }
             else if (tag=="DATE")
                 msg.when = DateItem::readISOExtDateTimeWithZone(val);
@@ -222,22 +229,14 @@ bool VMessageData::importMPBRecords(const QStringList &lines, DecodedMessageList
                 msg.contacts << ContactItem();
                 msg.contacts.first().phones << Phone(val);
             }
-            else if (tag=="BODY") {
-                if (encoding=="QUOTED-PRINTABLE")
-                    msg.text = QuotedPrintable::decode(val, codec);
-                else
-                    msg.text = codec->toUnicode(val.toLocal8Bit());
-            }
+            else if (tag=="BODY")
+                msg.text = decodeValue(val, errors);
             else if (tag=="SUBFOLDER")
-                msg.subFolder = val;
+                msg.subFolder = readMPBMsgSubfolder(val);
             else if (tag=="X-IRMC-LUID")
                 msg.id = val;
             else if (tag=="SMIL") {
-                QString sSmil;
-                if (encoding=="QUOTED-PRINTABLE")
-                    sSmil = QuotedPrintable::decode(val, codec);
-                else
-                    sSmil = codec->toUnicode(val.toLocal8Bit());
+                QString sSmil = decodeValue(val, errors);
                 msg.mmsFiles << InnerFile("", "smil.smil", QDateTime(), sSmil.toLocal8Bit());
             }
             else if (tag=="ATT") {
@@ -263,23 +262,41 @@ bool VMessageData::importMPBRecords(const QStringList &lines, DecodedMessageList
                     else
                         errors << S_UNKNOWN_ATT_SUBTYPE.arg(line+1).arg(ss+"2");
                 }
-                if (encoding=="QUOTED-PRINTABLE")
+                if (encoding=="QUOTED-PRINTABLE") {
+                    // This is a case of text files with explicit-defined codec
+                    // TODO think, use here toLocal8Bit() or toUtf8
+                    // Or!!! use here short form of QuotedPrintable::decode without codec
+                    // and preserve charset in separate attribute of InnerFile
+                    // and use it when show file
+                    // and ask when save all...
                     att.content = QuotedPrintable::decode(val, codec).toLocal8Bit();
+                }
                 else if (encoding=="BASE64" || encoding=="B")
-                    att.content = QByteArray::fromBase64(val.toLatin1());
+                    att.content = QByteArray::fromBase64(val);
                 else {
                     if (!encoding.isEmpty())
                         errors << S_UNKNOWN_ENCODING.arg(encoding);
+                    // Encoding not defined (in my examples) already is a text with charset.
+                    // TODO TEST THIS EXAMPLE! (S prazdnikon)
+                    // TODO think as above
                     if (!charSet.isEmpty())
-                        att.content = codec->toUnicode(val.toLocal8Bit()).toLatin1();
+                        att.content = codec->toUnicode(val).toLocal8Bit();
                     else
-                        att.content = val.toLocal8Bit();
+                        att.content = val;
 
                 }
                 if (fileSize>0 && fileSize!=att.content.size())
                     errors << QObject::tr("File %1 has size %2, declared %3")
                         .arg(att.name).arg(att.content.size()).arg(fileSize);
             }
+            else {
+                if (wasBody)
+                    msg.text +='\n' + decodeValue(s, errors);
+                else
+                    errors << S_UNKNOWN_MSG_TAG.arg(QString(s));
+                continue;
+            }
+            wasBody = (tag=="BODY");
         }
     }
     if (recordOpened) {
@@ -288,4 +305,15 @@ bool VMessageData::importMPBRecords(const QStringList &lines, DecodedMessageList
     }
     // Ready
     return (!list.isEmpty());
+}
+
+QString VMessageData::readMPBMsgSubfolder(const BString &src)
+{
+    const BString bckLabel = "Backup ";
+    if (src.startsWith(bckLabel))
+        return QObject::tr("Backup %1", "SMS archive date")
+            .arg(QString(src).mid(bckLabel.length()));
+    else return "";
+    // Second case: In older MPB versions here is ANSI-encoded label without date.
+    // Encodind depends by country, cannot be autodetected and label is useless.
 }

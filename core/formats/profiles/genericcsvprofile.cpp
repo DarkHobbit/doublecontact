@@ -40,8 +40,10 @@ GenericCSVProfile::GenericCSVProfile()
     _hasBOM = false;
     _quotingPolicy = CSVProfileBase::AlwaysQuote;
     _lineEnding = CSVProfileBase::CRLFEnding;
+    /*
     skipDecoding = true;
     skipEncoding = true;
+    */
 }
 
 bool GenericCSVProfile::detect(const QStringList &header) const
@@ -51,7 +53,8 @@ bool GenericCSVProfile::detect(const QStringList &header) const
 
 bool GenericCSVProfile::parseHeader(const QStringList &header)
 {
-    _header = header;
+
+    _header = BStringList::fromQStrings(header);
     return (!header.isEmpty());
 }
 
@@ -60,11 +63,12 @@ bool GenericCSVProfile::importRecord(const QStringList &row, ContactItem &item, 
     if (row.count()!= _header.count())
         errors << QObject::tr("Row length (%1) is not equal header length (%2). Possibly, incorrect CSV. \n%3")
             .arg(row.count()).arg(_header.count()).arg(row.join(",")); // TODO separator instead ,
-    QStringList vCard;
+    BStringList vCard;
     vCard << "BEGIN:VCARD";
     for (int i=0; (i<row.count() && i<_header.count()); i++)
         if (!row[i].isEmpty())
-            vCard << _header[i] + ":" + row[i];
+            // Charset decoding already was in CSVFile
+            vCard << _header[i] + ":" + row[i].toUtf8();
     vCard << "END:VCARD";
     ContactList list;
     bool res = VCardData::importRecords(vCard, list, false, errors);

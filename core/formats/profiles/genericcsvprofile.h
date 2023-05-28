@@ -14,6 +14,7 @@
 #define GENERICCSVPROFILE_H
 
 #include <QMap>
+#include "bstring.h"
 #include "csvprofilebase.h"
 #include "../common/vcarddata.h"
 
@@ -43,7 +44,7 @@ private:
     // TODO is vCard 4.0 allow many photo?
     TypeCounter phoneTypeCombinations, emailTypeCombinations, addrTypeCombinations, imTypeCombinations;
     TypeCounter otherTags, unknownTags;
-    QStringList _header;
+    BStringList _header;
     void clearCounters();
     // prepareExport helpers
     void checkStr(const QString& value, bool& found);

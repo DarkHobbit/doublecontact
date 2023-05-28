@@ -65,7 +65,8 @@ bool XmlContactFile::importRecords(const QString &url, ContactList &list, bool a
     if (!append)
         list.clear();
     for(int i=0; i<nodes.count(); i++) {
-        QStringList lines = nodes.at(i).toElement().text().split("\r\n");
+        BStringList lines =
+            BString(nodes.at(i).toElement().text().toUtf8()).splitByLines();
         if (VCardData::importRecords(lines, list, true, _errors))
             list.last().originalFormat = "XML";
     }

@@ -2,7 +2,7 @@
  *
  * Module: MyPhoneExplorer backup file import
  *
- * Copyright 2016 Mikhail Y. Zvyozdochkin aka DarkHobbit <pub@zvyozdochkin.ru>
+ * Copyright 2016-2022 Mikhail Y. Zvyozdochkin aka DarkHobbit <pub@zvyozdochkin.ru>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -12,10 +12,13 @@
  */
 #include <qglobal.h>
 #include <QStringList>
+#include <QTextStream>
+#include "bstring.h"
 #include "corehelpers.h"
 #include "mpbfile.h"
 
-const QString SECTION_BEGIN = QString("MyPhoneExplorer_ContentID:");
+#define S_ERR_NOT_MPB QObject::tr("File isn't MPB file or corrupted")
+const BString SECTION_BEGIN = BString("MyPhoneExplorer_ContentID:");
 
 MPBFile::MPBFile()
     :FileFormat()
@@ -50,124 +53,99 @@ bool MPBFile::importRecords(const QString &url, ContactList &list, bool append)
     if (!append) // not in VCardData::importRecords; else extra data will be lost
         list.clear();
     // Read file
-    QStringList content;
-    QTextStream stream(&file);
-    enum Section {
-        secNotFound,
-        secUnknown,
-        secPhonebook,
-        secCalls,
-        secOrganizer,
-        secNotes,
-        secSMS, // PDU SMS
-        secSMSArchive,
-        secMessages, // VMessage SMS
-        secMessageArchive
-        //TODO MyPhoneExplorer 1.8.14 also has other interest sections
-    };
-    Section section = secNotFound;
-    do {
-        QString line = stream.readLine();
-        // MPB section changes
-        int secPos = line.indexOf(SECTION_BEGIN);
-        if (secPos!=-1) {
-            // qDebug() << "sP " << secPos;
-            QString secName = line.mid(secPos+SECTION_BEGIN.length());
-            if (secName=="Model")
-                list.extra.model = stream.readLine();
-            else if (secName=="TimeStamp")
-                list.extra.timeStamp = DateItem::readISOExtDateTimeWithZone(stream.readLine());
-            else if (secName=="Phonebook")
-                section = secPhonebook;
-            else if (secName=="Calls")
-                section = secCalls;
-            else if (secName=="Organizer")
-                section = secOrganizer;
-            else if (secName=="Notes")
-                section = secNotes;
-            else if (secName=="SMS")
-                section = secSMS;
-            else if (secName=="SMSArchive")
-                section = secSMSArchive;
-            else if (secName=="Messages")
-                section = secMessages;
-            else if (secName=="MessageArchive")
-                section = secMessageArchive;
-            else if (secName=="EndofData")
-                break;
-            else
-                _errors << QObject::tr("Unsupported MPB section: ") + secName;
-            /*
-            if (section==secSMSArchive)
-                stream.setCodec("CP1251");
-            else
-                // TODO check on Linux
-                // TODO check on Qt 4.6 && 4.4.2 and probably remove version restriction
-#ifdef Q_WS_WIN
-                stream.setCodec("System");
-#else
-                stream.setCodec("UTF-8");
-#endif
-*/
-        }
-        // MPB section content
-        else
-        switch (section) {
-        case secNotFound:
-            _fatalError = QObject::tr("File isn't MPB file or corrupted");
-            return false;
-        case secUnknown:
-            break;
-        case secPhonebook:
-            content << line;
-            break;
-        case secCalls: {
-            QStringList cells = line.split('\t');
-            if (cells.count()!=6)
-                _errors << QObject::tr("Strange call item: %1, size %2")
-                           .arg(line).arg(cells.count());
-            if (cells.count()>=6) {
-                CallInfo call;
-                call.cType = cells[0];
-                call.timeStamp = cells[1];
-                call.duration = cells[2];
-                call.number = cells[3];
-                call.name = cells[4];
-                list.extra.calls << call;
-            }
-            break;
-        }
-        case secOrganizer:
-            list.extra.organizer << line;
-            break;
-        case secNotes:
-            list.extra.notes << Note(0, QDateTime::currentDateTime(), line);
-            // TODO нормальный VNOTE-парсер
-            break;
-        case secSMS:
-            list.extra.pduSMS << line;
-            break;
-        case secSMSArchive:
-            list.extra.pduSMSArchive << line;
-            break;
-        case secMessages:
-            list.extra.vmsgSMS << line;
-            break;
-        case secMessageArchive:
-            list.extra.vmsgSMSArchive << line;
-            break;
-        default:
-            break;
-        }
-    } while (!stream.atEnd());
+    QByteArray allS = file.readAll();
     closeFile();
-    // Parse contact list
-    if (content.isEmpty()) {
+    // Pre-check for very large alien file
+    if (!allS.left(SECTION_BEGIN.length()+2).contains(SECTION_BEGIN)) {
+        _fatalError = S_ERR_NOT_MPB;
+        return false;
+    }
+    // Split and merge sections
+    QList<QByteArray> all = allS.split(0xFF);
+    if (all.isEmpty()) {
+        _fatalError = S_ERR_NOT_MPB;
+        return false;
+    }
+    for (int i=all.count()-1; i>=0; i--) {
+        if (all[i].isEmpty())
+            all.removeAt(i);
+        else if (i>0 && !all[i].startsWith(SECTION_BEGIN)) {
+            all[i-1] += 0xFF;
+            all[i-1] += all[i];
+            all.removeAt(i);
+        }
+    }
+    if (!all.first().startsWith(SECTION_BEGIN)) {
+        _fatalError = S_ERR_NOT_MPB;
+        return false;
+    }
+    // MPB sections
+    bool res = false;
+    // TODO check on not-mpb file
+    foreach (const BString& sec, all) {
+        BStringList section = sec.splitByLines();
+        QString secName = QString(section.first().mid(SECTION_BEGIN.length()));
+        section.removeFirst();
+        if (secName=="EndofData")
+            break;
+        if (section.isEmpty()) {
+            _errors << QObject::tr("MPB section without content: %1").arg(secName);
+            continue;
+        }
+        if (secName=="Model")
+            list.extra.model = QString::fromUtf8(section.last());
+        else if (secName=="TimeStamp")
+            list.extra.timeStamp = DateItem::readISOExtDateTimeWithZone(section.last());
+        else if (secName=="Phonebook")
+            res = VCardData::importRecords(section, list, true, _errors);
+        else if (secName=="Calls") {
+            foreach(const BString& line, section) {
+                QStringList cells = QString::fromUtf8(line).split('\t');
+                if (cells.count()!=6)
+                    _errors << QObject::tr("Strange call item: %1, size %2")
+                               .arg(QString::fromUtf8(line)).arg(cells.count());
+                if (cells.count()>=6) {
+                    CallInfo call;
+                    call.cType = cells[0];
+                    call.timeStamp = cells[1];
+                    call.duration = cells[2];
+                    call.number = cells[3];
+                    call.name = cells[4];
+                    list.extra.calls << call;
+                }
+            }
+        }
+        else if (secName=="Organizer")
+            list.extra.organizer = section;
+        // TODO parser
+        else if (secName=="Notes")
+            foreach(const BString& line, section)
+                list.extra.notes << Note(0, QDateTime::currentDateTime(), QString::fromUtf8(line));
+                // TODO нормальный VNOTE-парсер
+        // PDU SMS
+        else if (secName=="SMS") {
+            list.extra.pduSMS = section;
+        }
+        else if (secName=="SMSArchive") {
+            list.extra.pduSMSArchive = section;
+        }
+        // VMessage SMS
+        else if (secName=="Messages") {
+            list.extra.vmsgSMS = section;
+        }
+        else if (secName=="MessageArchive") {
+            list.extra.vmsgSMSArchive = section;
+        }
+        else
+            _errors << QObject::tr("Unsupported MPB section: %1").arg(secName);
+    }
+    // Check contact list
+    if (!res) {
         // TODO maybe move this string to global for other formats
         _fatalError = QObject::tr("No contact records in this file");
         return false;
     }
-    return VCardData::importRecords(content, list, true, _errors);
+    return true;
 }
 
 bool MPBFile::exportRecords(const QString &url, ContactList &list)
@@ -181,13 +159,15 @@ bool MPBFile::exportRecords(const QString &url, ContactList &list)
     // Warning on Sony Ericsson
     if (list.extra.model.contains("Sony")||list.extra.model.contains("Eric")) // TODO remove, when test
         _errors << "Program was tested only on Android MPB files, not SonyEricsson. Please, contact author";
-    QStringList content;
+    BStringList content;
     // vCard data
     for (int i=0; i<list.count(); i++)
         if (list[i].version.isEmpty()) // some MPB files not contains vCard version number.
             list[i].version = "4.0";
     useOriginalFileVersion = false;
+    /* TODO not work now
     skipEncoding = true; // disable pre-encoding via VCardData::encodeValue
+    */
     groupFormat = GlobalConfig::gfMPB;
     forceVersion(GlobalConfig::VCF40); // MPB vCard section is vCard 4.0 without VERSION tag
     if (!VCardData::exportRecords(content, list, _errors))
@@ -196,23 +176,24 @@ bool MPBFile::exportRecords(const QString &url, ContactList &list)
     if (!openFile(url, QIODevice::WriteOnly))
         return false;
     _errors.clear();
-    QTextStream stream(&file);
     // Prelude sections
-    writeSectionHeader(stream, "Model");
-    stream << list.extra.model;
-    winEndl(stream);
-    writeSectionHeader(stream, "TimeStamp");
-    stream << DateItem::writeISOExtDateTimeWithZone(list.extra.timeStamp);
-    winEndl(stream);
+    writeSectionHeader(file, "Model");
+
+    file.write(list.extra.model.toUtf8().data());
+    winEndl(file);
+    writeSectionHeader(file, "TimeStamp");
+    
+file.write(DateItem::writeISOExtDateTimeWithZone(list.extra.timeStamp).toLatin1().data());
+    winEndl(file);
     // Phone book
-    writeSectionHeader(stream, "Phonebook");
-    foreach (const QString& line, content) {
-        stream << line;
-        winEndl(stream);
+    writeSectionHeader(file, "Phonebook");
+    foreach (const BString& line, content) {
+        file.write(line);
+        winEndl(file);
     }
-    winEndl(stream);
+    winEndl(file);
     // Call history
-    writeSectionHeader(stream, "Calls");
+    writeSectionHeader(file, "Calls");
     foreach (const CallInfo& call, list.extra.calls) {
         // Change name if was edited
         QString aboName = call.name;
@@ -245,70 +226,67 @@ bool MPBFile::exportRecords(const QString &url, ContactList &list)
                 _errors << QObject::tr("Number %1 not found in addressbook. Original name (%2) saved").arg(call.number).arg(aboName);
         }
         // Write call item
-        stream
-            << call.cType << '\t'
-            << call.timeStamp << '\t'
-            << call.duration << '\t'
-            << call.number << '\t'
-            << aboName << '\t';
-        winEndl(stream);
+        QString callLine = QString("%1\t%2\t%3\t%4\t%5\t")
+            .arg(call.cType).arg(call.timeStamp).arg(call.duration).arg(call.number).arg(aboName);
+        file.write(callLine.toUtf8().data());
+        winEndl(file);
     }
     // Interlude sections
-    writeSectionHeader(stream, "Organizer");
-    foreach (const QString& line, list.extra.organizer) {
-        stream << line;
-        winEndl(stream);
+    writeSectionHeader(file, "Organizer");
+    foreach (const BString& line, list.extra.organizer) {
+        file.write(line);
+        winEndl(file);
     }
-    writeSectionHeader(stream, "Notes");
+    writeSectionHeader(file, "Notes");
     // TODO нормальный парсер
     foreach (const Note& n, list.extra.notes) {
-        stream << n.text;
-        winEndl(stream);
+        file.write(n.text.toUtf8().data());
+        winEndl(file);
     }
     // PDU SMS
-    writeSectionHeader(stream, "SMS");
-    foreach (const QString& line, list.extra.pduSMS) {
-        stream << line;
-        winEndl(stream);
+    writeSectionHeader(file, "SMS");
+    foreach (const BString& line, list.extra.pduSMS) {
+        file.write(line);
+        winEndl(file);
     }
     // PDU SMS archive
-    writeSectionHeader(stream, "SMSArchive","CP1251"); // TODO check with various countries/locales.
-    foreach (const QString& line, list.extra.pduSMSArchive) {
-        stream << line;
-        winEndl(stream);
+    writeSectionHeader(file, "SMSArchive");
+    foreach (const BString& line, list.extra.pduSMSArchive) {
+        file.write(line);
+        winEndl(file);
     }
     // VMessage SMS
     if (!list.extra.vmsgSMS.isEmpty()) { // Old MyPhoneExplorer version may be not compatible with this section
-        writeSectionHeader(stream, "Messages");
-        foreach (const QString& line, list.extra.vmsgSMS) {
-            stream << line;
-            winEndl(stream);
+        writeSectionHeader(file, "Messages");
+        foreach (const BString& line, list.extra.vmsgSMS) {
+            file.write(line);
+            winEndl(file);
         }
     }
     // VMessage SMS archive
     if (!list.extra.vmsgSMSArchive.isEmpty()) { // Old MyPhoneExplorer version may be not compatible with this section
-        writeSectionHeader(stream, "MessageArchive");
-        foreach (const QString& line, list.extra.vmsgSMSArchive) {
-            stream << line;
-            winEndl(stream);
+        writeSectionHeader(file, "MessageArchive");
+        foreach (const BString& line, list.extra.vmsgSMSArchive) {
+            file.write(line);
+            winEndl(file);
         }
     }
     // Coda
-    writeSectionHeader(stream, "EndofData", "ISO 8859-1", false); // without endl!
+    writeSectionHeader(file, "EndofData", false); // without endl!
     closeFile();
     return true;
 }
 
-void MPBFile::writeSectionHeader(QTextStream &stream, const QString &sectionName, const char* codecAfter, bool writeEOL)
+void MPBFile::writeSectionHeader(QIODevice &out, const BString &sectionName, bool writeEOL)
 {
-    stream.setCodec("ISO 8859-1"); // to provide correct 0xff write
-    stream << '\xff' << SECTION_BEGIN << sectionName;
+    out.write("\xff");
+    out.write(SECTION_BEGIN);
+    out.write(sectionName);
     if (writeEOL)
-        winEndl(stream);
-    stream.setCodec(codecAfter);
+        winEndl(out);
 }
 
-void MPBFile::winEndl(QTextStream &stream)
+void MPBFile::winEndl(QIODevice &out)
 {
-    stream << (char)13 << ENDL;
+    out.write("\r\n");
 }

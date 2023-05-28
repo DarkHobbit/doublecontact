@@ -15,6 +15,7 @@
 #define DECODEDMESSAGELIST_H
 
 #include <QFlags>
+#include "bstring.h"
 #include "contactlist.h"
 
 enum MessageSourceFlag {
@@ -79,8 +80,9 @@ private:
     bool _mergeDuplicates, _mergeMultiParts;
     QStringList sMsgStatus, sMsgBox;
     QString multiText; // inter-parts buffer for addOrMerge
-    static void fromVMessageList(DecodedMessageList& messages, const QStringList& src, QStringList &errors, bool fromArchive);
-    static void fromPDUList(DecodedMessageList& messages, const QStringList& src, QStringList &errors, bool fromArchive);
+    static void fromVMessageList(DecodedMessageList& messages, const BStringList& src, QStringList &errors, bool fromArchive);
+    // TODO move fromPDUList to mpbfile.cpp
+    static void fromPDUList(DecodedMessageList& messages, const BStringList& src, QStringList &errors, bool fromArchive);
 };
 
 #endif // DECODEDMESSAGELIST_H

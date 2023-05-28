@@ -22,6 +22,7 @@ unix:LIBS += -lz
 INCLUDEPATH += $$PWD
 
 HEADERS	+= \
+    $$PWD/bstring.h \
     $$PWD/contactlist.h \
     $$PWD/corehelpers.h \
     $$PWD/extra.h \
@@ -31,6 +32,7 @@ HEADERS	+= \
     $$PWD/formats/formatfactory.h \
     $$PWD/formats/common/quotedprintable.h \
     $$PWD/formats/common/vcarddata.h \
+    $$PWD/formats/common/vdata.h \
     $$PWD/formats/files/csvfile.h \
     $$PWD/formats/files/fileformat.h \
     $$PWD/formats/files/htmlfile.h \
@@ -48,6 +50,7 @@ HEADERS	+= \
     $$PWD/formats/profiles/osmoprofile.h
 
 SOURCES	+= \
+    $$PWD/bstring.cpp \
     $$PWD/contactlist.cpp \
     $$PWD/corehelpers.cpp \
     $$PWD/extra.cpp \
@@ -56,6 +59,7 @@ SOURCES	+= \
     $$PWD/formats/formatfactory.cpp \
     $$PWD/formats/common/quotedprintable.cpp \
     $$PWD/formats/common/vcarddata.cpp \
+    $$PWD/formats/common/vdata.cpp \
     $$PWD/formats/files/csvfile.cpp \
     $$PWD/formats/files/fileformat.cpp \
     $$PWD/formats/files/htmlfile.cpp \

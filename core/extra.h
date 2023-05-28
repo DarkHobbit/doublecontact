@@ -17,6 +17,7 @@
 
 #include <QDateTime>
 #include <QStringList>
+#include "bstring.h"
 
 struct CallInfo {
     QString cType, timeStamp, duration, number, name;
@@ -62,15 +63,23 @@ class Notes: public QList<Note> {
     // some about saveall??
 };
 
+/* ExtraData, among other things, contains some message lists in various RAW formats.
+ * I'm not unifying this data during file reading, because:
+ * 1. Some file formats contain more than one message list, and user may want to merge it interactively in message view window.
+ * 2. For some formats, decoding of full message list is a very slow operation, not needed for some users, working only with contact info.
+ * 3. vMessage format contains vCard info. In C++ representation, it gives cyclic links between ContactList and DecodedMessageList.
+ * 4. For MPB as read-write format, it need to convert decoded messages to PDU for save to old MyPhoneExplorer format
+ * Because of this, DecodedMessageList works only by user request, before message window call
+ */
 struct ExtraData {
     // Common fields
     QString model;
     QDateTime timeStamp;
-    QStringList vmsgSMS, pduSMS; // some file formats may contains both SMS type sets
+    BStringList vmsgSMS, pduSMS; // some file formats may contains both SMS type sets
     Notes notes; // TODO check nbf
     // MPB specific
-    QStringList organizer;
-    QStringList vmsgSMSArchive, pduSMSArchive;
+    BStringList organizer;
+    BStringList vmsgSMSArchive, pduSMSArchive;
     QList<CallInfo> calls;
     // NBU specific
     QString imei, firmware, phoneLang;

@@ -12,6 +12,7 @@
  */
 
 #include <algorithm>
+#include <QObject>
 #include "contactlist.h"
 #include "corehelpers.h"
 
@@ -972,8 +973,17 @@ bool ContactList::hasFiles()
 }
 
 TagValue::TagValue(const QString& _tag, const QString& _value)
-    :tag(_tag), value(_value)
+    :tag(_tag), value(_value), data(), isBinary(false)
 {}
+
+TagValue::TagValue(const QString &_tag, const QByteArray _data)
+    :tag(_tag), value(), data(_data), isBinary(true)
+{}
+
+QString TagValue::text()
+{
+    return isBinary ? QObject::tr("BINARY DATA") : value;
+}
 
 DateItem::DateItem()
     :hasTime(false), hasTimeZone(false), zoneHour(0), zoneMin(0)
@@ -1213,3 +1223,4 @@ QString NumberNameMap::nameByNumber(const QString &number)
     //return << (*this)[number];
     return (*this)[Phone::expandNumber(number, gd.defaultCountryRule)];
 }
+

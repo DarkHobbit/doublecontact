@@ -419,7 +419,7 @@ QString NokiaData::ReadMMSTextString(QDataStream& ds)
         else
             b.append(byte);
     }
-    return QuotedPrintable::decodeFromMime(QString::fromLatin1(b));
+    return QuotedPrintable::decodeFromMime(b);
 }
 
 QString NokiaData::ReadMMSEncodedString(QDataStream &ds)

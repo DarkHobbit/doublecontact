@@ -81,10 +81,7 @@ bool NBFFile::importRecords(const QString &url, ContactList &list, bool append)
             _errors << S_ERR_OPEN_ARCH_ITEM.arg(itemID);
             continue;
         }
-        QTextStream stream(&vcf);
-        QStringList content;
-        while (!stream.atEnd())
-            content << stream.readLine();
+        BStringList content = BString(vcf.readAll()).splitByLines();
         vcf.close();
         // Append one contact to list!
         VCardData::importRecords(content, list, true, _errors);
@@ -198,7 +195,7 @@ bool NBFFile::exportRecords(const QString &url, ContactList &list)
     VCardData data;
     int i = 1;
     foreach (const ContactItem& item, list) {
-        QStringList lines;
+        BStringList lines;
         data.exportRecord(lines, item, _errors);
         QString fileName = QString("/%1.vcf").arg(i);
         QuaZipFile f(&nbf);
@@ -206,7 +203,7 @@ bool NBFFile::exportRecords(const QString &url, ContactList &list)
                    QuaZipNewInfo(NBF_VCARD_PATH + fileName)))
         {
             QTextStream stream(&f);
-            foreach (const QString line, lines)
+            foreach (const BString line, lines)
                 stream << line << (char)13 << ENDL;
             f.close();
         }

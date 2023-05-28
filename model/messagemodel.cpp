@@ -84,12 +84,8 @@ QVariant MessageModel::data(const QModelIndex &index, int role) const
                 return m.contactsToString();
             case mcText:
                 return (m.isMMS ? tr("<MMS>") : m.text);
-            case mcFolder: {
-                QString s = msgs.messageBoxes(m.box);
-                if (!m.subFolder.isEmpty())
-                    s += " " + m.subFolder;
-                return s;
-            }
+            case mcFolder:
+                return msgs.messageBoxes(m.box);
             case mcFlags:
                 return msgs.messageStates(m.status, m.delivered);
             case mcLast:

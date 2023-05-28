@@ -15,7 +15,7 @@
 #include <QRegExp>
 #include "quotedprintable.h"
 
-QString QuotedPrintable::decode(const QString &src, QTextCodec *codec)
+QByteArray QuotedPrintable::decode(const BString &src)
 {
     QByteArray res;
     bool ok;
@@ -23,13 +23,7 @@ QString QuotedPrintable::decode(const QString &src, QTextCodec *codec)
         if (src[i]=='=') {
             if (i<src.length()-1)
                 if (src[i+1]==' ') i++; // sometime bad space after = appears
-            const quint8 code = src.
-#if QT_VERSION >= 0x050100
-                    midRef
-#else
-                    mid
-#endif
-                    (i+1, 2).toInt(&ok, 16);
+            const quint8 code = src.mid(i+1, 2).toInt(&ok, 16);
             res.append(code);
             i += 2;
         }
@@ -40,18 +34,23 @@ QString QuotedPrintable::decode(const QString &src, QTextCodec *codec)
                 // (decimal value >126)
                 // TODO make full parser for this case (all bytes of non-ascii utf8 char are >127)
                 // This is MUST NOT be QStrings
-                QString sRes = src;
-                sRes = sRes.replace("=0A", "\n");
-                return codec->toUnicode(sRes.toLocal8Bit());
+                res = src;
+                res = res.replace("=0A", "\n");
+                return res;
             }
             else
                 res += src[i];
         }
     }
-    return codec->toUnicode(res);
+    return res;
 }
 
-QString QuotedPrintable::decodeFromMime(const QString &src)
+QString QuotedPrintable::decode(const BString &src, QTextCodec *codec)
+{
+    return codec->toUnicode(decode(src));
+}
+
+QString QuotedPrintable::decodeFromMime(const BString &src)
 {
     QRegExp mime("=\\?(.*)\\?(.)\\?(.*)\\?=");
     if (!mime.isValid())
@@ -66,18 +65,18 @@ QString QuotedPrintable::decodeFromMime(const QString &src)
         if (!codec)
             return src;
         else
-            return decode(content, codec);
+            return decode(content.toLocal8Bit(), codec); // toLocal - unfortenately
     }
     else // even if encoding=="B"
         return src;
 }
 
-QString QuotedPrintable::encode(const QString &src, QTextCodec *codec, int prefixLen)
+BString QuotedPrintable::encode(const QString &src, QTextCodec *codec, int prefixLen)
 {
     // We can't apply codec->fromUnicode to entire string, because
     // we must find ascii-able characters, but variable character length
     // may cause false match. We must check EACH character.
-    QString buf, lBuf;
+    BString buf, lBuf;
     for (int i=0; i<src.count(); i++) {
         QChar ch = src[i];
         QByteArray bytes = codec->fromUnicode(ch);
@@ -91,7 +90,7 @@ QString QuotedPrintable::encode(const QString &src, QTextCodec *codec, int prefi
         bool lastChar = i==src.count()-1;
         if (useLiteral) {
             QuotedPrintable::checkSoftBreak(buf, lBuf, prefixLen, 1, lastChar);
-            lBuf += ch;
+            lBuf += ch.toLatin1();
         }
         else { // Rule 1. General 8bit representation
             for(int j=0; j<bytes.count(); j++) {
@@ -99,7 +98,7 @@ QString QuotedPrintable::encode(const QString &src, QTextCodec *codec, int prefi
                 QString hex = QString::number((uchar)bytes[j], 16).toUpper();
                 if (hex.length()==1)
                     hex = QString("0")+hex;
-                lBuf += "=" + hex;
+                lBuf += "=" + hex.toLatin1();
             }
         }
     }
@@ -112,11 +111,11 @@ QString QuotedPrintable::encode(const QString &src, QTextCodec *codec, int prefi
     return buf;
 }
 
-void QuotedPrintable::mergeLinesets(QStringList &lines)
+void QuotedPrintable::mergeLinesets(BStringList &lines)
 {
     for (int i=0; i<lines.count(); i++) {
         if (i>=lines.count()) break; // need, because count changed inside this cycle
-        if (lines[i].contains("QUOTED-PRINTABLE", Qt::CaseInsensitive))
+        if (lines[i].toUpper().contains("QUOTED-PRINTABLE"))
             while (lines[i].right(1)=="=" && i<lines.count()-1) {
                 lines[i].remove(lines[i].length()-1, 1);
                 if (lines[i+1].left(1)=="\t") // Folding by tab, for example in Mozilla Thunderbird VCFs
@@ -132,7 +131,7 @@ void QuotedPrintable::mergeLines(QString &line)
     line.replace("=\r\n", ""); // TODO check on linux
 }
 
-void QuotedPrintable::checkSoftBreak(QString& buf, QString& lBuf, int prefixLen, int addSize, bool lastChar)
+void QuotedPrintable::checkSoftBreak(BString& buf, BString& lBuf, int prefixLen, int addSize, bool lastChar)
 {
     // If port to C++11, it must be lambda...
     // Rule 5 (RFC 2045). Soft Line Breaks

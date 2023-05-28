@@ -17,40 +17,33 @@
 #include <QStringList>
 
 #include "../../contactlist.h"
+#include "bstring.h"
+#include "vdata.h"
 
-class VCardData
+class VCardData: public VData
 {
 public:
     VCardData();
     void forceVersion(GlobalConfig::VCFVersion version);
     void unforceVersion();
-    void setSkipCoding(bool _skipEncoding, bool _skipDecoding);
-    bool importRecords(QStringList& lines, ContactList& list, bool append, QStringList& errors);
-    bool exportRecords(QStringList& lines, const ContactList& list, QStringList& errors);
-    void exportRecord(QStringList& lines, const ContactItem& item, QStringList& errors);
+    bool importRecords(BStringList& lines, ContactList& list, bool append, QStringList& errors);
+    bool exportRecords(BStringList& lines, const ContactList& list, QStringList& errors);
+    void exportRecord(BStringList& lines, const ContactItem& item, QStringList& errors);
 protected:
-    bool useOriginalFileVersion, skipEncoding, skipDecoding;
+    bool useOriginalFileVersion;
     GlobalConfig::GroupFormat groupFormat;
 private:
-    QString encoding;
-    QString charSet;
     GlobalConfig::VCFVersion formatVersion;
     bool _forceVersion;
-    QString decodeValue(const QString& src, QStringList& errors) const;
+    QStringList typeableTags, // Tags with possible TYPE attribute
+                unEditingTags; // Known but un-editing tags
     void importDate(DateItem& item, const QString& src, QStringList& errors, const QString& location) const;
-    void importAddress(PostalAddress& item, const QStringList& aTypes, const QStringList& values, QStringList& errors) const;
-    QString encodeValue(const QString& src, int prefixLen) const;
-    QString encodeAll(const QString& tag, const QStringList *aTypes, bool forceCharSet, const QString& value) const;
-    QString encodeTypes(const QStringList& aTypes, StandardTypes* st = 0, int syncMLRef = -1) const;
-    QString exportDate(const DateItem& item) const;
-    QString exportAddress(const PostalAddress& item) const;
+    void importAddress(PostalAddress& item, const QStringList& aTypes, const BStringList& values, QStringList& errors) const;
+    BString exportDate(const DateItem& item) const;
+    BString exportAddress(const PostalAddress& item) const;
+    BString encodeAll(const BString& tag, const QStringList *aTypes, bool forceCharSet, const QString& value) const;
+    BString encodeTypes(const QStringList& aTypes, StandardTypes* st = 0, int syncMLRef = -1) const;
 public:
-    static QStringList splitBySC(const QString& src);
-    static QString joinBySC(const QStringList& src);
-    static QString sc(const QString& src);
-    static QStringList splitByComma(const QString& src);
-    static QString joinByComma(const QStringList& src);
-    static QString cm(const QString& src);
     void debugSave(QFile& logFile, const QString& s, bool firstRec);
 };
 

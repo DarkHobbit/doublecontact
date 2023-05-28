@@ -18,21 +18,23 @@
 #include <QString>
 #include <QStringList>
 #include <QTextCodec>
+#include "bstring.h"
 
 class QuotedPrintable
 {
 public:
     // Decode string
-    static QString decode(const QString &src, QTextCodec* codec);
-    static QString decodeFromMime(const QString &src);
+    static QByteArray decode(const BString &src);
+    static QString decode(const BString &src, QTextCodec* codec);
+    static QString decodeFromMime(const BString &src);
     // Encode string
-    static QString encode(const QString &src, QTextCodec* codec, int prefixLen);
+    static BString encode(const QString &src, QTextCodec* codec, int prefixLen);
     // Merge quoted-printable linesets
-    static void mergeLinesets(QStringList& lines);
+    static void mergeLinesets(BStringList& lines);
     static void mergeLines(QString& line);
 private:
     // Check for soft line breaks (RFC 2045)
-    static void checkSoftBreak(QString& buf, QString& lBuf, int prefixLen, int addSize, bool lastChar);
+    static void checkSoftBreak(BString& buf, BString& lBuf, int prefixLen, int addSize, bool lastChar);
 };
 
 #endif // QUOTEDPRINTABLE_H

@@ -31,6 +31,7 @@
 const QString ptContacts = "Contacts";
 const QString ptGroups = "Groups";
 const QString ptBookmarks = "Bookmarks";
+const QString ptCalendar = "Calendar";
 const QString ptMessages = "Messages";
 const QString ptMms = "MMS";
 const QString ptSettings = "Settings";
@@ -55,7 +56,7 @@ NBUSectionType::Groups, ptGroups, ""},
 {{
     0x16, 0xCD, 0xF8, 0xE8, 0x23, 0x5E, 0x5A, 0x4E,
     0xB7, 0x35, 0xDD, 0xDF, 0xF1, 0x48, 0x12, 0x22 },
-NBUSectionType::Vcards, "Calendar", ""},
+NBUSectionType::Vcards, ptCalendar, ""},
 
 {{
     0x5C, 0x62, 0x97, 0x3B, 0xDC, 0xA7, 0x54, 0x41,
@@ -85,7 +86,7 @@ NBUSectionType::GeneralFolders, ptSettings, "Contacts"},
 {{
 0x2D, 0xED, 0xC7, 0x29, 0x57, 0x68, 0x22, 0x45,
 0xAE, 0xD4, 0xEB, 0x21, 0x02, 0x96, 0xA1, 0xEE },
-NBUSectionType::GeneralFolders, ptSettings, "Calendar"},
+NBUSectionType::GeneralFolders, ptSettings, ptCalendar},
 
 {{
 0x0A, 0xDF, 0x77, 0x94, 0xF7, 0x82, 0xBC, 0x48,
@@ -454,10 +455,6 @@ bool NBUFile::parseFolderVcard(QDataStream &stream, ContactList &list, const QSt
 {
     quint32 count = getU32(stream);
     // Valid sect names for vCard: Contacts, Bookmarks, Calendar
-    if (sectName!=ptContacts && sectName!=ptBookmarks && sectName!="Calendar") {
-        _errors << S_UNSUPPORTED_SECTION.arg(sectName);
-        return false;
-    }
     for (quint32 i = 0; i < count; i++)
     {
         quint32 test = getU32(stream);
@@ -472,22 +469,19 @@ bool NBUFile::parseFolderVcard(QDataStream &stream, ContactList &list, const QSt
         int vcLen = getU32(stream);
         char* raw = new char[vcLen];
         stream.readRawData((char*)raw, vcLen);
-
-
-        // Old: works only if encoding=quoted-printable
-        //QString vCard = QString::fromUtf8(raw, vcLen);
-        //QStringList content = vCard.split("\x0d\n");
-
-        // New: works with encoding=8bit, but it's very dirty hack!!!
-        // TODO: port to QByteArray
-        QByteArray ppc(raw, vcLen);
-        QTextStream ss (&ppc);
-        QStringList content;
-        while (!ss.atEnd())
-            content << ss.readLine();
-
-
-        VCardData::importRecords(content, list, true, _errors);
+        // TODO UTF16???
+        BStringList content = BString(raw, vcLen).splitByLines();
+        if (sectName==ptContacts)
+            VCardData::importRecords(content, list, true, _errors);
+        else  if (sectName==ptBookmarks)
+            _errors << S_UNSUPPORTED_SECTION.arg(sectName); // TODO
+        else  if ( sectName==ptCalendar) {
+            _errors << S_UNSUPPORTED_SECTION.arg(sectName); // TODO
+        }
+        else {
+            _errors << S_UNSUPPORTED_SECTION.arg(sectName);
+            return false;
+        }
         delete[] raw;
         list.last().originalFormat = "NBU";
     }
@@ -501,7 +495,6 @@ bool NBUFile::parseFolder(QDataStream &stream, long start, const QString &sectNa
         file.seek(start+4);
         QString folderName = this->getString16c(stream);
         quint32 count = getU32(stream);
-std::cout << "Messages " << count << "!"<< folderName.toLocal8Bit().data() << std::endl;
         for (quint32 i=0; i<count; i++) {
             file.seek(file.pos()+8);
             if (sectName==ptMms) {
@@ -510,11 +503,10 @@ std::cout << "Messages " << count << "!"<< folderName.toLocal8Bit().data() << st
             }
             else {
                 quint32 len = getU32(stream);
-                char* raw = new char[len+2];
+                ushort* raw = new ushort[len/2+2];
                 stream.readRawData((char*)raw, len);
-                raw[len] = 0;
-                raw[len+1] = 0;
-                QString msg = QString::fromUtf16((ushort*)raw);
+                raw[len/2] = 0;
+                BString msg = QString::fromUtf16(raw, len/2).toUtf8();
                 list.extra.vmsgSMS << msg;
                 delete[] raw;
             }
@@ -630,9 +622,6 @@ std::cout << "tst=0x" << std::hex << tst << std::dec << std::endl;
                 QString fileName = getString16c(stream);
                 file.seek(file.pos()+12);
                 quint32 size = getU32(stream);
-                std::cout << "Folder " << folderName.toLocal8Bit().data()
-                          << " file " << fileName.toLocal8Bit().data()
-                          << " size " << size << std::endl;
                 file.seek(file.pos()+2);
 #ifdef WITH_MESSAGES
                 if (folderName.contains("predefmessages")) {
@@ -645,6 +634,9 @@ std::cout << "tst=0x" << std::hex << tst << std::dec << std::endl;
 #endif
                 {
                     // TODO read file here
+                    std::cout << "Folder " << folderName.toLocal8Bit().data()
+                              << " file " << fileName.toLocal8Bit().data()
+                              << " size " << size << std::endl;
                     file.seek(file.pos()+size); //===>
                 }
             }

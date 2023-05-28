@@ -15,6 +15,7 @@
 #include <QStringList>
 #include <QTextStream>
 
+#include "bstring.h"
 #include "corehelpers.h"
 #include "globals.h"
 #include "../common/vcarddata.h"
@@ -46,14 +47,13 @@ bool VCFDirectory::importRecords(const QString &url, ContactList &list, bool app
     foreach (const QString& fileName, entries) {
         if (!openFile(url + QDir::separator() + fileName, QIODevice::ReadOnly))
             return false;
-        QStringList content;
-        QTextStream stream(&file);
-        do {
-            content.push_back(stream.readLine());
-        } while (!stream.atEnd());
+        BStringList content = BString(file.readAll()).splitByLines();
         closeFile();
         // Append one contact to list!
+        int prevErrCount = _errors.count();
         data.importRecords(content, list, true, _errors);
+        if (_errors.count()>prevErrCount)
+            _errors.last() += QString(" (%1)").arg(fileName);
         if (gd.readNamesFromFileName) {
             QString contName = fileName;
             contName.remove(".vcf");
@@ -79,15 +79,16 @@ bool VCFDirectory::exportRecords(const QString &url, ContactList &list)
     foreach(const ContactItem& item, list) {
         // TODO use id, if present, in filename?
         QString fileName = url + QDir::separator() + QString("%1.vcf").arg((uint)i, 4, 10, QChar('0'));
-        QStringList content;
+        BStringList content;
+        int prevErrCount = _errors.count();
         data.exportRecord(content, item, _errors);
         if (!openFile(fileName, QIODevice::WriteOnly))
             return false;
-        QTextStream stream(&file);
-        foreach (const QString line, content)
-            stream << line << (char)13 << ENDL;
+        file.write(content.joinByLines());
         closeFile();
         i++;
+        if (_errors.count()>prevErrCount)
+            _errors.last() +=    QString(" (%1)").arg(item.makeGenericName());
     }
     return true;
 }

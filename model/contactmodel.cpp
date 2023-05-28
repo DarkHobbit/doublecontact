@@ -182,22 +182,16 @@ QStringList ContactModel::mimeTypes() const
 QMimeData *ContactModel::mimeData(const QModelIndexList &indexes) const
 {
     VCardData d;
-    d.setSkipCoding(true, true);
-    QStringList lines, errors;
+    BStringList lines;
+    QStringList errors;
     QMimeData *mimeData = new QMimeData();
-    QByteArray encodedData;
-    QTextStream stream(&encodedData, QIODevice::WriteOnly);
     foreach (const QModelIndex &index, indexes)
     if (index.isValid() && index.column()==0)
     {
         const ContactItem& c = items[index.row()];
-        lines.clear();
         d.exportRecord(lines, c, errors);
-        foreach(const QString& s, lines)
-            stream << s << "\n";
-        stream.flush();
     }
-    mimeData->setData(mimeTypes()[0], encodedData);
+    mimeData->setData(mimeTypes()[0], lines.joinByLines());
     return mimeData;
 }
 
@@ -205,26 +199,21 @@ bool ContactModel::dropMimeData(const QMimeData *data, Qt::DropAction action,
       int, int column, const QModelIndex& index)
 {
     if (action == Qt::IgnoreAction)
-         return true;
+        return true;
     if (!data->hasFormat("text/vcard"))
-         return false;
+        return false;
     if (column > 0)
          return false;
-    QByteArray encodedData = data->data("text/vcard");
-    QTextStream stream(&encodedData, QIODevice::ReadOnly);
-    QStringList lines, errors;
+    // TODO здесь читать другие форматы (возможно, текст)
+    BStringList encodedData = BString(data->data("text/vcard")).splitByLines();
+    QStringList errors;
     VCardData d;
-    d.setSkipCoding(true, true);
     beginResetModel();
-    while (!stream.atEnd()) {
-        QString s = stream.readLine();
-        lines << s;
-    }
     if (index.row()==-1)
-        d.importRecords(lines, items, true, errors);
+        d.importRecords(encodedData, items, true, errors);
     else {
         ContactList addition;
-        d.importRecords(lines, addition, false, errors);
+        d.importRecords(encodedData, addition, false, errors);
         for(int i=0; i<addition.count(); i++)
             items.insert(index.row()+i, addition[i]);
     }

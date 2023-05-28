@@ -25,7 +25,7 @@ bool VCFFile::detect(const QString &url)
 {
     QFile f(url);
     if (!f.open(QIODevice::ReadOnly)) return false;
-    QTextStream stream(&f);
+    QTextStream stream(&f); // TODO file?
     QString s1 = stream.readLine();
     bool res = s1.startsWith("BEGIN:VCARD", Qt::CaseInsensitive);
     f.close();
@@ -48,26 +48,20 @@ bool VCFFile::importRecords(const QString &url, ContactList &list, bool append)
     if (!openFile(url, QIODevice::ReadOnly))
         return false;
     _errors.clear();
-    QStringList content;
-    QTextStream stream(&file);
-    do {
-        content.push_back(stream.readLine());
-    } while (!stream.atEnd());
+    BStringList content = BString(file.readAll()).splitByLines();
     closeFile();
     return VCardData::importRecords(content, list, append, _errors);
 }
 
 bool VCFFile::exportRecords(const QString &url, ContactList &list)
 {
-    QStringList content;
+    BStringList content;
     if (!VCardData::exportRecords(content, list, _errors))
         return false;
     if (!openFile(url, QIODevice::WriteOnly))
         return false;
     _errors.clear();
-    QTextStream stream(&file);
-    foreach (const QString line, content)
-        stream << line << (char)13 << ENDL;
+    file.write(content.joinByLines());
     closeFile();
     return true;
 }

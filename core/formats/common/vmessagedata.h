@@ -13,16 +13,18 @@
 #ifndef VMESSAGEDATA_H
 #define VMESSAGEDATA_H
 
-#include <QStringList>
-#include "../../contactlist.h"
-#include "../../decodedmessagelist.h"
+#include "bstring.h"
+#include "contactlist.h"
+#include "decodedmessagelist.h"
+#include "vdata.h"
 
-class VMessageData
+class VMessageData: public VData
 {
 public:
     VMessageData();
-    bool importRecords(const QStringList& lines, DecodedMessageList& list, bool append, QStringList& errors);
-    bool importMPBRecords(const QStringList& lines, DecodedMessageList& list, bool append, QStringList& errors, bool fromArchive);
+    bool importRecords(const BStringList& lines, DecodedMessageList& list, bool append, QStringList& errors);
+    bool importMPBRecords(const BStringList& lines, DecodedMessageList& list, bool append, QStringList& errors, bool fromArchive);
+    static QString readMPBMsgSubfolder(const BString& src);
 };
 
 #endif // VMESSAGEDATA_H
