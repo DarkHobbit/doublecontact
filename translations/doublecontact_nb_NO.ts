@@ -24,6 +24,31 @@
         <translation type="unfinished">Distribuert som GPL v3 og senere</translation>
     </message>
     <message>
+        <location filename="../app/aboutdialog.ui" line="142"/>
+        <source>Additional</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/aboutdialog.ui" line="148"/>
+        <source>Compiler:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/aboutdialog.ui" line="155"/>
+        <source>unknown compiler</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/aboutdialog.ui" line="162"/>
+        <source>Path to translations:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/aboutdialog.ui" line="169"/>
+        <source>unknown path</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Distributed under GPL v2 or above</source>
         <translation type="obsolete">Distribuert som GPL v2 og senere</translation>
     </message>
@@ -1444,17 +1469,24 @@ Sources: %2</source>
         <location filename="../app/messagewindow.cpp" line="283"/>
         <source>
 
+SMS subfolder: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/messagewindow.cpp" line="285"/>
+        <source>
+
 MMS properties:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="300"/>
+        <location filename="../app/messagewindow.cpp" line="302"/>
         <source>Save messages file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/messagewindow.cpp" line="307"/>
+        <location filename="../app/messagewindow.cpp" line="309"/>
         <source>Can you also save media files from MMS (%1 messages)?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1493,102 +1525,102 @@ MMS properties:
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../core/contactlist.cpp" line="116"/>
-        <location filename="../core/contactlist.cpp" line="1150"/>
+        <location filename="../core/contactlist.cpp" line="117"/>
+        <location filename="../core/contactlist.cpp" line="1160"/>
         <source>Home</source>
         <translation>Hjem</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="117"/>
+        <location filename="../core/contactlist.cpp" line="118"/>
         <source>Message</source>
         <translation>Melding</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="118"/>
-        <location filename="../core/contactlist.cpp" line="1151"/>
+        <location filename="../core/contactlist.cpp" line="119"/>
+        <location filename="../core/contactlist.cpp" line="1161"/>
         <source>Work</source>
         <translation>Arbeid</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="119"/>
-        <location filename="../core/contactlist.cpp" line="170"/>
-        <location filename="../core/contactlist.cpp" line="206"/>
-        <location filename="../core/contactlist.cpp" line="1152"/>
+        <location filename="../core/contactlist.cpp" line="120"/>
+        <location filename="../core/contactlist.cpp" line="171"/>
+        <location filename="../core/contactlist.cpp" line="207"/>
+        <location filename="../core/contactlist.cpp" line="1162"/>
         <source>Preferable</source>
         <translation type="unfinished">Foretrukket</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="120"/>
+        <location filename="../core/contactlist.cpp" line="121"/>
         <source>Voice</source>
         <translation>Stemme</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="121"/>
+        <location filename="../core/contactlist.cpp" line="122"/>
         <source>Fax</source>
         <translation>Faks</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="122"/>
+        <location filename="../core/contactlist.cpp" line="123"/>
         <source>Cell</source>
         <translation>Mobil</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="123"/>
+        <location filename="../core/contactlist.cpp" line="124"/>
         <source>Video</source>
         <translation>Video</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="124"/>
+        <location filename="../core/contactlist.cpp" line="125"/>
         <source>Pager</source>
         <translation>Personsøker</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="125"/>
+        <location filename="../core/contactlist.cpp" line="126"/>
         <source>BBS</source>
         <translation>BBS</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="126"/>
+        <location filename="../core/contactlist.cpp" line="127"/>
         <source>Modem</source>
         <translation>Modem</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="127"/>
+        <location filename="../core/contactlist.cpp" line="128"/>
         <source>Car</source>
         <translation>Bil</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="128"/>
+        <location filename="../core/contactlist.cpp" line="129"/>
         <source>ISDN</source>
         <translation>ISDN</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="129"/>
+        <location filename="../core/contactlist.cpp" line="130"/>
         <source>PCS</source>
         <translation>PCS</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="130"/>
+        <location filename="../core/contactlist.cpp" line="131"/>
         <source>CALLBACK</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="168"/>
+        <location filename="../core/contactlist.cpp" line="169"/>
         <source>Internet</source>
         <translation>Internett</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="169"/>
+        <location filename="../core/contactlist.cpp" line="170"/>
         <source>X.400</source>
         <translation>X.400</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="433"/>
+        <location filename="../core/contactlist.cpp" line="434"/>
         <source>Strange empty contact</source>
         <translation>Rar tom kontakt</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="916"/>
+        <location filename="../core/contactlist.cpp" line="917"/>
         <source>%1 records
 %2 phones
 %3 emails
@@ -1597,16 +1629,21 @@ MMS properties:
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="919"/>
+        <location filename="../core/contactlist.cpp" line="920"/>
         <source>
 %1 calls</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="924"/>
+        <location filename="../core/contactlist.cpp" line="925"/>
         <source>
 %1 SMS
 %2 archived SMS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/contactlist.cpp" line="985"/>
+        <source>BINARY DATA</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1628,7 +1665,7 @@ MMS properties:
 %8 arkiverte SMS</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="927"/>
+        <location filename="../core/contactlist.cpp" line="928"/>
         <source>
 
 model %1
@@ -1680,70 +1717,69 @@ telefonspråk %5</translation>
 %9 %10</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1153"/>
+        <location filename="../core/contactlist.cpp" line="1163"/>
         <source>Domestic</source>
         <translation>Innenlands</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1154"/>
+        <location filename="../core/contactlist.cpp" line="1164"/>
         <source>International</source>
         <translation>Internasjonal</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1155"/>
+        <location filename="../core/contactlist.cpp" line="1165"/>
         <source>Postal</source>
         <translation>Postadresse</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1156"/>
+        <location filename="../core/contactlist.cpp" line="1166"/>
         <source>Parcel</source>
         <translation>Pakkeadresse</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="81"/>
-        <location filename="../core/formats/common/vmessagedata.cpp" line="39"/>
-        <location filename="../core/formats/common/vmessagedata.cpp" line="144"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="79"/>
+        <location filename="../core/formats/common/vmessagedata.cpp" line="40"/>
+        <location filename="../core/formats/common/vmessagedata.cpp" line="147"/>
         <source>Unclosed record before line %1</source>
         <translation>Ulukket oppføring før linje %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="183"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="175"/>
         <source>Unexpected TYPE appearance at line %1: tag %2</source>
         <translation>Uventet TYPE-opptreden, på linje %1: etikett %2</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="214"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="219"/>
         <source>Missing phone type at line %1: %2%3</source>
         <translation>Manglende telefontype på linje %1: %2%3</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="223"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="228"/>
         <source>Non-standard phone type at line %1: %2%3</source>
         <translation>Ikke-standard telefontype på linje %1: %2%3</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="269"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="268"/>
         <source>Unsupported photo type at line %1: %2%3</source>
         <translation>Ustøttet bildetype på linje %1: %2%3</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="263"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="262"/>
         <source>Unknown encoding type at line %1: %2%3</source>
         <translation>Ukjent kodingstype på linje %1: %2%3</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="281"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="282"/>
         <source>Unknown photo kind at line %1: %2</source>
         <translation>Ukjent bildetype på slutten av linje %1: %2</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="149"/>
         <source>Last section not closed</source>
-        <translation>Siste del ulukket</translation>
+        <translation type="obsolete">Siste del ulukket</translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="388"/>
-        <location filename="../core/formats/files/udxfile.cpp" line="175"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="389"/>
+        <location filename="../core/formats/files/udxfile.cpp" line="177"/>
         <source>%1 unknown tags found</source>
         <translation>%1 ukjente etiketter funnet</translation>
     </message>
@@ -1756,12 +1792,12 @@ telefonspråk %5</translation>
         <translation type="obsolete">Ukjent koding: </translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="610"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="591"/>
         <source>Invalid timezone: </source>
         <translation>Ugyldig tidssone: </translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="640"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="621"/>
         <source>Invalid datetime: </source>
         <translation>Ugyldig datotid: </translation>
     </message>
@@ -1802,39 +1838,39 @@ linje %3, kol. %4
         <translation type="unfinished">Advarsel: Fant ikke UDX-versjon, behandler som 1.0…</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/udxfile.cpp" line="94"/>
+        <location filename="../core/formats/files/udxfile.cpp" line="96"/>
         <source>Can&apos;t find &apos;vCard&apos; records at file
 %1</source>
         <translation type="unfinished">Kan ikke finne &quot;vCard&quot;-datafelter i filen
 %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/udxfile.cpp" line="111"/>
+        <location filename="../core/formats/files/udxfile.cpp" line="113"/>
         <source>Can&apos;t find &apos;vCardField&apos; at sequence %1</source>
         <translation type="unfinished">Finner ikke &quot;vCardField&quot; i sekvensen %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/udxfile.cpp" line="141"/>
+        <location filename="../core/formats/files/udxfile.cpp" line="143"/>
         <source>Unknown phone type: %1 (%2)</source>
         <translation>Ukjent telefontype: %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/udxfile.cpp" line="160"/>
+        <location filename="../core/formats/files/udxfile.cpp" line="162"/>
         <source>Unknown &apos;vCardfield&apos; type: %1</source>
         <translation>Ukjent &quot;vCardField&quot;-type: %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/udxfile.cpp" line="169"/>
+        <location filename="../core/formats/files/udxfile.cpp" line="171"/>
         <source>%1 records read, %2 expected</source>
         <translation>%1 oppføringer lest, %2 ventet</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/udxfile.cpp" line="233"/>
+        <location filename="../core/formats/files/udxfile.cpp" line="235"/>
         <source>Warning: contact %1, duplicate id %2 changed to %3</source>
         <translation>Advarsel: Kontakt %1, duplikat-ID %2 endret til %3</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/udxfile.cpp" line="268"/>
+        <location filename="../core/formats/files/udxfile.cpp" line="270"/>
         <source>Warning: contact %1, unknown tel type:
 %2
  saved as cellular</source>
@@ -1843,7 +1879,7 @@ linje %3, kol. %4
 lagret som mobil</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/udxfile.cpp" line="288"/>
+        <location filename="../core/formats/files/udxfile.cpp" line="290"/>
         <source>time in birthday</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1852,32 +1888,32 @@ lagret som mobil</translation>
         <translation type="obsolete">Advarsel: Kontakten %1 har tiden (%2) i geburtsdag, ikke implementert i UDX-leser</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/udxfile.cpp" line="290"/>
+        <location filename="../core/formats/files/udxfile.cpp" line="292"/>
         <source>IM</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/files/udxfile.cpp" line="291"/>
+        <location filename="../core/formats/files/udxfile.cpp" line="293"/>
         <source>address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/files/udxfile.cpp" line="292"/>
+        <location filename="../core/formats/files/udxfile.cpp" line="294"/>
         <source>photo</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/files/udxfile.cpp" line="293"/>
+        <location filename="../core/formats/files/udxfile.cpp" line="295"/>
         <source>description</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/files/udxfile.cpp" line="294"/>
+        <location filename="../core/formats/files/udxfile.cpp" line="296"/>
         <source>job title</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/files/udxfile.cpp" line="295"/>
+        <location filename="../core/formats/files/udxfile.cpp" line="297"/>
         <source>anniversary</source>
         <translation type="unfinished">jubileum</translation>
     </message>
@@ -1914,14 +1950,14 @@ lagret som mobil</translation>
 %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/vcfdirectory.cpp" line="36"/>
+        <location filename="../core/formats/files/vcfdirectory.cpp" line="37"/>
         <source>Directory not exists:
 %1</source>
         <translation>Mappen finnes:
 %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/vcfdirectory.cpp" line="41"/>
+        <location filename="../core/formats/files/vcfdirectory.cpp" line="42"/>
         <source>Directory not contains VCF files:
 %1</source>
         <translation>Mappen inneholder ikke VCF-filer:
@@ -1929,49 +1965,57 @@ lagret som mobil</translation>
     </message>
     <message>
         <location filename="../core/formats/files/vcfdirectory.cpp" line="74"/>
-        <location filename="../core/globals.h" line="136"/>
         <source>Can&apos;t create directory
 %1</source>
         <translation>Kunne ikke opprette mappe
 %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="99"/>
         <source>Unsupported MPB section: </source>
-        <translation>Ustøttet MPB-del: </translation>
+        <translation type="obsolete">Ustøttet MPB-del: </translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="117"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="20"/>
         <source>File isn&apos;t MPB file or corrupted</source>
         <translation>Filen er ikke MPB, eller skadet</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="127"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="92"/>
+        <source>MPB section without content: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/formats/files/mpbfile.cpp" line="105"/>
         <source>Strange call item: %1, size %2</source>
         <translation>Merkelig samtaleelement: %1, størrelse %2</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="166"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="140"/>
+        <source>Unsupported MPB section: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/formats/files/mpbfile.cpp" line="145"/>
         <source>No contact records in this file</source>
         <translation>Ingen kontaktlisteoppføringer i denne filen</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="177"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="156"/>
         <source>MPB record allowed only for MPB source</source>
         <translation>MPB-dataoppføring tillatt kun for MPB-kilde</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="230"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="212"/>
         <source>Name for number %1 changed from %2 to %3</source>
         <translation>Navn for nummer %1 endret fra %2 til %3</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="242"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="224"/>
         <source>Number %1 without original name not found in addressbook</source>
         <translation>Nummer %1 uten opprinnelig navn ikke funnet i adressebok</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/mpbfile.cpp" line="244"/>
+        <location filename="../core/formats/files/mpbfile.cpp" line="226"/>
         <source>Number %1 not found in addressbook. Original name (%2) saved</source>
         <translation>Nummer %1 ikke funnet i adressebok. Opprinnelig navn (%2) lagret</translation>
     </message>
@@ -1986,7 +2030,7 @@ lagret som mobil</translation>
         <translation>Navne-prefikser flettet med etternavn (%1)</translation>
     </message>
     <message>
-        <location filename="../core/formats/profiles/genericcsvprofile.cpp" line="61"/>
+        <location filename="../core/formats/profiles/genericcsvprofile.cpp" line="64"/>
         <source>Row length (%1) is not equal header length (%2). Possibly, incorrect CSV. 
 %3</source>
         <translation type="unfinished">Radlengden (%1) stemmer ikke med hodelengen (%2). Mulig uriktig CSV.
@@ -2029,12 +2073,12 @@ lagret som mobil</translation>
         <translation>Kan ikke sette %1 element som gjeldende i arkiv</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/nbffile.cpp" line="133"/>
+        <location filename="../core/formats/files/nbffile.cpp" line="130"/>
         <source>NBF file can be saved only if original addressbook also was in NBF format</source>
         <translation>NBF-fil kan kun lagres hvis opprinnelig adressebok også var i NBF-format</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/nbffile.cpp" line="138"/>
+        <location filename="../core/formats/files/nbffile.cpp" line="135"/>
         <source>Original NBF file was moved or deleted</source>
         <translation>Opprinnelig NBF-fil flyttet eller slettet</translation>
     </message>
@@ -2044,425 +2088,316 @@ lagret som mobil</translation>
         <translation>Kan ikke åpne %1 element i arkiv</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="60"/>
         <source>Error</source>
-        <translation>Feil</translation>
+        <translation type="obsolete">Feil</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="61"/>
         <source>Warning</source>
-        <translation>Advarsel</translation>
+        <translation type="obsolete">Advarsel</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="62"/>
         <source>Confirmation</source>
-        <translation>Bekreftelse</translation>
+        <translation type="obsolete">Bekreftelse</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="63"/>
         <source>Information</source>
-        <translation>Informasjon</translation>
+        <translation type="obsolete">Informasjon</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="65"/>
         <source>Address book</source>
-        <translation>Adressebok</translation>
+        <translation type="obsolete">Adressebok</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="66"/>
         <source>New contact list</source>
-        <translation>Ny kontaktliste</translation>
+        <translation type="obsolete">Ny kontaktliste</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="116"/>
         <source>P.O. box</source>
-        <translation>Postboks</translation>
+        <translation type="obsolete">Postboks</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="140"/>
         <source>This format is read only</source>
-        <translation>Dette formatet kan kun leses</translation>
+        <translation type="obsolete">Dette formatet kan kun leses</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="68"/>
         <source>Select country rule</source>
-        <translation>Velg landsregel</translation>
+        <translation type="obsolete">Velg landsregel</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="67"/>
         <source>Group name</source>
-        <translation>Gruppenavn</translation>
+        <translation type="obsolete">Gruppenavn</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="69"/>
         <source>Select phone template</source>
-        <translation>Velg telefonmal</translation>
+        <translation type="obsolete">Velg telefonmal</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="70"/>
-        <source>Select tags for remove</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../core/globals.h" line="71"/>
         <source>Select CSV profile</source>
-        <translation>Velg CSV-profil</translation>
+        <translation type="obsolete">Velg CSV-profil</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="72"/>
         <source>Generic profile</source>
-        <translation>Generisk profil</translation>
+        <translation type="obsolete">Generisk profil</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="74"/>
         <source>mixed...</source>
-        <translation>blandet…</translation>
+        <translation type="obsolete">blandet…</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="76"/>
         <source>Firstname</source>
-        <translation type="unfinished">Fornavn</translation>
+        <translation type="obsolete">Fornavn</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="77"/>
         <source>Lastname</source>
-        <translation type="unfinished">Etternavn</translation>
+        <translation type="obsolete">Etternavn</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="78"/>
         <source>Middlename</source>
-        <translation>Mellomnavn</translation>
+        <translation type="obsolete">Mellomnavn</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="79"/>
         <source>Prefixes</source>
-        <translation type="unfinished">Grad/profesjon</translation>
+        <translation type="obsolete">Grad/profesjon</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="80"/>
         <source>Suffixes</source>
-        <translation type="unfinished">Tittel</translation>
+        <translation type="obsolete">Tittel</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="82"/>
         <source>Full name</source>
-        <translation>Fullt navn</translation>
+        <translation type="obsolete">Fullt navn</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="83"/>
         <source>Generic name</source>
-        <translation>Generisk navn</translation>
+        <translation type="obsolete">Generisk navn</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="84"/>
         <source>Description</source>
-        <translation>Beskrivelse</translation>
+        <translation type="obsolete">Beskrivelse</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="85"/>
         <source>Phone</source>
-        <translation>Telefon</translation>
+        <translation type="obsolete">Telefon</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="86"/>
         <source>All phones</source>
-        <translation>Alle telefoner</translation>
+        <translation type="obsolete">Alle telefoner</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="87"/>
         <source>Home phone</source>
-        <translation>Hjemmetelefon</translation>
+        <translation type="obsolete">Hjemmetelefon</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="88"/>
         <source>Work phone</source>
-        <translation>Arbeidstelefon</translation>
+        <translation type="obsolete">Arbeidstelefon</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="89"/>
         <source>Cell phone</source>
-        <translation>Mobiltelefon</translation>
+        <translation type="obsolete">Mobiltelefon</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="90"/>
         <source>Email</source>
-        <translation type="unfinished">E-postadresse</translation>
+        <translation type="obsolete">E-postadresse</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="91"/>
         <source>Birthday</source>
-        <translation>Geburtsdag</translation>
+        <translation type="obsolete">Geburtsdag</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="92"/>
         <source>Anniversary</source>
-        <translation>Jubileum</translation>
+        <translation type="obsolete">Jubileum</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="93"/>
         <source>Photo</source>
-        <translation>Bilde</translation>
+        <translation type="obsolete">Bilde</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="94"/>
         <source>Job title</source>
-        <translation>Jobbtittel</translation>
+        <translation type="obsolete">Jobbtittel</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="95"/>
         <source>Organization</source>
-        <translation>Organisasjon</translation>
+        <translation type="obsolete">Organisasjon</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="96"/>
-        <source>Role</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../core/globals.h" line="97"/>
         <source>Address</source>
-        <translation>Adresse</translation>
+        <translation type="obsolete">Adresse</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="98"/>
         <source>NickName</source>
-        <translation type="unfinished">Kallenavn</translation>
+        <translation type="obsolete">Kallenavn</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="99"/>
         <source>URL</source>
-        <translation>Nettadresse</translation>
+        <translation type="obsolete">Nettadresse</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="101"/>
         <source>Jabber</source>
-        <translation type="unfinished">XMPP</translation>
+        <translation type="obsolete">XMPP</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="102"/>
         <source>ICQ</source>
-        <translation>ICQ</translation>
+        <translation type="obsolete">ICQ</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="103"/>
         <source>Skype</source>
-        <translation>Skype</translation>
+        <translation type="obsolete">Skype</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="104"/>
         <source>Group</source>
-        <translation>Gruppe</translation>
+        <translation type="obsolete">Gruppe</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="105"/>
-        <source>Updated</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../core/globals.h" line="107"/>
         <source>Has phone</source>
-        <translation>Har telefon</translation>
+        <translation type="obsolete">Har telefon</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="108"/>
         <source>Has email</source>
-        <translation>Har e-postadresse</translation>
+        <translation type="obsolete">Har e-postadresse</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="109"/>
         <source>Has address</source>
-        <translation>Har adresse</translation>
+        <translation type="obsolete">Har adresse</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="110"/>
         <source>Has birthday</source>
-        <translation>Har geburtsdag</translation>
+        <translation type="obsolete">Har geburtsdag</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="111"/>
         <source>Has photo</source>
-        <translation>Har bilde</translation>
+        <translation type="obsolete">Har bilde</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="112"/>
         <source>Has problems</source>
-        <translation>Har problemer</translation>
+        <translation type="obsolete">Har problemer</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="113"/>
         <source>Some phones</source>
-        <translation>Noen telefoner</translation>
+        <translation type="obsolete">Noen telefoner</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="114"/>
         <source>Some emails</source>
-        <translation>Noen e-postadresser</translation>
+        <translation type="obsolete">Noen e-postadresser</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="127"/>
-        <source>Show in new window</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../core/globals.h" line="139"/>
-        <source>Group operation not implemented, select one record</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../core/globals.h" line="146"/>
         <source>Program built without network support. Use WITH_NETWORK define, if building from source code.
 </source>
-        <translation type="unfinished">Programmet er bygd uten nettverksstøtte. Bruk WITH_NETWORK define, hvis du bygger fra kildekode.
+        <translation type="obsolete">Programmet er bygd uten nettverksstøtte. Bruk WITH_NETWORK define, hvis du bygger fra kildekode.
 </translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="147"/>
         <source>Do you really want to delete the selected items?</source>
-        <translation>Ønsker du virkelig å slette valgte elementer?</translation>
+        <translation type="obsolete">Ønsker du virkelig å slette valgte elementer?</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="148"/>
         <source>Column sorting is switched. Hard sort results are not visible.
 Are you want switch column sorting off?</source>
-        <translation>Kolonnesortering er byttet. Harde sorteringsresultater er ikke synlige.
+        <translation type="obsolete">Kolonnesortering er byttet. Harde sorteringsresultater er ikke synlige.
 Er du sikker på at du ønsker skru av kolonnesortering?</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="150"/>
-        <source>Unknown encoding: %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../core/globals.h" line="151"/>
         <source>Unknown charset: %1</source>
-        <translation>Ukjent tegnsett: %1</translation>
+        <translation type="obsolete">Ukjent tegnsett: %1</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="153"/>
         <source>Mode: </source>
-        <translation type="unfinished">Modus: </translation>
+        <translation type="obsolete">Modus: </translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="154"/>
         <source>sorted</source>
-        <translation type="unfinished">sorter</translation>
+        <translation type="obsolete">sorter</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="155"/>
         <source>not sorted</source>
-        <translation type="unfinished">usortert</translation>
-    </message>
-    <message>
-        <location filename="../core/globals.h" line="159"/>
-        <source>Select MMS files Directory</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">usortert</translation>
     </message>
     <message>
         <source>P.o. box</source>
         <translation type="obsolete">Postboks</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="117"/>
         <source>Ext.addr.</source>
-        <translation type="unfinished">Ekst.adr.</translation>
+        <translation type="obsolete">Ekst.adr.</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="118"/>
         <source>Street</source>
-        <translation>Gate</translation>
+        <translation type="obsolete">Gate</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="119"/>
         <source>City/Locality</source>
-        <translation>By/plass</translation>
+        <translation type="obsolete">By/plass</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="120"/>
         <source>Region</source>
-        <translation>Region</translation>
+        <translation type="obsolete">Region</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="121"/>
         <source>Postal code</source>
-        <translation>Postkode</translation>
+        <translation type="obsolete">Postkode</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="122"/>
         <source>Country</source>
-        <translation>Land</translation>
+        <translation type="obsolete">Land</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="124"/>
         <source>[Unknown photo format]</source>
-        <translation>[Ukjent bildeformat]</translation>
+        <translation type="obsolete">[Ukjent bildeformat]</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="125"/>
         <source>Load image</source>
-        <translation>Last bilde</translation>
+        <translation type="obsolete">Last bilde</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="126"/>
         <source>Save image</source>
-        <translation>Lagre bilde</translation>
+        <translation type="obsolete">Lagre bilde</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="128"/>
         <source>Set URL</source>
-        <translation>Sett nettadresse</translation>
+        <translation type="obsolete">Sett nettadresse</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="129"/>
         <source>Remove photo</source>
-        <translation>Fjern bilde</translation>
+        <translation type="obsolete">Fjern bilde</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="131"/>
         <source>All supported files (%1)</source>
-        <translation>Alle støttede filer (%1)</translation>
+        <translation type="obsolete">Alle støttede filer (%1)</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="132"/>
         <source>All files (*.*)</source>
-        <translation>Alle filer (*.*)</translation>
+        <translation type="obsolete">Alle filer (*.*)</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="134"/>
         <source>Can&apos;t read file
 %1</source>
-        <translation>Kan ikke lese fil
+        <translation type="obsolete">Kan ikke lese fil
 %1</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="135"/>
         <source>Can&apos;t write file
 %1</source>
-        <translation>Kan ikke skrive til fil
+        <translation type="obsolete">Kan ikke skrive til fil
 %1</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="137"/>
         <source>Can&apos;t seek to %1 in file
 %2</source>
-        <translation>Kan ikke blafre til %1 i filen
+        <translation type="obsolete">Kan ikke blafre til %1 i filen
 %2</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="138"/>
         <source>Record not selected</source>
-        <translation>Oppføring ikke valg</translation>
+        <translation type="obsolete">Oppføring ikke valg</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="142"/>
         <source>Warning: contact %1 has %2, not supported in this format.
 Data will be lost</source>
-        <translation>Advarsel: Kontakt %1 har %2, ikke støttet i dette formatet.
+        <translation type="obsolete">Advarsel: Kontakt %1 har %2, ikke støttet i dette formatet.
 Data vil gå tapt</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="144"/>
         <source>%1 %2 will be lost at contact %3</source>
-        <translation>%1 %2 vil gå tapt i kontakt %3</translation>
+        <translation type="obsolete">%1 %2 vil gå tapt i kontakt %3</translation>
     </message>
     <message>
         <source>Error: Program built without network support. Use WITH_NETWORK define, if you build program from sources.
@@ -2502,49 +2437,49 @@ Check username, password, protocol and port</source>
 Sjekk brukernavn, passord, protokoll og port</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/nbufile.cpp" line="27"/>
+        <location filename="../core/formats/files/nbufile.cpp" line="28"/>
         <source>Unsupported NBU file section type: %1</source>
         <translation>Ustøttet NBU-fildeltype: %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/nbufile.cpp" line="28"/>
+        <location filename="../core/formats/files/nbufile.cpp" line="29"/>
         <source>Unsupported NBU file folder type: %1</source>
         <translation>Ustøttet NBU-filmappetype: %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/nbufile.cpp" line="157"/>
+        <location filename="../core/formats/files/nbufile.cpp" line="159"/>
         <source>Signature not recognized, trying anyway...</source>
         <translation type="unfinished">Signaturen gjenkjennes ikke, prøver uansett…</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/nbufile.cpp" line="206"/>
+        <location filename="../core/formats/files/nbufile.cpp" line="208"/>
         <source>Unknown NBU file section type</source>
         <translation>Ukjent NBU-fildeltype</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/nbufile.cpp" line="236"/>
+        <location filename="../core/formats/files/nbufile.cpp" line="238"/>
         <source>NBU inner file %1/%2 truncated.
 Read %3 bytes, %4 expected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/files/nbufile.cpp" line="257"/>
-        <location filename="../core/formats/files/nbufile.cpp" line="268"/>
+        <location filename="../core/formats/files/nbufile.cpp" line="259"/>
+        <location filename="../core/formats/files/nbufile.cpp" line="270"/>
         <source>Unknown vcard folder structure at section %1, subsection %2</source>
         <translation type="unfinished">Ukjent vKortmappestruktur i del %1, underdel %2</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/nbufile.cpp" line="297"/>
+        <location filename="../core/formats/files/nbufile.cpp" line="314"/>
         <source>Invalid index: %1</source>
         <translation>Ugyldig indeks: %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/nbufile.cpp" line="446"/>
+        <location filename="../core/formats/files/nbufile.cpp" line="465"/>
         <source>Test 2 greater than 0x01: %1</source>
         <translation>Test 2 større enn 0x01: %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/nbufile.cpp" line="449"/>
+        <location filename="../core/formats/files/nbufile.cpp" line="468"/>
         <source>Test 1 different than 0x10: %1</source>
         <translation>Test 1 forskjellig fra 0x01: %1</translation>
     </message>
@@ -2615,7 +2550,7 @@ Read %3 bytes, %4 expected</source>
         <translation type="obsolete">Tom</translation>
     </message>
     <message>
-        <location filename="../core/decodedmessagelist.cpp" line="308"/>
+        <location filename="../core/decodedmessagelist.cpp" line="310"/>
         <source>MPB message body missing</source>
         <translation>MPB-meldingskropp mangler</translation>
     </message>
@@ -2624,23 +2559,16 @@ Read %3 bytes, %4 expected</source>
         <translation type="obsolete">Ukjent meldingsformat</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="157"/>
         <source>Unknown vMessage tag: %1</source>
-        <translation type="unfinished">Ukjent vMessage-tagg: %1</translation>
+        <translation type="obsolete">Ukjent vMessage-tagg: %1</translation>
     </message>
     <message>
-        <location filename="../core/globals.h" line="158"/>
         <source>Unknown vMessage value: %1</source>
-        <translation>Ukjent vMessage-verdi: %1</translation>
+        <translation type="obsolete">Ukjent vMessage-verdi: %1</translation>
     </message>
     <message>
         <source>Last vMessage section not closed</source>
         <translation type="obsolete">Siste vMessage-seksjon ble ikke sluttført</translation>
-    </message>
-    <message>
-        <location filename="../model/recentlist.h" line="21"/>
-        <source>Clear recent list</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../core/formats/common/nokiadata.cpp" line="321"/>
@@ -2697,8 +2625,14 @@ Read %3 bytes, %4 expected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vmessagedata.cpp" line="280"/>
+        <location filename="../core/formats/common/vmessagedata.cpp" line="289"/>
         <source>File %1 has size %2, declared %3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/formats/common/vmessagedata.cpp" line="314"/>
+        <source>Backup %1</source>
+        <comment>SMS archive date</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2708,17 +2642,17 @@ Read %3 bytes, %4 expected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/extra.h" line="35"/>
+        <location filename="../core/extra.h" line="36"/>
         <source>Records: %1. Size: %2 byte(s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/extra.h" line="36"/>
+        <location filename="../core/extra.h" line="37"/>
         <source>Select attached files Directory</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/extra.h" line="37"/>
+        <location filename="../core/extra.h" line="38"/>
         <source>Save attachment</source>
         <translation type="unfinished"></translation>
     </message>
