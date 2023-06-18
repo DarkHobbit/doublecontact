@@ -77,7 +77,9 @@ DoubleContact allows save to MPB file **only** if original file also had MPB for
 
 If you combine contacts into groups, keep in mind that transfer it to other device is a very problematic task.
 
-vCard format provides CATEGORIES tags to point, which group(s) contains a contact. Unfortunately, most Android phones don't use this tag or use it for service information. So group information are lost.
+vCard format provides CATEGORIES tags to point, which group(s) contains a contact.
+Unfortunately, most Android phones don't use this tag or use it for service information (My Contacts, etc).
+In this case, user-defined groups (Family, Colleagues, etc) aren't saved in VCF file. So group information are lost.
 
 Some vendors save group in non-stanard tags, for example:
 
