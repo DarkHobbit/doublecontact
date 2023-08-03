@@ -6,7 +6,7 @@
     <message>
         <location filename="../app/aboutdialog.ui" line="14"/>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>关于</translation>
     </message>
     <message>
         <location filename="../app/aboutdialog.ui" line="24"/>
@@ -16,17 +16,17 @@
     <message>
         <location filename="../app/aboutdialog.ui" line="61"/>
         <source>The Contact Manager</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">联系人管理器</translation>
     </message>
     <message>
         <location filename="../app/aboutdialog.ui" line="104"/>
         <source>Distributed under GPL v3 or above</source>
-        <translation type="unfinished"></translation>
+        <translation>在GPL v3或更高版本下分发</translation>
     </message>
     <message>
         <location filename="../app/aboutdialog.ui" line="132"/>
         <source>Contributors</source>
-        <translation type="unfinished"></translation>
+        <translation>贡献者</translation>
     </message>
 </context>
 <context>
@@ -34,17 +34,17 @@
     <message>
         <location filename="../app/csvprofiledialog.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>对话</translation>
     </message>
     <message>
         <location filename="../app/csvprofiledialog.ui" line="25"/>
         <source>Encoding</source>
-        <translation type="unfinished"></translation>
+        <translation>编码</translation>
     </message>
     <message>
         <location filename="../app/csvprofiledialog.ui" line="39"/>
         <source>Separator</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">分隔符</translation>
     </message>
 </context>
 <context>
@@ -52,7 +52,7 @@
     <message>
         <location filename="../model/callmodel.cpp" line="24"/>
         <source>Type</source>
-        <translation type="unfinished"></translation>
+        <translation>类型</translation>
     </message>
     <message>
         <location filename="../model/callmodel.cpp" line="25"/>
