@@ -21,27 +21,27 @@
     <message>
         <location filename="../app/aboutdialog.ui" line="142"/>
         <source>Additional</source>
-        <translation type="unfinished"></translation>
+        <translation>Aanvullend</translation>
     </message>
     <message>
         <location filename="../app/aboutdialog.ui" line="148"/>
         <source>Compiler:</source>
-        <translation type="unfinished"></translation>
+        <translation>Compilatie:</translation>
     </message>
     <message>
         <location filename="../app/aboutdialog.ui" line="155"/>
         <source>unknown compiler</source>
-        <translation type="unfinished"></translation>
+        <translation>onbekende compilatie</translation>
     </message>
     <message>
         <location filename="../app/aboutdialog.ui" line="162"/>
         <source>Path to translations:</source>
-        <translation type="unfinished"></translation>
+        <translation>Vertalingslocatie:</translation>
     </message>
     <message>
         <location filename="../app/aboutdialog.ui" line="169"/>
         <source>unknown path</source>
-        <translation type="unfinished"></translation>
+        <translation>onbekende locatie</translation>
     </message>
     <message>
         <source>DoubleContact</source>
@@ -1567,7 +1567,9 @@ Bronnen: %2</translation>
         <source>
 
 SMS subfolder: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>
+
+Sms-submap: %1</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.cpp" line="285"/>
@@ -1751,7 +1753,7 @@ MMS-informatie:
     <message>
         <location filename="../core/contactlist.cpp" line="985"/>
         <source>BINARY DATA</source>
-        <translation type="unfinished"></translation>
+        <translation>BINAIRE GEGEVENS</translation>
     </message>
     <message>
         <source>%1 records
@@ -2101,7 +2103,7 @@ opgeslagen als mobiele telefoon</translation>
     <message>
         <location filename="../core/formats/files/mpbfile.cpp" line="92"/>
         <source>MPB section without content: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>MPB-sectie zonder inhoud: %1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/mpbfile.cpp" line="105"/>
@@ -2111,7 +2113,7 @@ opgeslagen als mobiele telefoon</translation>
     <message>
         <location filename="../core/formats/files/mpbfile.cpp" line="140"/>
         <source>Unsupported MPB section: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Niet-ondersteunde MBP-sectie: %1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/mpbfile.cpp" line="145"/>
@@ -2786,7 +2788,7 @@ Uitgelezen: %3 bytes - Verwacht: %4 bytes</translation>
         <location filename="../core/formats/common/vmessagedata.cpp" line="314"/>
         <source>Backup %1</source>
         <comment>SMS archive date</comment>
-        <translation type="unfinished"></translation>
+        <translation>Reservekopie %1</translation>
     </message>
     <message>
         <location filename="../model/callmodel.cpp" line="102"/>
