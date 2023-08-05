@@ -26,7 +26,7 @@
     <message>
         <location filename="../app/aboutdialog.ui" line="142"/>
         <source>Additional</source>
-        <translation type="unfinished"></translation>
+        <translation>Zusätzlich</translation>
     </message>
     <message>
         <location filename="../app/aboutdialog.ui" line="148"/>
@@ -41,12 +41,12 @@
     <message>
         <location filename="../app/aboutdialog.ui" line="162"/>
         <source>Path to translations:</source>
-        <translation type="unfinished"></translation>
+        <translation>Pfad zu den Übersetzungen:</translation>
     </message>
     <message>
         <location filename="../app/aboutdialog.ui" line="169"/>
         <source>unknown path</source>
-        <translation type="unfinished"></translation>
+        <translation>unbekannter Pfad</translation>
     </message>
     <message>
         <source>Distributed under GPL v2 or above</source>
@@ -1451,7 +1451,9 @@ Quellen: %2</translation>
         <source>
 
 SMS subfolder: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>
+
+SMS-Unterordner: %1</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.cpp" line="285"/>
@@ -1635,7 +1637,7 @@ MMS-Eigenschaften:
     <message>
         <location filename="../core/contactlist.cpp" line="985"/>
         <source>BINARY DATA</source>
-        <translation type="unfinished"></translation>
+        <translation>BINÄRDATEN</translation>
     </message>
     <message>
         <source>%1 records
@@ -1973,7 +1975,7 @@ Zeile %3, Spalte %4
     <message>
         <location filename="../core/formats/files/mpbfile.cpp" line="92"/>
         <source>MPB section without content: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>MPB-Sektion ohne Inhalt: %1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/mpbfile.cpp" line="105"/>
@@ -1983,7 +1985,7 @@ Zeile %3, Spalte %4
     <message>
         <location filename="../core/formats/files/mpbfile.cpp" line="140"/>
         <source>Unsupported MPB section: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Nicht unterstützte MPB-Sektion: %1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/mpbfile.cpp" line="145"/>
@@ -2607,7 +2609,7 @@ Read %3 bytes, %4 expected</source>
         <location filename="../core/formats/common/vmessagedata.cpp" line="314"/>
         <source>Backup %1</source>
         <comment>SMS archive date</comment>
-        <translation type="unfinished"></translation>
+        <translation>%1 sichern</translation>
     </message>
     <message>
         <location filename="../model/callmodel.cpp" line="102"/>
@@ -2624,7 +2626,7 @@ Read %3 bytes, %4 expected</source>
     <message>
         <location filename="../core/extra.h" line="37"/>
         <source>Select attached files Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Verzeichnis der angehängten Dateien auswählen</translation>
     </message>
     <message>
         <location filename="../core/extra.h" line="38"/>
