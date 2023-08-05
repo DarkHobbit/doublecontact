@@ -21,27 +21,27 @@
     <message>
         <location filename="../app/aboutdialog.ui" line="142"/>
         <source>Additional</source>
-        <translation type="unfinished"></translation>
+        <translation>Додатково</translation>
     </message>
     <message>
         <location filename="../app/aboutdialog.ui" line="148"/>
         <source>Compiler:</source>
-        <translation type="unfinished"></translation>
+        <translation>Компілятор:</translation>
     </message>
     <message>
         <location filename="../app/aboutdialog.ui" line="155"/>
         <source>unknown compiler</source>
-        <translation type="unfinished"></translation>
+        <translation>невідомий компілятор</translation>
     </message>
     <message>
         <location filename="../app/aboutdialog.ui" line="162"/>
         <source>Path to translations:</source>
-        <translation type="unfinished"></translation>
+        <translation>Шлях до перекладів:</translation>
     </message>
     <message>
         <location filename="../app/aboutdialog.ui" line="169"/>
         <source>unknown path</source>
-        <translation type="unfinished"></translation>
+        <translation>невідомий шлях</translation>
     </message>
     <message>
         <source>DoubleContact</source>
@@ -160,7 +160,7 @@
 Are you want to accept this certificate anyway?</source>
         <translation>Виявлено проблеми безпеки:
     %1
-Все одно прийняти даний сертифікат?</translation>
+Все одно прийняти цей сертифікат?</translation>
     </message>
     <message>
         <location filename="../core/formats/network/carddavformat.cpp" line="150"/>
@@ -925,7 +925,7 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/mainwindow.ui" line="396"/>
         <source>&amp;Options...</source>
-        <translation>&amp;Налаштування...</translation>
+        <translation>&amp;Параметри...</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="401"/>
@@ -1191,7 +1191,7 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/mainwindow.ui" line="569"/>
         <source>&amp;Hard sort</source>
-        <translation>Жорстке сортування</translation>
+        <translation>&amp;Жорстке сортування</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="574"/>
@@ -1567,7 +1567,9 @@ Sources: %2</source>
         <source>
 
 SMS subfolder: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>
+
+Підтека SMS: %1</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.cpp" line="285"/>
@@ -1601,7 +1603,7 @@ MMS properties:
     <message>
         <location filename="../app/multicontactdialog.ui" line="22"/>
         <source>Title</source>
-        <translation>Посада</translation>
+        <translation>Нпзва</translation>
     </message>
     <message>
         <location filename="../app/multicontactdialog.ui" line="32"/>
@@ -1751,7 +1753,7 @@ MMS properties:
     <message>
         <location filename="../core/contactlist.cpp" line="985"/>
         <source>BINARY DATA</source>
-        <translation type="unfinished"></translation>
+        <translation>БІНАРНІ ДАНІ</translation>
     </message>
     <message>
         <source>%1 records
@@ -2441,7 +2443,7 @@ Data will be lost</source>
     <message>
         <location filename="../core/formats/files/mpbfile.cpp" line="92"/>
         <source>MPB section without content: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Розділ MPB без вмісту:% 1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/mpbfile.cpp" line="105"/>
@@ -2451,7 +2453,7 @@ Data will be lost</source>
     <message>
         <location filename="../core/formats/files/mpbfile.cpp" line="140"/>
         <source>Unsupported MPB section: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Непідтримуваний розділ MPB: %1</translation>
     </message>
     <message>
         <location filename="../core/formats/files/mpbfile.cpp" line="145"/>
@@ -2776,7 +2778,7 @@ Read %3 bytes, %4 expected</source>
         <location filename="../core/formats/common/vmessagedata.cpp" line="314"/>
         <source>Backup %1</source>
         <comment>SMS archive date</comment>
-        <translation type="unfinished"></translation>
+        <translation>Резервне копіювання %1</translation>
     </message>
     <message>
         <location filename="../model/callmodel.cpp" line="102"/>
