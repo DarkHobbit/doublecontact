@@ -11,12 +11,12 @@
     <message>
         <location filename="../app/aboutdialog.ui" line="24"/>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation>常规</translation>
     </message>
     <message>
         <location filename="../app/aboutdialog.ui" line="61"/>
         <source>The Contact Manager</source>
-        <translation type="unfinished">联系人管理器</translation>
+        <translation>联系人管理器</translation>
     </message>
     <message>
         <location filename="../app/aboutdialog.ui" line="104"/>
@@ -57,22 +57,22 @@
     <message>
         <location filename="../model/callmodel.cpp" line="25"/>
         <source>TimeStamp</source>
-        <translation type="unfinished"></translation>
+        <translation>时间戳</translation>
     </message>
     <message>
         <location filename="../model/callmodel.cpp" line="26"/>
         <source>Duration</source>
-        <translation type="unfinished"></translation>
+        <translation>期限</translation>
     </message>
     <message>
         <location filename="../model/callmodel.cpp" line="27"/>
         <source>Number</source>
-        <translation type="unfinished"></translation>
+        <translation>号码</translation>
     </message>
     <message>
         <location filename="../model/callmodel.cpp" line="28"/>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>姓名</translation>
     </message>
 </context>
 <context>
@@ -80,37 +80,37 @@
     <message>
         <location filename="../app/callwindow.ui" line="14"/>
         <source>Calls</source>
-        <translation type="unfinished"></translation>
+        <translation>拨号</translation>
     </message>
     <message>
         <location filename="../app/callwindow.ui" line="31"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation>筛选</translation>
     </message>
     <message>
         <location filename="../app/callwindow.ui" line="56"/>
         <source>&amp;Save as...</source>
-        <translation type="unfinished"></translation>
+        <translation>另存为...</translation>
     </message>
     <message>
         <location filename="../app/callwindow.ui" line="65"/>
         <source>Copy text</source>
-        <translation type="unfinished"></translation>
+        <translation>复制文字</translation>
     </message>
     <message>
         <location filename="../app/callwindow.ui" line="68"/>
         <source>Ctrl+C</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+C</translation>
     </message>
     <message>
         <location filename="../app/callwindow.cpp" line="91"/>
         <source>Records: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>记录: %1</translation>
     </message>
     <message>
         <location filename="../app/callwindow.cpp" line="137"/>
         <source>Save calls file</source>
-        <translation type="unfinished"></translation>
+        <translation>保存通话文件</translation>
     </message>
 </context>
 <context>
@@ -118,14 +118,15 @@
     <message>
         <location filename="../core/formats/network/carddavformat.cpp" line="28"/>
         <source>Invalid URL</source>
-        <translation type="unfinished"></translation>
+        <translation>无效的URL</translation>
     </message>
     <message>
         <location filename="../core/formats/network/carddavformat.cpp" line="82"/>
         <source>There are security problems:
     %1
 Are you want to accept this certificate anyway?</source>
-        <translation type="unfinished"></translation>
+        <translation>存在安全风险:
+    %1 您同意这个证书吗?</translation>
     </message>
     <message>
         <location filename="../core/formats/network/carddavformat.cpp" line="150"/>
