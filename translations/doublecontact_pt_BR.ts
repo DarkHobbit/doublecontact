@@ -31,27 +31,27 @@
     <message>
         <location filename="../app/aboutdialog.ui" line="142"/>
         <source>Additional</source>
-        <translation type="unfinished"></translation>
+        <translation>Adicional</translation>
     </message>
     <message>
         <location filename="../app/aboutdialog.ui" line="148"/>
         <source>Compiler:</source>
-        <translation type="unfinished"></translation>
+        <translation>Compilador:</translation>
     </message>
     <message>
         <location filename="../app/aboutdialog.ui" line="155"/>
         <source>unknown compiler</source>
-        <translation type="unfinished"></translation>
+        <translation>compilador desconhecido</translation>
     </message>
     <message>
         <location filename="../app/aboutdialog.ui" line="162"/>
         <source>Path to translations:</source>
-        <translation type="unfinished"></translation>
+        <translation>Caminho para as traduções:</translation>
     </message>
     <message>
         <location filename="../app/aboutdialog.ui" line="169"/>
         <source>unknown path</source>
-        <translation type="unfinished"></translation>
+        <translation>caminho desconhecido</translation>
     </message>
 </context>
 <context>
@@ -77,7 +77,7 @@
     <message>
         <location filename="../model/callmodel.cpp" line="24"/>
         <source>Type</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipo</translation>
     </message>
     <message>
         <location filename="../model/callmodel.cpp" line="25"/>
