@@ -31,12 +31,12 @@
     <message>
         <location filename="../app/aboutdialog.ui" line="148"/>
         <source>Compiler:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kompiler:</translation>
     </message>
     <message>
         <location filename="../app/aboutdialog.ui" line="155"/>
         <source>unknown compiler</source>
-        <translation type="unfinished"></translation>
+        <translation>unbekannter Kompiler</translation>
     </message>
     <message>
         <location filename="../app/aboutdialog.ui" line="162"/>
