@@ -19,10 +19,13 @@
 #include <QFileDialog>
 #include <QGridLayout>
 #include <QItemSelectionModel>
+#include <QLabel>
 #include <QMessageBox>
 #include <QMimeData>
 #include <QPalette>
 #include <QRadioButton>
+#include <QSpacerItem>
+#include <QStackedWidget>
 #include <QUrl>
 
 #include "mainwindow.h"
@@ -47,6 +50,7 @@
 #include "settingsdialog.h"
 #include "sortdialog.h"
 #include "tagremovedialog.h"
+#include "formats/common/textreport.h"
 #include "formats/iformat.h"
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -148,7 +152,6 @@ MainWindow::MainWindow(QWidget *parent) :
     updateHeaders();
     updateModeStatus();
     updateRecent();
-    on_action_Two_panels_toggled(ui->action_Two_panels->isChecked());
 }
 
 MainWindow::~MainWindow()
@@ -167,6 +170,7 @@ void MainWindow::closeEvent(QCloseEvent *event)
 
 void MainWindow::showEvent(QShowEvent*)
 {
+    on_action_Two_panels_toggled(ui->action_Two_panels->isChecked());
     updateConfig();
     if (modLeft->rowCount()>0)
         ui->tvLeft->selectRow(0);
@@ -183,7 +187,7 @@ bool MainWindow::eventFilter(QObject *obj, QEvent *event)
         return true;
     }
     else if (event->type() == QEvent::Drop) {
-        bool isLeft = (obj == ui->tvLeft);
+        bool isLeftSource = (obj == ui->tvLeft);
         QDropEvent* e = static_cast<QDropEvent*>(event);
         // How many URLs got?
         if (!e->mimeData()->hasUrls()) {
@@ -196,7 +200,7 @@ bool MainWindow::eventFilter(QObject *obj, QEvent *event)
             return false;
         }
         // Open file(s)
-        ContactModel* primaryModel = isLeft ? modLeft : modRight;
+        ContactModel* primaryModel = isLeftSource ? modLeft : modRight;
         QString filePath = e->mimeData()->urls()[0].toLocalFile();
         if (askSaveChanges(primaryModel)) {
             open(primaryModel, filePath, QFileInfo(filePath).isDir() ? ftDirectory : ftFile);
@@ -205,7 +209,7 @@ bool MainWindow::eventFilter(QObject *obj, QEvent *event)
                 if (!ui->tvRight->isVisible())
                     ui->action_Two_panels->setChecked(true); // ???
                 filePath = e->mimeData()->urls()[1].toLocalFile();
-                ContactModel* secondaryModel = isLeft ? modRight : modLeft;
+                ContactModel* secondaryModel = isLeftSource ? modRight : modLeft;
                 if (askSaveChanges(secondaryModel))
                     open(secondaryModel, filePath, QFileInfo(filePath).isDir() ? ftDirectory : ftFile);
             }
@@ -232,6 +236,7 @@ void MainWindow::on_actionE_xit_triggered()
 
 void MainWindow::on_action_Two_panels_toggled(bool showTwoPanels)
 {
+    // TODO here switch off quickview or dup search if need activate second panel
     int splitSize = ui->splitter->width();
     if (showTwoPanels) {
         ui->tvRight->show();
@@ -252,6 +257,28 @@ void MainWindow::on_action_Two_panels_toggled(bool showTwoPanels)
     setButtonsAccess();
     configManager.setShowTwoPanels(showTwoPanels);
     updateModeStatus();
+}
+
+void MainWindow::on_action_Quick_view_toggled(bool showQuickView)
+{
+    selectedModel->setViewMode(
+        showQuickView ? ContactModel::StandardWithQuickView : ContactModel::Standard,
+        oppositeModel());
+    QStackedWidget *prevSw = (isLeftPanelActive ? ui->swLeft : ui->swRight),
+                   *newSw  = (isLeftPanelActive ? ui->swRight : ui->swLeft);
+    prevSw->setCurrentIndex(0);
+    newSw->setCurrentIndex(0);
+    int splitSize = ui->splitter->width();
+    if (showQuickView) {
+        if (ui->splitter->sizes().last()==0)
+            ui->splitter->setSizes(QList<int>() << splitSize/2 << splitSize/2);
+        newSw->setCurrentIndex(1);
+        selectionChanged();
+    }
+    else {
+        if (!ui->tvRight->isVisible())
+            ui->splitter->setSizes(QList<int>() << splitSize);
+    }
 }
 
 void MainWindow::on_btnExit_clicked()
@@ -489,7 +516,11 @@ void MainWindow::on_actionCo_mpare_triggered()
     ui->tvLeft->selectionModel()->clearSelection();
     ui->tvRight->selectionModel()->clearSelection();
     // Compare on
-    if (selectedModel->viewMode()==ContactModel::Standard) {
+    bool notInCompareMode = selectedModel->viewMode()!=ContactModel::CompareMain
+        && selectedModel->viewMode()!=ContactModel::CompareOpposite;
+    if (notInCompareMode) {
+        // TODO here switch off quick view and/or dup search (m.b.not only here)
+        // TODO if opposite panel unsaved and hidden before program closing, show it before ask (not here)
         if (!ui->tvRight->isVisible() || oppositeModel()->rowCount()==0 || selectedModel->rowCount()==0) {
             QMessageBox::critical(0, S_ERROR,
                 tr("Compare mode requires show two panels and load contact lists in both panels"));
@@ -531,9 +562,10 @@ void MainWindow::on_btnSort_clicked()
 void MainWindow::selectView(QTableView* view)
 {
     selectedView = view;
-    bool isLeft = selectedView==ui->tvLeft;
-    selectedModel = (isLeft ? modLeft : modRight);
-    selectedHeader = (isLeft ? ui->lbLeft : ui->lbRight);
+    isLeftPanelActive = selectedView==ui->tvLeft;
+    selectedModel = (isLeftPanelActive ? modLeft : modRight);
+    selectedHeader = (isLeftPanelActive ? ui->lbLeft : ui->lbRight);
+    selectedQVPanel = (isLeftPanelActive ? ui->swRigthPageDetails : ui->swLeftPageDetails); // Vice versa!
 }
 
 bool MainWindow::checkSelection(bool errorIfNoSelected, bool onlyOneRowAllowed)
@@ -605,24 +637,27 @@ void MainWindow::selectionChanged()
     static bool lockSelection = false;
     // For compare mode, select pair item(s)
     ContactModel::ContactViewMode viewMode = selectedModel->viewMode();
-    if (!lockSelection)
-    if (viewMode==ContactModel::CompareMain || viewMode==ContactModel::CompareOpposite) {
-        if (!checkSelection(false)) return;
-        QTableView* oppView = (selectedView==ui->tvLeft) ? ui->tvRight : ui->tvLeft;
-        QSortFilterProxyModel* oppProxy = dynamic_cast<QSortFilterProxyModel*>(oppView->model());
-        oppView->selectionModel()->clearSelection();
-        foreach (const QModelIndex& index, selection) {
-            ContactItem& item = selectedModel->itemList()[index.row()];
-            if (item.pairItem) {
-                QModelIndex oppIndexFirst = oppProxy->mapFromSource(
-                            oppositeModel()->index(item.pairIndex, 0));
-                QModelIndex oppIndexLast = oppProxy->mapFromSource(
-                            oppositeModel()->index(item.pairIndex, selectedModel->columnCount()-1));
-                lockSelection = true;
-                oppView->selectionModel()->select(QItemSelection(oppIndexFirst, oppIndexLast), QItemSelectionModel::Select);
-                lockSelection = false;
+    if (!lockSelection) {
+        if (viewMode==ContactModel::CompareMain || viewMode==ContactModel::CompareOpposite) {
+            if (!checkSelection(false)) return;
+            QTableView* oppView = (selectedView==ui->tvLeft) ? ui->tvRight : ui->tvLeft;
+            QSortFilterProxyModel* oppProxy = dynamic_cast<QSortFilterProxyModel*>(oppView->model());
+            oppView->selectionModel()->clearSelection();
+            foreach (const QModelIndex& index, selection) {
+                ContactItem& item = selectedModel->itemList()[index.row()];
+                if (item.pairItem) {
+                    QModelIndex oppIndexFirst = oppProxy->mapFromSource(
+                        oppositeModel()->index(item.pairIndex, 0));
+                    QModelIndex oppIndexLast = oppProxy->mapFromSource(
+                        oppositeModel()->index(item.pairIndex, selectedModel->columnCount()-1));
+                    lockSelection = true;
+                    oppView->selectionModel()->select(QItemSelection(oppIndexFirst, oppIndexLast), QItemSelectionModel::Select);
+                    lockSelection = false;
+                }
             }
         }
+        else if (viewMode==ContactModel::StandardWithQuickView)
+            updateQuickView();
     }
     setButtonsAccess();
 }
@@ -706,6 +741,55 @@ void MainWindow::updateViewMode()
     selectedModel->setViewMode(selectedModel->viewMode(), oppositeModel());
     if (gd.resizeTableRowsToContents)
         selectedView->resizeRowsToContents();
+    // TODO when switch on quick view on one panel, switch off it on other panel, if present
+    // Learn, here called updateViewMode() and don't forget about on_actionCo_mpare_triggered()
+}
+
+QLabel* MainWindow::createBoldTopLabel(const QString& text)
+{
+    QLabel* lb = new QLabel(QString("<b>%1</b>").arg(text));
+    lb->setAlignment(Qt::AlignTop);
+    return lb;
+}
+
+void MainWindow::updateQuickView()
+{
+    // TODO check QV logic on Tab and Ctrl+U
+    // Delete old quickview
+    QGridLayout* l = dynamic_cast<QGridLayout*>(selectedQVPanel->layout());
+    foreach (QObject* ch, selectedQVPanel->children())
+        if (dynamic_cast<QWidget*>(ch))
+            delete ch;
+    delete l;
+    // Generate new quickview
+    l = new QGridLayout();
+    l->setColumnStretch(1, 2);
+    if (!checkSelection(false) || selection.count()!=1)
+        return;
+    const QModelIndex& index = selection.first();
+    ContactItem& item = selectedModel->itemList()[index.row()];
+    TextReport::RepItems out;
+    TextReport::exportRecord(item, out, "\n");
+    l->addWidget(createBoldTopLabel(out.title), 0, 1);
+    for (int i=0; i<out.count(); i++) {
+        l->addWidget(createBoldTopLabel(out[i].first), i+1, 0);
+        l->addWidget(new QLabel(out[i].second), i+1, 1);
+    }
+    int lastCol = out.count()+1;
+    // Media if available
+    if (!item.photo.isEmpty() && item.photo.pType!="URL") {
+        l->addWidget(createBoldTopLabel(S_PHOTO), lastCol, 0);
+        QLabel* lbPhoto = new QLabel();
+        lbPhoto->setMaximumHeight(256);
+        lbPhoto->setMaximumHeight(192);
+        showPhoto(item.photo, lbPhoto);
+        l->addWidget(lbPhoto, lastCol, 1);
+        lastCol++;
+    }
+    // Page down
+    QSpacerItem* vSp = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+    l->addItem(vSp, lastCol, 0);
+    selectedQVPanel->setLayout(l);
 }
 
 void MainWindow::setSelectionModelEvents()

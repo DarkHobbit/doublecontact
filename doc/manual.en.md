@@ -134,6 +134,9 @@ To copy one or some records from one loaded address book to other, select this r
 
 Choosing **View -> Two panels** again  will turn off two panel mode.
 
+If you choose **View -> Quick View** or press Ctrl+Q, Quick View mode will be activated.
+In this mode, second panel show details of contact was selectes on current panel (only for single selection).
+
 You can change visual presentation of tables (**View -> Settings**, "General"
 tab). Program allows to switch on/off table grid, using of alternate grid colors and using of system or user-defined font and colors.
 

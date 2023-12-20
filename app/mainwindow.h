@@ -19,6 +19,7 @@
 #include <QModelIndexList>
 #include <QSortFilterProxyModel>
 #include <QTableView>
+#include <QWidget>
 
 #include "contactmodel.h"
 #include "recentlist.h"
@@ -51,6 +52,7 @@ private slots:
     void anyFocusChanged (QWidget*, QWidget* now);
     void on_actionE_xit_triggered();
     void on_action_Two_panels_toggled(bool showTwoPanels);
+    void on_action_Quick_view_toggled(bool showQuickView);
     void on_btnExit_clicked();
     void on_action_Add_triggered();
     void on_btnAdd_clicked();
@@ -116,10 +118,12 @@ private:
     Ui::MainWindow *ui;
     ContactModel *modLeft, *modRight;
     RecentList recent;
-    // Three potentially unsafe pointers (covered by selectView() in all changed)
+    // Potentially unsafe pointers (covered by selectView() in all changed)
     QTableView* selectedView;
     ContactModel* selectedModel;
     QLabel* selectedHeader;
+    QWidget* selectedQVPanel;
+    bool isLeftPanelActive;
     QSortFilterProxyModel *proxyLeft, *proxyRight;
     // End of potentially unsafe pointers
     QModelIndexList selection;
@@ -131,6 +135,8 @@ private:
     void updateHeaders();
     void updateModeStatus();
     void updateViewMode();
+    QLabel* createBoldTopLabel(const QString& text);
+    void updateQuickView();
     void setSelectionModelEvents();
     inline ContactModel* oppositeModel();
     inline QLabel* oppositeHeader();

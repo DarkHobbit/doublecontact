@@ -29,12 +29,6 @@ public:
     static QStringList supportedFilters();
     virtual bool importRecords(const QString &, ContactList &, bool);
     virtual bool exportRecords(const QString &url, ContactList &list);
-private:
-    void exportString(QTextStream& stream, const QString& field, const QString& title);
-    template <class T>
-    void exportStringableItem(QTextStream& stream, const T& field, const QString& title);
-    template <class T>
-    void exportTypedItems(QTextStream& stream, const QList<T>& lst, const QString& title);
 };
 
 #endif // HTMLFILE_H

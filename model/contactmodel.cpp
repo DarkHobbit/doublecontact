@@ -148,6 +148,7 @@ QVariant ContactModel::data(const QModelIndex &index, int role) const
     else if (role==Qt::BackgroundRole) {
         switch (_viewMode) {
         case ContactModel::Standard:
+        case ContactModel::StandardWithQuickView:
             return (c.unknownTags.isEmpty()) ? QVariant() : QBrush(Qt::yellow);
         case ContactModel::CompareOpposite:
         case ContactModel::CompareMain:
@@ -582,15 +583,25 @@ void ContactModel::massTagRemove(const QStringList &tagNames)
 
 void ContactModel::setViewMode(ContactModel::ContactViewMode mode, ContactModel *target)
 {
-    beginResetModel();
+    bool needRefresh =
+      ((_viewMode==ContactModel::Standard || _viewMode==ContactModel::StandardWithQuickView) &&
+      (mode==ContactModel::CompareMain || mode==ContactModel::CompareOpposite))
+      ||
+      ((_viewMode==ContactModel::CompareMain || _viewMode==ContactModel::CompareOpposite) &&
+      (mode==ContactModel::Standard || mode==ContactModel::StandardWithQuickView));
+    // TODO add here DupSearch varzzzz
+    if (needRefresh)
+        beginResetModel();
     _viewMode = mode;
     if (mode==ContactModel::CompareMain) {
         items.compareWith(target->itemList());
         target->setViewMode(ContactModel::CompareOpposite, 0);
     }
-    else if (mode==ContactModel::Standard && target)
+    else if ((mode==ContactModel::Standard
+         || mode==ContactModel::StandardWithQuickView) && target)
         target->setViewMode(ContactModel::Standard, 0);
-    endResetModel();
+    if (needRefresh)
+        endResetModel();
 }
 
 ContactModel::ContactViewMode ContactModel::viewMode()

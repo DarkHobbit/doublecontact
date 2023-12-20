@@ -31,6 +31,7 @@ HEADERS	+= \
     $$PWD/formats/iformat.h \
     $$PWD/formats/formatfactory.h \
     $$PWD/formats/common/quotedprintable.h \
+    $$PWD/formats/common/textreport.h \
     $$PWD/formats/common/vcarddata.h \
     $$PWD/formats/common/vdata.h \
     $$PWD/formats/files/csvfile.h \
@@ -58,6 +59,7 @@ SOURCES	+= \
     $$PWD/languagemanager.cpp \
     $$PWD/formats/formatfactory.cpp \
     $$PWD/formats/common/quotedprintable.cpp \
+    $$PWD/formats/common/textreport.cpp \
     $$PWD/formats/common/vcarddata.cpp \
     $$PWD/formats/common/vdata.cpp \
     $$PWD/formats/files/csvfile.cpp \

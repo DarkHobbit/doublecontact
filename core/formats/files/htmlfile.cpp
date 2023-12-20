@@ -13,6 +13,7 @@
 
 #include "corehelpers.h"
 #include "htmlfile.h"
+#include "../common/textreport.h"
 
 HTMLFile::HTMLFile()
 {
@@ -51,69 +52,26 @@ bool HTMLFile::exportRecords(const QString &url, ContactList &list)
     stream << ENDL;
     foreach (const ContactItem& item, list) {
         stream << QString("<p>\n");
+        TextReport::RepItems out;
+        TextReport::exportRecord(item, out, "; ");
         // Name
-        stream << QString("<b>%1</b>\n").arg(item.formatNames());
-        // Phone(s), email(s)
-        exportTypedItems(stream, item.phones, S_PHONE);
-        exportTypedItems(stream, item.emails, S_EMAIL);
-        // Birthday, anniversary
-        exportStringableItem(stream, item.birthday, S_BDAY);
-        exportStringableItem(stream, item.anniversary, S_ANN);
-        exportString(stream, item.description, S_DESC);
-        if (!item.photo.isEmpty())
-            exportString(stream, " ", S_HAS_PHOTO); // space, not empty string!
-        // Group(s)
-        if (!item.groups.isEmpty())
-            exportString(stream, item.groups.join(", "), S_GROUP); // space, not empty string!
-        // Work
-        exportString(stream, item.organization, S_ORG);
-        exportString(stream, item.title, S_TITLE);
-        exportString(stream, item.title, S_ROLE);
-        // Addresses
-        exportTypedItems(stream, item.addrs, S_ADDR);
-        // Internet
-        exportString(stream, item.nickName, S_NICK);
-        exportString(stream, item.url, S_URL);
-        exportTypedItems(stream, item.ims, S_IM);
+        stream << QString("<b>%1</b>\n").arg(out.title);
+        // Content
+        foreach (const TextReport::RepItem& sect, out)
+            stream << QString("<br/><b>%1:</b> %2\n")
+                .arg(sect.first).arg(sect.second) << ENDL;
+        // Media if available
+        if (!item.photo.isEmpty() && item.photo.pType!="URL") {
+            stream << "<br/><b>" << S_HAS_PHOTO << "</b> ("
+                   <<  item.photo.pType << ")" << ENDL; //===>
+            // TODO here upload photo, if present && (PNG || JPEG), maybe through QByteArray from exportRecord->out QByteArray
+        }
         stream << QString("</p>\n\n");
     }
-    // TODO hr and summary here
+    // Summary
+    stream << QString("<hr/>\n\n");
+    stream << list.statistics().replace("\n", "<br/>\n") << "\n\n";
     stream << "\n<body>\n<html>" << ENDL;
     closeFile();
     return true;
-}
-
-void HTMLFile::exportString(QTextStream &stream, const QString &field, const QString &title)
-{
-    if (!field.isEmpty())
-            stream << QString("<br/><b>%1:</b> %2\n").arg(title).arg(field);
-}
-
-template <class T>
-void HTMLFile::exportStringableItem(QTextStream &stream, const T& field, const QString &title)
-{
-    if (!field.isEmpty())
-        exportString(stream, field.toString(), title);
-}
-
-template <class T>
-void HTMLFile::exportTypedItems(QTextStream &stream, const QList<T> &lst, const QString& title)
-{
-    if (!lst.isEmpty()) {
-        stream << QString("<br/><b>%1:</b> ").arg(title);
-        int i=0;
-        foreach (const T& it, lst) {
-            QString types = "";
-            for (int j=0; j<it.types.count(); j++) {
-                types += it.standardTypes.translate(it.types[j]).toLower();
-                if (j<it.types.count()-1)
-                    types += "+";
-            }
-            stream << QString("%1 (%2)").arg(it.toString(true)).arg(types);
-            i++;
-            if (i<lst.count())
-                stream << ", ";
-        }
-        stream << ENDL;
-    }
 }

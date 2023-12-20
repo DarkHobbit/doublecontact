@@ -36,9 +36,10 @@ public:
     void updateVisibleColumns();
     enum ContactViewMode {
         Standard,
+        StandardWithQuickView, // TODO
         CompareMain,
         CompareOpposite,
-        DupSearch
+        DupSearch // TODO
     };
     // Base model implementation methods
     Qt::ItemFlags flags(const QModelIndex &index) const;
