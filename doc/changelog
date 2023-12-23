@@ -129,6 +129,7 @@ CURRENT
 * fixed call name encoding error (for build with WITH_CALLS)
 * Rows in table can be resized to contents
 * Fixed: in single-panel mode, left panel didn't stretched on entire window (was broken in 0.2.2)
+* Fixed: contact can be added to groups only in edit mode, not add
 * SMS from MPB/NBF/NBU files and MMS from NBF/NBU (NBU not checked) show and save to CSV (for build with WITH_MESSAGES)
 * Calls history from MPB files show and save to CSV (for build with WITH_CALLS)
 

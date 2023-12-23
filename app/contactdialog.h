@@ -38,7 +38,7 @@ class ContactDialog : public QDialog
 public:
     explicit ContactDialog(QWidget *parent = 0);
     ~ContactDialog();
-    void clearData();
+    void clearData(const ContactList& l);
     void setData(const ContactItem& c, const ContactList& l);
     void getData(ContactItem& c, ContactList& l);
 protected:

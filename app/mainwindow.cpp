@@ -372,7 +372,7 @@ void MainWindow::on_action_SaveAsDir_triggered()
 void MainWindow::on_action_Add_triggered()
 {
     ContactDialog* d = new ContactDialog(0);
-    d->clearData();
+    d->clearData(selectedModel->itemList());
     d->exec();
     if (d->result()==QDialog::Accepted) {
         ContactItem c;

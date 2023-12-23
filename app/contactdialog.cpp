@@ -89,7 +89,7 @@ void ContactDialog::showEvent(QShowEvent*)
     resizeEvent(0);
 }
 
-void ContactDialog::clearData()
+void ContactDialog::clearData(const ContactList& l)
 {
     setWindowTitle(tr("Add contact"));
     nameCount = phoneCount = emailCount = addrCount = imCount = 0;
@@ -116,16 +116,22 @@ void ContactDialog::clearData()
         addEmail(Email());
         setDefaultTypeList("Email", i+1, emailTypes);
     }
+    // Photo
     photo.clear();
     updatePhotoMenu();
     for (int i=0; i<_imCount; i++) {
         addIM(Messenger());
         setDefaultTypeList("IM", i+1, imTypes);
     }
+    // Addresses
     for (int i=0; i<_addrCount; i++) {
         addAddress(PostalAddress());
         setDefaultTypeList("Addr", i+1, addrTypes);
     }
+    // Groups
+    foreach(const QString& g, l.groupStat().keys())
+        ui->lwAvailableGroups->addItem(g);
+    // Resolution
     if (_width>0 && _height>0)
         resize(_width, _height);
 }
