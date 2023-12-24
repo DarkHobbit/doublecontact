@@ -125,11 +125,12 @@ Bugfix release:
 CURRENT
 * Quick View added (Ctrl+Q on panel view)
 * Global refactoring: VCardData/VMessageData ported to byte strings, common v-routines moved to separate module
-* fixed MPB error on old Qt version
-* fixed call name encoding error (for build with WITH_CALLS)
 * Rows in table can be resized to contents
+* Doubleclick can be used for groups in contact dialog and for columns in settings dialog
 * Fixed: in single-panel mode, left panel didn't stretched on entire window (was broken in 0.2.2)
 * Fixed: contact can be added to groups only in edit mode, not add
+* fixed MPB error on old Qt version
+* fixed call name encoding error (for build with WITH_CALLS)
 * SMS from MPB/NBF/NBU files and MMS from NBF/NBU (NBU not checked) show and save to CSV (for build with WITH_MESSAGES)
 * Calls history from MPB files show and save to CSV (for build with WITH_CALLS)
 

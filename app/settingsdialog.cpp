@@ -214,3 +214,17 @@ void SettingsDialog::on_btnGridColor2_clicked()
         gd.gridColor2 = d->currentColor().name();
     delete d;
 }
+
+void SettingsDialog::on_lwAvailableColumns_itemDoubleClicked(QListWidgetItem *item)
+{
+    item->setSelected(true);
+    on_btnAddCol_clicked();
+}
+
+
+void SettingsDialog::on_lwVisibleColumns_itemDoubleClicked(QListWidgetItem *item)
+{
+    item->setSelected(true);
+    on_btnDelCol_clicked();
+}
+

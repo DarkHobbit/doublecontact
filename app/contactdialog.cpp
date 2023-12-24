@@ -985,3 +985,17 @@ void ContactDialog::on_actionCopy_text_triggered()
     else if (ui->twContact->currentWidget()==ui->tabProblems)
         copyTagText(ui->twUnknownTags);
 }
+
+void ContactDialog::on_lwAvailableGroups_itemDoubleClicked(QListWidgetItem *item)
+{
+    item->setSelected(true);
+    on_btnIncludeToGroup_clicked();
+}
+
+
+void ContactDialog::on_lwContactInGroups_itemDoubleClicked(QListWidgetItem *item)
+{
+    item->setSelected(true);
+    on_btnExcludeFromGroup_clicked();
+}
+

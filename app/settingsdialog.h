@@ -2,6 +2,7 @@
 #define SETTINGSDIALOG_H
 
 #include <QDialog>
+#include <QListWidgetItem>
 #include <QStringList>
 
 #include "configmanager.h"
@@ -27,14 +28,13 @@ private slots:
     void on_btnUpCol_clicked();
     void on_btnDownCol_clicked();
     void on_cbUseSystemDateTimeFormat_clicked(bool checked);
-
     void on_cbUseSystemFontsAndColors_clicked(bool checked);
-
     void on_btnTableFont_clicked();
-
     void on_btnGridColor1_clicked();
+    void on_btnGridColor2_clicked();    
+    void on_lwAvailableColumns_itemDoubleClicked(QListWidgetItem *item);
 
-    void on_btnGridColor2_clicked();
+    void on_lwVisibleColumns_itemDoubleClicked(QListWidgetItem *item);
 
 private:
     QString _lang;

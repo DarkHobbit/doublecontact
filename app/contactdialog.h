@@ -19,6 +19,7 @@
 #include <QDateTimeEdit>
 #include <QDialog>
 #include <QGridLayout>
+#include <QListWidgetItem>
 #include <QMenu>
 #include <QResizeEvent>
 #include <QShowEvent>
@@ -116,6 +117,8 @@ private slots:
     void on_btnSaveView_clicked();
     void on_action_Remove_triggered();
     void on_actionCopy_text_triggered();
+    void on_lwAvailableGroups_itemDoubleClicked(QListWidgetItem *item);
+    void on_lwContactInGroups_itemDoubleClicked(QListWidgetItem *item);
 };
 
 #endif // CONTACTDIALOG_H
