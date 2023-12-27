@@ -98,28 +98,12 @@ TRANSLATIONS += \
     ../translations/doublecontact_uk_UA.ts \
     ../translations/doublecontact_zh_Hant.ts
 
-greaterThan(QT_MAJOR_VERSION, 4) {
-win32 {
-tr.commands = lrelease \
-    $$_PRO_FILE_
-}
-unix {
-macx {
-tr.commands = lrelease \
-    $$_PRO_FILE_
+exists( $$dirname(QMAKE_QMAKE)/lrelease-qt4 ) {
+      tr.commands = $$dirname(QMAKE_QMAKE)/lrelease-qt4  $$_PRO_FILE_
+} else:exists( $$dirname(QMAKE_QMAKE)/lrelease-qt5 ) {
+      tr.commands = $$dirname(QMAKE_QMAKE)/lrelease-qt5  $$_PRO_FILE_
 } else {
-tr.commands = lrelease-qt5 \
-    $$_PRO_FILE_
-}
-}
-} else {
-win32 {
-tr.commands = lrelease \
-    $$_PRO_FILE_
-} else {
-tr.commands = lrelease-qt4 \
-    $$_PRO_FILE_
-}
+      tr.commands = $$dirname(QMAKE_QMAKE)/lrelease  $$_PRO_FILE_
 }
     
 QMAKE_EXTRA_TARGETS += tr
