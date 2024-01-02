@@ -23,7 +23,7 @@ public:
     virtual bool detect(const QStringList &header) const;
     // Read
     virtual bool parseHeader(const QStringList& header);
-    virtual bool importRecord(const QStringList &row, ContactItem &item, QStringList &errors);
+    virtual bool importRecord(const QStringList &row, ContactItem &item, QStringList &errors, QString& fatalError);
     // Write
     virtual QStringList makeHeader();
     virtual bool exportRecord(QStringList &row, const ContactItem &item, QStringList &errors);

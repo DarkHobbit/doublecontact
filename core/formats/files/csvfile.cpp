@@ -142,7 +142,8 @@ bool CSVFile::importRecords(const QString &url, ContactList &list, bool append)
         ContactItem item;
         item.originalFormat = "CSV";
         list.originalProfile = currentProfile->name();
-        currentProfile->importRecord(rows[i], item, _errors);
+        if (!currentProfile->importRecord(rows[i], item, _errors, _fatalError))
+            return false;
         item.calculateFields();
         list << item;
     }

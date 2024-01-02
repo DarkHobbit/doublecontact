@@ -31,11 +31,10 @@ bool ExplayBM50Profile::detect(const QStringList &header) const
             && header[2]=="Middle name";
 }
 
-bool ExplayBM50Profile::importRecord(const QStringList &row, ContactItem &item, QStringList& errors)
+bool ExplayBM50Profile::importRecord(const QStringList &row, ContactItem &item, QStringList& errors, QString& fatalError)
 {
-    // TODO not all fields
     if (row.count()<13) {
-        errors << S_CSV_ROW_TOO_SHORT.arg(row.join(","));
+        fatalError = S_CSV_ROW_TOO_SHORT.arg(row.join(","));
         return false;
     }
     item.fullName = row[0];

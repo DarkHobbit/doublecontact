@@ -43,7 +43,7 @@ public:
     LineEnding lineEnding() const;
     // Read
     virtual bool parseHeader(const QStringList& header);
-    virtual bool importRecord(const QStringList& row, ContactItem& item, QStringList& errors)=0;
+    virtual bool importRecord(const QStringList& row, ContactItem& item, QStringList& errors, QString& fatalError)=0;
     // Write
     virtual bool prepareExport(const ContactList &list);
     virtual QStringList makeHeader();

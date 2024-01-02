@@ -42,11 +42,10 @@ bool OsmoProfile::parseHeader(const QStringList &header)
     return !columnIndexes.isEmpty();
 }
 
-bool OsmoProfile::importRecord(const QStringList &row, ContactItem &item, QStringList &errors)
+bool OsmoProfile::importRecord(const QStringList &row, ContactItem &item, QStringList &errors, QString& fatalError)
 {
-    // TODO m.b. need fatalError
     if (row.count()<4) {
-        errors << S_CSV_ROW_TOO_SHORT.arg(row.join(","));
+        fatalError = S_CSV_ROW_TOO_SHORT.arg(row.join(","));
         return false;
     }
     // Group

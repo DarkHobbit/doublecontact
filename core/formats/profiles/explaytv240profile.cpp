@@ -32,10 +32,10 @@ bool ExplayTV240Profile::detect(const QStringList &header) const
             && header[2]=="Home Number";
 }
 
-bool ExplayTV240Profile::importRecord(const QStringList &row, ContactItem &item, QStringList& errors)
+bool ExplayTV240Profile::importRecord(const QStringList &row, ContactItem &item, QStringList& errors, QString& fatalError)
 {
     if (row.count()<2) {
-        errors << S_CSV_ROW_TOO_SHORT.arg(row.join(","));
+        fatalError = S_CSV_ROW_TOO_SHORT.arg(row.join(","));
         return false;
     }
     item.names << row[0];
