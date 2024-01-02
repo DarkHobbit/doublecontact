@@ -63,9 +63,6 @@ private:
     void addPhone(const Phone& ph);
     void addEmail(const Email& em);
     void addAddress(const PostalAddress& addr);
-    /*
-    void setAddress(QWidget* parent, const PostalAddress& addr); // TODO if more 2 addresses will allowed, need post layout and num instead this
-    */
     void readAddress(int num, PostalAddress& addr);
     void addIM(const Messenger& im);
     // Common helpers for phone/email

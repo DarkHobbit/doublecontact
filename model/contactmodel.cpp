@@ -205,7 +205,7 @@ bool ContactModel::dropMimeData(const QMimeData *data, Qt::DropAction action,
         return false;
     if (column > 0)
          return false;
-    // TODO здесь читать другие форматы (возможно, текст)
+    // TODO here m.b. read other format (probably, text)
     BStringList encodedData = BString(data->data("text/vcard")).splitByLines();
     QStringList errors;
     VCardData d;

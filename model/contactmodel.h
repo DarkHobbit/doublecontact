@@ -36,7 +36,7 @@ public:
     void updateVisibleColumns();
     enum ContactViewMode {
         Standard,
-        StandardWithQuickView, // TODO
+        StandardWithQuickView,
         CompareMain,
         CompareOpposite,
         DupSearch // TODO

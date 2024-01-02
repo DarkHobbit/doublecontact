@@ -1222,7 +1222,6 @@ void MainWindow::on_actionFormat_phone_numbers_triggered()
     cbPhoneTemplate->addItem("+N-NNN-NNN-NN-NN");
     cbPhoneTemplate->addItem("+NNNNNNNNNNN");
     cbPhoneTemplate->setEditable(true);
-    // TODO set combobox editable
     l->addWidget(cbPhoneTemplate);
     QDialogButtonBox* bb = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
     connect(bb, SIGNAL(accepted()), d, SLOT(accept()));
