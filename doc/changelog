@@ -133,4 +133,4 @@ CURRENT
 * fixed call name encoding error (for build with WITH_CALLS)
 * SMS from MPB/NBF/NBU files and MMS from NBF/NBU (NBU not checked) show and save to CSV (for build with WITH_MESSAGES)
 * Calls history from MPB files show and save to CSV (for build with WITH_CALLS)
-
+* Added translations: Interlingue Occidental (incomplete)

@@ -89,6 +89,7 @@ TRANSLATIONS += \
     ../translations/doublecontact_de.ts \
     ../translations/doublecontact_en_GB.ts \
     ../translations/doublecontact_fr.ts \
+    ../translations/doublecontact_ie.ts \
     ../translations/doublecontact_nb_NO.ts \
     ../translations/doublecontact_nl.ts \
     ../translations/doublecontact_pl.ts \
@@ -97,6 +98,8 @@ TRANSLATIONS += \
     ../translations/doublecontact_ru_RU.ts \
     ../translations/doublecontact_uk_UA.ts \
     ../translations/doublecontact_zh_Hant.ts
+
+
 
 exists( $$dirname(QMAKE_QMAKE)/lrelease-qt4 ) {
       tr.commands = $$dirname(QMAKE_QMAKE)/lrelease-qt4  $$_PRO_FILE_
