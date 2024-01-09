@@ -22,7 +22,7 @@ public:
     ExplayTV240Profile();
     virtual bool detect(const QStringList& header) const;
     // Read
-    virtual bool importRecord(const QStringList& row, ContactItem& item, QStringList& errors, QString& fatalError);
+    virtual bool importRecord(const QStringList& row, ContactItem& item, QStringList&, QString& fatalError);
     // Write
     virtual QStringList makeHeader();
     virtual bool exportRecord(QStringList& row, const ContactItem& item, QStringList& errors);
