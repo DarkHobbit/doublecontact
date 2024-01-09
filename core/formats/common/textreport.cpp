@@ -51,7 +51,7 @@ void TextReport::exportRecord(const ContactItem& item, RepItems& out, const QStr
 void TextReport::exportString(RepItems &out, const QString &field, const QString &title)
 {
     if (!field.isEmpty())
-        out << QPair(title, field);
+        out << QPair<QString, QString>(title, field); // old gcc 4.4.0 require <...>
 }
 
 template<class T>
@@ -79,6 +79,6 @@ void TextReport::exportTypedItems(RepItems &out, const QList<T> &lst, const QStr
             if (i<lst.count())
                 content += itemSeparator;
         }
-        out << QPair(title, content);
+        out << QPair<QString, QString>(title, content);
     }
 }
