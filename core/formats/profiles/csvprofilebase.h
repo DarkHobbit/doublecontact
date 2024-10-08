@@ -13,6 +13,7 @@
 #ifndef CSVPROFILEBASE_H
 #define CSVPROFILEBASE_H
 
+#include <QMap>
 #include <QString>
 #include <QStringList>
 #include "../../contactlist.h"
@@ -54,12 +55,20 @@ protected:
     bool _hasHeader, _hasBOM;
     QuotingPolicy _quotingPolicy;
     LineEnding _lineEnding;
+    QMap<QString, int> columnIndexes;
     // Helpers
     bool present(const QStringList &row, int index);
+    bool present(const QStringList &row, const QString& colName);
+    QString value(const QStringList &row, const QString& colName);
     bool condAddPhone(const QStringList &row, ContactItem &item, int index, const QString& phType);
     bool condReadValue(const QStringList &row, int index, QString& dest);
     bool readWarning(const QStringList &row, int index, QStringList& errors);
     QString saveNamePart(const ContactItem &item, int nameIndex);
+    void nextRow(QStringList& row);
+public:
+    QList<QStringList> auxRows; // for multi-line profiles
+    // (when one contact may generate some output rows)
+    // It's public. It's against OOP canon but more fast (no copy many strings each records)
 };
 
 // Macros for use exclusively in exportRecord(...) methods

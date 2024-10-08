@@ -253,19 +253,19 @@ Er du sikker på at du vil godta dette sertifikatet uansett?</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="156"/>
-        <location filename="../app/contactdialog.cpp" line="723"/>
+        <location filename="../app/contactdialog.cpp" line="710"/>
         <source>name</source>
         <translation>navn</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="161"/>
-        <location filename="../app/contactdialog.cpp" line="725"/>
+        <location filename="../app/contactdialog.cpp" line="712"/>
         <source>phone</source>
         <translation>telefon</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="166"/>
-        <location filename="../app/contactdialog.cpp" line="727"/>
+        <location filename="../app/contactdialog.cpp" line="714"/>
         <source>email</source>
         <translation>e-postadresse</translation>
     </message>
@@ -447,42 +447,42 @@ Er du sikker på at du vil godta dette sertifikatet uansett?</translation>
         <translation>Legg til kontakt</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="135"/>
+        <location filename="../app/contactdialog.cpp" line="141"/>
         <source>Edit contact</source>
         <translation>Rediger kontakt</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="737"/>
+        <location filename="../app/contactdialog.cpp" line="724"/>
         <source>Phone type</source>
         <translation>Telefontype</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="739"/>
+        <location filename="../app/contactdialog.cpp" line="726"/>
         <source>Email type</source>
         <translation>E-posttype</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="741"/>
+        <location filename="../app/contactdialog.cpp" line="728"/>
         <source>Address type</source>
         <translation>Adressetype</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="743"/>
+        <location filename="../app/contactdialog.cpp" line="730"/>
         <source>IM type</source>
         <translation>Lynmeldingstype</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="816"/>
+        <location filename="../app/contactdialog.cpp" line="803"/>
         <source>Open image file</source>
         <translation>Åpne bildefil</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="848"/>
+        <location filename="../app/contactdialog.cpp" line="835"/>
         <source>Save image file</source>
         <translation>Lagre bildefil</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="866"/>
+        <location filename="../app/contactdialog.cpp" line="853"/>
         <source>Contact photo</source>
         <translation>Kontaktbilde</translation>
     </message>
@@ -1158,44 +1158,44 @@ Er du sikker på at du vil godta dette sertifikatet uansett?</translation>
         <translation>Ctrl+C</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="198"/>
+        <location filename="../app/mainwindow.cpp" line="199"/>
         <source>Only one of two files can be dropped to program window</source>
         <translation>Kun én av to filer kan slippes i programvinduet</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="294"/>
+        <location filename="../app/mainwindow.cpp" line="295"/>
         <source>Open contact file</source>
         <translation>Åpne kontaktfil</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="311"/>
+        <location filename="../app/mainwindow.cpp" line="312"/>
         <source>Open VCF Directory</source>
         <translation>Åpne VCF-mappe</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="335"/>
+        <location filename="../app/mainwindow.cpp" line="336"/>
         <source>Save contact file</source>
         <translation>Lagre kontaktfil</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="351"/>
+        <location filename="../app/mainwindow.cpp" line="352"/>
         <source>Save VCF Directory</source>
         <translation>Lagre VCF-mappe</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="360"/>
+        <location filename="../app/mainwindow.cpp" line="361"/>
         <source>Directory exists. Are You really want rewrite it?</source>
         <translation>Mappen finnes. Ønsker du virkelig å skrive den på nytt?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="409"/>
+        <location filename="../app/mainwindow.cpp" line="410"/>
         <source>Are You really want to edit more than one record?
 Only some fields can this edited in this mode</source>
         <translation>Er du sikker på at du ønsker å redigere mer enn én oppføring?
 Kun noen felter kan redigeres i dette moduset</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="525"/>
+        <location filename="../app/mainwindow.cpp" line="526"/>
         <source>Compare mode requires show two panels and load contact lists in both panels</source>
         <translation type="unfinished">Sammenligningsmodus krever visning av to paneler og innlasting av kontaktlister i begge paneler</translation>
     </message>
@@ -1204,12 +1204,12 @@ Kun noen felter kan redigeres i dette moduset</translation>
         <translation type="obsolete">Gruppeoperasjon ikke implementert, velg én oppflring</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="597"/>
+        <location filename="../app/mainwindow.cpp" line="598"/>
         <source> (directory)</source>
         <translation> (mappe)</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="714"/>
+        <location filename="../app/mainwindow.cpp" line="716"/>
         <source>Records: %1</source>
         <translation>Oppføringer: %1</translation>
     </message>
@@ -1218,12 +1218,12 @@ Kun noen felter kan redigeres i dette moduset</translation>
         <translation type="obsolete">Modus: </translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="720"/>
+        <location filename="../app/mainwindow.cpp" line="722"/>
         <source>two panels</source>
         <translation>to paneler</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="720"/>
+        <location filename="../app/mainwindow.cpp" line="722"/>
         <source>one panel</source>
         <translation>ett panel</translation>
     </message>
@@ -1236,69 +1236,69 @@ Kun noen felter kan redigeres i dette moduset</translation>
         <translation type="obsolete">usortert</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="724"/>
+        <location filename="../app/mainwindow.cpp" line="726"/>
         <source>simple editing</source>
         <translation>enkel redigering</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="728"/>
+        <location filename="../app/mainwindow.cpp" line="730"/>
         <source>compare</source>
         <translation>sammenlign</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="805"/>
+        <location filename="../app/mainwindow.cpp" line="825"/>
         <source>&apos;%1&apos; was changed.
 Save changes?</source>
         <translation>&quot;%1&quot; ble endret.
 Lagre endringer?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="905"/>
+        <location filename="../app/mainwindow.cpp" line="925"/>
         <source>Restart program to apply language change</source>
         <translation>Start programmet på nytt for å legge til programspråk</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="949"/>
+        <location filename="../app/mainwindow.cpp" line="969"/>
         <source>Two panels and compare mode needed for this operation</source>
         <translation>To paneler og sammenligningsmodus trengs for denne handlingen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="964"/>
+        <location filename="../app/mainwindow.cpp" line="984"/>
         <source>Left item</source>
         <translation>Venstre element</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="964"/>
+        <location filename="../app/mainwindow.cpp" line="984"/>
         <source>Right item</source>
         <translation>Høyre element</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="991"/>
+        <location filename="../app/mainwindow.cpp" line="1011"/>
         <source>Strongly two records on current panel must be selected for this operation</source>
         <translation>To dataoppføringer på gjeldende panel må være valgt sterkt for denne operasjonen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="997"/>
+        <location filename="../app/mainwindow.cpp" line="1017"/>
         <source>Item 1</source>
         <translation>Element 1</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="997"/>
+        <location filename="../app/mainwindow.cpp" line="1017"/>
         <source>Item 2</source>
         <translation>Element 2</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1065"/>
+        <location filename="../app/mainwindow.cpp" line="1085"/>
         <source>Operation requires show two panels</source>
         <translation type="unfinished">Operasjonen krever visning av to paneler</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1098"/>
+        <location filename="../app/mainwindow.cpp" line="1118"/>
         <source>Statitics</source>
         <translation>Statistikk</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1105"/>
+        <location filename="../app/mainwindow.cpp" line="1125"/>
         <source>Report file</source>
         <translation>Rapportfil</translation>
     </message>
@@ -2038,12 +2038,12 @@ lagret som mobil</translation>
         <translation>Nummer %1 ikke funnet i adressebok. Opprinnelig navn (%2) lagret</translation>
     </message>
     <message>
-        <location filename="../core/formats/profiles/csvprofilebase.h" line="21"/>
+        <location filename="../core/formats/profiles/csvprofilebase.h" line="22"/>
         <source>CSV row too short for this profile at line %1</source>
         <translation>CSV-rad for kort for denne profilen på linje %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/profiles/explaybm50profile.cpp" line="91"/>
+        <location filename="../core/formats/profiles/explaybm50profile.cpp" line="90"/>
         <source>Name prefixes merged with last name (%1)</source>
         <translation>Navne-prefikser flettet med etternavn (%1)</translation>
     </message>
@@ -2061,22 +2061,22 @@ lagret som mobil</translation>
         <translation>Ingen</translation>
     </message>
     <message>
-        <location filename="../core/formats/profiles/osmoprofile.cpp" line="69"/>
+        <location filename="../core/formats/profiles/osmoprofile.cpp" line="61"/>
         <source>Name day loaded as anniversary, contact %1</source>
         <translation>Navnedag innlastet som jubileum, kontakt %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/profiles/osmoprofile.cpp" line="89"/>
+        <location filename="../core/formats/profiles/osmoprofile.cpp" line="81"/>
         <source>Department loaded as Job title, contact %1</source>
         <translation>Avdeling innlastet som jobbtittel, kontakt %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/profiles/osmoprofile.cpp" line="189"/>
+        <location filename="../core/formats/profiles/osmoprofile.cpp" line="181"/>
         <source>Anniversary saved as name day, contact %1</source>
         <translation>Jubileum lagret som navnedag, kontakt %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/profiles/osmoprofile.cpp" line="208"/>
+        <location filename="../core/formats/profiles/osmoprofile.cpp" line="200"/>
         <source>Job title saved as Department, contact %1</source>
         <translation>Jobbtittel lagret som avdeling, kontakt %1</translation>
     </message>
@@ -2788,6 +2788,16 @@ Read %3 bytes, %4 expected</source>
     <message>
         <location filename="../model/recentlist.h" line="21"/>
         <source>Clear recent list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/formats/profiles/sylpheedprofile.cpp" line="19"/>
+        <source>Sylpheed Email Client</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/formats/profiles/sylpheedprofile.cpp" line="73"/>
+        <source>Record without emails with not saved: </source>
         <translation type="unfinished"></translation>
     </message>
 </context>

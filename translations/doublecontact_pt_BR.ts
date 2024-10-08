@@ -249,19 +249,19 @@ Deseja aceitar o certificado ?</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="156"/>
-        <location filename="../app/contactdialog.cpp" line="723"/>
+        <location filename="../app/contactdialog.cpp" line="710"/>
         <source>name</source>
         <translation>nome</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="161"/>
-        <location filename="../app/contactdialog.cpp" line="725"/>
+        <location filename="../app/contactdialog.cpp" line="712"/>
         <source>phone</source>
         <translation>telefone</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="166"/>
-        <location filename="../app/contactdialog.cpp" line="727"/>
+        <location filename="../app/contactdialog.cpp" line="714"/>
         <source>email</source>
         <translation>e-mail</translation>
     </message>
@@ -435,42 +435,42 @@ Deseja aceitar o certificado ?</translation>
         <translation>Adicionar contato</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="135"/>
+        <location filename="../app/contactdialog.cpp" line="141"/>
         <source>Edit contact</source>
         <translation>Editar contato</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="737"/>
+        <location filename="../app/contactdialog.cpp" line="724"/>
         <source>Phone type</source>
         <translation>Tipo de Telefone</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="739"/>
+        <location filename="../app/contactdialog.cpp" line="726"/>
         <source>Email type</source>
         <translation>Tipo de E-mail</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="741"/>
+        <location filename="../app/contactdialog.cpp" line="728"/>
         <source>Address type</source>
         <translation>Tipo de endereço</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="743"/>
+        <location filename="../app/contactdialog.cpp" line="730"/>
         <source>IM type</source>
         <translation>Tipo IM</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="816"/>
+        <location filename="../app/contactdialog.cpp" line="803"/>
         <source>Open image file</source>
         <translation>Abrir arquivo de imagem</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="848"/>
+        <location filename="../app/contactdialog.cpp" line="835"/>
         <source>Save image file</source>
         <translation>Salvar arquivo de imagem</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="866"/>
+        <location filename="../app/contactdialog.cpp" line="853"/>
         <source>Contact photo</source>
         <translation>Foto de contato</translation>
     </message>
@@ -1110,129 +1110,129 @@ Deseja aceitar o certificado ?</translation>
         <translation type="unfinished">Ctrl+C</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="198"/>
+        <location filename="../app/mainwindow.cpp" line="199"/>
         <source>Only one of two files can be dropped to program window</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="294"/>
+        <location filename="../app/mainwindow.cpp" line="295"/>
         <source>Open contact file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="311"/>
+        <location filename="../app/mainwindow.cpp" line="312"/>
         <source>Open VCF Directory</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="335"/>
+        <location filename="../app/mainwindow.cpp" line="336"/>
         <source>Save contact file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="351"/>
+        <location filename="../app/mainwindow.cpp" line="352"/>
         <source>Save VCF Directory</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="360"/>
+        <location filename="../app/mainwindow.cpp" line="361"/>
         <source>Directory exists. Are You really want rewrite it?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="409"/>
+        <location filename="../app/mainwindow.cpp" line="410"/>
         <source>Are You really want to edit more than one record?
 Only some fields can this edited in this mode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="525"/>
+        <location filename="../app/mainwindow.cpp" line="526"/>
         <source>Compare mode requires show two panels and load contact lists in both panels</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="597"/>
+        <location filename="../app/mainwindow.cpp" line="598"/>
         <source> (directory)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="714"/>
+        <location filename="../app/mainwindow.cpp" line="716"/>
         <source>Records: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="720"/>
+        <location filename="../app/mainwindow.cpp" line="722"/>
         <source>two panels</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="720"/>
+        <location filename="../app/mainwindow.cpp" line="722"/>
         <source>one panel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="724"/>
+        <location filename="../app/mainwindow.cpp" line="726"/>
         <source>simple editing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="728"/>
+        <location filename="../app/mainwindow.cpp" line="730"/>
         <source>compare</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="805"/>
+        <location filename="../app/mainwindow.cpp" line="825"/>
         <source>&apos;%1&apos; was changed.
 Save changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="905"/>
+        <location filename="../app/mainwindow.cpp" line="925"/>
         <source>Restart program to apply language change</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="949"/>
+        <location filename="../app/mainwindow.cpp" line="969"/>
         <source>Two panels and compare mode needed for this operation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="964"/>
+        <location filename="../app/mainwindow.cpp" line="984"/>
         <source>Left item</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="964"/>
+        <location filename="../app/mainwindow.cpp" line="984"/>
         <source>Right item</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="991"/>
+        <location filename="../app/mainwindow.cpp" line="1011"/>
         <source>Strongly two records on current panel must be selected for this operation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="997"/>
+        <location filename="../app/mainwindow.cpp" line="1017"/>
         <source>Item 1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="997"/>
+        <location filename="../app/mainwindow.cpp" line="1017"/>
         <source>Item 2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1065"/>
+        <location filename="../app/mainwindow.cpp" line="1085"/>
         <source>Operation requires show two panels</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1098"/>
+        <location filename="../app/mainwindow.cpp" line="1118"/>
         <source>Statitics</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1105"/>
+        <location filename="../app/mainwindow.cpp" line="1125"/>
         <source>Report file</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1869,12 +1869,12 @@ line %3, col %4
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/profiles/csvprofilebase.h" line="21"/>
+        <location filename="../core/formats/profiles/csvprofilebase.h" line="22"/>
         <source>CSV row too short for this profile at line %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/profiles/explaybm50profile.cpp" line="91"/>
+        <location filename="../core/formats/profiles/explaybm50profile.cpp" line="90"/>
         <source>Name prefixes merged with last name (%1)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1891,22 +1891,22 @@ line %3, col %4
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/profiles/osmoprofile.cpp" line="69"/>
+        <location filename="../core/formats/profiles/osmoprofile.cpp" line="61"/>
         <source>Name day loaded as anniversary, contact %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/profiles/osmoprofile.cpp" line="89"/>
+        <location filename="../core/formats/profiles/osmoprofile.cpp" line="81"/>
         <source>Department loaded as Job title, contact %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/profiles/osmoprofile.cpp" line="189"/>
+        <location filename="../core/formats/profiles/osmoprofile.cpp" line="181"/>
         <source>Anniversary saved as name day, contact %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/profiles/osmoprofile.cpp" line="208"/>
+        <location filename="../core/formats/profiles/osmoprofile.cpp" line="200"/>
         <source>Job title saved as Department, contact %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2584,6 +2584,16 @@ Read %3 bytes, %4 expected</source>
     <message>
         <location filename="../model/recentlist.h" line="21"/>
         <source>Clear recent list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/formats/profiles/sylpheedprofile.cpp" line="19"/>
+        <source>Sylpheed Email Client</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/formats/profiles/sylpheedprofile.cpp" line="73"/>
+        <source>Record without emails with not saved: </source>
         <translation type="unfinished"></translation>
     </message>
 </context>

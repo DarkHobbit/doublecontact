@@ -35,13 +35,6 @@ bool OsmoProfile::detect(const QStringList &header) const
 
 }
 
-bool OsmoProfile::parseHeader(const QStringList &header)
-{
-    foreach(const QString& col, header)
-        columnIndexes[col] = header.indexOf(col);
-    return !columnIndexes.isEmpty();
-}
-
 bool OsmoProfile::importRecord(const QStringList &row, ContactItem &item, QStringList &errors, QString& fatalError)
 {
     if (row.count()<4) {
@@ -335,22 +328,6 @@ bool OsmoProfile::exportRecord(QStringList &row, const ContactItem &item, QStrin
     // Check other lost fields
     LOSS_DATA(S_PHOTO, !item.photo.isEmpty());
     return true;
-}
-
-bool OsmoProfile::present(const QStringList &row, const QString &colName)
-{
-    if (columnIndexes.contains(colName))
-        return CSVProfileBase::present(row, columnIndexes[colName]);
-    else
-        return false;
-}
-
-QString OsmoProfile::value(const QStringList &row, const QString &colName)
-{
-    if (present(row, colName))
-        return row[columnIndexes[colName]];
-    else
-        return "";
 }
 
 QStringList OsmoProfile::makeHeader()

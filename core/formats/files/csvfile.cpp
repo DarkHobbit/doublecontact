@@ -19,6 +19,7 @@
 #include "../profiles/explaytv240profile.h"
 #include "../profiles/genericcsvprofile.h"
 #include "../profiles/osmoprofile.h"
+#include "../profiles/sylpheedprofile.h"
 
 CSVFile::CSVFile()
     :FileFormat(), currentProfile(0),
@@ -28,6 +29,7 @@ CSVFile::CSVFile()
     profiles << new ExplayTV240Profile;
     profiles << new GenericCSVProfile;
     profiles << new OsmoProfile;
+    profiles << new SylpheedProfile;
 }
 
 CSVFile::~CSVFile()
@@ -164,8 +166,14 @@ bool CSVFile::exportRecords(const QString &url, ContactList &list)
     QList<QStringList> rows;
     foreach (const ContactItem& item, list) {
         QStringList row;
+        currentProfile->auxRows.clear();
         currentProfile->exportRecord(row, item, _errors);
-        rows << row;
+        // for multi-line profiles
+        foreach (const QStringList& nextRow, currentProfile->auxRows) {
+            rows << nextRow;
+        }
+        if (!row.isEmpty())
+            rows << row;
     }
     if (!openFile(url, QIODevice::WriteOnly))
         return false;

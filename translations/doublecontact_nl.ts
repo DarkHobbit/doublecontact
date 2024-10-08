@@ -309,19 +309,19 @@ Wilt u dit certificaat tóch accepteren?</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="156"/>
-        <location filename="../app/contactdialog.cpp" line="723"/>
+        <location filename="../app/contactdialog.cpp" line="710"/>
         <source>name</source>
         <translation>naam</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="161"/>
-        <location filename="../app/contactdialog.cpp" line="725"/>
+        <location filename="../app/contactdialog.cpp" line="712"/>
         <source>phone</source>
         <translation>telefoonnummer</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="166"/>
-        <location filename="../app/contactdialog.cpp" line="727"/>
+        <location filename="../app/contactdialog.cpp" line="714"/>
         <source>email</source>
         <translation>e-mailadres</translation>
     </message>
@@ -527,42 +527,42 @@ Wilt u dit certificaat tóch accepteren?</translation>
         <translation>Contactpersoon toevoegen</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="135"/>
+        <location filename="../app/contactdialog.cpp" line="141"/>
         <source>Edit contact</source>
         <translation>Contactpersoon bewerken</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="737"/>
+        <location filename="../app/contactdialog.cpp" line="724"/>
         <source>Phone type</source>
         <translation>Telefoontype</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="739"/>
+        <location filename="../app/contactdialog.cpp" line="726"/>
         <source>Email type</source>
         <translation>E-mail-type</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="741"/>
+        <location filename="../app/contactdialog.cpp" line="728"/>
         <source>Address type</source>
         <translation>Soort adres</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="743"/>
+        <location filename="../app/contactdialog.cpp" line="730"/>
         <source>IM type</source>
         <translation>Soort IM</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="816"/>
+        <location filename="../app/contactdialog.cpp" line="803"/>
         <source>Open image file</source>
         <translation>Afbeeldingsbestand openen</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="848"/>
+        <location filename="../app/contactdialog.cpp" line="835"/>
         <source>Save image file</source>
         <translation>Afbeeldingsbestand opslaan</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="866"/>
+        <location filename="../app/contactdialog.cpp" line="853"/>
         <source>Contact photo</source>
         <translation>Contactpersoonfoto</translation>
     </message>
@@ -1242,32 +1242,32 @@ Wilt u dit certificaat tóch accepteren?</translation>
         <translation>Ctrl+C</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="294"/>
+        <location filename="../app/mainwindow.cpp" line="295"/>
         <source>Open contact file</source>
         <translation>Contactpersoonbestand openen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="311"/>
+        <location filename="../app/mainwindow.cpp" line="312"/>
         <source>Open VCF Directory</source>
         <translation>VCF-map openen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="335"/>
+        <location filename="../app/mainwindow.cpp" line="336"/>
         <source>Save contact file</source>
         <translation>Contactpersoonbestand opslaan</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="351"/>
+        <location filename="../app/mainwindow.cpp" line="352"/>
         <source>Save VCF Directory</source>
         <translation>VCF-map opslaan</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="360"/>
+        <location filename="../app/mainwindow.cpp" line="361"/>
         <source>Directory exists. Are You really want rewrite it?</source>
         <translation>De map bestaat al. Weet u zeker dat u hem wilt overschrijven?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="409"/>
+        <location filename="../app/mainwindow.cpp" line="410"/>
         <source>Are You really want to edit more than one record?
 Only some fields can this edited in this mode</source>
         <translation>Weet u zeker dat u meer dan één item wilt wijzigen?
@@ -1278,7 +1278,7 @@ In deze modus kan slechts een beperkt aantal velden worden gewijzigd</translatio
         <translation type="obsolete">Weet u zeker u de geselecteerde items wilt verwijderen?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="525"/>
+        <location filename="../app/mainwindow.cpp" line="526"/>
         <source>Compare mode requires show two panels and load contact lists in both panels</source>
         <translation>Om de vergelijkingsmodus te kunnen gebruiken moet u de twee panelen-modus inschakelen en lijsten laden in beide panelen</translation>
     </message>
@@ -1291,7 +1291,7 @@ In deze modus kan slechts een beperkt aantal velden worden gewijzigd</translatio
         <translation type="obsolete">Groepsbewerkingen zijn nog niet geïmplementeerd; selecteer één item</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="597"/>
+        <location filename="../app/mainwindow.cpp" line="598"/>
         <source> (directory)</source>
         <translation> (map)</translation>
     </message>
@@ -1300,12 +1300,12 @@ In deze modus kan slechts een beperkt aantal velden worden gewijzigd</translatio
         <translation type="obsolete">Dubbele contactpersoon - %1</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="198"/>
+        <location filename="../app/mainwindow.cpp" line="199"/>
         <source>Only one of two files can be dropped to program window</source>
         <translation>Slechts één van de twee bestanden kan worden versleept naar het applicatievenster</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="714"/>
+        <location filename="../app/mainwindow.cpp" line="716"/>
         <source>Records: %1</source>
         <translation>Items: %1</translation>
     </message>
@@ -1314,12 +1314,12 @@ In deze modus kan slechts een beperkt aantal velden worden gewijzigd</translatio
         <translation type="obsolete">Modus: </translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="720"/>
+        <location filename="../app/mainwindow.cpp" line="722"/>
         <source>two panels</source>
         <translation>twee panelen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="720"/>
+        <location filename="../app/mainwindow.cpp" line="722"/>
         <source>one panel</source>
         <translation>één paneel</translation>
     </message>
@@ -1332,69 +1332,69 @@ In deze modus kan slechts een beperkt aantal velden worden gewijzigd</translatio
         <translation type="obsolete">ongesorteerd</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="724"/>
+        <location filename="../app/mainwindow.cpp" line="726"/>
         <source>simple editing</source>
         <translation>simpele bewerking</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="728"/>
+        <location filename="../app/mainwindow.cpp" line="730"/>
         <source>compare</source>
         <translation>vergelijken</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="805"/>
+        <location filename="../app/mainwindow.cpp" line="825"/>
         <source>&apos;%1&apos; was changed.
 Save changes?</source>
         <translation>‘%1’ is gewijzigd.
 Wilt u de wijzigingen opslaan?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="905"/>
+        <location filename="../app/mainwindow.cpp" line="925"/>
         <source>Restart program to apply language change</source>
         <translation>Herstart de app om de taalwijziging door te voeren</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="949"/>
+        <location filename="../app/mainwindow.cpp" line="969"/>
         <source>Two panels and compare mode needed for this operation</source>
         <translation>De twee panelen- en vergelijkingsmodus zijn vereist voor deze bewerking</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="964"/>
+        <location filename="../app/mainwindow.cpp" line="984"/>
         <source>Left item</source>
         <translation>Linkeritem</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="964"/>
+        <location filename="../app/mainwindow.cpp" line="984"/>
         <source>Right item</source>
         <translation>Rechteritem</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="991"/>
+        <location filename="../app/mainwindow.cpp" line="1011"/>
         <source>Strongly two records on current panel must be selected for this operation</source>
         <translation>Twee items in het huidige paneel dienen te worden geselecteerd voor deze bewerking</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="997"/>
+        <location filename="../app/mainwindow.cpp" line="1017"/>
         <source>Item 1</source>
         <translation>Item 1</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="997"/>
+        <location filename="../app/mainwindow.cpp" line="1017"/>
         <source>Item 2</source>
         <translation>Item 2</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1065"/>
+        <location filename="../app/mainwindow.cpp" line="1085"/>
         <source>Operation requires show two panels</source>
         <translation>Deze bewerking vereist twee panelen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1098"/>
+        <location filename="../app/mainwindow.cpp" line="1118"/>
         <source>Statitics</source>
         <translation>Statistieken</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1105"/>
+        <location filename="../app/mainwindow.cpp" line="1125"/>
         <source>Report file</source>
         <translation>Rapportbestand</translation>
     </message>
@@ -2590,12 +2590,12 @@ De gegevens zullen verloren gaan</translation>
         <translation type="obsolete">Weet u zeker dat u de geselecteerde items wilt verwijderen?</translation>
     </message>
     <message>
-        <location filename="../core/formats/profiles/csvprofilebase.h" line="21"/>
+        <location filename="../core/formats/profiles/csvprofilebase.h" line="22"/>
         <source>CSV row too short for this profile at line %1</source>
         <translation>De CSV-regel is te kort voor dit profiel op regel %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/profiles/explaybm50profile.cpp" line="91"/>
+        <location filename="../core/formats/profiles/explaybm50profile.cpp" line="90"/>
         <source>Name prefixes merged with last name (%1)</source>
         <translation>Voorvoegsels samengevoegd met achternaam (%1)</translation>
     </message>
@@ -2613,22 +2613,22 @@ De gegevens zullen verloren gaan</translation>
         <translation>Geen</translation>
     </message>
     <message>
-        <location filename="../core/formats/profiles/osmoprofile.cpp" line="69"/>
+        <location filename="../core/formats/profiles/osmoprofile.cpp" line="61"/>
         <source>Name day loaded as anniversary, contact %1</source>
         <translation>Naam van dag die wordt geladen als jubileum, contactpersoon %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/profiles/osmoprofile.cpp" line="89"/>
+        <location filename="../core/formats/profiles/osmoprofile.cpp" line="81"/>
         <source>Department loaded as Job title, contact %1</source>
         <translation>Afdeling die wordt geladen als werktitel, contactpersoon %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/profiles/osmoprofile.cpp" line="189"/>
+        <location filename="../core/formats/profiles/osmoprofile.cpp" line="181"/>
         <source>Anniversary saved as name day, contact %1</source>
         <translation>Jubileum opgeslagen als naam van dag, contactpersoon %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/profiles/osmoprofile.cpp" line="208"/>
+        <location filename="../core/formats/profiles/osmoprofile.cpp" line="200"/>
         <source>Job title saved as Department, contact %1</source>
         <translation>Werktitel opgeslagen als afdeling, contactpersoon %1</translation>
     </message>
@@ -2913,6 +2913,16 @@ Uitgelezen: %3 bytes - Verwacht: %4 bytes</translation>
         <location filename="../core/extra.h" line="38"/>
         <source>Save attachment</source>
         <translation>Bijlage opslaan</translation>
+    </message>
+    <message>
+        <location filename="../core/formats/profiles/sylpheedprofile.cpp" line="19"/>
+        <source>Sylpheed Email Client</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/formats/profiles/sylpheedprofile.cpp" line="73"/>
+        <source>Record without emails with not saved: </source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -42,9 +42,13 @@ CSVProfileBase::LineEnding CSVProfileBase::lineEnding() const
     return _lineEnding;
 }
 
-bool CSVProfileBase::parseHeader(const QStringList&)
+bool CSVProfileBase::parseHeader(const QStringList& header)
 {
-    return true;
+    // Reference implementation for simple cases (Osmo)
+    // but may be reimplemented
+    foreach(const QString& col, header)
+        columnIndexes[col] = header.indexOf(col);
+    return !columnIndexes.isEmpty();
 }
 
 bool CSVProfileBase::prepareExport(const ContactList&)
@@ -60,6 +64,22 @@ QStringList CSVProfileBase::makeHeader()
 bool CSVProfileBase::present(const QStringList &row, int index)
 {
     return row.count()>index && !row[index].isEmpty();
+}
+
+bool CSVProfileBase::present(const QStringList &row, const QString &colName)
+{
+    if (columnIndexes.contains(colName))
+        return present(row, columnIndexes[colName]);
+    else
+        return false;
+}
+
+QString CSVProfileBase::value(const QStringList &row, const QString &colName)
+{
+    if (present(row, colName))
+        return row[columnIndexes[colName]];
+    else
+        return "";
 }
 
 bool CSVProfileBase::condAddPhone(const QStringList &row, ContactItem &item, int index, const QString &phType)
@@ -98,5 +118,11 @@ QString CSVProfileBase::saveNamePart(const ContactItem &item, int nameIndex)
         return item.names[nameIndex];
     else
         return "";
+}
+
+void CSVProfileBase::nextRow(QStringList &row)
+{
+    auxRows << row;
+    row.clear();
 }
 
