@@ -178,34 +178,39 @@ Voulez-vous accepter ce certificat quand même ?</translation>
         <translation>Fusion d&apos;éléments</translation>
     </message>
     <message>
-        <location filename="../app/comparedialog.cpp" line="67"/>
+        <location filename="../app/comparedialog.cpp" line="68"/>
         <source>Names</source>
         <translation>Noms</translation>
     </message>
     <message>
-        <location filename="../app/comparedialog.cpp" line="68"/>
+        <location filename="../app/comparedialog.cpp" line="69"/>
         <source>Phones</source>
         <translation>Téléphones</translation>
     </message>
     <message>
-        <location filename="../app/comparedialog.cpp" line="69"/>
+        <location filename="../app/comparedialog.cpp" line="70"/>
         <source>Emails</source>
         <translation>Courriels</translation>
     </message>
     <message>
-        <location filename="../app/comparedialog.cpp" line="71"/>
+        <location filename="../app/comparedialog.cpp" line="72"/>
         <source>Anniversaries</source>
         <translation>Anniversaires</translation>
     </message>
     <message>
-        <location filename="../app/comparedialog.cpp" line="73"/>
+        <location filename="../app/comparedialog.cpp" line="74"/>
         <source>Sort string</source>
         <translation>Chaîne de tri</translation>
     </message>
     <message>
-        <location filename="../app/comparedialog.cpp" line="77"/>
+        <location filename="../app/comparedialog.cpp" line="78"/>
         <source>Addresses</source>
         <translation>Adresses</translation>
+    </message>
+    <message>
+        <location filename="../app/comparedialog.cpp" line="85"/>
+        <source>Remove right record after merge</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1215,42 +1220,42 @@ Enregistrer les modifications ?</translation>
         <translation>L&apos;affichage des deux panneaux et le mode de comparaison sont nécessaires pour cette opération</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="984"/>
+        <location filename="../app/mainwindow.cpp" line="985"/>
         <source>Left item</source>
         <translation>Élément à gauche</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="984"/>
+        <location filename="../app/mainwindow.cpp" line="985"/>
         <source>Right item</source>
         <translation>Élément à droite</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1011"/>
+        <location filename="../app/mainwindow.cpp" line="1018"/>
         <source>Strongly two records on current panel must be selected for this operation</source>
         <translation>Deux enregistrements fortement liés doivent être sélectionnés dans ce panneau pour cette opération</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1017"/>
+        <location filename="../app/mainwindow.cpp" line="1025"/>
         <source>Item 1</source>
         <translation>Élément 1</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1017"/>
+        <location filename="../app/mainwindow.cpp" line="1025"/>
         <source>Item 2</source>
         <translation>Élément 2</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1085"/>
+        <location filename="../app/mainwindow.cpp" line="1098"/>
         <source>Operation requires show two panels</source>
         <translation>Cette opération nécessite l&apos;affichage des deux panneaux</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1118"/>
+        <location filename="../app/mainwindow.cpp" line="1131"/>
         <source>Statitics</source>
         <translation>Statistiques</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1125"/>
+        <location filename="../app/mainwindow.cpp" line="1138"/>
         <source>Report file</source>
         <translation>Fichier de rapport</translation>
     </message>

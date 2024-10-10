@@ -182,34 +182,39 @@ Er du sikker på at du vil godta dette sertifikatet uansett?</translation>
         <translation>Elementfletting</translation>
     </message>
     <message>
-        <location filename="../app/comparedialog.cpp" line="67"/>
+        <location filename="../app/comparedialog.cpp" line="68"/>
         <source>Names</source>
         <translation>Navn</translation>
     </message>
     <message>
-        <location filename="../app/comparedialog.cpp" line="68"/>
+        <location filename="../app/comparedialog.cpp" line="69"/>
         <source>Phones</source>
         <translation>Telefoner</translation>
     </message>
     <message>
-        <location filename="../app/comparedialog.cpp" line="69"/>
+        <location filename="../app/comparedialog.cpp" line="70"/>
         <source>Emails</source>
         <translation>E-postadresser</translation>
     </message>
     <message>
-        <location filename="../app/comparedialog.cpp" line="71"/>
+        <location filename="../app/comparedialog.cpp" line="72"/>
         <source>Anniversaries</source>
         <translation>Jubileum</translation>
     </message>
     <message>
-        <location filename="../app/comparedialog.cpp" line="73"/>
+        <location filename="../app/comparedialog.cpp" line="74"/>
         <source>Sort string</source>
         <translation>Sorter streng</translation>
     </message>
     <message>
-        <location filename="../app/comparedialog.cpp" line="77"/>
+        <location filename="../app/comparedialog.cpp" line="78"/>
         <source>Addresses</source>
         <translation>Adresser</translation>
+    </message>
+    <message>
+        <location filename="../app/comparedialog.cpp" line="85"/>
+        <source>Remove right record after merge</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1263,42 +1268,42 @@ Lagre endringer?</translation>
         <translation>To paneler og sammenligningsmodus trengs for denne handlingen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="984"/>
+        <location filename="../app/mainwindow.cpp" line="985"/>
         <source>Left item</source>
         <translation>Venstre element</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="984"/>
+        <location filename="../app/mainwindow.cpp" line="985"/>
         <source>Right item</source>
         <translation>Høyre element</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1011"/>
+        <location filename="../app/mainwindow.cpp" line="1018"/>
         <source>Strongly two records on current panel must be selected for this operation</source>
         <translation>To dataoppføringer på gjeldende panel må være valgt sterkt for denne operasjonen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1017"/>
+        <location filename="../app/mainwindow.cpp" line="1025"/>
         <source>Item 1</source>
         <translation>Element 1</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1017"/>
+        <location filename="../app/mainwindow.cpp" line="1025"/>
         <source>Item 2</source>
         <translation>Element 2</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1085"/>
+        <location filename="../app/mainwindow.cpp" line="1098"/>
         <source>Operation requires show two panels</source>
         <translation type="unfinished">Operasjonen krever visning av to paneler</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1118"/>
+        <location filename="../app/mainwindow.cpp" line="1131"/>
         <source>Statitics</source>
         <translation>Statistikk</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1125"/>
+        <location filename="../app/mainwindow.cpp" line="1138"/>
         <source>Report file</source>
         <translation>Rapportfil</translation>
     </message>

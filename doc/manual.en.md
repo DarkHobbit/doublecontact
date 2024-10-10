@@ -9,7 +9,7 @@ Features:
 
 * saving and loading addressbooks files:
   - VCF (vCard 2.1, 3.0 and 4.0 supported, VCF files directory as single address book also supported);
-  - CSV (profiles for some Explay models, OSMO PIM and generic profile for full contact information save);
+  - CSV (profiles for some Explay models, OSMO PIM, Sylpheed email client and generic profile for full contact information save);
   - MPB (MyPhoneExplorer backup);
   - NBF (modern Nokia backup file, **read only**);
   - NBU (older Nokia backup file, **read only**);
@@ -101,7 +101,7 @@ If you know other tags for groups saving or other device, which does support the
 CSV is a simple format with comma-separated values. There is not any standard,
 how contats must be saving in CSV. Because, when you open or save CSV files, program
 ask you for CSV profile. Program support profiles for some Explay models. Also,
-it support CSV profile for [Osmo PIM](http://clayo.org/osmo/).
+it support CSV profile for [Osmo PIM](http://clayo.org/osmo/) and Sylpheed email client.
 
 These profiles save not all vCard fields. If you need CSV with all contact information,
 use profile "Generic". In this profile, you can set file charset and cell separator.
@@ -242,6 +242,7 @@ Some sections, such as phones and emails, can have two kind of arrow buttons. Ar
 At first, load backup.vcf into DoubleContact left panel. Load sim.vcf into right panel. Press F3. Some items at right panel will be highlighting in red. This means that they were added on SIM card after backup. Select these items and copy it ti left panel (F5). After it, for best contact view, use name swapping and name splitting, if needed (see chapter "Group operations").
 
 You must not do anything with green items - these items are already OK. But yellow items requires your attention. For example, DoubleContact found pair with "John Doe" names. Select any contact in this pair and press F3. In "Item merge" window, names and addresses highlighted by green, but phones and birthday highlighted by red. There is a new phone number appear in right list. Copy it to left list by arrow button. Also, only left panel contains a birthday. Copy it to right (generally speaking, it is not necessary, if you want save only left address book, but will help avoid confusion). Press "Yes" to save changes.
+If **Remove right record after merge** check box was checked, program will remove merged contact from right panel, it will present on left panel only.
 
 After processing of all items, select left panel, choose **File -> Save as -> File**  and save the merged address book as backup_new.vcf.
 

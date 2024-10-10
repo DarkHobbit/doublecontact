@@ -14,6 +14,7 @@
 #ifndef COMPAREDIALOG_H
 #define COMPAREDIALOG_H
 
+#include <QCheckBox>
 #include <QDialog>
 #include "comparecontainers.h"
 
@@ -29,10 +30,11 @@ public:
     explicit CompareDialog(QWidget *parent = 0);
     ~CompareDialog();
     void setHeaders(const QString& left, const QString& right);
-    void setData(const ContactItem& left, const ContactItem& right);
-    void getData(ContactItem& left, ContactItem& right);
+    void setData(const ContactItem& left, const ContactItem& right, bool dropRightItem);
+    void getData(ContactItem& left, ContactItem& right, bool& dropRightItem);
 private:
     Ui::CompareDialog *ui;
+    // Pairs
     StringPair* pFullName;
     NamePair* pNames;
     PhonesPair* pPhones;
@@ -45,6 +47,8 @@ private:
     PostalAddressPair *pAddrs;
     StringPair *pNickName, *pURL;
     MessengersPair *pIMs;
+    // Bottom common elements
+    QCheckBox* cbDropRightItem;
     template<class P, class T>
         void checkPair(const QString& title, P** pair, T& leftData, T& rightData);
 };

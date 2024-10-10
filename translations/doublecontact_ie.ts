@@ -176,34 +176,39 @@ Are you want to accept this certificate anyway?</source>
         <translation>Unir elementes</translation>
     </message>
     <message>
-        <location filename="../app/comparedialog.cpp" line="67"/>
+        <location filename="../app/comparedialog.cpp" line="68"/>
         <source>Names</source>
         <translation>Nómines</translation>
     </message>
     <message>
-        <location filename="../app/comparedialog.cpp" line="68"/>
+        <location filename="../app/comparedialog.cpp" line="69"/>
         <source>Phones</source>
         <translation>Telefones</translation>
     </message>
     <message>
-        <location filename="../app/comparedialog.cpp" line="69"/>
+        <location filename="../app/comparedialog.cpp" line="70"/>
         <source>Emails</source>
         <translation>E-post</translation>
     </message>
     <message>
-        <location filename="../app/comparedialog.cpp" line="71"/>
+        <location filename="../app/comparedialog.cpp" line="72"/>
         <source>Anniversaries</source>
         <translation>Anniversaries</translation>
     </message>
     <message>
-        <location filename="../app/comparedialog.cpp" line="73"/>
+        <location filename="../app/comparedialog.cpp" line="74"/>
         <source>Sort string</source>
         <translation>Ordination</translation>
     </message>
     <message>
-        <location filename="../app/comparedialog.cpp" line="77"/>
+        <location filename="../app/comparedialog.cpp" line="78"/>
         <source>Addresses</source>
         <translation>Adresses</translation>
+    </message>
+    <message>
+        <location filename="../app/comparedialog.cpp" line="85"/>
+        <source>Remove right record after merge</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1197,42 +1202,42 @@ Gardar li modificationes?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="984"/>
+        <location filename="../app/mainwindow.cpp" line="985"/>
         <source>Left item</source>
         <translation>Levul element</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="984"/>
+        <location filename="../app/mainwindow.cpp" line="985"/>
         <source>Right item</source>
         <translation>Dextri element</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1011"/>
+        <location filename="../app/mainwindow.cpp" line="1018"/>
         <source>Strongly two records on current panel must be selected for this operation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1017"/>
+        <location filename="../app/mainwindow.cpp" line="1025"/>
         <source>Item 1</source>
         <translation>Element 1</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1017"/>
+        <location filename="../app/mainwindow.cpp" line="1025"/>
         <source>Item 2</source>
         <translation>Element 2</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1085"/>
+        <location filename="../app/mainwindow.cpp" line="1098"/>
         <source>Operation requires show two panels</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1118"/>
+        <location filename="../app/mainwindow.cpp" line="1131"/>
         <source>Statitics</source>
         <translation>Statistica</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1125"/>
+        <location filename="../app/mainwindow.cpp" line="1138"/>
         <source>Report file</source>
         <translation>File de raporte</translation>
     </message>

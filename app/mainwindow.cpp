@@ -979,15 +979,22 @@ void MainWindow::on_actionCompare_Result_triggered()
     on_action_Other_panel_triggered(); // to right
     if (!checkSelection(true, true)) return;
     ContactItem& right = modRight->beginEditRow(selection[0]);
+    bool dropRightItem = false;
     // Show results
     CompareDialog* d = new CompareDialog(0);
     d->setHeaders(tr("Left item"), tr("Right item"));
-    d->setData(left, right);
+    d->setData(left, right, dropRightItem);
     d->exec();
-    if (d->result()==QDialog::Accepted)
-        d->getData(left, right);
-    modLeft->endEditRow(leftSelection);
-    modRight->endEditRow(selection[0]);
+    if (d->result()==QDialog::Accepted) {
+        d->getData(left, right, dropRightItem);
+        modLeft->endEditRow(leftSelection);
+        modRight->endEditRow(selection[0]);
+        if (dropRightItem) {
+            selectedModel->removeAnyRows(
+                QModelIndexList() << selection[0]);
+            selectedView->clearSelection();
+        }
+    }
     delete d;
     // Restore panel
     if (!wasRight)
@@ -1013,14 +1020,20 @@ void MainWindow::on_action_Join_triggered()
     }
     ContactItem& i1 = selectedModel->beginEditRow(selection[0]);
     ContactItem& i2 = selectedModel->beginEditRow(selection[1]);
+    bool dropRightItem = true;
     CompareDialog* d = new CompareDialog(0);
     d->setHeaders(tr("Item 1"), tr("Item 2"));
-    d->setData(i1, i2);
+    d->setData(i1, i2, dropRightItem);
     d->exec();
     if (d->result()==QDialog::Accepted) {
-        d->getData(i1, i2);
+        d->getData(i1, i2, dropRightItem);
         selectedModel->endEditRow(selection[0]);
         selectedModel->endEditRow(selection[1]);
+        if (dropRightItem) {
+            selectedModel->removeAnyRows(
+                QModelIndexList() << selection[1]);
+            selectedView->clearSelection();
+        }
         updateViewMode();
         updateHeaders();
     }

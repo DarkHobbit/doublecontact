@@ -37,6 +37,7 @@ CompareDialog::CompareDialog(QWidget *parent) :
     pNickName = 0;
     pURL = 0;
     pIMs = 0;
+    cbDropRightItem = 0;
 }
 
 CompareDialog::~CompareDialog()
@@ -60,7 +61,7 @@ void CompareDialog::checkPair(const QString& title, P** pair, T& leftData, T& ri
     }
 }
 
-void CompareDialog::setData(const ContactItem &left, const ContactItem &right)
+void CompareDialog::setData(const ContactItem &left, const ContactItem &right, bool dropRightItem)
 {
     ui->layPairs->setAlignment(Qt::AlignTop);
     checkPair(S_FULL_NAME, &pFullName, left.fullName, right.fullName);
@@ -78,9 +79,15 @@ void CompareDialog::setData(const ContactItem &left, const ContactItem &right)
     checkPair(S_NICK, &pNickName, left.nickName, right.nickName);
     checkPair(S_URL, &pURL, left.url, right.url);
     checkPair(S_IM, &pIMs, left.ims, right.ims);
+    // Bottom common elements
+    int oldRowCount = ui->layPairs->rowCount();
+    cbDropRightItem = new QCheckBox(
+        tr("Remove right record after merge"));
+    cbDropRightItem->setChecked(dropRightItem);
+    ui->layPairs->addWidget(cbDropRightItem, oldRowCount, 0, 1, 4);
 }
 
-void CompareDialog::getData(ContactItem &left, ContactItem &right)
+void CompareDialog::getData(ContactItem &left, ContactItem &right, bool& dropRightItem)
 {
     if (pFullName)
         pFullName->getData(left.fullName, right.fullName);
@@ -112,4 +119,5 @@ void CompareDialog::getData(ContactItem &left, ContactItem &right)
         pURL->getData(left.url, right.url);
     if (pIMs)
         pIMs->getData(left.ims, right.ims);
+    dropRightItem = cbDropRightItem->isChecked();
 }
