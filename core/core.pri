@@ -10,14 +10,18 @@ QT += core xml
 include(../3rdparty/quazip/quazip.pri)
 
 DEFINES += QUAZIP_STATIC
+
+contains(CONFIG, static){
+  INCLUDEPATH += $(QTDIR)/src/3rdparty/zlib
+}
 win32 {
+  INCLUDEPATH += $(QTDIR)/src/3rdparty/zlib
   greaterThan(QT_MAJOR_VERSION, 4) {
 LIBS += -lz
-} else {
-  INCLUDEPATH += $(QTDIR)/src/3rdparty/zlib
 }
 }
 unix:LIBS += -lz
+
 
 INCLUDEPATH += $$PWD
 
