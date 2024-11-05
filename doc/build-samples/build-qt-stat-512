@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Need: libssl-dev
+
+# For system fonts:
+# libfreetype6-dev libfontconfig1-dev
+
+# For xcb:
+# sudo apt-get install libx11-*
+# sudo apt-get install libxcb-*
+# sudo apt-get install libxkbcommon-dev
+# sudo apt-get install libxkbcommon-x11-dev
+
+# -opengl desktop: mesa-common-dev, libgl1, libgl1-mesa-glx, libgl1-mesa-dri not helped
+
+QTDIR=/opt/Qt/5.12.12.st
+
+sudo mkdir -p ${QTDIR}
+
+./configure -opensource -confirm-license -platform linux-g++ -static -release \
+ -skip qtwebengine -skip declarative -no-opengl \
+ -qt-xcb -I /usr/include/xcb/ -L /usr/lib/x86_64-linux/gnu/ \
+ -fontconfig -feature-freetype -system-freetype FREETYPE_INCDIR=/usr/include/freetype2 \
+ -qt-zlib -qt-libpng -qt-libjpeg -openssl-linked -nomake examples -prefix ${QTDIR}
+
+make
+sudo make install
