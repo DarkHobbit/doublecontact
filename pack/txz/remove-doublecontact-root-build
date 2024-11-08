@@ -1,0 +1,10 @@
+#!/bin/bash
+
+rm -rf /usr/bin/doublecontact
+rm -rf /usr/bin/contconv
+
+rm -rf /usr/share/doublecontact
+rm -rf /usr/share/applications/doublecontact.desktop
+rm -rf /usr/share/pixmaps/doublecontact_32x32.xpm
+rm -rf /usr/share/doc/doublecontact
+

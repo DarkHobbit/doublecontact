@@ -15,5 +15,6 @@ PKG_NAME=doublecontact_${DC_VER}_amd64
 
 # cd .
 ../make-bin-image ../.. ../../${PKG_NAME} ${QT_MAJV}
+cp ./remove-doublecontact-root-build ../../${PKG_NAME}/
 tar -cJf ../../${PKG_NAME}.tar.xz `pwd`/../../${PKG_NAME}
 
