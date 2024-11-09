@@ -1935,12 +1935,12 @@ telefoontaal %5</translation>
         <translation type="obsolete">Onbekende versleuteling: </translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="591"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="593"/>
         <source>Invalid timezone: </source>
         <translation>Ongeldige tijdzone: </translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="621"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="623"/>
         <source>Invalid datetime: </source>
         <translation>Ongeldige datum/tijd: </translation>
     </message>
@@ -3090,7 +3090,12 @@ Uitgelezen: %3 bytes - Verwacht: %4 bytes</translation>
         <translation>Geprefereerde vCard-versie</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="321"/>
+        <location filename="../app/settingsdialog.ui" line="238"/>
+        <source>Write full name tag if empty</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/settingsdialog.ui" line="328"/>
         <source>Tag for group save</source>
         <translation>Groepslabel</translation>
     </message>
@@ -3112,47 +3117,47 @@ Uitgelezen: %3 bytes - Verwacht: %4 bytes</translation>
         <translation>Originele bestandsversie gebruiken (indien beschikbaar)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="240"/>
+        <location filename="../app/settingsdialog.ui" line="247"/>
         <source>Default country</source>
         <translation>Standaard land</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="252"/>
+        <location filename="../app/settingsdialog.ui" line="259"/>
         <source>(for phone number internationalization)</source>
         <translation>(voor internationalisering van telefoonnummers)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="259"/>
+        <location filename="../app/settingsdialog.ui" line="266"/>
         <source>Skip time from birthday and anniversaries</source>
         <translation>Tijd van verjaardagen en jubilea negeren</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="266"/>
+        <location filename="../app/settingsdialog.ui" line="273"/>
         <source>Non-standard phone/email types</source>
         <translation>Niet-standaardtypes telefoonnummers/e-mailadressen</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="272"/>
+        <location filename="../app/settingsdialog.ui" line="279"/>
         <source>Add X- to type names</source>
         <translation>X- toevoegen aan type-namen</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="279"/>
+        <location filename="../app/settingsdialog.ui" line="286"/>
         <source>Non-latin type names:</source>
         <translation>Niet-latijnse soortnamen:</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="286"/>
+        <location filename="../app/settingsdialog.ui" line="293"/>
         <source>Save as is</source>
         <translation>Opslaan</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="296"/>
+        <location filename="../app/settingsdialog.ui" line="303"/>
         <source>Replace to default type</source>
         <translation>Standaardtype vervangen</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="306"/>
+        <location filename="../app/settingsdialog.ui" line="313"/>
         <source>Place to X-CUSTOM</source>
         <translation>X-CUSTOM-locatie</translation>
     </message>
@@ -3165,22 +3170,22 @@ Uitgelezen: %3 bytes - Verwacht: %4 bytes</translation>
         <translation type="obsolete">X-GROUP-MEMBERSHIP gebruiken bij het opslaan van groepen</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="347"/>
+        <location filename="../app/settingsdialog.ui" line="354"/>
         <source>Loading</source>
         <translation>Laden</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="355"/>
+        <location filename="../app/settingsdialog.ui" line="362"/>
         <source>Default type if empty</source>
         <translation>Standaardtype indien leeg</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="367"/>
+        <location filename="../app/settingsdialog.ui" line="374"/>
         <source>(many phones treat &apos;Voice&apos; as &apos;Other&apos;)</source>
         <translation>(veel telefoons vatten &apos;Spraakoproep&apos; op als &apos;Overig&apos;)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="374"/>
+        <location filename="../app/settingsdialog.ui" line="381"/>
         <source>Warning on missing phone types</source>
         <translation>Waarschuwen bij ontbrekende telefoonnummers</translation>
     </message>
@@ -3189,22 +3194,22 @@ Uitgelezen: %3 bytes - Verwacht: %4 bytes</translation>
         <translation type="obsolete">(veel telefoons nemen &apos;Overig&apos; aan i.p.v. &apos;Spraak&apos;)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="381"/>
+        <location filename="../app/settingsdialog.ui" line="388"/>
         <source>Warning on non-standard phone types</source>
         <translation>Waarschuwen bij niet-standaard telefoontypes</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="388"/>
+        <location filename="../app/settingsdialog.ui" line="395"/>
         <source>Debug save</source>
         <translation>Foutopsporing opslaan</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="395"/>
+        <location filename="../app/settingsdialog.ui" line="402"/>
         <source>While VCF directory reading</source>
         <translation>Tijdens het uitlezen van mappen door VCF</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="401"/>
+        <location filename="../app/settingsdialog.ui" line="408"/>
         <source>Read contact names from file name</source>
         <translation>Contactpersoonnamen uitlezen uit bestandsnaam</translation>
     </message>
@@ -3213,7 +3218,7 @@ Uitgelezen: %3 bytes - Verwacht: %4 bytes</translation>
         <translation type="obsolete">Waarschuwen bij niet-standaard telefoonummers/e-mailadressen</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.cpp" line="141"/>
+        <location filename="../app/settingsdialog.cpp" line="143"/>
         <source>List must contain at least one visible column</source>
         <translation>De lijst moet minimaal één zichtbare kolom bevatten</translation>
     </message>

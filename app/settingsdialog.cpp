@@ -55,6 +55,7 @@ bool SettingsDialog::setData()
     ui->cbPrefVCardVer->addItems(enPrefVCFVersion.possibleValues());
     ui->cbPrefVCardVer->setCurrentIndex((short)gd.preferredVCFVersion);
     ui->cbUseOrigVer->setChecked(gd.useOriginalFileVersion);
+    ui->cbWriteFullNameIsEmpty->setChecked(gd.writeFullNameIsEmpty);
     ui->cbDefaultCountryRules->clear();
     ui->cbDefaultCountryRules->addItems(Phone::availableCountryRules());
     if (gd.defaultCountryRule>=0 && gd.defaultCountryRule<COUNTRY_RULES_COUNT)
@@ -106,6 +107,7 @@ bool SettingsDialog::getData()
     // Saving
     gd.preferredVCFVersion = (GlobalConfig::VCFVersion) ui->cbPrefVCardVer->currentIndex();
     gd.useOriginalFileVersion = ui->cbUseOrigVer->isChecked();
+    gd.useOriginalFileVersion = ui->cbWriteFullNameIsEmpty->isChecked();
     gd.defaultCountryRule = ui->cbDefaultCountryRules->currentIndex();
     gd.skipTimeFromDate = ui->cbSkipTimeFromDate->isChecked();
     gd.addXToNonStandardTypes = ui->cbAddXToNonStandardTypes->isChecked();

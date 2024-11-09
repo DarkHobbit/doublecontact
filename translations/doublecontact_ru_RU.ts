@@ -1862,12 +1862,12 @@ IMEI %3
         <translation type="obsolete">Неизвестное кодирование: </translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="591"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="593"/>
         <source>Invalid timezone: </source>
         <translation>Неправильный часовой пояс: </translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="621"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="623"/>
         <source>Invalid datetime: </source>
         <translation>Неправильная дата/время: </translation>
     </message>
@@ -3010,7 +3010,12 @@ Read %3 bytes, %4 expected</source>
         <translation>Предпочтительная версия vCard</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="321"/>
+        <location filename="../app/settingsdialog.ui" line="238"/>
+        <source>Write full name tag if empty</source>
+        <translation>Писать тег FN, если полного имени нет</translation>
+    </message>
+    <message>
+        <location filename="../app/settingsdialog.ui" line="328"/>
         <source>Tag for group save</source>
         <translation>Тег для записи групп</translation>
     </message>
@@ -3032,47 +3037,47 @@ Read %3 bytes, %4 expected</source>
         <translation>Брать версию из исходного файла (если есть)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="240"/>
+        <location filename="../app/settingsdialog.ui" line="247"/>
         <source>Default country</source>
         <translation>Страна по умолчанию</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="252"/>
+        <location filename="../app/settingsdialog.ui" line="259"/>
         <source>(for phone number internationalization)</source>
         <translation>(для интернационализации телефонных номеров)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="259"/>
+        <location filename="../app/settingsdialog.ui" line="266"/>
         <source>Skip time from birthday and anniversaries</source>
         <translation>Удалять время из дней рождения и годовщин</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="266"/>
+        <location filename="../app/settingsdialog.ui" line="273"/>
         <source>Non-standard phone/email types</source>
         <translation>Нестандартные типы телефонов/почты</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="272"/>
+        <location filename="../app/settingsdialog.ui" line="279"/>
         <source>Add X- to type names</source>
         <translation>Добавлять X- к именам типов</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="279"/>
+        <location filename="../app/settingsdialog.ui" line="286"/>
         <source>Non-latin type names:</source>
         <translation>Нелатинские имена типов:</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="286"/>
+        <location filename="../app/settingsdialog.ui" line="293"/>
         <source>Save as is</source>
         <translation>Сохранять как есть</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="296"/>
+        <location filename="../app/settingsdialog.ui" line="303"/>
         <source>Replace to default type</source>
         <translation>Заменять типом по умолчанию</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="306"/>
+        <location filename="../app/settingsdialog.ui" line="313"/>
         <source>Place to X-CUSTOM</source>
         <translation>Помещать в X-CUSTOM</translation>
     </message>
@@ -3085,22 +3090,22 @@ Read %3 bytes, %4 expected</source>
         <translation type="obsolete">Сохранять группы в теге X-GROUP-MEMBERSHIP</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="347"/>
+        <location filename="../app/settingsdialog.ui" line="354"/>
         <source>Loading</source>
         <translation>Загрузка</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="355"/>
+        <location filename="../app/settingsdialog.ui" line="362"/>
         <source>Default type if empty</source>
         <translation>Тип телефона, если пустой</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="367"/>
+        <location filename="../app/settingsdialog.ui" line="374"/>
         <source>(many phones treat &apos;Voice&apos; as &apos;Other&apos;)</source>
         <translation>(многие телефоны трактуют &apos;Голосовой&apos; как &apos;Прочий&apos;)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="374"/>
+        <location filename="../app/settingsdialog.ui" line="381"/>
         <source>Warning on missing phone types</source>
         <translation>Предупреждать о телефонах без типа</translation>
     </message>
@@ -3109,22 +3114,22 @@ Read %3 bytes, %4 expected</source>
         <translation type="obsolete">(многие телефоны трактуют &apos;Голосовой&apos; как &apos;Прочий&apos;)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="381"/>
+        <location filename="../app/settingsdialog.ui" line="388"/>
         <source>Warning on non-standard phone types</source>
         <translation>Предупреждать о нестандартных типах телефонов</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="388"/>
+        <location filename="../app/settingsdialog.ui" line="395"/>
         <source>Debug save</source>
         <translation>Отладочная запись</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="395"/>
+        <location filename="../app/settingsdialog.ui" line="402"/>
         <source>While VCF directory reading</source>
         <translation>При чтении каталога VCF</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="401"/>
+        <location filename="../app/settingsdialog.ui" line="408"/>
         <source>Read contact names from file name</source>
         <translation>Брать имена контакта из имени файла</translation>
     </message>
@@ -3133,7 +3138,7 @@ Read %3 bytes, %4 expected</source>
         <translation type="obsolete">Предупреждать о нестандартных типах телефонов/почты</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.cpp" line="141"/>
+        <location filename="../app/settingsdialog.cpp" line="143"/>
         <source>List must contain at least one visible column</source>
         <translation>В списке должен быть хотя бы один видимый столбец</translation>
     </message>

@@ -1814,12 +1814,12 @@ telefonspråk %5</translation>
         <translation type="obsolete">Ukjent koding: </translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="591"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="593"/>
         <source>Invalid timezone: </source>
         <translation>Ugyldig tidssone: </translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="621"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="623"/>
         <source>Invalid datetime: </source>
         <translation>Ugyldig datotid: </translation>
     </message>
@@ -2966,7 +2966,12 @@ Read %3 bytes, %4 expected</source>
         <translation>Foretrukket vCard-versjon</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="321"/>
+        <location filename="../app/settingsdialog.ui" line="238"/>
+        <source>Write full name tag if empty</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/settingsdialog.ui" line="328"/>
         <source>Tag for group save</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2988,47 +2993,47 @@ Read %3 bytes, %4 expected</source>
         <translation>Bruk opprinnelig filversjon (hvis tilgjengelig)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="240"/>
+        <location filename="../app/settingsdialog.ui" line="247"/>
         <source>Default country</source>
         <translation>Forvalgt land</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="252"/>
+        <location filename="../app/settingsdialog.ui" line="259"/>
         <source>(for phone number internationalization)</source>
         <translation>(for telefonnummerinternasjonalisering)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="259"/>
+        <location filename="../app/settingsdialog.ui" line="266"/>
         <source>Skip time from birthday and anniversaries</source>
         <translation>Hopp over tid fra geburtsdag og jubileum</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="266"/>
+        <location filename="../app/settingsdialog.ui" line="273"/>
         <source>Non-standard phone/email types</source>
         <translation>Ikke-standard telefon/e-posttyper</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="272"/>
+        <location filename="../app/settingsdialog.ui" line="279"/>
         <source>Add X- to type names</source>
         <translation type="unfinished">Legg X- til typenavn</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="279"/>
+        <location filename="../app/settingsdialog.ui" line="286"/>
         <source>Non-latin type names:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="286"/>
+        <location filename="../app/settingsdialog.ui" line="293"/>
         <source>Save as is</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="296"/>
+        <location filename="../app/settingsdialog.ui" line="303"/>
         <source>Replace to default type</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="306"/>
+        <location filename="../app/settingsdialog.ui" line="313"/>
         <source>Place to X-CUSTOM</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3037,22 +3042,22 @@ Read %3 bytes, %4 expected</source>
         <translation type="obsolete">Erstatt ikke-latinsk skrift ved navn</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="347"/>
+        <location filename="../app/settingsdialog.ui" line="354"/>
         <source>Loading</source>
         <translation>Laster</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="355"/>
+        <location filename="../app/settingsdialog.ui" line="362"/>
         <source>Default type if empty</source>
         <translation>Forvalgt type, hvis tom</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="367"/>
+        <location filename="../app/settingsdialog.ui" line="374"/>
         <source>(many phones treat &apos;Voice&apos; as &apos;Other&apos;)</source>
         <translation>(mange telefoner håndterer &quot;Tale&quot; som &quot;Annet&quot;)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="374"/>
+        <location filename="../app/settingsdialog.ui" line="381"/>
         <source>Warning on missing phone types</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3061,27 +3066,27 @@ Read %3 bytes, %4 expected</source>
         <translation type="obsolete">(mange telefoner behandler &quot;Stemme&quot; so &quot;Annet&quot;)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="381"/>
+        <location filename="../app/settingsdialog.ui" line="388"/>
         <source>Warning on non-standard phone types</source>
         <translation type="unfinished">Advarsel på ikke-standariserte telefontyper</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="388"/>
+        <location filename="../app/settingsdialog.ui" line="395"/>
         <source>Debug save</source>
         <translation>Lagre feilrettingsinfo</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="395"/>
+        <location filename="../app/settingsdialog.ui" line="402"/>
         <source>While VCF directory reading</source>
         <translation>Under lesing av VCF-mappe</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="401"/>
+        <location filename="../app/settingsdialog.ui" line="408"/>
         <source>Read contact names from file name</source>
         <translation>Les kontaktnavn fra filnavn</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.cpp" line="141"/>
+        <location filename="../app/settingsdialog.cpp" line="143"/>
         <source>List must contain at least one visible column</source>
         <translation>Listen må inneholde minst én synlig kolonne</translation>
     </message>

@@ -65,6 +65,8 @@ In some cases, for example, for SIM cards, each contact must not contain more th
 
 Some devices don't recognize birthdays, containing time. In this case, before saving you must activate time skipping ( **View -> Settings** menu item, "Saving" tab, set "Skip time from birthday and anniversaries" option).
 
+By default, program writes full/formatted name in VCF file even it is absent in contact record. Moreover, some programs, such as Sylpheed email cliend, don't recognize contacts without FN. But this behaviour can be changed for some old devices, such as SonyEricsson W300i. See "Saving" tab, "Write full name tag if empty" option
+
 Phones often add non-stanard tags to VCF files and destination device (by other vendor) can't read such file. In most cases, names of these tags start with X-, for example, X-STARRED. If you prepare file for phone, which not recognize such tags, or you simply want to simplify addressbook, choose **List -> Mass tags remove**. Program will scan all contacts in addressbook and offer you to select tags to be deleted from among those found. Notice that this operation processes all addressbook regardless of selected records in main window.
 
 If you combine contacts into groups, such as "Family", "Friends", etc., please, read also [Group of contacts](#group-of-contacts) section to avoid loss of information.

@@ -440,6 +440,8 @@ void VCardData::exportRecord(BStringList &lines, const ContactItem &item, QStrin
     }
     if (!item.fullName.isEmpty())
         lines <<encodeAll("FN", 0, false,sc(item.fullName));
+    else if (gd.writeFullNameIsEmpty)
+        lines << BString("FN:"); // default behaviour, except older phones e.g. se300
     if (!item.sortString.isEmpty())
         lines <<encodeAll("SORT-STRING", 0, false,sc(item.sortString));
     if (!item.nickName.isEmpty())

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>468</width>
-    <height>502</height>
+    <height>528</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,7 +17,7 @@
    <item>
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>0</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="tabGeneral">
       <attribute name="title">
@@ -229,6 +229,13 @@
         <widget class="QCheckBox" name="cbUseOrigVer">
          <property name="text">
           <string>Use original file version (if present)</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="cbWriteFullNameIsEmpty">
+         <property name="text">
+          <string>Write full name tag if empty</string>
          </property>
         </widget>
        </item>

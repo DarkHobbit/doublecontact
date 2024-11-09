@@ -206,6 +206,7 @@ struct GlobalConfig {
         VCF40
     } preferredVCFVersion;
     bool useOriginalFileVersion;
+    bool writeFullNameIsEmpty;
     int defaultCountryRule; // for phone i18n during compare numbers (i.e. for Russia +7 = 8)
     bool skipTimeFromDate;
     // addXToNonStandardTypes and nltnReplaceToDefault is standard behaviour

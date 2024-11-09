@@ -99,6 +99,7 @@ void ConfigManager::readConfig()
     // Saving
     gd.preferredVCFVersion = (GlobalConfig::VCFVersion)enPrefVCFVersion.load(settings);
     gd.useOriginalFileVersion = settings->value("Saving/UseOriginalFileVCardVersion", true).toBool();
+    gd.writeFullNameIsEmpty = settings->value("Saving/WriteFullNameIsEmpty", true).toBool();
     gd.defaultCountryRule = settings->value("Saving/DefaultCountryRule", 0).toInt();
     gd.skipTimeFromDate = settings->value("Saving/SkipTimeFromDate", false).toBool();
     gd.addXToNonStandardTypes = settings->value("Saving/AddXToNonStandardTypes", true).toBool();
@@ -141,6 +142,7 @@ void ConfigManager::writeConfig()
     // Saving
     enPrefVCFVersion.save(settings, gd.preferredVCFVersion);
     settings->setValue("Saving/UseOriginalFileVCardVersion", gd.useOriginalFileVersion);
+    settings->setValue("Saving/WriteFullNameIsEmpty", gd.writeFullNameIsEmpty);
     settings->setValue("Saving/DefaultCountryRule", gd.defaultCountryRule);
     settings->setValue("Saving/SkipTimeFromDate", gd.skipTimeFromDate);
     settings->setValue("Saving/AddXToNonStandardTypes", gd.addXToNonStandardTypes);
