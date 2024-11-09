@@ -88,7 +88,6 @@ bool SylpheedProfile::exportRecord(QStringList &row, const ContactItem &item, QS
     LOSS_DATA(S_PHONE, !item.phones.isEmpty());
     LOSS_DATA(S_BDAY, !item.birthday.isEmpty());
     LOSS_DATA(S_ANN, !item.anniversary.isEmpty());
-    LOSS_DATA(S_DESC, item.description);
     LOSS_DATA(S_PHOTO, !item.photo.isEmpty());
     LOSS_DATA(S_ORG, item.organization);
     LOSS_DATA(S_TITLE, item.title);
