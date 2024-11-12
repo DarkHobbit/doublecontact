@@ -986,13 +986,13 @@ QString TagValue::text()
 }
 
 DateItem::DateItem()
-    :hasTime(false), hasTimeZone(false), zoneHour(0), zoneMin(0)
+    :hasYear(true), hasTime(false), hasTimeZone(false), zoneHour(0), zoneMin(0)
 {
     value = QDateTime();
 }
 
 DateItem::DateItem(const QDateTime &dateTime)
-    :hasTime(false), hasTimeZone(false), zoneHour(0), zoneMin(0)
+    :hasYear(true), hasTime(false), hasTimeZone(false), zoneHour(0), zoneMin(0)
 {
     value = dateTime;
 }
@@ -1007,6 +1007,7 @@ bool DateItem::operator ==(const DateItem &d) const
 void DateItem::clear()
 {
     value = QDateTime();
+    hasYear = true;
     hasTime = false;
     hasTimeZone = false;
     zoneHour = 0;
@@ -1015,18 +1016,19 @@ void DateItem::clear()
 
 QString DateItem::toString(DateFormat format) const
 {
-    QString s;
+    QString fs;
     switch (format) {
     case DateItem::ISOBasic:
-        s = value.date().toString("yyyyMMdd");
+        fs = hasYear ? "yyyyMMdd" : "--MMdd";
         break;
     case DateItem::ISOExtended:
-        s = value.date().toString("yyyy-MM-dd");
+        fs = hasYear ? "yyyy-MM-dd" : "--MM-dd";
         break;
     default:
-        s = value.date().toString(gd.dateFormat);
+        fs = hasYear ? gd.dateFormat : "d MMMM";
         break;
     }
+    QString s = value.date().toString(fs);
     if (hasTime) {
         switch (format) {
         case DateItem::ISOBasic:

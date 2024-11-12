@@ -494,21 +494,26 @@ Voulez-vous accepter ce certificat quand même ?</translation>
     </message>
     <message>
         <location filename="../app/datedetailsdialog.ui" line="34"/>
+        <source>Set year for date</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/datedetailsdialog.ui" line="41"/>
         <source>Set time for date</source>
         <translation>Définir l&apos;heure pour la date</translation>
     </message>
     <message>
-        <location filename="../app/datedetailsdialog.ui" line="41"/>
+        <location filename="../app/datedetailsdialog.ui" line="48"/>
         <source>Set time zone</source>
         <translation>Définir le fuseau horaire</translation>
     </message>
     <message>
-        <location filename="../app/datedetailsdialog.ui" line="60"/>
+        <location filename="../app/datedetailsdialog.ui" line="67"/>
         <source>h</source>
         <translation>h</translation>
     </message>
     <message>
-        <location filename="../app/datedetailsdialog.ui" line="74"/>
+        <location filename="../app/datedetailsdialog.ui" line="81"/>
         <source>m</source>
         <translation>min</translation>
     </message>
@@ -1497,7 +1502,7 @@ Propriétés du MMS :
     <name>QObject</name>
     <message>
         <location filename="../core/contactlist.cpp" line="117"/>
-        <location filename="../core/contactlist.cpp" line="1160"/>
+        <location filename="../core/contactlist.cpp" line="1161"/>
         <source>Home</source>
         <translation>Accueil</translation>
     </message>
@@ -1508,7 +1513,7 @@ Propriétés du MMS :
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="119"/>
-        <location filename="../core/contactlist.cpp" line="1161"/>
+        <location filename="../core/contactlist.cpp" line="1162"/>
         <source>Work</source>
         <translation>Travail</translation>
     </message>
@@ -1516,7 +1521,7 @@ Propriétés du MMS :
         <location filename="../core/contactlist.cpp" line="120"/>
         <location filename="../core/contactlist.cpp" line="171"/>
         <location filename="../core/contactlist.cpp" line="207"/>
-        <location filename="../core/contactlist.cpp" line="1162"/>
+        <location filename="../core/contactlist.cpp" line="1163"/>
         <source>Preferable</source>
         <translation>Préférable</translation>
     </message>
@@ -1660,22 +1665,22 @@ langue du téléphone %5</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1163"/>
+        <location filename="../core/contactlist.cpp" line="1164"/>
         <source>Domestic</source>
         <translation>Domestique</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1164"/>
+        <location filename="../core/contactlist.cpp" line="1165"/>
         <source>International</source>
         <translation>International</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1165"/>
+        <location filename="../core/contactlist.cpp" line="1166"/>
         <source>Postal</source>
         <translation>Postal</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1166"/>
+        <location filename="../core/contactlist.cpp" line="1167"/>
         <source>Parcel</source>
         <translation>Colis</translation>
     </message>
@@ -1756,7 +1761,12 @@ langue du téléphone %5</translation>
         <translation>Fuseau horaire invalide : </translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="623"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="622"/>
+        <source>Unknown datetime format: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/formats/common/vcarddata.cpp" line="633"/>
         <source>Invalid datetime: </source>
         <translation>Date/heure invalide : </translation>
     </message>

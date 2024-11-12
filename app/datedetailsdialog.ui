@@ -29,6 +29,13 @@
     </layout>
    </item>
    <item>
+    <widget class="QCheckBox" name="cbHasYear">
+     <property name="text">
+      <string>Set year for date</string>
+     </property>
+    </widget>
+   </item>
+   <item>
     <widget class="QCheckBox" name="cbHasTime">
      <property name="text">
       <string>Set time for date</string>

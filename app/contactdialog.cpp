@@ -95,8 +95,8 @@ void ContactDialog::clearData(const ContactList& l)
     nameCount = phoneCount = emailCount = addrCount = imCount = 0;
     ui->cbBirthday->setChecked(false);
     ui->dteBirthday->setEnabled(false);
-    DateDetailsDialog::setDateFormat(ui->dteBirthday, false);
-    DateDetailsDialog::setDateFormat(ui->dteAnniversary, false);
+    DateDetailsDialog::setDateFormat(ui->dteBirthday, DateItem());
+    DateDetailsDialog::setDateFormat(ui->dteAnniversary, DateItem());
     // Restore default edit settings
     int _nameCount, _phoneCount, _emailCount, _imCount, _addrCount, _width, _height;
     QStringList nameTypes, phoneTypes, emailTypes, imTypes, addrTypes;
@@ -156,7 +156,7 @@ void ContactDialog::setData(const ContactItem& c, const ContactList& l)
     if (c.birthday.value.isValid())
         ui->dteBirthday->setDateTime(c.birthday.value);
     birthdayDetails = c.birthday;
-    DateDetailsDialog::setDateFormat(ui->dteBirthday, birthdayDetails.hasTime);
+    DateDetailsDialog::setDateFormat(ui->dteBirthday, birthdayDetails);
     // Anniversary
     ui->cbAnniversary->setChecked(c.anniversary.value.isValid());
     ui->dteAnniversary->setEnabled(c.anniversary.value.isValid());
@@ -164,7 +164,7 @@ void ContactDialog::setData(const ContactItem& c, const ContactList& l)
     if (c.anniversary.value.isValid())
         ui->dteAnniversary->setDateTime(c.anniversary.value);
     anniversaryDetails = c.anniversary;
-    DateDetailsDialog::setDateFormat(ui->dteAnniversary, anniversaryDetails.hasTime);
+    DateDetailsDialog::setDateFormat(ui->dteAnniversary, anniversaryDetails);
     // Photo
     photo = c.photo;
     showPhoto(c.photo, ui->lbPhotoContent);
@@ -622,7 +622,7 @@ void ContactDialog::editDateDetails(QDateTimeEdit *editor, DateItem &details)
     dlg->exec();
     if (dlg->result()==QDialog::Accepted) {
         dlg->getData(details);
-        DateDetailsDialog::setDateFormat(editor, details.hasTime);
+        DateDetailsDialog::setDateFormat(editor, details);
         editor->setDateTime(details.value);
     }
     delete dlg;

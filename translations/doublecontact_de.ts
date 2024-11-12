@@ -498,21 +498,26 @@ Möchten Sie dieses Zertifikat trotzdem akzeptieren?</translation>
     </message>
     <message>
         <location filename="../app/datedetailsdialog.ui" line="34"/>
+        <source>Set year for date</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/datedetailsdialog.ui" line="41"/>
         <source>Set time for date</source>
         <translation>Uhrzeit für Datum einstellen</translation>
     </message>
     <message>
-        <location filename="../app/datedetailsdialog.ui" line="41"/>
+        <location filename="../app/datedetailsdialog.ui" line="48"/>
         <source>Set time zone</source>
         <translation>Zeitzone festlegen</translation>
     </message>
     <message>
-        <location filename="../app/datedetailsdialog.ui" line="60"/>
+        <location filename="../app/datedetailsdialog.ui" line="67"/>
         <source>h</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../app/datedetailsdialog.ui" line="74"/>
+        <location filename="../app/datedetailsdialog.ui" line="81"/>
         <source>m</source>
         <translation></translation>
     </message>
@@ -1533,7 +1538,7 @@ MMS-Eigenschaften:
     <name>QObject</name>
     <message>
         <location filename="../core/contactlist.cpp" line="117"/>
-        <location filename="../core/contactlist.cpp" line="1160"/>
+        <location filename="../core/contactlist.cpp" line="1161"/>
         <source>Home</source>
         <translation></translation>
     </message>
@@ -1544,7 +1549,7 @@ MMS-Eigenschaften:
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="119"/>
-        <location filename="../core/contactlist.cpp" line="1161"/>
+        <location filename="../core/contactlist.cpp" line="1162"/>
         <source>Work</source>
         <translation>Geschäftlich</translation>
     </message>
@@ -1552,7 +1557,7 @@ MMS-Eigenschaften:
         <location filename="../core/contactlist.cpp" line="120"/>
         <location filename="../core/contactlist.cpp" line="171"/>
         <location filename="../core/contactlist.cpp" line="207"/>
-        <location filename="../core/contactlist.cpp" line="1162"/>
+        <location filename="../core/contactlist.cpp" line="1163"/>
         <source>Preferable</source>
         <translation>Bevorzugt</translation>
     </message>
@@ -1731,22 +1736,22 @@ Sprache des Telefons %5</translation>
 %9 %10</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1163"/>
+        <location filename="../core/contactlist.cpp" line="1164"/>
         <source>Domestic</source>
         <translation>Inländisch</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1164"/>
+        <location filename="../core/contactlist.cpp" line="1165"/>
         <source>International</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1165"/>
+        <location filename="../core/contactlist.cpp" line="1166"/>
         <source>Postal</source>
         <translation>Postalisch</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1166"/>
+        <location filename="../core/contactlist.cpp" line="1167"/>
         <source>Parcel</source>
         <translation>Paket</translation>
     </message>
@@ -1812,7 +1817,12 @@ Sprache des Telefons %5</translation>
         <translation>Ungültige Zeitzone: </translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="623"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="622"/>
+        <source>Unknown datetime format: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/formats/common/vcarddata.cpp" line="633"/>
         <source>Invalid datetime: </source>
         <translation>Ungültige Datumzeit: </translation>
     </message>

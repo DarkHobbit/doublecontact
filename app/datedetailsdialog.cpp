@@ -31,6 +31,7 @@ DateDetailsDialog::~DateDetailsDialog()
 void DateDetailsDialog::setData(const DateItem &data)
 {
     ui->dteDate->setDateTime(data.value);
+    ui->cbHasYear->setChecked(data.hasYear);
     ui->cbHasTime->setChecked(data.hasTime);
     if (data.hasTime) {
         ui->cbHasTimeZone->setChecked(data.hasTimeZone);
@@ -45,6 +46,7 @@ void DateDetailsDialog::setData(const DateItem &data)
 void DateDetailsDialog::getData(DateItem &data)
 {
     data.value = ui->dteDate->dateTime();
+    data.hasYear = ui->cbHasYear->isChecked();
     data.hasTime = ui->cbHasTime->isChecked();
     if (data.hasTime) {
         data.hasTimeZone = ui->cbHasTimeZone->isChecked();
@@ -57,7 +59,7 @@ void DateDetailsDialog::getData(DateItem &data)
 
 void DateDetailsDialog::on_cbHasTime_toggled(bool checked)
 {
-    setDateFormat(ui->dteDate, checked);
+    setDateFormat(ui->dteDate, ui->cbHasYear->isChecked(), checked);
     if (!checked)
         ui->cbHasTimeZone->setChecked(false);
     ui->cbHasTimeZone->setEnabled(checked);
@@ -76,11 +78,26 @@ void DateDetailsDialog::on_cbHasTimeZone_toggled(bool checked)
     ui->sbMin->setEnabled(false); //==>
 }
 
-void DateDetailsDialog::setDateFormat(QDateTimeEdit *editor, const bool hasTime)
+void DateDetailsDialog::setDateFormat(QDateTimeEdit *editor, const DateItem& date)
+{
+    setDateFormat(editor, date.hasYear, date.hasTime);
+}
+
+void DateDetailsDialog::setDateFormat(QDateTimeEdit *editor, bool hasYear, bool hasTime)
 {
     if (hasTime)
         editor->setDisplayFormat("dd.MM.yyyy H:mm");
-    else
+    else if (hasYear)
         editor->setDisplayFormat("dd.MM.yyyy");
+    else {
+        editor->setDisplayFormat("dd.MM");
+        editor->setCalendarPopup(false);
+    }
+}
+
+
+void DateDetailsDialog::on_cbHasYear_toggled(bool checked)
+{
+    setDateFormat(ui->dteDate, checked, ui->cbHasTime->isChecked());
 }
 

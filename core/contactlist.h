@@ -102,12 +102,12 @@ struct Messenger: public TypedStringItem {
     } standardTypes;
 };
 
-// TODO Maybe, after total port to Qt 5.10+, drop this type
-// and use QDateTime with timezoe support instead it
-// OR make TZDateTime from this class and use it for older Qt
-// Old Qt - inherit from QDateTime, new Qt - TZDateTime==QDateTime
+// I don't use QDateTime directly because:
+// 1. In old Qt timezone not supported
+// 2. vCard may contain date without year (--12-14)
 struct DateItem { // Birthday and anniversaries
     QDateTime value; // date & time
+    bool hasYear; // false if date without year (--12-14)
     bool hasTime; // false if date only was in file
     bool hasTimeZone; // record contains TZ info
     short zoneHour, zoneMin; // TZ value

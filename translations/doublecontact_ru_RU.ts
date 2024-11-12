@@ -574,21 +574,26 @@ Are you want to accept this certificate anyway?</source>
     </message>
     <message>
         <location filename="../app/datedetailsdialog.ui" line="34"/>
+        <source>Set year for date</source>
+        <translation>Есть год</translation>
+    </message>
+    <message>
+        <location filename="../app/datedetailsdialog.ui" line="41"/>
         <source>Set time for date</source>
         <translation>Есть время</translation>
     </message>
     <message>
-        <location filename="../app/datedetailsdialog.ui" line="41"/>
+        <location filename="../app/datedetailsdialog.ui" line="48"/>
         <source>Set time zone</source>
         <translation>Есть часовой пояс</translation>
     </message>
     <message>
-        <location filename="../app/datedetailsdialog.ui" line="60"/>
+        <location filename="../app/datedetailsdialog.ui" line="67"/>
         <source>h</source>
         <translation>ч</translation>
     </message>
     <message>
-        <location filename="../app/datedetailsdialog.ui" line="74"/>
+        <location filename="../app/datedetailsdialog.ui" line="81"/>
         <source>m</source>
         <translation>м</translation>
     </message>
@@ -1600,7 +1605,7 @@ MMS properties:
     <name>QObject</name>
     <message>
         <location filename="../core/contactlist.cpp" line="117"/>
-        <location filename="../core/contactlist.cpp" line="1160"/>
+        <location filename="../core/contactlist.cpp" line="1161"/>
         <source>Home</source>
         <translation>Домашний</translation>
     </message>
@@ -1611,7 +1616,7 @@ MMS properties:
     </message>
     <message>
         <location filename="../core/contactlist.cpp" line="119"/>
-        <location filename="../core/contactlist.cpp" line="1161"/>
+        <location filename="../core/contactlist.cpp" line="1162"/>
         <source>Work</source>
         <translation>Служебный</translation>
     </message>
@@ -1619,7 +1624,7 @@ MMS properties:
         <location filename="../core/contactlist.cpp" line="120"/>
         <location filename="../core/contactlist.cpp" line="171"/>
         <location filename="../core/contactlist.cpp" line="207"/>
-        <location filename="../core/contactlist.cpp" line="1162"/>
+        <location filename="../core/contactlist.cpp" line="1163"/>
         <source>Preferable</source>
         <translation>Предпочтительный</translation>
     </message>
@@ -1763,22 +1768,22 @@ IMEI %3
         <translation>ДВОИЧНЫЕ ДАННЫЕ</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1163"/>
+        <location filename="../core/contactlist.cpp" line="1164"/>
         <source>Domestic</source>
         <translation>Внутренний</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1164"/>
+        <location filename="../core/contactlist.cpp" line="1165"/>
         <source>International</source>
         <translation>Международный</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1165"/>
+        <location filename="../core/contactlist.cpp" line="1166"/>
         <source>Postal</source>
         <translation>Почтовый</translation>
     </message>
     <message>
-        <location filename="../core/contactlist.cpp" line="1166"/>
+        <location filename="../core/contactlist.cpp" line="1167"/>
         <source>Parcel</source>
         <translation>Для посылок</translation>
     </message>
@@ -1867,7 +1872,12 @@ IMEI %3
         <translation>Неправильный часовой пояс: </translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="623"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="622"/>
+        <source>Unknown datetime format: </source>
+        <translation>Неизвестный формат даты/времени</translation>
+    </message>
+    <message>
+        <location filename="../core/formats/common/vcarddata.cpp" line="633"/>
         <source>Invalid datetime: </source>
         <translation>Неправильная дата/время: </translation>
     </message>

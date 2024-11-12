@@ -31,10 +31,13 @@ public:
     ~DateDetailsDialog();
     void setData(const DateItem& data);
     void getData(DateItem& data);
-    static void setDateFormat(QDateTimeEdit* editor, bool hasTime);
+    static void setDateFormat(QDateTimeEdit* editor, const DateItem& date);
+    static void setDateFormat(QDateTimeEdit* editor, bool hasYear, bool hasTime);
 private slots:
     void on_cbHasTime_toggled(bool checked);
     void on_cbHasTimeZone_toggled(bool checked);
+    void on_cbHasYear_toggled(bool checked);
+
 private:
     Ui::DateDetailsDialog *ui;
 };

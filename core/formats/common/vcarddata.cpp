@@ -612,12 +612,22 @@ void VCardData::importDate(DateItem &item, const QString &src, QStringList& erro
         }
     }
     else { // without time
-        // TODO implement date without year: --0415 according vCard 4.0. Need flag or incorrect year
-        int sdPos = src.indexOf("-"); // - in long date format
-        if (sdPos!=-1)
-            item.value = QDateTime::fromString(src, "yyyy-MM-dd");
-        else
-            item.value = QDateTime::fromString(src, "yyyyMMdd");
+        if (src.startsWith("--")) { // date without year: --0415 according vCard 4.0
+            item.hasYear = false;
+            // TODO RFC also allows record "---12"; implement if examples will appear
+            QString subSrc = src.mid(2);
+            if (subSrc.length()==4 || (subSrc.length()==5 && subSrc[2]=='-'))
+                item.value = QDateTime(QDate(1812, subSrc.leftRef(2).toInt(),subSrc.rightRef(2).toInt() ), QTime());
+            else
+                errors << QObject::tr("Unknown datetime format: ") + src + " (" + location + ")";
+        }
+        else { // date WITH year
+            int sdPos = src.indexOf("-"); // - in long date format
+            if (sdPos!=-1)
+                item.value = QDateTime::fromString(src, "yyyy-MM-dd");
+            else
+                item.value = QDateTime::fromString(src, "yyyyMMdd");
+        }
     }
     if (!item.value.isValid())
         errors << QObject::tr("Invalid datetime: ") + src + " (" + location + ")";

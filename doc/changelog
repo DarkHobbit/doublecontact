@@ -126,6 +126,7 @@ CURRENT
 * Quick View added (Ctrl+Q on panel view)
 * Sylpheed Email client CSV files support
 * Global refactoring: VCardData/VMessageData ported to byte strings, common v-routines moved to separate module
+* Birthdays and anniversaries without year are now supported
 * Rows in table can be resized to contents
 * Doubleclick can be used for groups in contact dialog and for columns in settings dialog
 * Remove alternate record after merge if user want it
