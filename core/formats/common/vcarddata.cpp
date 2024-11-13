@@ -617,7 +617,7 @@ void VCardData::importDate(DateItem &item, const QString &src, QStringList& erro
             // TODO RFC also allows record "---12"; implement if examples will appear
             QString subSrc = src.mid(2);
             if (subSrc.length()==4 || (subSrc.length()==5 && subSrc[2]=='-'))
-                item.value = QDateTime(QDate(1812, subSrc.leftRef(2).toInt(),subSrc.rightRef(2).toInt() ), QTime());
+                item.value = QDateTime(QDate(1812, subSrc.left(2).toInt(),subSrc.right(2).toInt() ), QTime());
             else
                 errors << QObject::tr("Unknown datetime format: ") + src + " (" + location + ")";
         }
