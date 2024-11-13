@@ -24,6 +24,6 @@ cp /usr/share/qt${QT_MAJV}/translations/qt_??.qm ${TRANS_PATH}/
 cp /usr/share/qt${QT_MAJV}/translations/qt_??_??.qm ${TRANS_PATH}/
 cp ${SRC_DIR}/app/doublecontact.desktop ${DSK_PATH}/
 cp ${SRC_DIR}/img/32x32/doublecontact_32x32.xpm ${IMG_PATH}/
-cp ${SRC_DIR}/doc/* ${DOC_PATH}/
+cp -r ${SRC_DIR}/doc/* ${DOC_PATH}/
 cp ${SRC_DIR}/COPYING ${DOC_PATH}/
 cp ${SRC_DIR}/README.md ${DOC_PATH}/
