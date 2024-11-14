@@ -11,47 +11,47 @@
     <message>
         <location filename="../app/aboutdialog.ui" line="24"/>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation>一般</translation>
     </message>
     <message>
         <location filename="../app/aboutdialog.ui" line="61"/>
         <source>The Contact Manager</source>
-        <translation type="unfinished"></translation>
+        <translation>聯絡人管理員</translation>
     </message>
     <message>
         <location filename="../app/aboutdialog.ui" line="104"/>
         <source>Distributed under GPL v3 or above</source>
-        <translation type="unfinished"></translation>
+        <translation>根據 GPL v3 或更新版本分發</translation>
     </message>
     <message>
         <location filename="../app/aboutdialog.ui" line="132"/>
         <source>Contributors</source>
-        <translation type="unfinished"></translation>
+        <translation>貢獻者</translation>
     </message>
     <message>
         <location filename="../app/aboutdialog.ui" line="142"/>
         <source>Additional</source>
-        <translation type="unfinished"></translation>
+        <translation>額外</translation>
     </message>
     <message>
         <location filename="../app/aboutdialog.ui" line="148"/>
         <source>Compiler:</source>
-        <translation type="unfinished"></translation>
+        <translation>編譯器：</translation>
     </message>
     <message>
         <location filename="../app/aboutdialog.ui" line="155"/>
         <source>unknown compiler</source>
-        <translation type="unfinished"></translation>
+        <translation>未知的編譯器</translation>
     </message>
     <message>
         <location filename="../app/aboutdialog.ui" line="162"/>
         <source>Path to translations:</source>
-        <translation type="unfinished"></translation>
+        <translation>翻譯路徑：</translation>
     </message>
     <message>
         <location filename="../app/aboutdialog.ui" line="169"/>
         <source>unknown path</source>
-        <translation type="unfinished"></translation>
+        <translation>未知的路徑</translation>
     </message>
 </context>
 <context>
@@ -59,17 +59,17 @@
     <message>
         <location filename="../app/csvprofiledialog.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>對話框</translation>
     </message>
     <message>
         <location filename="../app/csvprofiledialog.ui" line="25"/>
         <source>Encoding</source>
-        <translation type="unfinished"></translation>
+        <translation>編碼</translation>
     </message>
     <message>
         <location filename="../app/csvprofiledialog.ui" line="39"/>
         <source>Separator</source>
-        <translation type="unfinished"></translation>
+        <translation>分隔符號</translation>
     </message>
 </context>
 <context>
@@ -82,22 +82,22 @@
     <message>
         <location filename="../model/callmodel.cpp" line="25"/>
         <source>TimeStamp</source>
-        <translation type="unfinished"></translation>
+        <translation>時間戳</translation>
     </message>
     <message>
         <location filename="../model/callmodel.cpp" line="26"/>
         <source>Duration</source>
-        <translation type="unfinished"></translation>
+        <translation>持續時間</translation>
     </message>
     <message>
         <location filename="../model/callmodel.cpp" line="27"/>
         <source>Number</source>
-        <translation>數字</translation>
+        <translation>號碼</translation>
     </message>
     <message>
         <location filename="../model/callmodel.cpp" line="28"/>
         <source>Name</source>
-        <translation>姓名</translation>
+        <translation>名稱</translation>
     </message>
 </context>
 <context>
@@ -105,37 +105,37 @@
     <message>
         <location filename="../app/callwindow.ui" line="14"/>
         <source>Calls</source>
-        <translation type="unfinished"></translation>
+        <translation>通話</translation>
     </message>
     <message>
         <location filename="../app/callwindow.ui" line="31"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation>過濾器</translation>
     </message>
     <message>
         <location filename="../app/callwindow.ui" line="56"/>
         <source>&amp;Save as...</source>
-        <translation type="unfinished"></translation>
+        <translation>儲存為… (&amp;S)</translation>
     </message>
     <message>
         <location filename="../app/callwindow.ui" line="65"/>
         <source>Copy text</source>
-        <translation type="unfinished"></translation>
+        <translation>複製文字</translation>
     </message>
     <message>
         <location filename="../app/callwindow.ui" line="68"/>
         <source>Ctrl+C</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+C</translation>
     </message>
     <message>
         <location filename="../app/callwindow.cpp" line="91"/>
         <source>Records: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>記錄：%1</translation>
     </message>
     <message>
         <location filename="../app/callwindow.cpp" line="137"/>
         <source>Save calls file</source>
-        <translation type="unfinished"></translation>
+        <translation>儲存通話檔案</translation>
     </message>
 </context>
 <context>
@@ -143,29 +143,31 @@
     <message>
         <location filename="../core/formats/network/carddavformat.cpp" line="28"/>
         <source>Invalid URL</source>
-        <translation type="unfinished"></translation>
+        <translation>無效的網址</translation>
     </message>
     <message>
         <location filename="../core/formats/network/carddavformat.cpp" line="82"/>
         <source>There are security problems:
     %1
 Are you want to accept this certificate anyway?</source>
-        <translation type="unfinished"></translation>
+        <translation>存在安全問題：
+    %1
+你仍然想接受此憑證嗎？</translation>
     </message>
     <message>
         <location filename="../core/formats/network/carddavformat.cpp" line="150"/>
         <source>SSL handshake failed</source>
-        <translation type="unfinished"></translation>
+        <translation>SSL 握手失敗</translation>
     </message>
     <message>
         <location filename="../core/formats/network/carddavformat.cpp" line="165"/>
         <source>No DAV items. It seems that this is not a CardDAV server.</source>
-        <translation type="unfinished"></translation>
+        <translation>沒有 DAV 項目。看起來這不是一個 CardDAV 伺服器。</translation>
     </message>
     <message>
         <location filename="../core/formats/network/carddavformat.cpp" line="177"/>
         <source>Strange vCard item: </source>
-        <translation type="unfinished"></translation>
+        <translation>奇怪的 vCard 項目： </translation>
     </message>
 </context>
 <context>
@@ -173,37 +175,37 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/comparedialog.ui" line="14"/>
         <source>Item Merge</source>
-        <translation type="unfinished"></translation>
+        <translation>項目合併</translation>
     </message>
     <message>
         <location filename="../app/comparedialog.cpp" line="68"/>
         <source>Names</source>
-        <translation type="unfinished"></translation>
+        <translation>名稱</translation>
     </message>
     <message>
         <location filename="../app/comparedialog.cpp" line="69"/>
         <source>Phones</source>
-        <translation type="unfinished"></translation>
+        <translation>電話</translation>
     </message>
     <message>
         <location filename="../app/comparedialog.cpp" line="70"/>
         <source>Emails</source>
-        <translation type="unfinished"></translation>
+        <translation>電子郵件</translation>
     </message>
     <message>
         <location filename="../app/comparedialog.cpp" line="72"/>
         <source>Anniversaries</source>
-        <translation type="unfinished"></translation>
+        <translation>週年紀念日</translation>
     </message>
     <message>
         <location filename="../app/comparedialog.cpp" line="74"/>
         <source>Sort string</source>
-        <translation type="unfinished"></translation>
+        <translation>排序字串</translation>
     </message>
     <message>
         <location filename="../app/comparedialog.cpp" line="78"/>
         <source>Addresses</source>
-        <translation type="unfinished"></translation>
+        <translation>地址</translation>
     </message>
     <message>
         <location filename="../app/comparedialog.cpp" line="85"/>
@@ -216,266 +218,266 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/contactdialog.ui" line="14"/>
         <source>Edit Contact</source>
-        <translation type="unfinished"></translation>
+        <translation>編輯聯絡人</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="24"/>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation>一般</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="37"/>
         <source>Full name</source>
-        <translation type="unfinished"></translation>
+        <translation>全名</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="49"/>
         <source>Name</source>
-        <translation type="unfinished">姓名</translation>
+        <translation>名稱</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="68"/>
         <source>Phone</source>
-        <translation type="unfinished"></translation>
+        <translation>電話</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="107"/>
         <source>Email</source>
-        <translation type="unfinished"></translation>
+        <translation>電子郵件</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="148"/>
         <location filename="../app/contactdialog.ui" line="384"/>
         <location filename="../app/contactdialog.ui" line="482"/>
         <source>Add...</source>
-        <translation type="unfinished"></translation>
+        <translation>增加…</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="156"/>
         <location filename="../app/contactdialog.cpp" line="710"/>
         <source>name</source>
-        <translation type="unfinished"></translation>
+        <translation>名稱</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="161"/>
         <location filename="../app/contactdialog.cpp" line="712"/>
         <source>phone</source>
-        <translation type="unfinished"></translation>
+        <translation>電話</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="166"/>
         <location filename="../app/contactdialog.cpp" line="714"/>
         <source>email</source>
-        <translation type="unfinished"></translation>
+        <translation>電子郵件</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="186"/>
         <source>Birthday</source>
-        <translation type="unfinished"></translation>
+        <translation>生日</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="200"/>
         <location filename="../app/contactdialog.ui" line="236"/>
         <source>Details</source>
-        <translation type="unfinished"></translation>
+        <translation>詳細資訊</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="254"/>
         <location filename="../app/contactdialog.ui" line="315"/>
         <source>Photo</source>
-        <translation type="unfinished"></translation>
+        <translation>照片</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="277"/>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation>描述</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="327"/>
         <source>Addresses</source>
-        <translation type="unfinished"></translation>
+        <translation>地址</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="335"/>
         <source>Organization</source>
-        <translation type="unfinished"></translation>
+        <translation>組織</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="345"/>
         <source>Job Title</source>
-        <translation type="unfinished"></translation>
+        <translation>職位名稱</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="355"/>
         <source>Role</source>
-        <translation type="unfinished"></translation>
+        <translation>角色</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="392"/>
         <source>Internet</source>
-        <translation type="unfinished"></translation>
+        <translation>網路</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="400"/>
         <source>NickName</source>
-        <translation type="unfinished"></translation>
+        <translation>暱稱</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="443"/>
         <source>Instant messaging</source>
-        <translation type="unfinished"></translation>
+        <translation>即時通訊</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="583"/>
         <source>Updated:</source>
-        <translation type="unfinished"></translation>
+        <translation>已更新：</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="689"/>
         <source>Save View</source>
-        <translation type="unfinished"></translation>
+        <translation>儲存檢視</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="721"/>
         <source>&amp;Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>移除 (&amp;R)</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="724"/>
         <source>Del</source>
-        <translation type="unfinished"></translation>
+        <translation>刪除</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="729"/>
         <source>Copy text</source>
-        <translation type="unfinished"></translation>
+        <translation>複製文字</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="732"/>
         <source>Ctrl+C</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+C</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="410"/>
         <source>URL</source>
-        <translation type="unfinished"></translation>
+        <translation>網址</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="222"/>
         <source>Anniversary</source>
-        <translation type="unfinished"></translation>
+        <translation>週年紀念日</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="492"/>
         <source>Groups</source>
-        <translation type="unfinished"></translation>
+        <translation>群組</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="498"/>
         <source>Contact in groups</source>
-        <translation type="unfinished"></translation>
+        <translation>在群組的聯絡人</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="505"/>
         <source>Available groups</source>
-        <translation type="unfinished"></translation>
+        <translation>可用的群組</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="545"/>
         <source>Other</source>
-        <translation type="unfinished"></translation>
+        <translation>其它</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="567"/>
         <source>Format version:</source>
-        <translation type="unfinished"></translation>
+        <translation>格式版本：</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="599"/>
         <source>ID</source>
-        <translation type="unfinished"></translation>
+        <translation>ID</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="553"/>
         <source>Original format:</source>
-        <translation type="unfinished"></translation>
+        <translation>原始格式：</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="613"/>
         <source>Sort string</source>
-        <translation type="unfinished"></translation>
+        <translation>排序字串</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="625"/>
         <source>Other contact attributes</source>
-        <translation type="unfinished"></translation>
+        <translation>其他聯絡人屬性</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="639"/>
         <location filename="../app/contactdialog.ui" line="670"/>
         <source>Tag</source>
-        <translation type="unfinished"></translation>
+        <translation>標籤</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="644"/>
         <location filename="../app/contactdialog.ui" line="675"/>
         <source>Value</source>
-        <translation type="unfinished"></translation>
+        <translation>值</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="653"/>
         <source>Problems</source>
-        <translation type="unfinished"></translation>
+        <translation>問題</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="659"/>
         <source>Unknown contact attributes</source>
-        <translation type="unfinished"></translation>
+        <translation>未知的聯絡人屬性</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.cpp" line="94"/>
         <source>Add contact</source>
-        <translation type="unfinished"></translation>
+        <translation>新增聯絡人</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.cpp" line="141"/>
         <source>Edit contact</source>
-        <translation type="unfinished"></translation>
+        <translation>編輯聯絡人</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.cpp" line="724"/>
         <source>Phone type</source>
-        <translation type="unfinished"></translation>
+        <translation>電話類型</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.cpp" line="726"/>
         <source>Email type</source>
-        <translation type="unfinished"></translation>
+        <translation>電子郵件類型</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.cpp" line="728"/>
         <source>Address type</source>
-        <translation type="unfinished"></translation>
+        <translation>地址類型</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.cpp" line="730"/>
         <source>IM type</source>
-        <translation type="unfinished"></translation>
+        <translation>即時通訊類型</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.cpp" line="803"/>
         <source>Open image file</source>
-        <translation type="unfinished"></translation>
+        <translation>開啟圖片檔案</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.cpp" line="835"/>
         <source>Save image file</source>
-        <translation type="unfinished"></translation>
+        <translation>儲存圖片檔案</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.cpp" line="853"/>
         <source>Contact photo</source>
-        <translation type="unfinished"></translation>
+        <translation>聯絡人照片</translation>
     </message>
 </context>
 <context>
@@ -483,12 +485,12 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/datedetailsdialog.ui" line="14"/>
         <source>Date details</source>
-        <translation type="unfinished"></translation>
+        <translation>日期詳細資訊</translation>
     </message>
     <message>
         <location filename="../app/datedetailsdialog.ui" line="22"/>
         <source>Date</source>
-        <translation type="unfinished"></translation>
+        <translation>日期</translation>
     </message>
     <message>
         <location filename="../app/datedetailsdialog.ui" line="34"/>
@@ -498,22 +500,22 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/datedetailsdialog.ui" line="41"/>
         <source>Set time for date</source>
-        <translation type="unfinished"></translation>
+        <translation>設定日期時間</translation>
     </message>
     <message>
         <location filename="../app/datedetailsdialog.ui" line="48"/>
         <source>Set time zone</source>
-        <translation type="unfinished"></translation>
+        <translation>設定時區</translation>
     </message>
     <message>
         <location filename="../app/datedetailsdialog.ui" line="67"/>
         <source>h</source>
-        <translation type="unfinished"></translation>
+        <translation>時</translation>
     </message>
     <message>
         <location filename="../app/datedetailsdialog.ui" line="81"/>
         <source>m</source>
-        <translation type="unfinished"></translation>
+        <translation>分</translation>
     </message>
 </context>
 <context>
@@ -521,32 +523,32 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/groupdialog.ui" line="14"/>
         <source>Groups</source>
-        <translation type="unfinished"></translation>
+        <translation>群組</translation>
     </message>
     <message>
         <location filename="../app/groupdialog.ui" line="45"/>
         <source>Add (Ins)</source>
-        <translation type="unfinished"></translation>
+        <translation>新增 (Ins)</translation>
     </message>
     <message>
         <location filename="../app/groupdialog.ui" line="52"/>
         <source>Edit (Enter)</source>
-        <translation type="unfinished"></translation>
+        <translation>編輯 (Enter)</translation>
     </message>
     <message>
         <location filename="../app/groupdialog.ui" line="59"/>
         <source>Remove (Del)</source>
-        <translation type="unfinished"></translation>
+        <translation>移除 (Del)</translation>
     </message>
     <message>
         <location filename="../app/groupdialog.ui" line="70"/>
         <source>&amp;Merge groups...</source>
-        <translation type="unfinished"></translation>
+        <translation>合併群組… (&amp;M)</translation>
     </message>
     <message>
         <location filename="../app/groupdialog.ui" line="77"/>
         <source>&amp;Split group...</source>
-        <translation type="unfinished"></translation>
+        <translation>分割群組… (&amp;S)</translation>
     </message>
     <message>
         <location filename="../app/groupdialog.ui" line="86"/>
@@ -557,32 +559,32 @@ Are you want to accept this certificate anyway?</source>
         <location filename="../app/groupdialog.cpp" line="58"/>
         <source>Contacts</source>
         <comment>In group</comment>
-        <translation type="unfinished"></translation>
+        <translation>聯絡人</translation>
     </message>
     <message>
         <location filename="../app/groupdialog.cpp" line="114"/>
         <source>Group merge</source>
-        <translation type="unfinished"></translation>
+        <translation>群組合併</translation>
     </message>
     <message>
         <location filename="../app/groupdialog.cpp" line="117"/>
         <source>United group</source>
-        <translation type="unfinished"></translation>
+        <translation>已聯合的群組</translation>
     </message>
     <message>
         <location filename="../app/groupdialog.cpp" line="122"/>
         <source>Merged group</source>
-        <translation type="unfinished"></translation>
+        <translation>已合併的群組</translation>
     </message>
     <message>
         <location filename="../app/groupdialog.cpp" line="147"/>
         <source>Group split</source>
-        <translation type="unfinished"></translation>
+        <translation>群組分割</translation>
     </message>
     <message>
         <location filename="../app/groupdialog.cpp" line="150"/>
         <source>New group</source>
-        <translation type="unfinished"></translation>
+        <translation>新群組</translation>
     </message>
     <message>
         <location filename="../app/groupdialog.cpp" line="153"/>
@@ -595,22 +597,22 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../model/innerfilemodel.cpp" line="24"/>
         <source>Folder</source>
-        <translation type="unfinished"></translation>
+        <translation>資料夾</translation>
     </message>
     <message>
         <location filename="../model/innerfilemodel.cpp" line="25"/>
         <source>Name</source>
-        <translation type="unfinished">姓名</translation>
+        <translation>名稱</translation>
     </message>
     <message>
         <location filename="../model/innerfilemodel.cpp" line="26"/>
         <source>TimeStamp</source>
-        <translation type="unfinished"></translation>
+        <translation>時間戳</translation>
     </message>
     <message>
         <location filename="../model/innerfilemodel.cpp" line="27"/>
         <source>Size</source>
-        <translation type="unfinished"></translation>
+        <translation>大小</translation>
     </message>
 </context>
 <context>
@@ -618,27 +620,27 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/innerfilewindow.ui" line="14"/>
         <source>Files</source>
-        <translation type="unfinished"></translation>
+        <translation>檔案</translation>
     </message>
     <message>
         <location filename="../app/innerfilewindow.ui" line="31"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation>過濾器</translation>
     </message>
     <message>
         <location filename="../app/innerfilewindow.ui" line="56"/>
         <source>&amp;Save all</source>
-        <translation type="unfinished"></translation>
+        <translation>儲存全部 (&amp;S)</translation>
     </message>
     <message>
         <location filename="../app/innerfilewindow.ui" line="65"/>
         <source>Copy text</source>
-        <translation type="unfinished"></translation>
+        <translation>複製文字</translation>
     </message>
     <message>
         <location filename="../app/innerfilewindow.ui" line="68"/>
         <source>Ctrl+C</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+C</translation>
     </message>
     <message>
         <location filename="../app/innerfilewindow.ui" line="73"/>
@@ -648,7 +650,7 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/innerfilewindow.ui" line="78"/>
         <source>Save file</source>
-        <translation type="unfinished"></translation>
+        <translation>儲存檔案</translation>
     </message>
 </context>
 <context>
@@ -666,7 +668,7 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/logwindow.ui" line="32"/>
         <source>Copy to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>複製至剪貼簿</translation>
     </message>
     <message>
         <location filename="../app/logwindow.cpp" line="42"/>
@@ -1110,12 +1112,12 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/mainwindow.ui" line="668"/>
         <source>Copy text</source>
-        <translation type="unfinished"></translation>
+        <translation>複製文字</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="671"/>
         <source>Ctrl+C</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+C</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.cpp" line="199"/>
@@ -1323,7 +1325,7 @@ Save changes?</source>
     <message>
         <location filename="../app/messagewindow.ui" line="67"/>
         <source>Merge duplicates</source>
-        <translation type="unfinished"></translation>
+        <translation>合併重複項目</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="43"/>
@@ -1338,12 +1340,12 @@ Save changes?</source>
     <message>
         <location filename="../app/messagewindow.ui" line="123"/>
         <source>Apply</source>
-        <translation type="unfinished"></translation>
+        <translation>套用</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="143"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation>過濾器</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="168"/>
@@ -1358,17 +1360,17 @@ Save changes?</source>
     <message>
         <location filename="../app/messagewindow.ui" line="184"/>
         <source>Copy text</source>
-        <translation type="unfinished"></translation>
+        <translation>複製文字</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="187"/>
         <source>Ctrl+C</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+C</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="192"/>
         <source>Properties</source>
-        <translation type="unfinished"></translation>
+        <translation>屬性</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="195"/>
@@ -2166,7 +2168,7 @@ Read %3 bytes, %4 expected</source>
     <message>
         <location filename="../core/extra.h" line="38"/>
         <source>Save attachment</source>
-        <translation type="unfinished"></translation>
+        <translation>儲存附件</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="60"/>
@@ -2667,32 +2669,32 @@ Are you want switch column sorting off?</source>
     <message>
         <location filename="../app/settingsdialog.ui" line="14"/>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>設定</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="24"/>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation>一般</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="32"/>
         <source>Language</source>
-        <translation type="unfinished"></translation>
+        <translation>語言</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="42"/>
         <source>Date format</source>
-        <translation type="unfinished"></translation>
+        <translation>日期格式</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="52"/>
         <source>Time format</source>
-        <translation type="unfinished"></translation>
+        <translation>時間格式</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="64"/>
         <source>Use system date/time format</source>
-        <translation type="unfinished"></translation>
+        <translation>使用系統日期／時間格式</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="71"/>
@@ -2732,7 +2734,7 @@ Are you want switch column sorting off?</source>
     <message>
         <location filename="../app/settingsdialog.ui" line="120"/>
         <source>Colors</source>
-        <translation type="unfinished"></translation>
+        <translation>顔色</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="126"/>
@@ -2747,7 +2749,7 @@ Are you want switch column sorting off?</source>
     <message>
         <location filename="../app/settingsdialog.ui" line="144"/>
         <source>Columns</source>
-        <translation type="unfinished"></translation>
+        <translation>欄</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="150"/>
@@ -2787,7 +2789,7 @@ Are you want switch column sorting off?</source>
     <message>
         <location filename="../app/settingsdialog.ui" line="247"/>
         <source>Default country</source>
-        <translation type="unfinished"></translation>
+        <translation>預設國家</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="259"/>
@@ -2832,7 +2834,7 @@ Are you want switch column sorting off?</source>
     <message>
         <location filename="../app/settingsdialog.ui" line="354"/>
         <source>Loading</source>
-        <translation type="unfinished"></translation>
+        <translation>正在載入</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="362"/>
@@ -2885,17 +2887,17 @@ Are you want switch column sorting off?</source>
     <message>
         <location filename="../app/sortdialog.ui" line="20"/>
         <source>Sort criterion</source>
-        <translation type="unfinished"></translation>
+        <translation>排序標準</translation>
     </message>
     <message>
         <location filename="../app/sortdialog.ui" line="61"/>
         <source>6</source>
-        <translation type="unfinished"></translation>
+        <translation>6</translation>
     </message>
     <message>
         <location filename="../app/sortdialog.cpp" line="22"/>
         <source>Sort string</source>
-        <translation type="unfinished"></translation>
+        <translation>排序字串</translation>
     </message>
 </context>
 <context>
@@ -2908,7 +2910,7 @@ Are you want switch column sorting off?</source>
     <message>
         <location filename="../app/tagremovedialog.ui" line="33"/>
         <source>Select all</source>
-        <translation type="unfinished"></translation>
+        <translation>選取全部</translation>
     </message>
     <message>
         <location filename="../app/tagremovedialog.cpp" line="39"/>
