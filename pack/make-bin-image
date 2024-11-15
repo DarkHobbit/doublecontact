@@ -1,8 +1,19 @@
 #!/bin/bash
 
 SRC_DIR=$1
-PKG_DIR=$2
-QT_MAJV=$3
+BLD_DIR=$2
+PKG_DIR=$3
+QT_MAJV=$4
+
+if ! [ -d ${SRC_DIR} ]; then
+  echo "Source directory not exists"
+  exit 1
+fi
+if ! [ -d ${BLD_DIR} ]; then
+  echo "Build directory not exists"
+  exit 1
+fi
+
 
 BIN_PATH=${PKG_DIR}/usr/bin
 TRANS_PATH=${PKG_DIR}/usr/share/doublecontact/translations
@@ -16,8 +27,8 @@ mkdir -p ${DSK_PATH}
 mkdir -p ${IMG_PATH}
 mkdir -p ${DOC_PATH}
 
-cp ${SRC_DIR}/app/doublecontact ${BIN_PATH}/
-cp ${SRC_DIR}/contconv/contconv ${BIN_PATH}/
+cp ${BLD_DIR}/app/doublecontact ${BIN_PATH}/
+cp ${BLD_DIR}/contconv/contconv ${BIN_PATH}/
 cp ${SRC_DIR}/translations/*.qm ${TRANS_PATH}/
 cp ${SRC_DIR}/translations/iso639-1.utf8 ${TRANS_PATH}/
 cp /usr/share/qt${QT_MAJV}/translations/qt_??.qm ${TRANS_PATH}/

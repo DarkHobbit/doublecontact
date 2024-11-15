@@ -26,7 +26,11 @@ CTL_FIlE=./${PKG_NAME}/DEBIAN/control
 
 # Make bin image
 cd ../..
-./pack/make-bin-image . ./${PKG_NAME} ${QT_MAJV}
+./pack/make-bin-image . . ./${PKG_NAME} ${QT_MAJV}
+if [ $? -ne 0 ]; then
+  echo "make-bin-image failed!"
+  exit 1
+fi
 # Copy debianization template
 cp -R ./pack/deb/DEBIAN ./${PKG_NAME}/
 # Add version number and arch to control file

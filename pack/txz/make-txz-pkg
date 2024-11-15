@@ -14,7 +14,11 @@ fi
 PKG_NAME=doublecontact_${DC_VER}_amd64
 
 # cd .
-../make-bin-image ../.. ../../${PKG_NAME} ${QT_MAJV}
-cp ./remove-doublecontact-root-build ../../${PKG_NAME}/
-tar -cJf ../../${PKG_NAME}.tar.xz `pwd`/../../${PKG_NAME}
+../make-bin-image ../.. ../../../build-stat ../../../${PKG_NAME} ${QT_MAJV}
+if [ $? -ne 0 ]; then
+  echo "make-bin-image failed!"
+  exit 1
+fi
+cp ./remove-doublecontact-root-build ../../../${PKG_NAME}/
+tar -cJf ../../../${PKG_NAME}.tar.xz `pwd`/../../../${PKG_NAME}
 
