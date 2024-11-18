@@ -9,37 +9,15 @@ Libraries: Qt4/5.
 
 ## Build ##
 
-Use qmake for build doublecontact. Project all.pro in repo root builds both GUI (doublecontact) and console (contconv) application.
+Build instructions contains in [separate manual](https://github.com/DarkHobbit/doublecontact/blob/master/doc/BUILD.en.md).
 
-Repo also contains config files for cmake, but currently it isn't usable. Use qmake.
+## User manual ##
 
-### Build instructions ###
+DoubleContact user manual [is also available](https://github.com/DarkHobbit/doublecontact/blob/master/doc/manual.en.md) on Github.
 
-#### Ubuntu ####
+## Translations ##
 
-sudo apt-get install qt4-qmake
+Please, use [Weblate](https://hosted.weblate.org/projects/doublecontact/) if you want to translate program on a new language. If you prefer edit separate files, you can [learn ready translation samples](https://github.com/DarkHobbit/doublecontact/tree/master/translations) and send your files to author.
 
-git clone https://github.com/DarkHobbit/doublecontact.git
+Please, don't place ellipsis and other non-latin character in source files directly. Place this into translation files (including English).
 
-cd doublecontact
-
-qmake
-
-make
-
-For Qt5, you may need install zlib before qmake. For example, for Debian:
-
-sudo apt-get install zlib1g-dev
-
-## Help ##
-
-### User manual ###
-
-DoubleContact user manual [is available](https://github.com/DarkHobbit/doublecontact/blob/master/doc/manual.en.md) on Github.
-
-### Translations ###
-
-Please, use [Weblate](https://hosted.weblate.org/projects/doublecontact/) if you want to translate program on a new language.
-
-Please, don't place ellipsis and other non-latin character in source files directly. Place this into translation files (including
-English).
