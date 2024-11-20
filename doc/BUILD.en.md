@@ -71,8 +71,15 @@ You can see  a sample of build script yin build-samples/build-qt-stat-512 file.
 Qt building may take several hours.
 
 After it, you must call define manually QTDIR variable and call qmake by absolute path from Qt directory.
+For example, if you installed Qt in /opt/Qt/5.5.12.st as in script above, run in doublecontact source repo:
 
-TODO sample
+```
+export QTDIR=/opt/Qt/5.12.12.st
+${QTDIR}/bin qmake
+make
+```
+
+Shadow build is also supported.
 
 ## macOS ##
 
@@ -85,4 +92,4 @@ on MinGW C++, Qt Creator and one of supported Qt versions (see General section).
 
 You also can make static build. See build-samples/buildstat-486.bat and build-samples/buildstat-510.bat for examples
 (second file requires path to Python and OpenSSL from MSYS installation, currently you can exclude OpenSSL from your build).
-
+See also batfiles in pack/exe and pack/zip for build'n'pack doublecontact after it.
