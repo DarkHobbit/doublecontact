@@ -1,0 +1,12 @@
+Source: doublecontact
+Section: misc
+Priority: optional
+Maintainer: Mikhail Y. Zvyozdochkin <pub@zvyozdochkin.ru>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.5
+Homepage: https://github.com/DarkHobbit/doublecontact
+#Vcs-Git: https://github.com/DarkHobbit/doublecontact.git
+#Vcs-Browser: https://github.com/DarkHobbit/doublecontact
+Package: doublecontact
+Depends: libc6 (>= 2.28), libqt5gui5 (>= 5.11), libqt5xml5 (>= 5.11)
+Description: offline DE-independent contact manager

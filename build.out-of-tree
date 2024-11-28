@@ -1,0 +1,13 @@
+#!/bin/bash
+
+SRC_DIR=`pwd`
+BLD_DIR=${SRC_DIR}/../build-doublecontact
+
+mkdir -p ${BLD_DIR}
+cd ${BLD_DIR}
+qmake ${SRC_DIR}/all.pro
+if [ $? -ne 0 ]; then
+    echo "qmake failed"
+    exit 1
+fi
+make

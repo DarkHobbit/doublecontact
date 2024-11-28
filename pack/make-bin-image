@@ -3,7 +3,7 @@
 SRC_DIR=$1
 BLD_DIR=$2
 PKG_DIR=$3
-QT_MAJV=$4
+QTTR_DIR=$4
 
 if ! [ -d ${SRC_DIR} ]; then
   echo "Source directory not exists"
@@ -31,8 +31,8 @@ cp ${BLD_DIR}/app/doublecontact ${BIN_PATH}/
 cp ${BLD_DIR}/contconv/contconv ${BIN_PATH}/
 cp ${SRC_DIR}/translations/*.qm ${TRANS_PATH}/
 cp ${SRC_DIR}/translations/iso639-1.utf8 ${TRANS_PATH}/
-cp /usr/share/qt${QT_MAJV}/translations/qt_??.qm ${TRANS_PATH}/
-cp /usr/share/qt${QT_MAJV}/translations/qt_??_??.qm ${TRANS_PATH}/
+cp ${QTTR_DIR}//qt_??.qm ${TRANS_PATH}/
+cp ${QTTR_DIR}/qt_??_??.qm ${TRANS_PATH}/
 cp ${SRC_DIR}/app/doublecontact.desktop ${DSK_PATH}/
 cp ${SRC_DIR}/img/32x32/doublecontact_32x32.xpm ${IMG_PATH}/
 cp -r ${SRC_DIR}/doc/* ${DOC_PATH}/

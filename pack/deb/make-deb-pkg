@@ -9,6 +9,7 @@ DC_VER=$1
 PKG_DIST=$2
 PKG_ARCH=$3
 QT_MAJV=$4
+QTTR_DIR=/usr/share/qt${QT_MAJV}/translations
 
 if [ -z "$DC_VER" ]
 then
@@ -26,13 +27,14 @@ CTL_FIlE=./${PKG_NAME}/DEBIAN/control
 
 # Make bin image
 cd ../..
-./pack/make-bin-image . . ./${PKG_NAME} ${QT_MAJV}
+./pack/make-bin-image . ../build-doublecontact ./${PKG_NAME} ${QTTR_DIR}
 if [ $? -ne 0 ]; then
   echo "make-bin-image failed!"
   exit 1
 fi
 # Copy debianization template
 cp -R ./pack/deb/DEBIAN ./${PKG_NAME}/
+cp ./pack/deb/control-qt${QT_MAJV}  ./${PKG_NAME}/DEBIAN/control
 # Add version number and arch to control file
 echo "Version: ${DC_VER}" >> ${CTL_FIlE}
 echo "Architecture: ${PKG_ARCH}" >> ${CTL_FIlE}
