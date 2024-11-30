@@ -1,44 +1,96 @@
-project(doublecontact CXX)
 
-# Problems:
-# compiled file much more than qmake build
-# neet parametrised generator for cpack (DEB or RPM, etc. without this file editing)
-# project must support both Qt4 and Qt5
-# need project for doublecontact and contconv and root project for packaging
+cmake_minimum_required (VERSION 3.5)
 
-message ("cmake build still not work correctly, use qmake")
+project(DoubleContactApp LANGUAGES CXX)
 
-cmake_minimum_required ( VERSION 2.8.9 )
-add_definitions(-Wall -g)
-find_package(Qt4 COMPONENTS QtCore QtGui QtXml REQUIRED)
+add_executable(doublecontact)
+set_target_properties(doublecontact PROPERTIES AUTOMOC ON AUTOUIC ON AUTORCC ON)
+target_link_libraries(doublecontact Qt::Core Qt::Widgets Qt::Xml quazip_static S_CORE S_MODEL)
 
-set(SOURCES main.cpp mainwindow.cpp contactdialog.cpp phonetypedialog.cpp logwindow.cpp settingsdialog.cpp datedetailsdialog.cpp helpers.cpp comparecontainers.cpp comparedialog.cpp multicontactdialog.cpp aboutdialog.cpp languageselectdialog.cpp)
-set(UIS mainwindow.ui contactdialog.ui phonetypedialog.ui logwindow.ui settingsdialog.ui datedetailsdialog.ui comparedialog.ui multicontactdialog.ui aboutdialog.ui languageselectdialog.ui)
-set(CMAKE_AUTOMOC true)
-# Need for old cmake
-IF (${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION} LESS 3.0)
-    set(MOC_HEADERS ../model/contactmodel.h)
-ENDIF (${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION} LESS 3.0)
+install(TARGETS doublecontact DESTINATION ${APP_BIN_PATH})
+install(FILES doublecontact.desktop DESTINATION ${APP_DSK_PATH})
 
- include_directories(
-  ${CMAKE_BINARY_DIR} ${QT_INCLUDE_DIR} ${QT_INCLUDE_DIR}/QtCore ${QT_INCLUDE_DIR}/QtGui ${QT_INCLUDE_DIR}/QtXml
- ../core ../model)
-add_subdirectory(../core "${CMAKE_CURRENT_BINARY_DIR}/core")
-add_subdirectory(../model "${CMAKE_CURRENT_BINARY_DIR}/model")
+target_sources(doublecontact
+    PRIVATE
+    # HEADERS
+    ################
+        mainwindow.h
+        contactdialog.h
+        phonetypedialog.h
+        logwindow.h
+        settingsdialog.h
+        datedetailsdialog.h
+        helpers.h
+        comparecontainers.h
+        comparedialog.h
+        innerfilewindow.h
+        multicontactdialog.h
+        aboutdialog.h
+        languageselectdialog.h
+        csvprofiledialog.h
+        sortdialog.h
+        tagremovedialog.h
+        groupdialog.h
+    # SOURCES
+    ################
+        main.cpp
+        mainwindow.cpp
+        contactdialog.cpp
+        phonetypedialog.cpp
+        logwindow.cpp
+        settingsdialog.cpp
+        datedetailsdialog.cpp
+        helpers.cpp
+        comparecontainers.cpp
+        comparedialog.cpp
+        innerfilewindow.cpp
+        multicontactdialog.cpp
+        aboutdialog.cpp
+        languageselectdialog.cpp
+        csvprofiledialog.cpp
+        sortdialog.cpp
+        tagremovedialog.cpp
+        groupdialog.cpp
+    # FORMS
+    ################
+        mainwindow.ui
+        contactdialog.ui
+        phonetypedialog.ui
+        logwindow.ui
+        settingsdialog.ui
+        datedetailsdialog.ui
+        comparedialog.ui
+        multicontactdialog.ui
+        aboutdialog.ui
+        languageselectdialog.ui
+    # RESOURCES
+    ################
+        doublecontact.qrc
+)
 
-include(${QT_USE_FILE})
-qt4_wrap_ui(UI_HEADERS ${UIS})
-qt4_wrap_cpp(MOC_SRCS ${MOC_HEADERS})
+if (WITH_CALLS)
+    target_compile_definitions(doublecontact PRIVATE WITH_CALLS)
+    target_sources(doublecontact
+        PRIVATE
+            callwindow.h
+            callwindow.cpp
+            callwindow.ui
+    )
+endif ()
 
-set(TR_DIR ../translations)
-set(TS_FILES ${TR_DIR}/doublecontact_ru_RU.ts ${TR_DIR}/doublecontact_en_GB.ts)
-qt4_add_translation(qm_files ${TS_FILES})
+if (WITH_MESSAGES)
+    target_compile_definitions(doublecontact PRIVATE WITH_MESSAGES)
+    target_sources(doublecontact
+        PRIVATE
+            messagewindow.h
+            messagewindow.cpp
+            messagewindow.ui
+    )
+endif ()
 
-add_executable(doublecontact ${SOURCES} $<TARGET_OBJECTS:S_CORE> $<TARGET_OBJECTS:S_MODEL> ${UI_HEADERS} ${MOC_SRCS} ${qm_files})
-target_link_libraries(doublecontact ${QT_LIBRARIES})
-
-set(CPACK_DEBIAN_PACKAGE_MAINTAINER Mikhail Y. Zvyozdochkin)
-set(CPACK_GENERATOR DEB)
-install(TARGETS doublecontact DESTINATION doublecontact)
-install(FILES ${qm_files} DESTINATION doublecontact)
-include (CPack)
+if (${CMAKE_SYSTEM_NAME}  MATCHES "Windows")
+    target_sources(doublecontact
+        PRIVATE
+            doublecontact.rc
+    )
+endif ()
