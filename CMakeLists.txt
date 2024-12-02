@@ -143,12 +143,11 @@ endif ()
 # used by default if the DESTINATION is a relative path.
 ################################################################################
 
-if (${CMAKE_SYSTEM_NAME}  MATCHES "Windows")
-    set(APP_ROOT_PATH doublecontact)
-    set(APP_BIN_PATH  ${APP_ROOT_PATH})
-    set(APP_I18N_PATH ${APP_ROOT_PATH})
-    set(APP_IMG_PATH  ${APP_ROOT_PATH})
-    set(APP_DOC_PATH  ${APP_ROOT_PATH}/doc)
+if (${CMAKE_SYSTEM_NAME} MATCHES "Windows")
+    set(APP_BIN_PATH  ".")
+    set(APP_I18N_PATH ".")
+    set(APP_IMG_PATH  ".")
+    set(APP_DOC_PATH  doc)
 elseif (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
 else ()
     set(APP_BIN_PATH  bin)
