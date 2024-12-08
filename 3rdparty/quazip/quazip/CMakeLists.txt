@@ -1,31 +1,51 @@
-# set all include directories for in and out of source builds
-include_directories(
-	${CMAKE_CURRENT_SOURCE_DIR}
-	${CMAKE_CURRENT_BINARY_DIR}
-	${ZLIB_INCLUDE_DIRS}
-)
 
-file(GLOB SRCS "*.c" "*.cpp")
-file(GLOB PUBLIC_HEADERS "*.h")
+cmake_minimum_required(VERSION 3.5)
 
-# Must be added to enable export macro
-ADD_DEFINITIONS(-DQUAZIP_BUILD)
+project(quazip VERSION 1.0.0 LANGUAGES C CXX)
 
-qt_wrap_cpp(MOC_SRCS ${PUBLIC_HEADERS})
-set(SRCS ${SRCS} ${MOC_SRCS})
+add_library(quazip_static STATIC)
+set_target_properties(quazip_static PROPERTIES AUTOMOC ON)
+target_link_libraries(quazip_static PUBLIC Qt::Core libzip::zip ZLIB::ZLIB)
+target_include_directories(quazip_static PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+target_compile_definitions(quazip_static PRIVATE QUAZIP_BUILD)
 
-add_library(${QUAZIP_LIB_TARGET_NAME} SHARED ${SRCS})
-add_library(quazip_static STATIC ${SRCS})
- 
-# Windows uses .lib extension for both static and shared library
-# *nix systems use different extensions for SHARED and STATIC library and by convention both libraries have the same name
-if (NOT WIN32)
-	set_target_properties(quazip_static PROPERTIES OUTPUT_NAME quazip${QUAZIP_LIB_VERSION_SUFFIX})
+target_sources(quazip_static
+    PRIVATE
+    # HEADERS
+    ################
+         crypt.h
+         ioapi.h
+         JlCompress.h
+         quaadler32.h
+         quachecksum32.h
+         quacrc32.h
+         quagzipfile.h
+         quaziodevice.h
+         quazipdir.h
+         quazipfile.h
+         quazipfileinfo.h
+         quazip_global.h
+         quazip.h
+         quazipnewinfo.h
+         unzip.h
+         zip.h
+    # SOURCES
+    ################
+        qioapi.cpp
+        JlCompress.cpp
+        quaadler32.cpp
+        quacrc32.cpp
+        quagzipfile.cpp
+        quaziodevice.cpp
+        quazip.cpp
+        quazipdir.cpp
+        quazipfile.cpp
+        quazipfileinfo.cpp
+        quazipnewinfo.cpp
+        unzip.c
+        zip.c
+ )
+
+if (TARGET ${QT}::Core5Compat)
+    target_link_libraries(quazip_static PUBLIC ${QT}::Core5Compat)
 endif ()
-
-set_target_properties(${QUAZIP_LIB_TARGET_NAME} quazip_static PROPERTIES VERSION 1.0.0 SOVERSION 1 DEBUG_POSTFIX d)
-# Link against ZLIB_LIBRARIES if needed (on Windows this variable is empty)
-target_link_libraries(${QUAZIP_LIB_TARGET_NAME} quazip_static ${QT_QTMAIN_LIBRARY} ${QTCORE_LIBRARIES} ${ZLIB_LIBRARIES})
-
-install(FILES ${PUBLIC_HEADERS} DESTINATION include/quazip${QUAZIP_LIB_VERSION_SUFFIX})
-install(TARGETS ${QUAZIP_LIB_TARGET_NAME} quazip_static LIBRARY DESTINATION ${LIB_DESTINATION} ARCHIVE DESTINATION ${LIB_DESTINATION} RUNTIME DESTINATION ${LIB_DESTINATION})
