@@ -48,7 +48,13 @@ void ConfigManager::prepare()
     if (!isPortable) {
         delete settings;
         settings = new QSettings("DarkHobbit", "doublecontact");
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+        // https://doc.qt.io/qt-6.2/qsettings.html#Format-enum
+        // In line with most implementations today, QSettings will assume the
+        // INI file is utf-8 encoded. This means that keys and values will be
+        // decoded as utf-8 encoded entries and written back as utf-8.
         settings->setIniCodec(QTextCodec::codecForName("UTF-8"));
+#endif
     }
 }
 

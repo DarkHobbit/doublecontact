@@ -104,10 +104,11 @@ bool CSVFile::importRecords(const QString &url, ContactList &list, bool append)
         return false;
     _errors.clear();
     QList<QStringList> rows;
-    QTextStream stream(&file);
     if (_encoding.isEmpty())
         _encoding = currentProfile->charSet();
-    stream.setCodec(_encoding.toLatin1().data());
+    QTextCodec *codec = QTextCodec::codecForName(_encoding.toLatin1().data());
+    QString converted = codec->toUnicode(file.readAll());
+    QTextStream stream(&converted);
     do {
         QString line = stream.readLine();
         bool inQuotes = false;
@@ -177,17 +178,20 @@ bool CSVFile::exportRecords(const QString &url, ContactList &list)
     }
     if (!openFile(url, QIODevice::WriteOnly))
         return false;
-    QTextStream stream(&file);
+    QString operate;
+    QTextStream stream(&operate);
     if (_encoding.isEmpty())
         _encoding = currentProfile->charSet();
-    stream.setCodec(_encoding.toLatin1().data());
-    stream.setGenerateByteOrderMark(currentProfile->hasBOM());
+    QTextCodec *codec = QTextCodec::codecForName(_encoding.toLatin1().data());
+    // TODO: add BOM manualy
+    //stream.setGenerateByteOrderMark(currentProfile->hasBOM());
     // Header
     if (currentProfile->hasHeader())
         putLine(stream, currentProfile->makeHeader());
     // Items
     foreach (const QStringList& row, rows)
         putLine(stream, row);
+    file.write(codec->fromUnicode(stream.readAll()));
     closeFile();
     return true;
 }

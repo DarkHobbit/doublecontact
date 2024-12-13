@@ -315,7 +315,11 @@ bool UDXFile::exportRecords(const QString &url, ContactList &list)
     if (!openFile(url, QIODevice::WriteOnly))
         return false;
     QTextStream stream(&file);
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+    // https://doc.qt.io/qt-6/qtextstream.html#setEncoding
+    // In Qt6 by default UTF-8 is used.
     stream.setCodec("UTF-8");
+#endif    
     stream << content;
     closeFile();
     return true;

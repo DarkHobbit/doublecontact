@@ -13,6 +13,7 @@
  */
 
 #include <limits.h>
+#include <QIODevice>
 #include <QTextCodec>
 
 #include "nokiadata.h"

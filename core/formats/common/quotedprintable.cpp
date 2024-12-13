@@ -82,9 +82,9 @@ BString QuotedPrintable::encode(const QString &src, QTextCodec *codec, int prefi
         QByteArray bytes = codec->fromUnicode(ch);
         // Can we use Literal representation?
         // Rule 2 (RFC 2045). Literal representation
-        bool useLiteral = (ch>=33 && ch<=126 && ch!=61);
+        bool useLiteral = (ch>=QChar(33) && ch<=QChar(126) && ch!=QChar(61));
         // Rule 3. Spaces
-        if (ch==0x20 || ch==0x09)
+        if (ch==QChar(0x20) || ch==QChar(0x09))
             useLiteral = i<src.count()-1;
         // Represent!
         bool lastChar = i==src.count()-1;

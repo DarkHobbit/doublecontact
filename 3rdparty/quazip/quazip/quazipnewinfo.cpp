@@ -23,6 +23,7 @@ see quazip/(un)zip.h files for details. Basically it's the zlib license.
 */
 
 #include <QFileInfo>
+#include <QtGlobal>     // QT_VERSION QT_VERSION_CHECK
 
 #include "quazipnewinfo.h"
 
@@ -134,7 +135,11 @@ void QuaZipNewInfo::setFileNTFSTimes(const QString &fileName)
     }
     setFileNTFSmTime(fi.lastModified());
     setFileNTFSaTime(fi.lastRead());
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+    setFileNTFScTime(fi.birthTime());
+#else
     setFileNTFScTime(fi.created());
+#endif
 }
 
 static void setNTFSTime(QByteArray &extra, const QDateTime &time, int position,

@@ -95,7 +95,11 @@ bool DecodedMessageList::toCSV(const QString &path)
     if (!f.open(QIODevice::WriteOnly))
         return false;
     QTextStream ss(&f);
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+    // https://doc.qt.io/qt-6/qtextstream.html#setEncoding
+    // In Qt6 by default UTF-8 is used.
     ss.setCodec("UTF-8");
+#endif
     ss << QObject::tr("\"Date\",\"Box\",\"From/To\",\"Number\",\"Status\",\"Text\",\"Aux\"\n");
     foreach(const DecodedMessage& msg, *this) {
         // Stricted text, without qoutes and line breaks
