@@ -15,8 +15,16 @@
 #include <QDir>
 #include <QFile>
 #include <QLocale>
-#include <QRegExp>
 #include <QTextCodec>
+#include <QtGlobal>         // QT_VERSION QT_VERSION_CHECK
+
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+    #include <QRegularExpression>
+    #define QRegExp QRegularExpression
+#else
+    #include <QRegExp>
+#endif
+
 #include "languagemanager.h"
 #include "corehelpers.h"
 
