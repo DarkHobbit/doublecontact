@@ -21,7 +21,13 @@ void RecentList::read()
 {
     clear();
     QSettings settings("DarkHobbit", "doublecontact"); // TODO unify with main config
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+        // https://doc.qt.io/qt-6.2/qsettings.html#Format-enum
+        // In line with most implementations today, QSettings will assume the
+        // INI file is utf-8 encoded. This means that keys and values will be
+        // decoded as utf-8 encoded entries and written back as utf-8.
     settings.setIniCodec("UTF8");
+#endif
     int _count = settings.value("Recent/Count", 0).toInt();
     for (int i=1; i<=_count; i++)
         push_back(settings.value(QString("Recent/Item%1").arg(i)).toString());

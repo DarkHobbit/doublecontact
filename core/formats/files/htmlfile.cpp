@@ -41,7 +41,11 @@ bool HTMLFile::exportRecords(const QString &url, ContactList &list)
         return false;
     _errors.clear();
     QTextStream stream(&file);
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+    // https://doc.qt.io/qt-6/qtextstream.html#setEncoding
+    // In Qt6 by default UTF-8 is used.
     stream.setCodec("UTF-8");
+#endif    
     stream << QString("<html><head>\n<meta charset=\"utf-8\">\n<title>%1</title>\n</head>\n<body>").arg(url) << ENDL;
     // General data
     stream << QString("<b>%1</b>: %2<br/>\n").arg(S_ADDRESS_BOOK).arg(url);
