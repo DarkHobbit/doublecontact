@@ -98,7 +98,11 @@ bool CallModel::saveToCSV(const QString &path)
     if (!f.open(QIODevice::WriteOnly))
         return false;
     QTextStream ss(&f);
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+    // https://doc.qt.io/qt-6/qtextstream.html#setEncoding
+    // In Qt6 by default UTF-8 is used.
     ss.setCodec("UTF-8");
+#endif
     ss << QObject::tr("\"Type\",\"Date\",\"Duration\",\"Number\",\"Name\"\n");
     foreach(const CallInfo& c, _src->extra.calls) {
         ss << "\""    << c.typeName()

@@ -442,7 +442,7 @@ void ContactItem::parseFullName()
         names.removeLast();
     for (int i=0; i<names.count(); i++)
         if (names[i].right(1)==",")
-            names[i].remove(names[i].count()-1);
+            names[i].remove(names[i].count()-1, 1);
 }
 
 void ContactItem::reverseFullName()
