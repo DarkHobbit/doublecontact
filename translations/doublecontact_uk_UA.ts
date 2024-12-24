@@ -212,7 +212,7 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/comparedialog.cpp" line="85"/>
         <source>Remove right record after merge</source>
-        <translation type="unfinished"></translation>
+        <translation>Видалити правий запис після злиття</translation>
     </message>
     <message>
         <source>Birthday</source>
@@ -587,7 +587,7 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/datedetailsdialog.ui" line="34"/>
         <source>Set year for date</source>
-        <translation type="unfinished"></translation>
+        <translation>Установіть рік для дати</translation>
     </message>
     <message>
         <location filename="../app/datedetailsdialog.ui" line="41"/>
@@ -803,7 +803,7 @@ Are you want to accept this certificate anyway?</source>
         <location filename="../app/mainwindow.ui" line="94"/>
         <location filename="../app/mainwindow.ui" line="156"/>
         <source>Contact Details</source>
-        <translation type="unfinished"></translation>
+        <translation>Контактна інформація</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="167"/>
@@ -941,12 +941,12 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/mainwindow.ui" line="444"/>
         <source>&amp;Quick view</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Швидкий перегляд</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="447"/>
         <source>Ctrl+Q</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Q</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="452"/>
@@ -1919,7 +1919,7 @@ SMS: %7
     <message>
         <location filename="../core/globals.h" line="149"/>
         <source>Last section not closed</source>
-        <translation type="unfinished">Остання секція не закрита</translation>
+        <translation>Останній розділ не закритий</translation>
     </message>
     <message>
         <location filename="../core/formats/common/vcarddata.cpp" line="389"/>
@@ -1943,7 +1943,7 @@ SMS: %7
     <message>
         <location filename="../core/formats/common/vcarddata.cpp" line="622"/>
         <source>Unknown datetime format: </source>
-        <translation type="unfinished"></translation>
+        <translation>Невідомий формат дати й часу: </translation>
     </message>
     <message>
         <location filename="../core/formats/common/vcarddata.cpp" line="633"/>
@@ -2101,316 +2101,316 @@ line %3, col %4
     <message>
         <location filename="../core/globals.h" line="60"/>
         <source>Error</source>
-        <translation type="unfinished">Помилка</translation>
+        <translation>Помилка</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="61"/>
         <source>Warning</source>
-        <translation type="unfinished">Увага</translation>
+        <translation>Увага</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="62"/>
         <source>Confirmation</source>
-        <translation type="unfinished">Підтвердження</translation>
+        <translation>Підтвердження</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="63"/>
         <source>Information</source>
-        <translation type="unfinished">Інформація</translation>
+        <translation>Інформація</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="65"/>
         <source>Address book</source>
-        <translation type="unfinished">Адресна книга</translation>
+        <translation>Адресна книга</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="66"/>
         <source>New contact list</source>
-        <translation type="unfinished">Новий список контактів</translation>
+        <translation>Новий список контактів</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="116"/>
         <source>P.O. box</source>
-        <translation type="unfinished">Поштова скринька</translation>
+        <translation>P.О. коробка</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="140"/>
         <source>This format is read only</source>
-        <translation type="unfinished">Цей формат підтримується лише в режимі читання</translation>
+        <translation>Цей формат підтримується лише в режимі читання</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="68"/>
         <source>Select country rule</source>
-        <translation type="unfinished">Оберіть правило для країни</translation>
+        <translation>Виберіть правило країни</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="67"/>
         <source>Group name</source>
-        <translation type="unfinished">Ім&apos;я групи</translation>
+        <translation>Ім&apos;я групи</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="69"/>
         <source>Select phone template</source>
-        <translation type="unfinished">Оберіть шаблон номеру телефону</translation>
+        <translation>Виберіть шаблон телефону</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="70"/>
         <source>Select tags for remove</source>
-        <translation type="unfinished">Виберіть теґи для видалення</translation>
+        <translation>Виберіть теґи для видалення</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="71"/>
         <source>Select CSV profile</source>
-        <translation type="unfinished">Оберіть CSV-профіль</translation>
+        <translation>Оберіть CSV-профіль</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="72"/>
         <source>Generic profile</source>
-        <translation type="unfinished">Загальний профіль</translation>
+        <translation>Загальний профіль</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="74"/>
         <source>mixed...</source>
-        <translation type="unfinished">змішаний…</translation>
+        <translation>змішаний…</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="76"/>
         <source>Firstname</source>
-        <translation type="unfinished">Ім&apos;я</translation>
+        <translation>Ім&apos;я</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="77"/>
         <source>Lastname</source>
-        <translation type="unfinished">Прізвище</translation>
+        <translation>Прізвище</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="78"/>
         <source>Middlename</source>
-        <translation type="unfinished">По-батькові</translation>
+        <translation>По-батькові</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="79"/>
         <source>Prefixes</source>
-        <translation type="unfinished">Префікси</translation>
+        <translation>Префікси</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="80"/>
         <source>Suffixes</source>
-        <translation type="unfinished">Суфікси</translation>
+        <translation>Суфікси</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="82"/>
         <source>Full name</source>
-        <translation type="unfinished">Повне ім&apos;я</translation>
+        <translation>Повне ім&apos;я</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="83"/>
         <source>Generic name</source>
-        <translation type="unfinished">Загальне ім&apos;я</translation>
+        <translation>Загальне ім&apos;я</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="84"/>
         <source>Description</source>
-        <translation type="unfinished">Опис</translation>
+        <translation>Опис</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="85"/>
         <source>Phone</source>
-        <translation type="unfinished">Телефон</translation>
+        <translation>Телефон</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="86"/>
         <source>All phones</source>
-        <translation type="unfinished">Всі телефони</translation>
+        <translation>Всі телефони</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="87"/>
         <source>Home phone</source>
-        <translation type="unfinished">Домашній телефон</translation>
+        <translation>Домашній телефон</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="88"/>
         <source>Work phone</source>
-        <translation type="unfinished">Робочий телефон</translation>
+        <translation>Робочий телефон</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="89"/>
         <source>Cell phone</source>
-        <translation type="unfinished">Стільниковий телефон</translation>
+        <translation>Стільниковий телефон</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="90"/>
         <source>Email</source>
-        <translation type="unfinished">Електронна пошта</translation>
+        <translation>Електронна пошта</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="91"/>
         <source>Birthday</source>
-        <translation type="unfinished">День народження</translation>
+        <translation>День народження</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="92"/>
         <source>Anniversary</source>
-        <translation type="unfinished">Річниця</translation>
+        <translation>Річниця</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="93"/>
         <source>Photo</source>
-        <translation type="unfinished">Світлина</translation>
+        <translation>Світлина</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="94"/>
         <source>Job title</source>
-        <translation type="unfinished">Посада</translation>
+        <translation>Назва посади</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="95"/>
         <source>Organization</source>
-        <translation type="unfinished">Організація</translation>
+        <translation>Організація</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="96"/>
         <source>Role</source>
-        <translation type="unfinished">Роль</translation>
+        <translation>Роль</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="97"/>
         <source>Address</source>
-        <translation type="unfinished">Адреса</translation>
+        <translation>Адреса</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="98"/>
         <source>NickName</source>
-        <translation type="unfinished">Псевдонім</translation>
+        <translation>Псевдонім</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="99"/>
         <source>URL</source>
-        <translation type="unfinished">Сайт</translation>
+        <translation>Сайт</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="101"/>
         <source>Jabber</source>
-        <translation type="unfinished">Jabber</translation>
+        <translation>Jabber</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="102"/>
         <source>ICQ</source>
-        <translation type="unfinished">ICQ</translation>
+        <translation>ICQ</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="103"/>
         <source>Skype</source>
-        <translation type="unfinished">Skype</translation>
+        <translation>Skype</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="104"/>
         <source>Group</source>
-        <translation type="unfinished">Група</translation>
+        <translation>Група</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="105"/>
         <source>Updated</source>
-        <translation type="unfinished">Оновлено</translation>
+        <translation>Оновлено</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="107"/>
         <source>Has phone</source>
-        <translation type="unfinished">Має телефон</translation>
+        <translation>Має телефон</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="108"/>
         <source>Has email</source>
-        <translation type="unfinished">Має електронну пошту</translation>
+        <translation>Має електронну пошту</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="109"/>
         <source>Has address</source>
-        <translation type="unfinished">Має адресу</translation>
+        <translation>Має адресу</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="110"/>
         <source>Has birthday</source>
-        <translation type="unfinished">Має день народження</translation>
+        <translation>Має день народження</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="111"/>
         <source>Has photo</source>
-        <translation type="unfinished">Має світлину</translation>
+        <translation>Має світлину</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="112"/>
         <source>Has problems</source>
-        <translation type="unfinished">Є проблеми</translation>
+        <translation>Є проблеми</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="113"/>
         <source>Some phones</source>
-        <translation type="unfinished">Деякі телефони</translation>
+        <translation>Деякі телефони</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="114"/>
         <source>Some emails</source>
-        <translation type="unfinished">Деякі адреси електронної пошти</translation>
+        <translation>Деякі адреси електронної пошти</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="127"/>
         <source>Show in new window</source>
-        <translation type="unfinished">Показати в новому вікні</translation>
+        <translation>Показати в новому вікні</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="139"/>
         <source>Group operation not implemented, select one record</source>
-        <translation type="unfinished">Групова операція не реалізована, виберіть один запис</translation>
+        <translation>Групова операція не реалізована, виберіть один запис</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="146"/>
         <source>Program built without network support. Use WITH_NETWORK define, if building from source code.
 </source>
-        <translation type="unfinished">Програма створена без підтримки мережі. Використовуйте визначення WITH_NETWORK, якщо створюєте з вихідного коду.
+        <translation>Програма створена без підтримки мережі. Використовуйте визначення WITH_NETWORK, якщо створюєте з вихідного коду.
 </translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="147"/>
         <source>Do you really want to delete the selected items?</source>
-        <translation type="unfinished">Ви дійсно бажаєте видалити обрані записи?</translation>
+        <translation>Ви дійсно бажаєте видалити обрані записи?</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="148"/>
         <source>Column sorting is switched. Hard sort results are not visible.
 Are you want switch column sorting off?</source>
-        <translation type="unfinished">Увімкнено сортування по стовпцям. Результати жорсткого сортування не відображаються.
+        <translation>Увімкнено сортування по стовпцям. Результати жорсткого сортування не відображаються.
 Вимкнути сортування по стовпцям?</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="150"/>
         <source>Unknown encoding: %1</source>
-        <translation type="unfinished">Невідоме кодування: %1</translation>
+        <translation>Невідоме кодування: %1</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="151"/>
         <source>Unknown charset: %1</source>
-        <translation type="unfinished">Невідома таблиця символів: %1</translation>
+        <translation>Невідома таблиця символів: %1</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="153"/>
         <source>Mode: </source>
-        <translation type="unfinished">Режим: </translation>
+        <translation>Режим: </translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="154"/>
         <source>sorted</source>
-        <translation type="unfinished">відсортовано</translation>
+        <translation>відсортовано</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="155"/>
         <source>not sorted</source>
-        <translation type="unfinished">не відсортовано</translation>
+        <translation>не відсортовано</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="159"/>
         <source>Select MMS files Directory</source>
-        <translation type="unfinished">Виберіть каталог файлів MMS</translation>
+        <translation>Виберіть каталог файлів MMS</translation>
     </message>
     <message>
         <source>P.o. box</source>
@@ -2419,105 +2419,105 @@ Are you want switch column sorting off?</source>
     <message>
         <location filename="../core/globals.h" line="117"/>
         <source>Ext.addr.</source>
-        <translation type="unfinished">Розширена адреса</translation>
+        <translation>Додаткова адреса.</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="118"/>
         <source>Street</source>
-        <translation type="unfinished">Вулиця</translation>
+        <translation>Вулиця</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="119"/>
         <source>City/Locality</source>
-        <translation type="unfinished">Населений пункт</translation>
+        <translation>Населений пункт</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="120"/>
         <source>Region</source>
-        <translation type="unfinished">Регіон</translation>
+        <translation>Регіон</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="121"/>
         <source>Postal code</source>
-        <translation type="unfinished">Поштовий індекс</translation>
+        <translation>Поштовий індекс</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="122"/>
         <source>Country</source>
-        <translation type="unfinished">Країна</translation>
+        <translation>Країна</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="124"/>
         <source>[Unknown photo format]</source>
-        <translation type="unfinished">[Невідомий формат світлини]</translation>
+        <translation>[Невідомий формат світлини]</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="125"/>
         <source>Load image</source>
-        <translation type="unfinished">Завантажити зображення</translation>
+        <translation>Завантажити зображення</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="126"/>
         <source>Save image</source>
-        <translation type="unfinished">Зберегти зображення</translation>
+        <translation>Зберегти зображення</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="128"/>
         <source>Set URL</source>
-        <translation type="unfinished">Призначити URL</translation>
+        <translation>Призначити URL</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="129"/>
         <source>Remove photo</source>
-        <translation type="unfinished">Видалити світлину</translation>
+        <translation>Видалити світлину</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="131"/>
         <source>All supported files (%1)</source>
-        <translation type="unfinished">Всі підтримувані файли (%1)</translation>
+        <translation>Всі підтримувані файли (%1)</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="132"/>
         <source>All files (*.*)</source>
-        <translation type="unfinished">Всі файли (*.*)</translation>
+        <translation>Всі файли (*.*)</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="134"/>
         <source>Can&apos;t read file
 %1</source>
-        <translation type="unfinished">Не можу прочитати файл
+        <translation>Не можу прочитати файл
 %1</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="135"/>
         <source>Can&apos;t write file
 %1</source>
-        <translation type="unfinished">Не можу записати файл
+        <translation>Не можу записати файл
 %1</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="137"/>
         <source>Can&apos;t seek to %1 in file
 %2</source>
-        <translation type="unfinished">Не можу перейти до %1 у файлі
+        <translation>Не можу перейти до %1 у файлі
 %2</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="138"/>
         <source>Record not selected</source>
-        <translation type="unfinished">Запис не обрано</translation>
+        <translation>Запис не обрано</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="142"/>
         <source>Warning: contact %1 has %2, not supported in this format.
 Data will be lost</source>
-        <translation type="unfinished">Попередження: контакт %1 містить %2, що не підтримується в даному форматі.
+        <translation>Попередження: контакт %1 містить %2, що не підтримується в даному форматі.
 Дані будуть втрачені</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="144"/>
         <source>%1 %2 will be lost at contact %3</source>
-        <translation type="unfinished">%1 %2 буде втрачено для контакту %3</translation>
+        <translation>%1 %2 буде втрачено для контакту %3</translation>
     </message>
     <message>
         <source>Are You really want to delete selected items?</source>
@@ -2816,12 +2816,12 @@ Read %3 bytes, %4 expected</source>
     <message>
         <location filename="../core/globals.h" line="157"/>
         <source>Unknown vMessage tag: %1</source>
-        <translation type="unfinished">Невідомий ярлик vMessage: %1</translation>
+        <translation>Невідомий ярлик vMessage: %1</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="158"/>
         <source>Unknown vMessage value: %1</source>
-        <translation type="unfinished">Невідомий вміст vMessage: %1</translation>
+        <translation>Невідомий вміст vMessage: %1</translation>
     </message>
     <message>
         <source>Last vMessage section not closed</source>
@@ -2830,7 +2830,7 @@ Read %3 bytes, %4 expected</source>
     <message>
         <location filename="../model/recentlist.h" line="21"/>
         <source>Clear recent list</source>
-        <translation type="unfinished">Очистити останній список</translation>
+        <translation>Очистити останній список</translation>
     </message>
     <message>
         <location filename="../core/formats/common/nokiadata.cpp" line="321"/>
@@ -2922,12 +2922,12 @@ Read %3 bytes, %4 expected</source>
     <message>
         <location filename="../core/formats/profiles/sylpheedprofile.cpp" line="19"/>
         <source>Sylpheed Email Client</source>
-        <translation type="unfinished"></translation>
+        <translation>Поштовий клієнт Sylpheed</translation>
     </message>
     <message>
         <location filename="../core/formats/profiles/sylpheedprofile.cpp" line="73"/>
         <source>Record without emails with not saved: </source>
-        <translation type="unfinished"></translation>
+        <translation>Запис без електронних листів з не збереженими: </translation>
     </message>
 </context>
 <context>
@@ -3092,7 +3092,7 @@ Read %3 bytes, %4 expected</source>
     <message>
         <location filename="../app/settingsdialog.ui" line="238"/>
         <source>Write full name tag if empty</source>
-        <translation type="unfinished"></translation>
+        <translation>Напишіть тег повного імені, якщо він пустий</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="328"/>
