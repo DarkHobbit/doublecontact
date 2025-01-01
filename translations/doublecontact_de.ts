@@ -703,7 +703,7 @@ Möchten Sie dieses Zertifikat trotzdem akzeptieren?</translation>
         <location filename="../app/mainwindow.ui" line="94"/>
         <location filename="../app/mainwindow.ui" line="156"/>
         <source>Contact Details</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontaktdetails</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="167"/>
@@ -841,7 +841,7 @@ Möchten Sie dieses Zertifikat trotzdem akzeptieren?</translation>
     <message>
         <location filename="../app/mainwindow.ui" line="444"/>
         <source>&amp;Quick view</source>
-        <translation type="unfinished"></translation>
+        <translation>Sch&amp;nellansicht</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="447"/>
@@ -2116,57 +2116,57 @@ Zeile %3, Spalte %4
     <message>
         <location filename="../core/globals.h" line="61"/>
         <source>Warning</source>
-        <translation type="unfinished">Warnhinweis</translation>
+        <translation>Warnung</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="62"/>
         <source>Confirmation</source>
-        <translation type="unfinished">Bestätigung</translation>
+        <translation>Bestätigung</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="65"/>
         <source>Address book</source>
-        <translation type="unfinished">Adressbuch</translation>
+        <translation>Adressbuch</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="66"/>
         <source>New contact list</source>
-        <translation type="unfinished">Neue Kontaktliste</translation>
+        <translation>Neue Kontaktliste</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="116"/>
         <source>P.O. box</source>
-        <translation type="unfinished">Postfach</translation>
+        <translation>Postfach</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="140"/>
         <source>This format is read only</source>
-        <translation type="unfinished">Dieses Format ist schreibgeschützt</translation>
+        <translation>Dieses Format ist schreibgeschützt</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="68"/>
         <source>Select country rule</source>
-        <translation type="unfinished">Länderregel auswählen</translation>
+        <translation>Länderregel auswählen</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="60"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Fehler</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="63"/>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Information</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="67"/>
         <source>Group name</source>
-        <translation type="unfinished">Gruppenname</translation>
+        <translation>Gruppenname</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="69"/>
         <source>Select phone template</source>
-        <translation type="unfinished">Telefonvorlage auswählen</translation>
+        <translation>Telefonvorlage auswählen</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="70"/>
@@ -2176,12 +2176,12 @@ Zeile %3, Spalte %4
     <message>
         <location filename="../core/globals.h" line="71"/>
         <source>Select CSV profile</source>
-        <translation type="unfinished">CSV-Profil auswählen</translation>
+        <translation>CSV-Profil auswählen</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="72"/>
         <source>Generic profile</source>
-        <translation type="unfinished">Allgemeines Profil</translation>
+        <translation>Allgemeines Profil</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="74"/>
@@ -2191,12 +2191,12 @@ Zeile %3, Spalte %4
     <message>
         <location filename="../core/globals.h" line="76"/>
         <source>Firstname</source>
-        <translation type="unfinished">Vorname</translation>
+        <translation>Vorname</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="77"/>
         <source>Lastname</source>
-        <translation type="unfinished">Nachname</translation>
+        <translation>Nachname</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="78"/>
@@ -2216,27 +2216,27 @@ Zeile %3, Spalte %4
     <message>
         <location filename="../core/globals.h" line="82"/>
         <source>Full name</source>
-        <translation type="unfinished">Vollständiger Name</translation>
+        <translation>Vollständiger Name</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="83"/>
         <source>Generic name</source>
-        <translation type="unfinished">Allgemeiner Name</translation>
+        <translation>Allgemeiner Name</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="84"/>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation>Beschreibung</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="85"/>
         <source>Phone</source>
-        <translation type="unfinished">Telefon</translation>
+        <translation>Telefon</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="86"/>
         <source>All phones</source>
-        <translation type="unfinished">Alle Telefone</translation>
+        <translation>Alle Telefone</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="87"/>
@@ -2256,32 +2256,32 @@ Zeile %3, Spalte %4
     <message>
         <location filename="../core/globals.h" line="90"/>
         <source>Email</source>
-        <translation type="unfinished">E-Mail</translation>
+        <translation>E-Mail</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="91"/>
         <source>Birthday</source>
-        <translation type="unfinished">Geburtstag</translation>
+        <translation>Geburtstag</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="92"/>
         <source>Anniversary</source>
-        <translation type="unfinished">Jahrestag</translation>
+        <translation>Jahrestag</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="93"/>
         <source>Photo</source>
-        <translation type="unfinished">Foto</translation>
+        <translation>Foto</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="94"/>
         <source>Job title</source>
-        <translation type="unfinished">Berufsbezeichnung</translation>
+        <translation>Berufsbezeichnung</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="95"/>
         <source>Organization</source>
-        <translation type="unfinished">Organisation</translation>
+        <translation>Organisation</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="96"/>
@@ -2291,42 +2291,42 @@ Zeile %3, Spalte %4
     <message>
         <location filename="../core/globals.h" line="97"/>
         <source>Address</source>
-        <translation type="unfinished"></translation>
+        <translation>Adresse</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="98"/>
         <source>NickName</source>
-        <translation type="unfinished">Spitzname</translation>
+        <translation>Spitzname</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="99"/>
         <source>URL</source>
-        <translation type="unfinished"></translation>
+        <translation>URL</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="101"/>
         <source>Jabber</source>
-        <translation type="unfinished"></translation>
+        <translation>Jabber</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="102"/>
         <source>ICQ</source>
-        <translation type="unfinished"></translation>
+        <translation>ICQ</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="103"/>
         <source>Skype</source>
-        <translation type="unfinished"></translation>
+        <translation>Skype</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="104"/>
         <source>Group</source>
-        <translation type="unfinished">Gruppe</translation>
+        <translation>Gruppe</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="105"/>
         <source>Updated</source>
-        <translation type="unfinished">Aktualisiert</translation>
+        <translation>Aktualisiert</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="107"/>
@@ -2336,22 +2336,22 @@ Zeile %3, Spalte %4
     <message>
         <location filename="../core/globals.h" line="108"/>
         <source>Has email</source>
-        <translation type="unfinished">E-Mail-Adresse vorhanden</translation>
+        <translation>E-Mail-Adresse vorhanden</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="109"/>
         <source>Has address</source>
-        <translation type="unfinished">Adresse vorhanden</translation>
+        <translation>Adresse vorhanden</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="110"/>
         <source>Has birthday</source>
-        <translation type="unfinished">Geburtstag vorhanden</translation>
+        <translation>Geburtstag vorhanden</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="111"/>
         <source>Has photo</source>
-        <translation type="unfinished">Foto vorhanden</translation>
+        <translation>Foto vorhanden</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="112"/>
@@ -2366,7 +2366,7 @@ Zeile %3, Spalte %4
     <message>
         <location filename="../core/globals.h" line="114"/>
         <source>Some emails</source>
-        <translation type="unfinished">Einige E-Mail-Adressen</translation>
+        <translation>Einige E-Mail-Adressen</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="117"/>
@@ -2376,17 +2376,17 @@ Zeile %3, Spalte %4
     <message>
         <location filename="../core/globals.h" line="120"/>
         <source>Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Region</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="127"/>
         <source>Show in new window</source>
-        <translation type="unfinished">In neuem Fenster anzeigen</translation>
+        <translation>In neuem Fenster anzeigen</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="128"/>
         <source>Set URL</source>
-        <translation type="unfinished"></translation>
+        <translation>URL festlegen</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="139"/>
@@ -2403,7 +2403,7 @@ Zeile %3, Spalte %4
     <message>
         <location filename="../core/globals.h" line="147"/>
         <source>Do you really want to delete the selected items?</source>
-        <translation type="unfinished">Wollen Sie die ausgewählten Elemente wirklich löschen?</translation>
+        <translation>Wollen Sie die ausgewählten Elemente wirklich löschen?</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="148"/>
@@ -2415,32 +2415,32 @@ Möchten Sie die Spaltensortierung ausschalten?</translation>
     <message>
         <location filename="../core/globals.h" line="150"/>
         <source>Unknown encoding: %1</source>
-        <translation type="unfinished">Unbekannte Kodierung: %1</translation>
+        <translation>Unbekannte Kodierung: %1</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="151"/>
         <source>Unknown charset: %1</source>
-        <translation type="unfinished">Unbekannter Zeichensatz: %1</translation>
+        <translation>Unbekannter Zeichensatz: %1</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="153"/>
         <source>Mode: </source>
-        <translation type="unfinished">Modus: </translation>
+        <translation>Modus: </translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="154"/>
         <source>sorted</source>
-        <translation type="unfinished">Sortiert</translation>
+        <translation>sortiert</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="155"/>
         <source>not sorted</source>
-        <translation type="unfinished">Unsortiert</translation>
+        <translation>unsortiert</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="159"/>
         <source>Select MMS files Directory</source>
-        <translation type="unfinished">Ordner für MMS-Dateien auswählen</translation>
+        <translation>Verzeichnis für MMS-Dateien auswählen</translation>
     </message>
     <message>
         <source>P.o. box</source>
@@ -2449,52 +2449,52 @@ Möchten Sie die Spaltensortierung ausschalten?</translation>
     <message>
         <location filename="../core/globals.h" line="118"/>
         <source>Street</source>
-        <translation type="unfinished">Straße</translation>
+        <translation>Straße</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="119"/>
         <source>City/Locality</source>
-        <translation type="unfinished">Stadt/Ort</translation>
+        <translation>Stadt/Ort</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="121"/>
         <source>Postal code</source>
-        <translation type="unfinished">Postleitzahl</translation>
+        <translation>Postleitzahl</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="122"/>
         <source>Country</source>
-        <translation type="unfinished">Land</translation>
+        <translation>Land</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="124"/>
         <source>[Unknown photo format]</source>
-        <translation type="unfinished">[Unbekanntes Fotoformat]</translation>
+        <translation>[Unbekanntes Fotoformat]</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="125"/>
         <source>Load image</source>
-        <translation type="unfinished">Grafik laden</translation>
+        <translation>Bild laden</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="126"/>
         <source>Save image</source>
-        <translation type="unfinished">Grafik speichern</translation>
+        <translation>Bild speichern</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="129"/>
         <source>Remove photo</source>
-        <translation type="unfinished">Foto entfernen</translation>
+        <translation>Foto entfernen</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="131"/>
         <source>All supported files (%1)</source>
-        <translation type="unfinished">Alle unterstützten Dateien (%1)</translation>
+        <translation>Alle unterstützten Dateien (%1)</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="132"/>
         <source>All files (*.*)</source>
-        <translation type="unfinished">Alle Dateien (*.*)</translation>
+        <translation>Alle Dateien (*.*)</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="134"/>
@@ -2520,7 +2520,7 @@ Möchten Sie die Spaltensortierung ausschalten?</translation>
     <message>
         <location filename="../core/globals.h" line="138"/>
         <source>Record not selected</source>
-        <translation type="unfinished">Datensatz nicht ausgewählt</translation>
+        <translation>Datensatz nicht ausgewählt</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="142"/>
