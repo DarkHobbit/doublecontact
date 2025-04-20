@@ -4,6 +4,7 @@
 
 DC_VER=$1
 QT_MAJV=$2
+QTTR_DIR=/usr/share/qt${QT_MAJV}/translations
 
 if [ -z "$DC_VER" ]
 then
@@ -14,7 +15,7 @@ fi
 PKG_NAME=doublecontact_${DC_VER}_amd64
 
 # cd .
-../make-bin-image ../.. ../.. ../../${PKG_NAME} ${QT_MAJV}
+../make-bin-image ../.. ../.. ../../${PKG_NAME} ${QTTR_DIR}
 if [ $? -ne 0 ]; then
   echo "make-bin-image failed!"
   exit 1
