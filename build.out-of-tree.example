@@ -1,0 +1,3 @@
+#!/bin/bash
+
+./build.out-of-tree /opt/Qt/5.12.12.st/bin/qmake
