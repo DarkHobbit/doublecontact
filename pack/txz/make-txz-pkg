@@ -1,9 +1,10 @@
 #!/bin/bash
 
-# Example: make-txz-pkg 0.2.4 4
+# Example: make-txz-pkg 0.2.4 /opt/Qt/5.12.12.st
 
 DC_VER=$1
-QT_MAJV=$2
+QT_DIR=$2
+QTTR_DIR=${QT_DIR}/translations
 
 if [ -z "$DC_VER" ]
 then
@@ -14,7 +15,7 @@ fi
 PKG_NAME=doublecontact_${DC_VER}_amd64
 
 # cd .
-../make-bin-image ../.. ../../../build-stat ../../../${PKG_NAME} ${QT_MAJV}
+../make-bin-image ../.. ../../../build-doublecontact ../../../${PKG_NAME} ${QTTR_DIR}
 if [ $? -ne 0 ]; then
   echo "make-bin-image failed!"
   exit 1
