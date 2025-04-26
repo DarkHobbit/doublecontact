@@ -1,0 +1,2 @@
+On Ubuntu 18.04: sudo apt-get install appstream
+(without it, appstreamcli command not found)

@@ -1,5 +1,5 @@
 [Desktop Entry]
-Version=0.2.4
+Version=1.0
 Type=Application
 Name=DoubleContact
 Name[ru]=DoubleContact
@@ -13,4 +13,4 @@ Exec=doublecontact %U
 TryExec=doublecontact
 Icon=doublecontact_32x32
 Terminal=false
-Categories=PIM
+Categories=Office;ContactManagement

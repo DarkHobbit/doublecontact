@@ -1,0 +1,43 @@
+#!/bin/bash
+
+# Example: make-appimage 0.2.4 x86_64 /opt/Qt/5.12.12.st
+DC_VER=$1
+PKG_ARCH=$2
+QT_DIR=$3
+QTTR_DIR=${QT_DIR}/translations
+
+if [ -z "$DC_VER" ]
+then
+  echo "Version number is missing"
+  exit 1
+fi
+if [ -z "$PKG_ARCH" ]
+then
+  echo "Package architecture is missing"
+  exit 1
+fi
+
+PKG_NAME=doublecontact_${DC_VER}_${PKG_ARCH}
+APP_DIR=${PKG_NAME}.AppDir
+
+# Make bin image (AppDir)
+cd ../..
+./pack/make-bin-image . . ./${APP_DIR} ${QTTR_DIR}
+if [ $? -ne 0 ]; then
+  echo "make-bin-image failed!"
+  exit 1
+fi
+
+# Modify AppDir, see https://github.com/AppImage/AppImageKit/wiki/AppDir
+cp pack/appimage/AppRun ./${APP_DIR}
+echo doublecontact_32x32.xpm > ./${APP_DIR}/.DirIcon
+cd ./${APP_DIR}
+# Modified .desktop with AppRun call instead executable placed to root package folder
+sed 's/Exec=doublecontact/Exec=.\/AppRun/' ./usr/share/applications/doublecontact.desktop > ./doublecontact.desktop
+cp ./usr/share/pixmaps/doublecontact_32x32.xpm ./
+# TODO icons theme?
+
+# appimagetool call!
+cd ..
+ARCH=x86_64 ../appimagetool-x86_64.AppImage  ./${APP_DIR}
+
