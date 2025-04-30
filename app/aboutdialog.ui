@@ -68,7 +68,7 @@
            <item>
             <widget class="QLabel" name="lbVer">
              <property name="text">
-              <string notr="true">v 0.2.5 beta 1</string>
+              <string notr="true">v 0.2.5 beta 2</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignCenter</set>

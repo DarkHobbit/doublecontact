@@ -30,6 +30,8 @@ fi
 
 # Modify AppDir, see https://github.com/AppImage/AppImageKit/wiki/AppDir
 cp pack/appimage/AppRun ./${APP_DIR}
+# mkdir ./${APP_DIR}/usr/share/metainfo
+# cp pack/appimage/doublecontact.appdata.xml ./${APP_DIR}/usr/share/metainfo
 echo doublecontact_32x32.xpm > ./${APP_DIR}/.DirIcon
 cd ./${APP_DIR}
 # Modified .desktop with AppRun call instead executable placed to root package folder

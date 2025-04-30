@@ -111,16 +111,19 @@ QString LanguageManager::transPath()
 #elif defined(Q_OS_MAC)
     return qApp->applicationDirPath()+"/../Translations";
 #else // Linux, BSD...
-//    if (QDir("/usr/share/doublecontact/translations").exists())
-    if (qApp->applicationDirPath().contains("/usr/bin"))
+    QString appDir = qApp->applicationDirPath();
+    if (appDir.contains("/usr/bin")) {
         // Standard case
-        return "/usr/share/doublecontact/translations";       
+        QString appRootPrefix = appDir.left(appDir.indexOf("/usr/bin"));
+        // For standard DEB/RPM, appRootPrefix is empty, but in AppImage it can be /tmp...
+        return appRootPrefix + "/usr/share/doublecontact/translations";
+    }
     else {
         // Developer case
-        if (QDir(qApp->applicationDirPath()+"/../translations").exists()) // in-source build
-            return qApp->applicationDirPath()+"/../translations";
+        if (QDir(appDir + "/../translations").exists()) // in-source build
+            return appDir + "/../translations";
         else
-            return qApp->applicationDirPath()+"/../../doublecontact/translations"; // shadow build
+            return appDir + "/../../doublecontact/translations"; // shadow build
     }
 #endif
 }
