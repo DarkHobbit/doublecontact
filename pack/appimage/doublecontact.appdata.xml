@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2016-2025 Mikhail Y. Zvyozdochkin aka DarkHobbit <pub@zvyozdochkin.ru> -->
+<component type="desktop-application">
+  <id>doublecontact.desktop</id>
+  <name>DoubleContact</name>
+  <summary>Contact manager primarily for phonebooks editing/merging</summary>
+  <description>
+    <p>DoubleContact is offline DE-independent contact manager primarily for phonebooks editing/merging.<br/>
+    DoubleContact UI is similar to two panel file manages, but second panel can be disabled.</p>
+    <p>Features:</p>
+    <ul>
+    <li>saving and loading addressbooks files:
+     <ul>
+      <li>VCF (vCard 2.1, 3.0 and 4.0 supported, VCF files directory as single address book also supported);</li>
+      <li>CSV (profiles for some Explay models, OSMO PIM, Sylpheed email client and generic profile for full contact information save);</li>
+      <li>MPB (MyPhoneExplorer backup);</li>
+      <li>NBF (modern Nokia backup file, <b>read only</b>);</li>
+      <li>NBU (older Nokia backup file, <b>read only</b>);</li>
+      <li>UDX (Philips Xenium file);</li>
+     </ul>
+    </li>
+    <li>contact view in table, sorting and filtering supported;</li>
+    <li>two panel view of two address books, with copy/move features;</li>
+    <li>single record editing, insert and remove;</li>
+    <li>group operations under selected records:
+     <ul>
+      <li>first/last name swap;</li>
+      <li>first/last name splitting;</li>
+      <li>phone number internationalization for some countries (in general, for ex-USSR);</li>
+      <li>phone numbers formatting by user-defined template, such as +N-NNN-NNN-NN-NN;</li>
+      <li>contact splitting for SIM card export (one phone per contact);</li>
+      <li>contact merge;</li>
+      <li>drop slashes and other specials;</li>
+      <li>formatted name generation;</li>
+     </ul>
+    </li>
+    <li>mass non-standard X-tags remove;</li>
+    <li>two address books comparison with highlighting of identical, similar and differ contacts;</li>
+    <li>interactive merge according to the comparison results;</li>
+    <li>HTML report generation.</li>
+    </ul>
+  </description>
+</component>

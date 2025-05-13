@@ -1,2 +1,6 @@
-On Ubuntu 18.04: sudo apt-get install appstream
+On Ubuntu 18.04:
+sudo apt-get install appstream
 (without it, appstreamcli command not found)
+sudo apt-get install curl
+(without it, metadata cannot be verified)
+
