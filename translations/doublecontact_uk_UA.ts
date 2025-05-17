@@ -105,7 +105,7 @@
     <message>
         <location filename="../model/callmodel.cpp" line="28"/>
         <source>Name</source>
-        <translation>Ім&apos;я</translation>
+        <translation>Назва</translation>
     </message>
 </context>
 <context>
@@ -293,7 +293,7 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/contactdialog.ui" line="49"/>
         <source>Name</source>
-        <translation>Ім&apos;я</translation>
+        <translation>Імені</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="68"/>
@@ -353,7 +353,7 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/contactdialog.ui" line="721"/>
         <source>&amp;Remove</source>
-        <translation>&amp;Видалити</translation>
+        <translation>&amp;Вилучити</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="724"/>
@@ -702,7 +702,7 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../model/innerfilemodel.cpp" line="25"/>
         <source>Name</source>
-        <translation>Ім&apos;я</translation>
+        <translation>Ім&apos;ям</translation>
     </message>
     <message>
         <location filename="../model/innerfilemodel.cpp" line="26"/>
@@ -971,7 +971,7 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/mainwindow.ui" line="468"/>
         <source>Return</source>
-        <translation>Return</translation>
+        <translation>Повернення</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="473"/>
@@ -1473,7 +1473,7 @@ Are you want switch column sorting off?</source>
     <message>
         <location filename="../app/messagewindow.ui" line="57"/>
         <source>vMessage </source>
-        <translation>vMessage </translation>
+        <translation>v Message </translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="74"/>
@@ -1543,7 +1543,7 @@ Are you want switch column sorting off?</source>
     <message>
         <location filename="../app/messagewindow.ui" line="195"/>
         <source>Return</source>
-        <translation>Return</translation>
+        <translation>Повернення</translation>
     </message>
     <message>
         <location filename="../app/messagewindow.ui" line="200"/>
@@ -2176,7 +2176,7 @@ line %3, col %4
     <message>
         <location filename="../core/globals.h" line="76"/>
         <source>Firstname</source>
-        <translation>Ім&apos;я</translation>
+        <translation>Імени</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="77"/>
