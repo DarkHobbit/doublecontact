@@ -43,7 +43,8 @@ enum ContactColumn {
   ccIMJabber,
   ccIMICQ,
   ccIMSkype,
-  ccLastRev, // last vCard update (REV)
+  ccLastRev,    // last vCard update (REV)
+  ccVersion,    // vCard version (VERSION)
   ccHasPhone,   // contact has at least one phone
   ccHasEmail,   // contact has at least one phone
   ccHasAddress, // contact has at least one postal address
@@ -103,6 +104,7 @@ enum ContactColumn {
 #define S_IM_SKYPE QObject::tr("Skype")
 #define S_GROUP QObject::tr("Group")
 #define S_LAST_REV QObject::tr("Updated")
+#define S_VERSION QObject::tr("Ver.")
 // Columns-flags
 #define S_HAS_PHONE QObject::tr("Has phone")
 #define S_HAS_EMAIL QObject::tr("Has email")
