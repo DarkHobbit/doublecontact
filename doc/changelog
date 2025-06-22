@@ -132,6 +132,7 @@ CURRENT
 * Remove alternate record after merge if user want it
 * FN field saved in VCF by default even if empty (optional)
 * New visible columns: Ver. (vCard version)
+* Option Write full name tag if empty is unchecked by default
 * Fixed: in single-panel mode, left panel didn't stretched on entire window (was broken in 0.2.2)
 * Fixed: contact can be added to groups only in edit mode, not add
 * fixed MPB error on old Qt version

@@ -104,7 +104,7 @@ void ConfigManager::readConfig()
     }
     // Saving
     gd.preferredVCFVersion = (GlobalConfig::VCFVersion)enPrefVCFVersion.load(settings);
-    gd.useOriginalFileVersion = settings->value("Saving/UseOriginalFileVCardVersion", true).toBool();
+    gd.useOriginalFileVersion = settings->value("Saving/UseOriginalFileVCardVersion", false).toBool();
     gd.writeFullNameIsEmpty = settings->value("Saving/WriteFullNameIsEmpty", true).toBool();
     gd.defaultCountryRule = settings->value("Saving/DefaultCountryRule", 0).toInt();
     gd.skipTimeFromDate = settings->value("Saving/SkipTimeFromDate", false).toBool();
