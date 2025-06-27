@@ -50,6 +50,8 @@ int Convertor::start()
     }
     QString inPath, outPath, inFormat, outFormat, inProfile, outProfile, filterString, mmsDataDir;
     ContactList::SortType sortType = ContactList::SortBySortString;
+    int tnMaxNames=0, tnMaxLen=0;
+    bool ok;
     gd.preferredVCFVersion = (GlobalConfig::VCFVersion) enPrefVCFVersion.defaultValue;
     gd.groupFormat = (GlobalConfig::GroupFormat) enGroupFormat.defaultValue;
     gd.nonLatinTypeNamesPolicy = (GlobalConfig::NonLatinTypeNamesPolicy) enNlTnPolicy.defaultValue;
@@ -59,6 +61,7 @@ int Convertor::start()
     bool forceDirectory = false;
     bool swapNames = false;
     bool splitNames = false;
+    bool trimNames = false;
     bool generateFullNames = false;
     bool dropFullNames = false;
     bool reverseFullNames = false;
@@ -213,6 +216,28 @@ int Convertor::start()
             swapNames = true;
         else if (arguments()[i]=="--split-names")
             splitNames = true;
+        else if (arguments()[i]=="--trim-names") {
+            i++;
+            if (arguments().count()-i<2) {
+                out << tr("Error: --trim-names command present, but maxnames or maxlen are missing\n");
+                printUsage();
+                return 1;
+            }
+            tnMaxNames = arguments()[i].toInt(&ok);
+            if (!ok) {
+                out << tr("Error: at --trim-names command, maxnames must be an integer value: %1\n").arg(arguments()[i]);
+                printUsage();
+                return 1;
+            }
+            i++;
+            tnMaxLen = arguments()[i].toInt(&ok);
+            if (!ok) {
+                out << tr("Error: at --trim-names command, maxlen must be an integer value: %1\n").arg(arguments()[i]);
+                printUsage();
+                return 1;
+            }
+            trimNames = true;
+        }
         else if (arguments()[i]=="--generate-full-names")
             generateFullNames = true;
         else if (arguments()[i]=="--drop-full-names")
@@ -436,6 +461,8 @@ int Convertor::start()
                 item.swapNames();
             if (splitNames)
                 item.splitNames();
+            if (trimNames)
+                item.trimNames(tnMaxNames, tnMaxLen);
             // TODO splitNumbers now can't be implemented, because in GUI it works via ContactModel
             // Probably, move it in ContactList in future
             if (generateFullNames)
@@ -582,6 +609,7 @@ void Convertor::printUsage()
         "Commands:\n" \
         "--swap-names - swap first and last name\n" \
         "--split-names - split name by spaces\n" \
+        "--trim-names maxnames maxlen - trim name component count and component length\n" \
         "--generate-full-names - generate full (formatted) name by names\n" \
         "--drop-full-names - clear full (formatted) name\n" \
         "--reverse-full-names - swap parts of full (formatted) name\n"
