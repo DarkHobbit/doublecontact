@@ -22,6 +22,7 @@ class FileFormat : public IFormat
 public:
     FileFormat();
     virtual ~FileFormat();
+    virtual bool setCharSet(const QString& value);
     QStringList errors();
     QString fatalError();
     static void lossData(QStringList& errors, const QString& contactName,

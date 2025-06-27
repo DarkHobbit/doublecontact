@@ -24,8 +24,11 @@ public:
 
     // IFormat interface
 public:
+    virtual bool setCharSet(const QString& value);
     bool importRecords(const QString &url, ContactList &list, bool append);
     bool exportRecords(const QString &url, ContactList &list);
+private:
+    QString charSet;
 };
 
 #endif // VCFDIR_H

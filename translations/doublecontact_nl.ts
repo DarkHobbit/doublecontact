@@ -573,6 +573,14 @@ Wilt u dit certificaat tóch accepteren?</translation>
     </message>
 </context>
 <context>
+    <name>ContactModel</name>
+    <message>
+        <location filename="../model/contactmodel.cpp" line="319"/>
+        <source>This format not support charset in settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>DateDetailsDialog</name>
     <message>
         <location filename="../app/datedetailsdialog.ui" line="14"/>
@@ -1945,17 +1953,17 @@ telefoontaal %5</translation>
         <translation type="obsolete">Onbekende versleuteling: </translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="593"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="594"/>
         <source>Invalid timezone: </source>
         <translation>Ongeldige tijdzone: </translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="622"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="623"/>
         <source>Unknown datetime format: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="633"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="634"/>
         <source>Invalid datetime: </source>
         <translation>Ongeldige datum/tijd: </translation>
     </message>
@@ -2108,21 +2116,21 @@ opgeslagen als mobiele telefoon</translation>
 %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/vcfdirectory.cpp" line="37"/>
+        <location filename="../core/formats/files/vcfdirectory.cpp" line="43"/>
         <source>Directory not exists:
 %1</source>
         <translation>De map bestaat niet:
 %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/vcfdirectory.cpp" line="42"/>
+        <location filename="../core/formats/files/vcfdirectory.cpp" line="48"/>
         <source>Directory not contains VCF files:
 %1</source>
         <translation>De map bevat geen VCF-bestanden:
 %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/vcfdirectory.cpp" line="74"/>
+        <location filename="../core/formats/files/vcfdirectory.cpp" line="81"/>
         <location filename="../core/globals.h" line="143"/>
         <source>Can&apos;t create directory
 %1</source>
@@ -3140,6 +3148,11 @@ Uitgelezen: %3 bytes - Verwacht: %4 bytes</translation>
         <translation>Groepslabel</translation>
     </message>
     <message>
+        <location filename="../app/settingsdialog.ui" line="338"/>
+        <source>Charset (not all formats)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>2.1</source>
         <translation type="obsolete">2.1</translation>
     </message>
@@ -3210,22 +3223,22 @@ Uitgelezen: %3 bytes - Verwacht: %4 bytes</translation>
         <translation type="obsolete">X-GROUP-MEMBERSHIP gebruiken bij het opslaan van groepen</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="354"/>
+        <location filename="../app/settingsdialog.ui" line="368"/>
         <source>Loading</source>
         <translation>Laden</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="362"/>
+        <location filename="../app/settingsdialog.ui" line="376"/>
         <source>Default type if empty</source>
         <translation>Standaardtype indien leeg</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="374"/>
+        <location filename="../app/settingsdialog.ui" line="388"/>
         <source>(many phones treat &apos;Voice&apos; as &apos;Other&apos;)</source>
         <translation>(veel telefoons vatten &apos;Spraakoproep&apos; op als &apos;Overig&apos;)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="381"/>
+        <location filename="../app/settingsdialog.ui" line="395"/>
         <source>Warning on missing phone types</source>
         <translation>Waarschuwen bij ontbrekende telefoonnummers</translation>
     </message>
@@ -3234,22 +3247,22 @@ Uitgelezen: %3 bytes - Verwacht: %4 bytes</translation>
         <translation type="obsolete">(veel telefoons nemen &apos;Overig&apos; aan i.p.v. &apos;Spraak&apos;)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="388"/>
+        <location filename="../app/settingsdialog.ui" line="402"/>
         <source>Warning on non-standard phone types</source>
         <translation>Waarschuwen bij niet-standaard telefoontypes</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="395"/>
+        <location filename="../app/settingsdialog.ui" line="409"/>
         <source>Debug save</source>
         <translation>Foutopsporing opslaan</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="402"/>
+        <location filename="../app/settingsdialog.ui" line="416"/>
         <source>While VCF directory reading</source>
         <translation>Tijdens het uitlezen van mappen door VCF</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="408"/>
+        <location filename="../app/settingsdialog.ui" line="422"/>
         <source>Read contact names from file name</source>
         <translation>Contactpersoonnamen uitlezen uit bestandsnaam</translation>
     </message>
@@ -3258,7 +3271,7 @@ Uitgelezen: %3 bytes - Verwacht: %4 bytes</translation>
         <translation type="obsolete">Waarschuwen bij niet-standaard telefoonummers/e-mailadressen</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.cpp" line="143"/>
+        <location filename="../app/settingsdialog.cpp" line="159"/>
         <source>List must contain at least one visible column</source>
         <translation>De lijst moet minimaal één zichtbare kolom bevatten</translation>
     </message>

@@ -24,6 +24,7 @@ public:
 
     // IFormat interface
 public:
+    virtual bool setCharSet(const QString& value);
     static bool detect(const QString &url);
     static QStringList supportedExtensions();
     static QStringList supportedFilters();

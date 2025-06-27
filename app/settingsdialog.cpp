@@ -1,8 +1,10 @@
 #include <QApplication>
+#include <QByteArray>
 #include <QColorDialog>
 #include <QFont>
 #include <QFontDialog>
 #include <QMessageBox>
+#include <QTextCodec>
 
 #include "configmanager.h"
 #include "contactlist.h"
@@ -18,6 +20,18 @@ SettingsDialog::SettingsDialog(QWidget *parent) :
     ui->bgNlTnPolicy->setId(ui->rbSaveNLNSNamesAsIs, 0);
     ui->bgNlTnPolicy->setId(ui->rbReplaceNLNSNames, 1);
     ui->bgNlTnPolicy->setId(ui->rbXCustomizeNLNSNames, 2);
+    foreach (const QByteArray& cn, QTextCodec::availableCodecs()) {
+        bool done = false;
+        for (int i=0; i<ui->cbCharSet->count(); i++) {
+            if (cn<ui->cbCharSet->itemText(i)) {
+                ui->cbCharSet->insertItem(i, cn);
+                done = true;
+                break;
+            }
+        }
+        if (!done)
+            ui->cbCharSet->addItem(cn);
+    }
 }
 
 SettingsDialog::~SettingsDialog()
@@ -65,6 +79,7 @@ bool SettingsDialog::setData()
     ui->bgNlTnPolicy->button((int)gd.nonLatinTypeNamesPolicy)->setChecked(true); // local-unsafe but setData() called only with checked values
     ui->cbGroupFormat->addItems(enGroupFormat.possibleValues());
     ui->cbGroupFormat->setCurrentIndex((short)gd.groupFormat);
+    ui->cbCharSet->setCurrentText(gd.saveCharSet);
     // Loading
     ui->cbDefaultEmptyPhoneType->clear();
     ui->cbDefaultEmptyPhoneType->insertItems(0, Phone::standardTypes.displayValues);
@@ -114,6 +129,7 @@ bool SettingsDialog::getData()
     gd.nonLatinTypeNamesPolicy =
         (GlobalConfig::NonLatinTypeNamesPolicy) ui->bgNlTnPolicy->checkedId();
     gd.groupFormat = (GlobalConfig::GroupFormat)ui->cbGroupFormat->currentIndex();
+    gd.saveCharSet = ui->cbCharSet->currentText();
     // Loading
     gd.defaultEmptyPhoneType = ui->cbDefaultEmptyPhoneType->currentText();
     gd.warnOnMissingTypes = ui->cbWarnOnMissingTypes->isChecked();

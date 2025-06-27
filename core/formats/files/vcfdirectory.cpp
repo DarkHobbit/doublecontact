@@ -29,6 +29,12 @@ VCFDirectory::~VCFDirectory()
 {
 }
 
+bool VCFDirectory::setCharSet(const QString &value)
+{
+    charSet = value;
+    return true;
+}
+
 bool VCFDirectory::importRecords(const QString &url, ContactList &list, bool append)
 {
     if (!append) list.clear(); // VCardData::importRecords must be called with append=true
@@ -43,6 +49,7 @@ bool VCFDirectory::importRecords(const QString &url, ContactList &list, bool app
         return false;
     }
     VCardData data;
+    data.charSet = charSet;
     _errors.clear();
     foreach (const QString& fileName, entries) {
         if (!openFile(url + QDir::separator() + fileName, QIODevice::ReadOnly))

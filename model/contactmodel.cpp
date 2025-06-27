@@ -314,7 +314,10 @@ bool ContactModel::saveAs(const QString& path, FormatType fType, QStringList &er
         delete format;
         return false;
     }
-    bool res = format->exportRecords(path, items);
+    bool res = format->setCharSet(gd.saveCharSet);
+    if (!res && !gd.saveCharSet.isEmpty() && gd.saveCharSet!="UTF-8")
+        errors << tr("This format not support charset in settings");
+    res = format->exportRecords(path, items);
     if (res) {
         // Add _old_ name to recent
         if ((!_source.isEmpty()) && (_sourceType!=ftNew) && (path!=_source))

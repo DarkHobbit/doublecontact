@@ -21,6 +21,12 @@ VCFFile::VCFFile()
 {
 }
 
+bool VCFFile::setCharSet(const QString &value)
+{
+    charSet = value;
+    return true;
+}
+
 bool VCFFile::detect(const QString &url)
 {
     QFile f(url);

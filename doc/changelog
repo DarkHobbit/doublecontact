@@ -131,6 +131,8 @@ CURRENT
 * Doubleclick can be used for groups in contact dialog and for columns in settings dialog
 * Remove alternate record after merge if user want it
 * FN field saved in VCF by default even if empty (optional)
+* Added name trimming by length and count
+* Added custom charset for VCF save
 * New visible columns: Ver. (vCard version)
 * Option Write full name tag if empty is unchecked by default
 * Fixed: in single-panel mode, left panel didn't stretched on entire window (was broken in 0.2.2)

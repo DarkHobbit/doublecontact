@@ -413,7 +413,8 @@ void VCardData::exportRecord(BStringList &lines, const ContactItem &item, QStrin
         }
     }
     // Encoding/charSet prefix
-    charSet = "UTF-8"; // TODO save original charset in ContactItem
+    if (charSet.isEmpty())
+        charSet = "UTF-8"; // for correct notification ";CHARSET=UTF-8;"
     encoding = formatVersion==GlobalConfig::VCF21 ? "QUOTED-PRINTABLE" : "";
     // Header
     lines << "BEGIN:VCARD";

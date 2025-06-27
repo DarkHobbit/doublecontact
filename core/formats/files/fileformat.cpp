@@ -22,6 +22,11 @@ FileFormat::FileFormat()
 FileFormat::~FileFormat()
 {}
 
+bool FileFormat::setCharSet(const QString&)
+{
+    return false; // not all formats support this feature
+}
+
 QStringList FileFormat::errors()
 {
     return _errors;

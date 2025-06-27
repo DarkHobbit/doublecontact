@@ -112,6 +112,7 @@ void ConfigManager::readConfig()
     gd.nonLatinTypeNamesPolicy =
         (GlobalConfig::NonLatinTypeNamesPolicy)enNlTnPolicy.load(settings);
     gd.groupFormat = (GlobalConfig::GroupFormat)enGroupFormat.load(settings);
+    gd.saveCharSet = settings->value("Saving/CharSet", "UTF-8").toString();
     // Loading
     gd.defaultEmptyPhoneType = settings->value("Loading/DefaultEmptyPhoneType",
         Phone::standardTypes.translate("voice")).toString(); // many phones treat type 'voice' as 'other'
@@ -154,6 +155,7 @@ void ConfigManager::writeConfig()
     settings->setValue("Saving/AddXToNonStandardTypes", gd.addXToNonStandardTypes);
     enNlTnPolicy.save(settings, gd.nonLatinTypeNamesPolicy);
     enGroupFormat.save(settings, gd.groupFormat);
+    settings->setValue("Saving/CharSet", gd.saveCharSet);
     // Loading
     settings->setValue("Loading/DefaultEmptyPhoneType", gd.defaultEmptyPhoneType);
     settings->setValue("Loading/WarnOnMissingTypes", gd.warnOnMissingTypes);

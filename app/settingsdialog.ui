@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>468</width>
-    <height>528</height>
+    <height>557</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -331,6 +331,24 @@
          </item>
          <item>
           <widget class="QComboBox" name="cbGroupFormat"/>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_7">
+         <item>
+          <widget class="QLabel" name="label">
+           <property name="text">
+            <string>Charset (not all formats)</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="cbCharSet">
+           <property name="insertPolicy">
+            <enum>QComboBox::InsertAlphabetically</enum>
+           </property>
+          </widget>
          </item>
         </layout>
        </item>

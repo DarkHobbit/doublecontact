@@ -235,6 +235,7 @@ struct GlobalConfig {
         gfNBF,
         gfMPB
     } groupFormat;
+    QString saveCharSet; // not all formats!
     // Load
     QString defaultEmptyPhoneType; // if phone w/o type was in loaded file
     bool warnOnMissingTypes;

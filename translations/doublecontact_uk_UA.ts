@@ -573,6 +573,14 @@ Are you want to accept this certificate anyway?</source>
     </message>
 </context>
 <context>
+    <name>ContactModel</name>
+    <message>
+        <location filename="../model/contactmodel.cpp" line="319"/>
+        <source>This format not support charset in settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>DateDetailsDialog</name>
     <message>
         <location filename="../app/datedetailsdialog.ui" line="14"/>
@@ -1941,17 +1949,17 @@ SMS: %7
         <translation type="obsolete">Невідоме кодування: </translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="593"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="594"/>
         <source>Invalid timezone: </source>
         <translation>Хибний часовий пояс: </translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="622"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="623"/>
         <source>Unknown datetime format: </source>
         <translation>Невідомий формат дати й часу: </translation>
     </message>
     <message>
-        <location filename="../core/formats/common/vcarddata.cpp" line="633"/>
+        <location filename="../core/formats/common/vcarddata.cpp" line="634"/>
         <source>Invalid datetime: </source>
         <translation>Хибна дата/час: </translation>
     </message>
@@ -2554,21 +2562,21 @@ Data will be lost</source>
         <translation type="obsolete">Ви дійсно бажаєте видалити обрані записи?</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/vcfdirectory.cpp" line="37"/>
+        <location filename="../core/formats/files/vcfdirectory.cpp" line="43"/>
         <source>Directory not exists:
 %1</source>
         <translation>Тека не існує:
 %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/vcfdirectory.cpp" line="42"/>
+        <location filename="../core/formats/files/vcfdirectory.cpp" line="48"/>
         <source>Directory not contains VCF files:
 %1</source>
         <translation>В теці відсутні VCF файли:
 %1</translation>
     </message>
     <message>
-        <location filename="../core/formats/files/vcfdirectory.cpp" line="74"/>
+        <location filename="../core/formats/files/vcfdirectory.cpp" line="81"/>
         <location filename="../core/globals.h" line="143"/>
         <source>Can&apos;t create directory
 %1</source>
@@ -3130,6 +3138,11 @@ Read %3 bytes, %4 expected</source>
         <translation>Теґ для збереження групи</translation>
     </message>
     <message>
+        <location filename="../app/settingsdialog.ui" line="338"/>
+        <source>Charset (not all formats)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>2.1</source>
         <translation type="obsolete">2.1</translation>
     </message>
@@ -3196,22 +3209,22 @@ Read %3 bytes, %4 expected</source>
         <translation type="obsolete">Замінювати не латинські назви типів</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="354"/>
+        <location filename="../app/settingsdialog.ui" line="368"/>
         <source>Loading</source>
         <translation>Завантаження</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="362"/>
+        <location filename="../app/settingsdialog.ui" line="376"/>
         <source>Default type if empty</source>
         <translation>Тип телефону, якщо порожній</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="374"/>
+        <location filename="../app/settingsdialog.ui" line="388"/>
         <source>(many phones treat &apos;Voice&apos; as &apos;Other&apos;)</source>
         <translation>(багато телефонів трактують «Голосовий» як «Інше»)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="381"/>
+        <location filename="../app/settingsdialog.ui" line="395"/>
         <source>Warning on missing phone types</source>
         <translation>Попередження про відсутні типи телефонів</translation>
     </message>
@@ -3220,22 +3233,22 @@ Read %3 bytes, %4 expected</source>
         <translation type="obsolete">(деякі телефони трактують тип &apos;Голосовий&apos; як &apos;Інший&apos;)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="388"/>
+        <location filename="../app/settingsdialog.ui" line="402"/>
         <source>Warning on non-standard phone types</source>
         <translation>Попереджувати про нестандартні типи телефонів</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="395"/>
+        <location filename="../app/settingsdialog.ui" line="409"/>
         <source>Debug save</source>
         <translation>Збереження налагодження</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="402"/>
+        <location filename="../app/settingsdialog.ui" line="416"/>
         <source>While VCF directory reading</source>
         <translation>Під час читання каталогу VCF</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="408"/>
+        <location filename="../app/settingsdialog.ui" line="422"/>
         <source>Read contact names from file name</source>
         <translation>Брати ім&apos;я контакту з імені файлу</translation>
     </message>
@@ -3244,7 +3257,7 @@ Read %3 bytes, %4 expected</source>
         <translation type="obsolete">Попереджувати про нестандартні типи телефонів/пошти</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.cpp" line="143"/>
+        <location filename="../app/settingsdialog.cpp" line="159"/>
         <source>List must contain at least one visible column</source>
         <translation>В переліку має бути хоча б один стовпчик</translation>
     </message>

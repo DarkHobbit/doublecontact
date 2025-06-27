@@ -31,6 +31,7 @@ enum FormatType {
 class IFormat {
 public:
     virtual ~IFormat() {};
+    virtual bool setCharSet(const QString& value)=0;
     virtual bool importRecords(const QString& url, ContactList& list, bool append)=0;
     virtual bool exportRecords(const QString& url, ContactList& list)=0;
     virtual QStringList errors()=0;
