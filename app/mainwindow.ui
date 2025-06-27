@@ -52,6 +52,7 @@
           <widget class="QLabel" name="lbLeft">
            <property name="font">
             <font>
+             <weight>75</weight>
              <bold>true</bold>
             </font>
            </property>
@@ -117,6 +118,7 @@
           <widget class="QLabel" name="lbRight">
            <property name="font">
             <font>
+             <weight>75</weight>
              <bold>true</bold>
             </font>
            </property>
@@ -264,7 +266,7 @@
      <x>0</x>
      <y>0</y>
      <width>954</width>
-     <height>22</height>
+     <height>23</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_File">
@@ -316,6 +318,7 @@
     <addaction name="action_Swap_names"/>
     <addaction name="actionCompare_Result"/>
     <addaction name="actionS_plit_names"/>
+    <addaction name="actionTrim_Names"/>
     <addaction name="actionJoin_names"/>
     <addaction name="action_Drop_slashes"/>
     <addaction name="actionIntl_phone_prefix"/>
@@ -705,6 +708,11 @@
   <action name="action_Files">
    <property name="text">
     <string>&amp;Files...</string>
+   </property>
+  </action>
+  <action name="actionTrim_Names">
+   <property name="text">
+    <string>Trim names</string>
    </property>
   </action>
  </widget>

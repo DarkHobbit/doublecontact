@@ -285,6 +285,14 @@ bool ContactItem::joinNames()
     return res;
 }
 
+void ContactItem::trimNames(int maxNames, int maxLen)
+{
+    while (names.count()>maxNames)
+        names.removeLast();
+    for (int i=0; i<names.count(); i++)
+        names[i] = names[i].left(maxLen);
+}
+
 bool ContactItem::dropSlashes()
 {
     for (int i=0; i<names.count(); i++) {

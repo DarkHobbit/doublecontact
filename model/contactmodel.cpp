@@ -427,6 +427,16 @@ void ContactModel::joinNames(const QModelIndexList &indices)
     _changed = true;
 }
 
+void ContactModel::trimNames(const QModelIndexList &indices, int maxNames, int maxLen)
+{
+    foreach(QModelIndex index, indices) {
+        beginEditRow(index);
+        items[index.row()].trimNames(maxNames, maxLen);
+        endEditRow(index);
+    }
+    _changed = true;
+}
+
 void ContactModel::dropSlashes(const QModelIndexList &indices)
 {
     foreach(QModelIndex index, indices) {

@@ -67,6 +67,7 @@ public:
     void swapNames(const QModelIndexList& indices);
     void splitNames(const QModelIndexList& indices);
     void joinNames(const QModelIndexList& indices);
+    void trimNames(const QModelIndexList& indices, int maxNames, int maxLen);
     void dropSlashes(const QModelIndexList& indices);
     void generateFullNames(const QModelIndexList& indices);
     void parseFullName(const QModelIndexList& indices);

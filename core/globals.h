@@ -65,9 +65,14 @@ enum ContactColumn {
 // Misc
 #define S_ADDRESS_BOOK QObject::tr("Address book")
 #define S_NEW_LIST QObject::tr("New contact list")
+// Dialogs
 #define S_GROUP_NAME QObject::tr("Group name")
 #define S_COUNTRY_RULE_SELECT QObject::tr("Select country rule")
 #define S_COUNTRY_PHONE_TEMPLATE QObject::tr("Select phone template")
+#define S_TRIM_NAMES QObject::tr("Trim names")
+#define S_TN_MAXNAMES QObject::tr("Maximum name components count")
+#define S_TN_MAXLEN QObject::tr("Maximum name component length")
+#define S_TN_TOTALLEN QObject::tr("Total maximum name length: %1")
 #define S_MASS_TAG_REMOVE QObject::tr("Select tags for remove")
 #define S_CSV_PROFILE_SELECT QObject::tr("Select CSV profile")
 #define S_GENERIC_CSV_PROFILE QObject::tr("Generic profile")

@@ -25,6 +25,7 @@
 #include <QPalette>
 #include <QRadioButton>
 #include <QSpacerItem>
+#include <QSpinBox>
 #include <QStackedWidget>
 #include <QUrl>
 
@@ -1265,6 +1266,44 @@ void MainWindow::on_actionJoin_names_triggered()
     selectedModel->joinNames(selection);
     updateViewMode();
     updateHeaders();
+}
+
+void MainWindow::on_actionTrim_Names_triggered()
+{
+    if (!checkSelection()) return;
+    QDialog* d = new QDialog(0);
+    d->setWindowTitle(S_TRIM_NAMES);
+    QVBoxLayout* l = new QVBoxLayout();
+    d->setLayout(l);
+    QGridLayout* gl = new QGridLayout();
+    gl->addWidget(new QLabel(S_TN_MAXNAMES), 0, 0);
+    QSpinBox* sbMaxNames = new QSpinBox();
+    gl->addWidget(sbMaxNames, 0, 1);
+    sbMaxNames->setMinimum(0);
+    sbMaxNames->setMaximum(5);
+    sbMaxNames->setValue(2);
+    gl->addWidget(new QLabel(S_TN_MAXLEN), 1, 0);
+    QSpinBox* sbMaxLen = new QSpinBox();
+    sbMaxLen->setMinimum(1);
+    sbMaxLen->setMaximum(76);
+    sbMaxLen->setValue(8);
+    gl->addWidget(sbMaxLen, 1, 1);
+    l->addLayout(gl);
+    QDialogButtonBox* bb = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
+    connect(bb, SIGNAL(accepted()), d, SLOT(accept()));
+    connect(bb, SIGNAL(rejected()), d, SLOT(reject()));
+    l->addWidget(bb);
+    d->exec();
+    if (d->result()==QDialog::Accepted) {
+        int maxNames = sbMaxNames->value();
+        int maxLen = sbMaxLen->value();
+        QMessageBox::information(0, S_INFORM,
+            S_TN_TOTALLEN.arg(maxNames*maxLen));
+        selectedModel->trimNames(selection, maxNames, maxLen);
+        updateViewMode();
+        updateHeaders();
+    }
+    delete d;
 }
 
 void MainWindow::on_actionParse_full_name_triggered()
