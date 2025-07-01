@@ -12,6 +12,9 @@ cd "%DIR_BUILD%"
 mkdir app
 mkdir contconv
 
+rem Important for core.pri!
+set QTDIR=%DIR_QT%
+
 %DIR_QT%\bin\qmake.exe "%DIR_SRC%\all.pro"
 if errorlevel 1 goto fatal
 mingw32-make release
