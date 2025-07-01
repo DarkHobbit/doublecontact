@@ -79,7 +79,7 @@ bool SettingsDialog::setData()
     ui->bgNlTnPolicy->button((int)gd.nonLatinTypeNamesPolicy)->setChecked(true); // local-unsafe but setData() called only with checked values
     ui->cbGroupFormat->addItems(enGroupFormat.possibleValues());
     ui->cbGroupFormat->setCurrentIndex((short)gd.groupFormat);
-    ui->cbCharSet->setCurrentText(gd.saveCharSet);
+    ui->cbCharSet->setCurrentIndex(ui->cbCharSet->findText(gd.saveCharSet));
     // Loading
     ui->cbDefaultEmptyPhoneType->clear();
     ui->cbDefaultEmptyPhoneType->insertItems(0, Phone::standardTypes.displayValues);
