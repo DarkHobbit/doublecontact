@@ -101,13 +101,15 @@ TRANSLATIONS += \
     ../translations/doublecontact_zh_Hant.ts
 
 
-
+# Last case - some old Qt versions, where QMAKE_QMAKE is empty (for example, 4.8 on win32)
 exists( $$dirname(QMAKE_QMAKE)/lrelease-qt4 ) {
       tr.commands = $$dirname(QMAKE_QMAKE)/lrelease-qt4  $$_PRO_FILE_
 } else:exists( $$dirname(QMAKE_QMAKE)/lrelease-qt5 ) {
       tr.commands = $$dirname(QMAKE_QMAKE)/lrelease-qt5  $$_PRO_FILE_
-} else {
+} else:exists( $$dirname(QMAKE_QMAKE)/lrelease ) {
       tr.commands = $$dirname(QMAKE_QMAKE)/lrelease  $$_PRO_FILE_
+} else {
+      tr.commands = lrelease  $$_PRO_FILE_
 }
     
 QMAKE_EXTRA_TARGETS += tr
