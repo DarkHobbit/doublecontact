@@ -278,7 +278,7 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/contactdialog.ui" line="14"/>
         <source>Edit Contact</source>
-        <translation>Редагувати контакт</translation>
+        <translation>Редагувати Контакт</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="24"/>
@@ -577,7 +577,7 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../model/contactmodel.cpp" line="319"/>
         <source>This format not support charset in settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Цей формат не підтримує кодування в налаштуваннях</translation>
     </message>
 </context>
 <context>
@@ -1124,7 +1124,7 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/mainwindow.ui" line="715"/>
         <source>Trim names</source>
-        <translation type="unfinished"></translation>
+        <translation>Назви обрізів</translation>
     </message>
     <message>
         <source>Settings...</source>
@@ -2169,22 +2169,22 @@ line %3, col %4
     <message>
         <location filename="../core/globals.h" line="72"/>
         <source>Trim names</source>
-        <translation type="unfinished"></translation>
+        <translation>Назви обрізів</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="73"/>
         <source>Maximum name components count</source>
-        <translation type="unfinished"></translation>
+        <translation>Максимальна кількість компонентів імені</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="74"/>
         <source>Maximum name component length</source>
-        <translation type="unfinished"></translation>
+        <translation>Максимальна довжина компонента імені</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="75"/>
         <source>Total maximum name length: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Загальна максимальна довжина імені: %1</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="76"/>
@@ -2349,7 +2349,7 @@ line %3, col %4
     <message>
         <location filename="../core/globals.h" line="112"/>
         <source>Ver.</source>
-        <translation type="unfinished"></translation>
+        <translation>Версія</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="114"/>
@@ -2901,7 +2901,7 @@ Read %3 bytes, %4 expected</source>
         <location filename="../core/formats/common/nokiadata.cpp" line="517"/>
         <source>Info</source>
         <comment>MmsClass</comment>
-        <translation>Інформація</translation>
+        <translation>Інфо</translation>
     </message>
     <message>
         <location filename="../core/formats/common/nokiadata.cpp" line="520"/>
@@ -3140,7 +3140,7 @@ Read %3 bytes, %4 expected</source>
     <message>
         <location filename="../app/settingsdialog.ui" line="338"/>
         <source>Charset (not all formats)</source>
-        <translation type="unfinished"></translation>
+        <translation>Кодування (не всі формати)</translation>
     </message>
     <message>
         <source>2.1</source>
