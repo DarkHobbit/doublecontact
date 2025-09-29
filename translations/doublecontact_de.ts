@@ -214,7 +214,7 @@ Möchten Sie dieses Zertifikat trotzdem akzeptieren?</translation>
     <message>
         <location filename="../app/comparedialog.cpp" line="85"/>
         <source>Remove right record after merge</source>
-        <translation type="unfinished"></translation>
+        <translation>Rechten Datensatz nach Zusammenführung entfernen</translation>
     </message>
 </context>
 <context>
@@ -507,7 +507,7 @@ Möchten Sie dieses Zertifikat trotzdem akzeptieren?</translation>
     <message>
         <location filename="../app/datedetailsdialog.ui" line="34"/>
         <source>Set year for date</source>
-        <translation type="unfinished"></translation>
+        <translation>Jahr für Datum festlegen</translation>
     </message>
     <message>
         <location filename="../app/datedetailsdialog.ui" line="41"/>
@@ -854,7 +854,7 @@ Möchten Sie dieses Zertifikat trotzdem akzeptieren?</translation>
     <message>
         <location filename="../app/mainwindow.ui" line="450"/>
         <source>Ctrl+Q</source>
-        <translation type="unfinished"></translation>
+        <translation>Strg+Q</translation>
     </message>
     <message>
         <location filename="../app/mainwindow.ui" line="455"/>
@@ -1808,7 +1808,7 @@ Sprache des Telefons %5</translation>
     <message>
         <location filename="../core/globals.h" line="156"/>
         <source>Last section not closed</source>
-        <translation type="unfinished">Letzter Abschnitt nicht geschlossen</translation>
+        <translation>Letzter Abschnitt nicht geschlossen</translation>
     </message>
     <message>
         <location filename="../core/formats/common/vcarddata.cpp" line="389"/>
@@ -1832,7 +1832,7 @@ Sprache des Telefons %5</translation>
     <message>
         <location filename="../core/formats/common/vcarddata.cpp" line="623"/>
         <source>Unknown datetime format: </source>
-        <translation type="unfinished"></translation>
+        <translation>Unbekanntes Datums-/Zeitformat: </translation>
     </message>
     <message>
         <location filename="../core/formats/common/vcarddata.cpp" line="634"/>
@@ -2204,7 +2204,7 @@ Zeile %3, Spalte %4
     <message>
         <location filename="../core/globals.h" line="76"/>
         <source>Select tags for remove</source>
-        <translation type="unfinished">Zum Entfernen ausgewählte Schlagwörter</translation>
+        <translation>Zu entfernende Schlagwörter auswählen</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="77"/>
@@ -2219,7 +2219,7 @@ Zeile %3, Spalte %4
     <message>
         <location filename="../core/globals.h" line="80"/>
         <source>mixed...</source>
-        <translation type="unfinished">gemischt …</translation>
+        <translation>gemischt …</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="82"/>
@@ -2234,17 +2234,17 @@ Zeile %3, Spalte %4
     <message>
         <location filename="../core/globals.h" line="84"/>
         <source>Middlename</source>
-        <translation type="unfinished">Zweiter Vorname</translation>
+        <translation>Zweiter Vorname</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="85"/>
         <source>Prefixes</source>
-        <translation type="unfinished">Vorwahlen</translation>
+        <translation>Anrede</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="86"/>
         <source>Suffixes</source>
-        <translation type="unfinished">Durchwahlnummern</translation>
+        <translation>Durchwahl</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="88"/>
@@ -2274,17 +2274,17 @@ Zeile %3, Spalte %4
     <message>
         <location filename="../core/globals.h" line="93"/>
         <source>Home phone</source>
-        <translation type="unfinished">Rufnummer (privat)</translation>
+        <translation>Rufnummer (privat)</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="94"/>
         <source>Work phone</source>
-        <translation type="unfinished">Rufnummer (dienstl.)</translation>
+        <translation>Rufnummer (dienstl.)</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="95"/>
         <source>Cell phone</source>
-        <translation type="unfinished">Handynummer</translation>
+        <translation>Handynummer</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="96"/>
@@ -2319,7 +2319,7 @@ Zeile %3, Spalte %4
     <message>
         <location filename="../core/globals.h" line="102"/>
         <source>Role</source>
-        <translation type="unfinished">Funktion</translation>
+        <translation>Funktion</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="103"/>
@@ -2369,7 +2369,7 @@ Zeile %3, Spalte %4
     <message>
         <location filename="../core/globals.h" line="114"/>
         <source>Has phone</source>
-        <translation type="unfinished">Rufnummer vorhanden</translation>
+        <translation>Rufnummer vorhanden</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="115"/>
@@ -2394,12 +2394,12 @@ Zeile %3, Spalte %4
     <message>
         <location filename="../core/globals.h" line="119"/>
         <source>Has problems</source>
-        <translation type="unfinished">Hat Probleme</translation>
+        <translation>Probleme vorhanden</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="120"/>
         <source>Some phones</source>
-        <translation type="unfinished">Einige Rufnummern</translation>
+        <translation>Einige Rufnummern</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="121"/>
@@ -2409,7 +2409,7 @@ Zeile %3, Spalte %4
     <message>
         <location filename="../core/globals.h" line="124"/>
         <source>Ext.addr.</source>
-        <translation type="unfinished"></translation>
+        <translation>Durchwahl</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="127"/>
@@ -2429,7 +2429,7 @@ Zeile %3, Spalte %4
     <message>
         <location filename="../core/globals.h" line="146"/>
         <source>Group operation not implemented, select one record</source>
-        <translation type="unfinished">Gruppenfunktion nicht implementiert. Bitte einen Datensatz auswählen.</translation>
+        <translation>Gruppenfunktion nicht implementiert. Bitte einen Datensatz auswählen.</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="153"/>
@@ -2447,8 +2447,8 @@ Zeile %3, Spalte %4
         <location filename="../core/globals.h" line="155"/>
         <source>Column sorting is switched. Hard sort results are not visible.
 Are you want switch column sorting off?</source>
-        <translation type="unfinished">Die Spaltensortierung wurde gewechselt. Harte Sortierergebnisse sind nicht sichtbar.
-Möchten Sie die Spaltensortierung ausschalten?</translation>
+        <translation>Die Spaltensortierung ist aktiviert. Die Ergebnisse die nach festen Kriterien sortiert wurden, werden ausgeblendet.
+Möchten Sie die Spaltensortierung deaktivieren?</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="157"/>
@@ -2538,21 +2538,21 @@ Möchten Sie die Spaltensortierung ausschalten?</translation>
         <location filename="../core/globals.h" line="141"/>
         <source>Can&apos;t read file
 %1</source>
-        <translation type="unfinished">Datei konnte nicht gelesen werden
+        <translation>Datei konnte nicht gelesen werden
 %1</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="142"/>
         <source>Can&apos;t write file
 %1</source>
-        <translation type="unfinished">Datei konnte nicht geschrieben werden
+        <translation>Datei konnte nicht geschrieben werden
 %1</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="144"/>
         <source>Can&apos;t seek to %1 in file
 %2</source>
-        <translation type="unfinished">Nach %1 konnte nicht in der Datei gesucht werden
+        <translation>Datei konnte nicht nach „%1“ durchsucht werden
 %2</translation>
     </message>
     <message>
@@ -2564,13 +2564,13 @@ Möchten Sie die Spaltensortierung ausschalten?</translation>
         <location filename="../core/globals.h" line="149"/>
         <source>Warning: contact %1 has %2, not supported in this format.
 Data will be lost</source>
-        <translation type="unfinished">Warnhinweis. Kontakt %1 enthält %2, wird nicht in diesem Format unterstützt.
-Daten gehen verloren</translation>
+        <translation>Warnhinweis: Kontakt „%1“ enthält „%2“, was in diesem Format nicht unterstützt wird.
+Daten gehen verloren.</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="151"/>
         <source>%1 %2 will be lost at contact %3</source>
-        <translation type="unfinished">%1 %2 geht bei Kontakt %3 verloren</translation>
+        <translation>%1 %2 geht bei Kontakt „%3“ verloren</translation>
     </message>
     <message>
         <source>Are You really want to delete selected items?</source>
@@ -2835,7 +2835,7 @@ Read %3 bytes, %4 expected</source>
     <message>
         <location filename="../core/formats/profiles/sylpheedprofile.cpp" line="19"/>
         <source>Sylpheed Email Client</source>
-        <translation type="unfinished"></translation>
+        <translation>Sylpheed • Mail-Client</translation>
     </message>
     <message>
         <location filename="../core/formats/profiles/sylpheedprofile.cpp" line="73"/>
@@ -3005,7 +3005,7 @@ Read %3 bytes, %4 expected</source>
     <message>
         <location filename="../app/settingsdialog.ui" line="238"/>
         <source>Write full name tag if empty</source>
-        <translation type="unfinished"></translation>
+        <translation>Vollständigen Namen eintragen, falls leer</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="328"/>
