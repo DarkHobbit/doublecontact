@@ -2189,17 +2189,17 @@ Zeile %3, Spalte %4
     <message>
         <location filename="../core/globals.h" line="73"/>
         <source>Maximum name components count</source>
-        <translation type="unfinished"></translation>
+        <translation>Maximale Anzahl von Namenskomponenten</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="74"/>
         <source>Maximum name component length</source>
-        <translation type="unfinished"></translation>
+        <translation>Maximale Länge der Namenskomponente</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="75"/>
         <source>Total maximum name length: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Maximale Namenlänge: %1</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="76"/>
