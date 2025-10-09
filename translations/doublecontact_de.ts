@@ -489,7 +489,7 @@ Möchten Sie dieses Zertifikat trotzdem akzeptieren?</translation>
     <message>
         <location filename="../model/contactmodel.cpp" line="319"/>
         <source>This format not support charset in settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Dieses Format unterstützt keine Zeichenkodierung in den Einstellungen</translation>
     </message>
 </context>
 <context>
@@ -1024,7 +1024,7 @@ Möchten Sie dieses Zertifikat trotzdem akzeptieren?</translation>
     <message>
         <location filename="../app/mainwindow.ui" line="715"/>
         <source>Trim names</source>
-        <translation type="unfinished"></translation>
+        <translation>Namen kürzen</translation>
     </message>
     <message>
         <source>Settings...</source>
@@ -2184,7 +2184,7 @@ Zeile %3, Spalte %4
     <message>
         <location filename="../core/globals.h" line="72"/>
         <source>Trim names</source>
-        <translation type="unfinished"></translation>
+        <translation>Namen kürzen</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="73"/>
