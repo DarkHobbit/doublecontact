@@ -2743,7 +2743,7 @@ Read %3 bytes, %4 expected</source>
     <message>
         <location filename="../model/recentlist.h" line="21"/>
         <source>Clear recent list</source>
-        <translation type="unfinished">Neueste Liste leeren</translation>
+        <translation>Aktuelle Liste leeren</translation>
     </message>
     <message>
         <location filename="../core/formats/common/nokiadata.cpp" line="322"/>
@@ -3015,7 +3015,7 @@ Read %3 bytes, %4 expected</source>
     <message>
         <location filename="../app/settingsdialog.ui" line="338"/>
         <source>Charset (not all formats)</source>
-        <translation type="unfinished"></translation>
+        <translation>Zeichensatz (nicht alle Formate)</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="231"/>
