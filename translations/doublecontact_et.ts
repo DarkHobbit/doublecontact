@@ -6,37 +6,37 @@
     <message>
         <location filename="../app/aboutdialog.ui" line="14"/>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>Rakenduse teave</translation>
     </message>
     <message>
         <location filename="../app/aboutdialog.ui" line="24"/>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation>Üldine</translation>
     </message>
     <message>
         <location filename="../app/aboutdialog.ui" line="61"/>
         <source>The Contact Manager</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontaktihaldur</translation>
     </message>
     <message>
         <location filename="../app/aboutdialog.ui" line="104"/>
         <source>Distributed under GPL v3 or above</source>
-        <translation type="unfinished"></translation>
+        <translation>Levitatud GPL v3 või hilisema alusel</translation>
     </message>
     <message>
         <location filename="../app/aboutdialog.ui" line="132"/>
         <source>Contributors</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaasautorid</translation>
     </message>
     <message>
         <location filename="../app/aboutdialog.ui" line="142"/>
         <source>Additional</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisateave</translation>
     </message>
     <message>
         <location filename="../app/aboutdialog.ui" line="148"/>
         <source>Compiler:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kompileerija:</translation>
     </message>
     <message>
         <location filename="../app/aboutdialog.ui" line="155"/>
