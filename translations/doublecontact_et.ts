@@ -41,17 +41,17 @@
     <message>
         <location filename="../app/aboutdialog.ui" line="155"/>
         <source>unknown compiler</source>
-        <translation type="unfinished"></translation>
+        <translation>tundmatu kompileerija</translation>
     </message>
     <message>
         <location filename="../app/aboutdialog.ui" line="162"/>
         <source>Path to translations:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tõlgete asukoht:</translation>
     </message>
     <message>
         <location filename="../app/aboutdialog.ui" line="169"/>
         <source>unknown path</source>
-        <translation type="unfinished"></translation>
+        <translation>tundmatu asukoht</translation>
     </message>
 </context>
 <context>
@@ -216,129 +216,129 @@ Are you want to accept this certificate anyway?</source>
     <message>
         <location filename="../app/contactdialog.ui" line="14"/>
         <source>Edit Contact</source>
-        <translation type="unfinished"></translation>
+        <translation>Muuda kontakti</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="24"/>
         <source>General</source>
-        <translation type="unfinished">General</translation>
+        <translation>Üldine</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="37"/>
         <source>Full name</source>
-        <translation type="unfinished"></translation>
+        <translation>Täisnimi</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="49"/>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nimi</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="68"/>
         <source>Phone</source>
-        <translation type="unfinished"></translation>
+        <translation>Telefon</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="107"/>
         <source>Email</source>
-        <translation type="unfinished"></translation>
+        <translation>E-posti aadress</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="148"/>
         <location filename="../app/contactdialog.ui" line="384"/>
         <location filename="../app/contactdialog.ui" line="482"/>
         <source>Add...</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisa...</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="156"/>
         <location filename="../app/contactdialog.cpp" line="710"/>
         <source>name</source>
-        <translation type="unfinished"></translation>
+        <translation>nimi</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="161"/>
         <location filename="../app/contactdialog.cpp" line="712"/>
         <source>phone</source>
-        <translation type="unfinished"></translation>
+        <translation>telefon</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="166"/>
         <location filename="../app/contactdialog.cpp" line="714"/>
         <source>email</source>
-        <translation type="unfinished"></translation>
+        <translation>e-posti aadress</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="186"/>
         <source>Birthday</source>
-        <translation type="unfinished"></translation>
+        <translation>Sünnipäev</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="200"/>
         <location filename="../app/contactdialog.ui" line="236"/>
         <source>Details</source>
-        <translation type="unfinished"></translation>
+        <translation>Üksikasjad</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="254"/>
         <location filename="../app/contactdialog.ui" line="315"/>
         <source>Photo</source>
-        <translation type="unfinished"></translation>
+        <translation>Foto</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="277"/>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation>Kirjeldus</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="327"/>
         <source>Addresses</source>
-        <translation type="unfinished"></translation>
+        <translation>Aadressid</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="335"/>
         <source>Organization</source>
-        <translation type="unfinished"></translation>
+        <translation>Organisatsioon</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="345"/>
         <source>Job Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Ametinimi</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="355"/>
         <source>Role</source>
-        <translation type="unfinished"></translation>
+        <translation>Roll</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="392"/>
         <source>Internet</source>
-        <translation type="unfinished"></translation>
+        <translation>Internet</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="400"/>
         <source>NickName</source>
-        <translation type="unfinished"></translation>
+        <translation>Hüüdnimi</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="443"/>
         <source>Instant messaging</source>
-        <translation type="unfinished"></translation>
+        <translation>Sõnumiklient</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="583"/>
         <source>Updated:</source>
-        <translation type="unfinished"></translation>
+        <translation>Uuendatud:</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="689"/>
         <source>Save View</source>
-        <translation type="unfinished"></translation>
+        <translation>Salvesta vaade</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="721"/>
         <source>&amp;Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Eemalda</translation>
     </message>
     <message>
         <location filename="../app/contactdialog.ui" line="724"/>
@@ -2044,152 +2044,152 @@ line %3, col %4
     <message>
         <location filename="../core/globals.h" line="80"/>
         <source>mixed...</source>
-        <translation type="unfinished">mixed…</translation>
+        <translation>segatud…</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="82"/>
         <source>Firstname</source>
-        <translation type="unfinished"></translation>
+        <translation>Eesnimi</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="83"/>
         <source>Lastname</source>
-        <translation type="unfinished"></translation>
+        <translation>Perenimi</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="84"/>
         <source>Middlename</source>
-        <translation type="unfinished"></translation>
+        <translation>Keskmine nimi</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="85"/>
         <source>Prefixes</source>
-        <translation type="unfinished"></translation>
+        <translation>Eesliited</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="86"/>
         <source>Suffixes</source>
-        <translation type="unfinished"></translation>
+        <translation>Järelliited</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="88"/>
         <source>Full name</source>
-        <translation type="unfinished"></translation>
+        <translation>Täisnimi</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="89"/>
         <source>Generic name</source>
-        <translation type="unfinished"></translation>
+        <translation>Üldine nimi</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="90"/>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation>Kirjeldus</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="91"/>
         <source>Phone</source>
-        <translation type="unfinished"></translation>
+        <translation>Telefon</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="92"/>
         <source>All phones</source>
-        <translation type="unfinished"></translation>
+        <translation>Kõik telefonid</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="93"/>
         <source>Home phone</source>
-        <translation type="unfinished"></translation>
+        <translation>Kodune telefon</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="94"/>
         <source>Work phone</source>
-        <translation type="unfinished"></translation>
+        <translation>Töötelefon</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="95"/>
         <source>Cell phone</source>
-        <translation type="unfinished"></translation>
+        <translation>Mobiiltelefon</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="96"/>
         <source>Email</source>
-        <translation type="unfinished"></translation>
+        <translation>E-posti aadress</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="97"/>
         <source>Birthday</source>
-        <translation type="unfinished"></translation>
+        <translation>Sünnipäev</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="98"/>
         <source>Anniversary</source>
-        <translation type="unfinished"></translation>
+        <translation>Aastapäev</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="99"/>
         <source>Photo</source>
-        <translation type="unfinished"></translation>
+        <translation>Foto</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="100"/>
         <source>Job title</source>
-        <translation type="unfinished"></translation>
+        <translation>Ametinimi</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="101"/>
         <source>Organization</source>
-        <translation type="unfinished">Organisation</translation>
+        <translation>Organisatsioon</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="102"/>
         <source>Role</source>
-        <translation type="unfinished"></translation>
+        <translation>Roll</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="103"/>
         <source>Address</source>
-        <translation type="unfinished"></translation>
+        <translation>Aadress</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="104"/>
         <source>NickName</source>
-        <translation type="unfinished"></translation>
+        <translation>Hüüdnimi</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="105"/>
         <source>URL</source>
-        <translation type="unfinished"></translation>
+        <translation>Võrguaadress</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="107"/>
         <source>Jabber</source>
-        <translation type="unfinished"></translation>
+        <translation>Jabber</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="108"/>
         <source>ICQ</source>
-        <translation type="unfinished"></translation>
+        <translation>ICQ</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="109"/>
         <source>Skype</source>
-        <translation type="unfinished"></translation>
+        <translation>Skype</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="110"/>
         <source>Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Grupp</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="111"/>
         <source>Updated</source>
-        <translation type="unfinished"></translation>
+        <translation>Uuendatud</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="112"/>
         <source>Ver.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ver.</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="114"/>
@@ -2710,7 +2710,7 @@ Read %3 bytes, %4 expected</source>
     <message>
         <location filename="../app/settingsdialog.ui" line="24"/>
         <source>General</source>
-        <translation type="unfinished">General</translation>
+        <translation>Üldised seadistused</translation>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="32"/>
