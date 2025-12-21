@@ -89,6 +89,7 @@ unix {
 TRANSLATIONS += \
     ../translations/doublecontact_de.ts \
     ../translations/doublecontact_en_GB.ts \
+    ../translations/doublecontact_et.ts \
     ../translations/doublecontact_fr.ts \
     ../translations/doublecontact_ie.ts \
     ../translations/doublecontact_nb_NO.ts \
