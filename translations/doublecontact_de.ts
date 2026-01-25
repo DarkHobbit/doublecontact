@@ -2364,7 +2364,7 @@ Zeile %3, Spalte %4
     <message>
         <location filename="../core/globals.h" line="112"/>
         <source>Ver.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ver.</translation>
     </message>
     <message>
         <location filename="../core/globals.h" line="114"/>
@@ -2734,7 +2734,7 @@ Read %3 bytes, %4 expected</source>
     <message>
         <location filename="../core/globals.h" line="165"/>
         <source>Unknown vMessage value: %1</source>
-        <translation type="unfinished">Unbekannter vMessage-Wert: %1</translation>
+        <translation>Unbekannter vMessage-Wert: %1</translation>
     </message>
     <message>
         <source>Last vMessage section not closed</source>
