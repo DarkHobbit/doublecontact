@@ -8,6 +8,7 @@ set_target_properties(quazip_static PROPERTIES AUTOMOC ON)
 target_link_libraries(quazip_static PUBLIC Qt::Core libzip::zip ZLIB::ZLIB)
 target_include_directories(quazip_static PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 target_compile_definitions(quazip_static PRIVATE QUAZIP_BUILD)
+target_compile_definitions(quazip_static PUBLIC QUAZIP_STATIC)
 
 target_sources(quazip_static
     PRIVATE

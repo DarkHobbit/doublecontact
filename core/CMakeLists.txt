@@ -96,6 +96,22 @@ if (WITH_MESSAGES)
     )
 endif ()
 
+if (WITH_NETWORK)
+    target_link_libraries(S_CORE PUBLIC qwebdav)
+    target_compile_definitions(S_CORE PUBLIC WITH_NETWORK)
+    target_sources(S_CORE
+        PRIVATE
+        # HEADERS
+        ################
+            formats/network/carddavformat.h
+            formats/network/imageloader.h
+        # SOURCES
+        ################
+            formats/network/carddavformat.cpp
+            formats/network/imageloader.cpp
+    )
+endif ()
+
 if (USE_GPL2)
     target_compile_definitions(S_CORE PRIVATE USE_GPL2)
 else ()

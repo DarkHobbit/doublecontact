@@ -187,4 +187,4 @@ set(CPACK_DEBIAN_PACKAGE_DESCRIPTION "Offline DE-independent contact manager")
 set(CPACK_DEBIAN_PACKAGE_SECTION "misc")
 set(CPACK_DEBIAN_PACKAGE_SHLIBDEPS ON)
 
-include (CPack)
+include(CPack)
