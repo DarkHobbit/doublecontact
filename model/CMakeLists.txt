@@ -1,7 +1,5 @@
 # Model-related part of DoubleContact
 
-cmake_minimum_required(VERSION 3.5)
-
 add_library(S_MODEL STATIC)
 set_target_properties(S_MODEL PROPERTIES AUTOMOC ON)
 target_link_libraries(S_MODEL PUBLIC Qt::Core Qt::Widgets S_CORE)

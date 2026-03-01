@@ -3,8 +3,6 @@
 # To use code under GPLv2, switch on USE_GPL2 define.
 # NBU support will be disabled
 
-cmake_minimum_required(VERSION 3.5)
-
 add_library(S_CORE STATIC)
 set_target_properties(S_CORE PROPERTIES AUTOMOC ON)
 target_link_libraries(S_CORE PUBLIC Qt::Core Qt::Xml quazip_static)
