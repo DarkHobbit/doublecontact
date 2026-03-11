@@ -1,5 +1,5 @@
 
-cmake_minimum_required (VERSION 3.5)
+cmake_minimum_required (VERSION 3.11)
 
 project(DoubleContactApp LANGUAGES CXX)
 
@@ -8,7 +8,10 @@ set_target_properties(doublecontact PROPERTIES AUTOMOC ON AUTOUIC ON AUTORCC ON)
 target_link_libraries(doublecontact Qt::Core Qt::Widgets Qt::Xml quazip_static S_CORE S_MODEL)
 
 install(TARGETS doublecontact DESTINATION ${APP_BIN_PATH})
-install(FILES doublecontact.desktop DESTINATION ${APP_DSK_PATH})
+
+if (${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+    install(FILES doublecontact.desktop DESTINATION ${APP_DSK_PATH})
+endif ()
 
 target_sources(doublecontact
     PRIVATE
@@ -60,9 +63,14 @@ target_sources(doublecontact
         settingsdialog.ui
         datedetailsdialog.ui
         comparedialog.ui
+        innerfilewindow.ui
         multicontactdialog.ui
         aboutdialog.ui
         languageselectdialog.ui
+        csvprofiledialog.ui
+        sortdialog.ui
+        tagremovedialog.ui
+        groupdialog.ui
     # RESOURCES
     ################
         doublecontact.qrc

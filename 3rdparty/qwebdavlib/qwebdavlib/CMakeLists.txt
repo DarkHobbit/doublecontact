@@ -1,6 +1,4 @@
 
-cmake_minimum_required(VERSION 3.5)
-
 add_library(qwebdav STATIC)
 set_target_properties(qwebdav PROPERTIES AUTOMOC ON)
 target_link_libraries(qwebdav PUBLIC Qt::Core Qt::Network Qt::Xml)

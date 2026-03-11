@@ -3,8 +3,6 @@
 # To use code under GPLv2, switch on USE_GPL2 define.
 # NBU support will be disabled
 
-cmake_minimum_required(VERSION 3.5)
-
 add_library(S_CORE STATIC)
 set_target_properties(S_CORE PROPERTIES AUTOMOC ON)
 target_link_libraries(S_CORE PUBLIC Qt::Core Qt::Xml quazip_static)
@@ -93,6 +91,22 @@ if (WITH_MESSAGES)
             formats/common/nokiadata.cpp
             formats/common/pdu.cpp
             formats/common/vmessagedata.cpp
+    )
+endif ()
+
+if (WITH_NETWORK)
+    target_link_libraries(S_CORE PUBLIC qwebdav)
+    target_compile_definitions(S_CORE PUBLIC WITH_NETWORK)
+    target_sources(S_CORE
+        PRIVATE
+        # HEADERS
+        ################
+            formats/network/carddavformat.h
+            formats/network/imageloader.h
+        # SOURCES
+        ################
+            formats/network/carddavformat.cpp
+            formats/network/imageloader.cpp
     )
 endif ()
 
