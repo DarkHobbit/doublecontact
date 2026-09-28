@@ -1265,32 +1265,32 @@ Are you want to accept this certificate anyway?</source>
         <translation>Ctrl+C</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="296"/>
+        <location filename="../app/mainwindow.cpp" line="297"/>
         <source>Open contact file</source>
         <translation>Відкрити файл контактів</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="313"/>
+        <location filename="../app/mainwindow.cpp" line="314"/>
         <source>Open VCF Directory</source>
         <translation>Відкрити теку VCF</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="337"/>
+        <location filename="../app/mainwindow.cpp" line="338"/>
         <source>Save contact file</source>
         <translation>Зберегти файл контактів</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="353"/>
+        <location filename="../app/mainwindow.cpp" line="354"/>
         <source>Save VCF Directory</source>
         <translation>Зберегти теку VCF</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="362"/>
+        <location filename="../app/mainwindow.cpp" line="363"/>
         <source>Directory exists. Are You really want rewrite it?</source>
         <translation>Тека існує. Бажаєте перезаписати її вміст?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="411"/>
+        <location filename="../app/mainwindow.cpp" line="412"/>
         <source>Are You really want to edit more than one record?
 Only some fields can this edited in this mode</source>
         <translation>Ви дійсно бажаєте відредагувати більш ніж один запис?
@@ -1301,7 +1301,7 @@ Only some fields can this edited in this mode</source>
         <translation type="obsolete">Ви дійсно бажаєте видалити обрані записи?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="527"/>
+        <location filename="../app/mainwindow.cpp" line="528"/>
         <source>Compare mode requires show two panels and load contact lists in both panels</source>
         <translation>Режим порівняння потребує відображення двох панелей та завантаження списку контактів у кожну з них</translation>
     </message>
@@ -1314,7 +1314,7 @@ Only some fields can this edited in this mode</source>
         <translation type="obsolete">Групова операція не реалізована, оберіть один запис</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="599"/>
+        <location filename="../app/mainwindow.cpp" line="600"/>
         <source> (directory)</source>
         <translation> (тека)</translation>
     </message>
@@ -1323,12 +1323,12 @@ Only some fields can this edited in this mode</source>
         <translation type="obsolete">Double Contact - %1</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="200"/>
+        <location filename="../app/mainwindow.cpp" line="201"/>
         <source>Only one of two files can be dropped to program window</source>
         <translation>Лише один з двох файлів можна перетягнути у вікно програми</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="717"/>
+        <location filename="../app/mainwindow.cpp" line="718"/>
         <source>Records: %1</source>
         <translation>Записів: %1</translation>
     </message>
@@ -1337,12 +1337,12 @@ Only some fields can this edited in this mode</source>
         <translation type="obsolete">Режим: </translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="723"/>
+        <location filename="../app/mainwindow.cpp" line="724"/>
         <source>two panels</source>
         <translation>2 панелі</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="723"/>
+        <location filename="../app/mainwindow.cpp" line="724"/>
         <source>one panel</source>
         <translation>1 панель</translation>
     </message>
@@ -1355,69 +1355,74 @@ Only some fields can this edited in this mode</source>
         <translation type="obsolete">не відсортовано</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="727"/>
+        <location filename="../app/mainwindow.cpp" line="728"/>
         <source>simple editing</source>
         <translation>проста правка</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="731"/>
+        <location filename="../app/mainwindow.cpp" line="732"/>
         <source>compare</source>
         <translation>порівняння</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="826"/>
+        <location filename="../app/mainwindow.cpp" line="827"/>
         <source>&apos;%1&apos; was changed.
 Save changes?</source>
         <translation>%1 було змінено.
 Зберегти зміни?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="926"/>
+        <location filename="../app/mainwindow.cpp" line="899"/>
+        <source>Can&apos;t create style %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/mainwindow.cpp" line="935"/>
         <source>Restart program to apply language change</source>
         <translation>Мову буде змінено після перезавантаження додатку</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="970"/>
+        <location filename="../app/mainwindow.cpp" line="979"/>
         <source>Two panels and compare mode needed for this operation</source>
         <translation>Спершу увімкніть дві панелі та режим порівняння</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="986"/>
+        <location filename="../app/mainwindow.cpp" line="995"/>
         <source>Left item</source>
         <translation>Лівий елемент</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="986"/>
+        <location filename="../app/mainwindow.cpp" line="995"/>
         <source>Right item</source>
         <translation>Правий елемент</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1019"/>
+        <location filename="../app/mainwindow.cpp" line="1028"/>
         <source>Strongly two records on current panel must be selected for this operation</source>
         <translation>Для цієї операції необхідно обрати рівно два записи на поточній панелі</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1026"/>
+        <location filename="../app/mainwindow.cpp" line="1035"/>
         <source>Item 1</source>
         <translation>Елемент 1</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1026"/>
+        <location filename="../app/mainwindow.cpp" line="1035"/>
         <source>Item 2</source>
         <translation>Елемент 2</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1099"/>
+        <location filename="../app/mainwindow.cpp" line="1108"/>
         <source>Operation requires show two panels</source>
         <translation>Операція потребує відображення двох панелей</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1132"/>
+        <location filename="../app/mainwindow.cpp" line="1141"/>
         <source>Statitics</source>
         <translation>Статистика</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1139"/>
+        <location filename="../app/mainwindow.cpp" line="1148"/>
         <source>Report file</source>
         <translation>Файл звіту</translation>
     </message>
@@ -3033,112 +3038,117 @@ Read %3 bytes, %4 expected</source>
         <translation>Загальні</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="32"/>
+        <location filename="../app/settingsdialog.ui" line="33"/>
         <source>Language</source>
         <translation>Мова</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="42"/>
+        <location filename="../app/settingsdialog.ui" line="43"/>
+        <source>Style</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/settingsdialog.ui" line="53"/>
         <source>Date format</source>
         <translation>Формат дати</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="52"/>
+        <location filename="../app/settingsdialog.ui" line="63"/>
         <source>Time format</source>
         <translation>Формат часу</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="64"/>
+        <location filename="../app/settingsdialog.ui" line="75"/>
         <source>Use system date/time format</source>
         <translation>Використовувати системний формат</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="71"/>
+        <location filename="../app/settingsdialog.ui" line="82"/>
         <source>Open last files at startup</source>
         <translation>Відкривати останній файл під час запуску</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="78"/>
+        <location filename="../app/settingsdialog.ui" line="89"/>
         <source>Show grid in tables</source>
         <translation>Показувати сітку в таблицях</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="85"/>
+        <location filename="../app/settingsdialog.ui" line="96"/>
         <source>Show line numbers</source>
         <translation>Показувати номери рядків</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="92"/>
+        <location filename="../app/settingsdialog.ui" line="103"/>
         <source>Resize table rows to contents</source>
         <translation>Змінити розмір рядків таблиці до вмісту</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="99"/>
+        <location filename="../app/settingsdialog.ui" line="110"/>
         <source>Use alternate row colors in table</source>
         <translation>Чергування кольорів в таблиці</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="106"/>
+        <location filename="../app/settingsdialog.ui" line="117"/>
         <source>Use system fonts and colors</source>
         <translation>Використовувати системні шрифти і кольори</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="113"/>
+        <location filename="../app/settingsdialog.ui" line="124"/>
         <source>Table font</source>
         <translation>Шрифт таблиць</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="120"/>
+        <location filename="../app/settingsdialog.ui" line="131"/>
         <source>Colors</source>
         <translation>Кольори</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="126"/>
+        <location filename="../app/settingsdialog.ui" line="137"/>
         <source>Grid base</source>
         <translation>Таблиці (основний)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="133"/>
+        <location filename="../app/settingsdialog.ui" line="144"/>
         <source>Grid alternate</source>
         <translation>Таблиці (дод.)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="144"/>
+        <location filename="../app/settingsdialog.ui" line="155"/>
         <source>Columns</source>
         <translation>Стовпчики</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="150"/>
+        <location filename="../app/settingsdialog.ui" line="161"/>
         <source>Visible</source>
         <translation>Видимі</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="157"/>
+        <location filename="../app/settingsdialog.ui" line="168"/>
         <source>Available</source>
         <translation>Доступні</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="211"/>
+        <location filename="../app/settingsdialog.ui" line="222"/>
         <source>Saving</source>
         <translation>Збереження</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="219"/>
+        <location filename="../app/settingsdialog.ui" line="230"/>
         <source>Preferred vCard version</source>
         <translation>Переважна версія vCard</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="238"/>
+        <location filename="../app/settingsdialog.ui" line="249"/>
         <source>Write full name tag if empty</source>
         <translation>Напишіть тег повного імені, якщо він пустий</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="328"/>
+        <location filename="../app/settingsdialog.ui" line="339"/>
         <source>Tag for group save</source>
         <translation>Теґ для збереження групи</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="338"/>
+        <location filename="../app/settingsdialog.ui" line="353"/>
         <source>Charset (not all formats)</source>
         <translation>Кодування (не всі формати)</translation>
     </message>
@@ -3155,52 +3165,52 @@ Read %3 bytes, %4 expected</source>
         <translation type="obsolete">4.0</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="231"/>
+        <location filename="../app/settingsdialog.ui" line="242"/>
         <source>Use original file version (if present)</source>
         <translation>Брати версію з джерельного файлу (якщо є)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="247"/>
+        <location filename="../app/settingsdialog.ui" line="258"/>
         <source>Default country</source>
         <translation>Типова країна</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="259"/>
+        <location filename="../app/settingsdialog.ui" line="270"/>
         <source>(for phone number internationalization)</source>
         <translation>(для інтернаціоналізації телефонних номерів)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="266"/>
+        <location filename="../app/settingsdialog.ui" line="277"/>
         <source>Skip time from birthday and anniversaries</source>
         <translation>Вилучати час з днів народжень та річниць</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="273"/>
+        <location filename="../app/settingsdialog.ui" line="284"/>
         <source>Non-standard phone/email types</source>
         <translation>Нестандартні типи телефонів/пошти</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="279"/>
+        <location filename="../app/settingsdialog.ui" line="290"/>
         <source>Add X- to type names</source>
         <translation>Додавати X- до назв типів</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="286"/>
+        <location filename="../app/settingsdialog.ui" line="297"/>
         <source>Non-latin type names:</source>
         <translation>Назви нелатинського типу:</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="293"/>
+        <location filename="../app/settingsdialog.ui" line="304"/>
         <source>Save as is</source>
         <translation>Зберегти як є</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="303"/>
+        <location filename="../app/settingsdialog.ui" line="314"/>
         <source>Replace to default type</source>
         <translation>Замінити на тип за замовчуванням</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="313"/>
+        <location filename="../app/settingsdialog.ui" line="324"/>
         <source>Place to X-CUSTOM</source>
         <translation>Помістіть до X-CUSTOM</translation>
     </message>
@@ -3209,22 +3219,22 @@ Read %3 bytes, %4 expected</source>
         <translation type="obsolete">Замінювати не латинські назви типів</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="368"/>
+        <location filename="../app/settingsdialog.ui" line="383"/>
         <source>Loading</source>
         <translation>Завантаження</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="376"/>
+        <location filename="../app/settingsdialog.ui" line="391"/>
         <source>Default type if empty</source>
         <translation>Тип телефону, якщо порожній</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="388"/>
+        <location filename="../app/settingsdialog.ui" line="403"/>
         <source>(many phones treat &apos;Voice&apos; as &apos;Other&apos;)</source>
         <translation>(багато телефонів трактують «Голосовий» як «Інше»)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="395"/>
+        <location filename="../app/settingsdialog.ui" line="410"/>
         <source>Warning on missing phone types</source>
         <translation>Попередження про відсутні типи телефонів</translation>
     </message>
@@ -3233,22 +3243,22 @@ Read %3 bytes, %4 expected</source>
         <translation type="obsolete">(деякі телефони трактують тип &apos;Голосовий&apos; як &apos;Інший&apos;)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="402"/>
+        <location filename="../app/settingsdialog.ui" line="417"/>
         <source>Warning on non-standard phone types</source>
         <translation>Попереджувати про нестандартні типи телефонів</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="409"/>
+        <location filename="../app/settingsdialog.ui" line="424"/>
         <source>Debug save</source>
         <translation>Збереження налагодження</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="416"/>
+        <location filename="../app/settingsdialog.ui" line="431"/>
         <source>While VCF directory reading</source>
         <translation>Під час читання каталогу VCF</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="422"/>
+        <location filename="../app/settingsdialog.ui" line="437"/>
         <source>Read contact names from file name</source>
         <translation>Брати ім&apos;я контакту з імені файлу</translation>
     </message>
@@ -3257,7 +3267,7 @@ Read %3 bytes, %4 expected</source>
         <translation type="obsolete">Попереджувати про нестандартні типи телефонів/пошти</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.cpp" line="159"/>
+        <location filename="../app/settingsdialog.cpp" line="172"/>
         <source>List must contain at least one visible column</source>
         <translation>В переліку має бути хоча б один стовпчик</translation>
     </message>

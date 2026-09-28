@@ -85,6 +85,7 @@ void ConfigManager::readConfig()
     gd.tableFont = settings->value("View/TableFont", gd.tableFont).toString();
     gd.gridColor1 = settings->value("View/GridColor1", gd.gridColor1).toString();
     gd.gridColor2 = settings->value("View/GridColor2", gd.gridColor2).toString();
+    gd.style = settings->value("View/Style", gd.style).toString();
     // For column view
     validColumnNames.clear();
     for (int i=0; i<contactColumnHeaders.count(); i++)
@@ -142,6 +143,7 @@ void ConfigManager::writeConfig()
     settings->setValue("View/TableFont", gd.tableFont);
     settings->setValue("View/GridColor1", gd.gridColor1);
     settings->setValue("View/GridColor2", gd.gridColor2);
+    settings->setValue("View/Style", gd.style);
     // Column view
     settings->setValue("VisibleColumns/Count", gd.columnNames.count());
     for (int i=0; i<gd.columnNames.count(); i++)

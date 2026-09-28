@@ -1265,32 +1265,32 @@ Wilt u dit certificaat tóch accepteren?</translation>
         <translation>Ctrl+C</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="296"/>
+        <location filename="../app/mainwindow.cpp" line="297"/>
         <source>Open contact file</source>
         <translation>Contactpersoonbestand openen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="313"/>
+        <location filename="../app/mainwindow.cpp" line="314"/>
         <source>Open VCF Directory</source>
         <translation>Vcf-map openen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="337"/>
+        <location filename="../app/mainwindow.cpp" line="338"/>
         <source>Save contact file</source>
         <translation>Contactpersoonbestand opslaan</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="353"/>
+        <location filename="../app/mainwindow.cpp" line="354"/>
         <source>Save VCF Directory</source>
         <translation>Vcf-map opslaan</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="362"/>
+        <location filename="../app/mainwindow.cpp" line="363"/>
         <source>Directory exists. Are You really want rewrite it?</source>
         <translation>De map bestaat al. Weet u zeker dat u hem wilt overschrijven?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="411"/>
+        <location filename="../app/mainwindow.cpp" line="412"/>
         <source>Are You really want to edit more than one record?
 Only some fields can this edited in this mode</source>
         <translation>Weet u zeker dat u meer dan één item wilt wijzigen?
@@ -1301,7 +1301,7 @@ In deze modus kan slechts een beperkt aantal velden worden gewijzigd</translatio
         <translation type="obsolete">Weet u zeker u de geselecteerde items wilt verwijderen?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="527"/>
+        <location filename="../app/mainwindow.cpp" line="528"/>
         <source>Compare mode requires show two panels and load contact lists in both panels</source>
         <translation>Om de vergelijkingsmodus te kunnen gebruiken moet u de tweepanelenmodus inschakelen en lijsten laden in beide panelen</translation>
     </message>
@@ -1314,7 +1314,7 @@ In deze modus kan slechts een beperkt aantal velden worden gewijzigd</translatio
         <translation type="obsolete">Groepsbewerkingen zijn nog niet geïmplementeerd; selecteer één item</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="599"/>
+        <location filename="../app/mainwindow.cpp" line="600"/>
         <source> (directory)</source>
         <translation> (map)</translation>
     </message>
@@ -1323,12 +1323,12 @@ In deze modus kan slechts een beperkt aantal velden worden gewijzigd</translatio
         <translation type="obsolete">Dubbele contactpersoon - %1</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="200"/>
+        <location filename="../app/mainwindow.cpp" line="201"/>
         <source>Only one of two files can be dropped to program window</source>
         <translation>Slechts één van de twee bestanden kan worden versleept naar het applicatievenster</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="717"/>
+        <location filename="../app/mainwindow.cpp" line="718"/>
         <source>Records: %1</source>
         <translation>Items: %1</translation>
     </message>
@@ -1337,12 +1337,12 @@ In deze modus kan slechts een beperkt aantal velden worden gewijzigd</translatio
         <translation type="obsolete">Modus: </translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="723"/>
+        <location filename="../app/mainwindow.cpp" line="724"/>
         <source>two panels</source>
         <translation>twee panelen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="723"/>
+        <location filename="../app/mainwindow.cpp" line="724"/>
         <source>one panel</source>
         <translation>één paneel</translation>
     </message>
@@ -1355,69 +1355,74 @@ In deze modus kan slechts een beperkt aantal velden worden gewijzigd</translatio
         <translation type="obsolete">ongesorteerd</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="727"/>
+        <location filename="../app/mainwindow.cpp" line="728"/>
         <source>simple editing</source>
         <translation>simpele bewerking</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="731"/>
+        <location filename="../app/mainwindow.cpp" line="732"/>
         <source>compare</source>
         <translation>vergelijken</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="826"/>
+        <location filename="../app/mainwindow.cpp" line="827"/>
         <source>&apos;%1&apos; was changed.
 Save changes?</source>
         <translation>‘%1’ is gewijzigd.
 Wilt u de wijzigingen opslaan?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="926"/>
+        <location filename="../app/mainwindow.cpp" line="899"/>
+        <source>Can&apos;t create style %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/mainwindow.cpp" line="935"/>
         <source>Restart program to apply language change</source>
         <translation>Herstart de app om de taalwijziging door te voeren</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="970"/>
+        <location filename="../app/mainwindow.cpp" line="979"/>
         <source>Two panels and compare mode needed for this operation</source>
         <translation>De tweepanelen- en vergelijkingsmodus zijn vereist voor deze bewerking</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="986"/>
+        <location filename="../app/mainwindow.cpp" line="995"/>
         <source>Left item</source>
         <translation>Linkeritem</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="986"/>
+        <location filename="../app/mainwindow.cpp" line="995"/>
         <source>Right item</source>
         <translation>Rechteritem</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1019"/>
+        <location filename="../app/mainwindow.cpp" line="1028"/>
         <source>Strongly two records on current panel must be selected for this operation</source>
         <translation>Twee items in het huidige paneel dienen te worden geselecteerd voor deze bewerking</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1026"/>
+        <location filename="../app/mainwindow.cpp" line="1035"/>
         <source>Item 1</source>
         <translation>Item 1</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1026"/>
+        <location filename="../app/mainwindow.cpp" line="1035"/>
         <source>Item 2</source>
         <translation>Item 2</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1099"/>
+        <location filename="../app/mainwindow.cpp" line="1108"/>
         <source>Operation requires show two panels</source>
         <translation>Deze bewerking vereist twee panelen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1132"/>
+        <location filename="../app/mainwindow.cpp" line="1141"/>
         <source>Statitics</source>
         <translation>Statistieken</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1139"/>
+        <location filename="../app/mainwindow.cpp" line="1148"/>
         <source>Report file</source>
         <translation>Rapportbestand</translation>
     </message>
@@ -3043,112 +3048,117 @@ Uitgelezen: %3 bytes — Verwacht: %4 bytes</translation>
         <translation>Algemeen</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="32"/>
+        <location filename="../app/settingsdialog.ui" line="33"/>
         <source>Language</source>
         <translation>Taal</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="42"/>
+        <location filename="../app/settingsdialog.ui" line="43"/>
+        <source>Style</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/settingsdialog.ui" line="53"/>
         <source>Date format</source>
         <translation>Datumopmaak</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="52"/>
+        <location filename="../app/settingsdialog.ui" line="63"/>
         <source>Time format</source>
         <translation>Tijdopmaak</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="64"/>
+        <location filename="../app/settingsdialog.ui" line="75"/>
         <source>Use system date/time format</source>
         <translation>Datum-/tijdopmaak van systeem gebruiken</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="71"/>
+        <location filename="../app/settingsdialog.ui" line="82"/>
         <source>Open last files at startup</source>
         <translation>Laatst gebruikte bestanden openen bij opstarten</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="78"/>
+        <location filename="../app/settingsdialog.ui" line="89"/>
         <source>Show grid in tables</source>
         <translation>Rooster weergeven in tabellen</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="85"/>
+        <location filename="../app/settingsdialog.ui" line="96"/>
         <source>Show line numbers</source>
         <translation>Regelnummers tonen</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="92"/>
+        <location filename="../app/settingsdialog.ui" line="103"/>
         <source>Resize table rows to contents</source>
         <translation>Tabel aanpassen aan inhoud</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="99"/>
+        <location filename="../app/settingsdialog.ui" line="110"/>
         <source>Use alternate row colors in table</source>
         <translation>Afwisselend kleurverloop gebruiken in tabelrijen</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="106"/>
+        <location filename="../app/settingsdialog.ui" line="117"/>
         <source>Use system fonts and colors</source>
         <translation>Systeemlettertypen en -kleuren gebruiken</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="113"/>
+        <location filename="../app/settingsdialog.ui" line="124"/>
         <source>Table font</source>
         <translation>Tabellettertype</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="120"/>
+        <location filename="../app/settingsdialog.ui" line="131"/>
         <source>Colors</source>
         <translation>Kleuren</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="126"/>
+        <location filename="../app/settingsdialog.ui" line="137"/>
         <source>Grid base</source>
         <translation>Rooster (basiskleur)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="133"/>
+        <location filename="../app/settingsdialog.ui" line="144"/>
         <source>Grid alternate</source>
         <translation>Rooster (afwisselende kleur)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="144"/>
+        <location filename="../app/settingsdialog.ui" line="155"/>
         <source>Columns</source>
         <translation>Kolommen</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="150"/>
+        <location filename="../app/settingsdialog.ui" line="161"/>
         <source>Visible</source>
         <translation>Zichtbaar</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="157"/>
+        <location filename="../app/settingsdialog.ui" line="168"/>
         <source>Available</source>
         <translation>Beschikbaar</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="211"/>
+        <location filename="../app/settingsdialog.ui" line="222"/>
         <source>Saving</source>
         <translation>Opslaan</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="219"/>
+        <location filename="../app/settingsdialog.ui" line="230"/>
         <source>Preferred vCard version</source>
         <translation>Voorkeur voor vCard-versie</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="238"/>
+        <location filename="../app/settingsdialog.ui" line="249"/>
         <source>Write full name tag if empty</source>
         <translation>Volledige naam wegschrijven indien blanco</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="328"/>
+        <location filename="../app/settingsdialog.ui" line="339"/>
         <source>Tag for group save</source>
         <translation>Groepslabel</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="338"/>
+        <location filename="../app/settingsdialog.ui" line="353"/>
         <source>Charset (not all formats)</source>
         <translation>Tekenset (niet alle formaten)</translation>
     </message>
@@ -3165,52 +3175,52 @@ Uitgelezen: %3 bytes — Verwacht: %4 bytes</translation>
         <translation type="obsolete">4.0</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="231"/>
+        <location filename="../app/settingsdialog.ui" line="242"/>
         <source>Use original file version (if present)</source>
         <translation>Originele bestandsversie gebruiken (indien beschikbaar)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="247"/>
+        <location filename="../app/settingsdialog.ui" line="258"/>
         <source>Default country</source>
         <translation>Standaard land</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="259"/>
+        <location filename="../app/settingsdialog.ui" line="270"/>
         <source>(for phone number internationalization)</source>
         <translation>(voor internationalisering van telefoonnummers)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="266"/>
+        <location filename="../app/settingsdialog.ui" line="277"/>
         <source>Skip time from birthday and anniversaries</source>
         <translation>Tijd van verjaardagen en jubilea negeren</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="273"/>
+        <location filename="../app/settingsdialog.ui" line="284"/>
         <source>Non-standard phone/email types</source>
         <translation>Niet-standaardtypes telefoonnummers/e-mailadressen</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="279"/>
+        <location filename="../app/settingsdialog.ui" line="290"/>
         <source>Add X- to type names</source>
         <translation>X- toevoegen aan typenamen</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="286"/>
+        <location filename="../app/settingsdialog.ui" line="297"/>
         <source>Non-latin type names:</source>
         <translation>Niet-Latijnse soortnamen:</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="293"/>
+        <location filename="../app/settingsdialog.ui" line="304"/>
         <source>Save as is</source>
         <translation>Huidige versie opslaan</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="303"/>
+        <location filename="../app/settingsdialog.ui" line="314"/>
         <source>Replace to default type</source>
         <translation>Standaardtype vervangen</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="313"/>
+        <location filename="../app/settingsdialog.ui" line="324"/>
         <source>Place to X-CUSTOM</source>
         <translation>X-CUSTOM-locatie</translation>
     </message>
@@ -3223,22 +3233,22 @@ Uitgelezen: %3 bytes — Verwacht: %4 bytes</translation>
         <translation type="obsolete">X-GROUP-MEMBERSHIP gebruiken bij het opslaan van groepen</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="368"/>
+        <location filename="../app/settingsdialog.ui" line="383"/>
         <source>Loading</source>
         <translation>Laden</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="376"/>
+        <location filename="../app/settingsdialog.ui" line="391"/>
         <source>Default type if empty</source>
         <translation>Standaardtype indien leeg</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="388"/>
+        <location filename="../app/settingsdialog.ui" line="403"/>
         <source>(many phones treat &apos;Voice&apos; as &apos;Other&apos;)</source>
         <translation>(veel telefoons vatten &apos;Spraakoproep&apos; op als &apos;Overig&apos;)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="395"/>
+        <location filename="../app/settingsdialog.ui" line="410"/>
         <source>Warning on missing phone types</source>
         <translation>Waarschuwen bij ontbrekende telefoonnummers</translation>
     </message>
@@ -3247,22 +3257,22 @@ Uitgelezen: %3 bytes — Verwacht: %4 bytes</translation>
         <translation type="obsolete">(veel telefoons nemen &apos;Overig&apos; aan i.p.v. &apos;Spraak&apos;)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="402"/>
+        <location filename="../app/settingsdialog.ui" line="417"/>
         <source>Warning on non-standard phone types</source>
         <translation>Waarschuwen bij niet-standaard telefoontypes</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="409"/>
+        <location filename="../app/settingsdialog.ui" line="424"/>
         <source>Debug save</source>
         <translation>Foutopsporing opslaan</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="416"/>
+        <location filename="../app/settingsdialog.ui" line="431"/>
         <source>While VCF directory reading</source>
         <translation>Tijdens het uitlezen van mappen door VCF</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="422"/>
+        <location filename="../app/settingsdialog.ui" line="437"/>
         <source>Read contact names from file name</source>
         <translation>Contactpersoonnamen uitlezen uit bestandsnaam</translation>
     </message>
@@ -3271,7 +3281,7 @@ Uitgelezen: %3 bytes — Verwacht: %4 bytes</translation>
         <translation type="obsolete">Waarschuwen bij niet-standaard telefoonummers/e-mailadressen</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.cpp" line="159"/>
+        <location filename="../app/settingsdialog.cpp" line="172"/>
         <source>List must contain at least one visible column</source>
         <translation>De lijst moet minimaal één zichtbare kolom bevatten</translation>
     </message>

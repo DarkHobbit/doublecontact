@@ -4,6 +4,7 @@
 #include <QFont>
 #include <QFontDialog>
 #include <QMessageBox>
+#include <QStyleFactory>
 #include <QTextCodec>
 
 #include "configmanager.h"
@@ -45,6 +46,16 @@ bool SettingsDialog::setData()
     ui->cbLanguage->insertItems(0, languageManager.nativeNames());
     _lang = configManager.readLanguage();
     ui->cbLanguage->setCurrentIndex(ui->cbLanguage->findText(_lang));
+    // Style
+    ui->cbStyle->clear();
+    for(const QString& styleName: QStyleFactory::keys())
+        ui->cbStyle->addItem(styleName);
+    int styleIndex;
+    if (gd.style.isEmpty())
+        styleIndex = ui->cbStyle->findText(qApp->style()->objectName(), Qt::MatchFixedString);
+    else
+        styleIndex = ui->cbStyle->findText(gd.style);
+    ui->cbStyle->setCurrentIndex(styleIndex);
     // Locale
     ui->leDateFormat->setText(gd.dateFormat);
     ui->leTimeFormat->setText(gd.timeFormat);
@@ -103,6 +114,8 @@ bool SettingsDialog::getData()
         _langChanged = true;
         _lang = newLang;
     }
+    // Style
+    gd.style = ui->cbStyle->currentText();
     // Locale
     gd.dateFormat = ui->leDateFormat->text();
     gd.timeFormat = ui->leTimeFormat->text();

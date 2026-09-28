@@ -27,6 +27,7 @@
 #include <QSpacerItem>
 #include <QSpinBox>
 #include <QStackedWidget>
+#include <QStyleFactory>
 #include <QUrl>
 
 #include "mainwindow.h"
@@ -889,6 +890,14 @@ void MainWindow::updateConfig()
     // Table(s) general config (must be after updateVisibleColumns(), because resizeRowsToContents())
     updateTableConfig(ui->tvLeft);
     updateTableConfig(ui->tvRight);
+    // Style
+    if (!gd.style.isEmpty()) {
+        QStyle* st = QStyleFactory::create(gd.style);
+        if (st)
+            qApp->setStyle(st);
+        else
+            QMessageBox::critical(0, S_ERROR, tr("Can't create style %1").arg(gd.style));
+    }
 }
 
 void MainWindow::updateRecent()
