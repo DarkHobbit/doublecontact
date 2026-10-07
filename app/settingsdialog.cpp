@@ -48,7 +48,7 @@ bool SettingsDialog::setData()
     ui->cbLanguage->setCurrentIndex(ui->cbLanguage->findText(_lang));
     // Style
     ui->cbStyle->clear();
-    for(const QString& styleName: QStyleFactory::keys())
+    foreach(const QString& styleName, QStyleFactory::keys())
         ui->cbStyle->addItem(styleName);
     int styleIndex;
     if (gd.style.isEmpty())
