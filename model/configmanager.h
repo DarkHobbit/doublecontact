@@ -72,10 +72,13 @@ public:
     static QString defaultDocDir();
     static QString defaultImageDir();
     QString defaultStyle();
+    QString defaultTableFont();
+    QString defaultGridColor1();
+    QString defaultGridColor2();
     QStringList validColumnNames; // Available list
 private:
     QSettings* settings;
-    QString _defaultStyle;
+    QString _defaultStyle, _defaultTableFont, _defaultGridColor1, _defaultGridColor2;
     QStringList filesToRemove;
     void updateFormats();
 };

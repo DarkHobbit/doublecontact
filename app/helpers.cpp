@@ -77,14 +77,13 @@ void updateTableConfig(QTableView *table)
     table->setShowGrid(gd.showTableGrid);
     table->verticalHeader()->setVisible(gd.showLineNumbers);
     table->setAlternatingRowColors(gd.useTableAlternateColors);
-    if (!gd.useSystemFontsAndColors) {
-        QFont f;
-        bool fontSuccess = f.fromString(gd.tableFont);
-        if (fontSuccess)
-            table->setFont(f);
-        table->setStyleSheet(QString("QTableView { alternate-background-color: %1; background: %2 }")
-               .arg(gd.gridColor2).arg(gd.gridColor1));
-    }
+    QFont f;
+    bool fontSuccess = f.fromString(gd.useSystemFontsAndColors ? configManager.defaultTableFont() : gd.tableFont);
+    if (fontSuccess)
+        table->setFont(f);
+    table->setStyleSheet(QString("QTableView { alternate-background-color: %1; background: %2 }")
+        .arg(gd.useSystemFontsAndColors ? configManager.defaultGridColor2() : gd.gridColor2)
+        .arg(gd.useSystemFontsAndColors ? configManager.defaultGridColor1() : gd.gridColor1));
     if (gd.resizeTableRowsToContents)
         table->resizeRowsToContents();
 }
