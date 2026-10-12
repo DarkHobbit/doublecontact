@@ -112,6 +112,13 @@
         </widget>
        </item>
        <item>
+        <widget class="QCheckBox" name="cbUseSystemStyle">
+         <property name="text">
+          <string>Use system style</string>
+         </property>
+        </widget>
+       </item>
+       <item>
         <widget class="QCheckBox" name="cbUseSystemFontsAndColors">
          <property name="text">
           <string>Use system fonts and colors</string>

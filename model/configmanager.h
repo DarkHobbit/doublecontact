@@ -31,7 +31,7 @@ public:
     ~ConfigManager();
     void prepare();
     // Common configuration, managed by config dialog
-    void setDefaults(const QString& tableFont, const QString& gridColor1, const QString& gridColor2);
+    void setDefaults(const QString& style, const QString& tableFont, const QString& gridColor1, const QString& gridColor2);
     void readConfig();
     void writeConfig();
     void addFileToRemove(const QString& path);
@@ -71,9 +71,11 @@ public:
 #endif
     static QString defaultDocDir();
     static QString defaultImageDir();
+    QString defaultStyle();
     QStringList validColumnNames; // Available list
 private:
     QSettings* settings;
+    QString _defaultStyle;
     QStringList filesToRemove;
     void updateFormats();
 };

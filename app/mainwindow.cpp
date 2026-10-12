@@ -27,6 +27,7 @@
 #include <QSpacerItem>
 #include <QSpinBox>
 #include <QStackedWidget>
+#include <QStyle>
 #include <QStyleFactory>
 #include <QUrl>
 
@@ -79,7 +80,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->tvLeft->installEventFilter(this);
     ui->tvRight->installEventFilter(this);
     // Configuration
-    configManager.setDefaults(ui->tvLeft->font().toString(),
+    configManager.setDefaults(
+        qApp->style()->objectName(),
+        ui->tvLeft->font().toString(),
         ui->tvLeft->palette().color(QPalette::Base).name(),
         ui->tvLeft->palette().color(QPalette::AlternateBase).name());
     configManager.readConfig(); // After contactColumnHeaders.fill()! Else national UI not works    
@@ -891,12 +894,13 @@ void MainWindow::updateConfig()
     updateTableConfig(ui->tvLeft);
     updateTableConfig(ui->tvRight);
     // Style
-    if (!gd.style.isEmpty()) {
-        QStyle* st = QStyleFactory::create(gd.style);
+    QString styleName = gd.useSystemStyle ? configManager.defaultStyle() : gd.style;
+    if (!styleName.isEmpty()) {
+        QStyle* st = QStyleFactory::create(styleName);
         if (st)
             qApp->setStyle(st);
         else
-            QMessageBox::critical(0, S_ERROR, tr("Can't create style %1").arg(gd.style));
+            QMessageBox::critical(0, S_ERROR, tr("Can't create style %1").arg(styleName));
     }
 }
 

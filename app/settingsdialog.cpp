@@ -68,6 +68,8 @@ bool SettingsDialog::setData()
     ui->cbShowLineNumbers->setChecked(gd.showLineNumbers);
     ui->cbResizeTableRowsToContents->setChecked(gd.resizeTableRowsToContents);
     ui->cbUseTableAlternateColors->setChecked(gd.useTableAlternateColors);
+    ui->cbUseSystemStyle->setChecked(gd.useSystemStyle);
+    on_cbUseSystemStyle_clicked(ui->cbUseSystemStyle->isChecked());
     ui->cbUseSystemFontsAndColors->setChecked(gd.useSystemFontsAndColors);
     on_cbUseSystemFontsAndColors_clicked(ui->cbUseSystemFontsAndColors->isChecked());
     // Column view
@@ -127,6 +129,7 @@ bool SettingsDialog::getData()
     gd.showLineNumbers = ui->cbShowLineNumbers->isChecked();
     gd.resizeTableRowsToContents = ui->cbResizeTableRowsToContents->isChecked();
     gd.useTableAlternateColors = ui->cbUseTableAlternateColors->isChecked();
+    gd.useSystemStyle = ui->cbUseSystemStyle->isChecked();
     gd.useSystemFontsAndColors = ui->cbUseSystemFontsAndColors->isChecked();
     // Column view
     gd.columnNames.clear();
@@ -208,6 +211,11 @@ void SettingsDialog::on_cbUseSystemDateTimeFormat_clicked(bool checked)
 {
     ui->leDateFormat->setEnabled(!checked);
     ui->leTimeFormat->setEnabled(!checked);
+}
+
+void SettingsDialog::on_cbUseSystemStyle_clicked(bool checked)
+{
+    ui->cbStyle->setEnabled(!checked);
 }
 
 void SettingsDialog::on_cbUseSystemFontsAndColors_clicked(bool checked)

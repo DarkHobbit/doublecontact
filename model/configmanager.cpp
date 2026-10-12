@@ -58,8 +58,9 @@ void ConfigManager::prepare()
     }
 }
 
-void ConfigManager::setDefaults(const QString &tableFont, const QString &gridColor1, const QString &gridColor2)
+void ConfigManager::setDefaults(const QString& style, const QString &tableFont, const QString &gridColor1, const QString &gridColor2)
 {
+    _defaultStyle = style;
     gd.tableFont = tableFont;
     gd.gridColor1 = gridColor1;
     gd.gridColor2 = gridColor2;
@@ -81,11 +82,12 @@ void ConfigManager::readConfig()
     gd.showLineNumbers = settings->value("View/ShowLineNumbers", false).toBool();
     gd.resizeTableRowsToContents = settings->value("View/ResizeTableRowsToContents", true).toBool();
     gd.useTableAlternateColors = settings->value("View/UseTableAlternateColors", true).toBool();
+    gd.useSystemStyle = settings->value("View/UseSystemStyle", false).toBool();
     gd.useSystemFontsAndColors = settings->value("View/UseSystemFontsAndColors", false).toBool();
     gd.tableFont = settings->value("View/TableFont", gd.tableFont).toString();
     gd.gridColor1 = settings->value("View/GridColor1", gd.gridColor1).toString();
     gd.gridColor2 = settings->value("View/GridColor2", gd.gridColor2).toString();
-    gd.style = settings->value("View/Style", gd.style).toString();
+    gd.style = settings->value("View/Style", _defaultStyle).toString();
     // For column view
     validColumnNames.clear();
     for (int i=0; i<contactColumnHeaders.count(); i++)
@@ -139,6 +141,7 @@ void ConfigManager::writeConfig()
     settings->setValue("View/ShowLineNumbers", gd.showLineNumbers);
     settings->setValue("View/ResizeTableRowsToContents", gd.resizeTableRowsToContents);
     settings->setValue("View/UseTableAlternateColors", gd.useTableAlternateColors);
+    settings->setValue("View/UseSystemStyle", gd.useSystemStyle);
     settings->setValue("View/UseSystemFontsAndColors", gd.useSystemFontsAndColors);
     settings->setValue("View/TableFont", gd.tableFont);
     settings->setValue("View/GridColor1", gd.gridColor1);
@@ -400,6 +403,11 @@ QString ConfigManager::defaultImageDir()
         #else
                 QDesktopServices::storageLocation( QDesktopServices::PicturesLocation);
         #endif
+}
+
+QString ConfigManager::defaultStyle()
+{
+    return _defaultStyle;
 }
 
 void ConfigManager::updateFormats()
