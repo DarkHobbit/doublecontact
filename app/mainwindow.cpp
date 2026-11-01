@@ -300,7 +300,7 @@ void MainWindow::on_action_OpenFile_triggered()
     QString path = QFileDialog::getOpenFileName(0, tr("Open contact file"),
         configManager.lastContactFile(),
         FormatFactory::supportedFilters(QIODevice::ReadOnly, false).join(";;"),
-        &selectedFilter);
+        &selectedFilter, dontUseNativeDialog());
     if (!path.isEmpty()) {
         open(selectedModel, path, ftFile);
         configManager.setLastContactFile(path);
@@ -315,7 +315,7 @@ void MainWindow::on_action_OpenDir_triggered()
         return;
     QString path = QFileDialog::getExistingDirectory(this,
         tr("Open VCF Directory"), configManager.lastContactFile(),
-        QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
+        QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks | dontUseNativeDialog());
     if (!path.isEmpty()) {
         open(selectedModel, path, ftDirectory);
         configManager.setLastContactFile(path);
@@ -341,7 +341,7 @@ void MainWindow::on_action_SaveAsFile_triggered()
     QString path = QFileDialog::getSaveFileName(0, tr("Save contact file"),
         configManager.lastContactFile(),
         FormatFactory::supportedFilters(QIODevice::WriteOnly, false).join(";;"),
-        &selectedFilter);
+        &selectedFilter, dontUseNativeDialog());
     if (!path.isEmpty()) {
         selectedModel->itemList().originalProfile.clear(); // force ask profile for new file
         saveAs(selectedModel, path, ftFile);
@@ -355,7 +355,7 @@ void MainWindow::on_action_SaveAsDir_triggered()
 {
     QString path = QFileDialog::getExistingDirectory(this,
         tr("Save VCF Directory"), configManager.lastContactFile(),
-        QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
+        QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks | dontUseNativeDialog());
     if (!path.isEmpty()) {
         QDir d(path);
         if (d.exists()) {
@@ -1152,7 +1152,7 @@ void MainWindow::on_actionRe_port_triggered()
     QString path = QFileDialog::getSaveFileName(0, tr("Report file"),
         ConfigManager::defaultDocDir() + QDir::separator() + "report.html",
         FormatFactory::supportedFilters(QIODevice::WriteOnly, true).join(";;"),
-        &selectedFilter);
+        &selectedFilter, dontUseNativeDialog());
     if (!path.isEmpty()) {
         QStringList errors;
         QString fatalError;

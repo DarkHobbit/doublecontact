@@ -70,6 +70,7 @@ bool SettingsDialog::setData()
     ui->cbUseTableAlternateColors->setChecked(gd.useTableAlternateColors);
     ui->cbUseSystemStyle->setChecked(gd.useSystemStyle);
     on_cbUseSystemStyle_clicked(ui->cbUseSystemStyle->isChecked());
+    ui->cbUseSystemDialogs->setChecked(gd.useSystemDialogs);
     ui->cbUseSystemFontsAndColors->setChecked(gd.useSystemFontsAndColors);
     on_cbUseSystemFontsAndColors_clicked(ui->cbUseSystemFontsAndColors->isChecked());
     // Column view
@@ -130,6 +131,7 @@ bool SettingsDialog::getData()
     gd.resizeTableRowsToContents = ui->cbResizeTableRowsToContents->isChecked();
     gd.useTableAlternateColors = ui->cbUseTableAlternateColors->isChecked();
     gd.useSystemStyle = ui->cbUseSystemStyle->isChecked();
+    gd.useSystemDialogs = ui->cbUseSystemDialogs->isChecked();
     gd.useSystemFontsAndColors = ui->cbUseSystemFontsAndColors->isChecked();
     // Column view
     gd.columnNames.clear();

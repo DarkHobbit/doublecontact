@@ -200,6 +200,7 @@ struct GlobalConfig {
     bool resizeTableRowsToContents;
     bool useTableAlternateColors;
     bool useSystemStyle;
+    bool useSystemDialogs;
     bool useSystemFontsAndColors;
     QString tableFont, gridColor1, gridColor2;
     QString style;

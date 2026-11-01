@@ -555,7 +555,7 @@ Are you want to accept this certificate anyway?</source>
         <translation>Сохранить картинку</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="853"/>
+        <location filename="../app/contactdialog.cpp" line="854"/>
         <source>Contact photo</source>
         <translation>Фото контакта</translation>
     </message>
@@ -1323,57 +1323,57 @@ Save changes?</source>
         <translation>%1 изменился. Сохранить?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="905"/>
+        <location filename="../app/mainwindow.cpp" line="903"/>
         <source>Can&apos;t create style %1</source>
         <translation>Не могу создать стиль %1</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="940"/>
+        <location filename="../app/mainwindow.cpp" line="939"/>
         <source>Restart program to apply language change</source>
         <translation>Язык сменится после перезапуска программы</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="984"/>
+        <location filename="../app/mainwindow.cpp" line="983"/>
         <source>Two panels and compare mode needed for this operation</source>
         <translation>Сначала нужно включить 2 панели и режим сравнения</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1000"/>
+        <location filename="../app/mainwindow.cpp" line="999"/>
         <source>Left item</source>
         <translation>Левый контакт</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1000"/>
+        <location filename="../app/mainwindow.cpp" line="999"/>
         <source>Right item</source>
         <translation>Правый контакт</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1033"/>
+        <location filename="../app/mainwindow.cpp" line="1032"/>
         <source>Strongly two records on current panel must be selected for this operation</source>
         <translation>Для этой операции должны быть выбраны строго две записи на текущей панели</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1040"/>
+        <location filename="../app/mainwindow.cpp" line="1039"/>
         <source>Item 1</source>
         <translation>Контакт 1</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1040"/>
+        <location filename="../app/mainwindow.cpp" line="1039"/>
         <source>Item 2</source>
         <translation>Контакт 2</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1113"/>
+        <location filename="../app/mainwindow.cpp" line="1112"/>
         <source>Operation requires show two panels</source>
         <translation>Необходимо включить 2 панели</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1146"/>
+        <location filename="../app/mainwindow.cpp" line="1145"/>
         <source>Statitics</source>
         <translation>Статистика</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1153"/>
+        <location filename="../app/mainwindow.cpp" line="1152"/>
         <source>Report file</source>
         <translation>Файл отчёта</translation>
     </message>
@@ -3024,66 +3024,71 @@ Read %3 bytes, %4 expected</source>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="124"/>
+        <source>Use system dialogs</source>
+        <translation>Использовать системные диалоги</translation>
+    </message>
+    <message>
+        <location filename="../app/settingsdialog.ui" line="131"/>
         <source>Use system fonts and colors</source>
         <translation>Использовать системные шрифты и цвета</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="131"/>
+        <location filename="../app/settingsdialog.ui" line="138"/>
         <source>Table font</source>
         <translation>Шрифт таблиц</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="138"/>
+        <location filename="../app/settingsdialog.ui" line="145"/>
         <source>Colors</source>
         <translation>Цвета</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="144"/>
+        <location filename="../app/settingsdialog.ui" line="151"/>
         <source>Grid base</source>
         <translation>Таблицы (основной)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="151"/>
+        <location filename="../app/settingsdialog.ui" line="158"/>
         <source>Grid alternate</source>
         <translation>Таблицы (дополнит.)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="162"/>
+        <location filename="../app/settingsdialog.ui" line="169"/>
         <source>Columns</source>
         <translation>Столбцы</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="168"/>
+        <location filename="../app/settingsdialog.ui" line="175"/>
         <source>Visible</source>
         <translation>Видимые</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="175"/>
+        <location filename="../app/settingsdialog.ui" line="182"/>
         <source>Available</source>
         <translation>Доступные</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="229"/>
+        <location filename="../app/settingsdialog.ui" line="236"/>
         <source>Saving</source>
         <translation>Сохранение</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="237"/>
+        <location filename="../app/settingsdialog.ui" line="244"/>
         <source>Preferred vCard version</source>
         <translation>Предпочтительная версия vCard</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="256"/>
+        <location filename="../app/settingsdialog.ui" line="263"/>
         <source>Write full name tag if empty</source>
         <translation>Писать тег FN, если полного имени нет</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="346"/>
+        <location filename="../app/settingsdialog.ui" line="353"/>
         <source>Tag for group save</source>
         <translation>Тег для записи групп</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="360"/>
+        <location filename="../app/settingsdialog.ui" line="367"/>
         <source>Charset (not all formats)</source>
         <translation>Кодовая страница</translation>
     </message>
@@ -3100,52 +3105,52 @@ Read %3 bytes, %4 expected</source>
         <translation type="obsolete">4.0</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="249"/>
+        <location filename="../app/settingsdialog.ui" line="256"/>
         <source>Use original file version (if present)</source>
         <translation>Брать версию из исходного файла (если есть)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="265"/>
+        <location filename="../app/settingsdialog.ui" line="272"/>
         <source>Default country</source>
         <translation>Страна по умолчанию</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="277"/>
+        <location filename="../app/settingsdialog.ui" line="284"/>
         <source>(for phone number internationalization)</source>
         <translation>(для интернационализации телефонных номеров)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="284"/>
+        <location filename="../app/settingsdialog.ui" line="291"/>
         <source>Skip time from birthday and anniversaries</source>
         <translation>Удалять время из дней рождения и годовщин</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="291"/>
+        <location filename="../app/settingsdialog.ui" line="298"/>
         <source>Non-standard phone/email types</source>
         <translation>Нестандартные типы телефонов/почты</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="297"/>
+        <location filename="../app/settingsdialog.ui" line="304"/>
         <source>Add X- to type names</source>
         <translation>Добавлять X- к именам типов</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="304"/>
+        <location filename="../app/settingsdialog.ui" line="311"/>
         <source>Non-latin type names:</source>
         <translation>Нелатинские имена типов:</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="311"/>
+        <location filename="../app/settingsdialog.ui" line="318"/>
         <source>Save as is</source>
         <translation>Сохранять как есть</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="321"/>
+        <location filename="../app/settingsdialog.ui" line="328"/>
         <source>Replace to default type</source>
         <translation>Заменять типом по умолчанию</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="331"/>
+        <location filename="../app/settingsdialog.ui" line="338"/>
         <source>Place to X-CUSTOM</source>
         <translation>Помещать в X-CUSTOM</translation>
     </message>
@@ -3158,22 +3163,22 @@ Read %3 bytes, %4 expected</source>
         <translation type="obsolete">Сохранять группы в теге X-GROUP-MEMBERSHIP</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="390"/>
+        <location filename="../app/settingsdialog.ui" line="397"/>
         <source>Loading</source>
         <translation>Загрузка</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="398"/>
+        <location filename="../app/settingsdialog.ui" line="405"/>
         <source>Default type if empty</source>
         <translation>Тип телефона, если пустой</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="410"/>
+        <location filename="../app/settingsdialog.ui" line="417"/>
         <source>(many phones treat &apos;Voice&apos; as &apos;Other&apos;)</source>
         <translation>(многие телефоны трактуют &apos;Голосовой&apos; как &apos;Прочий&apos;)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="417"/>
+        <location filename="../app/settingsdialog.ui" line="424"/>
         <source>Warning on missing phone types</source>
         <translation>Предупреждать о телефонах без типа</translation>
     </message>
@@ -3182,22 +3187,22 @@ Read %3 bytes, %4 expected</source>
         <translation type="obsolete">(многие телефоны трактуют &apos;Голосовой&apos; как &apos;Прочий&apos;)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="424"/>
+        <location filename="../app/settingsdialog.ui" line="431"/>
         <source>Warning on non-standard phone types</source>
         <translation>Предупреждать о нестандартных типах телефонов</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="431"/>
+        <location filename="../app/settingsdialog.ui" line="438"/>
         <source>Debug save</source>
         <translation>Отладочная запись</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="438"/>
+        <location filename="../app/settingsdialog.ui" line="445"/>
         <source>While VCF directory reading</source>
         <translation>При чтении каталога VCF</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="444"/>
+        <location filename="../app/settingsdialog.ui" line="451"/>
         <source>Read contact names from file name</source>
         <translation>Брать имена контакта из имени файла</translation>
     </message>
@@ -3206,7 +3211,7 @@ Read %3 bytes, %4 expected</source>
         <translation type="obsolete">Предупреждать о нестандартных типах телефонов/почты</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.cpp" line="175"/>
+        <location filename="../app/settingsdialog.cpp" line="177"/>
         <source>List must contain at least one visible column</source>
         <translation>В списке должен быть хотя бы один видимый столбец</translation>
     </message>

@@ -83,6 +83,7 @@ void ConfigManager::readConfig()
     gd.resizeTableRowsToContents = settings->value("View/ResizeTableRowsToContents", true).toBool();
     gd.useTableAlternateColors = settings->value("View/UseTableAlternateColors", true).toBool();
     gd.useSystemStyle = settings->value("View/UseSystemStyle", false).toBool();
+    gd.useSystemDialogs = settings->value("View/UseSystemDialogs", false).toBool();
     gd.useSystemFontsAndColors = settings->value("View/UseSystemFontsAndColors", false).toBool();
     gd.tableFont = settings->value("View/TableFont", _defaultTableFont).toString();
     gd.gridColor1 = settings->value("View/GridColor1", _defaultGridColor1).toString();
@@ -142,6 +143,7 @@ void ConfigManager::writeConfig()
     settings->setValue("View/ResizeTableRowsToContents", gd.resizeTableRowsToContents);
     settings->setValue("View/UseTableAlternateColors", gd.useTableAlternateColors);
     settings->setValue("View/UseSystemStyle", gd.useSystemStyle);
+    settings->setValue("View/UseSystemDialogs", gd.useSystemDialogs);
     settings->setValue("View/UseSystemFontsAndColors", gd.useSystemFontsAndColors);
     settings->setValue("View/TableFont", gd.tableFont);
     settings->setValue("View/GridColor1", gd.gridColor1);

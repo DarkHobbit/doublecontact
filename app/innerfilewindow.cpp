@@ -23,6 +23,7 @@
 #include <QTemporaryFile>
 #include <QUrl>
 
+#include "helpers.h"
 #include "innerfilewindow.h"
 #include "ui_innerfilewindow.h"
 #include "configmanager.h"
@@ -139,7 +140,7 @@ void InnerFileWindow::on_btnSaveAll_clicked()
     QString path = QFileDialog::getExistingDirectory(this,
         S_ATT_FILES_DIR,
         configManager.lastContactFile(),
-        QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
+        QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks | dontUseNativeDialog());
     if (!path.isEmpty()) {
         QString fatalError;
         if (!model->saveAll(path, fatalError))
@@ -174,7 +175,7 @@ void InnerFileWindow::on_actionSave_file_triggered()
     QString selectedFilter;
     path = QFileDialog::getSaveFileName(0, S_SAVE_ATT,
         path, "*.*",
-        &selectedFilter);
+        &selectedFilter, dontUseNativeDialog());
     if (!path.isEmpty()) {
         QString fatalError;
         if (!f.saveAs(path, fatalError))

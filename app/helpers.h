@@ -15,6 +15,7 @@
 #define HELPERS_H
 
 #include <QtGlobal>
+#include <QFileDialog>
 #include <QHeaderView>
 #include <QItemDelegate>
 #include <QLabel>
@@ -44,6 +45,8 @@ void showInnerFile(const InnerFile& f);
 
 // Set color/font for each table view
 void updateTableConfig(QTableView* table);
+// Unify use native/system dialogs settings
+QFileDialog::Option dontUseNativeDialog();
 
 // Table view sort settings
 void readTableSortConfig(QTableView* table, bool forceNeedSort, bool needSort = false);

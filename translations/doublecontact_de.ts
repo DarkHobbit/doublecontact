@@ -479,7 +479,7 @@ Möchten Sie dieses Zertifikat trotzdem akzeptieren?</translation>
         <translation>Bilddatei speichern</translation>
     </message>
     <message>
-        <location filename="../app/contactdialog.cpp" line="853"/>
+        <location filename="../app/contactdialog.cpp" line="854"/>
         <source>Contact photo</source>
         <translation>Kontaktfoto</translation>
     </message>
@@ -1165,44 +1165,44 @@ Möchten Sie dieses Zertifikat trotzdem akzeptieren?</translation>
         <translation>Strg + C</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="201"/>
+        <location filename="../app/mainwindow.cpp" line="204"/>
         <source>Only one of two files can be dropped to program window</source>
         <translation>Es kann nur eine von zwei Dateien im Programmfenster abgelegt werden</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="297"/>
+        <location filename="../app/mainwindow.cpp" line="300"/>
         <source>Open contact file</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="314"/>
+        <location filename="../app/mainwindow.cpp" line="317"/>
         <source>Open VCF Directory</source>
         <translation>VCF-Verzeichnis öffnen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="338"/>
+        <location filename="../app/mainwindow.cpp" line="341"/>
         <source>Save contact file</source>
         <translation>Kontaktdatei speichern</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="354"/>
+        <location filename="../app/mainwindow.cpp" line="357"/>
         <source>Save VCF Directory</source>
         <translation>VCF-Verzeichnis speichern</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="363"/>
+        <location filename="../app/mainwindow.cpp" line="366"/>
         <source>Directory exists. Are You really want rewrite it?</source>
         <translation>Verzeichnis existiert bereits Möchten Sie es wirklich überschreiben?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="412"/>
+        <location filename="../app/mainwindow.cpp" line="415"/>
         <source>Are You really want to edit more than one record?
 Only some fields can this edited in this mode</source>
         <translation>Möchten Sie wirklich mehr als einen Datensatz bearbeiten?
 Nur einige Felder können in diesem Modus bearbeitet werden.</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="528"/>
+        <location filename="../app/mainwindow.cpp" line="531"/>
         <source>Compare mode requires show two panels and load contact lists in both panels</source>
         <translation>Der Vergleichsmodus erfordert die Anzeige von zwei Fenstern und das Laden von Kontaktlisten in beiden Fenstern.</translation>
     </message>
@@ -1211,22 +1211,22 @@ Nur einige Felder können in diesem Modus bearbeitet werden.</translation>
         <translation type="obsolete">Gruppenoperationen nicht implementiert, wählen Sie einen Datensatz aus.</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="600"/>
+        <location filename="../app/mainwindow.cpp" line="603"/>
         <source> (directory)</source>
         <translation> (Ordner)</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="718"/>
+        <location filename="../app/mainwindow.cpp" line="721"/>
         <source>Records: %1</source>
         <translation>Datensätze: %1</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="724"/>
+        <location filename="../app/mainwindow.cpp" line="727"/>
         <source>two panels</source>
         <translation>Zwei Fenster</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="724"/>
+        <location filename="../app/mainwindow.cpp" line="727"/>
         <source>one panel</source>
         <translation>Ein Fenster</translation>
     </message>
@@ -1239,74 +1239,74 @@ Nur einige Felder können in diesem Modus bearbeitet werden.</translation>
         <translation type="obsolete">Nicht sortiert</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="728"/>
+        <location filename="../app/mainwindow.cpp" line="731"/>
         <source>simple editing</source>
         <translation>Einfache Bearbeitung</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="732"/>
+        <location filename="../app/mainwindow.cpp" line="735"/>
         <source>compare</source>
         <translation>Vergleichen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="827"/>
+        <location filename="../app/mainwindow.cpp" line="830"/>
         <source>&apos;%1&apos; was changed.
 Save changes?</source>
         <translation>„%1” wurde geändert.
 Änderungen speichern?</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="899"/>
+        <location filename="../app/mainwindow.cpp" line="903"/>
         <source>Can&apos;t create style %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="935"/>
+        <location filename="../app/mainwindow.cpp" line="939"/>
         <source>Restart program to apply language change</source>
         <translation>Anwendung neu starten, um die Sprachumschaltung zu übernehmen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="979"/>
+        <location filename="../app/mainwindow.cpp" line="983"/>
         <source>Two panels and compare mode needed for this operation</source>
         <translation>Zwei Fenster und Vergleichsmodus sind für diese Aufgabe erforderlich</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="995"/>
+        <location filename="../app/mainwindow.cpp" line="999"/>
         <source>Left item</source>
         <translation>Linkes Element</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="995"/>
+        <location filename="../app/mainwindow.cpp" line="999"/>
         <source>Right item</source>
         <translation>Rechtes Element</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1028"/>
+        <location filename="../app/mainwindow.cpp" line="1032"/>
         <source>Strongly two records on current panel must be selected for this operation</source>
         <translation>Zwei Datensätze im aktuellen Fenster sind zwingend für diesen Vorgang auszuwählen</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1035"/>
+        <location filename="../app/mainwindow.cpp" line="1039"/>
         <source>Item 1</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1035"/>
+        <location filename="../app/mainwindow.cpp" line="1039"/>
         <source>Item 2</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1108"/>
+        <location filename="../app/mainwindow.cpp" line="1112"/>
         <source>Operation requires show two panels</source>
         <translation>Für die Aufgabe sind zwei Fenster erforderlich</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1141"/>
+        <location filename="../app/mainwindow.cpp" line="1145"/>
         <source>Statitics</source>
         <translation>Statistiken</translation>
     </message>
     <message>
-        <location filename="../app/mainwindow.cpp" line="1148"/>
+        <location filename="../app/mainwindow.cpp" line="1152"/>
         <source>Report file</source>
         <translation></translation>
     </message>
@@ -2964,116 +2964,126 @@ Read %3 bytes, %4 expected</source>
     </message>
     <message>
         <location filename="../app/settingsdialog.ui" line="117"/>
+        <source>Use system style</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/settingsdialog.ui" line="124"/>
+        <source>Use system dialogs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../app/settingsdialog.ui" line="131"/>
         <source>Use system fonts and colors</source>
         <translation>Systemschriftarten und -farben verwenden</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="124"/>
+        <location filename="../app/settingsdialog.ui" line="138"/>
         <source>Table font</source>
         <translation>Tabellenschriftart</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="131"/>
+        <location filename="../app/settingsdialog.ui" line="145"/>
         <source>Colors</source>
         <translation>Farben</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="137"/>
+        <location filename="../app/settingsdialog.ui" line="151"/>
         <source>Grid base</source>
         <translation>Grundraster</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="144"/>
+        <location filename="../app/settingsdialog.ui" line="158"/>
         <source>Grid alternate</source>
         <translation>Alternatives Raster</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="155"/>
+        <location filename="../app/settingsdialog.ui" line="169"/>
         <source>Columns</source>
         <translation>Spalten</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="161"/>
+        <location filename="../app/settingsdialog.ui" line="175"/>
         <source>Visible</source>
         <translation>Sichtbar</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="168"/>
+        <location filename="../app/settingsdialog.ui" line="182"/>
         <source>Available</source>
         <translation>Verfügbar</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="222"/>
+        <location filename="../app/settingsdialog.ui" line="236"/>
         <source>Saving</source>
         <translation>Speichern</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="230"/>
+        <location filename="../app/settingsdialog.ui" line="244"/>
         <source>Preferred vCard version</source>
         <translation>vCard-Version bevorzugen</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="249"/>
+        <location filename="../app/settingsdialog.ui" line="263"/>
         <source>Write full name tag if empty</source>
         <translation>Vollständigen Namen eintragen, falls leer</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="339"/>
+        <location filename="../app/settingsdialog.ui" line="353"/>
         <source>Tag for group save</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="353"/>
+        <location filename="../app/settingsdialog.ui" line="367"/>
         <source>Charset (not all formats)</source>
         <translation>Zeichensatz (nicht alle Formate)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="242"/>
+        <location filename="../app/settingsdialog.ui" line="256"/>
         <source>Use original file version (if present)</source>
         <translation>Originaldateiversion verwenden (falls vorhanden)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="258"/>
+        <location filename="../app/settingsdialog.ui" line="272"/>
         <source>Default country</source>
         <translation>Land der Voreinstellung</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="270"/>
+        <location filename="../app/settingsdialog.ui" line="284"/>
         <source>(for phone number internationalization)</source>
         <translation>(für die Internationalisierung von Telefonnummern)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="277"/>
+        <location filename="../app/settingsdialog.ui" line="291"/>
         <source>Skip time from birthday and anniversaries</source>
         <translation>Zeit bei Geburtstagen und Jahrestagen überspringen</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="284"/>
+        <location filename="../app/settingsdialog.ui" line="298"/>
         <source>Non-standard phone/email types</source>
         <translation>Nicht standardmäßige Rufnummern-/E-Mail-Adressen-Typen</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="290"/>
+        <location filename="../app/settingsdialog.ui" line="304"/>
         <source>Add X- to type names</source>
         <translation>X- zu Typ-Namen hinzufügen</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="297"/>
+        <location filename="../app/settingsdialog.ui" line="311"/>
         <source>Non-latin type names:</source>
         <translation>Nicht-lateinische Typennamen:</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="304"/>
+        <location filename="../app/settingsdialog.ui" line="318"/>
         <source>Save as is</source>
         <translation>Unverändert speichern</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="314"/>
+        <location filename="../app/settingsdialog.ui" line="328"/>
         <source>Replace to default type</source>
         <translation>Durch Standardtyp ersetzen</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="324"/>
+        <location filename="../app/settingsdialog.ui" line="338"/>
         <source>Place to X-CUSTOM</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3086,22 +3096,22 @@ Read %3 bytes, %4 expected</source>
         <translation type="obsolete">X-GROUP-MEMBERSHIP für „Gruppen speichern” verwenden</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="383"/>
+        <location filename="../app/settingsdialog.ui" line="397"/>
         <source>Loading</source>
         <translation>Wird geladen</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="391"/>
+        <location filename="../app/settingsdialog.ui" line="405"/>
         <source>Default type if empty</source>
         <translation>Standardtyp, wenn leer</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="403"/>
+        <location filename="../app/settingsdialog.ui" line="417"/>
         <source>(many phones treat &apos;Voice&apos; as &apos;Other&apos;)</source>
         <translation>(viele Telefone behandeln „Stimme“ als „Andere“)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="410"/>
+        <location filename="../app/settingsdialog.ui" line="424"/>
         <source>Warning on missing phone types</source>
         <translation>Bei fehlenden Telefonnummern warnen</translation>
     </message>
@@ -3110,27 +3120,27 @@ Read %3 bytes, %4 expected</source>
         <translation type="obsolete">(Viele Telefone behandeln „Stimme” als „Weitere”)</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="417"/>
+        <location filename="../app/settingsdialog.ui" line="431"/>
         <source>Warning on non-standard phone types</source>
         <translation>Warnhinweis bei nicht standardgemäßen Telefontypen</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="424"/>
+        <location filename="../app/settingsdialog.ui" line="438"/>
         <source>Debug save</source>
         <translation>Debug speichern</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="431"/>
+        <location filename="../app/settingsdialog.ui" line="445"/>
         <source>While VCF directory reading</source>
         <translation>Während das VCF-Verzeichnis gelesen wird</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.ui" line="437"/>
+        <location filename="../app/settingsdialog.ui" line="451"/>
         <source>Read contact names from file name</source>
         <translation>Kontaktnamen aus Dateinamen auslesen</translation>
     </message>
     <message>
-        <location filename="../app/settingsdialog.cpp" line="172"/>
+        <location filename="../app/settingsdialog.cpp" line="177"/>
         <source>List must contain at least one visible column</source>
         <translation>Liste muss mindestens eine sichtbare Spalte enthalten</translation>
     </message>

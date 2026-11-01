@@ -136,7 +136,7 @@ void CallWindow::on_btnSaveAs_clicked()
     QString selectedFilter;
     path = QFileDialog::getSaveFileName(0, tr("Save calls file"),
         path, "*.csv",
-        &selectedFilter);
+        &selectedFilter, dontUseNativeDialog());
     if (!path.isEmpty())
         model->saveToCSV(path);
 }

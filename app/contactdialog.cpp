@@ -804,7 +804,7 @@ void ContactDialog::onLoadImage()
         S_ALL_SUPPORTED.arg("(*.png *.PNG *.jpg *.JPG *.jpeg *.JPEG)") +
         ";;JPEG (*.jpg *.JPG *.jpeg *.JPEG)" +
         ";;PNG (*.png *.PNG)" +
-        ";;" + S_ALL_FILES);
+        ";;" + S_ALL_FILES, 0, dontUseNativeDialog());
     if (path.isEmpty())
         return;
     configManager.setLastImageFile(path);
@@ -832,7 +832,8 @@ void ContactDialog::onSaveImage()
         filter = "JPEG (*.jpg)";
     else if (photo.pType=="PNG")
         filter = "PNG (*.png)";
-    path = QFileDialog::getSaveFileName(0, tr("Save image file"), path, filter);
+    path = QFileDialog::getSaveFileName(0, tr("Save image file"), path, 
+        filter, 0, dontUseNativeDialog());
     if (path.isEmpty())
         return;
     configManager.setLastImageFile(path);

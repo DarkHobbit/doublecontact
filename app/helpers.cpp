@@ -126,3 +126,8 @@ void writeTableSortConfig(QHeaderView* header)
                header->sortIndicatorOrder());
 }
 
+QFileDialog::Option dontUseNativeDialog()
+{
+    return gd.useSystemDialogs ? QFileDialog::Option()
+                               : QFileDialog::DontUseNativeDialog;
+}

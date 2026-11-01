@@ -301,7 +301,7 @@ void MessageWindow::on_btnSaveAs_clicked()
     QString selectedFilter;
     path = QFileDialog::getSaveFileName(0, tr("Save messages file"),
         path, "*.csv",
-        &selectedFilter);
+        &selectedFilter, dontUseNativeDialog());
     if (!path.isEmpty()) {
         model->saveToCSV(path);
         if (model->mmsCount()>0) {
@@ -311,7 +311,8 @@ void MessageWindow::on_btnSaveAs_clicked()
             if (btn==QMessageBox::Yes) {
                 QString path = QFileDialog::getExistingDirectory(this,
                     S_SELECT_MMS_DIR_TITLE, configManager.lastContactFile(),
-                    QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
+                    QFileDialog::ShowDirsOnly | 
+                    QFileDialog::DontResolveSymlinks | dontUseNativeDialog());
                 if (!path.isEmpty()) {
                     QString fatalError;
                     if (!model->saveAllMMSFiles(path, fatalError))
@@ -336,7 +337,7 @@ void MessageWindow::on_actionSave_MMS_Files_triggered()
     const DecodedMessage& msg = model->item(sel.row());
     QString path = QFileDialog::getExistingDirectory(this,
         S_SELECT_MMS_DIR_TITLE, configManager.lastContactFile(),
-        QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
+        QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks | dontUseNativeDialog());
     if (!path.isEmpty()) {
         QString fatalError;
         if (!msg.mmsFiles.saveAll(path, fatalError))
